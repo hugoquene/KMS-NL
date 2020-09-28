@@ -432,7 +432,7 @@ Volgens bovenstaande terminologie toetsen we echter niet de hypothesen, maar lei
 
 In deze fase verzamelen we empirische observaties en vergelijken we die
 met de uitgewerkte voorspellingen "onder H0", d.w.z. de voorspellingen
-als H0 waar zou zijn. In Hoofdstuk \@ref(ch:toetsing) zullen we nader ingaan op deze toetsing. Hier introduceren we alleen het algemene principe om nulhypotheses te toetsen. (Naast het hier beschreven conventionele "frequentistische" principe kunnen we ook hypotheses toetsen of vergelijken op een nieuwere "Bayesiaanse" wijze; we bespreken die in §\@ref(sec:bayesiaans)).
+als H0 waar zou zijn. In Hoofdstuk \@ref(ch:toetsing) zullen we nader ingaan op deze toetsing. Hier introduceren we alleen het algemene principe om nulhypotheses te toetsen. (Naast het hier beschreven conventionele "frequentistische" principe kunnen we ook hypotheses toetsen of vergelijken op een nieuwere "Bayesiaanse" wijze; deze wijze van toetsing valt echter buiten het bestek van dit boek).
 
 Als de observaties buitengewoon onwaarschijnlijk zijn onder H0, dan zijn
 er twee logische mogelijkheden. (i) De observaties deugen niet, we

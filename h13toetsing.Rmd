@@ -382,7 +382,7 @@ is getoetst.
 
 ## Betrouwbaarheidsinterval van het gemiddelde {#sec:t-betrouwbaarheidsinterval-gemiddelde}
 
-Deze paragraaf gaat dieper in op een onderwerp dat eerder al aan bod kwam in §\@ref(betrouwbaarheidsinterval-gemiddelde), en illustreert het betrouwbaarheidsinterval van het gemiddelde met de scores van de grammaticatoets.
+Deze paragraaf gaat dieper in op een onderwerp dat eerder al aan bod kwam in §\@ref(sec:betrouwbaarheidsinterval-gemiddelde), en illustreert het betrouwbaarheidsinterval van het gemiddelde met de scores van de grammaticatoets.
 
 Het gemiddelde van de steekproef, $\overline{x}$, kunnen we beschouwen
 als een goede schatting van het onbekende gemiddelde in de populatie,
@@ -894,8 +894,10 @@ Meestal gebruiken we echter de gestandaardiseerde effectgrootte (zie
 formules hieronder), waarbij we rekening houden met de spreiding in de
 observaties, bijv in de vorm van "pooled standard deviation" $s_p$ [^fn13-2].
 We vinden zo een gestandaardiseerde effectgrootte van
-$$\label{eq:d-standardized}
-    d = \frac{ \overline{x_1}-\overline{x_2} } {s_p} = \frac{10}{90.5} = 0.11$$
+\begin{equation}
+  (\#eq:d-standardized)
+    d = \frac{ \overline{x_1}-\overline{x_2} } {s_p} = \frac{10}{90.5} = 0.11
+\end{equation}
 In het eerste voorbeeld hierboven is de gestandaardiseerde effectgrootte
 van het verschil in woordenschat tussen meisjes en jongens dus 0.11. In
 dit geval is het verschil tussen de groepen gering ten opzichte van de

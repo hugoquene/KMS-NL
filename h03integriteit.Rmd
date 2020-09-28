@@ -50,7 +50,7 @@ onderzoek. Hoe moeten we op eerlijke, zorgvuldige, transparante,
 onafhankelijke en verantwoordelijke wijze een onderzoek opzetten, de
 gegevens verzamelen en verwerken, en verslag doen van het onderzoek? We
 moeten daarover nadenken nog voor het onderzoek begint, en daarom
-bespreken we deze onderwerpen aan het begin van deze syllabus, hoewel we
+bespreken we deze onderwerpen aan het begin van dit tekstboek, hoewel we
 ook vooruit zullen wijzen naar termen en begrippen die worden uitgewerkt
 in volgende hoofdstukken.
 
@@ -157,7 +157,7 @@ vragenlijsten afnemen in beide condities.
 
 De efficiëntie van een onderzoek hangt ook af van de afhankelijke
 variabele, en met name van het meetniveau 
-(Hoofdstuk \@ref(ch:meetniveau)), de nauwkeurigheid, en de betrouwbaarheid
+(Hoofdstuk \@ref(ch:Meetniveau)), de nauwkeurigheid, en de betrouwbaarheid
 van de observaties 
 (Hoofdstuk \@ref(ch:betrouwbaarheid)). Hoe lager het meetniveau, des te lager
 ook de efficiëntie van het onderzoek. En hoe lager de nauwkeurigheid,

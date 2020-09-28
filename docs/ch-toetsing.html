@@ -814,7 +814,7 @@ is getoetst.</p>
 </div>
 <div id="sec:t-betrouwbaarheidsinterval-gemiddelde" class="section level2" number="13.5">
 <h2><span class="header-section-number">13.5</span> Betrouwbaarheidsinterval van het gemiddelde</h2>
-<p>Deze paragraaf gaat dieper in op een onderwerp dat eerder al aan bod kwam in §<a href="#betrouwbaarheidsinterval-gemiddelde"><strong>??</strong></a>, en illustreert het betrouwbaarheidsinterval van het gemiddelde met de scores van de grammaticatoets.</p>
+<p>Deze paragraaf gaat dieper in op een onderwerp dat eerder al aan bod kwam in §<a href="ch-kansverdelingen.html#sec:betrouwbaarheidsinterval-gemiddelde">10.7</a>, en illustreert het betrouwbaarheidsinterval van het gemiddelde met de scores van de grammaticatoets.</p>
 <p>Het gemiddelde van de steekproef, <span class="math inline">\(\overline{x}\)</span>, kunnen we beschouwen
 als een goede schatting van het onbekende gemiddelde in de populatie,
 <span class="math inline">\(\mu\)</span>. Daarbij kunnen we de gevonden waarde van <span class="math inline">\(t^*\)</span> ook gebruiken om
@@ -1349,8 +1349,10 @@ van <span class="math inline">\(D=95-85=10\)</span> tussen jongens en meisjes.</
 formules hieronder), waarbij we rekening houden met de spreiding in de
 observaties, bijv in de vorm van “pooled standard deviation” <span class="math inline">\(s_p\)</span>.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>
 We vinden zo een gestandaardiseerde effectgrootte van
-<span class="math display">\[\label{eq:d-standardized}
-    d = \frac{ \overline{x_1}-\overline{x_2} } {s_p} = \frac{10}{90.5} = 0.11\]</span>
+<span class="math display" id="eq:d-standardized">\[\begin{equation}
+  \tag{13.9}
+    d = \frac{ \overline{x_1}-\overline{x_2} } {s_p} = \frac{10}{90.5} = 0.11
+\end{equation}\]</span>
 In het eerste voorbeeld hierboven is de gestandaardiseerde effectgrootte
 van het verschil in woordenschat tussen meisjes en jongens dus 0.11. In
 dit geval is het verschil tussen de groepen gering ten opzichte van de
@@ -1408,10 +1410,10 @@ steekproeven van tenminste 1738 meisjes en 1738 jongens nodig zijn.</p>
 <p>We kunnen de effectgrootte ook uitdrukken als de waarschijnlijkheid dat
 een verschil in de voorspelde richting optreedt, voor een willekeurig
 gekozen element uit de populatie
-(formules <a href="ch-toetsing.html#eq:d-onesample">(13.9)</a> en <a href="ch-toetsing.html#eq:d-paired">(13.11)</a>),
+(formules <a href="ch-toetsing.html#eq:d-onesample">(13.10)</a> en <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>),
 of (indien van toepassing) voor twee
 willekeurig en onafhankelijk gekozen elementen uit de twee populaties
-(formule <a href="ch-toetsing.html#eq:d-homoskedastic">(13.10)</a>) <span class="citation">(McGraw and Wong <a href="#ref-McGraw92" role="doc-biblioref">1992</a>)</span>. Laten we nog eens
+(formule <a href="ch-toetsing.html#eq:d-homoskedastic">(13.11)</a>) <span class="citation">(McGraw and Wong <a href="#ref-McGraw92" role="doc-biblioref">1992</a>)</span>. Laten we nog eens
 terugkeren naar de grammaticatoets van de studenten Taalwetenschap
 (§<a href="ch-toetsing.html#sec:ttoets-onesample">13.2</a>). Het effect dat we vonden is niet
 alleen significant maar ook groot. In termen van waarschijnlijkheid
@@ -1437,7 +1439,7 @@ verschil. Dit verschil heeft een 95% betrouwbaarheidsinterval van
 <h3><span class="header-section-number">13.8.1</span> formules</h3>
 <p>Voor een enkele steekproef:
 <span class="math display" id="eq:d-onesample">\[\begin{equation}
-   \tag{13.9}
+   \tag{13.10}
   d = \frac{\overline{x}-\mu}{s}
 \end{equation}\]</span>
 waarbij <span class="math inline">\(s\)</span> de standaarddeviatie <span class="math inline">\(s\)</span>
@@ -1445,24 +1447,24 @@ van de score <span class="math inline">\(x\)</span> voorstelt.</p>
 <p>Voor twee onafhankelijke steekproeven (zie
 formule <a href="ch-toetsing.html#eq:sd-pooled">(13.3)</a>):
 <span class="math display" id="eq:d-homoskedastic">\[\begin{equation}
-  \tag{13.10}
+  \tag{13.11}
   d = \frac{ \overline{x_1}-\overline{x_2} } { s_p }
 \end{equation}\]</span></p>
 <p>Voor gepaarde waarnemingen:
 <span class="math display" id="eq:d-paired">\[\begin{equation}
-  \tag{13.11}
+  \tag{13.12}
   d = \frac{ \overline{x_1}-\overline{x_2} } { s_D }
 \end{equation}\]</span>
 waarbij <span class="math inline">\(s_D\)</span> de
 standaarddeviatie is van het verschil <span class="math inline">\(D\)</span> volgens
-formule <a href="ch-toetsing.html#eq:d-paired">(13.11)</a>.</p>
+formule <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>.</p>
 </div>
 <div id="spss-13-2" class="section level3" number="13.8.2">
 <h3><span class="header-section-number">13.8.2</span> SPSS</h3>
 <p>In SPSS kunnen we de effectgrootte meestal het makkelijkste met de hand
 uitrekenen.</p>
 <p>Voor een enkele steekproef
-(formule <a href="ch-toetsing.html#eq:d-onesample">(13.9)</a>) kunnen we de effectgrootte eenvoudig
+(formule <a href="ch-toetsing.html#eq:d-onesample">(13.10)</a>) kunnen we de effectgrootte eenvoudig
 uitrekenen uit het gemiddelde en de standaarddeviatie, rekening houdend
 met de waarde <span class="math inline">\(\mu\)</span> waartegen we toetsen.</p>
 <pre><code>Analyze &gt; Descriptive Statistics &gt; Descriptives...</code></pre>
@@ -1474,9 +1476,9 @@ effectgrootte het beste met de hand uitrekenen op basis van de
 gemiddelden, standaarddeviaties, en omvang van de twee steekproeven,
 gebruik makend van
 formules <a href="ch-toetsing.html#eq:sd-pooled">(13.3)</a> en
-<a href="ch-toetsing.html#eq:d-homoskedastic">(13.10)</a> hierboven.</p>
+<a href="ch-toetsing.html#eq:d-homoskedastic">(13.11)</a> hierboven.</p>
 <p>Voor een enkele steekproef met twee gepaarde observaties
-(formule <a href="ch-toetsing.html#eq:d-paired">(13.11)</a>) kunnen we de effectgrootte weer eenvoudiger
+(formule <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>) kunnen we de effectgrootte weer eenvoudiger
 uitrekenen uit het gemiddelde en de standaarddeviatie van het verschil.
 De gegevens staan in de uitvoer van de paarsgewijze <span class="math inline">\(t\)</span>-toets
 (§<a href="ch-toetsing.html#sec:SPSS-ttoets-gepaard">13.7.3</a>), respectievelijk als <code>Mean</code> en
@@ -1487,7 +1489,7 @@ De gegevens staan in de uitvoer van de paarsgewijze <span class="math inline">\(
 <h3><span class="header-section-number">13.8.3</span> R</h3>
 <p>In R is het wat makkelijker om de effectgrootte te laten uitrekenen.</p>
 <p>Voor een enkele steekproef
-(formule <a href="ch-toetsing.html#eq:d-onesample">(13.9)</a>):<br />
+(formule <a href="ch-toetsing.html#eq:d-onesample">(13.10)</a>):<br />
 </p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="ch-toetsing.html#cb96-1" aria-hidden="true"></a>gramm2013 &lt;-<span class="st"> </span><span class="kw">read.csv</span>( <span class="dt">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="dt">header=</span>F)</span>
 <span id="cb96-2"><a href="ch-toetsing.html#cb96-2" aria-hidden="true"></a><span class="kw">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;opleiding&quot;</span>)</span>
@@ -1517,7 +1519,7 @@ argument opgeven (power = <span class="math inline">\(1-\beta\)</span>; zie
 ## NOTE: n is number in *each* group</code></pre>
 <p>In de uitvoer staat bij <code>delta</code> het kleinste significante effect aangegeven; zie ook Voorbeeld 13.3 hierboven.</p>
 <p>Voor een enkele steekproef met twee gepaarde observaties
-(formule <a href="ch-toetsing.html#eq:d-paired">(13.11)</a>):</p>
+(formule <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>):</p>
 <div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="ch-toetsing.html#cb102-1" aria-hidden="true"></a>ujedata &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;;&quot;</span> )</span>
 <span id="cb102-2"><a href="ch-toetsing.html#cb102-2" aria-hidden="true"></a><span class="kw">with</span>( ujedata, <span class="kw">mean</span>(cond.u<span class="op">-</span>cond.je) <span class="op">/</span><span class="st"> </span><span class="kw">sd</span>(cond.u<span class="op">-</span>cond.je) )</span></code></pre></div>
 <pre><code>## [1] -2.130141</code></pre>
@@ -1559,18 +1561,18 @@ nodig: ten eerste de effectgrootte uitgedrukt als correlatie <span class="citati
 ten tweede de standaardfout van de effectgrootte <span class="math inline">\(d\)</span> <span class="citation">(Nakagawa and Cuthill <a href="#ref-Naka07" role="doc-biblioref">2007</a>, 600,
 formule 18)</span>:
 <span class="math display" id="eq:d-paired-se">\[\begin{equation}
-  \tag{13.12}
+  \tag{13.13}
     \textrm{se}_d = \sqrt{ \frac{2(1-r)}{n} + \frac{d^2}{2(n-1)} }
 \end{equation}\]</span>
 In
 ons eerdere voorbeeld van de <span class="math inline">\(n=10\)</span> gepaarde oordelen over een webpagina
 met <em>U</em> of <em>je</em> als aanspreekvorm vonden we <span class="math inline">\(d=-2.13\)</span>. We vinden ook dat
 <span class="math inline">\(r=.9135\)</span>. Met deze gegevens vinden we <span class="math inline">\(\textrm{se}_d = 0.519\)</span> via
-formule <a href="ch-toetsing.html#eq:d-paired-se">(13.12)</a>.</p>
+formule <a href="ch-toetsing.html#eq:d-paired-se">(13.13)</a>.</p>
 <p>Hiermee bepalen we vervolgens het betrouwbaarheidsinterval voor de
 effectgrootte:
 <span class="math display" id="eq:d-paired-CI">\[\begin{equation}
-   \tag{13.13}
+   \tag{13.14}
     d \pm t^*_{n-1} \times \textrm{se}_d 
 \end{equation}\]</span>
 (zie de overeenkomstige
@@ -1625,7 +1627,7 @@ niet verwerpen) <span class="citation">(Cumming <a href="#ref-Cumm12" role="doc-
 <hr />
 <ol start="29">
 <li id="fn29"><p>Wij danken Els Rose voor het beschikbaar stellen van deze gegevens.<a href="ch-toetsing.html#fnref29" class="footnote-back">↩︎</a></p></li>
-<li id="fn30"><p>In dit geval gebruiken we <span class="math inline">\(s_p = \sqrt{ \frac{122\times82^2+128\times98^2} {122+128} } = 90.5\)</span>, zie formules <a href="ch-toetsing.html#eq:sd-pooled">(13.3)</a> en <a href="ch-toetsing.html#eq:d-homoskedastic">(13.10)</a>.<a href="ch-toetsing.html#fnref30" class="footnote-back">↩︎</a></p></li>
+<li id="fn30"><p>In dit geval gebruiken we <span class="math inline">\(s_p = \sqrt{ \frac{122\times82^2+128\times98^2} {122+128} } = 90.5\)</span>, zie formules <a href="ch-toetsing.html#eq:sd-pooled">(13.3)</a> en <a href="ch-toetsing.html#eq:d-homoskedastic">(13.11)</a>.<a href="ch-toetsing.html#fnref30" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
