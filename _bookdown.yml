@@ -1,0 +1,45 @@
+book_filename: "KMS-NL"
+rmd_files: ["index.Rmd",
+            "h01inleiding.Rmd",
+            "h02onderzoek.Rmd",
+            "h03integriteit.Rmd",
+            "h04meetniveau.Rmd",
+            "h05validiteit.Rmd",
+            "h06ontwerp.Rmd",
+            "h07steekproeven.Rmd",
+            "h08frequenties.Rmd",
+            "h09centrumspreiding.Rmd",
+            "h10kansverdelingen.Rmd",
+            "h11samenhang.Rmd",
+            "h12betrouwbaarheid.Rmd",
+            "h13toetsing.Rmd",
+            "h14power.Rmd",
+            "h15variantieanalyse.Rmd",
+            "h16chikwadraat.Rmd",
+            "h17anderenonpartoetsen.Rmd",
+            "a1randomgetallen.Rmd",
+            "a2kritiekeZwaarden.Rmd",
+            "a3kritieketwaarden.Rmd",
+            "a4kritiekechi2waarden.Rmd",
+            "referenties.Rmd"]
+output_dir: "docs"
+language:
+  label:
+    fig: 'Figuur '
+    tab: 'Tabel '
+    eq: 'Vergelijking '
+    thm: 'Theorema '
+    lem: 'Lemma '
+    cor: 'Corollary '
+    prp: 'Propositie '
+    cnj: 'Conjecture '
+    def: 'Definitie '
+    exm: 'Voorbeeld '
+    exr: 'Oefening '
+    proof: 'Bewijs: '
+    remark: 'Opmerking: '
+    solution: 'Oplossing: '
+  ui:
+    chapter_name: "Hoofdstuk "
+    appendix_name: "Appendix "
+delete_merged_file: true

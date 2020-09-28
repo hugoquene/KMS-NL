@@ -1,0 +1,982 @@
+# Variantieanalyse {#ch:variantieanalyse}
+
+## Inleiding {#sec:inleiding}
+
+Dit hoofdstuk gaat over een veel gebruikte statistische analyse, genaamd
+*variantie-analyse* (Eng. 'analysis of variance', vaak afgekort als
+ANOVA). In dit hoofdstuk gebruiken we relatief veel Engelse
+terminologie, ten eerste omdat de Nederlandse termen nauwelijks gebruikt
+worden, en daarmee samenhangend om goed aan te sluiten bij de
+Engelstalige vakliteratuur over variantieanalyse.
+
+Hoe zit dit hoofdstuk in elkaar? We beginnen in
+paragraaf \@ref(sec:anova-voorbeelden) met enkele voorbeelden van onderzoek
+waarvan de uitkomsten getoetst kunnen worden met variantieanalyse. De
+bedoeling van de paragraaf is je vertrouwd te maken met de techniek, met
+de nieuwe terminologie, en met de voorwaarden waaronder van deze
+techniek gebruik mag worden gemaakt. In
+§\@ref(sec:anova-oneway-uitleg) introduceren we de techniek op een
+intuïtieve wijze door in te gaan op de gedachtegang achter de toets. In
+§\@ref(sec:anova-oneway-formeel) leiden we een formele vorm af voor
+de belangrijkste toetsingsgrootheid, de $F$-ratio.
+
+## Enkele voorbeelden {#sec:anova-voorbeelden}
+
+Variantieanalyse is, net als de *t*-toets, een statistische
+generalisatietechniek, dat wil zeggen: een instrument dat gebruikt kan
+worden bij de formulering van uitspraken over de eigenschappen van
+populaties, op basis van gegevens ontleend aan steekproeven uit die
+populaties. In het geval van de *t*-toets en van ANOVA gaan die uitspraken over
+het al dan niet gelijk zijn van de gemiddelden van (twee of meer)
+populaties. In deze zin kan variantieanalyse dan ook opgevat worden als
+een uitgebreide versie van de *t*-toets: met ANOVA kunnen we gegevens analyseren
+van meer dan twee steekproeven. Bovendien is het mogelijk om de effecten
+van meerdere onafhankelijke variabelen simultaan in de analyse te
+betrekken. Dat komt van pas als we gegevens willen analyseren uit een
+factorieel ontwerp (§\@ref(sec:ontwerp-factorieel)).
+
+---
+
+> *Voorbeeld 15.1*: In dit voorbeeld
+onderzoeken we het spreektempo ofwel de spreeksnelheid van vier groepen
+sprekers, nl. afkomstig uit het Midden, Noorden, Zuiden en Westen van
+Nederland. De spreeksnelheid is uitgedrukt als de gemiddelde duur van
+een lettergreep, gemiddeld over een interview van ca 15 minuten met elke
+spreker [@Quene08] [@R-hqmisc]. Een kortere gemiddelde syllabeduur correspondeert
+dus met een snellere spreker (vgl. de schaatssport: een kortere
+rondetijd correspondeert met een snellere schaatser). Er waren 20
+sprekers per groep, maar 1 spreker (uit het Zuiden) met een extreem hoge
+waarde is hier verwijderd uit de steekproef.
+
+---
+
+De geobserveerde spreeksnelheden per spreker uit bovenstaand voorbeeld 15.1
+zijn samengevat in Tabel \@ref(tab:syldur) en
+Figuur \@ref(fig:syldur-boxplot). Hierbij is de regio van herkomst een
+onafhankelijke categoriale variabele of 'factor'. De waarden van deze
+factor worden ook aangeduid als 'nivo\'s' (Eng. 'levels'), of in veel
+onderzoeken als 'groepen' of 'condities'. Ieder nivo of iedere groep of
+conditie vormt een 'cel' van het ontwerp, en de observaties uit die cel
+worden ook 'replicaties' genoemd (bedenk waarom die zo genoemd worden).
+De spreeksnelheid vormt de afhankelijke variabele. De nulhypothese luidt
+dat de gemiddelden van de afhankelijke variabele gelijk zijn voor alle
+groepen, dus H0: $\mu_M = \mu_N = \mu_Z = \mu_W$. Als we H0 verwerpen,
+dan betekent dat dus *alleen* dat niet alle gemiddelden gelijk zijn,
+maar het betekent *niet* dat ieder groepsgemiddelde afwijkt van ieder
+ander groepsgemiddelde. Daarvoor is nader (post-hoc) onderzoek nodig; we
+komen daar later nog op terug.
+
+Table: (#tab:syldur) Gemiddelde spreeksnelheden, met standaarddeviatie en aantallen sprekers, verdeeld naar regio van herkomst van de spreker (zie voorbeeld 15.1).
+
+  regio     gemiddelde   s.d.    n
+  -------- ------------ ------- ----
+  Midden      0.253      0.028   20
+  Noord       0.269      0.029   20
+  Zuid        0.260      0.030   19
+  West        0.235      0.028   20
+
+```{r syldur-boxplot, echo=FALSE, fig.cap="Boxplot van de gemiddelde duur van de lettergrepen, opgesplitst naar regio van herkomst van de spreker."}
+require(hqmisc) # for hqmisc::talkers data set
+data(talkers)
+with( subset(talkers,syldur<0.4), 
+      boxplot( syldur~region, col="grey90",
+               xlab="Regio in Nederland",
+               ylab="Gemidd. duur van lettergreep (s)",
+               xaxt="n") )
+axis( side=1, at=1:4, labels=c("Midden","Noord","Zuid","West") )
+# require(plotrix) # for plotrix::axis.break
+plotrix::axis.break(axis=2)
+```
+
+Om nu te onderzoeken of de vier populaties verschillen in hun gemiddelde
+spreeksnelheid, zouden we in eerste instantie en kunnen uitvoeren voor
+alle paren van nivo's. (Met 4 nivo's zou dat 6 toetsen vereisen, zie
+vergelijking \@ref(eq:choose) met $n=4$ en $x=2$). Er kleven echter
+verschillende bezwaren aan deze aanpak. Eén daarvan bespreken we hier.
+Bij iedere gebruiken we een overschrijdingskans van $\alpha=.05$. We
+hebben dus een kans van .95 op een juiste beslissing zonder Type-I-fout.
+De kans dat we bij alle 6 toetsen een juiste beslissing nemen is
+$.95^6 = .731$ (volgens de productregel,
+vergelijking \@ref(eq:kans-productregel)). De gezamenlijke kans op één of meer
+Type-I-fout(en) in de 6 toetsen is dus niet meer $.05$, maar is nu
+opgelopen tot $1-.731 = .265$, ruim een kwart!
+
+Variantieanalyse nu biedt de mogelijkheid om op grond van één enkele
+toetsing (dus niet 6 toetsen) de houdbaarheid te onderzoeken van de
+bovengenoemde nulhypothese. Variantieanalyse kan dus het beste
+gekenschetst worden als een globale toetsingstechniek, die het meest
+geschikt is als je a priori geen specifieke voorspellingen kan of wil
+doen omtrent de verschillen tussen de populaties.
+
+Een variantieanalyse toegepast op de scores samengevat in
+Tabel \@ref(tab:syldur)
+zal tot verwerping van de nul-hypothese leiden: de 4 regionale
+gemiddelden zijn niet gelijk. De gevonden verschillen zijn
+hoogstwaarschijnlijk niet toe te schrijven aan toevallige
+steekproeffluctuaties, maar aan systematische verschillen tussen de
+groepen ($\alpha=.05$). Kan nu geconcludeerd worden dat de gevonden
+verschillen in spreeksnelheid *veroorzaakt* worden door verschil in
+herkomst van de spreker? Hier is terughoudendheid geboden (zie
+§\@ref(sec:causaliteit)). Het is immers niet uit te sluiten dat de
+vier populaties niet alleen in spreeksnelheid systematisch van elkaar
+verschillen, maar ook in andere relevante factoren, die niet in het
+onderzoek opgenomen zijn, zoals gezondheid, welvaart, of onderwijs. Die
+andere factoren zouden we alleen kunnen uitsluiten als we proefpersonen
+aselect zouden toewijzen aan de gekozen nivo's van de onafhankelijke
+variabele. Dat is echter niet mogelijk als het gaat om de regio van
+herkomst van de spreker: we kunnen een spreker meestal wel (aselect)
+toewijzen aan een behandelvorm of conditie, maar niet aan een regio van
+herkomst. In feite is het onderzoek in voorbeeld 15.1 
+dus quasi-experimenteel.
+
+Voor ons tweede voorbeeld betrekken we een tweede factor in hetzelfde
+onderzoek naar spreeksnelheid, nl. ook het geslacht van de spreker.
+ANOVA stelt ons in staat om in één enkele analyse te toetsen of (i) de vier
+regio's van elkaar verschillen (H0: $\mu_M = \mu_N = \mu_Z = \mu_W$), en
+of (ii) de twee geslachten van elkaar verschillen (H0:
+$\mu_\textrm{vrouw} = \mu_\textrm{man}$), en of (iii) de verschillen
+tussen de regio's hetzelfde zijn voor beide geslachten (of, anders
+gezegd, of de verschillen tussen de geslachten hetzelfde zijn voor alle
+regio's). Dat laatste noemen we de 'interactie' tussen de twee factoren.
+
+Table: (#tab:syldur2way) Gemiddelde spreeksnelheden, met standaarddeviatie en aantallen sprekers, verdeeld naar geslacht en regio van herkomst van de spreker (zie voorbeeld 15.1).
+
+  geslacht   regio     gemiddelde   s.d.    n
+  ---------- -------- ------------ ------- ----
+  vrouw      Midden      0.271      0.021   10
+  vrouw      Noord       0.285      0.025   10
+  vrouw      Zuid        0.269      0.028   9
+  vrouw      West        0.238      0.028   10
+  man        Midden      0.235      0.022   10
+  man        Noord       0.253      0.025   10
+  man        Zuid        0.252      0.030   10
+  man        West        0.232      0.028   10
+
+De resultaten in Tabel \@ref(tab:syldur2way) suggereren dat (i) sprekers uit het Westen
+sneller spreken dan de anderen, en dat (ii) mannen sneller spreken dan
+vrouwen (!). En (iii) het verschil tussen mannen en vrouwen lijkt
+kleiner voor sprekers uit het Westen dan voor sprekers uit andere
+regionen.
+
+### aannames
+
+De variantie-analyse vereist vier aannames (of assumpties) waaraan
+voldaan moet zijn, om deze toets te mogen gebruiken; deze aannames komen
+overeen met die van de *t*-toets
+(§\@ref(sec:ttoets-aannames)).
+
+* De gegevens moeten gemeten zijn op intervalniveau (zie
+§\@ref(sec:interval)).
+
+* Alle observaties moeten onafhankelijk van elkaar zijn.
+
+* De scores moeten normaal verdeeld zijn (zie
+§\@ref(sec:isvarnormaalverdeeld)).
+
+* De variantie van de scores moet (ongeveer) gelijk zijn in de
+scores van de respectievelijke groepen of condities (zie
+§\@ref(sec:variantie)). 
+Schending van deze aanname is ernstiger
+naarmate de steekproeven meer in grootte verschillen. Het is daarom
+verstandig om te werken met even grote, en liefst niet te kleine
+steekproeven.
+
+Samenvattend: variantieanalyse kan gebruikt worden om meerdere
+populatiegemiddelden te vergelijken, en om de effecten van meerdere
+factoren en combinaties van factoren (interacties) te bepalen.
+Variantieanalyse vereist wel dat de gegevens aan meerdere voorwaarden
+voldoen.
+
+## Eén-weg-variantieanalyse
+
+### Een intuïtieve uitleg {#sec:anova-oneway-uitleg}
+
+Zoals gezegd gebruiken we variantieanalyse om te onderzoeken of de
+scores van verschillende groepen, of verzameld onder verschillende
+condities, van elkaar verschillen. Maar --- scores verschillen *altijd*
+van elkaar, door toevallige fluctuaties tussen de replicaties binnen
+elke steekproef. In de voorgaande hoofdstukken zijn we al vele
+voorbeelden tegengekomen van toevalsfluctuaties binnen dezelfde
+steekproef en binnen dezelfde conditie. De vraag wordt dan, of de scores
+*tussen* de verschillende groepen (of verzameld onder verschillende
+condities) méér van elkaar verschillen dan je zou verwachten op grond
+van toevallige fluctuaties *binnen* elke groep of cel.
+
+De bovengenoemde "verschillen tussen scores" vormen bij elkaar de
+variantie van die scores
+(§\@ref(sec:variantie)). Bij variantieanalyse verdelen we de totale
+variantie in twee delen: ten eerste de variantie veroorzaakt door
+(systematische) verschillen *tussen* groepen, en ten tweede de variantie
+veroorzaakt door (toevallige) verschillen *binnen* groepen. Als H0 waar
+is, en als er dus (in de populaties) géén verschillen tussen de groepen
+zijn, dan verwachten we desalniettemin (in de steekproeven van de
+groepen) wèl enige verschillen tussen de gemiddelde scores van de
+groepen, zij het dat de laatstgenoemde verschillen niet groter zullen
+zijn dan de toevallige verschillen binnen de groepen, als H0 waar is.
+Lees deze alinea nog eens aandachtig door.
+
+Deze aanpak wordt geïllustreerd in
+Figuur \@ref(fig:kleurtjes-obs), waarin de scores zijn afgebeeld uit drie
+experimentele groepen (met aselecte toewijzing van proefpersonen aan de
+groepen): de rode, grijze en blauwe groep. De scores verschillen van
+elkaar, in ieder geval door toevallige fluctuaties van de scores binnen
+elke groep. Er zijn misschien ook systematische verschillen tussen (de
+gemiddelde scores van) de drie groepen. Maar zijn deze systematische
+verschillen nu relatief groter dan de toevallige verschillen binnen
+groepen? Zo ja, dan verwerpen we H0.
+
+```{r kleurtjes-obs, echo=FALSE, fig.cap="Gesimuleerde observaties van drie experimentele groepen: rood (neerwaartse driehoek), grijs (ruit), en blauw (opwaartse driehoek) (n=15 per groep), met het gemiddelde per groep (in streeplijnen), en met het gemiddelde over alle observaties (stippellijn)."}
+# adapted from `kleurtjes.R`, HQ 20161228
+set.seed(979593)
+rood <- rnorm(15,mean =-0.5)
+wit <- rnorm(15,mean =0)
+blauw <- rnorm(15,mean =+0.5)
+kleurtjes <- data.frame( kleur=gl(n=3,k=15,labels=c("red","grey50","blue")), 
+                         score=c(rood,wit,blauw),
+                         sym=gl(3,15,labels=c("25","23","24")))
+op <- par(mar=c(4,4,1,1)+0.1) # minder marges overal
+with(kleurtjes, plot(score, bg=as.character(kleur), 
+                     pch=as.integer(as.character(sym)),
+                     xlab="Observatie-nummer", ylab="Score") )
+segments( x0=1-0.5, x1=15+0.5, y0=mean(kleurtjes$score[kleurtjes$kleur=="red"]),
+          lwd=3, lty=2, col="red" )
+segments( x0=16-0.5, x1=30+0.5, y0=mean(kleurtjes$score[kleurtjes$kleur=="grey50"]),
+          lwd=3, lty=2, col="grey50" )
+segments( x0=31-0.5, x1=55+0.5, y0=mean(kleurtjes$score[kleurtjes$kleur=="blue"]),
+          lwd=3, lty=2, col="blue" )
+segments( x0=1-0.5, x1=55+0.5, y0=mean(kleurtjes$score),
+          lwd=2, lty=3, col="black" )
+# adapted from  troonredes...analyzepauses.R
+omegasq <- function ( model, term ) {	
+     mtab <- anova(model)
+     rterm <- dim(mtab)[1] # resid term
+     return( (mtab[term,2]-mtab[term,1]*mtab[rterm,3]) / (mtab[rterm,3]+sum(mtab[,2])) )
+}
+# summary(aov( score~kleur, data=kleurtjes) -> m01)
+# omegasq(m01,"kleur") # [1] 0.2708136
+# conmat <- matrix( c(-1,.5,.5, 0,-1,+1), byrow=F, nrow=3 )
+# dimnames(conmat)[[2]] <- c(".R.GB",".0G.B")
+# contrasts(kleurtjes$kleur) <- conmat
+# summary(aov( score~kleur, data=kleurtjes) -> m02)
+# https://blogs.uoregon.edu/rclub/2015/11/03/anova-contrasts-in-r/
+# summary.aov(m02, split=list(kleur=list(1,2) ))
+# Df Sum Sq Mean Sq F value   Pr(>F)    
+# kleur        2  14.50   7.248   9.356 0.000436 ***
+#   kleur: C1  1  14.31  14.308  18.470 0.000100 ***
+#   kleur: C2  1   0.19   0.188   0.243 0.624782    
+# Residuals   42  32.54   0.775                     
+# omega squared
+# (14.308-1*0.775)/(0.775+14.308+0.19+32.54) # [1] 0.2830402
+# (0.188-1*0.775)/(0.775+14.308+0.19+32.54) # [1] -0.012277
+# TukeyHSD(m02)
+```
+
+De systematische verschillen *tussen* de groepen corresponderen met de
+verschillen van de rode, grijze en blauwe groepsgemiddelden
+(streepjeslijnen in
+Figuur \@ref(fig:kleurtjes-obs)) ten opzichte van het gemiddelde over
+alle observaties (stippellijn). Voor de eerste observatie is dat een
+negatieve afwijking, want de score ligt onder het algemene gemiddelde
+(stippellijn). De toevallige verschillen *binnen* de groepen
+corresponderen met de afwijking van iedere observatie ten opzichte van
+het groepsgemiddelde (voor de eerste observatie is dat dus een positieve
+afwijking, want de score ligt boven het groepsgemiddelde van de rode
+groep).
+
+Laten we nu de overstap maken van 'verschillen' naar 'variantie'. We
+splitsen dan de afwijking van iedere observatie t.o.v. het algemene
+gemiddelde op in twee afwijkingen: ten eerste de afwijking van
+groepsgemiddelde t.o.v. algemene gemiddelde, en ten tweede de afwijking
+van iedere replicatie t.o.v. het groepsgemiddelde. Dat zijn twee stukjes
+variantie, die tezamen de totale variantie vormen. Omgekeerd kunnen we
+dus de totale variantie opdelen in deze twee componenten, vandaar de
+naam 'variantieanalyse'. (We zullen in de volgende paragraaf uitleggen
+hoe die componenten berekend worden, rekening houdend met het aantal
+observaties en aantal groepen.)
+
+Die verdeling van de totale variantie in twee variantiecomponenten is
+nuttig, omdat we daarna de *verhouding* of ratio tussen die twee delen
+kunnen bepalen. Die verhouding tussen varianties wordt de $F$-ratio
+genoemd, en we gebruiken deze verhouding om H0 te toetsen.
+
+$$\textrm{H0}: \textrm{variantie tussen groepen} = \textrm{variantie binnen groepen}$$
+
+$$\textrm{H0}: F = \frac{\textrm{variantie tussen groepen}}{\textrm{variantie binnen groepen}} = 1$$
+
+De $F$-ratio is dus een toetsingsgrootheid, waarvan de kansverdeling
+bekend is indien H0 waar is. In het voorbeeld van
+Figuur \@ref(fig:kleurtjes-obs) vinden we $F=3.22$, met 3 groepen en 45
+observaties, $p=.0004$. We vinden hier dus een relatief grote
+systematische variantie *tussen* groepen, ten opzichte van de relatief
+kleine toevallige variantie *binnen* groepen: de eerstgenoemde variantie
+(teller van verhouding $F$) is meer dan $3\times$ zo groot als de
+laatstgenoemde variantie (noemer van verhouding $F$). De kans $p$ om
+deze verhouding te vinden als H0 waar is, is buitengewoon gering, en we
+verwerpen daarom H0. (We zullen in de volgende paragraaf uitleggen hoe
+die kans bepaald wordt, weer rekening houdend met het aantal observaties
+en aantal groepen.) We spreken dan van een significant effect van de
+factor op de afhankelijke variabele.
+
+Aan het slot van deze paragraaf herhalen we de essentie van de
+variantieanalyse. We verdelen de totale variantie in twee delen: de
+mogelijk systematische variantie tussen groepen of condities, en de
+variantie binnen groepen of condities (d.i. altijd aanwezige, toevallige
+fluctuatie tussen replicaties). De toetsingsgrootheid $F$ bestaat uit de
+verhouding tussen deze twee varianties. We toetsen eenzijdig of $F=1$,
+en verwerpen H0 als $F>1$ zodanig dat de kans
+$P(F|\textrm{H0}) < \alpha$. De gemiddelde scores van de groepen of
+condities zijn dan hoogstwaarschijnlijk niet alle gelijk. We weten
+daarmee nog niet welke groepen van elkaar verschillen, daarvoor is nog
+verdere (post-hoc) analyse nodig
+(§\@ref(sec:anova-oneway-posthoc) hieronder).
+
+### Een formele uitleg {#sec:anova-oneway-formeel}
+
+Voor onze uitleg beginnen we met de geobserveerde scores. We nemen aan
+dat de scores zijn opgebouwd volgens een bepaald statistisch model, nl.
+als de optelsom van het populatiegemiddelde ($\mu$), een systematisch
+effect ($\alpha_j$) van de $j$'de conditie of groep (over $k$ condities
+of groepen), en een toevallig effect ($e_{ij}$) voor de $i$'de
+replicatie binnen de $j$'de conditie of groep (over $N$ replicaties in
+totaal). In formule: 
+$$x_{ij} = \mu + \alpha_{j} + e_{ij}$$ 
+Ook hier
+weer ontleden we dus iedere score in een systematisch deel en een
+toevallig deel. Dat geldt niet alleen voor de scores zelf, maar ook voor
+de afwijkingen van iedere score ten opzichte van het totale gemiddelde
+(zie §\@ref(sec:anova-oneway-uitleg)).
+
+Er zijn derhalve drie varianties van belang. Ten eerste de totale
+variantie (zie vergelijking
+\@ref(eq:variantie), afgekort tot `t`) over alle $N$
+observaties uit alle groepen of condities tezamen: 
+\begin{equation}
+  (\#eq:MStotal)
+    s^2_t = \frac{ \sum (x_{ij} - \overline{x})^2 } {N-1}
+\end{equation}
+Ten tweede de variantie tussen (Eng. 'between', afgekort tot`b`) de
+groepen of condities:
+\begin{equation}
+  (\#eq:MSbetween)
+    s^2_b = \frac{ \sum_{j=1}^{j=k} n_j (\overline{x_j} - \overline{x})^2 } {k-1}
+\end{equation}
+en ten derde de variantie binnen (Eng. 'within', afgekort tot `w`) de
+groepen of condities:
+\begin{equation}
+  (\#eq:MSwithin)
+    s^2_w = \frac{ \sum_{j=1}^{j=k} \sum_i (x_{ij} - \overline{x_j})^2 } {N-k}
+\end{equation}
+
+In deze vergelijkingen worden de *tellers* gevormd door de som van de
+gekwadrateerde afwijkingen ('sums of squares', afgekort `SS`). In de
+vorige paragraaf hebben we aangegeven dat de afwijkingen bij elkaar
+optellen, en dat geldt dan ook voor de gesommeerde en gekwadrateerde
+afwijkingen: 
+\begin{align}
+  (\#eq:SStotal)
+    { \sum (x_{ij} - \overline{x})^2 } &= 
+    { \sum_{j=1}^{j=k} n_j (\overline{x_j} - \overline{x})^2 } + 
+    { \sum_{j=1}^{j=k} \sum_i (x_{ij} - \overline{x_j})^2 } \\
+    \textrm{SS}_t &= \textrm{SS}_b + \textrm{SS}_w
+\end{align}
+De
+*noemers* van de varianties worden gevormd door de vrijheidsgraden
+('degrees of freedom', afgekort `df`, zie
+§\@ref(sec:ttoets-vrijheidsgraden)). Voor de variantie tussen
+groepen $s^2_b$ is dat het aantal groepen of condities, minus 1 ($k-1$).
+Voor de variantie binnen groepen $s^2_w$ is dat het aantal observaties,
+minus het aantal groepen ($N-k$). Voor de totale variantie is dat het
+aantal observaties minus 1 ($N-1$). Ook de vrijheidsgraden van de
+afwijkingen tellen bij elkaar op: 
+\begin{align}
+  (\#eq:dftotal1)
+    { (N-1) } &= { (k-1) } + { (N-k) } \\
+    \textrm{df}_t &= \textrm{df}_b + \textrm{df}_w
+\end{align}
+
+De bovenstaande breuken die de varianties $s^2_t$, $s^2_b$ en $s^2_w$
+beschrijven, worden ook aangeduid als de 'mean squares' (afgekort `MS`).
+$\textrm{MS}_{t}$ is per definitie gelijk aan de 'gewone' variantie
+$s^2_x$ (zie de identieke vergelijkingen
+\@ref(eq:variantie) en
+\@ref(eq:MStotal)).
+
+De toetsingsgrootheid $F$ is gedefinieerd als de verhouding van de twee
+hierboven gedefinieerde variantiecomponenten: 
+\begin{equation}
+  (\#eq:Fratio)
+    F = \frac{ s^2_b } { s^2_w }
+\end{equation}
+met niet één maar twee
+vrijheidsgraden, resp. $(k-1)$ voor de teller en $(N-k)$ voor de noemer.
+
+De overschrijdingskans $p$ die behoort bij de gevonden $F$ kan je
+bepalen aan de hand van een tabel, maar meestal voeren we een
+variantieanalyse uit met behulp van de computer, en die berekent dan ook
+die overschrijdingskans.
+
+De resultaten van een variantieanalyse worden samengevat met een vaste
+opbouw in een zgn. ANOVA-tabel, zoals
+Tabel \@ref(tab:kleurtjes-anova). Daarin staat de belangrijkste
+informatie samengevat. Maar de hele tabel kan ook in één zin samengevat
+worden, zie Voorbeeld 15.2
+
+Table: (#tab:kleurtjes-anova) Samenvatting van variantieanalyse van de observaties in Figuur \@ref(fig:kleurtjes-obs).
+
+  variantiebron     df   SS      MS      $F$     $p$
+  --------------- ---- ------- ------- ------- --------
+  groep              2  14.50   7.248   9.356   0.0004
+  (within)          42  32.54   0.775          
+
+---
+
+> *Voorbeeld 15.2*: 
+De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep 
+[$F(2,42) = 9.35, p = .0004, \omega^2 = 0.28$].
+
+---
+
+
+### Effectgrootte {#sec:anova-oneway-effectgrootte}
+
+Net als bij de is het niet alleen van belang om een binaire beslissing
+te nemen over H0, maar is het minstens zo belangrijk om te weten hoe
+groot het geobserveerde effect is (zie ook
+§\@ref(sec:ttoets-effectgrootte)). Deze effectgrootte bij
+variantieanalyse kan worden uitgedrukt in verschillende maten, waarvan
+wij er twee bespreken (deze paragraaf is gebaseerd op @KL00; zie ook @Olej03).
+
+De eenvoudigste maat is de zgn. $\eta^2$ ("èta-kwadraat" of "eta
+squared"), de proportie van de totale SS die toe te schrijven is aan de
+verschillen tussen de groepen of condities: $$\label{eq:etasq}
+    \eta^2 = \frac{ \textrm{SS}_b } { \textrm{SS}_t }$$ De effectgrootte
+$\eta^2$ is een proportie tussen 0 en 1, die aangeeft hoeveel van de
+variantie in de *steekproef* toe te schrijven is aan de onafhankelijke
+variabele.
+
+De tweede maat voor effectgrootte bij variantieanalyse is de zgn.
+$\omega^2$ ("omega-kwadraat" of "omega squared"): 
+\begin{equation}
+  (\#eq:omegasq)
+    \omega^2 = \frac{ \textrm{SS}_b - (k-1) \textrm{MS}_w} { \textrm{SS}_t + \textrm{MS}_w }
+\end{equation}
+De effectgrootte $\omega^2$ is ook een proportie; dit is een schatting
+van de proportie van de variantie in de *populatie* die toe te schrijven
+is aan de onafhankelijke variabele, waarbij de schatting uiteraard
+gebaseerd is op de onderzochte steekproef. Omdat we in het algemeen meer
+geïnteresseerd zijn in generalisatie naar de populatie dan naar de
+steekproef, geven wij de voorkeur aan $\omega^2$ als maat voor de
+effectgrootte.
+
+We dienen niet alleen de $F$-ratio, vrijheidsgraden, en
+overschrijdingskans te rapporteren, maar ook de effectgrootte (zie
+voorbeeld 15.2 hierboven).
+
+>"It is not enough to report
+$F$-ratios and whether they are statistically significant. We must know
+how strong relations are. After all, with large enough $N$s, $F$- and
+$t$-ratios can almost always be statistically significant. While often
+sobering in their effect, especially when they are low, coefficients of
+association of independent and dependent variables [i.e., effect size
+coefficients] are *indispensable* parts of research results" [@KL00
+p.327, nadruk toegevoegd].
+
+### Gerichte vergelijkingen {#sec:anova-oneway-gericht}
+
+In voorbeeld 15.2 (zie
+Figuur \@ref(fig:kleurtjes-obs)) onderzochten we de verschillen tussen
+scores uit de rode, zwarte en blauwe groepen. De nulhypothese die
+getoetst werd was H0:
+$\mu_\textrm{rood} = \mu_\textrm{grijs} = \mu_\textrm{blauw}$. 
+Het is
+echter ook goed mogelijk dat een onderzoeker al bepaalde ideeën heeft
+over de verschillen tussen de groepen, en *gericht* op zoek is naar
+bepaalde verschillen, en andere verschillen juist wil negeren. De
+gerichte vergelijkingen (Eng. 'planned comparisons') worden ook wel
+'contrasten' genoemd.
+
+Laten we voor hetzelfde voorbeeld aannemen dat de onderzoeker al
+verwacht, uit eerder onderzoek, dat de scores van de rode en blauwe
+groepen van elkaar zullen verschillen. De bovenstaande H0 is dan niet
+meer interessant om te onderzoeken, omdat we bij voorbaat verwachten H0
+te zullen verwerpen. De onderzoeker wil nu gericht weten 
+(1) of de rode
+groep lager scoort dan de andere twee groepen, (H0:
+$\mu_\textrm{rood} = (\mu_\textrm{grijs}+\mu_\textrm{blauw})/2$), en
+(2)
+of de grijze en blauwe groepen van elkaar verschillen (H0:
+$\mu_\textrm{grijs} = \mu_\textrm{blauw}$) 
+[^fn15-1].
+
+De factor 'groep' heeft 2 vrijheidsgraden, en dat betekent dat we
+precies 2 van zulke gerichte vergelijkingen of 'contrasten' kunnen maken
+die onafhankelijk zijn van elkaar. Dergelijke onafhankelijke contrasten
+worden 'orthogonaal' genoemd.
+
+In een variantieanalyse met gerichte vergelijkingen wordt de variantie
+tussen groepen of condities nog verder opgedeeld, nl. in de gerichte
+contrasten zoals de twee hierboven (zie
+Tabel \@ref(tab:kleurtjes-anova-contrast)). We laten een verdere uitleg
+over gerichte vergelijkingen hier achterwege, maar adviseren wel om waar
+mogelijk slim gebruik te maken van deze gerichte vergelijkingen, indien
+je een meer specifieke nulhypothese kunt opstellen dan H0: "de
+gemiddelde scores zijn gelijk in alle groepen of condities". We kunnen
+zo gerichte uitspraken doen over de verschillen tussen de groepen in ons
+voorbeeld:
+
+---
+
+> *Voorbeeld 15.3*:
+De gemiddelde score van de rode
+groep is significant lager dan van de beide andere groepen gecombineerd
+[$F(1,42)=18.47, p=.0001, \omega^2=0.28$]. De gemiddelde score is
+nagenoeg gelijk voor de grijze en blauwe groep
+[$F(1,42)<1, \textrm{n.s.}, \omega^2=0.00$]. 
+Dit impliceert dat de
+rode groep significant lagere scores behaalt dan de grijze groep en dan
+de blauwe groep.
+
+---
+
+Table: (#tab:kleurtjes-anova-contrast) Samenvatting van variantieanalyse van de observaties in Figuur \@ref(fig:kleurtjes-obs), met gerichte contrasten tussen groepen.
+
+  variantiebron           df   SS       MS      $F$      $p$
+  --------------------- ---- ------- -------- -------- --------
+  groep                    2  14.50   7.248    9.356    0.0004
+    groep, contrast 1      1  14.31   14.308   18.470   0.0001
+    groep, contrast 2      1  0.19    0.188    0.243    0.6248
+  (within)                42  32.54   0.775            
+
+De variantie-analyse met gerichte vergelijkingen is dus vooral bruikbaar
+als je, voordat de observaties zijn gedaan, al gerichte hypotheses hebt
+over verschillen tussen bepaalde (combinaties van) groepen of condities.
+Die hypotheses kunnen gebaseerd zijn op theoretische overwegingen, of op
+eerdere onderzoeksresultaten.
+
+
+#### Orthogonale contrasten
+
+Elk contrast kan worden uitgedrukt in de vorm van gewichten voor iedere
+conditie. Voor de hierboven besproken contrasten kan dat in de vorm van
+deze gewichten:
+
+   conditie      contrast 1   contrast 2
+  ------------  ------------ ------------
+    rood             -1           0
+    grijs            +0.5        -1
+    blauw            +0.5        +1
+
+De H0 voor contrast 2 ($\mu_\textrm{grijs} = \mu_\textrm{blauw}$) is uit
+te drukken in gewichten als volgt:
+$\textrm{C2} = 0\times \mu_\textrm{rood} -1 \times \mu_\textrm{grijs} +1 \times \mu_\textrm{blauw} = 0$.
+
+Om te bepalen of twee contrasten orthogonaal zijn, vermenigvuldigen we
+hun respectievelijke gewichten voor iedere conditie (rij):\
+$( (-1)(0), (+0.5)(-1), (+0.5)(+1) )= (0, -0.5, +0.5)$.\
+Vervolgens tellen we al deze producten bij elkaar op:
+$0 -0.5 + 0.5 = 0$. Als de som van deze producten nul is, dan zijn de
+twee contrasten orthogonaal.
+
+### Post-hoc vergelijkingen {#sec:anova-oneway-posthoc}
+
+In veel onderzoeken heeft een onderzoeker géén idee over de te
+verwachten verschillen tussen de groepen of condities. Pas na afloop van
+de variantieanalyse, *nadat* er een significant effect gevonden is,
+besluit de onderzoeker om nader te inspecteren welke condities van
+elkaar verschillen. We spreken dan van *post-hoc* vergelijkingen,
+"suggested by the data" [@MD04 p.200]. We moeten daarbij conservatief te
+werk gaan, juist omdat we na de variantieanalyse al kunnen vermoeden dat
+sommige vergelijkingen een significant resultaat zullen opleveren,
+d.w.z., de nulhypotheses zijn al niet neutraal.
+
+Er zijn vele tientallen statistische toetsen voor post-hoc
+vergelijkingen. Het belangrijkste verschil is hun mate van conservatisme
+(neiging om H0 niet te verwerpen) vs. liberalisme (neiging om H0 wel te
+verwerpen). Daarnaast zijn sommige toetsen meer ingericht op
+paarsgewijze vergelijkingen tussen condities ('pairwise comparisons',
+zoals contrast 2 hierboven) en andere meer op complexe vergelijkingen
+(zoals contrast 1 hierboven). En de toetsen verschillen in de aannames
+die ze doen over de varianties in de cellen. We noemen hier één toets
+voor post-hoc-vergelijkingen tussen paren van condities: *Tukey's
+Honestly Significant Difference*, afgekort Tukey's HSD. Deze toets neemt
+een goede middenpositie in tussen te conservatief of te liberaal. Een
+belangrijke eigenschap van de Tukey HSD toets is dat de *gezamenlijke*
+overschrijdingskans (Eng. 'family-wise error') over alle paarsgewijze
+vergelijkingen tezamen gelijk is aan de opgegeven overschrijdingskans
+$\alpha$ (zie §\@ref(sec:anova-voorbeelden)). De Tukey HSD toets resulteert in
+een 95% betrouwbaarheidsinterval van het verschil tussen twee condities,
+en/of in een $p$-waarde van het verschil tussen twee condities.
+
+### SPSS
+
+#### voorbereiding
+
+We gebruiken de gegevens in het bestand `data/kleurgroepen.txt`; deze gegevens zijn ook weergegeven in Figuur \@ref(fig:kleurtjes-obs).
+Lees eerst de benodigde gegevens, en controleer deze:
+```
+File > Import Data > Text Data...
+```
+Selecteer `Files of type: Text` en selecteer bestand
+`data/kleurgroepen.txt`. Bevestig met `Open`.\
+Namen van variabelen staan op regel 1. Decimale symbool is punt
+(period). Data beginnen op regel 2. Elke regel is een observatie. De
+gebruikte scheiding (delimiter) tussen variabelen is een spatie. Tekst
+staat tussen dubbele aanhalingstekens. De variabelen hoef je niet verder
+te definiëren, de standaardopties van SPSS werken hier goed.\
+Bevestig het laatste keuzescherm met `Done`. De gegevens
+worden dan ingelezen.
+
+Onderzoek of de responsies normaal verdeeld zijn, met behulp van de
+technieken uit Deel II van dit tekstboek (met name
+§\@ref(sec:isvarnormaalverdeeld)).
+
+We kunnen in SPSS niet vooraf toetsen of de varianties gelijk zijn in de
+drie groepen, zoals vereist voor variantieanalyse. We doen dat tegelijk
+met de variantieanalyse zelf.
+
+#### ANOVA
+
+In SPSS kan je een variantieanalyse op meerdere manieren uitvoeren. We
+gebruiken hier een algemeen bruikbare aanpak, waarbij we aangeven dat er
+één afhankelijke variabele in het spel is.\
+```
+Analyze > General Linear Model > Univariate...
+```
+
+Selecteer `score` als afhankelijke variabele (sleep naar paneel
+"Dependent variable").\
+Selecteer `kleur` als onafhankelijke variabele (sleep naar paneel "Fixed
+Factor(s)").\
+Kies `Model...`{.console} en daarna `Full factorial` model, `Type I` Sum
+of squares, en vink aan: `Include intercept in model`, en bevestig met
+`Continue`{.console}.\
+Kies `Options...`{.console} en vraag om gemiddelden voor de condities
+van de factor `kleur` (sleep naar paneel "Display Means for"). Vink aan:
+`Estimates of effect size` en `Homogeneity tests`, en bevestig weer met
+`Continue`{.console}.\
+Bevestig alle keuzes met `OK`{.console}.
+
+In de uitvoer vinden we eerst de uitslag van Levene's toets op gelijke
+varianties (homogeniteit van variantie), die geen aanleiding geeft om H0
+te verwerpen. We mogen dus een variantieanalyse uitvoeren.
+
+Daarna wordt de variantieanalyse samengevat in een tabel gelijkend op
+Tabel \@ref(tab:kleurtjes-anova), waarbij ook de effectgrootte vermeld
+wordt in de vorm van ` Partial eta square`. Het is echter beter om
+$\omega^2$ te rapporteren, maar je moet die dan wel zelf uitrekenen!
+
+#### gerichte vergelijking
+
+Voor een variantieanalyse met gerichte vergelijkingen moeten we de
+gewenste contrasten aangeven voor de factor `kleur`. De werkwijze is
+echter anders dan hierboven. We kunnen de gerichte contrasten in SPSS
+niet opgeven via het menu-systeem dat we tot nu toe gebruikten. We
+moeten hiervoor "onder de motorkap" gaan werken!\
+Herhaal daartoe eerst de instructies hierboven. Maar, in plaats van
+alles te bevestigen, kies je nu de knop `Paste`. Er wordt dan
+een zgn. Syntax-venster geopend (of geactiveerd, als het al open was).
+Je ziet daarin het SPSS-commando dat je via het menu hebt opgebouwd. We
+gaan dit commando bewerken om onze eigen, speciale contrasten aan te
+geven. Bij het specificeren van de contrasten moeten we wel rekening
+houden met de *alfabetische* ordening van de condities: blauw, grijs,
+rood.\
+Het commando in het Syntax-venster moet er uiteindelijk uitzien als
+hieronder, nadat je de regel `/CONTRAST` hebt toegevoegd. Het commando
+moet worden afgesloten met een punt.\
+
+``` {.console}
+UNIANOVA score BY kleur
+  /METHOD=SSTYPE(1)
+  /INTERCEPT=INCLUDE
+  /EMMEANS=TABLES(kleur) 
+  /PRINT=ETASQ HOMOGENEITY
+  /CRITERIA=ALPHA(.05)
+  /DESIGN=kleur
+  /CONTRAST(kleur)=special(0.5 0.5 -1, 1 -1 0).
+```
+
+Plaats de cursor ergens tussen het woord `UNIANOVA` en de afsluitende
+punt, en klik dan op de grote groene pijl naar rechts (`Run Selection`)
+in het menu van het Syntax-venster.
+
+De uitvoer geeft voor ieder contrast de significantie en het
+betrouwbaarheidsinterval van het getoetste contrast. Het eerste contrast
+is wel significant (`Sig. .000`, rapporteer als $p<.001$, zie §\@ref(sec:pgroterdannul)), en het tweede niet, zie
+Tabel \@ref(tab:kleurtjes-anova-contrast).
+
+#### post-hoc-vergelijking
+
+Herhaal eerst de instructies hierboven.\
+Kies de knop `Post Hoc...`, en selecteer de factor `kleur`
+(verplaats naar venster "Post Hoc Tests for:"). Vink aan: `Tukey`, en
+daarna `Continue`. Bevestig alle keuzes met `OK`.
+
+Voor iedere paarsgewijze vergelijking zien we het verschil, de
+standaardfout, en de ondergrens (`Lower Bound`) en bovengrens
+(`Upper Bound`) van het 95% betrouwbaarheidsinterval van dat verschil.
+Als dat interval *niet* nul omvat, dan is het verschil tussen de twee
+groepen of condities dus waarschijnlijk niet gelijk aan nul. De
+gecorrigeerde overschrijdingskans volgens Tukey's HSD toets is bovendien
+gegeven in de derde kolom. We zien dat rood verschilt van blauw, dat
+rood verschilt van grijs, en dat de scores van de grijze en blauwe
+groepen niet verschillen.
+
+### R
+
+#### voorbereiding
+
+Lees eerst de benodigde gegevens, en controleer deze:
+```{r}
+# zelfde data als gebruikt in Fig.15.2
+kleurgroepen <- read.table( "data/kleurgroepen.txt", header=T )
+```
+
+Onderzoek of de responsies normaal verdeeld zijn, met behulp van de
+technieken uit Deel II van dit tekstboek (met name
+§\@ref(sec:isvarnormaalverdeeld)).
+
+Onderzoek of de varianties gelijk zijn in de drie groepen, zoals vereist
+voor variantieanalyse. De H0 die we daarbij toetsen luidt:
+$s^2_\textrm{rood} = s^2_\textrm{grijs} = s^2_\textrm{blauw}$. We
+toetsen deze H0 met behulp van Bartlett's toets.
+
+```{r}
+bartlett.test( x=kleurgroepen$score, g=kleurgroepen$kleur )
+```
+
+#### ANOVA
+
+```{r}
+summary( aov( score~kleur, data=kleurgroepen) -> m01 ) # zie Tabel 15.3
+```
+
+#### effectgrootte {#R:omega-kwadraat}
+
+```{r}
+# eigen functie om omega2 te berekenen, zie vergelijking (15.7) in de hoofdtekst, 
+# voor effect genaamd `term` in summary(`model`)
+omegasq <- function ( model, term ) {   
+     mtab <- anova(model)
+     rterm <- dim(mtab)[1] # resid term
+     return( (mtab[term,2]-mtab[term,1]*mtab[rterm,3]) / 
+             (mtab[rterm,3]+sum(mtab[,2])) )
+     }
+omegasq( m01, "kleur" ) # roep functie aan met 2 argumenten
+```
+
+#### gerichte vergelijking
+
+Bij het specificeren van de contrasten moeten we rekening houden met de *alfabetische* ordening van de condities: *blauw, grijs, rood*.
+```{r}
+# maak matrix van twee orthogonale contrasten (per kolom, niet per rij) 
+conmat <- matrix( c(.5,.5,-1, +1,-1,0), byrow=F, nrow=3 )
+dimnames(conmat)[[2]] <- c(".R.GB",".0G.B") # (1) R vs G+B, (2) G vs B 
+contrasts(kleurgroepen$kleur) <- conmat # wijs contrasten toe aan factor
+summary( aov( score~kleur, data=kleurgroepen) -> m02 ) # uitvoer is nodig voor omega2
+# zie https://blogs.uoregon.edu/rclub/2015/11/03/anova-contrasts-in-r/
+summary.aov( m02, split=list(kleur=list(1,2)) )
+```
+
+Als we gerichte vergelijkingen hebben (planned contrasts) dan is de eerder geconstrueerde functie `omegasq` niet bruikbaar (en evenmin de eerder gegeven formule). We moeten de $\omega^2$ nu met de hand uitrekenen met gebruik van de uitvoer van de samenvatting van model `m02`: 
+```{r}
+(14.308-1*0.775)/(0.775+14.308+0.19+32.54) # 0.2830402
+(0.188-1*0.775)/(0.775+14.308+0.19+32.54) # afgerond 0.00
+```
+
+#### post-hoc-vergelijkingen {#post-hoc-vergelijkingen}
+
+```{r}
+TukeyHSD(m02)
+```
+
+Voor iedere paarsgewijze vergelijking zien we het verschil, en de
+ondergrens (`lwr`) en bovengrens (`upr`) van het 95%
+betrouwbaarheidsinterval van dat verschil. Als dat interval *niet* nul
+omvat, dan is het verschil tussen de twee groepen of condities dus
+waarschijnlijk niet gelijk aan nul. De gecorrigeerde overschrijdingskans
+volgens Tukey's HSD toets is bovendien gegeven in de laatste kolom.
+Wederom zien we dat rood verschilt van grijs, dat rood verschilt van
+blauw, en dat de scores van de grijze en blauwe groepen niet
+verschillen.
+
+## Tweeweg-variantieanalyse
+
+In §\@ref(sec:anova-voorbeelden) hebben we al een voorbeeld gegeven
+van een onderzoek met twee factoren die in één variantieanalyse
+onderzocht worden. We kunnen op deze manier onderzoeken (i) of er een
+hoofdeffect is van de eerste factor (bijv. regio van herkomst van de
+spreker), (ii) of er een hoofdeffect is van de tweede factor (bijv.
+geslacht van de spreker), en (iii) of er een interactie-effect is. Zo'n
+interactie houdt in dat de verschillen tussen condities van de ene
+factor niet hetzelfde zijn voor de condities van de andere factor, of
+anders gezegd, dat de gemiddelde score van een cel afwijkt van de
+voorspelde waarde op grond van de twee hoofdeffecten.
+
+### Een intuïtieve uitleg {#een-intuïtieve-uitleg}
+
+In veel studies zijn we geïnteresseerd in de *gecombineerde* effecten
+van twee of meer factoren. In
+Tabel \@ref(tab:syldur2way) zagen we al gemiddelde spreeksnelheden,
+uitgesplitst naar regio van herkomst èn naar geslacht van de spreker.
+Als de verschillen tussen de regio's anders zijn voor mannen dan voor
+vrouwen, of andersom gezegd als de verschillen tussen mannen en vrouwen
+anders zijn voor de verschillende regio's, dan spreken we van interactie
+of wisselwerking. Door een tweede factor toe te voegen in het onderzoek,
+krijgen we dus ook te maken met een derde effect, nl. de interactie
+tussen de eerste en tweede factor 
+[^fn15-2].
+
+Als er een significante interactie aanwezig is, dan kunnen we niet meer
+algemene uitspraken doen over de betrokken hoofdeffecten. Immers, de
+werking van een hoofdeffect hangt dan tevens af van de wisselwerking met
+(een) ander(e) hoofdeffect(en), zoals te zien in
+Figuur \@ref(fig:drakebenelheni2003fig2) (§\@ref(sec:ontwerp-factorieel)). 
+De scores zijn *gemiddeld*
+niet hoger voor de ene groep luisteraars dan voor de andere groep, en de
+scores zijn ook niet *gemiddeld* hoger in de ene conditie dan in de
+andere. De hoofdeffecten zijn dus niet significant, maar hun interactie
+is daarentegen wel significant. Het effect van de ene factor is precies
+tegengesteld in de verschillende niveau's van de andere factor.
+
+### Een formele uitleg {#een-formele-uitleg}
+
+We nemen wederom aan dat de scores zijn opgebouwd volgens een
+statistisch model, nl. als de optelsom van het populatiegemiddelde
+$\mu$, een systematisch effect $\alpha_j$ van de $j$'de conditie van
+factor A, een systematisch effect $\beta_k$ van de $k$'de conditie van
+factor B, een systematisch effect $(\alpha\beta)_{jk}$ van de combinatie
+van condities $(j,k)$ van factoren A en B, en een toevallig effect
+$e_{ijk}$ voor de $i$'de replicatie binnen de $jk$'de cel. In formule:
+
+$$x_{ijk} = \mu + \alpha_{j} + \beta_{k} + (\alpha\beta)_{jk} + e_{ijk}$$
+
+Bij de éénweg-variantieanalyse wordt de totale 'sums of squares'
+opgesplitst in twee componenten, nl. tussen en binnen condities (zie
+vergelijking \@ref(eq:SStotal)). 
+Bij de tweeweg-variantieanalyse zijn er nu
+echter *vier* componenten: 
+\begin{align}
+  (\#eq:SStotal2way)
+    { \sum (x_{ijk} - \overline{x})^2 } = &  { \sum_j n_j (\bar{x}_j - \bar{x})^2 } + \\ 
+    & { \sum_k n_k (\bar{x}_k - \bar{x})^2 } +  \\
+    & { \sum_j \sum_k n_{jk} (\bar{x}_{jk} - \bar{x}_j - \bar{x}_k + \bar{x})^2 } + \\
+    & { \sum_i \sum_j \sum_k (x_{ijk} - \bar{x}_{jk})^2 } 
+\end{align}
+
+Ook de vrijheidsgraden van deze kwadratensommen tellen weer bij elkaar
+op: 
+\begin{align}
+  (\#eq:dftotal2)
+    { (N-1) } &= (A-1) &+ (B-1) &+ (A-1)(B-1) &+ (N-AB) \\
+    \textrm{df}_t &= \textrm{df}_A &+ \textrm{df}_B &+ \textrm{df}_{AB} &+ \textrm{df}_w
+\end{align}
+
+Net als bij de eenweg-variantieanalyse berekenen we weer de 'mean
+squares' door de kwadratensommen te delen door hun vrijheidsgraden.
+
+We toetsen nu *drie* nulhypotheses, nl voor de twee hoofdeffecten en
+voor hun interacties. Voor elke toets bepalen we de betreffende
+$F$-ratio. De teller wordt gevormd door de geobserveerde variantie,
+zoals hierboven geformuleerd; de noemer wordt gevormd door $s^2_w$, de
+toevallige variantie tussen de replicaties *binnen* de cellen. Alle
+noodzakelijke berekeningen voor variantieanalyse, inclusief bepalen van
+vrijheidsgraden en overschrijdingskansen, worden tegenwoordig door de
+computer uitgevoerd.
+
+De resultaten worden weer samengevat in een ANOVA-tabel, die nu iets is
+uitgebreid in Tabel \@ref(tab:syldur2way-anova). We toetsen en rapporteren nu drie
+hypothesen. Als de interactie significant is, dan dien je die interactie
+eerst te rapporteren, en daarna pas de hoofdeffecten. De aanwezige
+interactie is dan immers van invloed op hoe we de hoofdeffecten moeten
+interpreteren. Als de interactie niet significant is, zoals in ons
+huidige voorbeeld met de spreeksnelheden uit
+Tabel \@ref(tab:syldur2way), dan is het gebruikelijk om eerst de
+hoofdeffecten te rapporteren, en daarna het niet-significante
+interactie-effect.
+
+> De geobserveerde spreeksnelheden verschillen significant tussen de vier
+regio's van herkomst van de sprekers
+[$F(3,71)=6.0, p=.0010, \omega^2=.14$], en mannen spreken significant
+sneller dan vrouwen [$F(1,71)=15.1, p=.0002, \omega^2=.13$]. 
+De twee
+factoren vertoonden geen interactie
+[$F(3,71)=1.4, \textrm{n.s.}, \omega^2=.01$]. 
+Een
+post-hoc-vergelijking tussen de regio's liet zien dat de sprekers uit
+het Westen significant sneller spreken dan die uit het Noorden (Tukey's
+HSD-toets, $p=.0006$) en dan die uit het Zuiden ($p=.0190$); andere
+paarsgewijze verschillen tussen regio's waren niet significant.
+
+Table: (#tab:syldur2way-anova) Samenvatting van tweewegs-variantieanalyse van de spreeksnelheden in Tabel \@ref(tab:syldur2way).
+
+  variantiebron                       df    SS         MS       $F$      $p$
+  --------------------------------- ---- --------- ---------- -------- --------
+  (i) regio                           3   0.01234   0.004114   6.039    0.0010
+  (ii) geslacht                       1   0.01031   0.010310   15.135   0.0002
+  (iii) regio $\times$ geslacht       3   0.00287   0.000958   1.406    0.2482
+  within                             71   0.04837   0.000681           
+
+
+### SPSS
+
+#### voorbereiding
+
+Eén spreker heeft een zeer lange gemiddelde syllabeduur; deze observatie
+zullen we verder negeren.
+```
+Data > Select cases...
+```
+Geef aan dat we alleen observaties gebruiken die aan een conditie
+voldoen, en geef aan dat die conditie luidt  `syldur < 0.4`.
+
+#### ANOVA en post-hoc toets
+
+```
+Analyze > General Linear Model > Univariate...
+```
+Sleep de afhankelijke variabele (`syldur`) naar het vakje Dependent
+variable. Sleep de twee onafhankelijke variabelen (`sex`, `region`) naar het
+vakje Fixed factor(s).\
+Voor de post-hoc toetsen, kies de knop `Post Hoc...`. Selecteer factor
+`region` en kies `Tukey`. Bevestig met `Continue` en daarna nogmaals met
+`OK`.
+
+### R 
+
+#### voorbereiding
+
+```{r}
+require(hqmisc) # voor hqmisc::talkers data set
+data(talkers)
+ok <- talkers$syldur<0.4 # TRUE voor 79 van 80 talkers
+# tabel van gemiddelden, zie Table 15.2 in hoofdtekst
+with(talkers, tapply( syldur[ok], list(region[ok],sex[ok]), mean ))
+```
+
+#### ANOVA
+
+```{r}
+# zie Table 15.5 in hoofdtekst
+summary( aov(syldur~region*sex, data=talkers, subset=ok) -> m03 )
+```
+
+#### effectgrootte {#effectgrootte}
+
+We gebruiken hiervoor de eerder geprogrammeerde functie `omegasq` (§\@ref(R:omega-kwadraat)):
+
+```{r}
+omegasq(m03, "region")      # [1] 0.1380875
+omegasq(m03, "sex")         # [1] 0.1291232
+omegasq(m03, "region:sex")  # [1] 0.01112131
+```
+
+#### post-hoc toetsen
+
+```{r}
+TukeyHSD(x=m03, which="region")
+```
+
+
+[^fn15-1]: Als (1) rood wel verschilt van grijs en blauw, en als (2) grijs en blauw bovendien onderling niet verschillen, dan impliceert dat dat rood verschilt van grijs (een nieuwe bevinding) en dat rood verschilt van blauw (dat wisten we al).
+
+[^fn15-2]: Als we nog meer factoren toevoegen, dan wordt de situatie al snel onoverzichtelijk. Met drie hoofdeffecten zijn er al 3  tweeweg-interacties plus 1 drieweg-interactie. Met vier hoofdeffecten zijn er al 6 tweeweg-interacties, plus 4 drieweg-interacties, plus 1 vierweg-interactie.

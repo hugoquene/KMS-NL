@@ -1,0 +1,269 @@
+#  Andere nonparametrische toetsen {#ch:andere-nonpar-toetsen}
+
+## Inleiding {#sec:h17inleiding}
+
+In dit hoofdstuk bespreken we verschillende andere non-parametrische
+toetsen. Deze toetsen zijn bruikbaar indien de gegevens niet op
+interval-niveau gemeten zijn (zie hoofdstuk
+\@ref(ch:Meetniveau)), of als de kansverdeling van de gegevens
+afwijkt van de normaalverdeling (zie
+§\@ref(sec:watalsnietnormaal)). De non-parametrische toetsen doen
+geen aannames over de parameters van de kansverdeling van de gegevens.
+
+We zagen al eerder dat er non-parametrische correlatie-coëffienten
+bestaan, nl. de Spearman rangorde-correlatiecoëfficient
+(§\@ref(sec:Spearman)) en de (nominale) Phi-correlatiecoëfficient
+(§\@ref(sec:Phi)). In
+het vorige hoofdstuk bespraken we een veelgebruikte non-parametrische
+toets, de $\chi^2$-toets. We gaan hieronder in op een aantal andere veelgebruikte
+non-parametrische toetsen. We bespreken die in twee groepen: eerst voor
+voor gepaarde waarnemingen, en daarna voor ongepaarde waarnemingen uit
+meerdere steekproeven. Binnen elke paragraaf bespreken we eerst de
+toetsen die informatie gebruiken van nominaal niveau (tekentoetsen en
+aanverwanten) en daarna de toetsen die informatie gebruiken van ordinaal
+niveau, d.w.z. die gebaseerd zijn op de rangorde van de observaties.
+
+## Gepaarde observaties, enkele steekproef
+
+### Tekentoets {#sec:tekentoets}
+
+Een handige toets voor gepaarde observaties is de zgn. tekentoets (Eng: 'sign test'). 
+Deze toets is te beschouwen als een non-parametrische, nominale tegenhanger
+van de *t*-toets voor gepaarde waarnemingen
+(§\@ref(sec:ttoets-gepaard)).
+
+We kijken in deze toets alleen naar het *teken* (positief of negatief)
+van het *verschil* $D$ tussen de twee gepaarde waarnemingen. Laten we
+weer het voorbeeld nemen van een denkbeeldig onderzoek naar webpagina's
+met *U* of *je* als aanspreekvorm, met $N=10$ respondenten. In
+Tabel \@ref(tab:data-uje-paired) zagen we dat alle 10 respondenten de
+voorkeur gaven aan *je*: de verschilvariabele $D$ was $10\times$
+negatief en $0\times$ positief, of anders gezegd, alle uitkomsten van
+$D$ waren negatief.
+
+Met de tekentoets kijken we hoe waarschijnlijk deze verdeling van
+positieve en negatieve waarden van $D$ is, als H0 waar zou zijn. Volgens
+H0 verwachten we $N/2$ positieve en $N/2$ negatieve verschillen; volgens
+H0 is de kans op een positief teken van $D$ (de kans op een treffer) dus
+$p=1/2$. We bepalen nu de kans op deze gevonden uitkomst (0 treffers)
+gegeven H0, en we gebruiken daarvoor de binomiale kansverdeling
+(§\@ref(sec:binomiaalverdeling)): 
+\begin{equation}
+  (\#eq:prob-binom-uje)
+    P(0\,\mbox{treffers}) = {10 \choose 0} (0.5)^0 (1-0.5)^{10-0} = (1) (1) (0.000976) < 0.001
+\end{equation}
+De kans op deze uitkomst volgens H0 is dermate klein dat we in het licht
+van deze uitkomst besluiten om H0 te verwerpen, en we rapporteren dat
+als volgt:
+
+> De $N=10$ respondenten geven unaniem een lager oordeel aan de
+> webpagina met *U* als aanspreekvorm dan aan de vergelijkbare pagina
+> met *je* als aanspreekvorm; dit is een significant verschil
+> (tekentoets, $p<.001$).
+
+### Wilcoxon signed-ranks test {#sec:Wilcoxon-signed-rank}
+
+De Wilcoxon signed-ranks test is te beschouwen als een
+non-parametrische, ordinale tegenhanger van de *t*-toets voor gepaarde
+waarnemingen (§\@ref(sec:ttoets-gepaard)).
+
+Deze toets maakt gebruik van de *rangorde* van het verschil $D$ tussen
+de twee gepaarde waarnemingen. We gebruiken nogmaals het voorbeeld van
+het denkbeeldige onderzoek naar de webpagina's met *U* of *je* als
+aanspreekvorm
+(Tabel \@ref(tab:data-uje-paired)), maar nu kijken we naar de *rangorde*
+van de verschillen $D$ (rekening houdend met gelijke verschillen bij
+meerdere proefpersonen), en geven daarbij het teken (positief of
+negatief) van het verschil $D$:
+$$-2, -2, -7.5, -5, -7.5, -5, -10, -7.5, -5, -2$$
+De som van de positieve rangnummers is $W_+=0$ (er zijn geen positieve rangnummers)
+en de som van de negatieve rangnummers $W_-= -53.5$, en daarmee $|W_-|=53.5$. De kleinste van
+deze twee sommen ($W_+$ of $|W_-|$) vormt de toetsingsgrootheid; we gebruiken hier $|W_-|$. 
+We gaan
+hier niet in op de kansverdeling van de toetsingsgrootheid, maar we
+laten de significantie door de computer bepalen: $P(|W_-|)=.0055$. De kans
+op deze uitkomst volgens H0 is dermate klein dat we in het licht van
+deze uitkomst wederom besluiten om H0 te verwerpen.
+
+De (ordinale) Wilcoxon signed-ranks test maakt gebruik van meer
+informatie dan de (nominale) tekentoets. Als een effect significant is
+volgens de tekentoets, zoals in dit voorbeeld, dan is het ook altijd
+significant volgens de Wilcoxon signed-ranks test. Als een effect
+significant is in de Wilcoxon signed-ranks test, dan is het ook altijd
+significant volgens de *t*-toets. Dat heeft te maken met het meetniveau: de
+tekentoets beschouwt alleen het (nominale) *teken* van de verschillen, de
+Wilcoxon signed-rank is gebaseerd op de (ordinale) *rangschikking* van de
+verschillen, en de *t*-toets is gebaseerd op de (interval) *omvang* van de
+verschillen.
+
+#### formules
+
+We berekenen niet alleen $W_+$ (of $|W_-|$) op de hierboven aangegeven wijze, 
+maar ook de bijbehorende waarde van $z$ [@Ferg89]:
+\begin{equation}
+  (\#eq:Wilcoxon-signedrank-z)
+  z = \frac{ W_+ - \frac{N(N+1)}{4} } { \sqrt{ \frac{N(N+1)(2N+1)}{24} } }
+\end{equation}
+Daarmee kunnen we de effectgrootte uitrekenen, in de vorm van een
+correlatie [@Rose91 Eq.2.18]: 
+\begin{equation}
+  (\#eq:es-z2r)
+    r = \frac {z} {\sqrt{N}}
+\end{equation}
+Voor het bovenstaande voorbeeld vinden we
+$z=-2.803$, en $r=-.89$, hetgeen wijst op een buitengewoon groot effect.
+
+
+## Onafhankelijke observaties, meerdere steekproeven
+
+### Mediaantoets
+
+De mediaantoets (Eng. 'median test') is te beschouwen als een non-parametrische, nominale
+tegenhanger van de *t*-toets voor ongepaarde, onafhankelijke waarnemingen. Het is
+eigenlijk een tekentoets  (zie §\@ref(sec:tekentoets)), waarbij we toetsen of de verdeling van
+observaties boven/onder hun *gezamenlijke* mediaan
+(zie §\@ref(sec:mediaan) voor uitleg over de mediaan) afwijkt van de verwachte verdeling volgens H0.
+De nulhypothese H0 is dat de verdelingen van de twee steekproeven niet
+van elkaar verschillen, en dat in beide steekproeven dus ongeveer de
+helft van de observaties boven de gezamenlijke mediaan ligt, en de
+andere helft er onder.
+
+### Wilcoxon rank sum test, ofwel Mann-Whitney U test {#sec:wilcoxon-rank-sum}
+
+De Wilcoxon rank sum test is equivalent aan de Mann-Whitney U test.
+Beide zijn de beschouwen als non-parametrische, ordinale tegenhangers
+van de *t*-toets voor ongepaarde, onafhankelijke waarnemingen
+(§\@ref(sec:ttoets-onafh)).
+
+Stel je voor dat we willen onderzoeken of sommige tekstkenmerken van
+invloed zijn op de subjectieve waardering van de tekst. Een
+onderzoekster trekt daartoe een aselecte steekproef van proefpersonen
+uit de populatie (zie
+§\@ref(sec:aselectesteekproef)), en wijst deze proefpersonen op
+aselecte wijze toe aan twee onderzoekscondities (randomisatie, zie §\@ref(sec:internevaliditeit), punt 5).
+In de eerste conditie moeten de proefpersonen een oordeel geven over de
+originele versie van een tekst. In de tweede conditie geven de
+proefpersonen een oordeel over de herschreven versie van dezelfde tekst.
+Hoe hoger de score die gegeven wordt, hoe hoger de waardering voor de
+tekst. Eén van de proefpersonen moest helaas het onderzoek voortijdig
+staken. De oordelen van de overige 19 proefpersonen staan in
+Tabel \@ref(tab:data-origineelherschreven). Op grond van de aselecte
+steekproef en de aselecte toewijzing van proefpersonen aan condities
+zijn de oordelen te beschouwen als afkomstig van twee verschillende
+aselecte steekproeven. De nulhypothese luidt dat er geen verschil
+bestaat in waardering tussen de twee condities.
+
+Table: (#tab:data-origineelherschreven) Oordelen van $N=19$ proefpersonen over de originele en herschreven versies van een tekst.
+
+  Conditie                                                   
+  ------------- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+  Origineel      10   17   35   2    19   4    18   28   24   --
+  Herschreven    15   22   8    48   29   25   27   39   31   36
+
+
+De Wilcoxon rank sum test is gebaseerd op de *rangorde* van de
+observaties. Iedere observatie wordt vervangen door het rangnummer van
+die observatie, genomen over de twee condities tezamen. De laagste of
+kleinste waarde krijgt rangnummer 1. De som van de rangnummers van de
+kleinste groep (hier: van de originele conditie) duiden we aan als
+$W_1$. De kansverdeling van $W$ onder H0 is bekend (exact voor kleine
+$n_1$ en $n_2$, en bij benadering voor grotere steekproeven). Daarmee
+kunnen we de kans bepalen om de gevonden waarde van $W_1$ aan te
+treffen, of een meer extreme waarde, indien H0 waar is.
+
+Eerder zagen we dat de *t*-toets voor ongepaarde waarnemingen
+(§\@ref(sec:ttoets-onafh)) onderzoekt of de *gemiddelden*
+verschillend zijn voor twee steekproeven. Analoog daaraan onderzoekt de
+Wilcoxon rank sum test (en de Mann-Whitney $U$ test) of de *medianen*
+verschillend zijn voor de twee steekproeven. De toets is dus robuuster
+voor uitbijters --- als we het hoogste oordeel (48) zouden vervangen
+door een nog veel hoger oordeel (zeg 480), dan heeft dat geen invloed op
+de mediaan van die groep, en het heeft evenmin invloed op de
+toetsingsgrootheid of op de significantie daarvan.
+
+Voor ons voorbeeld vinden we dat de lagere rangnummers relatief vaak
+voorkomen bij de eerste conditie (originele versie), d.w.z. dat de tekst
+in deze conditie lager werd beoordeeld. De som van de rangnummers voor
+deze kleinste conditie is de toetsingsgrootheid $W_1=67$. In sommige
+versies van de toets[^fn17-1] wordt deze ruwe som gebruikt om de
+significantie te berekenen. In andere versies van de toets[^fn17-2] wordt
+deze ruwe som eerst gecorrigeerd voor de minimale waarde van $W_1$ (zie
+de formules hieronder): de toetsingsgrootheid wordt dan
+$U=W_1 - \textrm{min}(W_1) = 67-45=22$. Daarna wordt de significantie
+van $W_1=67$ of van $U=22$ berekend. We vinden dat $p=.0653$. Als we
+tweezijdig toetsen (H0: oordelen in conditie 2 zijn niet hoger en niet
+lager dan in conditie 1) met $\alpha=.05$ dan is er geen reden om H0 te
+verwerpen[^fn17-3].
+
+#### formules
+
+Voor de sommen van rangnummers geldt dat
+$W_1 + W_2 = (n_1+n_2) (n_1+n_2+1) / 2$.
+
+Als in de kleinste (eerste) conditie alle laagste rangnummers zitten
+(d.w.z. alle laagste oordelen), dan heeft $W_1$ de minimale waarde van
+$n_1 (n_1+1) /2$. Als in deze conditie alle hoogste rangnummers zitten
+(d.w.z. alle hoogste oordelen) dan heeft $W_1$ de maximale waarde van
+$n_1 (n_1+n_2+1) / 2$. $W_1$ (en het minimum en maximum ervan) kan
+alleen gehele waarden aannemen.
+
+Het is handig om niet alleen $W_1$ of $U$ uit te rekenen, maar ook de
+bijbehorende waarde van $z$ [@Ferg89]:
+\begin{equation}
+  (\#eq:Wilcoxon-ranksum)
+\bar{W_1} = \frac{ n_1 (n_1+n_2+1) }{ 2 }
+\end{equation}
+\begin{equation}
+   (\#eq:Wilcoxon-ranksum-z)
+  z = \frac{ |W_1-\bar{W_1}|-\frac{1}{2} }{ \sqrt{ \frac{n_1 n_2 (n_1+n_2+1)}{12} } }
+\end{equation}
+Daarmee bepalen we wederom de effectgrootte volgens
+vergelijking \@ref(eq:es-z2r). 
+Voor het bovenstaande voorbeeld vinden we zo
+$\bar{W_1}=22.5$, $z=1.837$, en $r=.42$, hetgeen wijst op een 'medium'
+effect. Dat dit aanzienlijke effect toch niet leidt tot een significant
+verschil (bij tweezijdige toetsing) is vermoedelijk een gevolg van de
+(te) kleine omvang van de twee groepen.  
+
+
+### Kruskall-Wallis H test
+
+De Kruskall-Wallis H test is te beschouwen als een uitbreiding van de
+Wilcoxon rank sum test (zie
+§(sec:wilcoxon-rank-sum) hierboven), voor $k \ge 2$ onafhankelijke
+steekproeven of groepen. De toets is ook bruikbaar om $k=2$ groepen te
+vergelijken; dan is de toets geheel equivalent aan de Wilcoxon rank sum
+test hierboven. De Kruskall-Wallis H test is te beschouwen als de
+non-parametrische, ordinale tegenhanger van een een-wegs
+variantie-analyse
+(zie §\@ref(sec:anova-oneway-uitleg)). Losjes gezegd: we voeren een
+soort variantie-analyse uit, niet op de observaties zelf, maar op de
+rangnummers van de observaties. We berekenen als toetsingsgrootheid $H$,
+op basis van de rangnummers van de observaties in de $k$ verschillende
+groepen.
+
+#### formule
+
+\begin{equation}
+  (\#eq:kruskall-wallis-H)
+    H = \frac{12}{N(N+1)} \sum^{k} (\frac{R^2_j}{n_j}) - 3(N+1)
+\end{equation}
+waarbij $R_j$ verwijst naar de *som* van de rangnummers van de
+observaties in groep $j$, en $n_j$ naar de omvang van groep $j$.
+(Gemakshalve laten we hier 'knopen' buiten beschouwing, dat zijn
+gevallen waarin dezelfde waarde en rangnummer voorkomt in meerdere
+groepen.)
+
+De toetsingsgrootheid $H$ heeft een kansverdeling die lijkt op die van
+$\chi^2$, met $k-1$ vrijheidsgraden. De significantie van de
+toetsingsgrootheid $H$ wordt dus bepaald via de kansverdeling van
+$\chi^2$ (zie Bijlage \@ref(app:kritiekechi2waarden)). 
+Die benadering via $\chi^2$ werkt echter alleen indien $k\ge3$
+en $n_j\ge5$ voor de kleinste groep [@Ferg89]; indien $k=2$ of $n_j<5$
+dan wordt de kans $P(H)$ exact berekend.
+
+[^fn17-1]: Wilcoxon rank sum test in SPSS.
+
+[^fn17-2]: Mann-Whitney test in SPSS en in R, en Wilcoxon rank sum test in R.
+
+[^fn17-3]: Als we tweezijdig toetsen met $\alpha=.10$, dan zouden we H0 wel kunnen verwerpen. Als we eenzijdig toetsen (H0: oordelen in conditie 2 zijn niet hoger dan in conditie 1), dan mogen we de berekende $p$ halveren, omdat die berekende $p$ uitgaat van tweezijdige toetsing. We zouden dan dus vinden $p=.0653/2=.0326$, en omdat deze kans kleiner is dan $\alpha=.05$ zouden we dan wel H0 kunnen verwerpen.

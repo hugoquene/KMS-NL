@@ -1,0 +1,321 @@
+# Power {#ch:power}
+
+## Inleiding {#sec:power-inleiding}
+
+Bij statistische toetsing van H0 bepalen we de kans $P$ op de
+geobserveerde verschillen of effecten (of op nog grotere verschillen of
+effecten dan geobserveerd) indien H0 waar zou zijn, en dus indien het
+geobserveerde verschil louter aan het toeval toegeschreven moet worden
+(zie §\@ref(sec:empirischecyclus) en
+Hoofdstuk \@ref(ch:toetsing)). Als die kans $P$ zeer klein is, dan hebben we
+dus resultaten gevonden die zeer onwaarschijnlijk zijn als H0 waar zou
+zijn. We concluderen dan dat H0 vermoedelijk *niet waar* is en we
+verwerpen daarom H0. Het gevonden verschil of effect noemen we dan
+"significant" (Latijn: 'betekenis makend'). Er is echter wel een kans,
+$P$, dat het gevonden verschil toch een toevalstreffer was, en dat we
+door H0 te verwerpen een fout van Type-I maken (d.w.z. H0 ten onrechte
+verwerpen, zie
+§\@ref(sec:toetsing-inleiding)). Omdat we een bepaald
+significantieniveau $\alpha$ hanteren waarmee we $P$ vergelijken, is
+deze $\alpha$ dus ook de kans dat we een Type-I-fout maken.
+
+Minstens even belangrijk, echter, is de omgekeerde fout om H0 ten
+onrechte *niet* te verwerpen, een Type-II-fout. Voorbeelden van deze
+fouten zijn: een verdachte niet veroordelen ook al is hij schuldig, een
+'spam' mail-bericht doorlaten naar mijn mailbox, een patiënt onderzoeken
+en diens ziekte toch niet opmerken, concluderen dat vogels zwijgen
+hoewel ze toch zingen
+(voorbeeld 13.1), of ten onrechte concluderen dat twee
+groepen niet verschillen hoewel er wel een belangrijk verschil bestaat
+tussen de twee groepen. De kans op een Type-II-fout wordt aangeduid met
+het symbool $\beta$.
+
+Als H0 in werkelijkheid niet waar is (er is een verschil, het bericht is
+'spam', de vogels zingen, enz), dan dient H0 dus verworpen te worden, en
+dient $\beta$ dus zo klein mogelijk te zijn. De kans om H0 dan *terecht*
+te verwerpen is dan $(1-\beta)$ (zie complementregel \@ref(eq:complementregel)); 
+deze kans $(1-\beta)$ wordt de *power*
+genoemd. Power is op te vatten als **de kans voor de onderzoeker om gelijk
+te _krijgen_** (H0 wordt verworpen) **als zij ook gelijk _heeft_** (H0 is onwaar).
+
+De kansen op fouten van Type-I en Type-II moeten goed tegen elkaar
+afgewogen worden. In veel onderzoek worden als overschrijdingskansen
+gehanteerd $\alpha=.05$ (significantieniveau) en $\beta=.20$
+(power=$.80$). Hiermee wordt een impliciete afweging gemaakt dat een
+Type-I-fout $4\times$ zo ernstig is als een Type-II-fout. Voor sommige
+onderzoeken zou dat gerechtvaardigd kunnen zijn, maar het is ook goed
+denkbaar dat onder bepaalde omstandigheden een Type-II-fout eigenlijk
+nog ernstiger is dan een Type-I-fout. Als we beide typen fouten min of
+meer even ernstig vinden, dan zouden we dus moeten streven naar een
+kleinere $\beta$ en grotere power [@Rose08].
+
+De power van een onderzoek hangt af van drie factoren: (i) de
+effectgrootte $d$, die zelf weer afhankelijk is van het gemeten verschil
+$D$ en van de variatie $s$ in de observaties
+(formule \@ref(eq:d-standardized)), (ii) de steekproefgrootte $N$, en (iii)
+het significantieniveau $\alpha$. In de volgende paragrafen zullen we
+deze factoren afzonderlijk bespreken, waarbij we de andere twee factoren
+zoveel mogelijk constant houden. Bij deze bespreking gebruiken we
+afbeeldingen van de berekende power
+(Figuren \@ref(fig:powercontours-alpha01) en
+\@ref(fig:powercontours-alpha05)). De afgebeelde power-contouren
+zijn specifiek voor een *t*-toets voor onafhankelijke steekproeven
+(§\@ref(sec:ttoets-onafh)) met tweezijdige toetsing. De hieronder
+besproken verbanden treden echter ook op bij andere statistische
+toetsen.
+
+```{r powercontours-alpha01, echo=FALSE, fig.cap="Power uitgedrukt in contouren (zie schaalverdeling), afhankelijk van de gestandaardiseerde effectgrootte (d) en de steekproefgrootte (n), volgens een tweezijdige t-toets voor ongepaarde, onafhankelijke waarnemingen, met significantieniveau alpha=.01."}
+# adapted from plot.powercontours.2050705.R
+# HQ 20150705
+alpha <- .01
+x1 <- seq(0.1,1.0,by=.05) # effect size d
+x2 <- seq(2,150,by=5) # sample size N
+zz <- matrix(NA, nrow=length(x1),ncol=length(x2))
+rownames(zz) <- x1
+colnames(zz) <- x2
+for (i in x1) { 
+  for (j in x2) zz[as.character(i),as.character(j)] <- power.t.test( d=i, n=j, sig=alpha, 
+                                                                     type="two", alt="two" )$power 
+  }
+filled.contour( x1, x2, zz, levels=c(0:10)/10, 
+                col=gray(c(10:0)/10), key.title = title(main = "Power"), 
+                xlab="Effectgrootte (d)", ylab="Steekproefgrootte (n per groep)" )
+title( main="t-toets voor\nonafhankelijke steekproeven", line=1.1 )
+```
+
+```{r powercontours-alpha05, echo=FALSE, fig.cap="Power uitgedrukt in contouren (zie schaalverdeling), afhankelijk van de gestandaardiseerde effectgrootte (d) en de steekproefgrootte (n), volgens een tweezijdige t-toets voor ongepaarde, onafhankelijke waarnemingen, met significantieniveau alpha=.05."}
+# adapted from plot.powercontours.2050705.R
+# HQ 20150705
+alpha <- .05
+x1 <- seq(0.1,1.0,by=.05) # effect size d
+x2 <- seq(2,150,by=5) # sample size N
+zz <- matrix(NA, nrow=length(x1),ncol=length(x2))
+rownames(zz) <- x1
+colnames(zz) <- x2
+for (i in x1) { 
+  for (j in x2) zz[as.character(i),as.character(j)] <- power.t.test( d=i, n=j, sig=alpha, 
+                                                                     type="two", alt="two" )$power 
+  }
+filled.contour( x1, x2, zz, levels=c(0:10)/10, 
+                col=gray(c(10:0)/10), key.title = title(main = "Power"), 
+                xlab="Effectgrootte (d)", ylab="Steekproefgrootte (n per groep)" )
+title( main="t-toets voor\nonafhankelijke steekproeven", line=1.1 )
+```
+
+
+## Verband tussen effectgrootte en power {#sec:effectgrootte-power}
+
+De twee figuren \@ref(fig:powercontours-alpha01) en
+\@ref(fig:powercontours-alpha05) laten zien dat in het algemeen de
+power toeneemt, naarmate het te toetsen effect groter is (meer naar
+rechts in elke figuur). Dat is ook niet verwonderlijk: een groter effect
+heeft een grotere kans om opgespoord te worden in een statistische toets
+dan een kleiner effect, onder dezelfde omstandigheden. Een middelmatig
+groot effect van $d=.5$ heeft, bij $n=30$ observaties in elke groep,
+slechts een kans van $.48$ om opgespoord te worden (als $\alpha=.05$, Figuur \@ref(fig:powercontours-alpha05)). Op basis van een
+onderzoek met $n=30$ observaties per groep is het dus eigenlijk een
+grote gok of een onderzoeker zo'n effect (met $d=.5$) wel zal opsporen,
+en H0 zal verwerpen. Anders gezegd, de kans op een Type-I-fout is
+weliswaar veilig laag ($\alpha=.05$) maar de kans op een Type-II-fout is
+meer dan $10\times$ zo groot, en daarmee gevaarlijk hoog ($\beta=.52$) [@Rose08, Ch.12]. 
+
+Een groter effect heeft een grotere kans om opgespoord te worden. Een
+groter effect van $d=.8$, bijvoorbeeld, resulteert in een power van
+$.86$ bij dezelfde toetsing. De kans op een Type-II-fout $\beta=.14$ is
+weliswaar ook hier groter dan de kans op een Type-I-fout, maar de
+verhouding $\beta/\alpha$ is aanzienlijk minder scheef.
+
+Als onderzoeker hebben we alleen indirect invloed op de effectgrootte.
+We hebben uiteraard geen invloed op het ware ruwe verschil $D$ in de
+populatie. Voor de power is echter niet dat ruwe verschil $D$ van
+belang, maar het gestandaardiseerde verschil $d=D/s$
+(§\@ref(sec:ttoets-effectgrootte)). Dus als we zorgen dat de
+standaarddeviatie $s$ op enige wijze kleiner wordt, dan wordt daarmee
+$d$ groter, en dan wordt daarmee weer de power groter
+(figuren \@ref(fig:powercontours-alpha01) en \@ref(fig:powercontours-alpha05)), 
+en dan hebben we dus meer kans
+om een bestaand effect daadwerkelijk op te sporen! Vanwege dat doel
+streven onderzoekers er altijd naar om storende invloeden van allerlei
+andere factoren zoveel mogelijk te neutraliseren. Die storende invloeden
+zorgen immers voor extra variabiliteit in de observaties, en daarmee
+voor een lagere power bij de statistische toetsing.
+
+In een goed opgezet onderzoek willen we vooraf al bepalen wat de power
+zal zijn, en hoe groot de steekproef dient te zijn (zie hierna).
+Daarvoor hebben we een schatting nodig van de kleinste effectgrootte $d$
+die we nog willen opsporen
+(§\@ref(sec:ttoets-effectgrootte)) [@Quene10]. Om de effectgrootte te
+schatten, is ten eerste een schatting nodig van het ruwe verschil $D$
+tussen de groepen of condities. Ten tweede is er een schatting nodig van
+de variabiliteit $s$ in de observaties. Die schattingen zijn meestal af
+te leiden uit eerdere publicaties, waarin doorgaans ook de
+standaarddeviatie $s$ wordt gerapporteerd. Als er geen eerdere
+onderzoeksrapporten beschikbaar zijn, dan kan $s$ grofweg geschat worden
+uit enkele informele 'pilot'-observaties. Neem daarvan het verschil
+tussen de hoogste en de laagste (bereik of 'range'), deel dit bereik
+door 4, en gebruik de uitkomst daarvan als grove schatting voor $s$
+[@PD08].
+
+## Verband tussen steekproefgrootte en power {#sec:steekproefgrootte-power}
+
+Het verband tussen de steekproefgrootte $N$ en de power van een
+onderzoek wordt geïllustreerd in
+Figuur \@ref(fig:powercontours-alpha01) voor een streng
+significantieniveau $\alpha=.01$, en in
+Figuur \@ref(fig:powercontours-alpha05) voor het meest gebruikte
+significantieniveau $\alpha=.05$. De figuren laten zien dat in het
+algemeen de power toeneemt, naarmate de steekproef groter wordt (meer
+naar boven). De toename is steiler (power neemt sneller toe) bij grotere
+effecten (rechterkant) dan bij kleinere effecten (linkerkant). Anders gezegd: bij
+kleine effecten is de steekproef eigenlijk bijna altijd te klein om deze
+kleine effecten met voldoende power te kunnen opsporen. We zagen dat al
+eerder in voorbeeld 13.3 (Hoofdstuk \@ref(ch:toetsing)).
+
+## Verband tussen significantieniveau en power {#sec:significantieniveau-power}
+
+Het verband tussen het significantieniveau $\alpha$ en de power wordt
+geïllustreerd door het verschil tussen de twee figuren
+\@ref(fig:powercontours-alpha01) en
+\@ref(fig:powercontours-alpha05). Voor iedere combinatie van
+effectgrootte en steekproefgrootte is de power lager in
+Figuur \@ref(fig:powercontours-alpha01) voor $\alpha=.01$ dan in
+Figuur \@ref(fig:powercontours-alpha05) voor $\alpha=.05$. Als we het
+significantieniveau $\alpha$ hoger kiezen, dan neemt de kans toe om H0
+te verwerpen, en dus ook de power om H0 terecht te verwerpen als H0
+onwaar is (zie
+Tabel \@ref(tab:H0H1uitkomsten)). Maar helaas neemt met een hoger
+significantieniveau $\alpha$ ook de kans toe om H0 ten onrechte te
+verwerpen als H0 waar is (d.w.z. om een Type-I-fout te maken). De
+onderzoeker moet een afweging maken tussen tussen fouten van Type-I (met
+kans $\alpha$) of van Type-II (met kans $\beta$); zoals eerder gezegd
+moet deze afweging afhangen van de ernst van (de consequenties van) deze
+twee typen van fouten.
+
+## Nadelen van onvoldoende power
+
+Helaas zijn er zeer veel voorbeelden te vinden van 'underpowered'
+onderzoek in het domein van taal en communicatie. Dit onderzoek heeft
+een te kleine kans om H0 te verwerpen als het onderzochte effect wel
+bestaat (H0 is niet waar). Waarom is dat kwalijk [@Quene10]?
+
+Ten eerste kan de Type-II-fout die hier optreedt ernstige consequenties
+hebben: een behandelmethode die eigenlijk beter is, wordt niet als
+zodanig erkend, een patiënt wordt niet of onjuist gediagnostiseerd, een
+nuttige innovatie wordt ten onrechte terzijde geschoven. Deze fout
+belemmert de groei van onze kennis en ons inzicht, en belemmert de
+wetenschappelijke vooruitgang (zie ook
+voorbeeld 3.2 in Hoofdstuk \@ref(ch:integriteit)).
+
+```{r underpoweredeffectsizes, echo=FALSE, fig.cap="Gevonden effectgroottes (langs horizontale as) in gesimuleerde experimenten (tweezijdige t-toets voor onafhankelijke waarnemingen, alpha=.05), uitgesplitst naar steekproefgrootte (links $n=20$, rechts $n=80$) en naar toetsingsresultaat (donkere symbolen: wel significant; lichte symbolen: niet significant). De ware effectgrootte tussen groepen is altijd $d=0.5$, aangegeven met grijze stippellijn. De gemiddelde gevonden effectgrootte van de significante uitkomsten is aangegeven met zwarte stippellijn. Voor iedere steekproefgrootte zijn 100 stimulaties uitgevoerd (langs verticale as)."}
+# adapted from plot.underpoweredeffectsizes.20170225.R
+# HQ 20150707
+# aangepast HQ 20170225 voor oratie, met 2 panelen
+set.seed(2003)
+nsim <- 100
+ii <- 1:nsim
+# nn <- c(20,50,80) # values of n per group to simulate
+nn <- c(20,80) # values of n per group to simulate
+dnominal <- 0.5 # d is fixed at 0.5
+sd.pooled <- function( x1, x2 ) {
+ 	nx1 <- length(x1)
+ 	nx2 <- length(x2)
+ 	var.pooled <- ((nx1-1)*var(x1)+(nx2-1)*var(x2))/(nx1+nx2-2)
+ 	return(sqrt(var.pooled))
+ 	}
+dres <- matrix(NA,nrow=length(ii),ncol=length(nn))
+pres <- matrix(NA,nrow=length(ii),ncol=length(nn))
+rownames(dres)<-ii; colnames(dres)<-nn
+rownames(pres)<-ii; colnames(pres)<-nn
+for (n in nn) {
+	for (i in ii) {
+		x1 <- rnorm(n, dnominal, 1) # effect d=0.5
+		x2 <- rnorm(n, 0  , 1) # baseline
+		dres[as.character(i),as.character(n)] <- (mean(x1)-mean(x2))/sd.pooled(x1,x2) 	
+		pres[as.character(i),as.character(n)] <- t.test(x1,x2,type="two")$p.value
+	}
+}
+
+op <- par( mfrow=c(1,length(nn)), mar=c(5,0.5,5,0.5) )
+
+for (n in 1:length(nn)) {
+	dreported <- mean(dres[pres[ii,as.character(nn[n])]<.05,as.character(nn[n])])
+	thebias <- (dreported-dnominal)
+	thepower <- round(table(pres[ii,as.character(nn[n])]<.05)[2]/nsim,2)
+	plot( dres[ii,as.character(nn[n])], ii, pch=ifelse(pres[ii,as.character(nn[n])]<.05,19,1), 
+	      xlim=c(dnominal-1,dnominal+1), yaxt="n",
+	      xlab="", ylab="", type="n", 
+	      main=paste("n1 = n2 =",nn[n],"\nsd(d) =",round(sd(dres[,as.character(nn[n])]),2),"\npower = ",thepower,"\nbias =",round(thebias,2)) )
+  # lines before points
+	abline( v=dnominal,  lty=2, lwd=2, col="grey" )
+	# add line for average of d values of significant outcomes
+	abline( v=dreported, lty=3, lwd=2 )
+	points( dres[ii,as.character(nn[n])], ii, 
+#         pch=21, 
+	        pch=ifelse(pres[ii,as.character(nn[n])]<.05,19,1) )
+#	        col=ifelse(pres[ii,as.character(nn[n])]<.05,scales::alpha("black",.8),1),
+#	        bg= ifelse(pres[ii,as.character(nn[n])]<.05,scales::alpha("black",.8),scales::alpha("white",.2) ) )
+	}
+mtext("effectgrootte (d)", side=1, line=-2, outer=TRUE)
+par(op)
+```
+De uitkomsten van gesimuleerde experimenten met verschillende
+steekproefgrootte, en dus met verschillende power, zijn samengevat in
+Figuur \@ref(fig:underpoweredeffectsizes). We leggen het tweede nadeel uit aan de hand van deze wat complexe figuur. In het linker paneel van
+Figuur \@ref(fig:underpoweredeffectsizes) zien we dat de verschillende
+(simulaties van) 'underpowered' onderzoeken een gemengd beeld laten
+zien. Sommige van deze onderzoeken laten wèl een significant effect zien
+(donkere symbolen), en veel andere onderzoeken niet (lichte symbolen).
+Dat gemengde beeld leidt dan doorgaans tot vervolgonderzoek, waarin men
+probeert om uit te zoeken *waarom* het effect wel optrad in sommige
+onderzoeken, en niet in andere. Zou het verschil in resultaten toe te
+schrijven zijn aan verschillen in stimuli? proefpersonen? taken?
+instrumentatie? Al dat vervolg-onderzoek is echter *overbodig*: het
+gemengde beeld van deze onderzoeken is goed te verklaren door de geringe
+power van elk onderzoek. Het nodeloze en overbodige vervolg-onderzoek
+kost veel tijd en geld (en indirecte kosten, zie
+Hoofdstuk \@ref(ch:integriteit)), en het gaat ten koste van ander, nuttiger
+onderzoek [@Schm96, p.118]. Anders gezegd: één goed ontworpen studie met
+ruim voldoende power kan vele nodeloze vervolg-studies voorkomen.
+
+Het derde nadeel is gebaseerd op de ervaring dat onderzoek waarin wèl
+een significant effect gevonden wordt (donkere symbolen), een grotere
+kans heeft om gerapporteerd te worden; dit verschijnsel wordt
+'publication bias' of het 'file drawer problem' genoemd. Immers, een
+positief resultaat wordt vaak wel gepubliceerd en een negatief resultaat
+verdwijnt vaak in een bureaulade. Bij geringe power leidt dat tot een
+derde nadeel, nl. een overschatting of 'bias' van de gerapporteerde
+effectgrootte. In een underpowered studie, immers, moet een gevonden
+effect tamelijk groot zijn om gevonden te worden. In het meest linkse
+paneel zien we dat er slechts $31\times$ een significant effect gevonden
+wordt. De gemiddelde effectgrootte van deze 31 significante uitkomsten
+is $\overline{d_{\textrm{signif}}}=0.90$ (zwarte stippellijn), d.w.z.
+een vertekening of 'bias' van $0.40$ ten opzichte van de eigenlijke
+$d=0.50$ (grijze stippellijn)[^fn14-1]. In het meest rechtse paneel zien we dat
+er $91\times$ een significant effect gevonden wordt (dus de power is
+hier voldoende). De gemiddelde effectgrootte van deze 91 significante
+uitkomsten wijkt nauwelijks af van de eigenlijke $d$. Bovendien is de
+standaarddeviatie van de gerapporteerde effectgrootten kleiner, en dat
+is weer van belang voor later onderzoek, meta-studies, en systematische
+reviews.
+
+Ten vierde brengt het gemengde beeld van de verschillende onderzoeken,
+met soms wel en soms niet significante uitkomsten, en met grote variatie
+in de gerapporteerde effectgrootte, het gevaar met zich mee dat deze
+uitkomsten minder serieus genomen worden door 'afnemers' van
+wetenschappelijke kennis (behandelaars, zorgverzekeraars, ontwikkelaars,
+beleidsmakers, e.d.). Deze afnemers krijgen zo de indruk dat de
+wetenschappelijke evidentie voor dit onderzochte effect niet sterk is,
+en/of dat de onderzoekers het oneens zijn over of dat effect bestaat en
+zo ja hoe groot het dan is [@Kolf93] (Figuur \@ref(fig:underpoweredeffectsizes)). 
+Ook dat belemmert de
+wetenschappelijke vooruitgang, en het belemmert het gebruik van
+wetenschappelijke inzichten in maatschappelijke toepassingen.
+
+Om al deze bezwaren te vermijden moeten onderzoekers al in een vroeg
+stadium rekening houden met de gewenste power van een onderzoek. Het
+opzetten en uitvoeren van een onderzoek met onvoldoende power is immers
+in strijd met de eerder besproken ethische en morele principes van
+zorgvuldigheid en verantwoordelijkheid
+(§\@ref(sec:integriteit-inleiding)).
+
+[^fn14-1]: Een replicatie-studie die wel voldoende power heeft, vindt dus typisch een kleiner effect dan de originele 'underpowered' studie. Het kleinere effect gevonden in de replicatie-studie is dan typisch ook niet significant. We zeggen dan dat de replicatie-studie "fails to replicate" het effect dat in de originele studie wel significant was -- maar dat eigenlijk een spurieuze vondst was. 

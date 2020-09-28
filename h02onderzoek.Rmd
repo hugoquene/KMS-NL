@@ -1,0 +1,725 @@
+# Hypothese-toetsend onderzoek {#ch:onderzoek}
+
+## Inleiding
+
+Veel empirisch onderzoek heeft tot doel om verbanden vast te stellen
+tussen (vermeende) oorzaken en hun (vermeende) gevolgen. De onderzoeker
+wil weten of de ene variabele van invloed is op de andere. Het onderzoek
+toetst de hypothese dat er een verband is tussen de vermeende oorzaak en
+het vermeende gevolg (zie Tabel \@ref(tab:oorzaakgevolg)). 
+De beste methode om zo'n causaal verband vast
+te stellen, en dus om de hypothese te toetsen, is het experiment. Een
+goed opgezet en goed uitgevoerd experiment is de 'gouden standaard' in
+veel wetenschappelijke disciplines, omdat het goede waarborgen biedt
+voor de validiteit van de conclusies (zie
+Hoofdstuk \@ref(ch:validiteit).
+Anders gezegd: de uitkomsten van een goed
+experiment vormen de sterkst mogelijke evidentie voor een verband tussen
+de onderzochte variabelen. Zoals besproken in
+Hoofdstuk \@ref(ch:inleiding) zijn er ook vele andere vormen van onderzoek,
+en kunnen hypotheses ook op andere wijze en volgens andere paradigmata
+onderzocht worden, maar we beperken ons hier tot experimenteel
+onderzoek.
+
+Table: (#tab:oorzaakgevolg) Mogelijke oorzaken en mogelijke gevolgen. 
+
+onderwerp   vermeende oorzaak             vermeend gevolg
+----------- ----------------------------- --------------------------------
+handel      buitentemperatuur             aantal verkochte ijsjes
+zorg        type behandeling              mate van herstel
+onderwijs   lesmethode                    prestatie in toets
+taal        beginleeftijd van onderwijs   mate van taalbeheersing
+onderwijs   klassegrootte                 schoolprestatie algemeen
+zorg        temperatuur                   hoogte van malaria-gebieden
+taal        leeftijd                      spreeksnelheid
+zorg        ligtijd voedsel op grond      mate van bacteriële besmetting
+
+
+In experimenteel onderzoek wordt het effect onderzocht van een door de
+onderzoeker gemanipuleerde variabele op een andere variabele. In de
+inleiding is al een voorbeeld gegeven van een experimenteel onderzoek.
+Een nieuwe lesmethode werd beproefd door leerlingen te verdelen over
+twee groepen. De ene groep kreeg les volgens een nieuwe methode, terwijl
+de andere groep het gebruikelijke onderwijs genoot. De onderzoeker
+hoopte en verwachtte dat zijn nieuwe lesmethode een gunstig effect zou
+hebben, d.w.z. dat het zou leiden tot betere prestaties.
+
+In hypothese-toetsend onderzoek wordt nagegaan of de onderzochte
+variabelen inderdaad met elkaar samenhangen op de verwachte wijze. In
+deze definitie staan twee termen centraal: 'variabelen' en 'op de
+verwachte wijze'. Voordat we nader ingaan op experimenteel onderzoek
+zullen we deze termen nader beschouwen.
+
+
+## Variabelen {#sec:variabelen}
+
+Wat is een variabele? Grofweg is een variabele een eigenschap van
+objecten of personen die kan variëren, en die dus verschillende waarden
+kan aannemen. Laten we twee eigenschappen van personen bekijken: het
+aantal broers en zussen, en het geslacht van de moeder van die persoon.
+De eerste eigenschap kan variëren tussen personen, en is dus een
+variabele (tussen personen). De tweede eigenschap kan niet variëren: als
+er een moeder is, dan is die altijd en per definitie van het vrouwelijke
+geslacht. De tweede eigenschap is dus niet een variabele, maar een
+constante eigenschap.
+
+In onze wereld bestaat bijna alles in een variabele hoeveelheid of
+hoedanigheid of mate. Ook een eigenschap die lastig te definiëren is,
+zoals de populariteit van een persoon in een groep, kan een variabele
+vormen. We kunnen immers personen in een groep rangschikken van meer tot
+minder populair. Voorbeelden van variabelen zijn er te over:
+
+* van *personen*: hun lengte, hun gewicht, schoenmaat, spreeksnelheid,
+    aantal broers en zussen, aantal kinderen, politieke voorkeur,
+    inkomen, geslacht, populariteit in een groep, enz.
+
+* van *teksten*: het totaal aantal woorden ('tokens'), aantal
+    verschillende woorden ('types'), aantal spelfouten, aantal zinnen,
+    aantal leestekens, enz.
+
+* van *woorden*: de gebruiksfrequentie, aantal lettergrepen, aantal
+    klanken, grammaticale woordsoort, enz.
+
+* van *objecten* zoals auto's, telefoons, enz.: het gewicht, aantal
+    componenten, energieverbruik, kostprijs, enz.
+
+* van *organisaties*: het aantal werknemers, postcode, omzet, aantal
+    burgers of klanten of patiënten of leerlingen, aantal operaties of
+    diploma's of transacties, rechtsvorm, enz.
+
+
+## Onafhankelijke en afhankelijke variabelen {#sec:onafhankelijkeafhankelijkevariabelen}
+
+In hypothese-toetsend onderzoek kennen we twee soorten variabelen: de
+afhankelijke en de onafhankelijke variabele. De *onafhankelijke
+variabele* is dat wat het veronderstelde effect teweeg moet brengen. De
+onafhankelijke variabele is het aspect dat in een onderzoek door de
+onderzoeker gemanipuleerd wordt. In het voorbeeld waar een experiment
+uitgevoerd wordt om het effect van een nieuwe lesmethode te evalueren,
+vormt die lesmethode de onafhankelijke variabele. Wanneer de prestaties
+van de leerlingen die de nieuwe lesmethode gevolgd hebben vergeleken
+worden met de prestaties van leerlingen die alleen traditioneel
+schrijfonderwijs gevolgd hebben, dan neemt de onafhankelijke variabele
+twee waarden aan. Deze twee waarden (ook wel *niveau's* genoemd) van de
+onafhankelijke variabele kunnen we in dit voorbeeld benoemen als
+"experimenteel" en "controle", of als "nieuw" en "oud". We zouden de
+waarden van de onafhankelijke variabele ook kunnen uitdrukken als een
+getal, 1 resp. 0. Deze getallen hebben geen numerieke betekenis (we
+zouden de waarden ook 17 resp. 23 kunnen noemen), maar worden hier enkel
+gebruikt als willekeurige etiketten om verschillende groepen te
+onderscheiden. De gemanipuleerde variabele wordt 'onafhankelijk' genoemd
+omdat de gekozen (gemanipuleerde) waarden van deze variabele in een
+onderzoek niet afhankelijk zijn van iets anders: de onderzoeker is
+onafhankelijk in zijn of haar keuze van de gekozen waarden. Een
+onafhankelijke variabele wordt ook wel *factor* of soms *predictor*
+genoemd.
+
+Het tweede type variabele is de *afhankelijke variabele*. De
+afhankelijke variabele is de variabele waarvoor we het veronderstelde
+effect verwachten. De onafhankelijke variabele veroorzaakt dus
+mogelijkerwijs een effect op de afhankelijke variabele, of: men
+veronderstelt dat de waarde van de afhankelijke variabele afhankelijk is
+van de waarde van de onafhankelijke variabele --- vandaar hun
+benamingen. De afhankelijke variabele is dus datgene wat we meten of
+observeren. Een geobserveerde waarde van de afhankelijke variabele wordt
+ook wel *responsie* of *score* genoemd; ook de afhankelijke variabele
+zelf wordt vaak zo aangeduid. In het voorbeeld waar een experiment
+uitgevoerd wordt om het effect van een nieuwe lesmethode op de
+prestaties van leerlingen te evalueren, vormen die prestaties van de
+leerlingen de afhankelijke variabele. Andere voorbeelden zijn de
+spreeksnelheid, of de score op een vragenlijst, of het aantal malen dat
+een product verkocht wordt (zie Tabel \@ref(tab:oorzaakgevolg)). 
+Kortom, in principe kan elke variabele
+als afhankelijke variabele gebruikt worden. Het is voornamelijk de
+vraagstelling die bepaalt welke afhankelijke variabele gekozen wordt, en
+hoe deze gemeten wordt.
+
+De onafhankelijke en afhankelijke variabelen dienen we overigens
+nadrukkelijk *niet* te interpreteren als 'oorzaak' resp. 'gevolg'. Het
+doel van het onderzoek is immers om overtuigend aan te tonen dàt er een
+(causaal) verband bestaat tussen de onafhankelijke en de afhankelijke
+variabele. In
+Hoofdstuk \@ref(ch:validiteit) zullen we echter zien hoe complex dat is.
+
+De onderzoeker varieert de onafhankelijke variabele en observeert of dit
+resulteert in verschillen in de afhankelijke variabele. Als de waarden
+van de afhankelijke variabele verschillen voor en na de manipulatie van
+de onafhankelijke variabele, dan nemen we aan dat dit een gevolg is van
+de manipulatie van de onafhankelijke variabele. Er is sprake van een
+relatie tussen beide variabelen. Als de waarde van de afhankelijke
+variabele niet verschilt onder invloed van de waarden van de
+onafhankelijke variabele, dan is er geen verband tussen beide
+variabelen.
+
+---
+
+> *Voorbeeld 2.1*: [@QSF12] onderzochten of een
+glimlach of frons invloed heeft op hoe luisteraars gesproken woorden
+verwerken. De woorden werden door de computer uitgesproken
+(gesynthetiseerd) in verschillende fonetische varianten, en wel op zo'n manier dat die woorden klonken alsof ze neutraal, of met een glimlach,
+of met een frons waren uitgesproken. Luisteraars moesten de woorden zo
+snel mogelijk classificeren als 'positief' danwel 'negatief' (qua
+betekenis). In dit onderzoek vormt de fonetische variant (neutraal,
+glimlach, frons) de onafhankelijke variabele, en de snelheid waarmee de
+luisteraars oordelen vormt de afhankelijke variabele.
+
+---
+
+## Falsificatie en nul-hypothese {#sec:falsificatie}
+
+Het doel van wetenschappelijk onderzoek is om te komen tot een coherente
+verzameling van "justified true beliefs" [@Mort03]. Een
+wetenschappelijke overtuiging moet dus deugdelijk onderbouwd en
+gerechtvaardigd zijn (en coherent met andere overtuigingen). Hoe komen
+we tot zo'n goede onderbouwing en rechtvaardiging? Daarvoor moeten we
+eerst terug naar het zgn. inductie-probleem van [@Hume1739]. Hume constateerde dat
+het logisch onmogelijk is om een bewering te generaliseren van een
+aantal specifieke gevallen (de waarnemingen in een onderzoek) naar een
+algemene regel (alle mogelijke waarnemingen in het universum).
+
+Het probleem met deze generalisatie of inductie zullen we illustreren
+met de overtuiging 'alle zwanen zijn wit'. Als ik 10 zwanen heb gezien
+die allemaal wit zijn, dan zou ik dat kunnen beschouwen als een
+onderbouwing voor deze overtuiging. Deze generalisatie zou echter ook
+onterecht kunnen zijn: misschien bestaan er ook niet-witte zwanen, al
+heb ik die niet gezien. Meer algemeen: de inductie van specifieke
+waarnemingen naar een generalisatie houdt altijd een risico in, en kan
+niet gedaan worden "met behoud van waarheid". Er zit dus altijd een
+logische 'sprong' in, waardoor de generalisatie niet zonder risico is.
+Een regel die wel opgaat voor alle waargenomen specifieke gevallen
+('alle zwanen zijn wit') hoeft daarmee nog niet een algemene regel te
+zijn. Hetzelfde inductie-probleem blijft bestaan als ik 100 of 1000
+witte zwanen heb gezien. Maar wat als ik één zwarte zwaan heb gezien?
+Dan weet ik meteen, met zekerheid, dat de overtuiging dat alle zwanen
+wit zijn, niet waar is. Dit principe gebruiken we ook in
+wetenschappelijk onderzoek.
+
+Laten we terugkeren naar ons eerdere voorbeeld waarin we hebben
+verondersteld dat een nieuwe lesmethode beter is dan een oude
+lesmethode; deze overtuiging noemen we H1. Laten we deze redenering nu
+eens omdraaien, en ons baseren op de complementaire overtuiging[^fn02-1] dat
+de nieuwe methode *niet* beter is dan de oude; deze overtuiging noemen
+we de nul-hypothese of H0. Deze overtuiging H0 'alle methoden hebben
+gelijk effect' is analoog aan de overtuiging 'alle zwanen zijn wit' uit
+het voorbeeld in de vorige alinea. Hoe moeten we nu toetsen of de
+overtuiging of hypothese H0 waar is? Laten we daarvoor een
+representatieve steekproef van leerlingen trekken (zie
+Hoofdstuk \@ref(ch:steekproeftrekking)), en laten we de leerlingen volgens
+het toeval toewijzen aan de nieuwe of oude lesmethode (waarden van
+onafhankelijke variabele); we observeren vervolgens alle prestaties
+(afhankelijke variabele) van alle deelnemende leerlingen, volgens
+hetzelfde protocol voor alle gevallen. Vooralsnog veronderstellen we dat
+H0 waar is. We verwachten dus ook geen verschil tussen de prestaties van
+de verschillende groepen leerlingen. Als de leerlingen van de nieuwe
+methode desalniettemin veel beter blijken te presteren dan de leerlingen
+van de oude methode, dan vormt dat waargenomen verschil de figuurlijke
+zwarte zwaan: het gevonden verschil (dat in tegenspraak is met H0) maakt
+het onwaarschijnlijk dat H0 waar is (*mits* het onderzoek valide was;
+meer daarover in het volgende hoofdstuk). Omdat H0 en H1 elkaar
+uitsluiten, is het dan dus ook erg waarschijnlijk dat H1 wèl waar is. En
+omdat we onze onderbouwing baseerden op H0 en niet op H1, kunnen
+sceptici ons niet van partijdigheid beschuldigen: we probeerden immers
+juist aan te tonen dat er géén verschil was tussen de prestaties van de
+leerlingen uit de twee groepen.
+
+Deze methode wordt *falsificatie* genoemd, omdat we kennis verwerven
+door hypothesen te verwerpen (falsifiëren) en niet door hypothesen te
+aanvaarden (verifiëren). Deze methodologie is ontwikkeld door de
+wetenschapsfilosoof Karl Popper [@Popp35; @Popp59; @Popp63]. De
+falsificatie-methode heeft interessante overeenkomsten met de
+evolutietheorie. Door variatie tussen de individuen kunnen sommigen zich
+succesvol voortplanten, terwijl veel anderen voortijdig sterven en/of
+zich niet voortplanten. Op analoge wijze kunnen sommige tentatieve
+beweringen niet weerlegd worden, en kunnen deze dus 'overleven' en 'zich
+voortplanten', terwijl veel andere beweringen weerlegd worden en dus
+'sterven'. In de woorden van [@Popp63, p.51]:
+
+> " ... to explain (the world) ... as far as possible, with the help of laws and explanatory theories ...there is no more rational procedure than the method of trial and error --- of conjecture and refutation: of boldly proposing theories; of trying our best to show that these are erroneous; and of accepting them tentatively if our critical efforts are unsuccessful." 
+
+Een goede wetenschappelijke bewering of theorie dient dus falsifieerbaar
+of weerlegbaar of toetsbaar te zijn [@Popp63], d.w.z. het moet mogelijk
+zijn om de onjuistheid van die bewering of theorie aan te tonen. De
+wetenschappelijke onderbouwing en daarmee de plausibiliteit van een
+toetsbare bewering neemt toe, naarmate die bewering vaker en onder meer
+wisselende omstandigheden bestand is gebleken tegen falsificatie. 'Het
+klimaat wordt warmer' is een goed voorbeeld van een bewering die steeds
+beter bestand blijkt te zijn tegen falsificatie, en die daarmee steeds
+sterker wordt.
+
+---
+
+> *Voorbeeld 2.2:* 'Alle zwanen zijn wit' en 
+'de gemiddelde temperatuur van de aarde stijgt sinds 1900'
+zijn falsifieerbare, en daarom wetenschappelijk bruikbare
+beweringen. Maar hoe zit dat met de volgende beweringen?\
+> a. Goud lost op in water.\
+> b. Zout lost op in water.\
+> c. Vrouwen praten meer dan mannen.\
+> d. De muziek van Coldplay is beter dan die van U2.\
+> e. De muziek van Coldplay verkoopt beter dan die van U2.\
+> f. Als een patiënt een duiding van de psychoanalyticus afwijst, dan is dat het gevolg van weerstand omdat de duiding van de
+psychoanalyticus juist is.\
+> g. De stijging van de gemiddelde temperatuur van de aarde is het gevolg van menselijke activiteiten.
+
+---
+
+## De empirische cyclus {#sec:empirischecyclus}
+
+In het voorafgaande hebben we op een vrij
+globale manier kennis gemaakt met experimenteel onderzoek. In deze
+paragraaf beschrijven we het verloop van experimenteel onderzoek meer
+systematisch. Er zijn in de loop der tijd verschillende schema's
+opgesteld waarin onderzoek in fasen beschreven wordt. De bekendste van
+deze schema's is waarschijnlijk wel de empirische cyclus van [@Groot61].
+
+In de empirische cyclus worden vijf onderzoeksfasen onderscheiden: de
+observatiefase, de inductiefase, de deductiefase, de toetsingsfase en de
+evaluatiefase. In de laatste fase worden tekortkomingen en alternatieve
+interpretaties geformuleerd. Dit leidt weer tot nieuw onderzoek, waarin
+opnieuw de serie fasen kan worden doorlopen (vandaar 'cyclus'). Deze
+vijf onderzoeksfasen zullen wij één voor één behandelen.
+
+### observatie
+
+In deze fase construeert de onderzoeker een probleem. Dat wil zeggen dat
+de onderzoeker een idee vorm over de mogelijke relaties tussen
+verschillende (theoretische) concepten of constructen. Deze
+veronderstellingen worden later uitgewerkt tot meer algemene hypothesen.
+Veronderstellingen kunnen op duizenden manieren tot stand komen --- maar
+vereisen altijd nieuwsgierigheid van de onderzoeker. De onderzoeker kan
+een vreemd fenomeen opmerken dat verklaard moet worden, bv het fenomeen
+dat het vermogen om absolute toonhoogte te horen ("absoluut gehoor")
+veel vaker voorkomt bij Chinezen dan bij Amerikanen [@Deut06]. Ook het
+systematisch doorzoeken van wetenschappelijke publicaties kan leiden tot
+veronderstellingen. Soms blijkt dan dat de resultaten van verschillende
+onderzoeken elkaar tegenspreken, of dat er een duidelijke lacune zit in
+onze kennis.
+
+Veronderstellingen kunnen ook gebaseerd zijn op case-studies:
+onderzoeken waarbij één of enkele gevallen intensief bestudeerd en
+extensief beschreven worden. Zo ontwikkelde Piaget zijn theorie over de
+verstandelijke ontwikkeling van kinderen op basis van observaties van
+zijn eigen kinderen in de tijd dat hij werkloos was. Deze observaties
+vormden later, toen Piaget zijn eigen laboratorium had, aanleiding voor
+vele experimenten op basis waarvan hij zijn theoretische inzichten kon
+verdiepen en verifiëren.
+
+Het is belangrijk om te beseffen dat puur onbevangen, objectieve
+waarneming niet mogelijk is. Waarnemingen zijn altijd min of meer
+theorie-geladen of kennis-geladen. Als we niet weten waarop we moeten
+letten, kunnen we ook niet goed waarnemen. Zo kunnen wolken-experts veel
+meer typen van bewolking onderscheiden en interpreteren dan leken.
+Voordat er observaties gedaan worden en feiten worden geanalyseerd, is
+het dus verstandig om eerst een expliciet theoretisch kader aan te
+brengen, ook al is dit nog rudimentair.
+
+Een onderzoeker komt tot veronderstellingen naar aanleiding van
+opmerkelijke verschijnselen, case-studies, literatuurstudie, e.d. Er
+zijn echter geen methodologische richtlijnen over hoe dit proces zou
+moeten verlopen: het is een creatief proces.
+
+### inductie
+
+In de inductiefase wordt de in de observatiefase geopperde
+veronderstelling gegeneraliseerd. Op grond van specifieke observaties
+wordt nu een hypothese geopperd waarvan de onderzoeker vermoedt dat die
+algemeen geldig is. (**Inductie** is de logische stap waarbij een algemene
+bewering of hypothese wordt afgeleid uit specifieke gevallen: mijn
+kinderen (hebben) leren praten $\rightarrow$ alle kinderen (kunnen)
+leren praten.)
+
+Zo kan een onderzoeker uit de observatie dat de vrouwen in zijn/haar
+omgeving meer praten dan de mannen (meer minuten per etmaal, en meer
+woorden per etmaal), een algemene hypothese afleiden: H1: vrouwen praten
+meer dan mannen (zie Voorbeeld 2.2); deze hypothese kan nader ingeperkt
+worden in tijd en plaats.
+
+De hypothese moet tevens een duidelijk omschreven empirische inhoud
+hebben, d.w.z. het type of de klasse van observaties moet goed
+omschreven zijn. Gaat het over alle vrouwen en mannen? Of alleen
+sprekers van het Nederlands? En hoe zit het met meertalige sprekers? En
+met kinderen die hun taal nog aan het leren zijn? Die duidelijk
+omschreven inhoud is nodig om de hypothese te kunnen toetsen (zie subsectie Toetsing hieronder, en zie Hoofdstuk \@ref(ch:toetsing)).
+
+Tenslotte moet een hypothese ook logisch coherent zijn, d.w.z. de
+hypothese moet aansluiten bij andere theorieën of hypothesen. Als een
+hypothese niet logisch coherent is, dan kan zij per definitie niet
+eenduidig aan de empirie gerelateerd worden, en is zij dus niet goed
+toetsbaar. Hieruit volgt dat een hypothese niet multi-interpretabel mag
+zijn: een hypothese moet op zichzelf één en niet meer dan één uitkomst
+van een experiment voorspellen.
+
+In het algemeen worden drie typen hypothesen onderscheiden [@Groot61]:
+
+-   Universeel-deterministische hypothesen.\
+    Deze hebben als algemene vorm: *alle A's zijn B's*. Bijvoorbeeld: alle
+    zwanen zijn wit, alle (volwassen) mensen kunnen spreken. Als een
+    onderzoeker voor één A kan aantonen dat deze niet B is, dan is de
+    hypothese in beginsel gefalsifieerd. Een universeel deterministische
+    hypothese kan nooit geverifieerd worden; een onderzoeker kan alleen
+    een uitspraak doen over de gevallen die hij geobserveerd, dan wel
+    gemeten heeft. Bij een oneindige verzameling, zoals: alle vogels, of
+    alle mensen, of alle kachels, kan dit tot problemen leiden. De
+    onderzoeker weet niet of er misschien één enkel geval bestaat waarin
+    geldt: A is niet B; er is één vogel die niet kan vliegen, et cetera.
+    Over deze andere gevallen kan dus geen uitspraak gedaan worden,
+    waardoor de universele geldigheid van de hypothese nooit volledig
+    'bewezen' kan worden.
+
+-   Deterministische existentiehypothesen.\
+    Deze hebben als algemene vorm: *er is tenminste één A die B is*.
+    Bijvoorbeeld: er is tenminste één zwaan die wit is, er is tenminste
+    één mens die kan praten, er is tenminste één kachel die warmte
+    geeft. Als een onderzoeker kan aantonen dat er één A is die B is,
+    dan is de hypothese geverifieerd. Deterministische
+    existentiehypothesen kunnen echter nooit gefalsifieerd worden.
+    Daarvoor zou het nodig zijn om van een oneindige verzameling alle
+    eenheden of individuen te onderzoeken op het al dan niet B zijn, en
+    dat is door de oneindigheid van de verzameling nu juist uitgesloten.
+    Hieruit blijkt tegelijk dat dit type hypothesen geen algemene
+    uitspraken doen, en dat het wetenschappelijk belang ervan niet zo
+    duidelijk is. Je kunt het ook zo zeggen: voor elk specifiek geval A
+    doet een dergelijke hypothese helemaal geen duidelijke voorspelling;
+    een gegeven A zou de gezochte B kunnen zijn, maar dat hoeft helemaal
+    niet. In deze zin voldoet een deterministische existentiehypothese
+    dan ook niet aan ons criterium van falsificatie.
+
+-   Probabilistische hypothesen.\
+    Deze hebben als algemene vorm: *er zijn relatief meer A's die B zijn,
+    dan niet-A's die B zijn*. 
+    In de gedragswetenschappen (inclusief taal
+    en communicatie) is dit verreweg het meest voorkomende type
+    hypothese.\
+    Bijvoorbeeld: er zijn relatief meer vrouwen die veelpratend zijn dan
+    mannen die veelpratend zijn. Of: er zijn relatief meer
+    hoog-presterende leerlingen bij de nieuwe methode dan bij de oude
+    methode. Of: versprekingen treden relatief vaker op bij het begin
+    dan bij het einde van een woord. Daarmee wordt nog niet aangegeven
+    dat alle vrouwen meer praten dan alle mannen, en evenmin wordt
+    aangegeven dat alle leerlingen met de nieuwe methode beter presteren
+    dan alle leerlingen van de oude methode.
+
+### deductie
+
+In deze fase van de empirische cyclus worden specifieke voorspellingen
+afgeleid uit de algemeen geformuleerde hypothese die is opgezet in de
+inductiefase. (**Deductie** is de logische stap waarbij een specifieke
+bewering of voorspelling wordt afgeleid uit een meer algemene bewering:
+alle kinderen leren praten $\rightarrow$ mijn kinderen (zullen) leren
+praten.)
+
+Laten we veronderstellen (H1) dat "vrouwen meer praten dan mannen". Uit
+deze hypothese doen we in deze fase specifieke voorspellingen voor
+specifieke steekproeven. Wanneer we bijvoorbeeld 40 vrouwelijke en 40
+mannelijke docenten Nederlands zouden interviewen, zonder
+tijdsbeperking, dan luidt de voorspelling op grond van deze H1 dat de
+vrouwelijke docenten in deze steekproef meer zullen zeggen dan de
+mannelijke docenten in de steekproef (en dus ook, dat ze een groter
+aantal lettergrepen zullen spreken in het interview).
+
+Zoals hierboven uitgelegd (§\@ref(sec:falsificatie)), wordt in het meeste wetenschappelijk
+onderzoek echter niet de H1 getoetst, maar de logische tegenhanger
+daarvan, die met H0 wordt aangeduid. 
+Voor de toetsing (in de volgende fase van de empirische
+cyclus) is het dus gebruikelijk om voorspellingen te toetsen die zijn
+afgeleid uit de H0 (!), bijvoorbeeld "vrouwen en mannen produceren *even veel* lettergrepen in een vergelijkbaar interview".
+
+In de praktijk worden de termen 'hypothese' en 'voorspelling' vaak door
+elkaar gebruikt, en spreken we vaak over het toetsen van hypothesen.
+Volgens bovenstaande terminologie toetsen we echter niet de hypothesen, maar leiden we uit de hypothesen voorspellingen af (via deductie), en toetsen we daarna die voorspellingen aan de data. 
+
+### toetsing
+
+In deze fase verzamelen we empirische observaties en vergelijken we die
+met de uitgewerkte voorspellingen "onder H0", d.w.z. de voorspellingen
+als H0 waar zou zijn. In Hoofdstuk \@ref(ch:toetsing) zullen we nader ingaan op deze toetsing. Hier introduceren we alleen het algemene principe om nulhypotheses te toetsen. (Naast het hier beschreven conventionele "frequentistische" principe kunnen we ook hypotheses toetsen of vergelijken op een nieuwere "Bayesiaanse" wijze; we bespreken die in §\@ref(sec:bayesiaans)).
+
+Als de observaties buitengewoon onwaarschijnlijk zijn onder H0, dan zijn
+er twee logische mogelijkheden. (i) De observaties deugen niet, we
+hebben fout geobserveerd. Maar als de onderzoeker zijn werk goed
+gecontroleerd heeft en zichzelf serieus neemt, dan is dat niet
+waarschijnlijk. (ii) De voorspelling was onjuist, H0 is wellicht niet
+juist, en moet dus verworpen worden, ten gunste van H1.
+
+In ons voorbeeld hierboven (in de voorgaande subsectie over deductie) hebben we uit H0 (!) de voorspelling afgeleid
+dat in een steekproef van 40 mannelijke en 40 vrouwelijke docenten, de
+leden van de twee groepen even veel lettergrepen gebruiken in een
+gestandaardiseerd interview. We vinden echter dat de mannen meer lettergrepen gebruiken (gemiddeld 4210 lettergrepen) dan de vrouwen (gemiddeld 3926 lettergrepen) [@Quene08, p.1112]. 
+Hoe
+waarschijnlijk is dit verschil als de observaties kloppen, en als H0
+waar zou zijn? Die kans is zodanig klein dat de onderzoeker H0 verwerpt
+(zie optie (ii) hierboven), en concludeert dat vrouwen en mannen *niet even veel* praten, althans in dit onderzoek.
+
+In het bovenstaande voorbeeld worden in de toetsingsfase twee groepen
+vergeleken, hier mannen en vrouwen. Eén van die twee groepen is vaak een
+neutrale groep of controle-groep, zoals we al zagen in het eerdere
+voorbeeld van de nieuwe en oude lesmethode. Waarom maken onderzoekers
+vaak gebruik van zo'n controle-groep? Stel je eens voor dat we alleen de
+nieuwe-methode-groep zouden onderzoeken. In de toetsingsfase meten we de
+prestaties van de leerlingen, en die is ruim voldoende: gemiddeld een 7.
+Is de nieuwe methode dan een succes? Misschien niet: als de leerlingen
+volgens de oude methode een 8 zouden behalen, dan zou de nieuwe methode
+eigenlijk slechter zijn, en zouden we de nieuwe methode beter niet
+kunnen invoeren. Om daar een zinnige conclusie over te kunnen trekken,
+is het essentieel om de nieuwe en oude methoden onderling te
+vergelijken. Vandaar dat in veel onderzoek een neutrale conditie,
+nul-conditie, controle-groep, placebo-behandeling, o.i.d, is opgenomen.
+
+Hoe kunnen we nu de kans bepalen op de gevonden observaties, als H0 waar
+zou zijn? Dat is vaak wat complex, maar we illustreren het hier met een
+eenvoudig voorbeeld. We gooien kop of munt met een munt. We
+veronderstellen (H0): de munt is eerlijk, de kans op kop is $1/2$ per
+worp. We gooien $10\times$ met dezelfde munt, en wonderbaarlijk genoeg
+observeren we alle $10\times$ een kop als uitkomst. De kans dat dit
+gebeurt, als H0 waar is, is $P = (1/2)^{10} = 1/1024$. Als H0 waar zou
+zijn is deze uitkomst uiterst onwaarschijnlijk (al is de uitkomst niet
+onmogelijk, want $P > 0$), en daarom verwerpen we H0. We concluderen dus
+dat de munt waarschijnlijk niet eerlijk is.
+
+Dit roept een belangrijk punt op: wanneer is een uitkomst zò
+onwaarschijnlijk dat we H0 verwerpen? Welk criterium hanteren we voor de
+kans op de gevonden observaties als H0 waar zou zijn? Dit is de vraag
+naar het significantieniveau, d.w.z. het kansniveau waarbij we besluiten
+de H0 te verwerpen. Dit wordt aangeduid met symbool $\alpha$. Als in een
+onderzoek een significantieniveau gehanteerd wordt van $\alpha = 0.05$,
+dan wordt de H0 verworpen als de kans om deze resultaten te vinden als
+H0 waar is[^fn02-2], kleiner is dan 5%. De uitkomst is dan zo
+onwaarschijnlijk, dat we ervoor kiezen om H0 te verwerpen (optie (ii)
+hierboven), d.w.z. we concluderen dat H0 waarschijnlijk *niet* waar is.
+
+Als we H0 aldus verwerpen, dan lopen we wel een kleine kans dat we
+eigenlijk met optie (i) te maken hebben: H0 is waar, maar de observaties
+wijken *toevallig* sterk af van de voorspelling op basis van H0, en H0
+wordt dan ten onrechte verworpen. Dit wordt een Type-I-fout genoemd.
+Deze fout is vergelijkbaar met de onterechte veroordeling van een
+onschuldig persoon, of met de onjuiste classificatie van een onschuldig
+email-bericht als 'spam'. Meestal wordt $\alpha = .05$ gebruikt, maar
+ook andere significantie-niveau's zijn mogelijk en soms verstandiger.
+
+Merk op dat de significantie betrekking heeft op de kans om de gevonden
+extreme gegevens (of meer extreme gegevens) te vinden, indien H0 waar
+is: $$\textrm{significantie} = P(\textrm{data}|\textrm{H0})$$ De
+significantie is dus *niet* de kans dat H0 waar is als je deze gegevens
+gevonden hebt, $P(\textrm{H0}|\textrm{data})$, hoewel we deze denkfout
+vaak tegenkomen.
+
+Bij iedere vorm van toetsing is er ook een kans op de omgekeerde fout,
+nl. dat we H0 ten onrechte niet verwerpen. Dat wordt een Type-II-fout
+genoemd: H0 is eigenlijk niet waar (dus H1 is waar) maar H0 wordt
+desalniettemin niet verworpen. Deze fout is vergelijkbaar met de
+onterechte vrijspraak van een schuldig persoon, of met het onterecht
+goedkeuren van een *spam* email-bericht (zie
+Tabel \@ref(tab:H0H1uitkomsten)).
+
+Table: (#tab:H0H1uitkomsten) Mogelijke uitkomsten van beslissingsprocedure.
+
+werkelijkheid
+------------------------------ --------------------------- --------------------------
+                               **H0 verworpen**            **H0 niet verworpen**
+H0 is waar (H1 onwaar)         Type-I-fout ($\alpha$)      correct
+H0 is onwaar (H1 waar)         correct                     Type-II-fout ($\beta$)
+                               **verdachte veroordeeld**   **verdachte vrijgesproken**
+verdachte is onschuldig (H0)   Type-I-fout                 correct
+verdachte is schuldig          correct                     Type-II-fout
+                               **bericht weggegooid**       **bericht doorgestuurd**
+bericht is OK (H0)             Type-I-fout                 correct
+bericht is spam                correct                     Type-II-fout
+
+Als we het significantieniveau hoger instellen, bv. $\alpha = .20$, dan
+is de kans om de H0 te verwerpen dus ook veel groter. In de
+toetsingsfase verwerpen we immers H0 al indien de kans op deze gegevens
+(of meer extreme gegevens) kleiner is dan 20%. Een uitkomst van
+$8\times$ kop in 10 worpen is dan al voldoende om H0 te verwerpen (d.i.
+om de munt als onzuiver te beoordelen). Er zijn dus meer uitkomsten
+mogelijk waarbij we H0 zullen verwerpen. Dat hogere significantieniveau
+houdt dus een groter risico in op een Type-I-fout, en tegelijk een
+kleiner risico op een Type-II-fout. De afweging tussen de twee typen
+fouten hangt af van de precieze omstandigheden van het onderzoek, en van
+de consequenties van de twee typen van fouten. Welke fout is ernstiger:
+een goed bericht weggooien, of een *spam*-bericht doorsturen? De kans op
+een Type-I-fout (significantieniveau) heeft een onderzoeker in eigen
+hand. De kans op een Type-II-fout is afhankelijk van drie factoren, en
+is lastig te bepalen. We zullen dat nader bespreken in
+Hoofdstuk \@ref(ch:power).
+
+### evaluatie
+
+Aan het einde van het onderzoek moet de onderzoeker de
+onderzoeksresultaten evalueren: wat is het nu allemaal waard? Het draait
+hier niet slechts om de vraag of de onderzoeksresultaten al dan niet ten
+gunste van de getoetste theorie uitgevallen zijn. Het gaat om een
+kritische beschouwing van de wijze waarop de data zijn verzameld, de
+denkstappen, de operationalisatie, de mogelijke alternatieve
+verklaringen, alsmede de consequenties van de resultaten. De resultaten
+moeten in een bredere context geplaatst en besproken worden. Wellicht
+leiden de conclusies ook tot aanbevelingen, bijvoorbeeld voor klinische
+toepassingen of voor de onderwijspraktijk. Dit is ook het moment om
+suggesties voor ander of vervolgonderzoek te doen.
+
+In deze fase gaat het primair om de interpretatie van de resultaten,
+waarbij de onderzoeker als interpretator een belangrijke en persoonlijke
+rol speelt. Verschillende onderzoekers kunnen dezelfde uitkomsten geheel
+anders interpreteren. En soms zijn de resultaten in tegenspraak met wat
+was voorspeld of gewenst.
+
+## Keuzemomenten {#sec:keuzemomenten}
+
+Onderzoek bestaat uit een reeks van keuze-momenten: van de inspirerende
+observaties in de eerste fase, via de operationele beslissingen in de
+uitvoering van het onderzoek, tot de interpretatie van de resultaten in
+de laatste fase. Zelden zal een onderzoeker in staat zijn om altijd de
+beste keuze te maken, maar hij of zij moet er voor waken dat ergens een
+slechte keuze gemaakt zou worden. Het hele onderzoek is net zo sterk als
+de zwakste schakel: de waarde van het hele onderzoek hangt af van de
+slechtste keuze in de reeks van keuzes. Ter illustratie geven we een
+beeld van de keuzes die een onderzoeker moet maken tijdens de gehele
+empirische cyclus.
+
+De eerste keuze die gemaakt moet worden betreft de probleemstelling.
+Relevante vragen die de onderzoeker op dit moment moet beantwoorden
+zijn: hoe herken ik een bepaalde onderzoeksvraag, is onderzoek hier het
+aangewezen middel, is dit idee onderzoekbaar? De beantwoording van
+dergelijke vragen is van allerlei factoren afhankelijk, zoals mens- en
+maatschappijvisie, wensen van de opdrachtgever, financiële en praktische
+mogelijkheden, enz.
+
+De onderzoeksvraag moet wel te beantwoorden zijn met de beschikbare
+methoden en middelen. Maar binnen die beperking kan de onderzoeksvraag
+elk aspect van de werkelijkheid betreffen, ongeacht of dit aspect nu
+irrelevant of belangrijk wordt geacht. Er zijn vele voorbeelden van
+onderzoek dat aanvankelijk werd afgedaan als irrelevant, maar dat
+desondanks wel degelijk van wetenschappelijke waarde bleek te zijn,
+bijvoorbeeld een studie over de vraag "is 'Huh?' a universal word?"
+[@DTE13] (Voorbeeld 1.1). 
+Ook bleken ideeën die eerst als onjuist werden afgedaan later toch te kloppen met de werkelijkheid. Zo beweerde Galilei, zogenaamd 'ten onrechte', dat de aarde om de zon draaide. Kortom, onderzoeksvragen moeten niet te snel verworpen worden omdat zij 'nutteloos', een 'open deur', 'irrelevant' of 'triviaal' zouden zijn.
+
+Als de onderzoeker besluit om verder te gaan met het onderzoek, dan is
+de volgende stap doorgaans literatuurstudie. In de meeste handboeken
+wordt aanbevolen veel te lezen, maar hoe wordt de literatuur verzameld?
+Uiteraard moet de relevante onderzoeksliteratuur over het probleemgebied
+doorgenomen worden. Gelukkig bestaan er tegenwoordig allerlei
+hulpmiddelen om relevante wetenschappelijke publicaties te vinden. Het
+is raadzaam om daarvoor de aanwijzingen en zgn. "libguides" te
+bestuderen die de Universiteitsbibliotheek aanbiedt (zie
+<http://www.uu.nl/bibliotheek>, en <http://libguides.library.uu.nl>).
+Ook de gids van [@Sand11] bevelen we ten zeerste aan: de gids bevat vele uiterst
+nuttige aanwijzingen over het opsporen van relevante
+onderzoeksliteratuur.
+
+In de fase daarna doemen de eerste methodologische problemen op. De
+onderzoeker moet namelijk de probleemstelling exacter formuleren. Een
+belangrijke afweging die hier gemaakt dient te worden is of de
+probleemstelling wel onderzoekbaar is (§\@ref(sec:falsificatie)). 
+Een vraag als "wat is het effect van
+beginleeftijd van leren op de taalvaardigheid in een vreemde taal?" is
+bijvoorbeeld niet zonder meer onderzoekbaar. Deze vraag moet nader
+gespecificeerd worden. Cruciale concepten moeten ge(her)definieerd
+worden: wat is de beginleeftijd van het leren van een vreemde taal? Wat is taalvaardigheid? Wat is een effect? En wat is eigenlijk een vreemde taal? Hoe definieer ik de populatie? 
+De onderzoeker wordt geconfronteerd
+met allerlei vragen over definities en operationalisatie: Worden
+begrippen theoretisch of empirisch of pragmatisch gedefinieerd? Welke
+instrumenten worden gebruikt om de verschillende constructen te meten?
+Maar ook: hoe ingewikkeld moet het onderzoek worden? Kan het hele
+onderzoek dan wel tot een goed einde worden gebracht? Op welke wijze
+moeten de gegevens verzameld worden? Kunnen de gewenste gegevens wel
+verzameld worden, of zullen respondenten dergelijke vragen nooit
+(kunnen) beantwoorden? Is de voorgestelde manipulatie ethisch
+verantwoord? Wat is de afstand tussen het theoretische construct en de
+wijze waarop dat zal worden gemeten? Wanneer in deze fase iets fout
+gaat, dan heeft dat direct weerslag op de rest van het onderzoek.
+
+Als er met succes een probleemstelling is geformuleerd en
+geoperationaliseerd, dan volgt een nadere literatuurverkenning. Dit
+tweede literatuuronderzoek is veel meer toegespitst op de inmiddels
+uitgewerkte onderzoeksvraag dan de eerder genoemde, brede
+literatuurverkenning. Op grond van eerdere publicaties kan de
+onderzoeker zijn of haar oorspronkelijke probleemstelling heroverwegen.
+Niet alleen moet de literatuur nu doorgenomen worden met het oog op
+inhoudelijk theoretische overwegingen, maar ook moet aandacht worden
+besteed aan voorbeelden van operationalisering van de kernbegrippen.
+Zijn deze begrippen wel goed geoperationaliseerd, en als er
+verschillende manieren van operationalisering zijn, wat is dan de ratio
+achter deze verschillen? En, kunnen de kernbegrippen zo
+geoperationaliseerd worden dat de afstand tussen het
+begrip-zoals-bedoeld en het begrip-zoals-bepaald (nog) kleiner is
+(§\@ref(sec:instrumentatie-onderzoek))? De aanwijzingen hierboven
+voor het zoeken in wetenschappelijke literatuur zijn hier wederom van
+nut. De onderzoeker dient zich vervolgens (nogmaals) te beraden op het
+nut van het onderzoek. Afhankelijk van de probleemstelling moeten vragen
+gesteld worden als: draagt het onderzoek bij aan de kennis op een
+bepaald gebied, worden door het onderzoek oplossingen gecreëerd voor
+ervaren knelpunten of problemen, of draagt het onderzoek bij aan te
+creëren oplossingen? Voldoet de vraagstelling nog aan het
+oorspronkelijke probleem (of de oorspronkelijke vraagstelling) van de
+opdrachtgevers? Zijn er voldoende (technische, financiële, praktische)
+mogelijkheden om het onderzoek uit te voeren?
+
+In de volgende stap moet worden gespecificeerd hoe de gegevens worden
+verzameld. Dit is een essentiële stap die van invloed is op de rest van
+het onderzoek; we wijden er daarom een apart hoofdstuk aan
+(Hoofdstuk \@ref(ch:steekproeftrekking)). 
+Waaruit bestaat de populatie: uit
+taalgebruikers? leerlingen? tweetalige babies? versprekingen van
+medeklinkers? zinnen? En hoe moet je een representatieve steekproef of
+steekproeven trekken uit deze populatie(s)? Hoe groot moet die
+steekproef dan zijn? Ook moet er in deze fase gekozen worden voor een
+analysemethode. Het is zelfs aan te bevelen om in deze fase al een
+analyseplan te ontwerpen. Welke analyses zullen worden uitgevoerd, welke exploraties van de gegevens worden voorzien?
+
+Met al deze keuzes zijn de voorbereidingen nog niet afgerond. Ook de
+instrumenten moeten worden gekozen: welke apparatuur,
+opname-gereedschap, vragenlijsten, enz., worden gebruikt om waarnemingen
+mee te doen? Bestaan er al geschikte instrumenten? Zo ja, zijn deze dan
+makkelijk toegankelijk en mogen zij gebruikt worden? Zo nee, dan moeten
+instrumenten ontwikkeld worden 
+(§\@ref(sec:instrumentatie-onderzoek)). 
+Maar in dat geval neemt de
+onderzoeker ook de taak op zich om deze instrumenten eerst te beproeven,
+om na te gaan of de gegevens die met deze instrumenten verkregen worden,
+voldoen aan de kwaliteitseisen die de onderzoeker zich gesteld heeft, of
+die in het algemeen aan de instrumenten in wetenschappelijk onderzoek
+gesteld mogen worden (in termen van betrouwbaarheid en validiteit, zie
+Hoofdstukken \@ref(ch:validiteit) en \@ref(ch:betrouwbaarheid).
+
+Pas nadat ook de instrumenten in gereedheid gebracht zijn begint het
+eigenlijke empirische onderzoek: de gekozen gegevens van de gekozen
+steekproef worden verzameld op de gekozen wijze met behulp van de
+gekozen instrumenten. Ook hierbij zijn er allerlei, vaak praktische
+problemen waar de onderzoeker tegenaan loopt. Een waar gebeurd
+voorbeeld: drie dagen nadat een onderzoeker zijn vragenlijst verstuurd
+had begon een poststaking die twee weken duurde. Helaas had de
+onderzoeker de respondenten ook twee weken de tijd gegeven om te
+reageren. Dus toen de poststaking voorbij was, was de inzendtermijn
+verlopen. Wat moest hij toen? Bij gebrek aan alternatieven besloot de
+onderzoeker alle 1020 respondenten telefonisch te benaderen met het
+verzoek de vragenlijst alsnog in te vullen en te retourneren.
+
+Voor de onderzoeker die zich de moeite getroost heeft van te voren een
+analyseplan op te stellen breekt nu de tijd aan om te oogsten. Eindelijk
+kunnen de geplande analyses ook uitgevoerd worden. Helaas blijkt de
+werkelijkheid meestal veel weerbarstiger dan de onderzoeker van te voren
+had bedacht. Proefpersonen geven onverwachte responsies, of houden zich
+niet aan de instructies, veronderstelde verbanden blijken niet aanwezig,
+en onverwachte (en ongewenste) verbanden blijken in sterke mate
+aanwezig. In latere hoofdstukken zullen we dieper ingaan op
+analysemethoden en problemen daarbij.
+
+Tenslotte moet de onderzoeker ook rapporteren over het onderzoek. Zonder
+(adequaat) onderzoeksverslag zijn de gegevens niet toegankelijk en had
+het onderzoek net zo goed *niet* uitgevoerd kunnen worden. Dit is een
+essentiële stap, waarbij onder meer de vraag gesteld dient te worden of
+het onderzoek op basis van de verslaglegging controleerbaar en
+repliceerbaar is. Meestal wordt van onderzoeksactiviteiten verslag
+gedaan in de vorm van een werkstuk, een onderzoeksrapport of een artikel in een wetenschappelijk tijdschrift. Soms wordt van een onderzoek ook
+verslag gedaan in een meer populair tijdschrift, dat voor een bredere
+doelgroep bedoeld is dan alleen collega-onderzoekers.
+
+Tot zover een beknopt overzicht van de keuzen die onderzoekers moeten
+maken tijdens hun onderzoek. Ieder empirisch onderzoek bestaat uit een
+aaneenschakeling van problemen, keuzes en beslissingen. De belangrijkste
+keuzes zijn al gemaakt voordat de onderzoeker begint met gegevens
+verzamelen.
+
+[^fn02-1]: Twee beweringen zijn complementair als ze elkaar wederzijds uitsluiten, zoals H1 en H0 in dit voorbeeld.
+
+[^fn02-2]: Vollediger: Als de kans om deze resultaten te vinden, of resultaten die nog meer verschillen van de door H0 voorspelde resultaten, kleiner is dan 5%, dan wordt H0 verworpen.

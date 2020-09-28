@@ -1,0 +1,874 @@
+# Kansverdelingen {#ch:kansverdelingen}
+
+## Kansen {#sec:kansen}
+
+Bellen achter het stuur vergroot de kans op een ongeluk [@Bhar13]. De
+gemiddelde kans op neerslag in Nederland is 7%. Mijn bestelling heeft
+10% kans om een dag later dan beloofd afgeleverd te worden. Kansen en
+waarschijnlijkheden spelen een belangrijke rol in ons dagelijks leven,
+en ook in het wetenschappelijk onderzoek. Immers, veel hypothesen zijn
+probabilistisch van aard (zie Hoofdstuk \@ref(ch:onderzoek)): 
+de hypothesen doen uitspraken over
+een verschil in *kansen* van uitkomsten. Om conclusies te kunnen trekken
+ten aanzien van die probabilistische hypothesen hebben we enige kennis
+nodig over waarschijnlijkheden, kansberekening, en kansverdelingen.
+Daarover gaat dit hoofdstuk.
+
+Laten we ter inleiding eens kijken naar een Nederlands *Scrabble*-spel.
+Het spel bevat een zakje met daarin 102 fiches, met op elke fiche een
+letter[^fn10-1]. Van de 102 fiches zijn er 6 met de letter A. Als ik uit een
+vol en goed gemengd zakje één fiche neem, wat is dan de kans dat ik de
+letter A tref? Die kans-op-uitkomst-A wordt aangeduid als
+$P(\textrm{A})$, met de $P$ van _Probabilitas_ (Lat. "kans,
+waarschijnlijkheid"), en is te bepalen als
+\begin{equation}
+    P(\textrm{A})=
+    \frac{\textrm{aantal A's}}{\textrm{totaal aantal fiches}}= 
+    \frac{6}{102} = 0.0588
+  (\#eq:kans-scrabble-1-A)
+\end{equation}
+
+De kans op een gebeurtenis wordt uitgedrukt als een proportie, een getal
+tussen $0$ en $1$, of als een percentage, d.w.z. een proportie in
+eenheden van $1/100$. Een kans kan dus nooit kleiner zijn dan $0$ en kan
+nooit groter zijn dan 1: de kans is immers de verhouding tussen (teller)
+aantal specifieke uitkomsten en (noemer) totaal aantal mogelijke
+uitkomsten (zie
+formule \@ref(eq:kans-scrabble-1-A)), waarbij deze teller nooit groter kan
+zijn dan deze noemer [@SK01].
+
+Als twee uitkomsten elkaar wederzijds uitsluiten, zoals bij de
+uitkomsten A of B in ons Scrabble-voorbeeld, dan mogen we de kansen van
+die uitkomsten *optellen* (somregel). De kans op uitkomst A *of*
+uitkomst B (waarbij de uitkomsten A en B elkaar uitsluiten), is de *som*
+van $P(\textrm{A})$ en $P(\textrm{B})$: 
+\begin{equation}
+    P(\textrm{A of B}) = P(\textrm{A}) + P(\textrm{B})
+  (\#eq:kans-somregel)
+\end{equation}
+
+---
+
+> *Voorbeeld 10.1:* 
+In ons Scrabble-voorbeeld is $P(\textrm{A})=\frac{6}{102}$ en
+$P(\textrm{B})=\frac{2}{102}$. De kans op uitkomst A-of-B is dan
+$P(\textrm{A of B})=P(\textrm{A})+P(\textrm{B})=6/102+2/102=8/102=.0784$.
+
+---
+
+Als ik uit een vol en goed gemengd zakje één fiche neem, dan zijn er
+twee complementaire uitkomsten mogelijk: ik tref een A, of ik tref
+*niet* een A. De uitkomsten sluiten elkaar weer wederzijds uit, dus ook
+de kansen op deze uitkomsten mogen we optellen. Bovendien zijn de
+uitkomsten complementair, d.w.z. de uitkomst kan alleen maar één van
+deze twee mogelijke uitkomsten zijn. De respectievelijke kansen op deze
+complementaire gebeurtenissen zijn dan ook complementair, d.w.z. deze
+respectievelijke kansen tellen op tot precies $1$ =100%
+(complementregel). Er is immers 100% kans dat de uitkomst één van de
+twee mogelijke uitkomsten van de trekking is. Als we $P(\textrm{A})$ al
+kennen kunnen we de kans op de complementaire uitkomst makkelijk
+uitrekenen: 
+\begin{align}
+    P(\textrm{A}) + P(\textrm{niet-A}) & = & 1\\
+    P(\textrm{A}) & = & 1 - P(\textrm{niet-A})\\
+    P(\textrm{niet-A}) & = & 1 - P(\textrm{A})
+    (\#eq:complementregel)
+\end{align}
+
+---
+
+> *Voorbeeld 10.2:* 
+In ons Scrabble-voorbeeld is $P(\textrm{A})=\frac{6}{102}$. De kans op
+uitkomst niet-A is dan
+$P(\textrm{niet-A})= 1 - P(\textrm{A}) = 1 - \frac{6}{102} = \frac{96}{102} = .9412$.
+
+---
+
+Laten we als gedachten-experiment nu een tweede Scrabble-spel pakken, en
+daaruit een tweede zakje met fiches pakken, eveneens vol en goed
+gemengd. Uit elk zakje nemen we nu blind één letterfiche. Er zijn nu
+twee gebeurtenissen of uitkomsten, nl. de uitkomst van de eerste
+trekking (uit het eerste zakje), en de uitkomst van de tweede trekking
+(uit het tweede zakje). Deze twee uitkomsten sluiten elkaar niet
+wederzijds uit, want de twee uitkomsten hebben geen wederzijdse invloed
+op elkaar. De uitkomst uit het tweede zakje wordt immers niet beïnvloed
+door de uitkomst van het eerste zakje, of omgekeerd. We zeggen dan dat
+deze uitkomsten *onafhankelijk* van elkaar zijn. Als de uitkomsten
+inderdaad onafhankelijk van elkaar zijn, dan berekenen we de kans op een
+combinatie van uitkomsten door de kansen te *vermenigvuldigen*
+(productregel). De kans op de combinatie van uitkomst A *en* uitkomst B
+(waarbij de uitkomsten A en B onafhankelijk van elkaar zijn), is het
+*product* van $P(\textrm{A})$ en $P(\textrm{B})$:
+\begin{equation}
+    P(\textrm{A en B}) = P(\textrm{A}) \times P(\textrm{B})
+  (\#eq:kans-productregel)
+\end{equation}
+
+---
+
+> *Voorbeeld 10.3:* 
+In ons Scrabble-voorbeeld is $P(\textrm{A})=\frac{6}{102}$ en
+$P(\textrm{B})=\frac{2}{102}$. De kans op uitkomst A bij het eerste
+zakje *en* B bij het tweede zakje is dan
+$P(\textrm{A en B})=P(\textrm{A}) \times P(\textrm{B})=\frac{6}{102} \times \frac{2}{102} = .0012$.
+
+---
+
+> *Voorbeeld 10.4:* 
+In ons Scrabble-voorbeeld is $P(\textrm{klinker})=\frac{38}{102}$. De kans
+om een klinker (A, E, I, O, U, Y) te trekken uit het eerste zakje *en*
+een klinker uit het tweede zakje is dan
+$P(\textrm{klinker-en-klinker})=P(\textrm{eerste klinker}) \times P(\textrm{tweede klinker})=\frac{38}{102} \times \frac{38}{102} = (\frac{38}{102})^2 = .1388$.
+
+---
+
+## Binomiale kansverdeling {#sec:binomiaalverdeling}
+
+Voor het vervolg van dit hoofdstuk brengen we twee wijzigingen aan in
+het Scrabble-spel. Ten eerste verwijderen we de 2 blanco fiches zonder
+letter uit het zakje. Er blijven dan precies 100 fiches over, waarvan 38
+met een klinker (vocaal, $V$) en 62 met een medeklinker (consonant,
+$C$). Er blijven dus slechts twee mogelijke categorieën van uitkomsten
+over, die elkaar wederzijds uitsluiten. Zo'n variabele van het nominale
+meetnivo, met precies twee categorieën, noemen we bi-nomiaal
+('twee-namig'). We beschouwen de klinkers als treffers, en de
+medeklinkers als missers. Deze twee mogelijke uitkomsten zijn
+complementair: $P(V)=.38$ (afgekort als $p$) en $P(C)=.62$ (afgekort als
+$q=1-p$).
+
+Ten tweede leggen we het getrokken letterfiche voortaan terug in het
+zakje, nadat we de getrokken letter genoteerd hebben. Op die manier
+hebben we niet tientallen complete letterzakjes nodig, maar slechts één
+letterzakje dat na elke teruglegging weer compleet en goed gemengd is.
+We beschouwen de uitkomsten van opeenvolgende trekkingen als
+onafhankelijk.
+
+**Terzijde:** De uitkomst van een bepaalde trekking is dus onafhankelijk
+van de uitkomst van vorige trekkingen. Als er zojuist $100\times$
+achtereen een klinker getrokken is, dan heeft dat geen enkele invloed op
+(de uitkomst van) de eerstvolgende trekking uit het letterzakje. Het
+letterzakje, of de hand van de trekker, heeft immers geen geheugen. Bij
+*elke* trekking is de kans op een treffer $p=.38$, ook als er zojuist
+$100\times$ of $1000\times$ een klinker is getrokken. Hetzelfde geldt
+voor de opeenvolgende uitkomsten bij roulette: bij elke ronde is de kans
+op een treffer $1/37$, ook als het balletje zojuist $100\times$ op
+eenzelfde getal terecht is gekomen[^fn10-2].
+
+Laten we met bovengenoemde wijzigingen nu $n=3$ trekkingen uitvoeren
+(met teruglegging, zie boven), en voor elke mogelijke uitkomst de kans
+op die uitkomst bepalen, zie
+Tabel \@ref(tab:klinkerkansen).
+
+Table: (#tab:klinkerkansen) Kansen van mogelijke uitkomsten van $n=3$ trekkingen van klinkers,
+  $p=.38$, met teruglegging (zie tekst).
+
+  uitkomst    aantal klinkers       kans
+  ---------- ----------------- --------------
+  CCC                0          $qqq = q^3$
+  VCC                1          $pqq = pq^2$
+  CVC                1          $qpq = pq^2$
+  CCV                1          $qqp = pq^2$
+  VVC                2          $ppq = p^2q$
+  VCV                2          $pqp = p^2q$
+  CVV                2          $qpp = p^2q$
+  VVV                3          $ppp = p^3$
+
+
+Het aantal treffers (klinkers) in de $n=3$ trekkingen heeft de
+*kansverdeling* zoals samengevat in
+Tabel \@ref(tab:binomkansverdeling3) (eerste en laatste kolom) en
+Figuur \@ref(fig:binomkansverdeling3) (horizontale en verticale as). 
+In zo'n kansverdeling zien we voor elke mogelijke uitkomst van $x$ (hier:
+aantal klinkers) hoe groot de kans op die uitkomst is.
+
+Table: (#tab:binomkansverdeling3) Kansverdeling van een binomiale variabele met $n=3$ en $p=.38$.
+
+  aantal klinkers          kans    kans
+  ----------------- ----------- ----------
+  0                     $1 q^3$  = .2383
+  1                   $3 p q^2$  = .4383
+  2                   $3 p^2 q$  = .2686
+  3                     $1 p^3$  = .0549
+  som                 $(p+q)^3$  = 1.0000
+
+```{r binomkansverdeling3, echo=FALSE, fig.cap="Kansverdeling van een binomiale variabele x met n=3 en p=.38.", fig.width=4}
+xx <- 0:4
+plot( xx-0.5, dbinom(xx,size=3,prob=.38), 
+    type="s", ylim=c(0,.7), xlab="x", ylab="P(x)", lwd=2, 
+    main="binomiale kansverdeling\nn=3, p=.38", yaxs="i" )
+polygon( x=c( -0.5, rep(xx,each=2)+rep( c(-0.5,+0.5), length(xx) ) ), 
+         y=c( 0, rep(dbinom(xx,size=3,prob=.38),each=2) ), 
+         col="grey85" )
+segments( x0=xx-0.5, y0=0, y1=dbinom(xx,3,.38), lwd=2 ) # ontbrekend segmentje
+```
+
+De kansverdeling van een binomiale variabele noemen we de binomiale
+kansverdeling, ook aangeduid als binomiale verdeling of
+binomiaalverdeling. De exacte kansen van de binomiale kansverdeling kan
+je uitrekenen met formule \@ref(eq:prob-binomial) hieronder.
+
+
+### formules
+
+De kans op een $x$ aantal treffers in $n$ trekkingen is gegeven als
+\begin{equation}
+  P(x\,\mbox{treffers}) = {n \choose x} p^x (1-p)^{n-x}
+  (\#eq:prob-binomial)
+\end{equation}
+waarbij $n$ is het aantal trekkingen of pogingen, $x$ is het aantal treffers (tussen
+0 en $n$), en $p$ is de kans op een treffer.
+
+De coëfficient ${n \choose x}$ geeft het aantal verschillende ordeningen
+aan waarin we een combinatie (greep) van $x$ elementen uit $n$ kunnen
+kiezen. Bij $x=1$ klinker uit $n=3$ trekkingen zijn er drie
+mogelijkheden: de ene klinker zou getrokken kunnen zijn in de eerste
+trekking, of de tweede trekking, of de derde trekking, zie
+Tabel \@ref(tab:klinkerkansen). Het aantal verschillende mogelijke
+ordeningen is gegeven als 
+\begin{equation}
+  {n \choose x} = \frac{n!}{x!(n-x)!}
+  (\#eq:choose)
+\end{equation}
+waarbij
+$x! = x (x-1) (x-2) \dots \times 2 \times 1$, dus
+$4!=4\times3\times2\times1=24$.
+
+---
+
+> *Voorbeeld 10.5:* Er staan 4 stoelen voor 2 personen. Op een stoel mag maximaal 1 persoon
+plaatsnemen. Hoeveel verschillende ordeningen van $x=2$ personen over
+$n=4$ stoelen zijn er mogelijk?
+
+> Antwoord: Er zijn
+${4 \choose 2} = \frac{4\times3\times2\times1}{2\times1\times2\times1} = \frac{24}{4} = 6$
+mogelijke ordeningen, namelijk 1100, 1010, 1001, 0110, 0101, en 0011.
+
+---
+
+Deze binomiaal-coëfficienten, die het aantal verschillende mogelijke
+ordeningen aangeven, zijn snel terug te vinden in de zogenaamde Driehoek
+van Pascal, afgebeeld in Tabel \@ref(tab:driehoekpascal). 
+Het aantal verschillende
+ordeningen van $x=2$ personen over $n=4$ stoelen vinden we in rij $n=4$.
+De bovenste rij is die voor $n=0$. De vijfde rij is die voor $n=4$ en we
+zien daar achtereenvolgens de binomiaal-coëfficienten voor
+$x= 0, 1, 2, 3, 4$. Voor ${4 \choose 2}$ vinden we daar de
+binomiaalcoëfficient $6$. Iedere coefficiënt is de som van de twee
+bovenliggende coëfficienten[^fn10-3], en iedere coëfficient is op te vatten
+als het aantal mogelijke wegen afdalend van de top van de driehoek naar
+die cel.
+
+Table: (#tab:driehoekpascal) Driehoek van Pascal: binomiaalcoëfficienten voor het aantal mogelijke ordeningen voor een combinatie van $x$ elementen uit $n$ (zie tekst).
+
+  --------- --- --- --- --- ---- ---- ---- ---- ---- ---- ---- --- --- --- ---
+  $n= 0$:                                   1                              
+  $n= 1$:                              1         1                         
+  $n= 2$:                         1         2         1                    
+  $n= 3$:                    1         3         3         1               
+  $n= 4$:                1        4         6         4         1          
+  $n= 5$:            1       5         10        10        5        1      
+  $n= 6$:        1       6        15        20        15        6       1  
+  $n= 7$:    1       7       21        35        35        21       7       1
+  --------- --- --- --- --- ---- ---- ---- ---- ---- ---- ---- --- --- --- ---
+
+Het gemiddelde en de standaarddeviatie van de binomiale kansverdeling
+zijn $$\begin{aligned}
+    \mu & = & np \\
+    \sigma & = & \sqrt{ np(1-p) }\end{aligned}$$
+
+---
+
+> *Voorbeeld 10.6:*
+De binomiale kansverdeling voor $x$ treffers uit $n=3$ trekkingen met
+$p=.38$ kans op een treffer is afgebeeld in
+Figuur \@ref(fig:binomkansverdeling3). Deze binomiale kansverdeling heeft
+een gemiddelde $\mu=n \times p = 3 \times .38 = 1.14$, en een
+standaarddeviatie
+$\sigma = \sqrt{n \times p \times (1-p)} = \sqrt{ 3 \times .38 \times .62} = 0.84$
+.
+
+---
+
+### R
+
+```{r binomkansverdeling3.dbinom}
+dbinom( 0:3, size=3, prob=.38 )
+```
+
+De uitvoer is weergegeven in Tabel \@ref(tab:binomkansverdeling3) hierboven. 
+
+```{r driehoekpascal}
+matrixcalc::pascal.matrix( 10 ) # links onder diagonaal is Driehoek van Pascal
+```
+
+De driehoek van Pascal is te vinden links onder de diagonaal van deze matrix.
+
+
+## Normale kansverdeling {#sec:normaalverdeling}
+
+Naarmate de steekproefgrootte $n$ toeneemt, gaat de binomiale
+kansverdeling minder trapsgewijs verspringen, en wordt de kansverdeling
+meer vloeiend, zoals te zien in
+Figuur \@ref(fig:binomkansverdeling50n500).
+
+```{r binomkansverdeling50n500, echo=FALSE, fig.cap="Kansverdeling van een binomiale variabele x met n=50 (links) en n=500 (rechts) en p=.38."}
+op <- par(mfcol=c(1,2))
+plotbinom <- function( x, n=100, pr=.38, xlab="", ylab="", ymax=.5, ... ) {
+  plot( xx-0.5, dbinom(x,size=n,prob=pr), 
+    type="s", ylim=c(0,ymax), xlab=xlab, ylab=ylab, lwd=2, 
+    main=paste("n=",n,", p=",pr,sep=""), yaxs="i" )
+  segments( x0=x[1]-0.5, y0=0, y1=dbinom(x[1],n,pr), lwd=2 ) # ontbrekend segmentje
+}
+# links
+xx <- 0:50
+plotbinom(xx, n=50, pr=.38, ymax=.12)
+# rechts
+xx <- 0:500
+plotbinom(xx, n=500, ymax=.04)
+par(op)
+```
+
+Bij een nog grotere steekproef wordt de kansverdeling een vloeiende lijn. 
+Deze kansverdeling komt zo vaak voor, dat dit de *normale kansverdeling*
+of 'normale verdeling' wordt genoemd. De verdeling wordt ook wel
+aangeduid als de Gaussische verdeling (vernoemd naar de wiskundige Carl
+Friedrich Gauss, 1777--1855), of de 'bell curve' (naar de vorm). Heel
+veel variabelen volgen bij benadering deze kansverdeling:
+geboortegewicht, lichaamslengte, omvang van woordenschat, IQ, inhoud van
+een pak melk van 1 liter ℮, duur van een telefoongesprek, enz enz. Voor
+al deze variabelen hebben observaties dicht bij het gemiddelde een hoge
+kans om voor te komen, en observaties die sterk afwijken van het
+gemiddelde zijn relatief zeldzaam (lage kans).
+
+```{r normaalkansverdeling, echo=FALSE, fig.cap="Normale kansverdeling van een variabele x met gemiddelde 0 en standaarddeviatie 1."}
+curve( dnorm(x,mean=0,sd=1), from=-5, to=+5, lwd=4,
+       xlab="x", ylab="P(x)", yaxs="i", xlim=c(-3.5,+3.5), ylim=c(0,0.45)  )
+xx <- seq(-2,+2,by=.01)
+polygon( x=c( -2, xx, 2 ), 
+         y=c(  0, dnorm(xx,mean=0,sd=1), 0 ), 
+         col="grey85" )
+xx <- seq(-1,+1,by=.01)
+polygon( x=c( -1, xx, 1 ), 
+         y=c(  0, dnorm(xx,mean=0,sd=1), 0 ), 
+         col="grey70" )
+curve( dnorm(x,mean=0,sd=1), from=-5, to=+5, lwd=4,
+       xlab="x", ylab="P(x)", yaxs="i", xlim=c(-3.5,+3.5), ylim=c(0,0.45),  add=TRUE  )
+```
+
+De normale kansverdeling van variabele $X$ met gemiddelde $\mu$ en
+standaarddeviatie $\sigma$ heeft de volgende kenmerken (zie
+Figuur \@ref(fig:normaalkansverdeling)):
+
+-   de verdeling is symmetrisch rond het gemiddelde $\mu$,
+
+-   de verdeling is asymptotisch, d.w.z. de staarten lopen eindeloos
+    door,
+
+-   het gemiddelde, de mediaan en de modus vallen samen,
+
+-   de totale oppervlakte onder de curve, d.i. de totale kans op één van
+    de mogelijke uitkomsten, is gelijk aan 1,
+    
+-   de oppervlakte onder de curve geeft de kans aan op een waarde van $X$ binnen een bepaald interval,  
+
+-   de buigpunten van de curve (van hol naar bol en v.v.) liggen bij
+    $X=\mu-\sigma$ en $X=\mu+\sigma$,
+
+-   ongeveer 2/3 van de observaties ligt
+    tussen $X=\mu-\sigma$ en $X=\mu+\sigma$ (donkergrijs gebied;
+    $P(-1<x/\sigma<1)=.6827$ of 68%) en ongeveer 95% van de observaties ligt
+    tussen $-2\sigma$ en $+2\sigma$ (donkergrijs plus lichtgrijze
+    gebieden; $P(-2<x/\sigma<2)=.9546$), dit staat bekend als de
+    Empirical Rule.
+
+Een normale kansverdeling met $\mu=0$ en $\sigma=1$ wordt aangeduid als
+de standaard-normale kansverdeling. Zoals we al eerder zagen 
+(§\@ref(sec:standaardscores)) kunnen we een normaal-verdeelde
+variabele $x$ standaardiseren, d.w.z. de observaties transformeren naar
+een standaardscore of $z$-score: $z = (x-\overline{x})/s$. 
+De kansverdeling in
+Figuur \@ref(fig:normaalkansverdeling) is die van de standaard-normale
+kansverdeling van $Z$, oftewel de kansverdeling van $(X-\mu)/\sigma$.
+
+De kansverdeling van een normaal verdeelde variabele $X$ zou je zelf
+kunnen uitrekenen met behulp van formule
+\@ref(eq:prob-normal) hieronder. Maar het is handiger om daarvoor
+een tabel te gebruiken; die staat in
+Bijlage \@ref(app:kritiekeZwaarden). 
+In grafische vorm uitgelegd geven die tabellen je,
+voor verschillende oppervlakten ofwel kansen $p$ aan de rechter zijde onder de curve, 
+de positieve waarde van $Z^*$ die de linkergrens vormt
+van die oppervlakte. Dat betekent dus dat je precies de kans $p$ hebt om
+een waarde te vinden van $Z$ die even groot als of groter dan deze
+ondergrens $Z^*$ is (mits de variabele inderdaad normaal verdeeld is).
+
+---
+
+> Voorbeeld  10.7: Aan de rechterzijde van Figuur \@ref(fig:normaalkansverdeling) zien we een klein wit oppervlak onder de curve. Dit oppervlak geeft de kans weer dat $Z>2$. Het oppervlak heeft een omvang van `r format( pnorm(2,lower=FALSE), digits=3)`. De kans om een waarde van $Z>2$ te vinden is dus `r format( pnorm(2,lower=FALSE), digits=3)` ofwel iets minder dan 2.5%. (Tip: relateer deze kans aan de bovengenoemde Empirical Rule).
+
+---
+
+In
+Bijlage \@ref(app:kritiekeZwaarden) vind je gemakshalve niet een maar twee
+tabellen, elk bestaande uit meerdere kolom-aanduidingen en één rij van
+cellen. De eerste tabel geeft je, voor verschillende 'afgeronde' kansen
+$p$ (kolommen), de kritieke waarde $Z^*$ (cellen) waarvoor geldt dat de
+kans $p$ om een waarde van $Z$ te vinden die even groot als of groter
+dan deze kritieke waarde $Z^*$ is, precies gelijk is aan de waarde $p$
+bovenaan de kolom. De tweede tabel werkt net zo, maar dan voor
+'afgeronde' waarden van $Z^*$ in de cellen, en precieze kansen $p$ in de
+kolom-aanduidingen.
+
+Wat is de kans $p$ dat $Z>1$? In de tweede deeltabel, tweede kolom,
+vinden we $p=0.1587$. We weten daarmee ook dat $P(Z<1)$ wel
+$1-0.1587=0.8413$ moet zijn. Bovendien weten we dat de verdeling
+symmetrisch is (zie hierboven), dus weten we dat $P(Z< -1)$ ook $.1587$
+moet zijn. Wat is de kans $p$ dat $Z>3$ is? In de tweede deeltabel 
+vinden we voor grenswaarde $Z^*=3$ de overschrijdingskans
+$p=0.0013$. Voor een normaal verdeelde variabele $Z$ is er dus een
+overschrijdingskans $p=0.0013$ om een waarde van $Z$ te vinden die
+tenminste drie standaarddeviaties boven het gemiddelde ligt.
+
+Vaak willen we het omgekeerde weten: als we een bepaalde
+overschrijdingskans kiezen, welke grenswaarde $Z^*$ hoort daar dan bij?
+Welke grenswaarde onderscheidt de hoogste 5% van de observaties van de
+onderste 95% ($p=0.05$)? In de eerste deeltabel vinden we
+voor overschrijdingskans $p=0.05$ de grenswaarde $Z^*=1.645$. Deze
+grenswaarde, teruggerekend naar de oorspronkelijke variabele, wordt dan
+vaak aangeduid als het 95e percentiel of 'P95' van de verdeling. Wie
+tenminste deze score heeft behaald, behoort bij de beste 5% en heeft het dus 
+beter gedaan dan 95% van de deelnemers.
+
+---
+
+> *Voorbeeld 10.8:* 
+Extreme waarden komen bij een normaal-verdeelde variabele per definitie
+weinig voor. Maar wat is de grens voor een extreme waarde? Laten we
+aannemen dat we niet meer dan 5% van alle observaties als extreem willen
+beschouwen. De normale kansverdeling is symmetrisch, dus van die 5% is
+te verwachten dat de ene helft (2.5%) ligt aan het linker uiteinde van
+de verdeling, en de andere 2.5% aan de rechterzijde. Welke grenswaarde
+$Z^*$ correspondeert met deze overschrijdingskans $p=0.025$?
+
+> In
+Bijlage \@ref(app:kritiekeZwaarden) nemen we de eerste deeltabel. In de kolom 
+voor overschrijdingskans $p=0.025$, vinden we grenswaarde
+$Z^*=1.960$. Als we een observatie vinden met $Z \ge 1.960$ of met
+$Z \le -1.960$ dan beschouwen we dat als een extreme, zeldzame
+observatie.
+
+---
+
+> *Voorbeeld 10.9:* 
+Intelligentie wordt uitgedrukt als een IQ-score, een variabele met een
+normale kansverdeling met $\mu=100$ en $\sigma=15$. "Membership of Mensa
+is open to persons who have attained a score within the upper two
+percent of the general population on an approved intelligence test that
+has been properly administered and supervised"
+([www.mensa.org](www.mensa.org)). Welke IQ-score moet je tenminste
+behalen om lid te kunnen worden?
+
+> Antwoord: Het 98e percentiel van een standaard-normaal verdeelde
+variabele ligt bij $Z^*=+2.0537$, en dus met
+$x=\overline{x}+2.0537 s = 100+30.8 = 130.8$. Naar boven afgerond moet
+je dus een IQ-score behalen van 131 punten of hoger.
+
+---
+
+> *Voorbeeld 10.10:* 
+Verifieer de bovengenoemde Empirical Rule met behulp van
+Bijlage \@ref(app:kritiekeZwaarden).
+
+---
+
+<!-- 
+De tweede tabel in Bijlage \@ref{app:kritiekeZwaarden} geeft je ook, 
+voor verschillende positieve waarden van die
+ondergrens $Z^*$, de precieze kans $p$ om een waarde te vinden van $Z$
+die even groot als of groter dan deze ondergrens $Z^*$ is. Die precieze
+kans $p$ noemen we de *overschrijdingskans* behorend bij die waarde van
+$Z$ volgens de kansverdeling.
+-->
+
+### formules
+
+Als variabele $X$ een normale kansverdeling heeft, met gemiddelde $\mu$
+en standaarddeviatie $\sigma$, dan wordt dat aangegeven als
+\begin{equation}
+  X \sim \mathcal{N}(\mu,\sigma)
+  (\#eq:normaalverdeeld)
+\end{equation}
+
+De normale kansverdeling van variabele $X$ met gemiddelde $\mu$ en
+standaarddeviatie $\sigma$ is 
+\begin{equation}
+  P(X) = \frac{1}{\sigma \sqrt{2\pi}} \mbox{e}^{ \frac{-(X-\mu)^2}{2\sigma^2} }.
+  (\#eq:prob-normal)
+\end{equation}
+
+De standaard-normale kansverdeling van variabele $Z$ met gemiddelde
+$\mu=0$ en standaarddeviatie $\sigma=1$ is
+\begin{equation}
+    P(Z) = \frac{1}{\sqrt{2\pi}} \mbox{e}^{ \frac{-Z^2}{2} }
+  (\#eq:prob-standaardnormaal)
+\end{equation}
+
+## Heeft mijn variabele een normale kansverdeling? {#sec:isvarnormaalverdeeld}
+
+```{r itunestimeshist-prep, echo=FALSE}
+itunes <- read.table( file="data/itunestimes20120511.txt", header=TRUE )
+# Size in bytes, Time in ms
+# longest <- max(itunes$Time/60000) ## set upper limit at 50 minutes, remove few extreme outliers
+longest <- 50 - 0.1
+themax <- ceiling( longest )
+ok <- (itunes$Time/60000 < themax)
+yy <- itunes$Time[ok]/60000
+```
+
+Het langste nummer in mijn digitale muziekbibliotheek duurt ongeveer `r round(longest)`
+minuten (dat is een klassiek-indiaas muziekstuk, een 'morning raga').
+Een histogram van de duren van alle muzieknummers zie je in
+Figuur \@ref(fig:itunestimeshist). 
+
+```{r itunestimeshist, echo=FALSE, fig.cap="Histogram van de duren van muzieknummers in mijn digitale muziekbibliotheek."}
+hist( yy, xlab="Duur (minuten)", ylab="Aantal", main="", 
+      breaks=themax, col=grey(.85) )
+text( themax*2/3, 400, paste("N=",nrow(itunes),sep="") )
+```
+Dit histogram laat zien dat deze duren
+duidelijk *niet* een normale kansverdeling volgen: de verdeling is niet
+symmetrisch, en de onderste staart loopt niet eindeloos door (er zijn
+geen muzieknummers met negatieve duren).
+
+Ook het gemiddelde $\bar{x} =$ `r round(mean(itunes$Time/60000),digits=3)` en
+standaarddeviatie $s =$ `r round(sd(itunes$Time/60000),digits=3)` 
+wijzen op een niet-normale kansverdeling: 
+bij een normale verdeling verwachten we dat slechts $(68/2)+50=84$% van de duren langer duurt dan
+$\bar{x}-s\approx 0$ minuten, maar in werkelijkheid duurt 100%
+(dus een groter deel dan verwacht) langer dan 0 minuten.
+
+Een veel gebruikte manier om te inspecteren of een variabele $X$ een
+normale kansverdeling heeft, is om een grafiek te maken met de
+geobserveerde waarden langs de ene as (hier de horizontale), en de corresponderende $z$-scores
+langs de andere as. Zo'n figuur wordt een quantile-quantile-plot of
+QQ-plot genoemd; de QQ-plot voor de duren in mijn muziekbibliotheek zie
+je in Figuur \@ref(fig:itunestimesqqplot).
+
+```{r itunestimesqqplot, echo=FALSE, fig.cap="Quantile-quantile-plot van de duren van muzieknummers in mijn digitale muziekbibliotheek."}
+qqnorm( yy, datax=TRUE )
+qqline( yy, col="purple", lwd=2, datax=TRUE )
+```
+
+Als de duren een normale kansverdeling zouden hebben (normaal zouden
+zijn verdeeld), dan zouden er een aantal negatieve duren moeten zijn, en
+er zouden dan veel meer duren tussen 8 en 14 minuten moeten zijn (i.p.v.
+tussen 8 en `r themax` minuten). De afwijkingen van de rechte lijn in
+Figuur \@ref(fig:itunestimesqqplot) geven dus aan dat de geobserveerde
+duren niet een normale kansverdeling volgen, zoals we al zagen in het
+histogram (Figuur \@ref(fig:itunestimeshist)).
+
+Er zijn ook verschillende statistische toetsen om te onderzoeken of een
+variabele een normale kansverdeling heeft. De twee meest gebruikte zijn
+de Shapiro-Wilk-toets (met toetsingsgrootheid $W$) voor normaliteit, en
+de Kolmogorov-Smirnov-toets (met toetsingsgrootheid $D$) voor
+normaliteit. Beide toetsen onderzoeken de
+H0:$X\sim\mathcal{N}(\bar{X},s)$ (zie
+formule \@ref(eq:normaalverdeeld)).
+
+### SPSS
+
+```
+Analyze > Descriptive Statistics > Explore...
+```
+
+Selecteer variabele Time (sleep naar Dependent List paneel).\
+Kies knop `Plots`, en vink aan `Normality plots with tests`, dat
+betekent 'als je een QQ-plot oftewel Normality plot maakt, voer dan ook toetsen
+op normaliteit uit'. Bevestig met `Continue` en daarna met `OK`. De
+uitvoer bevat eerst de resultaten van de Shapiro-Wilks-toets en de
+Kolmogorov-Smirnov toets. Volgens beide toetsen is de kans om deze
+verdeling te vinden, als H0 waar is, bijna nul --- zie echter de
+waarschuwing in
+§\@ref(#sec:pgroterdannul)! We verwerpen daarom H0 en concluderen
+dat de duren van muzieknummers niet normaal verdeeld zijn. Na deze
+toetsresultaten volgt o.a. een QQ-plot.
+
+### R
+
+```{r}
+itunes <- read.table( file="data/itunestimes20120511.txt", header=TRUE )
+# Size in bytes, Time in ms
+qqnorm(itunes$Time/60000, datax=T, plot.it=FALSE) # normally we'd use plot.it=TRUE  
+# qqline(itunes$Time/60000, datax=T, col="purple", lwd=T) # see QQ-plot above
+```
+
+```{r}
+shapiro.test(itunes$Time/60000)
+```
+
+Volgens deze toets is de kans om deze verdeling te vinden, als H0 waar
+is, bijna nul, nl. kleiner dan $2.2 \times 10^{-16}$ (d.i. kleiner dan
+het kleinste getal dat het analysepakket hier kan weergeven). We
+verwerpen daarom H0 en concluderen dat de duren van muzieknummers niet
+normaal verdeeld zijn.
+
+## Wat als mijn variabele niet normaal verdeeld is? {#sec:watalsnietnormaal}
+
+In Deel III zullen we diverse statistische
+toetsen bespreken. De toetsen die we bespreken in hoofdstukken
+\@ref(ch:toetsing) en \@ref(ch:power) en \@ref(ch:variantieanalyse)
+vereisen echter dat de afhankelijke
+variabele een normale kansverdeling heeft. Als een variabele *niet* een
+(ongeveer) normale kansverdeling heeft, dan kan die variabele dus niet
+zomaar gebruikt worden voor statistische toetsing met de daar behandelde
+statistische toetsen, of exacter gezegd, de conclusies uit zo'n
+statistische toetsing zijn dan niet valide. Wat te doen? Er zijn dan
+twee mogelijkheden.
+
+Ten eerste is het mogelijk om de afhankelijke variabele $y$ te
+transformeren, d.w.z. dat we er een rekenkundige bewerking op loslaten.
+Als het goed is, resulteert dat in een variabele $y'$ die wèl bij
+benadering normaal verdeeld is. Veel gebruikte transformaties zijn:
+logaritmiseren ($y'=\log{y}$), worteltrekken ($y'=\sqrt{y}$), of
+inverteren ($y'=1/y$). Vervolgens wordt de getransformeerde
+afhankelijke variabele $y'$ gebruikt voor de statistische toetsing.
+Uiteraard moet je wel controleren of de nieuwe afhankelijke variabele
+$y'$ inderdaad (bij benadering) normaal verdeeld is. Ook moet je bij de
+interpretatie van de resultaten van de analyse rekening houden met de
+uitgevoerde transformatie!
+
+Ten tweede is het soms mogelijk om een andere statistische toets te
+gebruiken, die niet vereist dat de afhankelijke variabele normaal
+verdeeld is. Dat worden non-parametrische toetsen genoemd. We gaan er
+nader op in in de hoofdstukken \@ref(ch:chi-kwadraat-toetsen) en
+\@ref(ch:andere-nonpar-toetsen). 
+Die toetsen hebben wel als nadeel
+dat ze minder statistische power hebben (voor een bespreking van power,
+zie hoofdstuk \@ref(ch:power)): ze zijn minder gevoelig, en vereisen dus grotere
+steekproeven om een effect vast te stellen.
+
+## Kansverdeling van gemiddelde {#sec:CentraalLimietTheorema}
+
+```{r echo=FALSE}
+set.seed(202009)
+nn  <- 50
+aux <- sample( x=length(yy), size=50 )
+```
+In deze paragraaf beschouwen we de muzieknummers in mijn digitale
+muziekbibliotheek als een *populatie*. We nemen nu een willekeurige
+steekproef van $n=$ `r nn` nummers, en bepalen de gemiddelde duur over deze
+`r nn` muzieknummers in de steekproef: 
+stel $\bar{x} =$ `r round(mean(yy[aux]),digits=3)` minuten. Opvallend
+genoeg ligt dit gemiddelde van de steekproef dicht bij het gemiddelde
+van de populatie ($\mu =$ `r round(mean(yy),digits=3)` minuten, zie hierboven). 
+Deze operatie herhalen we
+$250\times$: we krijgen zo 250 steekproefgemiddelden. De
+frequentieverdeling van die 250 steekproefgemiddelden zie je in
+Figuur \@ref(fig:itunesmeanshist).
+
+```{r itunesmeanshist, echo=FALSE, fig.cap="Frequentieverdeling van 250 gemiddelden, elk over een willekeurige steekproef van $n=50$ muzieknummers (de afhankelijke variabele is de duur van een muzieknummer, in minuten). De bijpassende normaalverdeling is aangegeven als een vloeiende curve."}
+set.seed(2020)
+nn <- 50
+itunesmeans <- rep(NA,nn)
+for (i in 1:250) {
+  steekproef <- sample( x=length(yy), size=nn )
+  itunesmeans[i] <- mean( yy[steekproef] )
+}
+hist( itunesmeans, col=gray(.70), breaks=16, # ceiling(sqrt(250))
+      xlab=paste("Gemiddelde duur van \n",nn," muzieknummers in steekproef", sep=""),
+      ylab="Aantal steekproeven", 
+      main="" )
+legend("topright", legend="n=50", bty="n") # no box
+curve( dnorm(x,mean=mean(itunesmeans),sd=sd(itunesmeans))*nn, col="purple", lwd=2, add=TRUE )
+```
+
+Opvallend genoeg vertonen deze *gemiddelden* van (de afhankelijke
+variabele $X$ in) de steekproeven *wel* een min of meer normale kansverdeling, of de
+variabele $X$ in de populatie nu wel of niet normaal verdeeld is. Anders
+gezegd, de kansverdeling van een steekproefgemiddelde benadert *altijd* de
+normale kansverdeling, ongeacht de kansverdeling van de betreffende
+variabele in de populatie, indien tenminste de steekproef voldoende
+groot was. (Dit staat bekend als het Centraal Limiet Theorema). Lees de
+bovenstaande zinnen nog eens aandachtig door. Als vuistregel geldt dat
+de omvang van de steekproef, $n$, tenminste 30 moet zijn. Naarmate de
+steekproef groter is, wijkt de kansverdeling van de
+steekproefgemiddelden minder af van de normaalverdeling.
+
+De normale kansverdeling van de steekproefgemiddelden heeft een eigen
+gemiddelde, $\mu_{\bar{X}}$, en een eigen standaarddeviatie,
+$s_{\bar{X}}$. Hiervoor geldt: 
+\begin{equation}
+    \mu_{\bar{X}} = \mu_X
+    (\#eq:meanofmean)
+\end{equation}
+en 
+\begin{equation}
+    s_{\bar{X}} = \frac{s}{\sqrt{n}}
+    (\#eq:sem)
+\end{equation}
+De standaarddeviatie van het
+gemiddelde, $s_{\bar{X}}$, staat ook bekend als de 'standard error of
+the mean'. De steekproefgemiddelden $\bar{X}$ hebben minder spreiding
+dan de afzonderlijke observaties $X$, en de gemiddelden variëren ook
+minder naarmate er gemiddeld is over een grotere steekproef, zoals ook
+blijkt uit formule \@ref(eq:sem). Je kunt deze standard error of the mean goed
+beschouwen als de 'foutmarge' bij de schatting van het
+populatiegemiddelde uit het steekproefgemiddelde.
+
+Het bijzondere is nu, dat we niet 250 herhaalde willekeurige
+steekproeven hoeven te trekken en te analyseren. We weten immers dat de
+steekproefgemiddelden een normale kansverdeling hebben met
+$\mu_{\bar{X}} = \mu_X$ en $s_{\bar{X}} = \frac{s}{\sqrt{n}}$. De
+kansverdeling van het gemiddelde kunnen we dus afleiden uit slechts één
+steekproef van $n$ observaties, met één steekproefgemiddelde $\bar{X}$
+en één standaarddeviatie $s$ [@Cumm12]. Lees ook deze alinea nog eens
+aandachtig door.
+
+
+## Betrouwbaarheidsinterval van het gemiddelde {#sec:betrouwbaarheidsinterval-gemiddelde}
+
+Zoals hierboven uitgelegd, kunnen we het gemiddelde van de steekproef,
+$\bar{X}$, gebruiken als een goede schatting van het onbekende
+gemiddelde in de populatie, $\mu$. Op grond van het Centraal Limiet
+Theorema (§\@ref(sec:CentraalLimietTheorema)) weten we ook dat de gemiddelden
+van herhaalde steekproeven (van $n$ observaties) een normale verdeling
+volgen: $\mu_{\bar{X}} \sim \mathcal{N}(\mu_{X},\sigma/\sqrt{n})$, en
+dus dat 95% van deze herhaalde steekproefgemiddelden zullen liggen
+tussen $\mu_{X}-1.96\sigma/\sqrt{n}$ en $\mu_{X}+1.96\sigma/\sqrt{n}$.
+Dit interval wordt het 95%-betrouwbaarheidsinterval genoemd. We weten
+met 95% betrouwbaarheid dat het populatiegemiddelde $\mu$ in dit
+interval ligt --- mits $n$ voldoende groot is, en mits de
+standaarddeviatie, $\sigma$, in de populatie bekend is.
+
+Aan die laatste voorwaarde wordt in de praktijk echter zelden of nooit
+voldaan. De standaarddeviatie in de populatie is doorgaans niet bekend,
+en deze $\sigma$ wordt daarom ook geschat uit de steekproef. We
+gebruiken de steekproef van $n$ observaties dus niet alleen om $\mu_X$
+te schatten, maar ook om $\sigma_X$ te schatten. We mogen dan het
+betrouwbaarheidsinterval niet meer bepalen op grond van de
+standaard-normale kansverdeling. In plaats daarvan gebruiken we een
+aangepaste versie daarvan, de zgn. $t$-verdeling
+(Figuur \@ref(fig:tkansverdeling)). Deze kansverdeling van $t$ is iets
+breder, d.w.z. met een iets lagere top en met iets dikkere staarten, dan
+de standaard-normale kansverdeling van $Z$ in
+Figuur \@ref(fig:normaalkansverdeling). 
+De gedachte daarbij is dat de
+schatting van $\mu$ wat onzekerder is (dus de kansverdeling is breder)
+omdat niet alleen $\mu$ maar ook de standard error of the mean
+($s/\sqrt{n}$) geschat wordt op grond van de steekproef. In allebei de
+schattingen kunnen afwijkingen zitten, waardoor iets meer kans is om een
+steekproefgemiddelde te vinden dat afwijkt van het populatiegemiddelde.
+Zoals we al zagen wordt de schatting van $\mu$ beter naarmate $n$ groter
+is: de $t$-verdeling benadert dan de standaard-normale kansverdeling.
+
+```{r tkansverdeling, echo=FALSE, fig.cap="Kansverdeling volgens de t-verdeling van een variabele $x$ met gemiddelde 0 en standaarddeviatie 1, voor n=600 en n=6."}
+curve( dt(x,df=600-1), from=-4, to=+4, xlim=c(-3,3), lwd=2, ylab="P(x)", n=501, col="navy" )
+curve( dt(x,df=6-1), from=-4, to=+4, lwd=2, add=TRUE, n=501, col="darkred" )
+text( -0.5, 0.25, "n=6", col="darkred", cex=1.5)
+text( 1.1, 0.35, "n=600", col="navy", cex=1.5)
+```
+
+Voor de $t$-verdeling moeten we dus weten hoe groot de steekproef was;
+deze $n$ bepaalt immers de precieze kansverdeling van $t$, en daarmee de
+kritieke waarde $t*$. We gaan daar nader op in in
+§\@ref(sec:ttoets-vrijheidsgraden). We volstaan hier met een
+uitgewerkt voorbeeld.
+
+---
+
+> *Voorbeeld 10.11:* 
+Soms wil een onderzoeker weten hoe snel het Nederlands eigenlijk
+gesproken wordt, en hoe groot de variatie tussen sprekers is in deze
+spreeksnelheid. Deze variabele, spreeksnelheid, wordt uitgedrukt als het
+aantal seconden dat een lettergreep duurt (meestal $<1$ seconde). Hoewel [@Quene08]
+schat dat $\mu=0.220$ s en $\sigma=0.0225$ s, doen we alsof we deze
+populatieparameters niet kennen --- net als echte onderzoekers, die deze
+populatieparameters meestal ook niet kennen.
+
+> Voor een steekproef van $n=30$ sprekers vinden we $\bar{x}=0.215$ en
+$s=0.0203$ seconden. Daaruit schatten[^fn10-4] we $\hat{\mu}=0.215$ en
+$\hat{\sigma}=0.0203$. Omdat $\sigma$ niet bekend is, gebruiken we de
+$t$-verdeling om het betrouwbaarheidsinterval te bepalen. We gebruiken
+de $t$-verdeling voor $n=30$ en vinden een kritieke waarde $t^*=2.05$
+(zie
+Bijlage \@ref(app:kritieketwaarden), voor $B=95$%). 
+Volgens
+formule \@ref(eq:t-onesampleCI) weten we dan met 95% betrouwbaarheid dat het onbekende populatiegemiddelde $\mu$ ligt tussen
+$\bar{x}-2.05\times s_{\bar{x}}$ en $\bar{x}+2.05\times s_{\bar{x}}$,
+oftewel tussen $0.215-2.05\times0.0037$ en $0.215+2.05\times0.0037$,
+oftewel tussen $0.208$ en $0.223$ seconde.
+
+---
+
+In Figuur \@ref(fig:tempo95CIs) zie je de resultaten van een
+computer-simulatie om dit te illustreren. We hebben $100\times$
+denkbeeldige steekproeven getrokken van $n=30$ moedertaalsprekers van
+het Standaard Nederlands, en de spreeksnelheid vastgesteld van deze
+sprekers. Voor elke steekproef hebben we het 95%
+betrouwbaarheidsinterval getekend. Voor 95 van de 100 steekproeven valt
+het populatiegemiddelde $\mu=0.220$ inderdaad binnen het interval, maar
+voor 5 van de 100 steekproeven ten onrechte niet (deze zijn gemarkeerd
+langs de rechterkant).
+
+```{r tempo95CIs, echo=FALSE, fig.cap="95%-Betrouwbaarheidsintervallen en steekproefgemiddelden, over 100 gesimuleerde steekproeven (n=30) uit een populatie met gemiddelde 0.220 en s.d. 0.0225; zie tekst."}
+# plot.tempo95CIs.20150325
+# data van tempo van CGN sprekers
+set.seed(20090227) # first version
+nn <- 30
+conf <- .95
+mu <- 0.220
+sigma <- 0.0225
+nsim <- 100
+crit <- qt( 1-((1-conf)/2), (nn-1) )
+se <- function(x) { sd(x)/sqrt(length(x)) }
+results <- NA
+hits <- rep(NA,nsim)
+op <- par( oma=c(0,0,0,0), mar=c(3,1,3,1)+0.1 )
+plot( 1:nsim, 1:nsim, type="n", 
+	xlab="Spreektempo (seconde/lettergreep)", ylab="", xlim=c(0.195,0.245), yaxt="n" )
+abline( v=0, lty=2 )
+
+for (i in 1:nsim) {
+	aux <- rnorm(nn,mu,sigma)
+	lb <- mean(aux)-crit*se(aux)
+	ub <- mean(aux)+crit*se(aux)
+	results <- append( results, c(mean(aux),se(aux),lb,ub) )
+	hits[i] <- is.inrange( mu, c(lb,ub) )
+	lines( x=c(lb,ub), y=rep(i,2), type="l",lwd=2,
+	       col=ifelse(hits[i],"black","red") )
+	points( x=mean(aux), y=i, pch=20, cex=.5 ) # added 20090319
+	}
+results <- results[2:length(results)]
+results <- matrix(results,ncol=4,byrow=T)
+mtext("Spreektempo (seconde/lettergreep)", side=1, line=2)
+mtext("Spreektempo (lettergreep/seconde)", side=3, line=2)
+abline(v=mu, col="grey", lty=2) 
+xx <- seq(0.18,0.26,by=0.02)
+axis(side=3, at=xx, labels=round(1/xx,2) ) 
+axis(side=4, at=which(!hits), labels=F) # ticks only
+# clean up
+rm(nn,conf,mu,sigma,nsim,crit,i)
+rm(aux,lb,ub)
+# keep results matrix
+par(op)
+```
+
+### formules
+
+Het tweezijdige $B$% betrouwbaarheidsinterval voor het
+populatie-gemiddelde is 
+\begin{equation}
+  \bar{X} \pm t^*_{n-1} \times \frac{s}{\sqrt{n}}
+  (\#eq:t-onesampleCI)
+\end{equation}
+waarbij $t^*$ met $n-1$ vrijheidsgraden gevonden wordt met behulp van
+Bijlage \@ref(app:kritieketwaarden), zie
+§\@ref(sec:ttoets-vrijheidsgraden) voor meer uitleg hierover.
+
+[^fn10-1]: Twee van de fiches zijn echter zonder letter; later in deze paragraaf zullen we deze blanco fiches verwijderen uit het zakje.
+
+[^fn10-2]: Roulettespelers kunnen gokken op 36 van de 37 mogelijke uitkomsten, dus op de lange termijn ontvangt het casino $1/37$ deel van alle inzetten.
+
+[^fn10-3]: Dus ${n \choose x} = {n-1 \choose x} + {n-1 \choose x-1}$, [@Weis15].
+
+[^fn10-4]: Schattingen van parameters worden aangegeven met een "dakje" erboven.

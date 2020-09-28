@@ -1,0 +1,134 @@
+# Meetniveau {#ch:Meetniveau}
+
+## Inleiding
+
+In Hoofdstuk \@ref(ch:onderzoek) maakten we al kennis met variabelen:
+eigenschappen die verschillende waarden kunnen aannemen. De waarde van
+een variabele is dus een aanduiding van een eigenschap, of kwaliteit, of
+hoedanigheid, van een object of persoon. Als het gaat om een
+afhankelijke variabele, dan wordt die waarde ook aangeduid als *score*
+of *responsie*, vaak aangeduid met symbool $Y$. De wijze waarop een
+kenmerk wordt uitgedrukt in een (gemeten) waarde, noemen we het
+*meetniveau* van de variabele; het meetniveau is dus een eigenschap of
+kenmerk van de variabele zelf! We onderscheiden vier meetniveau's, in
+toenemende niveau's van informativiteit: nominaal, ordinaal, interval,
+ratio. Bij de eerste twee meetniveau's worden alleen discrete
+categorieën onderscheiden, zonder of met ordening. Bij de laatste twee
+meetniveau's worden getalswaarden gebruikt, zonder of met nulpunt. We
+zullen de meetniveau's hieronder nader bespreken. Inzicht in het
+meetniveau van een variabele is van belang voor de interpretatie van de
+scores op een variabele en --- zoals we later zullen zien --- voor de
+keuze van de juiste statistische toets om een onderzoeksvraag te
+beantwoorden.
+
+## Nominaal {#sec:nominaal}
+
+We spreken van een nominale variabele (of nominaal meetniveau) als een
+kenmerk gecategoriseerd wordt in afzonderlijke (discrete) categorieën,
+waarbij er *niet* een ordening is tussen de categorieën. Bekende
+voorbeelden zijn o.a. de nationaliteit van een proefpersoon, het merk
+van een auto, de kleur van iemands ogen, de smaak van een bak schepijs,
+je woonsituatie (bij gezin van herkomst, op kamers, zelfstandig,
+samenwonend, anders), enz. De scores kunnen alleen gebruikt worden om de
+categorieën te onderscheiden (de uitspraak "vanille is anders dan
+aardbei" is wel zinnig). We kunnen wel tellen hoe vaak iedere categorie
+voorkomt, maar er is geen interpreteerbare rangorde (de uitspraak "vanille
+is groter dan aardbei" is onzinnig), en we kunnen ook niet rekenen met
+de gemeten waarden van een nominale variabele. We kunnen dus wel de
+meest voorkomende nationaliteit vaststellen, maar we kunnen niet de
+gemiddelde nationaliteit uitrekenen.
+
+## Ordinaal {#sec:ordinaal}
+
+Er is sprake van een ordinale variabele (of van een ordinaal meetniveau)
+als een kenmerk gecategoriseerd wordt in afzonderlijke categorieën,
+waarbij er *wel* een rangorde is tussen de categorieën. Bij een ordinale
+variabele weten we echter niets over de afstand tussen de verschillende
+categorieën. Bekende voorbeelden zijn o.a. schooltype (VMBO, HAVO, VWO,
+...), antwoord op een schaalvraag (*mee eens, neutraal, niet mee eens*),
+positie op een ranglijst, volgorde van afvallen bij een talentenjacht,
+kledingmaat (XS, S, M, L, XL, ...), of militaire rang (soldaat, majoor,
+generaal, ...). Ook hier kunnen we wel tellen hoe vaak iedere categorie
+voorkomt, en we kunnen ook de rangorde zinnig interpreteren (wie als
+laatste afvalt presteert beter dan wie als eerste afvalt, maat L is
+groter dan M, een generaal is de baas van een majoor). We kunnen echter
+niet rekenen met de gemeten waarden van een ordinale variabele. We
+kunnen wel de meest verkochte kledingmaat vaststellen, maar we kunnen
+niet de gemiddelde verkochte kledingmaat uitrekenen[^fn04-1].
+
+## Interval {#sec:interval}
+
+Er is sprake van een interval-variabele (of van een interval-meetniveau)
+als een kenmerk uitgedrukt wordt in een getal op een continue schaal,
+waarbij deze schaal *niet* een nulpunt heeft. Door de schaal weten we
+bij een interval-variabele ook wat de afstanden of intervallen zijn
+tussen de verschillende waarden. Bekende voorbeelden zijn o.a.
+temperatuur in graden Celcius (het nulpunt is arbitrair), of jaartal
+(idem). We kunnen tellen hoe vaak iedere categorie voorkomt, we kunnen
+de rangorde zinnig interpreteren (het jaar 1999 in onze gregoriaanse
+kalender ging vooraf aan het jaar 2000), en we kunnen ook de intervallen
+zinnig interpreteren (van 1918 tot 1939 is net zo lang als van 1989 tot
+2010). We kunnen wel rekenen met de waarden van een interval-variabele,
+maar de enige zinnige bewerkingen zijn optellen en aftrekken. Daarmee
+kunnen we wel een gemiddelde berekenen, bijv. het gemiddelde jaar waarin de
+personen in een steekproef hun eerste mobiele telefoon begonnen te gebruiken.
+
+## Ratio {#sec:ratio}
+
+Het vierde en hoogste meetniveau is het ratio-niveau. Er is sprake van
+een ratio-variabele (of van een ratio-meetniveau) als een kenmerk
+uitgedrukt wordt in een getal op een continue schaal, waarbij deze
+schaal *wel* een nulpunt heeft. Door de schaal weten we bij een
+ratio-variabele wat de afstanden of intervallen zijn tussen de
+verschillende waarden. Bovendien weten we door het nulpunt wat de
+verhoudingen of ratio's zijn tussen de verschillende waarden. Bekende
+voorbeelden zijn o.a. temperatuur in graden Kelvin (vanaf het absolute
+nulpunt), de responsietijd[^fn04-2] in duizendsten van een seconde (ms), je
+lengte in cm, je leeftijd in jaren, het aantal gemaakte fouten in een
+toets, enz. Bij een ratio-variabele kunnen we tellen hoe vaak iedere
+categorie voorkomt, we kunnen de rangorde zinnig interpreteren (iemand
+van 180 cm is langer dan iemand van 179 cm), we kunnen intervallen
+zinnig interpreteren (de toename in leeftijd van 12 naar 18 is tweemaal
+zo groot als de toename van 9 naar 12), en we kunnen ook verhoudingen
+tussen de waarden zelf zinnig interpreteren (een leeftijd van 24 is
+*tweemaal* zo oud als een leeftijd van 12). We kunnen rekenen met de
+waarden van een interval-variabele, en daarbij kunnen we niet alleen
+optellen en aftrekken maar ook delen en vermenigvuldigen. Ook hier is
+het mogelijk om een gemiddelde te berekenen, bijv. de gemiddelde leeftijd
+waarop de personen in een steekproef hun eerste mobiele telefoon begonnen te gebruiken.
+
+## Ordening van meetniveaus {#sec:ordeningvanmeetniveaus}
+
+De meetniveaus zijn hierboven besproken in toenemende informativiteit of
+sterkte. Een nominale variabele bevat het minste informatie en geldt als
+het laagste meetniveau, en een ratio-variabele bevat het meeste
+informatie en geldt als het hoogste meetniveau.
+
+Het is altijd mogelijk om gegevens gemeten op een hoger meetniveau te
+interpreteren alsof ze op een lager niveau zijn gemeten. Als we
+bijvoorbeeld het maandinkomen van de personen in een steekproef hebben
+gemeten op ratio-niveau (in €), dan kunnen we daar probleemloos een
+ordinale variabele van maken (*minder dan modaal, van modaal tot
+tweemaal modaal, meer dan tweemaal modaal*). We gooien daarbij
+informatie weg: de oorspronkelijke meting in € bevat meer informatie dan
+de daaruit afgeleide classificatie in drie geordende categorieën.
+
+Natuurlijk is het omgekeerde niet mogelijk: een variabele van een laag
+meetniveau kunnen we niet interpreteren op een hoger niveau. We zouden
+dan informatie achteraf moeten toevoegen die we niet hebben verzameld
+bij de oorspronkelijke meting van die variabele. Het is dus zaak om de
+relevante variabelen te meten of te observeren op het juiste meetniveau. 
+Stel je
+voor dat we de lichaamslengte van volwassen mannen en vrouwen willen
+vergelijken. Als we de lichaamslengte meten op ordinaal meetniveau (met
+drie categorieën *kort*, *middelmatig* en *lang* gelijkelijk
+gedefinieerd voor alle personen), dan kunnen we dus niet de gemiddelde
+lichaamslengte uitrekenen, en we kunnen ook niet een statistische toets
+gebruiken die refereert aan het gemiddelde van de lichaamslengte. Dat
+hoeft geen probleem te zijn, maar het is wel goed om vooraf te
+doordenken wat de consequenties zijn van de keuze voor een bepaald
+meetniveau.
+
+[^fn04-1]: Als de helft van de respondenten *mee eens* antwoordt, en de andere helft *niet mee eens*, dan kunnen we niet zinnig concluderen dat de responsies gemiddeld *neutraal* zouden zijn.
+
+[^fn04-2]: Het nulpunt is het moment van de gebeurtenis waarop de proefpersoon moet reageren.

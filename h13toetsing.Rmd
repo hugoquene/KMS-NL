@@ -1,0 +1,1179 @@
+# (PART\*) Deel III: Toetsende statistiek {-}
+
+# Toetsing {#ch:toetsing}
+
+## Inleiding {#sec:toetsing-inleiding}
+
+Vanaf dit hoofdstuk houden we ons bezig met het toetsen van
+onderzoekshypothesen, en in het bijzonder met toetsen van *nul*-hypotheses (null hypothesis significance testing, NHST), zoals uitgelegd in Hoofdstuk \@ref(ch:onderzoek). 
+
+Voor dergelijke toetsingen is in de loop der jaren
+een groot aantal technieken ontwikkeld. De toetsen die we behandelen
+zijn de meest gebruikte en kunnen we indelen in parametrische en
+non-parametrische toetsen. Parametrische toetsen veronderstellen dat de
+afhankelijke variabele (tenminste) gemeten is op intervalniveau (zie
+hoofdstuk \@ref(ch:Meetniveau)), en dat de gemeten uitkomsten of scores
+normaal verdeeld zijn (zie
+§\@ref(sec:normaalverdeling) en
+§\@ref(sec:watalsnietnormaal)). Bij non-parametrische toetsen
+worden, afhankelijk van de techniek, minder aannamen gemaakt over het
+meetniveau, danwel over de verdeling van de geobserveerde scores; het
+zijn zogenaamde verdelingsvrije toetsen. Het gevolg is dat de toetsing
+iets minder 'gevoelig' is, onder verder gelijke omstandigheden, d.w.z.
+dat de nulhypothese onder verder gelijke omstandigheden minder vaak
+verworpen kan worden. Deze toetsen hebben derhalve minder power (zie
+Hoofdstuk \@ref(ch:power)). Onderzoekers geven daarom meestal de voorkeur
+aan parametrische toetsen.
+
+Het algemene principe van toetsing hebben we al kort besproken in
+§\@ref(sec:falsificatie) en
+§\@ref(sec:empirischecyclus). 
+We leggen het hier nogmaals uit aan
+de hand van een voorbeeld. We onderzoeken de bewering H1: 'studenten
+Taalwetenschap beheersen de traditionele zinsgrammatica *beter* dan de
+gemiddelde talen-student'. Als meet-instrument gebruiken we de zgn.
+"grammaticatoets"[^fn13-1] die verplicht is voor de meeste studenten in het
+talen-domein van de Universiteit Utrecht. Op grond van eerdere
+studiejaren verwachten we een gemiddelde score van 73 op deze toets; dit
+is het gemiddeld aantal goede antwoorden uit 100 vragen. We
+operationaliseren dus eerst H1: $\mu > 73$, en daaruit leiden we de
+bijbehorende nulhypothese af die daadwerkelijk getoetst wordt:
+$\mu = 73$.
+(In §\@ref(sec:ttoets.eenzijdigtweezijdig) hieronder gaan we nader in
+op het al dan niet noemen van de *richting* van het verschil in H1).
+
+Voor de
+eerstejaars studenten Taalwetenschap ($n=34$) van een bepaald studiejaar
+vinden we een gemiddelde score van 84.4. Dat is inderdaad ver boven de
+referentie-waarde van 73, maar dat zou ook toeval kunnen zijn. Misschien
+is H0 waar, en zitten er geheel toevallig veel grammaticale bollebozen
+in onze steekproef (uit de populatie van mogelijke eerstejaars studenten
+Taalwetenschap). We kunnen de kans $P$ op die situatie uitrekenen,
+d.w.z. de kans $P$ om een gemiddelde score van $\overline{x}=84.4$ te
+vinden gegeven een willekeurige steekproef van $n=34$ personen en
+gegeven dat H0 in werkelijkheid waar is (d.w.z. $\mu=73$): dan blijkt
+$P=.000000001913$. Deze kans $P$ representeert de kans om bij toeval
+deze gegevens te vinden terwijl H0 waar is:
+$P(\overline{x}=84.4|\textrm{H0},n=34)$. In dit geval is die kans $P$
+zeer klein.
+
+Voor de argumentatie is het essentieel dat de gegevens valide zijn en
+betrouwbaar zijn --- juist daarom zijn we uitgebreid ingegaan op
+validiteit
+(Hoofdstuk \@ref(ch:validiteit)) en betrouwbaarheid
+(Hoofdstuk \@ref(ch:betrouwbaarheid)). Als we alles goed gedaan hebben, dan
+mogen we immers vertrouwen hebben in onze verkregen gegevens. De lage
+waarschijnlijkheid van de gegevens volgens H0 kunnen we dan
+redelijkerwijs *niet* toeschrijven aan fouten in de operationalisatie,
+of aan meetfouten, of aan andere afwijkingen in de gegevens. De logische
+conclusie is dan, dat de onwaarschijnlijke uitkomst erop wijst dat de
+premisse (H0) waarschijnlijk *niet* waar is: we verwerpen H0; H0 is dus
+gefalsifieerd. Onze kennis is daarmee toegenomen, omdat we nu op
+gerechtvaardigde gronden mogen aannemen dat H0 onwaar is (en dus dat H1
+waar is).
+
+Indien we H0 verwerpen, op basis van bovenstaande redenering, die weer
+gebaseerd is op waarschijnlijkheid, dan moeten we wel rekening houden
+met de kleine kans $P$ dat het verwerpen van H0 een onterechte
+beslissing is (Type-I-fout; zie 
+§\@ref(sec:empirischecyclus)). Er is immers de kans $P$ dat we deze
+data vinden terwijl H0 toch waar is (in dit voorbeeld: terwijl de
+taalwetenschappers eigenlijk gemiddeld niet anders scoren dan $\mu=73$).
+
+```{r gramm2013onesample, echo=FALSE, fig.cap="Kansverdeling van de gemiddelde score uit een steekproef (n=34) bij populatiegemiddelde 73 en populatie-s.d. 14. Het gekleurde gebied bestrijkt 5% van de totale oppervlakte onder de curve; uitkomsten langs de X-as van dit gebied hebben dus een kans van ten hoogste 5% om op te treden als H0 waar is."}
+# modified from gramm2013onesample.R, HQ 20141010
+gramm2013 <- read.csv( file="data/grammaticatoets2013.csv",header=F)
+dimnames(gramm2013)[[2]] <- c("score","opleiding")
+# N=233
+source( url("http://www.hugoquene.nl/R/eda.fnc.R"), echo=FALSE) # echo=FALSE
+mean(gramm2013$score[gramm2013$opleiding!="TW"]) -> testmean # gemiddelde score van NIET-TW studenten
+# gebruik die als mu in one-sample t test
+# with(gramm2013, t.test(score[opleiding=="TW"], mu=round(testmean)) )
+sd(gramm2013$score[gramm2013$opleiding!="TW"]) -> testsd 
+# 
+curve( dnorm(x, mean=testmean, sd=(testsd/sqrt(34)) ), 
+       n=500, lwd=2, from=65, to=95, xlab="Gemiddelde score (n=34)", ylab="Kansdichtheid" )
+abline(v=testmean, lty=2, col="grey")
+abline(h=0, lty=2, col="grey")
+xx <- seq( testmean+qnorm(.975)*(testsd/sqrt(34)), 
+           testmean+qnorm(.99999)*(testsd/sqrt(34)), 
+           length=25 )
+yy <- dnorm( xx, mean=testmean, sd=testsd/sqrt(34) )
+polygon( x=c(testmean+qnorm(.975)*(testsd/sqrt(34)), xx), 
+         y=c(0,yy), col="darkorange", border="darkorange" )
+abline( v=testmean+qnorm(.975)*(testsd/sqrt(34)), lty=2, col="grey" ) 
+curve( dnorm(x, mean=testmean, sd=(testsd/sqrt(34)) ), 
+       n=500, lwd=3, from=60, to=100, add=T ) # overwrite curve over lines and polygons, long tails!
+arrows( 84.4, y0=.04, y1=0.002, lwd=3, col="darkred" )
+text( 84.4, .06, "waargenomen\ngemiddelde", adj=1/2 )
+```
+
+Figuur \@ref(fig:gramm2013onesample) toont de kansverdeling van het
+gemiddelde van de steekproef ($n=34$) als H0 waar is. We zien dat de
+waarde 73 de hoogste kans heeft, maar ook 72 of 74 zijn waarschijnlijke
+gemiddelde scores volgens H0. Een gemiddelde van 84.4 is echter zeer
+onwaarschijnlijk, de kans $P$ op deze gemiddelde score (hoogte van de
+curve) is bijna nul volgens H0.
+
+De grenswaarde voor $P$ waarbij we H0 verwerpen, wordt het
+significantieniveau genoemd, vaak aangeduid met symbool $\alpha$ (zie
+§\@ref(sec:empirischecyclus)). Onderzoekers gebruiken vaak
+$\alpha=.05$, maar soms worden andere grenswaarden gebruikt. In
+Figuur \@ref(fig:gramm2013onesample) zie je dat de kans op een gemiddelde
+score van 77.7 of meer een kans heeft van $P=.05$ of kleiner, volgens
+H0. Dit is te zien aan de oppervlakte onder de curve. Het gekleurde deel
+heeft precies een oppervlakte van 0.05 van de totale oppervlakte onder
+de curve.
+
+De beslissing om H0 wel of niet te verwerpen is gebaseerd op de
+waarschijnlijkheid $P$ van de uitkomsten, gegeven H0. De beslissing zou
+dus ook onjuist kunnen zijn. De bevinding dat $P < \alpha$ vormt dus
+geen *onomstotelijk* bewijs dat H0 onwaar is (en verworpen *moet*
+worden); het is ook mogelijk dat H0 toch waar is maar dat het gevonden
+effect een toevalstreffer was (Type-I-fout). Omgekeerd vormt de
+bevinding dat $P > \alpha$ geen sluitend bewijs dat H0 waar is. Er
+kunnen allerlei andere, plausibele redenen zijn waarom een wel bestaand
+effect (H0 is onwaar) toch niet goed geobserveerd wordt. Als ik geen
+vogels hoor zingen, dan betekent dat niet noodzakelijkerwijs dat er echt
+geen vogels zingen. Meer algemeen: "absence of evidence is not evidence
+of absence" (; ). Het is daarom goed om ook altijd de grootte van het
+gevonden effect of verschil te rapporteren (dit wordt nader uitgelegd in
+§\@ref(#sec:ttoets-effectgrootte) hieronder).
+
+---
+
+> *Voorbeeld 13.1:* 
+Stel H0: 'vogels zingen niet'. Schrijf
+tenminste vier redenen op waarom ik geen vogels hoor zingen, zelfs als
+er wel vogels zingen (H0 is onwaar). Als ik H0 niet verwerp, wat voor
+type fout maak ik dan?
+
+---
+
+## $t$-toets voor enkele steekproef {#sec:ttoets-onesample}
+
+De Student $t$-toets wordt toegepast om een verschil te kunnen onderzoeken tussen
+de gemiddelde score van een steekproef, en een a priori veronderstelde
+waarde van dat gemiddelde. We gebruiken deze toets als de
+standaarddeviatie $\sigma$ in de populatie niet bekend is, en dus
+geschat moet worden uit de steekproef. De gedachtegang is als volgt.
+
+Op grond van het gemiddelde en de standaarddeviatie in de steekproef, en
+van het (volgens H0) veronderstelde gemiddelde, bepalen we de toetsingsgrootheid $t$.
+Als H0 waar is, dan is de waarde $t=0$ het meest waarschijnlijk.
+Naarmate het verschil tussen het geobserveerde steekproefgemiddelde en
+het veronderstelde steekproefgemiddelde groter wordt, neemt $t$ ook toe.
+Als de toetsingsgrootheid $t$ groter is dan een bepaalde grenswaarde
+$t*$, dus als $t>t*$, dan is de kans op deze toetsingsgrootheid, als H0
+waar is, erg klein: $P(t|\textrm{H0}) < \alpha$. De kans om dit
+resultaat te vinden als H0 waar is, is dan zo gering dat we besluiten H0
+te verwerpen (zie
+§\@ref(sec:empirischecyclus)). We spreken dan van een *significant*
+verschil: de afwijking tussen het geobserveerde en het verwachte
+gemiddelde is vermoedelijk niet toevallig.
+
+In het eerdere voorbeeld van de grammaticatoets bij studenten
+Taalwetenschap (§\@ref(sec:toetsing-inleiding)) hebben we al kennis gemaakt met
+deze vorm van de $t$-toets.
+Als $\overline{x}=84.4, s=8.4, n=34$, dan is
+toetsingsgrootheid $t=7.9$ volgens formule \@ref(eq:t-onesample) hieronder.
+
+De kansverdeling van toetsingsgrootheid $t$ onder H0 is bekend; je vindt
+de grenswaarde $t^*$ in
+Bijlage \@ref(app:kritieketwaarden). Anders gezegd, als de gevonden
+toetsingsgrootheid $t$ groter is dan de grenswaarde $t^*$ die in de
+tabel staat vermeld, dan is $P(t|\textrm{H0})<\alpha$. Om de tabel in
+Bijlage \@ref(app:kritieketwaarden) te kunnen gebruiken moeten we nog een
+nieuw begrip introduceren, namelijk het aantal vrijheidsgraden. Dat
+begrip wordt uitgelegd in
+§\@ref(sec:ttoets-vrijheidsgraden) hieronder.
+
+Met het aantal vrijheidsgraden kun je in
+Bijlage \@ref(app:kritieketwaarden) opzoeken welke grenswaarde $t^*$ nodig
+is om een bepaalde overschrijdingskans $p$ te verkrijgen. Laten we
+opzoeken wat de overschrijdingskans is voor de gevonden
+toetsingsgrootheid $t=7.9$. Eerst zoeken we in de linker kolom het
+aantal vrijheidsgraden ('d.f.') op. Als het aantal vrijheidsgraden niet
+in de tabel voorkomt, dan dienen we voorzichtigheidshalve naar beneden
+af te ronden, hier naar 30 d.f. Dit aantal bepaalt de regel die voor ons
+van toepassing is. In de derde kolom staat $t^*=1.697$. Onze gevonden
+toetsingsgrootheid $t=7.9$ is groter dan deze $t^*=1.697$, dus de
+overschrijdingskans is kleiner dan de $p=.05$ die hoort bij de derde
+kolom. Als we verder naar rechts gaan op dezelfde regel, zien we dat de
+vermelde $t^*$ nog toeneemt. Onze gevonden toetsingsgrootheid $t$ is
+zelfs nog groter dan $t^*=3.385$ in de laatste kolom. De
+overschrijdingskans is dus zelfs nog kleiner dan $p=.001$ uit de titel
+van die laatste kolom. (Doorgaans berekent het statistische
+analyse-programma ook de overschrijdingskans.) We rapporteren het
+resultaat als volgt:
+
+> De gemiddelde score van de studenten Taalwetenschap (lichting 2013) is
+> 84.4 ($s=8.4$); dit is significant beter dan het veronderstelde
+> populatie-gemiddelde van 73 ($t(33)=7.9, p<.001$).
+
+### vrijheidsgraden {#sec:ttoets-vrijheidsgraden}
+
+Om het concept van vrijheidsgraden uit te leggen, beginnen we met een
+analogie. Stel dat er drie mogelijke routes zijn om van A naar B te
+reizen: een kustpad, een bergpad, of een autoweg. Een wandelaar die van
+A naar B wil reizen, heeft weliswaar drie opties, maar er zijn slechts
+twee vrijheidsgraden voor de wandelaar: hij of zij hoeft slechts 2
+keuzes te maken om te kiezen uit de drie opties. Eerst valt de autoweg
+af (eerste kies-moment), en dan het bergpad (tweede kies-moment), en de
+gekozen route langs het kustpad blijft als enige over. Er zijn dus twee
+keuzes 'vrij', om uiteindelijk één van de drie mogelijke routes te
+kiezen. Als we de twee keuzes weten, dan kunnen we daaruit afleiden
+welke route gekozen moet zijn.
+
+Nu kijken we naar een student die gemiddeld een $\overline{x}=7.0$ heeft
+behaald over de $N=4$ cursussen van het eerste basispakket van zijn of
+haar opleiding. Het gemiddelde van $7.0$ kan op vele manieren tot stand
+zijn gekomen, bv. $(8,7,7,6)$ of $(5,6,8,9)$. Maar als we van drie
+cursussen het resultaat weten, èn we weten dat het gemiddelde een 7.0
+bedraagt, dan weten we ook wat de waarde van de vierde observatie moet
+zijn. Die laatste observatie is dus niet meer 'vrij' maar wordt nu
+vastgelegd door de eerste drie observaties, in combinatie met het
+gemiddelde over de $N=4$ observaties. We zeggen dan dat je $N-1$
+*vrijheidsgraden* hebt om dit kenmerk van de steekproef te bepalen,
+zoals hier het steekproefgemiddelde, of zoals de toetsingsgrootheid $t$.
+De vrijheidsgraden worden in het Engels 'degrees of freedom' genoemd,
+vaak afgekort tot 'd.f.' (symbool $\nu$, griekse letter "nu") .
+
+In de praktijk is het aantal vrijheidsgraden niet moeilijk te bepalen.
+We geven namelijk bij elke toets aan hoe je de vrijheidsgraden bepaalt
+--- en het aantal d.f. wordt doorgaans ook berekend door de statistische
+analyse-programma's die we gebruiken.
+
+Bij de $t$-toets voor een enkele steekproef is het aantal vrijheidsgraden het
+aantal observaties $N-1$. In het hierboven besproken voorbeeld hebben we
+dus $N-1 = 34-1 = 33$ vrijheidsgraden.
+
+### formules {#sec:formules13-1}
+
+\begin{equation}
+  t = \frac{ \overline{y}-\mu} { s } \times \sqrt{N}
+  (\#eq:t-onesample)
+\end{equation}
+
+### aannames {#sec:ttoets-aannames}
+
+De voor een enkele steekproef vereist drie aannames (assumpties) waaraan
+voldaan moet zijn, om de toets te mogen gebruiken.
+
+* De gegevens moeten gemeten zijn op intervalniveau (zie
+hoofdstuk \@ref(ch:Meetniveau)).
+
+* Alle observaties moeten onafhankelijk van elkaar zijn.
+
+* De scores moeten normaal verdeeld zijn (zie
+§\@ref(sec:normaalverdeling)).
+
+### SPSS
+
+De hierboven gegevens zijn te vinden in het bestand `data/grammaticatoets2013.csv`. 
+
+Om onze eerdere hypothese te toetsen, moeten we in SPSS eerst de
+observaties selecteren van de studenten Taalwetenschap.
+```
+Data > Select cases...
+```
+
+Kies `If condition is satisfied` en druk op knop `If...` om de condities
+voor selectie (inclusie) aan te geven.\
+Selecteer variabele `opleiding` (sleep naar rechter paneel), kies knop
+`=`, en type daarna *`TW`*, zodat de hele conditie luidt
+`opleiding = TW`.
+
+Daarna kunnen we onze eerdere hypothese toetsen als volgt:
+```
+Analyze > Compare Means > One-Sample T Test...
+```
+
+Selecteer variabele (sleep naar Test variable(s) paneel).\
+Geef op tegen welke waarde van $\mu$ getoetst moet worden: geef op als
+Test Value `73`. Bevestig met `OK`.
+
+De uitvoer bevat zowel beschrijvende statistiek als de resultaten van
+een *tweezijdige* $t$-toets. 
+
+Neem bij het overnemen van die uitvoer goede notitie van de waarschuwing in
+§\@ref(sec:pgroterdannul) hieronder: SPSS rapporteert alsof `p=.000` maar dat is onjuist. 
+
+### R
+
+Onze hierboven besproken hypothese kan worden getoetst met de volgende opdrachten:
+```{r gramm2013onesample-test}
+gramm2013 <- read.csv( file="data/grammaticatoets2013.csv",header=F)
+dimnames(gramm2013)[[2]] <- c("score","opleiding")
+with( gramm2013,
+      t.test( score[opleiding=="TW"], mu=73, alt="greater" ) )
+```
+
+
+De notatie `1.913e-09` moet gelezen worden als het getal
+$(1.913 \times 10^{-9})$.
+
+## Overschrijdingskans $p$ is altijd groter dan nul {#sec:pgroterdannul}
+
+De overschrijdingskans $p$ kan heel klein zijn, maar is altijd groter
+dan nul! In het bovenstaande voorbeeld van de grammaticatoets
+vonden we $P=.000000001913$, een heel kleine kans, maar wel groter dan
+nul. Dat is ook te zien aan de staarten van de bijbehorende
+kansverdeling, die asymptotisch naderen naar nul (zie
+Fig.\@ref(fig:gramm2013onesample)) maar nooit helemaal gelijk aan nul
+worden. Er is immers altijd een miniem kleine kans dat je een extreme
+waarde (of een nog extremere waarde) van je toetsingsgrootheid zult
+vinden in een steekproef --- we onderzoeken de steekproef immers juist
+omdat de uitkomst van de toetsingsgrootheid niet a priori vaststaat.
+
+In SPSS worden de overschrijdingskansen echter afgerond, en kunnen dan
+in de uitvoer verschijnen als `‘Sig. .000’` oftewel $p=.000$. Dit is
+onjuist. De overschrijdingskans of significantie is immers niet gelijk
+aan nul, maar is *afgerond tot* nul, en dat is niet hetzelfde.
+Rapporteer de overschrijdingskans of significantie altijd met de juiste
+nauwkeurigheid, in dit voorbeeld als $p<.001$ of zelfs $p<.0005$
+(rekening houdend met de afronding door SPSS naar drie decimale
+cijfers).
+
+## Eenzijdige en tweezijdige toetsen {#sec:ttoets-eenzijdigtweezijdig}
+
+De procedure die we hierboven hebben besproken geldt voor het éénzijdig
+toetsen. Dat wil zeggen dat de alternatieve hypothese niet alleen stelt
+dat de gemiddelden zullen verschillen, maar ook in welke richting dat
+zal zijn: H1: $\mu >73$, de studenten Taalwetenschap scoren *beter* dan
+het populatiegemiddelde. Als we een verschil zouden vinden in de
+tegengestelde richting, zeg $\overline{x}=68$, dan beginnen we niet eens
+aan statistische toetsing: de H0 blijft zonder meer in stand. Pas als we
+een verschil vinden in de veronderstelde richting is het zinvol om te
+inspecteren of dit verschil significant is. Wanneer je nu kijkt naar de
+afbeelding bij
+Bijlage \@ref(app:kritieketwaarden), dan klopt dit ook. De $p$-waarde
+correspondeert met de oppervlakte van het gekleurde gebied.
+
+Indien de alternatieve hypothese H1 de richting van het verschil *niet*
+specificeert, dan treedt er een complicatie op. Zowel verschillen in de
+ene richting als in de andere richting zijn dan immers relevant. We
+spreken dan van tweezijdig toetsen. Om de tweezijdige
+overschrijdingskans te berekenen moeten we de $p$-waarde uit
+Bijlage \@ref(app:kritieketwaarden) vermenigvuldigen met $2$ (omdat we nu
+kijken naar twee gekleurde gebieden, aan beide zijden van de
+kansverdeling).
+
+Laten we in het voorbeeld van de grammaticatoets nu tweezijdig toetsen.
+We operationaliseren de alternatieve hypothese dan als H1: $\mu \ne 73$.
+Wederom is $\overline{x}=73, t=7.9$ met 33 d.f. (afgerond naar 30 d.f.).
+Bij de eenzijdige overschrijdingskans $p=.025$ (vierde kolom) vinden we
+de kritieke grenswaarde $t^*=2.042$. De tweezijdige overschrijdingskans
+voor deze grenswaarde is $2 \times .025 = .05$. Onze gevonden
+toetsingsgrootheid $t=7.9$ is groter dan deze $t^*=2.042$, dus de
+tweezijdige overschrijdingskans is kleiner dan $p=2\times.025=.05$. Onze
+gevonden toetsingsgrootheid $t$ is zelfs groter dan $t^*=3.385$ in de
+laatste kolom, dus de tweezijdige overschrijdingskans is zelfs kleiner
+dan $2\times.001$. We kunnen onze tweezijdige toetsing als volgt
+rapporteren:
+
+> De gemiddelde score van de studenten Taalwetenschap (lichting 2013) is
+> 84.4 ($s=8.4$); dit verschilt significant van het veronderstelde
+> populatie-gemiddelde van 73 ($t(33)=7.9, p<.002$).
+
+In de meeste onderzoeken wordt tweezijdig getoetst; als de richting van
+de toets niet wordt vermeld dan mag je daarom aannemen dat er tweezijdig
+is getoetst.
+
+## Betrouwbaarheidsinterval van het gemiddelde {#sec:t-betrouwbaarheidsinterval-gemiddelde}
+
+Deze paragraaf gaat dieper in op een onderwerp dat eerder al aan bod kwam in §\@ref(betrouwbaarheidsinterval-gemiddelde), en illustreert het betrouwbaarheidsinterval van het gemiddelde met de scores van de grammaticatoets.
+
+Het gemiddelde van de steekproef, $\overline{x}$, kunnen we beschouwen
+als een goede schatting van het onbekende gemiddelde in de populatie,
+$\mu$. Daarbij kunnen we de gevonden waarde van $t^*$ ook gebruiken om
+aan te geven hoe betrouwbaar die schatting is: het
+betrouwbaarheidsinterval. Daarmee drukken we uit hoe (on)zeker we weten
+dat het gemiddelde van de steekproef, $\overline{x}$, overeenkomt met
+het gemiddelde van de populatie [@Cumm12]. We kennen zulke foutenmarges
+ook uit verkiezingsuitslagen, waar ze aangeven hoe zeker de uitslag van
+de steekproef (van respondenten) overeenkomt met de werkelijke
+verkiezingsuitslag voor de gehele populatie (van kiezers). Een
+foutenmarge van 2% betekent dat het voor 95% zeker is dat $x$, het
+percentage stemmen op een bepaalde partij, zal liggen tussen $(x-2)$% en
+$(x+2)$%.
+
+In ons voorbeeld met 30 d.f. vinden we $t^*=2.042$ voor 95%
+betrouwbaarheid. Via formule
+\@ref(eq:t-onesampleCI) komen we tot het 95%
+betrouwbaarheidsinterval $(81.5, 87.3)$. We weten met 95% zekerheid dat
+de onbekende gemiddelde score op de grammaticatoets, van de populatie
+van alle mogelijke studenten taalwetenschap groter is dan 81.5 en
+kleiner dan 87.3. We weten dan dus ook, met 95% zekerheid, dat het
+*onbekende* populatiegemiddelde $\mu$ afwijkt van de veronderstelde
+waarde 73 [@Cumm12]. We rapporteren dat als volgt:
+
+> De gemiddelde score van de studenten Taalwetenschap (lichting 2013) is
+> 84.4, met 95% betrouwbaarheidsinterval (81.5, 87.3), 33 d.f.
+
+In Figuur \@ref(fig:gramm2013CIs) zie je de resultaten van een
+computersimulatie om dit te illustreren. Deze figuur is op dezelfde wijze gemaakt als Figuur \@ref(fig:tempo95CIs) in Hoofdstuk \@ref(ch:kansverdelingen) en illustreert hetzelfde punt. 
+We hebben $100\times$
+steekproeven getrokken van scores van studenten Taalwetenschap, met
+$\mu=84.4$ en $\sigma=8.4$ (zie
+§\@ref(sec:standaarddeviatie)) en $N=34$. Voor elke steekproef
+hebben we het 95% betrouwbaarheidsinterval getekend. Voor 95 van de 100
+steekproeven valt het populatiegemiddelde $\mu=84.4$ inderdaad binnen
+het interval, maar voor 5 van de 100 steekproeven ten onrechte niet
+(deze zijn gemarkeerd langs de rechterkant).
+
+```{r gramm2013CIs, echo=FALSE, fig.cap="95%-Betrouwbaarheidsintervallen en steekproefgemiddelden, over 100 gesimuleerde steekproeven (n=34) uit een populatie met populatiegemiddelde 84.4, populatie-s.d. 8.4."}
+# adapted from similar chunk in Ch.10
+set.seed(20200912) # last version
+nn <- 34
+conf <- .95
+mu <- 84.4
+sigma <- 8.4
+nsim <- 100
+crit <- qt( 1-((1-conf)/2), (nn-1) )
+se <- function(x) { sd(x)/sqrt(length(x)) }
+results <- NA
+hits <- rep(NA,nsim)
+op <- par( oma=c(0,0,0,0), mar=c(3,1,3,1)+0.1 )
+plot( 1:nsim, 1:nsim, type="n", 
+	xlab="Score grammaticatoets", ylab="", xlim=c(72,90), yaxt="n" )
+abline( v=0, lty=2 )
+
+for (i in 1:nsim) {
+	aux <- rnorm(nn,mu,sigma)
+	lb <- mean(aux)-crit*se(aux)
+	ub <- mean(aux)+crit*se(aux)
+	results <- append( results, c(mean(aux),se(aux),lb,ub) )
+	hits[i] <- is.inrange( mu, c(lb,ub) )
+	lines( x=c(lb,ub), y=rep(i,2), type="l",lwd=2,
+	       col=ifelse(hits[i],"black","red") )
+	points( x=mean(aux), y=i, pch=20, cex=.5 ) # added 20090319
+	}
+results <- results[2:length(results)]
+results <- matrix(results,ncol=4,byrow=T)
+mtext("Score grammaticatoets", side=1, line=2)
+#  mtext("Spreektempo (lettergreep/seconde)", side=3, line=2)
+abline(v=mu, col="grey", lty=2) 
+abline(v=73, col="grey", lty=2)  # see previous chunk, gemidd van niet-TW
+axis(side=1, at=73) # tick and label
+#  xx <- seq(0.18,0.26,by=0.02)
+# axis(side=3, at=xx, labels=round(1/xx,2) ) 
+axis(side=4, at=which(!hits), labels=F) # ticks only
+# clean up
+rm(nn,conf,mu,sigma,nsim,crit,i)
+rm(aux,lb,ub)
+# keep results matrix
+par(op)
+```
+
+
+### formules {#sec:formules13-2}
+
+Het tweezijdige betrouwbaarheidsinterval voor $B$% betrouwbaarheid voor
+een populatie-gemiddelde $\overline{y}$ is 
+\begin{equation}
+    \overline{y} \pm t^*_{N-1} \times \frac{s}{\sqrt{N}}
+  (\#eq:t-onesampleCI)
+\end{equation}
+
+### SPSS
+
+```
+Analyze > Descriptive Statistics > Explore...
+```
+
+Selecteer afhankelijke variabele (sleep naar Dependent List paneel).\
+Kies knop `Statistics` en vink aan `Descriptives` met Confidence Interval
+95%.\
+Bevestig met `Continue` en met `OK`.\
+De uitvoer bevat meerdere beschrijvende statistische maten, waaronder nu
+ook het 95% betrouwbaarheidsinterval van het gemiddelde.
+
+### R
+
+R vermeldt het betrouwbaarheidsinterval van het gemiddelde (met een zelf
+op te geven betrouwbaarheidsniveau) bij een $t$-toets. We voeren dus wederom een $t$-toets
+uit en vinden het betrouwbaarheidsinterval van het gemiddelde in de
+uitvoer.
+```{r}
+with( gramm2013, t.test( score[opleiding=="TW"] ) )
+```
+
+## $t$-toets voor twee onafhankelijke steekproeven {#sec:ttoets-onafh}
+
+De Student wordt toegepast om een verschil te kunnen onderzoeken tussen
+de gemiddelde scores van twee onafhankelijke steekproeven, bv van
+vergelijkbare jongens en meisjes. Op grond van de gemiddelden en de
+standaarddeviaties van de twee steekproeven bepalen we de
+toetsingsgrootheid $t$. Als H0 waar is, dan is de waarde $t=0$ het meest
+waarschijnlijk. Naarmate het verschil tussen de twee gemiddelden groter
+wordt, neemt $t$ ook toe. Wederom verwerpen we H0 indien $t>t^*$ voor
+het gekozen significantieniveau $\alpha$.
+
+Als eerste voorbeeld nemen we een onderzoek naar de omvang van de
+productieve woordenschat bij Zweedse meisjes en jongens van 18 maanden
+oud [@Ande11]. We onderzoeken de veronderstelling dat de woordenschat
+van meisjes verschilt van die van jongens, d.w.z. H1: $\mu_m \ne \mu_j$.
+We kunnen niet a priori aannemen dat een eventueel verschil slechts één
+richting op kan gaan; we toetsen daarom tweezijdig, zoals al blijkt uit
+H1. De bijbehorende nul-hypothese die we toetsen is H0: $\mu_m = \mu_j$.
+In dit onderzoek werd de woordenschat geschat op grond van vragenlijsten
+aan de ouders van de kinderen in de steekproeven. Deelnemers waren
+(ouders van) $n_1=123$ meisjes en $n_2=129$ jongens, allen 18 maanden
+oud. Uit de resultaten blijkt dat de meisjes een gemiddelde woordenschat
+hebben van $\overline{x_1}=95$ woorden ($s_1=82$), en voor de jongens is
+dat $\overline{x_2}=85$ woorden ($s_2=98$). Met deze gegevens bepalen we
+de toetsingsgrootheid $t$ volgens formule
+\@ref(#eq:t-homoskedastic), resulterend in $t=0.88$ met 122 d.f. De
+bijbehorende kritieke grenswaarde $t^*$ zoeken we wederom op in
+Bijlage \@ref(app:kritieketwaarden). In de regel voor 100 d.f. (na
+afronding naar beneden) vinden we $t^*=1.984$ in de vierde kolom. Voor
+tweezijdige toetsing moeten we de overschrijdingskans behorend bij deze
+kolom verdubbelen (zie
+§\@ref(sec:ttoets-eenzijdigtweezijdig)), resulterend in $p=.05$. De
+gevonden toetsingsgrootheid $t < t^*$, dus $p>.05$. We besluiten om H0
+*niet* te verwerpen, en rapporteren dat als volgt:
+
+> De gemiddelde productieve woordenschat van Zweedse kinderen van 18
+> maanden oud verschilt nauwelijks tussen meisjes en jongens
+> ($t(122)=0.88, p>.4$). Meisjes produceren gemiddeld 95 verschillende
+> woorden ($s=82$), en jongens gemiddeld 85 verschillende woorden
+> ($s=98$).
+
+Als tweede voorbeeld nemen we een onderzoek naar het spreektempo van
+twee groepen sprekers, nl. afkomstig uit het Westen (eerste groep) en
+uit het Noorden (tweede groep) van Nederland. De spreeksnelheid wordt
+hier uitgedrukt als de gemiddelde duur van een gesproken lettergreep,
+gemiddeld over een interview van ca 15 minuten (zie voorbeeld \@ref(ch:variantieanalyse).1). 
+We onderzoeken H0: $\mu_W = \mu_N$ met
+tweezijdige toetsing. Uit de resultaten blijkt dat de westerlingen
+($n=20$) een gemiddelde lettergreepduur hebben van
+$\overline{x_W}=0.235$ s ($s=0.028$), en voor de noorderlingen (ook
+$n=20$) is dat $\overline{x_N}=0.269$ s ($s=0.029$). Met deze gegevens
+bepalen we wederom de toetsingsgrootheid $t$ volgens formule
+\@ref(eq:t-homoskedastic), resulterend in $t=-3.76$ met 38 d.f. De
+bijbehorende kritieke grenswaarde $t^*$ zoeken we wederom op in
+Bijlage \@ref(app:kritieketwaarden). De juiste d.f. zijn niet in de tabel
+vermeld, dus ronden we naar beneden af (d.i. in conservatieve richting)
+naar 30 d.f. In die regel vinden we $t^*=2.042$ in de vierde kolom. Voor
+tweezijdige toetsing moeten we de overschrijdingskans behorend bij deze
+kolom verdubbelen (zie
+§\@ref(sec:ttoets-eenzijdigtweezijdig)), resulterend in $p=.05$. De
+gevonden toetsingsgrootheid $t < t^*$, dus $p<.05$. We besluiten daarom
+om H0 *wel* te verwerpen, en rapporteren dat als volgt:
+
+> De gemiddelde duur van een lettergreep gesproken door een spreker uit
+> het westen van Nederland is $0.235$ seconde ($s=0.028$). Dit is
+> significant korter dan bij sprekers uit het Noorden van Nederland
+> ($\overline{x}=0.269$ s, $s=0.029$) ($t(38)=-3.76, p<.05$). In de
+> onderzochte opnames uit 1999 praten de sprekers uit het Westen dus
+> sneller dan die uit het Noorden van Nederland.
+
+### aannames {#aannames}
+
+De Student voor twee onafhankelijke steekproeven vereist vier aannames
+(of assumpties) waaraan voldaan moet zijn, om de toets te mogen
+gebruiken.
+
+* De gegevens moeten gemeten zijn op intervalniveau (zie
+§\@ref(sec:interval)).
+
+* Alle observaties moeten onafhankelijk van elkaar zijn.
+
+* De scores van beide groepen moeten normaal verdeeld zijn (zie
+§\@ref(sec:isvarnormaalverdeeld)).
+
+De variantie van de scores moet gelijk zijn in beide
+steekproeven. Schending van deze aanname is ernstiger naarmate de twee
+steekproeven meer in grootte verschillen. Het is daarom verstandig om te
+werken met even grote, en liefst niet te kleine steekproeven. Als de
+steekproeven even groot zijn dan is het schenden van deze aanname van
+gelijke varianties niet zo ernstig.
+
+### formules {#sec:ttoets-formules}
+
+#### toetsingsgrootheid
+
+Voor de berekening van de toetsingsgrootheid $t$ zijn verschillende
+formules in gebruik.
+
+Indien de steekproeven ongeveer gelijke variantie hebben, dan gebruiken
+we eerst de "pooled standard deviation" $s_p$ als tussenstap. De beide
+standaarddeviaties van de twee steekproeven worden daarin gewogen naar
+hun steekproefomvang. 
+\begin{equation}
+    s_p = \sqrt{ \frac{(n_1-1) s^2_1 + (n_2-1) s^2_2} {n_1+n_2-2} }
+    (\#eq:sd-pooled)
+\end{equation}
+Vervolgens
+\begin{equation}
+  (\#eq:t-homoskedastic)
+  t = \frac{ \overline{x_1}-\overline{x_2} } { s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}} }
+\end{equation}
+
+Indien de steekproeven *niet* gelijke variantie hebben, en de vierde
+aanname hierboven dus is geschonden, dan wordt Welch's benadering
+gebruikt: 
+\begin{equation}
+  (\#eq:sd-WS)
+  s_{\textrm{WS}} = \sqrt{\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2} }
+\end{equation}
+Vervolgens 
+\begin{equation}
+  (\#eq:t-WS)
+  t = \frac{ \overline{x_1}-\overline{x_2} } { s_{\textrm{WS}} }
+\end{equation}
+
+#### vrijheidsgraden {#vrijheidsgraden}
+
+Meestal wordt de uitgevoerd door een computerprogramma. Daarbij wordt
+dan meestal de volgende benadering gebruikt van de vrijheidsgraden
+($\nu$, zie §\@ref(sec:ttoets-vrijheidsgraden)). 
+Eerst worden $g_1=s^2_1/n_1$
+en $g_2=s^2_2/n_2$ berekend. Het aantal vrijheidsgraden van $t$ is dan
+\begin{equation}
+  (\#eq:df-WS)
+  \nu_\textrm{WS} = 
+        \frac {(g_1+g_2)^2} {g^2_1/(n_1-1) + g^2_2/(n_2-1)}
+\end{equation}
+
+Het aantal vrijheidsgraden volgens deze benadering heeft als liberale
+bovengrens $(n_1+n_2-2)$, en als conservatieve ondergrens de kleinste
+van $(n_1-1)$ of $(n_2-1)$. Je kunt dus ook altijd deze conservatieve
+ondergrens gebruiken. Indien de twee groepen ongeveer dezelfde variantie
+hebben (d.i. $s_1 \approx s_2$), dan kan je ook de liberale bovengrens
+gebruiken.
+
+Voor het tweede voorbeeld hierboven geeft de benadering van formule
+\@ref(eq:df-WS) de
+schatting van $37.99 \approx 38$ d.f. De conservatieve ondergrens is
+$n_1-1 = n_2-1 = 19$. De liberale bovengrens is $n_1+n_2 -2 = 38$. (In
+de tabel met kritische waarden $t*$, in
+Bijlage \@ref(app:kritieketwaarden), is het meestal raadzaam om de regel
+te gebruiken met de eerstvolgende kleinere waarde voor het aantal
+vrijheidsgraden.)
+
+### SPSS {#sec:SPSS-ttoets-ongepaard}
+
+Het tweede bovenstaande voorbeeld wordt hier uitgewerkt.
+
+```
+Analyze > Compare Means > Independent-Samples T Test
+```
+
+Sleep de afhankelijke variabele `syldur` naar paneel Test Variable(s).
+Sleep de onafhankelijke variabele `region` naar paneel Grouping
+Variable. Definieer de twee groepen: waarde W voor regio groep 1 en
+waarde N voor regrio groep 2. Bevestig met `Continue` en `OK`.
+
+Zoals je hierboven kon zien, is de berekening van de afhankelijk van het
+antwoord op de vraag of de standaarddeviaties van de twee groepen
+ongeveer gelijk zijn. SPSS lost dat zeer onhandig op: je krijgt alle
+relevante uitvoer te zien, en moet daar zelf een keuze uit maken.
+
+#### Test for equality of variances
+
+Met Levene's test wordt onderzocht H0: $s^2_1 = s^2_2$, d.w.z. of de
+varianties (en daarmee de standaarddeviaties) van de twee groepen gelijk
+zijn. Als je een kleine waarde vindt voor de toetsingsgrootheid $F$, en
+een $p>.05$, dan hoef je deze H0 niet te verwerpen. Je mag dan aannemen
+dat de varianties gelijk zijn. Als je een grote waarde vindt voor $F$,
+met $p<.05$, dan dien je deze H0 wel te verwerpen, en je mag niet
+aannemen dat de varianties van de twee groepen gelijk zijn.
+
+#### Test for equality of means
+
+Afhankelijk van deze uitkomst van Levene's test moet je de eerste of de
+tweede regel gebruiken van de uitvoer van de Independent-Samples Test
+(een toets die onderzoekt of de gemiddelden van de twee groepen gelijk
+zijn). In dit voorbeeld zijn de varianties ongeveer gelijk, zoals de
+Levene's test ook aangeeft. We gebruiken dus de eerste regel van de
+uitvoer, en rapporteren $t(38)=-3.765, p=.001$.
+
+###  {#sec:R-ttoets-ongepaard}
+
+```{r}
+require(hqmisc)
+data(talkers)
+with(talkers, t.test( syldur[region=="W"], syldur[region=="N"], 
+            paired=F, var.equal=T ) )
+```
+
+## $t$-toets voor gepaarde waarnemingen {#sec:ttoets-gepaard}
+
+De Student $t$-toets wordt ook toegepast om een verschil te onderzoeken tussen de
+gemiddelden van twee afhankelijke of gepaarde waarnemingen. Daarvan is
+sprake als we slechts één steekproef trekken (zie hoofdstuk
+\@ref(ch:steekproeftrekking)), en van de leden van deze steekproef
+vervolgens twee observaties verzamelen, nl. één observatie onder elk van
+beide condities. De twee observaties zijn dan gepaard, d.w.z. aan elkaar
+gerelateerd, en deze observaties zijn dus niet onafhankelijk (want
+afkomstig van hetzelfde lid van de steekproef). Eén van de assumpties
+van de is daarmee geschonden.
+
+Als voorbeeld nemen we een denkbeeldig onderzoek naar het gebruik van
+*U* of *je* als aanspreekvorm op een website. De onderzoeker maakt twee
+versies van een webpagina, de ene met *U* en de andere met *je*. Elke
+respondent moet beide versies beoordelen op een schaal van 1 tot 10. (Om
+redenen van validiteit wordt de volgorde van de twee versies gevarieerd
+tussen respondenten; de volgorde waarin de pagina's beoordeeld zijn, kan
+dus geen invloed hebben op de totaalscore per conditie.) In
+Tabel \@ref(tab:data-uje-paired) zijn de oordelen van $N=10$
+respondenten samengevat.
+
+Table: (#tab:data-uje-paired) Fictieve oordelen over een webpagina met *U* of *je* als
+  aanspreekvorm, door $N=10$ respondenten.
+
+  id    conditie *U*   conditie *je*           $D$
+ ---- -------------- --------------- ---------------------
+  1          8               9                 -1
+  2          5               6                 -1
+  3          6               9                 -3
+  4          6               8                 -2
+  5          5               8                 -3
+  6          4               6                 -2
+  7          4               8                 -4
+  8          7              10                 -3
+  9          7               9                 -2
+  10         6               7                 -1
+                                       $\overline{D}$=-2.2
+
+
+Het paar van observaties voor het $i$-de lid van de steekproef heeft een
+verschil-score die we kunnen schrijven als: 
+$D_i = x_{1i} - x_{2i}$ waarbij $x_{1i}$ de score is van de afhankelijke
+variabele is voor het $i$-de lid van de steekproef in conditie 1, en
+$x_{2i}$ de score voor het $i$-de lid voor conditie 2. Deze
+verschilscore is ook vermeld in
+Tabel \@ref(tab:data-uje-paired).
+
+Deze verschilscore $D$ wordt vervolgens eigenlijk geanalyseerd met de
+eerder besproken $t$-toets voor één enkele steekproef (zie
+§\@ref(sec:ttoets-onesample)), waarbij H0: $\mu_D=0$. d.w.z. geen verschil
+tussen condities. We berekenen het gemiddelde van de verschilscore,
+$\overline{D}$, en de standaarddeviatie van de verschilscore, $s_{D}$,
+op de gebruikelijke wijze (zie
+§\@ref(sec:standaarddeviatie)). We gebruiken dit gemiddelde en deze
+standaarddeviatie om de toetsingsgrootheid $t$ te berekenen, via formule
+\@ref(eq:t-pairedsamples), met $(N-1)$ vrijheidsgraden. Tenslotte
+gebruiken we weer
+Bijlage \@ref(app:kritieketwaarden) om de grenswaarde $t^*$ te bepalen, en
+daarmee de overschrijdingskans $p$ voor de gevonden waarde van de
+steekproefgrootheid $t$ onder H0.
+
+Voor het bovengenoemde voorbeeld met *U* of *je* als aanspreekvorm
+vinden we aldus $\overline{D}=-2.2$ en $s_D=1.0$. Als we dit invullen in
+formule \@ref(eq:t-pairedsamples) vinden we $t=-6.74$ met $N-1=9$ d.f. De
+bijbehorende kritieke grenswaarde $t^*$ zoeken we wederom op in
+Bijlage \@ref(app:kritieketwaarden). Daarbij negeren we het teken van $t$,
+omdat de kansverdeling van $t$ immers symmetrisch is. In de regel voor 9
+d.f. vinden we $t^*=4.297$ in de laatste kolom. Voor tweezijdige
+toetsing moeten we de overschrijdingskans behorend bij deze kolom
+verdubbelen (zie
+§\@ref(sec:ttoets-eenzijdigtweezijdig)), resulterend in $p=.002$.
+De gevonden toetsingsgrootheid $t > t^*$, dus $p<.002$. We besluiten om
+H0 *wel* te verwerpen, en rapporteren dat als volgt:
+
+> Het oordeel van $N=10$ respondenten over de pagina met *U* als
+> aanspreekvorm is gemiddeld 2.2 punten lager dan hun oordeel over de
+> vergelijkbare pagina met *je* als aanspreekvorm; dit is een
+> significant verschil ($t(9)=-6.74, p<.002$).
+
+### aannames {#aannames-1}
+
+De voor gepaarde waarnemingen binnen een enkele steekproef vereist drie
+aannames (assumpties) waaraan voldaan moet zijn, om deze toets te mogen
+gebruiken.
+
+* De gegevens moeten gemeten zijn op intervalniveau (zie
+§\@ref(sec:interval)).
+
+* Alle *paren* van observaties moeten onafhankelijk van elkaar
+zijn.
+
+* De *verschilscores* $D$ moeten normaal verdeeld zijn (zie
+§\@ref(sec:isvarnormaalverdeeld)); als het aantal paren van
+waarnemingen in de steekproef echter groter is dan ca 30 dan is de
+doorgaans goed bruikbaar.
+
+### formules {#sec:formules13-4}
+
+\begin{equation}
+  (\#eq:t-pairedsamples)
+  t = \frac{ \overline{D}-\mu_D} { s_D } \times \sqrt{N}
+\end{equation}
+
+### SPSS {#sec:SPSS-ttoets-gepaard}
+
+De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand `data/ujedata.csv`.
+```
+Analyze > Compare Means > Paired-Samples T Test
+```
+Sleep eerste afhankelijke variabele `cond.u` naar paneel Paired
+Variables onder Variable1, en sleep tweede variabele `cond.je` naar
+zelfde paneel onder Variable2. Bevestig met `OK`.
+
+###  {#sec:R-ttoets-gepaard}
+
+De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand `data/ujedata.csv`.
+```{r ttoets-gepaard}
+ujedata <- read.table( file="data/ujedata.csv", header=TRUE, sep=";" )
+with(ujedata, t.test( cond.u, cond.je, paired=TRUE ) )
+```
+
+## Effectgrootte {#sec:ttoets-effectgrootte}
+
+Tot nu toe zijn we vooral ingegaan op toetsing als een binaire
+beslissing om H0 wel of niet te verwerpen, in het licht van de
+observaties. Maar het is daarnaast ook van groot belang om te weten hoe
+groot het geobserveerde effect eigenlijk is: de *effectgrootte* (Eng.
+'effect size', 'ES') [@Cohen88; @Thom02; @Naka07].
+
+In formules \@ref(eq:t-onesample) en \@ref(eq:t-pairedsamples) komt tot uiting 
+dat $t$ groter wordt,
+naarmate het effect groter wordt, d.w.z. bij een groter verschil
+$(\overline{x}-\mu)$ of $(\overline{x_1}-\overline{x_2})$ of
+$(\overline{D}-\mu_D)$\], *en/of* naarmate de steekproef groter wordt.
+Kort gezegd [@Rose08 p.338, formule 11.10]: 
+\begin{equation}
+  (\#eq:Rose08)
+    \textrm{significance test} = 
+    \textrm{size of effect} \times \textrm{size of study}
+\end{equation}
+
+Dat houdt
+in dat een klein, en mogelijk triviaal effect, ook statistisch
+significant kan zijn als de steekproef maar groot genoeg is. Omgekeerd
+kan een heel groot effect goed vastgesteld worden op basis van een zeer
+kleine steekproef.
+
+---
+
+> *Voorbeeld 13.2:*
+In een onderzoek naar de levensduur van overleden 50+-ers uit Oostenrijk
+en Denemarken [@Dobl99] bleek dat de levensduur verschilt met de
+geboorteweek, vermoedelijk omdat babies uit "zomerzwangerschappen"
+gemiddeld iets gezonder zijn (of waren) dan die uit
+"winterzwangerschappen". In dit onderzoek waren de verschillen in
+levensduur zeer gering ($\pm 0.30$ jaar in Oostenrijk, $\pm 0.15$ jaar
+in Denemarken), maar het aantal observaties was echter zeer groot.
+
+> Daarentegen is het verschil in lichaamslengte tussen dwergen (korter dan
+1.5 m) en reuzen (langer dan 2.0 m) zo groot dat het goed kan worden
+vastgesteld op basis van slechts $n=2$ in elke groep.
+
+---
+
+In ons onderzoek zijn we vooral geïnteresseerd in belangrijke
+verschillen, d.w.z. doorgaans grote verschillen. We moeten beseffen dat
+onderzoek ook kosten met zich meebrengt in termen van geld, tijd,
+inspanning, privacy, en verlies van onbevangenheid voor ander onderzoek
+(zie hoofdstuk
+\@ref(ch:integriteit)). We willen dus niet nodeloos onderzoek doen
+naar triviale effecten. Een onderzoeker dient daarom vooraf te bepalen
+wat het kleinste effect is dat hij/zij wil kunnen opsporen, bv. 1 punt
+verschil in de score van de grammaticatoets. Verschillen kleiner dan 1
+punt worden dan beschouwd als triviaal, en verschillen groter dan 1 punt
+als potentieel interessant.
+
+Ook is het van belang om de gevonden effectgrootte te vermelden bij de
+resultaten van een onderzoek, om lezers en latere onderzoekers van
+dienst te zijn. In sommige wetenschappelijke tijdschriften is het zelfs
+verplicht om effectgrootte te rapporteren. Dat kan overigens ook in de
+vorm van een betrouwbaarheidsinterval van het gemiddelde
+(zie \@ref(sec:t-betrouwbaarheidsinterval-gemiddelde)), omdat we deze
+betrouwbaarheidsintervallen en effectgroottes in elkaar kunnen
+omrekenen.
+
+De ruwe effectgrootte is eenvoudigweg het verschil $D$ in gemiddelden
+tussen twee groepen, of tussen twee condities, uitgedrukt in eenheden
+van de ruwe score. In §\@ref(sec:ttoets-onafh) vonden we zo een verschil in woordenschat
+van $D=95-85=10$ tussen jongens en meisjes.
+
+Meestal gebruiken we echter de gestandaardiseerde effectgrootte (zie
+formules hieronder), waarbij we rekening houden met de spreiding in de
+observaties, bijv in de vorm van "pooled standard deviation" $s_p$ [^fn13-2].
+We vinden zo een gestandaardiseerde effectgrootte van
+$$\label{eq:d-standardized}
+    d = \frac{ \overline{x_1}-\overline{x_2} } {s_p} = \frac{10}{90.5} = 0.11$$
+In het eerste voorbeeld hierboven is de gestandaardiseerde effectgrootte
+van het verschil in woordenschat tussen meisjes en jongens dus 0.11. In
+dit geval is het verschil tussen de groepen gering ten opzichte van de
+spreiding binnen de groepen --- de kans dat een willekeurig gekozen
+meisje een grotere woordenschat heeft dan een willekeurig gekozen
+jongen, is slechts 0.53 [@McGraw92], en dat is nauwelijks beter dan de
+kans van 0.50 die we verwachten volgens H0. Dat dit zeer kleine effect
+niet significant is (zie §\@ref(sec:ttoets-onafh)) wekt dan ook geen verbazing. 
+We zouden de
+effectgrootte en significantie als volgt kunnen rapporteren:
+
+> De gemiddelde productieve woordenschat van Zweedse kinderen van 18
+> maanden oud verschilt nauwelijks tussen meisjes en jongens. Meisjes
+> produceren gemiddeld 95 verschillende woorden ($s=82$), en jongens
+> gemiddeld 85 verschillende woorden ($s=98$). Het verschil is zeer
+> klein ($d=0.11)$ en niet significant ($t(122)=0.88, p>.4$).
+
+In het tweede voorbeeld hierboven is de gestandaardiseerde effectgrootte
+van het verschil in duren van lettergrepen ongeveer
+$(0.235-0.269)/0.029 \approx 1.15$. Dit relatief grote effect kunnen we
+als volgt rapporteren:
+
+> De gemiddelde duur van een lettergreep gesproken door een spreker uit
+> het westen van Nederland is $0.235$ seconde ($s=0.028$). Dit is
+> aanzienlijk korter dan bij sprekers uit het Noorden van Nederland
+> ($\overline{x}=0.269$ s, $s=0.029$). Het verschil is ca. 10%; dit
+> verschil is zeer groot ($d=-1.15$) en significant
+> ($t(38)=-3.76, p<.05$). In de onderzochte opnames uit 1999 praten de
+> sprekers uit het Westen dus aanzienlijk sneller dan die uit het
+> Noorden van Nederland.
+
+Als $d$ ligt rond 0.2 spreken we van een klein effect. Een effectgrootte
+$d$ rond 0.5 noemen we een middelmatig (medium) effect, en een $d$ rond
+0.8 of groter noemen we een groot effect [@Cohen88; @Rose08].
+
+```{r kleinstesignifverschil, echo=FALSE, fig.cap="Relatie tussen de steekproefgrootte en het kleinste effect (d) dat significant is volgens een voor ongepaarde, onafhankelijke waarnemingen, met foutkansen alpha=.05 en beta=.10."}
+# adapted from `plotkleinstesignifverschil.R`
+# plot figure of smallest signif difference, based on power.t.test
+# to illustrate that significance = effect size * size of study
+# HQ 20140314 and 20150315
+op <- par( mar=c(5,4,2,2)+0.1 ) # tighter top margin 
+themax = 10000
+n1 <- unique( round(exp( seq(log(5),log(themax),length=200) ) ))
+sig = .05
+power = .90
+delta1 <- rep(NA, length(n1))
+for (i in 1:length(n1)) { 
+  delta1[i] <- power.t.test( n=n1[i], sd=1, sig=sig, power=power, type="two.sample" )$delta 
+  }
+plot( n1, delta1, log="x", type="p", pch=15, 
+	xlab="Steekproefgrootte (n in elke groep)", 
+	ylab="Kleinste significante effect (d)" )
+grid()
+mid <- 250 # approximately
+text(mid,2.1,"t-toets voor twee steekproeven",adj=0.5,family="sans")
+text(mid,1.9,expression(italic(n[1]==n[2])),adj=0.5,family="sans")
+text(mid,1.7,expression(alpha==.05),adj=0.5,family="sans")
+text(mid,1.5,expression(beta==.10),adj=0.5,family="sans")
+x2 <- 122
+segments(x0=x2,y0=0,y1=0.42, lty=2, lwd=1)
+x3 <- ceiling( power.t.test(delta=0.11,sig=sig,power=power)$n )
+segments(x0=x3,y0=0,y1=0.11, lty=2, lwd=1)
+abline(h=0.11, lty=2,lwd=1 )
+axis( side=1, at=c(x2,x3), labels=c(x2,x3), line=-1, tick=F )
+axis( side=4, at=c(0.11), labels=c(0.11), tick=T )
+rm(n1,sig,power,delta1,mid,x2,x3)
+par(op)
+```
+
+---
+
+> *Voorbeeld 13.3:*
+Kijk nog eens naar formule
+\@ref(eq:Rose08)
+en naar Figuur \@ref(fig:kleinstesignifverschil) die de relatie tussen
+steekproefgrootte en effectgrootte illustreert. Met een
+steekproefgrootte van $n_1=122$ kunnen we alleen een effect van $d=0.42$
+of groter opsporen, met voldoende kleine kansen op fouten van Typen I en
+II ($\alpha=.05, \beta=.10$). Om het zeer kleine effect van $d=0.11$ op
+te sporen, met dezelfde kleine foutkansen $\alpha$ en $\beta$, zouden er
+steekproeven van tenminste 1738 meisjes en 1738 jongens nodig zijn.
+
+---
+
+We kunnen de effectgrootte ook uitdrukken als de waarschijnlijkheid dat
+een verschil in de voorspelde richting optreedt, voor een willekeurig
+gekozen element uit de populatie
+(formules \@ref(eq:d-onesample) en \@ref(eq:d-paired)), 
+of (indien van toepassing) voor twee
+willekeurig en onafhankelijk gekozen elementen uit de twee populaties
+(formule \@ref(eq:d-homoskedastic)) [@McGraw92]. Laten we nog eens
+terugkeren naar de grammaticatoets van de studenten Taalwetenschap
+(§\@ref(sec:ttoets-onesample)). Het effect dat we vonden is niet
+alleen significant maar ook groot. In termen van waarschijnlijkheid
+uitgedrukt: de kans dat een willekeurige student Taalwetenschap een
+score behaalt groter dan $\mu_0=73$ is 0.91. (En een willekeurig gekozen
+student Taalwetenschap heeft dus nog 9% kans om lager te scoren dan het
+veronderstelde populatie-gemiddelde van 73.)
+
+Voor de fictieve oordelen over de webpagina's met *U* of *je* (zie
+Tabel \@ref(tab:data-uje-paired)) vinden we een gestandaardiseerde
+effectgrootte van
+$$d = \frac{ \overline{D}-\mu_D} {s_D} = \frac{ -2.20-0 } {1.03} = -2.13$$
+Dat dit extreem grote effect inderdaad significant is, wekt dan ook geen
+verbazing. We kunnen dat als volgt rapporteren:
+
+> De oordelen van $N=10$ respondenten over de pagina's met *U* of *je*
+> als aanspreekvorm verschillen significant, met gemiddeld $-2.2$ punten
+> verschil. Dit verschil heeft een 95% betrouwbaarheidsinterval van
+> $-2.9$ tot $-1.5$ en een geschatte gestandaardiseerde effectgrootte
+> $d=-2.13$; de kans dat een willekeurig gekozen respondent de
+> *je*-versie hoger beoordeelt dan de *U*-versie is $p=.98$.
+
+### formules {#sec:formules13-5}
+
+Voor een enkele steekproef: 
+\begin{equation}
+   (\#eq:d-onesample)
+  d = \frac{\overline{x}-\mu}{s}
+\end{equation}
+waarbij $s$ de standaarddeviatie $s$
+van de score $x$ voorstelt.
+
+Voor twee onafhankelijke steekproeven (zie
+formule \@ref(eq:sd-pooled)): 
+\begin{equation}
+  (\#eq:d-homoskedastic)
+  d = \frac{ \overline{x_1}-\overline{x_2} } { s_p }
+\end{equation}
+
+Voor gepaarde waarnemingen: 
+\begin{equation}
+  (\#eq:d-paired)
+  d = \frac{ \overline{x_1}-\overline{x_2} } { s_D }
+\end{equation}
+waarbij $s_D$ de
+standaarddeviatie is van het verschil $D$ volgens
+formule \@ref(eq:d-paired).
+
+### SPSS {#spss-13-2}
+
+In SPSS kunnen we de effectgrootte meestal het makkelijkste met de hand
+uitrekenen.
+
+Voor een enkele steekproef
+(formule \@ref(eq:d-onesample)) kunnen we de effectgrootte eenvoudig
+uitrekenen uit het gemiddelde en de standaarddeviatie, rekening houdend
+met de waarde $\mu$ waartegen we toetsen.
+```
+Analyze > Descriptive Statistics > Descriptives...
+```
+
+Kies de knop `Options` en zorg dat `Mean` en `Std.deviation` zijn
+aangevinkt. In de uitvoer staan vervolgens de benodigde gegevens:\
+$d = (84.41 - 73) / 8.392 = 1.36$, een zeer groot effect.
+
+Voor ongepaarde, onafhankelijke waarnemingen kunnen we eveneens de
+effectgrootte het beste met de hand uitrekenen op basis van de
+gemiddelden, standaarddeviaties, en omvang van de twee steekproeven,
+gebruik makend van
+formules \@ref(eq:sd-pooled) en
+\@ref(eq:d-homoskedastic) hierboven.
+
+Voor een enkele steekproef met twee gepaarde observaties
+(formule \@ref(eq:d-paired)) kunnen we de effectgrootte weer eenvoudiger
+uitrekenen uit het gemiddelde en de standaarddeviatie van het verschil.
+De gegevens staan in de uitvoer van de paarsgewijze $t$-toets 
+(§\@ref(sec:SPSS-ttoets-gepaard)), respectievelijk als `Mean` en
+`Std.Deviation`:\
+$d = -2.200 / 1.033 = 2.130$, een super groot effect.
+
+### R
+
+In R is het wat makkelijker om de effectgrootte te laten uitrekenen.
+
+Voor een enkele steekproef
+(formule \@ref(eq:d-onesample)):\
+
+```{r}
+gramm2013 <- read.csv( file="data/grammaticatoets2013.csv",header=F)
+dimnames(gramm2013)[[2]] <- c("score","opleiding")
+with(gramm2013, score[opleiding=="TW"]) -> score.TW # hulpvariabele
+( mean(score.TW)-73 ) / sd(score.TW) 
+```
+
+De kans op een score groter dan het populatiegemiddelde (de toetswaarde) `73` voor een willekeurige student Taalwetenschap (waarvan we aannemen dat $\mu=84.4$ en $s=8.4$):
+```{r}
+1 - pnorm( 73, mean=84.4, sd=8.4 ) 
+```
+
+Voor ongepaarde, onafhankelijke waarnemingen kunnen we het kleinste
+significante effect uitrekenen (zie ook
+Fig. \@ref(fig:kleinstesignifverschil)); daarvoor gebruiken we de functie `power.t.test`. (Deze functie is ook gebruikt om Fig.\@ref(fig:kleinstesignifverschil) te construeren.)
+Je moet bij die functie de gewenste `power` als
+argument opgeven (power = $1-\beta$; zie
+§\@ref(sec:power-inleiding)).
+```{r}
+power.t.test( n=122, sig=.05, power=.90, type="two.sample" )
+```
+In de uitvoer staat bij `delta` het kleinste significante effect aangegeven; zie ook Voorbeeld 13.3 hierboven. 
+
+Voor een enkele steekproef met twee gepaarde observaties
+(formule \@ref(eq:d-paired)):
+``` {r}
+ujedata <- read.table( file="data/ujedata.csv", header=TRUE, sep=";" )
+with( ujedata, mean(cond.u-cond.je) / sd(cond.u-cond.je) )
+```
+
+### Betrouwbaarheidsinterval van de effectgrootte
+
+We hebben al eerder gezien
+(§\@ref(sec:betrouwbaarheidsinterval-gemiddelde) en §\@ref(sec:t-betrouwbaarheidsinterval-gemiddelde))
+dat we een kenmerk
+of parameter van de populatie kunnen schatten op basis van een kenmerk
+van een steekproef. Zo hebben we het onbekende populatiegemiddelde $\mu$
+geschat op basis van het geobserveerde steekproefgemiddelde
+$\overline{x}$. Bij die schatting hoort wel een bepaalde mate van
+onzekerheid of betrouwbaarheid: misschien verschilt de onbekende
+parameter in de populatie enigszins van het steekproefkenmerk, dat we
+als schatter gebruiken, ten gevolge van toevallige variaties in de
+steekproef. De (on)zekerheid of (on)betrouwbaarheid wordt uitgedrukt als
+een betrouwbaarheidsinterval van het geschatte kenmerk. We weten dan met
+een bepaalde betrouwbaarheid (meestal 95%) dat de onbekende parameter
+binnen dat interval zal liggen
+(§\@ref(sec:betrouwbaarheidsinterval-gemiddelde) en §\@ref(sec:t-betrouwbaarheidsinterval-gemiddelde)). 
+
+Deze redenatie nu geldt niet alleen voor de gemiddelde score, of voor de
+mediaan of voor de variantie, maar evenzo voor de effectgrootte. Ook de
+effectgrootte is immers een onbekende parameter uit de populatie, die we
+proberen te schatten op grond van een beperkte steekproef. Voor de
+fictieve oordelen over de webpagina's met *U* of *je* (zie
+Tabel \@ref(tab:data-uje-paired)) vonden we een gestandaardiseerde
+effectgrootte van $d=-2.13$. Dit is een schatting van de onbekende
+effectgrootte (d.i. van de sterkte van de voorkeur voor de *je*-variant)
+in de populatie van beoordelaars, op basis van een steekproef van $n=10$
+beoordelaars. We kunnen ook hier de betrouwbaarheid van deze schatting
+aangeven, in de vorm van een *betrouwbaarheidsinterval* rondom de
+geobserveerde effectgrootte $d=-2.13$.
+
+Het betrouwbaarheidsinterval van de effectgrootte is wel wat lastig vast
+te stellen [@Naka07; @Chen15]. We illustreren het hier op simpele wijze
+voor het simpelste geval, nl. dat van de $t$-toets voor een enkele steekproef,
+c.q. voor twee gepaarde observaties. We hebben hiervoor twee elementen
+nodig: ten eerste de effectgrootte uitgedrukt als correlatie [@Rose08
+p.359, formule 12.1], $$r = \sqrt{ \frac{t^2}{t^2+\textrm{df}} }$$ en
+ten tweede de standaardfout van de effectgrootte $d$ [@Naka07 p.600,
+formule 18]: 
+\begin{equation}
+  (\#eq:d-paired-se)
+    \textrm{se}_d = \sqrt{ \frac{2(1-r)}{n} + \frac{d^2}{2(n-1)} }
+\end{equation}
+In
+ons eerdere voorbeeld van de $n=10$ gepaarde oordelen over een webpagina
+met *U* of *je* als aanspreekvorm vonden we $d=-2.13$. We vinden ook dat
+$r=.9135$. Met deze gegevens vinden we $\textrm{se}_d = 0.519$ via
+formule \@ref(eq:d-paired-se).
+
+Hiermee bepalen we vervolgens het betrouwbaarheidsinterval voor de
+effectgrootte: 
+\begin{equation}
+   (\#eq:d-paired-CI)
+    d \pm t^*_{n-1} \times \textrm{se}_d 
+\end{equation}
+(zie de overeenkomstige
+formule \@ref(eq:t-onesampleCI)). 
+Na invullen van $t^*_9=2.262$ (zie
+Bijlage \@ref(app:kritieketwaarden)) en $\textrm{se}_d = 0.519$ vinden we
+uiteindelijk een 95%-betrouwbaarheidsinterval van $(-3.30,-0.96)$. We
+weten dus met 95% betrouwbaarheid dat de onbekende effectgrootte in de
+populatie ergens binnen dit interval ligt, en dus ook dat die kleiner is
+dan nul. Op grond van die laatste overweging kunnen we H0 verwerpen.
+Maar: we weten nu niet alleen *dat* de voorkeur afwijkt van nul, maar
+ook *in welke mate* de (gestandaardiseerde) voorkeur afwijkt van nul,
+d.w.z. hoe sterk de voorkeur voor de *je*-versie is. Deze nieuwe kennis
+over de mate of grootte van het effect is vaak nuttiger en interessanter
+dan de binaire beslissing of er wel of niet een effect is (H0 wel of
+niet verwerpen) [@Cumm12].
+
+[^fn13-1]: Wij danken Els Rose voor het beschikbaar stellen van deze gegevens.
+
+[^fn13-2]: In dit geval gebruiken we $s_p = \sqrt{ \frac{122\times82^2+128\times98^2} {122+128} } = 90.5$, zie formules \@ref(eq:sd-pooled) en \@ref(eq:d-homoskedastic).

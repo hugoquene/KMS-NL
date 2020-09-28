@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hoofdstuk 5 Validiteit | Kwantitatieve Methoden en Statistiek</title>
+  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hoofdstuk 5 Validiteit | Kwantitatieve Methoden en Statistiek" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta name="github-repo" content="rstudio/KMS-NL" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hoofdstuk 5 Validiteit | Kwantitatieve Methoden en Statistiek" />
+  
+  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch-Meetniveau.html"/>
+<link rel="next" href="ch-ontwerp.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Kwantitatieve Methoden en Statistiek</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Voorwoord</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#notatie"><i class="fa fa-check"></i>Notatie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licentie"><i class="fa fa-check"></i>Licentie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citatie"><i class="fa fa-check"></i>Citatie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technische-details"><i class="fa fa-check"></i>Technische details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#over-de-auteurs"><i class="fa fa-check"></i>Over de auteurs</a></li>
+</ul></li>
+<li class="part"><span><b>Deel I: Methodologie</b></span></li>
+<li class="chapter" data-level="1" data-path="ch-inleiding.html"><a href="ch-inleiding.html"><i class="fa fa-check"></i><b>1</b> Inleiding</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:wetenschappelijk-onderzoek"><i class="fa fa-check"></i><b>1.1</b> Wetenschappelijk onderzoek</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:theorie"><i class="fa fa-check"></i><b>1.1.1</b> Theorie</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:paradigmata"><i class="fa fa-check"></i><b>1.2</b> Paradigmata</a></li>
+<li class="chapter" data-level="1.3" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:instrumentatie-onderzoek"><i class="fa fa-check"></i><b>1.3</b> Instrumentatie-onderzoek</a></li>
+<li class="chapter" data-level="1.4" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:beschrijvend-onderzoek"><i class="fa fa-check"></i><b>1.4</b> Beschrijvend onderzoek</a></li>
+<li class="chapter" data-level="1.5" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:experimenteel-onderzoek"><i class="fa fa-check"></i><b>1.5</b> Experimenteel onderzoek</a></li>
+<li class="chapter" data-level="1.6" data-path="ch-inleiding.html"><a href="ch-inleiding.html#vooruitblik"><i class="fa fa-check"></i><b>1.6</b> Vooruitblik</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html"><i class="fa fa-check"></i><b>2</b> Hypothese-toetsend onderzoek</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#inleiding"><i class="fa fa-check"></i><b>2.1</b> Inleiding</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:variabelen"><i class="fa fa-check"></i><b>2.2</b> Variabelen</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:onafhankelijkeafhankelijkevariabelen"><i class="fa fa-check"></i><b>2.3</b> Onafhankelijke en afhankelijke variabelen</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:falsificatie"><i class="fa fa-check"></i><b>2.4</b> Falsificatie en nul-hypothese</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:empirischecyclus"><i class="fa fa-check"></i><b>2.5</b> De empirische cyclus</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#observatie"><i class="fa fa-check"></i><b>2.5.1</b> observatie</a></li>
+<li class="chapter" data-level="2.5.2" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#inductie"><i class="fa fa-check"></i><b>2.5.2</b> inductie</a></li>
+<li class="chapter" data-level="2.5.3" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#deductie"><i class="fa fa-check"></i><b>2.5.3</b> deductie</a></li>
+<li class="chapter" data-level="2.5.4" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#toetsing"><i class="fa fa-check"></i><b>2.5.4</b> toetsing</a></li>
+<li class="chapter" data-level="2.5.5" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#evaluatie"><i class="fa fa-check"></i><b>2.5.5</b> evaluatie</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:keuzemomenten"><i class="fa fa-check"></i><b>2.6</b> Keuzemomenten</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch-integriteit.html"><a href="ch-integriteit.html"><i class="fa fa-check"></i><b>3</b> Integriteit</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ch-integriteit.html"><a href="ch-integriteit.html#sec:integriteit-inleiding"><i class="fa fa-check"></i><b>3.1</b> Inleiding</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-integriteit.html"><a href="ch-integriteit.html#sec:ontwerp"><i class="fa fa-check"></i><b>3.2</b> Ontwerp</a></li>
+<li class="chapter" data-level="3.3" data-path="ch-integriteit.html"><a href="ch-integriteit.html#proefpersonen-en-informanten"><i class="fa fa-check"></i><b>3.3</b> Proefpersonen en informanten</a></li>
+<li class="chapter" data-level="3.4" data-path="ch-integriteit.html"><a href="ch-integriteit.html#gegevens"><i class="fa fa-check"></i><b>3.4</b> Gegevens</a></li>
+<li class="chapter" data-level="3.5" data-path="ch-integriteit.html"><a href="ch-integriteit.html#teksten"><i class="fa fa-check"></i><b>3.5</b> Teksten</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-Meetniveau.html"><a href="ch-Meetniveau.html"><i class="fa fa-check"></i><b>4</b> Meetniveau</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch-Meetniveau.html"><a href="ch-Meetniveau.html#inleiding-1"><i class="fa fa-check"></i><b>4.1</b> Inleiding</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-Meetniveau.html"><a href="ch-Meetniveau.html#sec:nominaal"><i class="fa fa-check"></i><b>4.2</b> Nominaal</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-Meetniveau.html"><a href="ch-Meetniveau.html#sec:ordinaal"><i class="fa fa-check"></i><b>4.3</b> Ordinaal</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-Meetniveau.html"><a href="ch-Meetniveau.html#sec:interval"><i class="fa fa-check"></i><b>4.4</b> Interval</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-Meetniveau.html"><a href="ch-Meetniveau.html#sec:ratio"><i class="fa fa-check"></i><b>4.5</b> Ratio</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-Meetniveau.html"><a href="ch-Meetniveau.html#sec:ordeningvanmeetniveaus"><i class="fa fa-check"></i><b>4.6</b> Ordening van meetniveaus</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch-validiteit.html"><a href="ch-validiteit.html"><i class="fa fa-check"></i><b>5</b> Validiteit</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ch-validiteit.html"><a href="ch-validiteit.html#inleiding-2"><i class="fa fa-check"></i><b>5.1</b> Inleiding</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:causaliteit"><i class="fa fa-check"></i><b>5.2</b> Causaliteit</a></li>
+<li class="chapter" data-level="5.3" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:validiteit"><i class="fa fa-check"></i><b>5.3</b> Validiteit</a></li>
+<li class="chapter" data-level="5.4" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:internevaliditeit"><i class="fa fa-check"></i><b>5.4</b> Interne validiteit</a></li>
+<li class="chapter" data-level="5.5" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:constructvaliditeit"><i class="fa fa-check"></i><b>5.5</b> Constructvaliditeit</a></li>
+<li class="chapter" data-level="5.6" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:externevaliditeit"><i class="fa fa-check"></i><b>5.6</b> Externe validiteit</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html"><i class="fa fa-check"></i><b>6</b> Ontwerp</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:ontwerp-inleiding"><i class="fa fa-check"></i><b>6.1</b> Inleiding</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:tussenbinnenproefpersonen"><i class="fa fa-check"></i><b>6.2</b> Tussen of binnen ?</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#het-one-shot-single-case-ontwerp"><i class="fa fa-check"></i><b>6.3</b> Het one-shot single-case-ontwerp</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#het-één-groep-voormeting-nameting-ontwerp"><i class="fa fa-check"></i><b>6.4</b> Het één-groep-voormeting-nameting-ontwerp</a></li>
+<li class="chapter" data-level="6.5" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:voormeting-nameting-controlegroep-ontwerp"><i class="fa fa-check"></i><b>6.5</b> Het voormeting-nameting-controlegroep-ontwerp</a></li>
+<li class="chapter" data-level="6.6" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:solomon-vier-groepen-ontwerp"><i class="fa fa-check"></i><b>6.6</b> Het Solomon-vier-groepen-ontwerp</a></li>
+<li class="chapter" data-level="6.7" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#het-nameting-controlegroep-ontwerp"><i class="fa fa-check"></i><b>6.7</b> Het nameting-controlegroep-ontwerp</a></li>
+<li class="chapter" data-level="6.8" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:ontwerp-factorieel"><i class="fa fa-check"></i><b>6.8</b> Factoriële ontwerpen</a></li>
+<li class="chapter" data-level="6.9" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:afhankelijkegroepen"><i class="fa fa-check"></i><b>6.9</b> Afhankelijke- en onafhankelijke-groepen-ontwerp</a></li>
+<li class="chapter" data-level="6.10" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#onderzoek-ontwerpen"><i class="fa fa-check"></i><b>6.10</b> Onderzoek ontwerpen</a></li>
+<li class="chapter" data-level="6.11" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#tenslotte"><i class="fa fa-check"></i><b>6.11</b> Tenslotte</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html"><i class="fa fa-check"></i><b>7</b> Steekproeven</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:gelegenheidssteekproef"><i class="fa fa-check"></i><b>7.1</b> Gelegenheidssteekproeven</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:systematischesteekproef"><i class="fa fa-check"></i><b>7.2</b> Systematische steekproeven</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:aselectesteekproef"><i class="fa fa-check"></i><b>7.3</b> Aselecte steekproeven</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#spss"><i class="fa fa-check"></i><b>7.3.1</b> SPSS</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#r"><i class="fa fa-check"></i><b>7.3.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:steekproefgrootte"><i class="fa fa-check"></i><b>7.4</b> Steekproefgrootte</a></li>
+</ul></li>
+<li class="part"><span><b>Deel II: Beschrijvende statistiek</b></span></li>
+<li class="chapter" data-level="8" data-path="ch-frequenties.html"><a href="ch-frequenties.html"><i class="fa fa-check"></i><b>8</b> Frequenties</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ch-frequenties.html"><a href="ch-frequenties.html#inleiding-3"><i class="fa fa-check"></i><b>8.1</b> Inleiding</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:frequenties"><i class="fa fa-check"></i><b>8.2</b> Frequenties</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:intervallen"><i class="fa fa-check"></i><b>8.2.1</b> Intervallen</a></li>
+<li class="chapter" data-level="8.2.2" data-path="ch-frequenties.html"><a href="ch-frequenties.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="8.2.3" data-path="ch-frequenties.html"><a href="ch-frequenties.html#r-1"><i class="fa fa-check"></i><b>8.2.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:staafdiagrammen"><i class="fa fa-check"></i><b>8.3</b> Staafdiagrammen</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:histogrammen"><i class="fa fa-check"></i><b>8.4</b> Histogrammen</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="ch-frequenties.html"><a href="ch-frequenties.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="8.4.2" data-path="ch-frequenties.html"><a href="ch-frequenties.html#r-2"><i class="fa fa-check"></i><b>8.4.2</b> R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html"><i class="fa fa-check"></i><b>9</b> Centrum en spreiding</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#inleiding-4"><i class="fa fa-check"></i><b>9.1</b> Inleiding</a></li>
+<li class="chapter" data-level="9.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#symbolen"><i class="fa fa-check"></i><b>9.2</b> Symbolen</a></li>
+<li class="chapter" data-level="9.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#centrummaten"><i class="fa fa-check"></i><b>9.3</b> Centrummaten</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:gemiddelde"><i class="fa fa-check"></i><b>9.3.1</b> gemiddelde</a></li>
+<li class="chapter" data-level="9.3.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:mediaan"><i class="fa fa-check"></i><b>9.3.2</b> mediaan</a></li>
+<li class="chapter" data-level="9.3.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#modus"><i class="fa fa-check"></i><b>9.3.3</b> modus</a></li>
+<li class="chapter" data-level="9.3.4" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:harmonischgemiddelde"><i class="fa fa-check"></i><b>9.3.4</b> harmonisch gemiddelde</a></li>
+<li class="chapter" data-level="9.3.5" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#gewinsoriseerde-gemiddelde"><i class="fa fa-check"></i><b>9.3.5</b> gewinsoriseerde gemiddelde</a></li>
+<li class="chapter" data-level="9.3.6" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#getrimde-gemiddelde"><i class="fa fa-check"></i><b>9.3.6</b> getrimde gemiddelde</a></li>
+<li class="chapter" data-level="9.3.7" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#vergelijking-van-centrummaten"><i class="fa fa-check"></i><b>9.3.7</b> vergelijking van centrummaten</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:kwartielen-en-boxplots"><i class="fa fa-check"></i><b>9.4</b> Kwartielen en boxplots</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#kwartielen"><i class="fa fa-check"></i><b>9.4.1</b> Kwartielen</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:uitbijters"><i class="fa fa-check"></i><b>9.4.2</b> Uitbijters</a></li>
+<li class="chapter" data-level="9.4.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:boxplot"><i class="fa fa-check"></i><b>9.4.3</b> Boxplots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:spreidingsmaten"><i class="fa fa-check"></i><b>9.5</b> Spreidingsmaten</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:variantie"><i class="fa fa-check"></i><b>9.5.1</b> variantie</a></li>
+<li class="chapter" data-level="9.5.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:standaarddeviatie"><i class="fa fa-check"></i><b>9.5.2</b> standaarddeviatie</a></li>
+<li class="chapter" data-level="9.5.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#mad"><i class="fa fa-check"></i><b>9.5.3</b> MAD</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:significantecijfers"><i class="fa fa-check"></i><b>9.6</b> Over significante cijfers</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:significantecijfers-gemiddelde"><i class="fa fa-check"></i><b>9.6.1</b> Gemiddelde en standaarddeviatie</a></li>
+<li class="chapter" data-level="9.6.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#percentages"><i class="fa fa-check"></i><b>9.6.2</b> Percentages</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:robuustefficient"><i class="fa fa-check"></i><b>9.7</b> Keuzemoment</a></li>
+<li class="chapter" data-level="9.8" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:standaardscores"><i class="fa fa-check"></i><b>9.8</b> Standaardscores</a></li>
+<li class="chapter" data-level="9.9" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
+<li class="chapter" data-level="9.10" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#r-3"><i class="fa fa-check"></i><b>9.10</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html"><i class="fa fa-check"></i><b>10</b> Kansverdelingen</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:kansen"><i class="fa fa-check"></i><b>10.1</b> Kansen</a></li>
+<li class="chapter" data-level="10.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:binomiaalverdeling"><i class="fa fa-check"></i><b>10.2</b> Binomiale kansverdeling</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#formules"><i class="fa fa-check"></i><b>10.2.1</b> formules</a></li>
+<li class="chapter" data-level="10.2.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#r-4"><i class="fa fa-check"></i><b>10.2.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:normaalverdeling"><i class="fa fa-check"></i><b>10.3</b> Normale kansverdeling</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#formules-1"><i class="fa fa-check"></i><b>10.3.1</b> formules</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld"><i class="fa fa-check"></i><b>10.4</b> Heeft mijn variabele een normale kansverdeling?</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#r-5"><i class="fa fa-check"></i><b>10.4.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:watalsnietnormaal"><i class="fa fa-check"></i><b>10.5</b> Wat als mijn variabele niet normaal verdeeld is?</a></li>
+<li class="chapter" data-level="10.6" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:CentraalLimietTheorema"><i class="fa fa-check"></i><b>10.6</b> Kansverdeling van gemiddelde</a></li>
+<li class="chapter" data-level="10.7" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:betrouwbaarheidsinterval-gemiddelde"><i class="fa fa-check"></i><b>10.7</b> Betrouwbaarheidsinterval van het gemiddelde</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#formules-2"><i class="fa fa-check"></i><b>10.7.1</b> formules</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ch-samenhang.html"><a href="ch-samenhang.html"><i class="fa fa-check"></i><b>11</b> Samenhang</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#inleiding-5"><i class="fa fa-check"></i><b>11.1</b> Inleiding</a></li>
+<li class="chapter" data-level="11.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:Pearson"><i class="fa fa-check"></i><b>11.2</b> Pearson product-moment-correlatie</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#formules-3"><i class="fa fa-check"></i><b>11.2.1</b> Formules</a></li>
+<li class="chapter" data-level="11.2.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.2.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-6"><i class="fa fa-check"></i><b>11.2.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:regressie"><i class="fa fa-check"></i><b>11.3</b> Regressie</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:regressie-formules"><i class="fa fa-check"></i><b>11.3.1</b> Formules</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.3.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-7"><i class="fa fa-check"></i><b>11.3.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#invloedrijke-observaties"><i class="fa fa-check"></i><b>11.4</b> Invloedrijke observaties</a></li>
+<li class="chapter" data-level="11.5" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearmans rangorde-correlatie</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#formules-4"><i class="fa fa-check"></i><b>11.5.1</b> Formules</a></li>
+<li class="chapter" data-level="11.5.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.5.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-8"><i class="fa fa-check"></i><b>11.5.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
+<ul>
+<li class="chapter" data-level="11.6.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#formules-5"><i class="fa fa-check"></i><b>11.6.1</b> Formules</a></li>
+<li class="chapter" data-level="11.6.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.6.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-9"><i class="fa fa-check"></i><b>11.6.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Tenslotte</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html"><i class="fa fa-check"></i><b>12</b> Betrouwbaarheid</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#inleiding-6"><i class="fa fa-check"></i><b>12.1</b> Inleiding</a></li>
+<li class="chapter" data-level="12.2" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#wat-is-betrouwbaarheid"><i class="fa fa-check"></i><b>12.2</b> Wat is betrouwbaarheid?</a></li>
+<li class="chapter" data-level="12.3" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#testtheorie"><i class="fa fa-check"></i><b>12.3</b> Testtheorie</a></li>
+<li class="chapter" data-level="12.4" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#interpretaties"><i class="fa fa-check"></i><b>12.4</b> Interpretaties</a></li>
+<li class="chapter" data-level="12.5" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#methoden-om-betrouwbaarheid-te-schatten"><i class="fa fa-check"></i><b>12.5</b> Methoden om betrouwbaarheid te schatten</a></li>
+<li class="chapter" data-level="12.6" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#betrouwbaarheid-tussen-beoordelaars"><i class="fa fa-check"></i><b>12.6</b> Betrouwbaarheid tussen beoordelaars</a></li>
+<li class="chapter" data-level="12.7" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#betrouwbaarheid-en-constructvaliditeit"><i class="fa fa-check"></i><b>12.7</b> Betrouwbaarheid en constructvaliditeit</a></li>
+<li class="chapter" data-level="12.8" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
+<li class="chapter" data-level="12.9" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#r-10"><i class="fa fa-check"></i><b>12.9</b> R</a></li>
+</ul></li>
+<li class="part"><span><b>Deel III: Toetsende statistiek</b></span></li>
+<li class="chapter" data-level="13" data-path="ch-toetsing.html"><a href="ch-toetsing.html"><i class="fa fa-check"></i><b>13</b> Toetsing</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:toetsing-inleiding"><i class="fa fa-check"></i><b>13.1</b> Inleiding</a></li>
+<li class="chapter" data-level="13.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-onesample"><i class="fa fa-check"></i><b>13.2</b> <span class="math inline">\(t\)</span>-toets voor enkele steekproef</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-vrijheidsgraden"><i class="fa fa-check"></i><b>13.2.1</b> vrijheidsgraden</a></li>
+<li class="chapter" data-level="13.2.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-1"><i class="fa fa-check"></i><b>13.2.2</b> formules</a></li>
+<li class="chapter" data-level="13.2.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-aannames"><i class="fa fa-check"></i><b>13.2.3</b> aannames</a></li>
+<li class="chapter" data-level="13.2.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
+<li class="chapter" data-level="13.2.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-11"><i class="fa fa-check"></i><b>13.2.5</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:pgroterdannul"><i class="fa fa-check"></i><b>13.3</b> Overschrijdingskans <span class="math inline">\(p\)</span> is altijd groter dan nul</a></li>
+<li class="chapter" data-level="13.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-eenzijdigtweezijdig"><i class="fa fa-check"></i><b>13.4</b> Eenzijdige en tweezijdige toetsen</a></li>
+<li class="chapter" data-level="13.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:t-betrouwbaarheidsinterval-gemiddelde"><i class="fa fa-check"></i><b>13.5</b> Betrouwbaarheidsinterval van het gemiddelde</a>
+<ul>
+<li class="chapter" data-level="13.5.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-2"><i class="fa fa-check"></i><b>13.5.1</b> formules</a></li>
+<li class="chapter" data-level="13.5.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="13.5.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-12"><i class="fa fa-check"></i><b>13.5.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-onafh"><i class="fa fa-check"></i><b>13.6</b> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven</a>
+<ul>
+<li class="chapter" data-level="13.6.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#aannames"><i class="fa fa-check"></i><b>13.6.1</b> aannames</a></li>
+<li class="chapter" data-level="13.6.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-formules"><i class="fa fa-check"></i><b>13.6.2</b> formules</a></li>
+<li class="chapter" data-level="13.6.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:SPSS-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.3</b> SPSS</a></li>
+<li class="chapter" data-level="13.6.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.4</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="13.7" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-gepaard"><i class="fa fa-check"></i><b>13.7</b> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen</a>
+<ul>
+<li class="chapter" data-level="13.7.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#aannames-1"><i class="fa fa-check"></i><b>13.7.1</b> aannames</a></li>
+<li class="chapter" data-level="13.7.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-4"><i class="fa fa-check"></i><b>13.7.2</b> formules</a></li>
+<li class="chapter" data-level="13.7.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:SPSS-ttoets-gepaard"><i class="fa fa-check"></i><b>13.7.3</b> SPSS</a></li>
+<li class="chapter" data-level="13.7.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-gepaard"><i class="fa fa-check"></i><b>13.7.4</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-effectgrootte"><i class="fa fa-check"></i><b>13.8</b> Effectgrootte</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-5"><i class="fa fa-check"></i><b>13.8.1</b> formules</a></li>
+<li class="chapter" data-level="13.8.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-13-2"><i class="fa fa-check"></i><b>13.8.2</b> SPSS</a></li>
+<li class="chapter" data-level="13.8.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-13"><i class="fa fa-check"></i><b>13.8.3</b> R</a></li>
+<li class="chapter" data-level="13.8.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#betrouwbaarheidsinterval-van-de-effectgrootte"><i class="fa fa-check"></i><b>13.8.4</b> Betrouwbaarheidsinterval van de effectgrootte</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="ch-power.html"><a href="ch-power.html"><i class="fa fa-check"></i><b>14</b> Power</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="ch-power.html"><a href="ch-power.html#sec:power-inleiding"><i class="fa fa-check"></i><b>14.1</b> Inleiding</a></li>
+<li class="chapter" data-level="14.2" data-path="ch-power.html"><a href="ch-power.html#sec:effectgrootte-power"><i class="fa fa-check"></i><b>14.2</b> Verband tussen effectgrootte en power</a></li>
+<li class="chapter" data-level="14.3" data-path="ch-power.html"><a href="ch-power.html#sec:steekproefgrootte-power"><i class="fa fa-check"></i><b>14.3</b> Verband tussen steekproefgrootte en power</a></li>
+<li class="chapter" data-level="14.4" data-path="ch-power.html"><a href="ch-power.html#sec:significantieniveau-power"><i class="fa fa-check"></i><b>14.4</b> Verband tussen significantieniveau en power</a></li>
+<li class="chapter" data-level="14.5" data-path="ch-power.html"><a href="ch-power.html#nadelen-van-onvoldoende-power"><i class="fa fa-check"></i><b>14.5</b> Nadelen van onvoldoende power</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html"><i class="fa fa-check"></i><b>15</b> Variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:inleiding"><i class="fa fa-check"></i><b>15.1</b> Inleiding</a></li>
+<li class="chapter" data-level="15.2" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-voorbeelden"><i class="fa fa-check"></i><b>15.2</b> Enkele voorbeelden</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#aannames-2"><i class="fa fa-check"></i><b>15.2.1</b> aannames</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#eén-weg-variantieanalyse"><i class="fa fa-check"></i><b>15.3</b> Eén-weg-variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.3.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-uitleg"><i class="fa fa-check"></i><b>15.3.1</b> Een intuïtieve uitleg</a></li>
+<li class="chapter" data-level="15.3.2" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-formeel"><i class="fa fa-check"></i><b>15.3.2</b> Een formele uitleg</a></li>
+<li class="chapter" data-level="15.3.3" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-effectgrootte"><i class="fa fa-check"></i><b>15.3.3</b> Effectgrootte</a></li>
+<li class="chapter" data-level="15.3.4" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-gericht"><i class="fa fa-check"></i><b>15.3.4</b> Gerichte vergelijkingen</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc vergelijkingen</a></li>
+<li class="chapter" data-level="15.3.6" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
+<li class="chapter" data-level="15.3.7" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#r-14"><i class="fa fa-check"></i><b>15.3.7</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="15.4" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#tweeweg-variantieanalyse"><i class="fa fa-check"></i><b>15.4</b> Tweeweg-variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#een-intuïtieve-uitleg"><i class="fa fa-check"></i><b>15.4.1</b> Een intuïtieve uitleg</a></li>
+<li class="chapter" data-level="15.4.2" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#een-formele-uitleg"><i class="fa fa-check"></i><b>15.4.2</b> Een formele uitleg</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#r-15"><i class="fa fa-check"></i><b>15.4.4</b> R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html"><i class="fa fa-check"></i><b>16</b> Chi-kwadraat-toetsen</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#sec:h16inleiding"><i class="fa fa-check"></i><b>16.1</b> Inleiding</a></li>
+<li class="chapter" data-level="16.2" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#sec:chi2gof"><i class="fa fa-check"></i><b>16.2</b> <span class="math inline">\(\chi^2\)</span>-toets voor “goodness of fit” in enkele steekproef</a></li>
+<li class="chapter" data-level="16.3" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#chi2-toets-voor-homogeniteit-van-een-variabele-in-meerdere-steekproeven"><i class="fa fa-check"></i><b>16.3</b> <span class="math inline">\(\chi^2\)</span>-toets voor homogeniteit van een variabele in meerdere steekproeven</a></li>
+<li class="chapter" data-level="16.4" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#chi2-toets-voor-verband-tussen-twee-variabelen-in-enkele-steekproef"><i class="fa fa-check"></i><b>16.4</b> <span class="math inline">\(\chi^2\)</span>-toets voor verband tussen twee variabelen in enkele steekproef</a></li>
+<li class="chapter" data-level="16.5" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#sec:chi2toets-aannames"><i class="fa fa-check"></i><b>16.5</b> aannames</a></li>
+<li class="chapter" data-level="16.6" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#formule"><i class="fa fa-check"></i><b>16.6</b> formule</a></li>
+<li class="chapter" data-level="16.7" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#spss-14"><i class="fa fa-check"></i><b>16.7</b> SPSS</a>
+<ul>
+<li class="chapter" data-level="16.7.1" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#goodness-of-fit-voorbereiding"><i class="fa fa-check"></i><b>16.7.1</b> goodness of fit: voorbereiding</a></li>
+<li class="chapter" data-level="16.7.2" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#goodness-of-fit-toetsing"><i class="fa fa-check"></i><b>16.7.2</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.7.3" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#kruistabellen-voorbereiding"><i class="fa fa-check"></i><b>16.7.3</b> kruistabellen: voorbereiding</a></li>
+<li class="chapter" data-level="16.7.4" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#kruistabellen-toetsing"><i class="fa fa-check"></i><b>16.7.4</b> kruistabellen: toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.8" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#r-16"><i class="fa fa-check"></i><b>16.8</b> R</a>
+<ul>
+<li class="chapter" data-level="16.8.1" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#goodness-of-fit-toetsing-1"><i class="fa fa-check"></i><b>16.8.1</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.8.2" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#kruistabellen-voorbereiding-en-toetsing"><i class="fa fa-check"></i><b>16.8.2</b> kruistabellen: voorbereiding en toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.9" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#effectgrootte-odds-ratio"><i class="fa fa-check"></i><b>16.9</b> Effectgrootte: odds ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html"><i class="fa fa-check"></i><b>17</b> Andere nonparametrische toetsen</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#sec:h17inleiding"><i class="fa fa-check"></i><b>17.1</b> Inleiding</a></li>
+<li class="chapter" data-level="17.2" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#gepaarde-observaties-enkele-steekproef"><i class="fa fa-check"></i><b>17.2</b> Gepaarde observaties, enkele steekproef</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#sec:tekentoets"><i class="fa fa-check"></i><b>17.2.1</b> Tekentoets</a></li>
+<li class="chapter" data-level="17.2.2" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#sec:Wilcoxon-signed-rank"><i class="fa fa-check"></i><b>17.2.2</b> Wilcoxon signed-ranks test</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#onafhankelijke-observaties-meerdere-steekproeven"><i class="fa fa-check"></i><b>17.3</b> Onafhankelijke observaties, meerdere steekproeven</a>
+<ul>
+<li class="chapter" data-level="17.3.1" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#mediaantoets"><i class="fa fa-check"></i><b>17.3.1</b> Mediaantoets</a></li>
+<li class="chapter" data-level="17.3.2" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#sec:wilcoxon-rank-sum"><i class="fa fa-check"></i><b>17.3.2</b> Wilcoxon rank sum test, ofwel Mann-Whitney U test</a></li>
+<li class="chapter" data-level="17.3.3" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>17.3.3</b> Kruskall-Wallis H test</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Bijlagen</b></span></li>
+<li class="chapter" data-level="A" data-path="app-randomgetallen.html"><a href="app-randomgetallen.html"><i class="fa fa-check"></i><b>A</b> Willekeurige getallen</a></li>
+<li class="chapter" data-level="B" data-path="app-kritiekeZwaarden.html"><a href="app-kritiekeZwaarden.html"><i class="fa fa-check"></i><b>B</b> Standaard-normale kansverdeling</a></li>
+<li class="chapter" data-level="C" data-path="app-kritieketwaarden.html"><a href="app-kritieketwaarden.html"><i class="fa fa-check"></i><b>C</b> Kritieke waarden van <span class="math inline">\(t\)</span>-verdeling</a></li>
+<li class="chapter" data-level="D" data-path="app-kritiekechi2waarden.html"><a href="app-kritiekechi2waarden.html"><i class="fa fa-check"></i><b>D</b> Kritieke waarden van <span class="math inline">\(\chi^2\)</span>-verdeling</a></li>
+<li class="chapter" data-level="" data-path="referenties.html"><a href="referenties.html"><i class="fa fa-check"></i>Referenties</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Gemaakt met bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kwantitatieve Methoden en Statistiek</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch:validiteit" class="section level1" number="5">
+<h1><span class="header-section-number">Hoofdstuk 5</span> Validiteit</h1>
+<div id="inleiding-2" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Inleiding</h2>
+<p>Experimenteel onderzoek heeft tot doel om hypotheses te toetsen. Ook in
+ander, niet-experimenteel onderzoek kunnen hypotheses worden getoetst,
+maar we beperken ons hier voor de helderheid tot experimenteel
+onderzoek, d.w.z. onderzoek waarin het experiment als methode wordt
+gebruikt. In experimenteel onderzoek wordt getracht causale verbanden
+aannemelijk te maken. Als de resultaten van een experimenteel onderzoek
+de onderzoekshypothese bevestigen (d.w.z. de nulhypothese wordt
+verworpen), dan is het aannemelijk dat een verandering in de
+onafhankelijke variabele de oorzaak (Latijn: <em>causa</em>) is voor een
+verandering of <em>effect</em> in de afhankelijke variabele. Zo kunnen we na
+experimenteel onderzoek met enige zekerheid concluderen, bijvoorbeeld,
+dat een verschil in behandeling na een herseninfarct de oorzaak is, of
+een belangrijke oorzaak is, van een verschil in taalvaardigheid van een
+patiënt zoals geobserveerd 6 maanden na een herseninfarct. Het
+experiment heeft aannemelijk gemaakt dat er een causaal of oorzakelijk
+verband is tussen de behandelingsmethode (onafhankelijke variabele) en
+de resulterende taalvaardigheid (afhankelijke variabele).</p>
+</div>
+<div id="sec:causaliteit" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Causaliteit</h2>
+<p>Een causaal of oorzakelijk verband tussen twee variabelen is iets anders
+dan een ‘gewoon’ verband of samenhang tussen twee variabelen. Als twee
+verschijnselen met elkaar samenhangen, hoeft het ene niet de oorzaak van
+het andere te zijn. Een eerste voorbeeld zien we bij de samenhang tussen
+de lengte van personen en hun gewicht: lange mensen zijn over het
+algemeen zwaarder dan korte mensen (en omgekeerd: korte mensen zijn over
+het algemeen lichter dan lange mensen). Is er nu sprake van een causale
+relatie tussen lengte en gewicht? Wordt het ene kenmerk (deels)
+veroorzaakt door het andere? Nee, in dit voorbeeld is er wel samenhang
+maar geen causaal verband tussen de kenmerken: zowel lengte als gewicht
+worden “veroorzaakt” door andere variabelen, o.a. genetische
+eigenschappen en voedingspatronen. Een tweede voorbeeld is de samenhang
+tussen motivatie en taalvaardigheid van iemand die een vreemde taal
+leert: hoog gemotiveerde studenten leren een nieuwe vreemde taal beter
+en vlotter dan laag gemotiveerde studenten, maar ook hier is niet
+duidelijk wat de oorzaak en wat het gevolg is.</p>
+<p>Een causaal verband is een speciale vorm van samenhang. Een causaal
+verband is een verband tussen twee twee verschijnselen of kenmerken,
+waarbij bovendien voldaan moet zijn aan een aantal extra voorwaarden
+<span class="citation">(Shadish, Cook, and Campbell <a href="#ref-SCC02" role="doc-biblioref">2002</a>)</span>. Ten eerste moet de oorzaak aan het gevolg vooraf gaan (na
+behandeling treedt verbetering op). Ten tweede moet het gevolg niet
+optreden als de oorzaak niet aanwezig was (zonder behandeling geen
+verbetering). Bovendien moet het gevolg — althans in theorie —
+altijd optreden als de oorzaak aanwezig is (behandeling resulteert
+altijd in verbetering). Ten derde kunnen we geen andere plausibele
+verklaring vinden voor het optreden van het gevolg, behalve de mogelijke
+oorzaak. Als we het causale mechanisme kennen (we snappen waarom
+behandeling de oorzaak is van verbetering), dan zijn we beter in staat
+om mogelijke andere plausibele verklaringen uit te sluiten. Helaas is
+dat bij de gedragswetenschappen, inclusief de taalwetenschap, echter
+zelden het geval. We constateren wel dat een behandeling resulteert in
+verbetering, maar de theorie die oorzaak (behandeling) en gevolg
+(verbetering) verbindt is zelden compleet en vertoont belangrijke
+lacunes. Dat betekent dat we goede voorzorgen moeten treffen in onze
+onderzoeksmethoden, teneinde mogelijke alternatieve plausibele
+verklaringen voor de gevonden effecten uit te sluiten.</p>
+</div>
+<div id="sec:validiteit" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Validiteit</h2>
+<p>Een bewering of conclusie is <em>valide</em> als de bewering <em>waar</em> (true) en
+<em>gerechtvaardigd</em> (justified) is. Een ware uitspraak correspondeert met
+de werkelijkheid: de bewering <em>ieder kind leert ten minste een taal</em> is
+waar, omdat de bewering de werkelijkheid goed weergeeft. Een
+gerechtvaardigde bewering ontleent geldigheid aan de empirische
+evidentie waarop die bewering is gebaseerd: ieder kind dat wij hebben
+geobserveerd, of dat anderen hebben geobserveerd, leert een taal of
+heeft een taal geleerd (behalve bijzondere gevallen voor wie een aparte
+verklaring nodig is). De rechtvaardiging van een bewering is sterker
+naarmate de methode van (directe of indirecte) observatie sterker is en
+meer zekerheid biedt. Dit houdt ook in dat de validiteit van een
+bewering niet een categoriale eigenschap is (wel/niet valide) maar een
+gradueel kenmerk: een bewering kan meer of minder valide zijn.</p>
+<p>Aan de validiteit van een bewering kunnen drie verschillende aspecten
+worden onderscheiden.</p>
+<ol style="list-style-type: decimal">
+<li><p>In hoeverre zijn de conclusies over de relaties tussen de
+afhankelijke en de onafhankelijke variabele geldig? Deze vraag heeft
+betrekking op de <em>interne validiteit</em>.</p></li>
+<li><p>In hoeverre zijn de uitwerkingen, operationaliseringen, van de
+afhankelijke en onafhankelijke variabele adequaat? Deze vraag heeft
+betrekking op de <em>constructvaliditeit</em>.</p></li>
+<li><p>In hoeverre kunnen de conclusies gegeneraliseerd worden naar andere
+proefpersonen, stimuli, condities, situaties, observaties? Deze
+vraag heeft betrekking op de <em>externe validiteit</em>.</p></li>
+</ol>
+<p>Deze drie vormen van validiteit zullen wij in de navolgende paragrafen
+toelichten.</p>
+</div>
+<div id="sec:internevaliditeit" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Interne validiteit</h2>
+<p>Het is vanzelfsprekend de bedoeling om in een experimenteel onderzoek
+zoveel mogelijk alternatieve verklaringen voor de onderzoeksresultaten
+uit te sluiten. Er moet immers aangetoond worden dat er een causaal
+verband is tussen twee variabelen X en Y, en daarbij moeten storende
+factoren zoveel mogelijk onder controle gehouden worden. Laten we eens
+kijken naar voorbeeld 5.1 hieronder.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.1</em>: <span class="citation">(Verhoeven, De Pauw, and Kloots <a href="#ref-Verh04" role="doc-biblioref">2004</a>)</span> onderzochten o.a. de hypothese dat
+ouderen (boven de 45 jaar) langzamer spreken dan jongeren (onder de 40
+jaar). Om dat te onderzoeken werd spraak opgenomen van 160 sprekers,
+gelijk verdeeld over de twee leeftijdsgroepen, in een interview van
+ongeveer 15 minuten. Na fonetische analyse van de articulatiesnelheid
+blijkt dat de “jongeren” relatief snel spreken met 4.78 lettergrepen per
+seconde, en de “ouderen” aanzienlijk langzamer, met 4.52 lettergrepen
+per seconde <span class="citation">(Verhoeven, De Pauw, and Kloots <a href="#ref-Verh04" role="doc-biblioref">2004</a>, 302)</span>. We concluderen dat de hogere leeftijd de
+<em>oorzaak</em> is van het lagere spreektempo bij de oudere sprekers — maar
+is die conclusie terecht?</p>
+</blockquote>
+<hr />
+<p>Deze vraag naar de rechtvaardiging van de conclusie is een vraag naar de
+interne validiteit van het onderzoek. De interne validiteit heeft
+betrekking op de relaties tussen gemeten of gemanipuleerde variabelen,
+en is onafhankelijk van de (theoretische) constructen die de
+verschillende variabelen representeren (vandaar de term ‘interne
+validiteit’). Of, anders gezegd: de vraag naar de interne validiteit is
+een vraag naar mogelijke alternatieve verklaringen voor de gevonden
+onderzoeksresultaten. Veel van de mogelijke alternatieve verklaringen
+kunnen worden ondervangen door de manier waarop de gegevens worden
+verzameld. We bespreken hieronder de meest in het oog lopende
+bedreigingen van de interne validiteit <span class="citation">(Shadish, Cook, and Campbell <a href="#ref-SCC02" role="doc-biblioref">2002</a>)</span>.</p>
+<ol style="list-style-type: decimal">
+<li><strong>Geschiedenis</strong>
+is een bedreiging van de
+interne validiteit. Het begrip ‘geschiedenis’ omvat o.a. gebeurtenissen
+die hebben plaatsgevonden tussen of tijdens een voormeting en een
+nameting; het gaat dan om gebeurtenissen die geen deel uitmaken van de
+experimentele manipulatie (de onafhankelijke variabele), maar die wel
+van invloed zouden kunnen zijn op de afhankelijke variabele. Een
+hittegolf, bijvoorbeeld, kan van invloed zijn op het gedrag van de
+proefpersonen tijdens een onderzoek.</li>
+</ol>
+<p>In een laboratorium wordt de ‘geschiedenis’ onder controle gehouden door
+de proefpersonen af te sluiten van invloeden van buitenaf (zoals een
+hittegolf), of door afhankelijke variabelen te kiezen die nauwelijks
+beïnvloed kunnen worden door externe factoren. In onderzoek buiten het
+laboratorium, waaronder veldonderzoek, is het veel lastiger en vaak
+zelfs onmogelijk om invloeden van buitenaf onder controle te houden. In
+het volgende voorbeeld wordt dit duidelijk.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.2</em>: In een onderzoek worden twee methoden vergeleken om leerlingen een
+vreemde taal te leren spreken, i.c. Nieuw-Grieks. De eerste groep moet
+Griekse woordjes en grammatica leren in een klaslokaal, gedurende enkele
+weken. De tweede groep gaat in diezelfde periode op een studiereis naar
+Griekenland, waar leerlingen moeten converseren in de doeltaal. De
+totale tijd besteed aan het taalvaardigheidsonderwijs is voor beide
+groepen gelijk. Na afloop blijkt de taalvaardigheid van de tweede groep
+groter dan die van de eerste groep. Wordt dat verschil in de
+afhankelijke variabele inderdaad veroorzaakt door de lesmethode
+(onafhankelijke variabele)?</p>
+</blockquote>
+<hr />
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Rijping</strong> is de natuurlijke veroudering of rijping van proefpersonen
+tijdens een onderzoek. Als de proefpersonen gedurende een onderzoek
+ouder worden, zich ontwikkelen, meer ervaren of sterker worden, èn als
+deze rijping niet is opgenomen in de onderzoeksvraag, dan vormt rijping
+een bedreiging van de interne validiteit. In experimenten waarin
+reactietijden worden gemeten, bijvoorbeeld, zien we meestal dat de
+reactietijden van een proefpersoon sneller worden gedurende het
+experiment, als gevolg van training en oefening. We kunnen de interne
+validiteit dan beschermen tegen dit leer-effect, door de stimuli voor
+iedere proefpersoon in een andere willekeurige volgorde aan te bieden.</li>
+</ol>
+<p>Meestal is er sprake van rijping doordat de proefpersonen vele malen
+achtereen dezelfde taak uitvoeren of dezelfde vragen beantwoorden.
+Rijping kan echter ook optreden wanneer proefpersonen hun antwoorden
+kenbaar moeten maken op een juist niet gebruikelijke manier, bv. door
+een ongewone vraagstelling, of in een ongebruikelijke vorm van
+meerkeuze-vragen. Bij de eerste paar keer dat een proefpersoon dan
+vragen beantwoordt, kan de wijze van beantwoorden interfereren met het
+antwoord zelf. Achteraf kunnen we een vergelijking maken tussen bv. het
+eerste kwart en het laatste kwart van de antwoorden, om zo te bekijken
+of er een mogelijk effect was van ervaring, d.w.z. van rijping.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Ook de <strong>instrumentatie</strong> of instrumenten die voor een onderzoek
+gebruikt worden, kunnen een bedreiging vormen voor de interne
+validiteit. Verschillende instrumenten die worden geacht hetzelfde
+construct te meten, moeten ook gelijke metingen produceren. En hetzelfde
+instrument moet ook gelijke metingen produceren onder verschillende
+omstandigheden. Voor computer-gestuurde experimenten is dat meestal geen
+probleem. Maar bij vragenlijsten, of bij de beoordeling van
+schrijfopdrachten, kan de interne validiteit wel worden bedreigd.</li>
+</ol>
+<p>Bij veel onderzoek worden observaties gedaan zowel voorafgaand aan een
+behandeling, als na afloop daarvan. Daarbij kan dezelfde toets gebruikt
+worden, maar dan kan er een leer-effect optreden (zie hierboven).
+Onderzoekers gebruiken daarom vaak verschillende toetsen bij de
+voormeting en de nameting, maar daarbij kan er wel een
+instrumentatie-effect optreden. De onderzoeker moet de mogelijke voor-
+en nadelen tegen elkaar afwegen.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.3</em>: <span class="citation">(Rijlaarsdam <a href="#ref-Rijl86" role="doc-biblioref">1986</a>)</span>
+onderzocht het effect van ‘peer evaluation’ op de kwaliteit van
+schrijfproducten. De opzet van zijn onderzoek was (enigszins
+vereenvoudigd) als volgt: eerst schrijven de leerlingen een opstel over
+onderwerp A, dan volgt het schrijfonderwijs inclusief ‘peer evaluation’,
+waarna nogmaals een opstel geschreven wordt over onderwerp B. De
+schrijfproducten van voormeting en nameting worden beoordeeld, waarna
+getoetst wordt of de gemiddelde prestaties verschillen tussen voormeting
+en nameting.</p>
+</blockquote>
+<blockquote>
+<p>In dit onderzoek vormt niet alleen de interventie (schrijfonderwijs) een
+duidelijk verschil tussen de voormeting en de nameting, maar ook het
+onderwerp van de schrijfopdracht (A of B) vormt een verschil. Het is
+twijfelachtig of met beide schrijfopdrachten wel precies hetzelfde wordt
+gemeten. Dit verschil in instrumentatie bedreigt de interne validiteit,
+omdat er op verschillende momenten misschien een (deels) verschillend
+aspect van de schrijfvaardigheid is gemeten. De instrumentatie (hier:
+het verschil in onderwerpen van de schrijfopdrachten) geeft een
+plausibele alternatieve verklaring voor een verschil in
+schrijfvaardigheid, naast of in plaats van de onafhankelijke variabele
+(hier: het tussentijdse schrijfonderwijs).</p>
+</blockquote>
+<hr />
+<ol start="4" style="list-style-type: decimal">
+<li>Een volgende bedreiging van de interne validiteit staat bekend als
+het effect van <strong>regressie naar het gemiddelde</strong>. Regressie naar het
+gemiddelde kan een rol spelen zodra het onderzoek gericht is op speciale
+groepen, bijvoorbeeld slechte lezers, slechte schrijvers, maar evenzo:
+goede lezers, goede schrijvers, etc. We geven eerst een voorbeeld, omdat
+het verschijnsel niet direct intuïtief duidelijk is.</li>
+</ol>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.4</em>:
+Er is enige controverse over het gebruik van illustraties in
+kinderboeken. Sommigen menen dat in boeken waarmee kinderen leren lezen
+geen (of zo min mogelijk) illustraties mogen voorkomen: illustraties
+leiden de aandacht af van te leren kenmerken van woorden. Anderen menen
+dat in illustraties wezenlijke informatie weergegeven kan worden:
+illustraties dienen als extra informatiebron.</p>
+</blockquote>
+<blockquote>
+<p><span class="citation">(Donald <a href="#ref-Dona83" role="doc-biblioref">1983</a>)</span> onderzocht de invloed van illustraties bij een tekst op het begrip van
+die tekst. De onderzoeker selecteerde 120 leerlingen (uit 1868
+leerlingen) uit de derde en zesde groep van het basisonderwijs; 60 uit
+elk van beide groepen. Volgens de prestaties op een eerder afgenomen
+leestoets bleken van de 60 leerlingen per klas er 30 als slechte en 30
+als goede lezers geclassificeerd te kunnen worden. Elke leerling kreeg
+dezelfde tekst te zien, aangeboden met of zonder illustraties
+(onafhankelijke variabele), zie Tabel <a href="ch-validiteit.html#tab:designDona83">5.1</a>.</p>
+</blockquote>
+<blockquote>
+<p>De resultaten bleken goeddeels de tweede hypothese te ondersteunen:
+illustraties bevorderen het begrip van de tekst, ook bij onervaren
+lezers. De slechtere lezers begrepen de tekst met illustraties beter, en
+ook jongere lezers ondervonden voordeel van de illustraties.</p>
+</blockquote>
+<hr />
+<table>
+<caption><span id="tab:designDona83">Tabel 5.1: </span> Aanbiedingscondities in het onderzoek van Donald (1983).</caption>
+<thead>
+<tr class="header">
+<th align="left">groep</th>
+<th align="center">leesvaardigheid</th>
+<th align="center">conditie</th>
+<th align="center"><span class="math inline">\(n\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">3</td>
+<td align="center">slecht</td>
+<td align="center">zonder</td>
+<td align="center">15</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="center">slecht</td>
+<td align="center">met</td>
+<td align="center">15</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="center">goed</td>
+<td align="center">zonder</td>
+<td align="center">15</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="center">goed</td>
+<td align="center">met</td>
+<td align="center">15</td>
+</tr>
+<tr class="odd">
+<td align="left">6</td>
+<td align="center">slecht</td>
+<td align="center">zonder</td>
+<td align="center">15</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="center">slecht</td>
+<td align="center">met</td>
+<td align="center">15</td>
+</tr>
+<tr class="odd">
+<td align="left">6</td>
+<td align="center">goed</td>
+<td align="center">zonder</td>
+<td align="center">15</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="center">goed</td>
+<td align="center">met</td>
+<td align="center">15</td>
+</tr>
+</tbody>
+</table>
+<p>Wat is er nu mis met dit onderzoek? Het antwoord is gelegen in de manier
+waarop leerlingen zijn geselecteerd. Lezers werden ingedeeld als
+‘slecht’ of ‘goed’ op basis van een leesvaardigheidstoets, maar hun
+prestaties op die toets worden altijd beïnvloed door toevallige
+factoren, die niets met leesvaardigheid te maken hebben: Tom voelde zich
+niet lekker, daarom heeft hij deze toets slecht gemaakt, Sarah was met
+haar gedachten elders, Niels had last van zijn knie, Julie was enorm
+gemotiveerd en heeft zichzelf overtroffen. Met andere woorden: de
+leesvaardigheid is niet geheel betrouwbaar gemeten. Dit betekent (1) dat
+de slechte lezers die toevallig boven hun niveau gepresteerd hebben, ten
+onrechte niet bij de slechte lezers ingedeeld werden, maar deel
+uitmaakten van de groep goede lezers; en omgekeerd (2) dat goede lezers
+die bij deze toets toevallig onder hun niveau gepresteerd hebben, ten
+onrechte als slechte lezers bestempeld werden. Onder de slechte lezers
+zitten dus altijd ook een paar lezers die helemaal zo slecht nog niet
+zijn, en onder de goede lezers zitten ook een paar lezers die eigenlijk
+niet zo goed zijn.</p>
+<p>Wanneer de eigenlijk-goede lezers, die ten onrechte geclassificeerd zijn
+als niet-goede lezers, een tweede leestoets maken (nadat zij een tekst
+met of zonder illustraties bestudeerd hebben), dan zullen zij meestal
+weer op hun gewone hoge niveau presteren. Een hogere score op de tweede
+toets (de nameting) kan dus een artefact zijn van de selectiemethode.
+Hetzelfde geldt, mutatis mutandis, voor de eigenlijk-slechte lezers die
+ten onrechte geselecteerd zijn als niet-slechte lezers. Wanneer deze
+leerlingen een tweede leestoets maken, dan zullen ook zij meestal weer
+op hun gewone (lage) niveau presteren. De score op de nameting ligt voor
+hen dus lager dan de score op de voormeting.</p>
+<p>Voor het aangehaalde onderzoek van betekent dit dat het geconstateerde
+verschil tussen slechte en goede lezers deels toevallig is. Ook als de
+onafhankelijke variabele geen effect heeft, zal de groep ‘goede’ lezers
+bij de tweede leestoets gemiddeld slechter presteren, en zal de groep
+‘slechte’ lezers bij de tweede leestoets gemiddeld beter presteren. Met
+andere woorden: het verschil tussen de twee groepen is bij de nameting
+minder groot dan bij de voormeting, als gevolg van toevallige variatie:
+regressie naar het gemiddelde. Het zal duidelijk zijn dat
+onderzoeksresultaten getroebleerd kunnen worden door dit verschijnsel.
+Zoals we hierboven zagen kan een experimenteel effect afgezwakt worden
+of verdwijnen als gevolg van regressie naar het gemiddelde; omgekeerd
+kan regressie naar het gemiddelde ten onrechte aangezien worden als een
+experimenteel effect <span class="citation">(Retraction Watch <a href="#ref-RMP18" role="doc-biblioref">2018</a>)</span>.</p>
+<p>In het algemeen kan regressie naar het gemiddelde optreden als er een
+classificatie gemaakt wordt op basis van een voormeting, waarvan de
+scores samenhang vertonen met de scores van de nameting (zie
+Hoofdstuk <a href="ch-samenhang.html#ch:samenhang">11</a>). Als er geen enkele correlatie is tussen
+voormeting en nameting, dan speelt regressie naar het gemiddelde zelfs
+de hoofdrol: een verschil tussen voormeting en nameting is dan alleen
+het gevolg van regressie naar het gemiddelde. Als er perfecte correlatie
+is, dan speelt regressie naar het gemiddelde geen enkele rol, maar dan
+is ook de voormeting niet informatief, want immers geheel (achteraf) te
+voorspellen uit de nameting.</p>
+<p>Regressie naar het gemiddelde kan een alternatieve verklaring bieden
+voor de vermeende grote toename van scores tussen voormeting en nameting
+voor een lage prestatiegroep (bv. slechte lezers), ten opzichte van een
+kleinere toename voor een hoge prestatiegroep (bv. goede lezers).
+Omgekeerd kan het ook een alternatieve verklaring bieden voor de
+vermeende afname van scores tussen voormeting en nameting voor een hoge
+prestatiegroep (bv. goede lezers), ten opzichte van een lage
+prestatiegroep (bv. slechte lezers).</p>
+<p>Het is beter om de groepen <em>niet</em> samen te stellen op basis van een van
+de uitkomsten van een van de metingen (voormeting of nameting), maar op
+basis van een ander, onafhankelijk criterium. De proefpersonen van beide
+groepen zullen dan zullen bij de voormeting ongeveer gemiddeld scoren,
+en het effect van regressie naar het gemiddelde is dan klein. In alle
+groepen zullen dan ongeveer evenveel proefpersonen zitten met een door
+het toeval iets te hoge als met een iets te lage uitgevallen score,
+zowel bij de voormeting als bij de nameting.</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Een vijfde bedreiging van de interne validiteit is <strong>selectie</strong>.
+Hiermee doelen we (voornamelijk) op een
+zodanige verdeling van proefpersonen over verschillende condities dat
+deze bij aanvang van het onderzoek niet gelijkwaardig zijn. Wanneer
+bijvoorbeeld in de experimentele conditie alle slimme proefpersonen
+zitten, terwijl in de controleconditie alleen de domme leerlingen
+terecht gekomen zijn, dan kan een effect niet zonder meer aan de
+manipulatie van de onafhankelijke variabele toegeschreven worden. Het
+verschil in aanvangsniveau (hier: in intelligentie) levert dan een
+plausibele alternatieve verklaring die de interne validiteit bedreigt.</li>
+</ol>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.5</em>: Voor een eerlijke vergelijking tussen scholen van hetzelfde schooltype
+(VMBO, HAVO, VWO, etc) moeten we rekening houden met verschillen tussen
+scholen in hun ingangsniveau van de leerlingen. Stel dat school A
+leerlingen heeft met ingangsnivo 50, en eindexamennivo 100 (op een
+willekeurige schaal). School B heeft leerlingen met ingangsnivo 30, en
+eindexamennivo 90 (op dezelfde schaal). Is school B slechter dan A (want
+lager eindnivo), of is school B beter dan A (want kleiner verschil in
+eindnivo)?</p>
+</blockquote>
+<hr />
+<p>In veel onderwijskundig onderzoek is het onmogelijk om leerlingen van
+verschillende klassen op basis van het toeval aan condities toe te
+wijzen — dit wordt wel aselecte toewijzing genoemd. Dit kan namelijk
+onoverkomelijke organisatorische problemen met zich meebrengen. Deze
+organisatorische problemen omvatten meer dan alleen het (aselect)
+splitsen van de klas, hoewel dit vaak al lastig te realiseren is. Ook
+moet de onderzoeker rekenschap afleggen van mogelijke
+overdrachtseffecten tussen de condities: de leerlingen praten met
+elkaar, leren elkaar misschien zelfs wel de essentialia van de
+experimentele conditie(s). Het uitblijven van een effect zou dan op
+tenminste één alternatieve manier verklaard kunnen worden. Vanwege de
+geschetste problematiek worden vaak complete schoolklassen toegewezen
+aan een van de condities. Maar klassen bestaan uit een aantal leerlingen
+van dezelfde school. Bij de keuze van leerlingen, en hun ouders, voor
+een school treedt zelf-selectie op (in het Nederlandse
+onderwijssysteem), waardoor er verschillen zijn in uitgangspositie
+tussen condities (d.w.z. tussen klassen binnen condities). Eventuele
+gevonden verschillen tussen condities zouden dus ook door zelfselectie
+van leerlingen naar scholen veroorzaakt kunnen zijn.</p>
+<p>Hierboven is al de meest eenvoudige manier aangegeven om verschillende
+condities een gelijk aanvangsniveau te geven: wijs de leerlingen
+aselect, volgens toeval, ‘at random’, toe aan de condities. Deze methode
+staat bekend als <em>randomisatie</em> <span class="citation">(Shadish, Cook, and Campbell <a href="#ref-SCC02" role="doc-biblioref">2002</a>, 294 ff)</span>. We kunnen bijvoorbeeld
+randomiseren door leerlingen een willekeurig (random) nummer te geven
+(zie
+Appendix <a href="app-randomgetallen.html#app:randomgetallen">A</a>) en daarna de ‘even leerlingen’ aan de
+ene conditie en de ‘oneven leerlingen’ aan de andere conditie toe te
+wijzen. Bij aselecte toewijzing van proefpersonen aan condities berusten
+alle verschillen tussen de proefpersonen in de verschillende condities
+op toeval, en worden die verschillen dus uitgemiddeld. Naar alle
+waarschijnlijkheid zijn er dan geen systematische verschillen tussen de
+onderscheiden groepen of condities. Dit geldt echter alleen indien de
+groepen groot genoeg zijn.</p>
+<p>Randomisatie, de aselecte toewijzing van proefpersonen aan condities,
+moet onderscheiden worden van de aselecte steekproeftrekking uit een
+populatie (zie
+§<a href="ch-steekproeftrekking.html#sec:aselectesteekproef">7.3</a>). Bij aselecte
+steekproeftrekking gaat het om de willekeurige selectie van
+proefpersonen uit de populatie van mogelijke proefpersonen naar de
+steekproef; we streven er dan naar dat de steekproef of steekproeven
+lijken op de populatie waaruit die getrokken is/zijn. Bij randomisatie
+gaat het om de willekeurige toewijzing van de proefpersonen uit de
+steekproef aan de verschillende condities van het onderzoek; we streven
+er dan naar dat de steekproeven lijken op elkaar.</p>
+<p>Een tweede methode om twee gelijke groepen te creëren is <em>matching</em>. Bij
+matching worden proefpersonen eerst gemeten op een aantal relevante
+variabelen. Daarna worden koppels gevormd die een gelijke score op deze
+variabelen hebben. Van deze koppels wordt er één aan de ene conditie en
+één aan de andere conditie toegewezen. Matching heeft echter
+verschillende bezwaren. Ten eerste kan regressie naar het gemiddelde een
+rol gaan spelen. Ten tweede is matching, wanneer de proefpersonen op
+meerdere variabelen gematcht moeten worden, zeer bewerkelijk, en is een
+grote groep potentiële proefpersonen vereist. Ten derde wordt bij
+matching alleen rekening gehouden met variabelen die de onderzoeker
+relevant acht, en niet met andere onbekende variabelen. Bij randomisatie
+wordt niet alleen gerandomiseerd naar die relevante variabelen, maar ook
+naar andere eigenschappen die mogelijk een rol zouden kunnen spelen
+zonder dat de onderzoeker zich dat realiseert. Kortom, de relatief
+eenvoudige randomisatie is verre te prefereren boven matching.</p>
+<ol start="6" style="list-style-type: decimal">
+<li><strong>Uitval</strong> van respondenten is de laatste bedreiging van interne
+validiteit. In sommige gevallen begint een onderzoeker met veel
+proefpersonen. Gedurende het onderzoek vallen echter proefpersonen uit.
+Zolang het percentage uitvallers beperkt blijft, is er geen probleem.
+Maar er ontstaat wel een probleem, als de uitval selectief is voor één
+van de onderscheiden condities. Is dat laatste wel het geval, dan kan er
+over die conditie niet veel meer gezegd worden. Het probleem van uitval
+speelt vooral een rol bij longitudinaal onderzoek. Dit is onderzoek
+waarbij een beperkte groep respondenten gedurende een langere periode
+gevolgd wordt. Men heeft daarbij echter te maken met mensen die
+verhuizen, of overlijden gedurende het experiment, of participanten die
+niet meer willen meewerken, enz. Dit kan een enorme reductie van het
+aantal respondenten teweeg brengen.</li>
+</ol>
+<p>Hierboven hebben we een aantal veel voorkomende problemen besproken die
+de interne validiteit van een onderzoek kunnen bedreigen. De lijst is
+echter niet uitputtend! Elk type onderzoek heeft zo z’n eigen problemen,
+en het is de taak van de onderzoeker om alert te zijn op mogelijke
+bedreigingen van de interne validiteit. Probeer daartoe plausibele
+verklaringen te bedenken die een eventueel effect ook, of zelfs beter
+zouden kunnen verklaren dan de te onderzoeken oorzaak. De onderzoeker
+moet dus denken als zijn eigen scepticus, die geenszins overtuigd is dat
+de onderzochte factor werkelijk de oorzaak is van het gevonden effect.
+Welke mogelijke alternatieve verklaringen zijn er volgens die scepticus,
+en hoe zou de onderzoeker die bedreigingen voor de validiteit kunnen
+wegnemen door de opzet van het onderzoek? Dat vereist goed inzicht in de
+logische relaties tussen de onderzoeksvragen, de onderzochte variabelen,
+de resultaten, en de conclusie.</p>
+</div>
+<div id="sec:constructvaliditeit" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Constructvaliditeit</h2>
+<p>In een experimenteel onderzoek wordt een onafhankelijke variabele
+gemanipuleerd. Dit kan, afhankelijk van de vraagstelling, op vele
+manieren. Evenzo kan de wijze waarop de afhankelijke variabele(n)
+gemeten wordt op verschillende manieren vorm gegeven worden. De manier
+waarop de onafhankelijke en de afhankelijke variabelen vorm gegeven
+worden noemen we de <em>operationalisatie</em> van deze variabelen. De
+leesvaardigheid van leerlingen kan bijvoorbeeld geoperationaliseerd
+worden als (a) hun score op een tekstbegriptoets met open vragen; (b)
+hun score op een tekstbegriptoets met meerkeuzevragen; (c) hun score op
+een zgn. cloze-toets (ontbrekend woord invullen); of (d) als de mate
+waarin geschreven instructies uitgevoerd kunnen worden. Meestal zijn er
+heel veel manieren om een variabele te operationaliseren, en zelden
+volgt uit een theorie één dwingende beschrijving voor de wijze van
+operationalisatie van de onafhankelijke of de afhankelijke variabelen.
+<em>Constructvaliditeit</em>, of <em>begripsvaliditeit</em>, heeft betrekking op de
+mate waarin de operationalisatie van zowel de afhankelijke variabele(n)
+als de onafhankelijke variabele(n) een adequate afspiegeling is (zijn)
+van de theoretische constructen waar het onderzoek zich op richt. Met
+andere woorden: zijn de onafhankelijke en de afhankelijke variabelen
+goed gerelateerd aan de theoretische concepten waar het onderzoek op
+gericht is?</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.6</em>: De <em>taalontwikkeling</em> van
+babies en peuters is lastig te observeren, en al helemaal als het gaat
+om de auditieve en perceptieve ontwikkeling van deze proefpersonen die
+nog niet of nauwelijks zelf spreken. Een veel gebruikte methode is het
+Head Turn Preference Paradigm <span class="citation">(Johnson and Zamuner <a href="#ref-John10" role="doc-biblioref">2010</a>)</span>. Bij deze methode kijkt de baby
+eerst naar een groen knipperend licht recht voor zich. Als de aandacht
+van het kind zo is gevangen, dooft vervolgens het groene licht en begint
+een rood licht te knipperen, aan de linker of rechter zijde van de
+proefpersoon. Het kind draait dan zijn of haar hoofd om het knipperende
+licht te zien. Vervolgens wordt er een spraakgeluidsbestand afgespeeld,
+via een luidspreker vlak bij het knipperende licht aan de zijkant. De
+afhankelijke variabele is de periode waarin het kind zijwaarts blijft
+kijken (met minder dan 2 s onderbreking). Daarna begint een nieuwe
+aanbiedingscyclus. De kijktijd wordt opgevat als een indicatie voor de
+mate van voorkeur van het kind voor de gesproken stimulus.</p>
+</blockquote>
+<blockquote>
+<p>De interpretatie van de verkregen kijktijden is echter lastig, omdat
+kinderen nu eens voorkeur hebben voor nieuwe geluidsstimuli (bv zinnen
+in een onbekende taal), en dan weer juist aan bekende stimuli (bv
+grammaticale vs ongrammaticale zinnen). Zelfs als de stimuli nauwkeurig
+zijn afgestemd op het ontwikkelingsniveau van de proefpersoon, is het
+lastig om de afhankelijke variabele (kijktijd) goed te relateren aan het
+bedoelde theoretische construct (voorkeur van kind).</p>
+</blockquote>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.7</em>: Zoals hierboven aangegeven kan het begrip <em>leesvaardigheid</em> op allerlei
+manieren worden geoperationaliseerd. Volgens sommigen kan
+leesvaardigheid niet goed gemeten worden met behulp van meerkeuzevragen
+(Houtman 1986, Shohamy 1984). Bij meerkeuzevragen worden de antwoorden
+zeer sterk beïnvloed door andere zaken zoals algemene ontwikkeling,
+gokvaardigheid, ervaring met eerdere toetsen, en door de vraagstelling
+zelf, zoals geïllustreerd in deze vraag:</p>
+</blockquote>
+<blockquote>
+<p><em>Wie van de volgende personen heeft de afgelopen jaren een autobiografie
+gepubliceerd?<br />
+ a. Jeanne d’Arc </em>(algemene ontwikkeling)<em><br />
+ b. mijn buurvrouw </em>(vraagstelling, ervaring)<em><br />
+ c. Malala Yousafzai<br />
+ d. Alexander Graham Bell </em>(algemene ontwikkeling)**<br />
+</p>
+</blockquote>
+<blockquote>
+<p>Deze vraag is duidelijk niet construct-valide voor het meten van kennis
+over autobiografieën.</p>
+</blockquote>
+<hr />
+<p>Uiteraard gelden bovengenoemde problemen met de constructvaliditeit niet
+alleen voor schriftelijke vragen of meerkeuzevragen, maar ook voor
+mondelinge vragen aan proefpersonen.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.8</em>:
+Als we ouders mondeling de vraag stellen <em>Hoe vaak leest U uw kind
+eigenlijk voor?</em> dan wekken we met die vraag al de suggestie dat
+voorlezen wenselijk is. De ouders zouden hun voorleesgedrag wel eens
+kunnen overschatten. We meten dus niet alleen het construct
+‘voorleesgedrag’, maar ook het construct ‘neiging tot sociaal wenselijke
+antwoorden’ (zie hierna).</p>
+</blockquote>
+<hr />
+<p>Een notoir lastig construct om te operationaliseren is
+<em>schrijfvaardigheid</em>. Wat is een goed en wat is een slecht
+schrijfproduct? En wat is dan eigenlijk schrijfvaardigheid? Kan
+schrijfvaardigheid gemeten worden door een telling van relevante
+inhoudselementen in een tekst, moeten er zinnen of woorden geteld
+worden, of misschien vooral connectieven (<em>dus, want, omdat, hoewel</em>,
+enz), moeten er oordelen van <em>lezers</em> verzameld worden over de
+geschreven tekst (t.a.v. doelgerichtheid, publiekgerichtheid, stijl), of
+moet er één oordeel van lezers verzameld worden over de globale
+kwaliteit, moeten er spelfouten geteld worden, etc? De problemen bij de
+operationalisatie komen voort uit een gebrek aan theorie over
+schrijfvaardigheid, waaruit een definitie voor de kwaliteit van
+schrijfproducten afgeleid zou kunnen worden <span class="citation">(Van den Bergh and Meuffels <a href="#ref-BM93" role="doc-biblioref">1993</a>)</span>. Kritiek op
+onderzoek naar schrijfvaardigheid is daarom makkelijk, maar alternatieve
+operationalisaties van het construct zijn moeilijk.</p>
+<p>Een ander lastig construct is de <em>verstaanbaarheid</em> van gesproken
+zinnen. Verstaanbaarheid (‘intelligibility’) kan op diverse manieren
+worden geoperationaliseerd. De eerste mogelijkheid is dat de onderzoeker
+de woorden of zinnen uitspreekt en dat de proefpersoon die naspreekt,
+waarbij fouten in de reproductie geteld worden; een nadeel hierbij is
+dat er nauwelijks controle is over de model-uitspraak van de
+onderzoeker. Een tweede mogelijkheid is dat de woorden of zinnen vooraf
+worden opgenomen en verder dezelfde procedure wordt gevolgd; een nadeel
+blijft dat de responsies worden beïnvloed door kennis van de wereld,
+grammaticale verwachtingen, bekendheid met de spreker of zijn
+taalgebruik, enz. De meest betrouwbare methode is die van de zgn.
+‘speech reception threshold’ <span class="citation">(Plomp and Mimpen <a href="#ref-Plomp79" role="doc-biblioref">1979</a>)</span> beschreven in het volgende
+voorbeeld. Deze methode heeft echter als nadeel dat ze
+tijdrovend is, niet goed automatisch afgenomen kan worden, en dat er
+veel stimulusmateriaal (spraakopnamen) nodig is (zijn) voor een enkele
+meting.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.19</em>: We laten een lijst van 13
+gesproken zinnen horen, gemaskeerd met ruisgeluid. De verhouding tussen
+spraak en ruis (speech-to-noise ratio, SNR) wordt uitgedrukt in dB. Bij
+0 dB SNR zijn spraak en ruis even luid, bij +3 dB SNR is de spraak 3 dB
+luider dan de ruis, bij -2 dB SNR is de spraak 2 dB <em>zachter</em> dan de
+ruis, etc. Na iedere zin moet de luisteraar de aangeboden zin naspreken.
+Als dat foutloos gebeurt, dan wordt voor de volgende zin de SNR met 2 dB
+verlaagd (minder spraak of meer ruis); als de responsie fout was, dan
+wordt voor de volgende zin de SNR met 2 dB verhoogd (meer spraak of
+minder ruis). Na een paar zinnen is er weinig variatie meer in SNR, en
+schommelt de SNR rond een optimum. De gemiddelde SNR over de laatste 10
+aangeboden zinnen vormt de ‘speech reception threshold’ (SRT). Deze SRT
+is ook op te vatten als de SNR waarbij de helft van de zinnen goed wordt
+verstaan.</p>
+</blockquote>
+<hr />
+<p>Tot nog toe hebben we het gehad over problemen met betrekking tot de
+constructvaliditeit van de afhankelijke variabelen. Maar ook de
+operationalisatie van de <em>on</em>afhankelijke variabele staat vaak ter
+discussie. De onderzoeker heeft immers vele keuzes moeten maken tijdens
+de operationalisering van zijn onafhankelijke variabele (zie
+§<a href="ch-onderzoek.html#sec:keuzemomenten">2.6</a>), en de gemaakte keuzes zijn vaak wel
+aanvechtbaar.</p>
+<p>Een onderzoek is niet constructvalide, of niet begripsvalide, als de
+operationalisaties van de afhankelijke variabelen de toets der kritiek
+niet kunnen doorstaan. Een onderzoek is ook niet constructvalide, als de
+onafhankelijke variabele niet een valide operationalisatie is van
+het-theoretische-begrip-zoals-bedoeld. Als die operationalisatie niet
+valide is, dan wordt er dus eigenlijk iets anders gemanipuleerd dan de
+bedoeling was. In dat geval is de relatie tussen de afhankelijke
+variabele en de gemanipuleerde onafhankelijke variabele zoals bedoeld
+niet eenduidig meer. Eventuele geobserveerde verschillen in de
+afhankelijke variabele hoeven niet alleen veroorzaakt te worden door de
+onafhankelijke variabele zoals bedoeld, maar kunnen ook beïnvloed zijn
+door andere factoren. Een bekend effect in dit opzicht is het zogenaamde
+Hawthorne-effect.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.10</em>: De directie
+van de Hawthorne Works Factory (Western Electric Company) in Cicero
+(Illinois), USA, was gealarmeerd door slechte bedrijfsresultaten. Een
+team onderzoekers nam de gang van zaken onder de loep, waarbij ongeveer
+alles werd onderzocht: werktijden, beloning, pauzes, verlichting,
+verwarming, werkoverleg, management, enz. De resultaten van dat
+onderzoek (uit 1927) wezen uit dat de productiviteit enorm was gestegen
+– maar dat er geen verband was met een van de onafhankelijke
+variabelen. De toename van productiviteit werd uiteindelijk
+toegeschreven aan de grotere aandacht voor de werknemers.</p>
+</blockquote>
+<hr />
+<p>Het Hawthorne-effect houdt dus in dat een verandering in gedrag niet
+samenhangt met de manipulatie van enige onafhankelijke variabele, maar
+dat die verandering van gedrag het gevolg is van een psychologisch
+verschijnsel: proefpersonen die weten dat ze worden geobserveerd, doen
+meer hun best om gewenst gedrag te vertonen.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.11</em>: <span class="citation">(Richardson et al. <a href="#ref-RDCPW78" role="doc-biblioref">1978</a>)</span>
+vergeleken de effectiviteit van twee methoden ter verbetering van de
+leesvaardigheid van slechte lezers. De leerlingen werden geselecteerd op
+basis van hun scores op drie toetsen. De 72 geselecteerde leerlingen
+werden aselect toegewezen aan één van de twee methode-condities
+(gestructureerd leesonderwijs versus geprogrammeerde instructie). In de
+eerste conditie werd het gestructureerde leesonderwijs verzorgd door
+vier docenten, die aan een klein groepje (van vier leerlingen) les
+gaven. In feite is de leerling-docent-ratio dus <span class="math inline">\(1:1\)</span>. In de tweede
+conditie (geprogrammeerde instructie) bemoeiden de docenten zich zo min
+mogelijk met de leerlingen. Het experiment nam 75 sessies van 45 minuten
+in beslag. Na de tweede observatie bleek dat de leerlingen die volgens
+de eerste (gestructureerde) methode les gekregen hadden, beter vooruit
+waren gegaan dan de leerlingen die met behulp van de tweede methode
+(geprogrammeerde instructie) les gekregen hadden.</p>
+</blockquote>
+<blockquote>
+<p>Tot zover is er geen probleem met dit onderzoek. Er ontstaat pas een
+probleem als we zouden concluderen dat de gestructureerde methode beter
+is dan de geprogrammeerde instructie. Een alternatieve verklaring, die
+in dit onderzoek niet uitgesloten kan worden, is dat het gevonden effect
+niet (alleen) het gevolg is van de methode, maar (ook) een gevolg is van
+de grotere individuele aandacht in de eerste conditie (gestructureerd
+leesonderwijs).</p>
+</blockquote>
+<hr />
+<p>Net zoals bij de interne validiteit kan ook bij de construct- of
+begripsvaliditeit een aantal validiteitbedreigende factoren genoemd
+worden.</p>
+<ol style="list-style-type: decimal">
+<li>Een eerste bedreiging van de begripsvaliditeit is
+<em>mono-operationalisatie</em>. In veel onderzoeken wordt de afhankelijke
+variabele slechts op één manier geoperationaliseerd. De proefpersonen
+hoeven slechts één taak uit te voeren, bv. één auditieve taak met
+reactietijdmetingen (over meerdere aanbiedingen), of één vragenlijst
+(met meerdere vragen). Het onderzoek staat of valt dan met deze
+specifieke operationalisatie van de afhankelijke variabele. Over de
+validiteit van deze specifieke operationalisatie zijn dan geen verdere
+gegevens voorhanden. De onderzoeker laat in zo’n geval ruimte voor
+twijfel. Strikt genomen moeten we de onderzoeker immers op zijn woord
+geloven omtrent de validiteit van zijn operationalisering. Dergelijk
+onderzoek kan veel beter worden uitgevoerd. De onderzoeker moet dan het
+te meten construct op verschillende manieren operationaliseren, bv. door
+meerdere auditieve taken te laten uitvoeren, met niet alleen
+reactietijdmetingen maar ook met tellingen van foutieve responsies. Of
+de onderzoeker laat niet alleen een vragenlijst invullen, maar
+observeert het bedoelde construct ook d.m.v. andere taken en
+observatiemethoden. Wanneer de prestaties op de verschillende typen
+responsies in hoge mate samenhangen, kan daarmee aangetoond worden dat
+al deze toetsen hetzelfde construct vertegenwoordigen. We noemen dit
+<em>convergente validiteit</em>. Er is sprake van convergente validiteit als de
+prestaties op instrumenten die hetzelfde theoretische construct
+vertegenwoordigen, in hoge mate samenhangen (convergeren).</li>
+</ol>
+<p>Het is echter niet voldoende om te laten zien dat toetsen die hetzelfde
+concept of construct beogen te meten, inderdaad convergent valide zijn.
+Daarmee is immers nog niet aangetoond wat dit construct is, en evenmin
+of het gemeten construct wel het bedoelde construct is. Hebben we wel
+echt ‘vloeiendheid’ van de spreker gemeten, met meerdere methoden, of
+hebben we eigenlijk steeds het construct ‘aandacht’ of ‘spreeksnelheid’
+gemeten? En hebben we wel echt ‘mate van tekstbegrip’ gemeten, met
+verschillende convergente methoden, of hebben we eigenlijk steeds het
+construct ‘faalangst’ gemeten? Om de construct-validiteit te waarborgen
+moet eigenlijk ook worden aangetoond dat de operationalisaties
+<em>divergent valide</em> zijn ten opzichte van operationalisaties die een
+ánder aspect of een ándere (verwante) vaardigheid beogen te meten.
+Kortom de onderzoeker moet kunnen aantonen dat de prestaties op
+instrumenten (operationalisaties) die één vaardigheid (construct)
+vertegenwoordigen in hoge mate samenhangen (convergeren), terwijl de
+prestaties op instrumenten die verschillende vaardigheden
+vertegenwoordigen juist lage samenhang vertonen (divergeren). Pas dan
+heeft de onderzoeker aannemelijk gemaakt dat de specifieke
+operationalisaties inderdaad constructvalide zijn.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Ook de verwachtingen van de onderzoeker — die zich uiten in bewust
+èn onbewust gedrag — kunnen de constructvaliditeit van een onderzoek
+bedreigen. De onderzoeker is ook een mens, en is dus niet immuun voor de
+invloed van zijn of haar eigen verwachtingen op de uitkomsten van het
+onderzoek. Na afloop van het experiment is de invloed van de onderzoeker
+helaas moeilijk te achterhalen.</li>
+</ol>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.12</em>:Kluger Hans was een paard dat kon rekenen.
+Als aan Kluger Hans gevraagd werd
+<em>hoeveel is <span class="math inline">\(4+4\)</span>?</em>, dan stampte het paard 8 maal met zijn rechter
+voorhoef, als gevraagd werd <em>hoeveel is <span class="math inline">\(3-1\)</span>?</em>, dan stampte Hans twee
+maal met zijn voorhoef. Kluger Hans baarde veel opzien en werd onderwerp
+van verschillende studies. Een commissie stelde in 1904 vast dat Kluger
+Hans inderdaad kon rekenen (en communiceren met mensen). Later
+constateerde een lid van de onderzoekscommissie, Carl Stumpf, samen met
+zijn assistent Oskar Pfungst, echter: “…het paard laat verstek gaan,
+als de oplossing van de gestelde opgave aan geen van de aanwezigen
+bekend is” <span class="citation">(Pfungst <a href="#ref-Pfung07" role="doc-biblioref">1907</a>, 185, vert. HQ)</span>, of als het de persoon die de
+oplossing weet niet kan zien. “Es bedarf also optischer Hilfen” (idem).
+Na nauwkeurige observaties bleek dat de baas van Kluger Hans (en andere
+aanwezigen) zich een heel klein beetje ontspande zodra Hans het juiste
+aantal malen met zijn rechter voorpoot gestampt had. Dit onopzettelijke
+teken was voor Kluger Hans voldoende aanleiding om het stampen te staken
+(d.i. om zijn rechter voorhoef op de grond te houden), teneinde daarna
+zijn beloning van wortels en brood in ontvangst te nemen
+<span class="citation">(Pfungst <a href="#ref-Pfung07" role="doc-biblioref">1907</a>)</span> <span class="citation">(Watzlawick <a href="#ref-Watz77" role="doc-biblioref">1977</a>, 38–47)</span>.</p>
+</blockquote>
+<blockquote>
+<p>Een misschien vergelijkbaar, recenter geval is dat van Alex, een
+papegaai met bijzondere cognitieve gaven, zie o.a. <span class="citation">(Boswall, <a href="#ref-BLLB14" role="doc-biblioref">n.d.</a>)</span> en <span class="citation">(“Alex Foundation” <a href="#ref-Alex15" role="doc-biblioref">2015</a>)</span>.</p>
+</blockquote>
+<hr />
+<p>Het beroemde voorbeeld van Kluger Hans illustreert hoe subtiel de invloed van een
+onderzoeker of proefleider op het te onderzoeken object kan zijn. Deze
+invloed bedreigt natuurlijk de constructvaliditeit. Het is daarom beter
+als de onderzoeker niet ook zelf fungeert als experimentator<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> of
+proefleider. Studies waarin de onderzoeker zelf optreedt als behandelaar
+of docent of beoordelaar, kunnen worden bekritiseerd omdat de
+(verwachtingen van de) onderzoeker de uitkomsten kunnen beïnvloeden,
+waardoor de constructvaliditeit van de onafhankelijke variabele wordt
+bedreigd. Onderzoekers kunnen zich wel verweren tegen deze ‘experimenter
+bias’. In het Head Turn Preference Paradigm
+(voorbeeld 5.6), bijvoorbeeld, is het gebruikelijk dat de
+experimentator niet weet uit welke groep een proefpersoon afkomstig is,
+en dat de experimentator niet hoort welk geluidsbestand wordt aangeboden
+<span class="citation">(Johnson and Zamuner <a href="#ref-John10" role="doc-biblioref">2010</a>, 74)</span>.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Een derde bedreiging van de constructvaliditeit kan samengevat
+worden onder de term <em>motivatie</em>. Aan de bedreiging van de validiteit
+door motivatie zitten tenminste twee kanten. Als (ten minste) één van de
+condities in een onderzoek erg belastend of vervelend is, dan kunnen de
+proefpersonen gedemotiveerd raken en zich minder inspannen bij hun
+taken. Ze presteren dan minder, maar dit is een effect van (gebrek aan)
+motivatie, en niet een direct effect van de onafhankelijke variabele
+(hier: conditie). Het effect hoeft dan niet veroorzaakt te worden door
+de manipulatie van het bedoelde construct, maar door de onbedoelde
+manipulatie van de <em>motivatie</em> van de proefpersonen. Ook het omgekeerde
+kan natuurlijk een bedreiging van de constructvaliditeit vormen. Indien
+van één van de condities een extra motiverende werking op de
+proefpersonen heeft, dan kan een eventueel effect toegeschreven worden
+aan motivationele aspecten. Ook dan kan er sprake zijn van een effect
+van een onbedoeld gemanipuleerde variabele.</p></li>
+<li><p>Een vierde bedreiging van de validiteit heeft te maken met de keuze
+uit de vele mogelijke waarden van een onafhankelijke variabele, d.w.z.
+de <em>‘dosering’</em> ervan. Als de onafhankelijke variabele is ‘het aantal
+keren dat een gedicht ter voorbereiding mag worden doorgelezen’, moet de
+onderzoeker bepalen hoeveel keer de proefpersonen het gedicht mogen
+doorlezen: één, twee, drie of meer keren? Als de onafhankelijke
+variabele is ‘de tijd die de proefpersonen mogen studeren’, dan moet de
+onderzoeker kiezen hoe lang de proefpersonen mogen leren: vijf minuten,
+een kwartier, twee uur? De onderzoeker maakt een keuze uit de dosering
+van de onafhankelijke variabele ‘leertijd’. Op grond van deze dosering
+kan de onderzoeker concluderen dat de afhankelijke variabele niet
+beïnvloed wordt door de onafhankelijke variabele. In feite moet de
+onderzoeker echter concluderen dat er geen verband lijkt tussen de
+<em>gekozen dosering van</em> de onafhankelijke variabele, en de afhankelijke
+variabele. Een mogelijk effect wordt verhuld door de keuze van de
+dosering (waarden) van de onafhankelijke variabele.</p></li>
+</ol>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.13</em>: Als een personenauto en een voetganger botsen,
+loopt de voetganger een
+risico te overlijden. Dat overlijdensrisico is relatief gering (kleiner
+dan 20%) bij botsingssnelheden tot ca 50 km/u. Als we ons onderzoek naar
+het verband tussen botsingssnelheid en overlijdensrisico zouden beperken
+tot deze lage ‘doseringen’ van botsingssnelheden, dan zouden we wellicht
+concluderen dat de botsingssnelheid géén invloed heeft op het
+overlijdensrisico voor de voetganger. Dat zou een foutieve conclusie
+zijn (van welk type?), want bij hogere botsingssnelheden neemt het
+overlijdensrisico voor de voetganger toe tot bijna 100%
+<span class="citation">(Rosén, Stigson, and Sander <a href="#ref-Rosen11" role="doc-biblioref">2011</a>; SWOV <a href="#ref-SWOV12" role="doc-biblioref">2012</a>)</span>.</p>
+</blockquote>
+<hr />
+<p>5. Een vijfde bedreiging van de constructvaliditeit wordt veroorzaakt
+door de <em>sturende werking van de voormeting</em>. In veel studies wordt de
+afhankelijke variabele herhaaldelijk gemeten, zowel voor als na
+manipulatie van de afhankelijke variabele: de zgn. voormeting en
+nameting. De aard en inhoud van de voormeting kunnen echter sporen
+nalaten bij de proefpersoon. Zo kan de proefpersoon zijn onbevangenheid
+verliezen, waardoor het effect van de onafhankelijke variabele (bv.
+behandeling) wordt verkleind. Een eventueel verschil in scores tussen de
+experimentele condities kan dus op meerdere manieren worden verklaard.
+De verklaring kan immers liggen in een effect van alleen de
+onafhankelijke variabele, maar kan ook liggen in een effect van <em>de
+combinatie van voormeting en onafhankelijke variabele</em>. Bovendien kan de
+afwezigheid van een effect soms worden verklaard door het feit dat een
+voormeting is verricht (zie het Solomon vier-groepen-ontwerp, in Hoofdstuk <a href="ch-ontwerp.html#ch:ontwerp">6</a>, voor een onderzoeksontwerp dat
+hiermee rekening houdt).</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.14</em>: We kunnen de effecten van twee behandelingen vergelijken in een
+experiment waarin de deelnemers volgens het toeval in twee groepen
+worden ingedeeld. De eerste groep (E) krijgt eerst een voormeting, dan
+een behandeling, en dan een nameting. De tweede groep (C) krijgt geen
+voormeting, en ook geen behandeling, maar alleen een nameting, die voor
+deze groep de enige meting is.</p>
+</blockquote>
+<blockquote>
+<p>Als we bij de nameting een verschil vinden tussen de twee groepen, dan
+is dat niet zonder meer toe te schrijven aan het verschil in
+behandeling. Het verschil zou ook, of mede, veroorzaakt kunnen zijn door
+de sturende werking van de voormeting, bv als gevolg van de sturende
+woordkeuze of zinsbouw van de vragen of opdrachten in de voormeting.
+Misschien hebben de deelnemers in groep E iets geleerd in de voormeting,
+d.w.z. <em>niet</em> in de behandeling, waardoor ze beter of anders presteren
+in de nameting dan de deelnemers in groep C.</p>
+</blockquote>
+<hr />
+<ol start="6" style="list-style-type: decimal">
+<li>Een ander probleem dat van invloed kan zijn op de
+constructvaliditeit is <em>sociaal wenselijk
+antwoorden</em>. Dat is niets anders dan dat mensen
+geneigd zijn een antwoord geven, dat in de gegeven sociale situatie
+wenselijk is, en dat hen dus niet in de problemen brengt of tot
+gezichtsverlies leidt. Een voorbeeld kan dit verduidelijken.</li>
+</ol>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.15</em>: Bij peilingen voor verkiezingen zijn respondenten geneigd om sociaal wenselijk te antwoorden, en dat geldt ook voor de vraag of de respondent überhaupt zal gaan stemmen <span class="citation">(Karp and Brockington <a href="#ref-Karp05" role="doc-biblioref">2005</a>)</span>. De neiging tot het sociaal wenselijke antwoord (“ja, ik ga stemmen”) is sterker naarmate respondenten hoger zijn opgeleid, en dus is de overschatting van het opkomst-percentage groter voor hoger-opgeleiden dan voor lager-opgeleiden. Dat heeft weer gevolgen voor de uitslagen van de peilingen van de verschillende partijen, omdat de populariteit van de politieke partijen verschillend is voor kiezers van verschillend opleidingsniveau.</p>
+</blockquote>
+<hr />
+<p>Dit effect heeft mede gezorgd voor de overschatting van het aantal
+Clinton-stemmers, en onderschatting van het aantal Trump-stemmers, bij
+de peilingen voorafgaand aan de Amerikaanse presidentsverkiezing in
+2016.</p>
+<ol start="7" style="list-style-type: decimal">
+<li>Een laatste probleem met betrekking tot de constructvaliditeit kan
+aangeduid worden als: een <em>beperkte generaliseerbaarheid</em> over
+constructen. Bij de presentatie van onderzoeksresultaten worden
+regelmatig opmerkingen gemaakt als: ‘Ja, ik ben het eens met uw
+conclusie dat X van invloed is op Y, maar hoe zit het met…’. Op de
+puntjes kan dan van alles ingevuld worden: de toepasbaarheid bij andere
+doelgroepen, of in andere genres, of in andere talen, etc. Deze aspecten
+zijn weliswaar van belang, maar spelen in het onderzoek zelf niet direct
+een rol: we hebben het onderzoek immers uitgevoerd met een bepaalde
+selectie van doelgroep, genre, talen, etc.</li>
+</ol>
+<p>Toch bevelen we wel aan om zulke vragen over generaliseerbaarheid onder
+ogen te zien. Zijn de conclusies eveneens van toepassing op een andere
+doelgroep of taal? Waarom wel of niet? Welke andere factoren zouden de
+generalisatie kunnen beïnvloeden? Zou een gunstig effect voor de ene
+groep of taal ook kunnen uitpakken als een ongunstig effect voor een
+andere groep of taal die buiten het onderzoek is gevallen?</p>
+</div>
+<div id="sec:externevaliditeit" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Externe validiteit</h2>
+<p>Op basis van de gegevens die zijn verzameld kan een onderzoeker — als
+het goed is — de conclusie trekken: <em>in dit onderzoek geldt dat…</em>.
+Het is echter zelden de bedoeling van een onderzoeker om conclusies te
+trekken die alleen gelden voor één onderzoek. Een onderzoeker wil niet
+aantonen dat tweetaligheid een gunstige invloed heeft op de
+taalontwikkeling <em>van de steekproef van onderzochte kinderen</em>. Een
+onderzoeker wil conclusies trekken als: tweetaligheid heeft een gunstige
+invloed op de taalontwikkeling <em>van kinderen</em>. De onderzoeker wil
+generaliseren. In het dagelijks leven doen we hetzelfde: we proeven één
+hapje soep uit een hele pan, en op grond daarvan doen we een uitspraak
+over die hele pan soep. We gaan er van uit dat onze bevindingen op basis
+van dat ene hapje gegeneraliseerd mogen worden naar de hele pan, en dat
+het niet nodig is om de hele pan leeg te eten voordat we er een
+uitspraak over kunnen doen.</p>
+<p>De vraag of een onderzoeker de resultaten kan en mag generaliseren is de
+vraag naar de <em>externe validiteit</em> van een onderzoek <span class="citation">(Shadish, Cook, and Campbell <a href="#ref-SCC02" role="doc-biblioref">2002</a>)</span>.
+Generalisatie heeft betrekking op o.a.</p>
+<ul>
+<li><p>eenheden: zijn de resultaten ook geldig voor andere elementen (bv.
+scholen, personen, teksten) uit de populatie, die niet aan het
+onderzoek deelnamen?</p></li>
+<li><p>behandelingen: zijn de resultaten ook geldig voor andere
+behandelingen die lijken op de specifieke condities in dit
+onderzoek?</p></li>
+<li><p>situaties: zijn de resultaten ook geldig buiten de specifieke
+context van dit onderzoek?</p></li>
+<li><p>tijden: zijn de resultaten van dit onderzoek ook geldig op andere
+tijdstippen?</p></li>
+</ul>
+<p>Bij externe validiteit maken we een onderscheid tussen (1) de
+generalisatie <em>naar</em> een beoogde specifieke doelgroep, situatie en tijd,
+en (2) de generalisatie <em>over</em> andere doelgroepen, situaties en tijden.
+Het generaliseren <em>naar</em> en <em>over</em> zijn twee aspecten van de externe
+validiteit die goed uit elkaar gehouden moeten worden. Het generaliseren
+<em>naar</em> een doelgroep of populatie, van personen en vaak ook van
+taalmateriaal, heeft te maken met de representativiteit van de gebruikte
+steekproef; in hoeverre is de steekproef een goede afspiegeling van de
+populatie (van personen, van woorden, van relevante mogelijke zinnen)?
+Het generaliseren <em>naar</em> is dus direct verbonden met het onderzoeksdoel;
+pas als er gegeneraliseerd kan worden naar gedefinieerde populaties kan
+een onderzoeksdoel bereikt zijn. Het generaliseren <em>over</em> doelgroepen
+heeft te maken met de mate waarin de geformuleerde conclusies geldig
+zijn voor te onderscheiden deel-populaties. We illustreren dit met een
+voorbeeld.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 5.16</em>: <span class="citation">(Lev-Ari and Keysar <a href="#ref-LevA10" role="doc-biblioref">2010</a>)</span> onderzochten of luisteraars minder geloof hechten
+aan sprekers met een
+vreemd buitenlands accent in de uitspraak van het Engels. Voor de
+stimuli lieten ze zinnen uitspreken (bv. <em>A giraffe can hold more water
+than a camel</em>) door verschillende sprekers zonder enig accent, met licht
+accent, of met sterk accent. Luisteraars (moedertaal-sprekers van het
+Engels) gaven aan in welke mate ze dachten dat de gesproken zin waar
+was. De resultaten lieten zien dat de luisteraars de zinnen beoordeelden
+als minder waar, als de zin was gesproken door een spreker met een
+vreemd buitenlands accent.</p>
+</blockquote>
+<hr />
+<p>We mogen aannemen dat deze uitkomst gegeneraliseerd kan worden <em>naar</em> de
+beoogde doelgroep, nl. alle moedertaal-luisteraars van het Amerikaans
+Engels. Deze generalisatie kan worden gemaakt ondanks de mogelijkheid
+dat verschillende luisteraars misschien in verschillende mate beïnvloed
+werden door het buitenlandse accent van de spreker.</p>
+<p>Wellicht zou een latere analyse kunnen laten zien dat er verschil is
+tussen vrouwelijke en mannelijke luisteraars. Het is denkbaar dat
+vrouwen en mannen verschillen in hun gevoeligheid voor het accent van de
+spreker. Zo’n (denkbeeldige) uitkomst zou laten zien dat er niet
+gegeneraliseerd mag worden <em>over</em> deel-populaties binnen de doelgroep,
+hoewel er wel gegeneraliseerd kon worden <em>naar</em> de doelgroep.</p>
+<p>In het (toegepast) taalwetenschappelijk onderzoek proberen onderzoekers
+doorgaans om <em>tegelijkertijd</em> te generaliseren naar <em>twee</em> populaties
+van eenheden, nl. van personen (c.q. scholen of families) <em>en stimuli</em>
+(woorden, zinnen, teksten, enz). We willen aannemelijk maken dat de
+resultaten niet alleen geldig zijn voor de onderzochte taalgebruikers,
+maar ook voor andere taalgebruikers. Tegelijkertijd willen we ook
+aannemelijk maken dat de resultaten niet alleen geldig zijn voor de
+onderzochte stimuli, maar ook voor andere vergelijkbaar taalmateriaal
+waaruit de steekproef van stimuli is getrokken. Die gelijktijdige
+generalisatie vereist een complex onderzoeksontwerp, doordat er
+herhaalde observaties zijn binnen proefpersonen (meerdere oordelen van
+eenzelfde proefpersoon) en binnen stimuli (meerdere oordelen over
+dezelfde stimulus). Stimuli, proefpersonen en condities worden
+vervolgens slim gecombineerd om de interne validiteit zo goed mogelijk
+te beschermen. Uiteraard vereist de generalisatie naar ander
+taalmateriaal wel, dat de stimuli willekeurig zijn geselecteerd uit de
+(soms oneindig grote) populatie van al het mogelijke taalmateriaal (zie
+Hoofdstuk <a href="ch-steekproeftrekking.html#ch:steekproeftrekking">7</a>).</p>
+
+</div>
+</div>
+<h3>Referenties</h3>
+<div id="refs" class="references">
+<div id="ref-Alex15">
+<p>“Alex Foundation.” 2015. <a href="http://alexfoundation.org/">http://alexfoundation.org/</a>.</p>
+</div>
+<div id="ref-BLLB14">
+<p>Boswall, Jeffery. n.d. “Alex, the Talking Parrot.” British Library. <a href="http://www.bl.uk/listentonature/specialinterestlang/langofbirds14.html">http://www.bl.uk/listentonature/specialinterestlang/langofbirds14.html</a>.</p>
+</div>
+<div id="ref-Dona83">
+<p>Donald, D. R. 1983. “THE Use and Value of Illustrations as Contextual Information for Readers at Different Progress and Developmental Levels.” <em>British Journal of Educational Psychology</em> 53 (2): 175–85.</p>
+</div>
+<div id="ref-John10">
+<p>Johnson, Elizabeth K., and Tania Zamuner. 2010. “Using Infant and Toddler Testing Methods in Language Acquisition Research.” In <em>Experimental Methods in Language Acquisition Research</em>, edited by Elma Blom and Sharon Unsworth, 73–93. Amsterdam: John Benjamins.</p>
+</div>
+<div id="ref-Karp05">
+<p>Karp, J. A., and D. Brockington. 2005. “Social Desirability and Response Validity: A Comparative Analysis of Overreporting Voter Turnout in Five Countries.” <em>Journal of Politics</em> 67 (3): 825–40.</p>
+</div>
+<div id="ref-LevA10">
+<p>Lev-Ari, Shiri, and Boaz Keysar. 2010. “Why Don’t We Believe Non-Native Speakers? The Influence of Accent on Credibility.” <em>Journal of Experimental Social Psychology</em> 46 (6): 1093–6.</p>
+</div>
+<div id="ref-Pfung07">
+<p>Pfungst, Oskar. 1907. <em>Das Pferd Des Herrn von Osten (Der Kluge Hans): Ein Beitrag Zur Experimentellen Tier- Und Menschen-Psychologie</em>. Leipzig: J. A. Barth. <a href="https://archive.org/details/daspferddesherr00stumgoog">https://archive.org/details/daspferddesherr00stumgoog</a>.</p>
+</div>
+<div id="ref-Plomp79">
+<p>Plomp, R., and A. M. Mimpen. 1979. “Improving the Reliability of Testing the Speech Reception Threshold for Sentences.” <em>International Journal of Audiology</em> 18 (1): 43–52.</p>
+</div>
+<div id="ref-RMP18">
+<p>Retraction Watch. 2018. “The ‘Regression to the Mean Project:’ What Researchers Should Know About a Mistake Many Make.” <a href="http://retractionwatch.com/2018/10/30/the-regression-to-the-mean-project-what-researchers-should-know-about-a-mistake-many-make/">http://retractionwatch.com/2018/10/30/the-regression-to-the-mean-project-what-researchers-should-know-about-a-mistake-many-make/</a>.</p>
+</div>
+<div id="ref-RDCPW78">
+<p>Richardson, Ellis, Barbara DiBenedetto, Adolph Christ, Mark Press, and Bertrand G. Winsberg. 1978. “An Assessment of Two Methods for Remediating Reading Deficiencies.” <em>Reading Improvement</em> 15 (2): 82.</p>
+</div>
+<div id="ref-Rijl86">
+<p>Rijlaarsdam, G. 1986. “Effecten van Leerlingrespons Op Aspecten van Stelvaardigheid.” PhD thesis.</p>
+</div>
+<div id="ref-Rosen11">
+<p>Rosén, Erik, Helena Stigson, and Ulrich Sander. 2011. “Literature Review of Pedestrian Fatality Risk as a Function of Car Impact Speed.” <em>Accident Analysis and Prevention</em> 43 (1): 25–33. <a href="http://dx.doi.org/10.1016/j.aap.2010.04.003">http://dx.doi.org/10.1016/j.aap.2010.04.003</a>.</p>
+</div>
+<div id="ref-SCC02">
+<p>Shadish, William R., Thomas D. Cook, and Donald T. Campbell. 2002. <em>Experimental and Quasi-Experimental Designs for Generalized Causal Inference</em>. Belmont, CA: Wadsworth.</p>
+</div>
+<div id="ref-SWOV12">
+<p>SWOV. 2012. “De Relatie Tussen Snelheid En Ongevallen.” SWOV. <a href="http://www.swov.nl/rapport/Factsheets/NL/Factsheet_Snelheid.pdf">http://www.swov.nl/rapport/Factsheets/NL/Factsheet_Snelheid.pdf</a>.</p>
+</div>
+<div id="ref-BM93">
+<p>Van den Bergh, Huub, and Bert Meuffels. 1993. “Schrijfvaardigheid.” In <em>Taalbeheersing Als Tekstwetenschap: Terreinen En Trends</em>, edited by A. Braet and J. Van de Gein. Dordrecht: ICG.</p>
+</div>
+<div id="ref-Verh04">
+<p>Verhoeven, Jo, Guy De Pauw, and Hanne Kloots. 2004. “Speech Rate in a Pluricentric Language: A Comparison Between Dutch in Belgium and the Netherlands.” <em>Language and Speech</em> 47 (3): 297–308.</p>
+</div>
+<div id="ref-Watz77">
+<p>Watzlawick, Paul. 1977. <em>Is “Werkelijk” Waar? Spraakverwarring, Zinsbegoocheling En Onvoorstelbare Werkelijkheid</em>. Deventer: Van Loghum Slaterus.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="8">
+<li id="fn8"><p>De experimentator is degene die een experiment afneemt bij een proefpersoon. De experimentator kan een andere persoon zijn dan de onderzoekers die de onderzoekshypothesen hebben opgesteld en/of proefpersonen hebben gerecruteerd.<a href="ch-validiteit.html#fnref8" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-Meetniveau.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-ontwerp.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/h05validiteit.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["KMS-NL.pdf", "KMS-NL.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,477 @@
+# Integriteit {#ch:integriteit}
+
+## Inleiding {#sec:integriteit-inleiding}
+
+Wetenschappelijk onderzoek heeft de mensheid onmetelijk grote baten
+opgeleverd, zoals betrouwbare computer-technologie, goede medische zorg,
+en begrip van andere talen en culturen. Al deze verworvenheden zijn
+gebaseerd op wetenschappelijk onderbouwde kennis. Onderzoekers
+produceren kennis, en de vooruitgang en groei van kennis ontstaat omdat
+onderzoekers voortbouwen op de ervaringen en inzichten van hun
+voorgangers.
+
+---
+
+> *Voorbeeld 3.1*: Sir Isaac Newton schreef over zijn
+wetenschappelijke werk: "If I have seen further it is by standing on (the)
+shoulders of Giants" (in een brief aan Robert Hooke d.d. 5 Feb
+1676[^fn03-1]). Dit beeld is te herleiden tot de middeleeuwse geleerde
+Bernard de Chartres: "...nos esse quasi nanos gigantum umeris
+insidentes" (dat wij zijn als dwergen gezeten op de schouders van
+reuzen) in vergelijking tot geleerden uit de Oudheid. Newton's
+uitspraak is ook het motto van Google Scholar
+([scholar.google.com](scholar.google.com)), een zoekmachine voor
+wetenschappelijke publicaties.
+
+---
+
+In dit hoofdstuk bespreken we de ethische en morele aspecten van
+wetenschappelijk onderzoek. Wetenschap is mensenwerk, en het vereist een
+goed ontwikkeld beoordelingsvermogen van de onderzoekers. De
+*Nederlandse Gedragscode Wetenschappelijke Integriteit* [@VSNU18]
+(<http://www.vsnu.nl/wetenschappelijke_integriteit>) beschrijft hoe
+wetenschappelijke onderzoekers (en studenten) zich dienen te gedragen.
+Volgens deze gedragscode dient wetenschappelijk onderzoek en onderwijs
+gebaseerd te zijn op de volgende principes:
+
+-   eerlijkheid,
+
+-   zorgvuldigheid,
+
+-   transparantie,
+
+-   onafhankelijkheid, en
+
+-   verantwoordelijkheid
+
+In de volgende paragrafen zullen we nagaan hoe we volgens deze principes
+dienen te handelen bij de verschillende fasen van wetenschappelijk
+onderzoek. Hoe moeten we op eerlijke, zorgvuldige, transparante,
+onafhankelijke en verantwoordelijke wijze een onderzoek opzetten, de
+gegevens verzamelen en verwerken, en verslag doen van het onderzoek? We
+moeten daarover nadenken nog voor het onderzoek begint, en daarom
+bespreken we deze onderwerpen aan het begin van deze syllabus, hoewel we
+ook vooruit zullen wijzen naar termen en begrippen die worden uitgewerkt
+in volgende hoofdstukken.
+
+## Ontwerp {#sec:ontwerp}
+
+Weliswaar levert wetenschappelijk onderzoek ons onmetelijk grote baten
+op, maar daar staan ook aanzienlijke kosten tegenover. De directe kosten
+zijn o.a. de inrichting en onderhoud van laboratoria, apparatuur en
+technische ondersteuning, maar ook de loonkosten van de onderzoekers,
+vergoedingen voor informanten en proefpersonen, reiskosten voor toegang
+tot bibliotheken, archieven, informanten en proefpersonen, e.d. Deze
+directe kosten worden doorgaans gefinancierd uit publieke middelen van
+universiteiten en andere wetenschappelijke instellingen. Daarnaast zijn
+er indirecte kosten, die voor een deel ten laste komen van de
+informanten en proefpersonen: tijd en moeite die niet aan iets anders
+besteed kan worden, verlies van privacy, en mogelijke andere risico's
+die we nog niet kennen. Een vaak vergeten kostenpost is het verlies van
+onbevangenheid: een proefpersoon die heeft meegedaan aan een experiment
+leert daarvan, en reageert daarna misschien anders in een volgend
+experiment (zie 
+§\@ref(sec:internevaliditeit), onder Geschiedenis). De resultaten
+uit zo'n volgend experiment zijn daardoor minder goed generaliseerbaar
+naar andere personen die een andere geschiedenis hebben, en *niet*
+eerder aan een onderzoek hebben meegedaan.
+
+Gezien de grote kosten moet onderzoek zodanig zijn doordacht en
+ontworpen, dat de verwachte baten redelijkerwijs opwegen tegen de
+verwachte kosten [@Rose08, Ch.3]. Als de kans op valide conclusies uit
+een onderzoek erg klein is, dan is het beter om dat onderzoek *niet* uit
+te voeren, en zo de directe en indirecte kosten te besparen.
+
+---
+
+> *Voorbeeld 3.2*: 
+Stel dat we willen onderzoeken of tweetalige kinderen van 4 jaar oud een
+cognitief voordeel hebben boven eentalige leeftijdsgenoten. Op grond van
+eerder onderzoek verwachten we een verschil van tenminste 2 punten (op
+een 10-punts-schaal) tussen beide groepen (met "pooled standard
+deviation" $s_p=4$, dus $d=0.5$, zie 
+§ \@ref(sec:ttoets-formules) en
+§ \@ref(sec:ttoets-effectgrootte)).  
+
+> We vergelijken twee groepen van
+elk $n=4$ kinderen. Zelfs als er inderdaad een verschil is van 2 punten
+tussen de twee groepen (dus als de onderzoekshypothese waar is), dan nog
+is er in dit onderzoek slechts 51% kans om een significant verschil te
+vinden: de power is slechts .51
+(Hoofdstuk \@ref(ch:power)), 
+omdat de twee groepen zo weinig proefpersonen
+bevatten. De vierjarige kinderen en hun ouders kunnen beter andere
+dingen doen (school, thuis, werk) dan meedoen aan dit onderzoek.
+
+> Als er echter $n=30$ kinderen in elk van de twee groepen zouden meedoen,
+en als er inderdaad een verschil is van 2 punten tussen de twee groepen
+(dus als de onderzoekshypothese waar is) dan zou de power .90 zijn. Met
+grotere groepen hebben we dus een veel betere kans om onze
+onderzoekshypothese te bevestigen. Dit uitgebreide ontwerp van het
+onderzoek zal meer kosten (voor de onderzoekers en de kinderen en hun
+ouders), maar levert vermoedelijk ook veel meer op: een valide conclusie
+met grote maatschappelijke impact.
+
+---
+
+Het ontwerp van een onderzoek (zie
+Hoofdstuk \@ref(ch:ontwerp)) moet zo efficiënt mogelijk zijn, en de
+onderzoeker moet daarover al in een vroeg stadium nadenken. De
+efficiëntie hangt ten eerste af van keuzes over hoe de onafhankelijke
+variabelen worden gevarieerd. Is er een aparte groep proefpersonen voor
+iedere conditie van de onafhankelijke variabele (condities zijn "between
+subjects", zoals in voorbeeld 3.2 hierboven? Bij een between-subjects
+ontwerp met twee groepen zijn er ca $n=(5.6/d)^2$ nodig in elke groep [@Gelm07] 
+(zie §\@ref(sec:ttoets-effectgrootte)). Of doen alle proefpersonen mee
+aan alle condities (condities zijn "within subjects")? Bij een
+within-subjects ontwerp met twee condities zijn er dan slechts
+$n=(2.8/d)^2$ proefpersonen nodig in elke conditie, en het onderzoek
+heeft dan dus minder directe en indirecte kosten voor veel minder
+proefpersonen. In het algemeen is het daarom beter om indien mogelijk,
+onafhankelijke variabelen te variëren binnen proefpersonen, en niet
+tussen proefpersonen. Toch is dat niet altijd mogelijk, ten eerste omdat
+individuele kenmerken nu eenmaal alleen verschillen tussen proefpersonen
+(denk aan: mannelijk/vrouwelijk geslacht, wel/niet meertalige jeugd,
+wel/niet afasie, enz.). Ten tweede moeten we terdege rekening houden met
+effecten van 'transfer' tussen condities, die de validiteit bedreigen
+(denk aan: ervaring, leren, vermoeidheid, rijping). We keren hierop
+terug in §\@ref(sec:validiteit).
+
+Meertaligheid en geslacht zijn kenmerken die alleen tussen personen
+kunnen variëren. Maar andere condities kunnen ook variëren binnen
+personen, bijvoorbeeld de dag waarop een cognitieve meting wordt
+afgenomen. Stel dat we een verschil verwachten van $D=2$ punten tussen
+cognitieve metingen afgenomen op maandag of op vrijdag (met $s=4$ en
+$d=0.5$, zie voorbeeld 3.2. Als we de dag van de meting variëren
+tussen proefpersonen, en dus aparte groepen maken voor de
+maandag-kinderen en de vrijdag-kinderen, dan zijn er $n=(5.6/0.5)^2=126$
+kinderen nodig in iedere groep, dus $N=252$ kinderen in totaal. Als we
+de dag van de meting echter variëren binnen proefpersonen, en iedere
+proefpersoon dus observeren zowel op maandag als op vrijdag, dan zijn er
+in totaal slechts $N=(2.8/0.5)^2=32$ kinderen nodig. Met het
+within-subjects ontwerp hoeven we dus veel minder kinderen lastig te
+vallen met onze cognitieve meting. Wel moeten we terdege rekening houden
+met leereffecten tussen de eerste en de tweede meting, en daarvoor
+gepaste maatregelen treffen. We kunnen bijvoorbeeld niet meer dezelfde
+vragenlijsten afnemen in beide condities.
+
+De efficiëntie van een onderzoek hangt ook af van de afhankelijke
+variabele, en met name van het meetniveau 
+(Hoofdstuk \@ref(ch:meetniveau)), de nauwkeurigheid, en de betrouwbaarheid
+van de observaties 
+(Hoofdstuk \@ref(ch:betrouwbaarheid)). Hoe lager het meetniveau, des te lager
+ook de efficiëntie van het onderzoek. En hoe lager de nauwkeurigheid,
+des te lager ook de efficiëntie van het onderzoek, en des te meer
+proefpersonen en observaties zijn er nodig om valide conclusies te
+kunnen trekken.
+
+Stel dat we een verschil willen onderzoeken tussen twee condities binnen
+proefpersonen, en stel dat het verschil in werkelijkheid 2 punten
+bedraagt (met $s_D=4$ en $d=0.5$, zie
+voorbeeld 3.2). We kijken nu echter niet naar de richting en
+de grootte van het verschil, maar alleen naar de *richting* van het
+verschil tussen de twee observaties per proefpersoon: heeft die
+proefpersoon een positief of een negatief verschil tussen de eerste en
+de tweede conditie? Deze binomiale afhankelijke variabele bevat minder
+informatie dan de oorspronkelijke puntenscore (nl. alleen de richting,
+en niet de grootte van het verschil), en het onderzoek is daardoor dus
+minder efficiënt. We hebben daarom in dit specifieke voorbeeld niet 34
+maar tenminste 59 proefpersonen nodig.
+
+Onderzoekers zijn dus verantwoordelijk om de kosten en baten van hun
+onderzoek zorgvuldig en eerlijk af te wegen en te beoordelen, en zij
+dienen te beschikken over voldoende methodologische bagage om een goed
+onderzoeksontwerp (design) te kiezen gezien het tijdsbestek, de mogelijk
+beschikbare proefpersonen, de meetinstrumenten, enz.
+
+## Proefpersonen en informanten
+
+Wetenschappelijk onderzoek is mensenwerk: onderzoekers zijn ook mensen.
+Op het gebied van de geesteswetenschappen bestuderen die onderzoekers
+weer het gedrag en de geestelijke producten van (andere) mensen.
+Daarvoor gelden wetten, regels, richtlijnen en gedragscodes waaraan
+onderzoekers (en studenten!) zich dienen te houden, vanuit de eerder
+genoemde principes van zorgvuldigheid en verantwoordelijkheid. Het
+onderzoek zelf, en de verzamelde gegevens, mogen geen schade of groot
+verlies van privacy opleveren voor de deelnemers.
+
+Voor geesteswetenschappelijk onderzoek zijn twee wetten relevant:
+
+-   Algemene Verordening Gegevensbescherming (AVG),\
+    zie
+    <https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/avg-europese-privacywetgeving>
+
+-   Wet Medisch-wetenschappelijk Onderzoek met mensen (WMO),\
+    zie <http://www.wetten.nl>
+
+Het is verplicht om proefpersonen (of hun wettelijke vertegenwoordigers)
+te vragen om expliciete "informed consent". Dat houdt in dat de
+proefpersonen eerlijk geïnformeerd worden over het onderzoek, over de
+baten en kosten daarvan, en over hun beloning, en dat zij daarna (d.i.
+"informed") expliciet toestemmen in hun deelname ("consent").
+Voorbeelden van informed consent (informatiebrieven en
+toestemmingsverklaringen) zijn te vinden op de website van de Facultaire
+Ethische Toetsingscommissie (FETC, hieronder nader besproken), via
+<https://fetc-gw.wp.hum.uu.nl/>.
+
+Alle gegevens waaruit een individuele persoon te herleiden is, worden
+beschouwd als "persoonsgegevens", en deze persoonsgegevens mogen alleen
+worden verzameld en verwerkt conform de AVG. Het is raadzaam om de
+onderzoeksgegevens zo snel mogelijk los te koppelen van de
+persoonsgegevens, d.w.z. dat je de gegevens anonimiseert. De koppeling
+tussen persoonsgegevens en en onderzoeksgegevens (bijv. een lijst met
+namen van proefpersonen en hun bijbehorende anonieme persoonlijke code)
+is zelf weer vertrouwelijke informatie die je zorgvuldig moet bewaren en
+opslaan. Bewaar de persoonsgegevens niet langer dan nodig. De
+onderzoeksgegevens mag je alleen gebruiken voor het (wetenschappelijke)
+doel waarmee ze zijn verzameld. Zorg ook dat de proefpersonen niet
+herkenbaar zijn (gebruik anonieme codes) in verslagen en publicaties
+over het onderzoek.
+
+Foto's en opnames van personen (audio, video, fysiologische gegevens,
+EEG) vallen onder het zgn. portretrecht. Foto's en andere
+identificerende opnames worden dus als portretten beschouwd. Bij
+publicatie kan de afgebeelde/weergegeven persoon zich beroepen op het
+portretrecht, en een schadevergoeding eisen voor het letsel dat hem of
+haar door die publicatie wordt aangedaan. Als je een herkenbare opname
+zou willen publiceren, dan moet je dus vooraf expliciete toestemming
+daarvoor vragen van de opgenomen persoon of zijn wettelijke
+vertegenwoordiger (zie het bovengenoemde voorbeeld van "informed
+consent"). Dat geldt ook als je een fragment van zo'n opname laat zien
+of horen tijdens een conferentie of op een website.
+
+In de wet WMO is vastgelegd dat onderzoek met mensen eerst moet worden
+goedgekeurd door een speciale commissie; voor de Faculteit
+Geesteswetenschappen van de Universiteit Utrecht is dat de
+Medisch-Ethische Toetsingscommissie die valt onder het Universitair
+Medisch Centrum Utrecht (METC). Die commissie weegt af of de mogelijke
+baten van het onderzoek redelijkerwijs opwegen tegen de kosten en
+mogelijke schade voor de proefpersonen.
+
+Het meeste onderzoek op het gebied van talen en communicatie bij de
+Universiteit Utrecht is vrijgesteld van de tijdrovende toetsing door de
+METC, maar moet wel verplicht worden voorgelegd aan de **Facultaire
+Ethische Toetsingscommissie** (FETC), en wel aan de kamer Linguïstiek
+daarvan. Dat geldt echter niet voor onderzoek door studenten! Op de website
+van de FETC is meer informatie te vinden:
+<https://fetc-gw.wp.hum.uu.nl/>. Overleg bij twijfel altijd met je begeleider of docent. 
+Ethische toetsing is ook verplicht voor
+studenten en onderzoekers uit andere domeinen (literatuur, geschiedenis,
+media & cultuur) die van plan zijn onderzoek te verrichten met mensen.
+
+## Gegevens
+
+De verzamelde data of gegevens vormen de onderbouwing voor de conclusies
+uit wetenschappelijk onderzoek. Die gegevens zijn daarmee van essentieel
+belang: zonder gegevens geen valide conclusies. Zoals we hierboven zagen
+(§\@ref(sec:ontwerp))
+zijn die gegevens bovendien zeer kostbaar (in tijd, geld, privacy, enz).
+We moeten er dus uiterst zorgvuldig mee omgaan. We moeten anderen kunnen
+overtuigen van de validiteit van onze conclusies op basis van die
+gegevens, en we moeten de onderliggende gegevens desgevraagd kunnen
+delen met andere onderzoekers.
+
+Die zorgvuldigheid vereist dus in ieder geval dat we zo snel mogelijk
+voldoende reservekopieën maken, en die bewaren op verschillende veilige
+plaatsen. Bedenk eens wat er zou gebeuren als een brand of overstroming
+je werkplek of woning zou vernietigen, of als tijdens je scriptie-project je laptop wordt gestolen (waar gebeurd!). Heb je dan goede en
+recente kopieën van de gegevens elders opgeslagen? Voor kopieën en
+'backups' kun je goed gebruik maken van een afdoende beveiligde "cloud
+service"[^fn03-2].
+
+De zorgvuldigheid vereist ook dat we goed bijhouden wat de gegevens
+voorstellen, en hoe ze zijn verzameld. Gegevens zonder bijbehorende
+beschrijving zijn nagenoeg waardeloos voor wetenschappelijk onderzoek.
+Charles Darwin noteerde nauwkeurig welke vogel op welk van de
+Galapagos-eilanden welke vorm van snavel had, en deze observaties
+vormden later (deel van) de onderbouwing van zijn evolutie-theorie. Houd
+dus een logboek bij (op papier of digitaal) waarin je alle stappen van
+je onderzoek beschrijft, en eventueel motiveert. Noteer ook merk en type
+en instellingen van de gebruikte apparatuur, en noteer versie-nummer en
+instellingen van de gebruikte software. Houd bij welke bewerkingen je op
+de gegevens hebt toegepast, en waarom, en in welk bestand welke gegevens
+zijn opgeslagen.
+
+Als je werkt met geditigaliseerde data (bv in Excel of SPSS of R), houd
+dan ook zorgvuldig bij welke variabelen in welke kolom is opgeslagen, in
+welke eenheden, en met welke codes.
+
+---
+
+> *Voorbeeld 3.3*: Het
+bestand <http://tinyurl.com/nj4pjaq> bevat gegevens van 80 sprekers van
+het Nederlands, ten dele ontleend aan het Corpus Gesproken Nederlands
+(CGN). De eerste regel bevat de namen van de variabelen. Iedere volgende
+regel correspondeert met één spreker. De gegevens op iedere regel zijn
+gescheiden door spaties. De eerste kolom bevat de anonieme
+identificatie-code van de spreker volgens het CGN. In de vijfde kolom
+staat de regio van herkomst van de spreker gecodeerd, als één
+letterteken, met de codes `W` Randstad, `M` Midden-Nederland, `N`
+Noord-Nederland, `S` Zuid-Nederland) [@Quene08]. Door de zorgvuldige
+annotatie zijn deze gegevens nog goed bruikbaar, ook al zijn ze ruim 20
+jaar geleden verzameld door collega-onderzoekers.
+
+---
+
+Gegevens blijven het intellectuele eigendom van degene die ze heeft
+verzameld. Gebruik van andermans data zonder bronvermelding kan
+beschouwd worden als diefstal, of als plagiaat.
+
+Fraude met gegevens (gegevens fabriceren of verzinnen, in plaats van
+observeren) is uiteraard strijdig met meerdere principes uit de
+bovengenoemde gedragscode [@VSNU18]. Fraude schaadt het wederzijds
+vertrouwen waarop wetenschap is gebaseerd. Het misleidt andere
+onderzoekers die voortbouwen op de fictieve resultaten, en
+onderzoeksgeld voor die frauduleuze onderzoekslijn wordt weggezogen uit
+ander, niet frauduleus onderzoek --- kortom, een wetenschappelijke
+doodzonde. Als je wilt overleggen over vragen of dilemma's hierover,
+neem dan contact op met prof.dr. Christoph Baumgartner, vertrouwenspersoon
+wetenschappelijke integriteit van de Faculteit Geesteswetenschappen
+(`c.baumgartner@uu.nl`).
+
+## Teksten
+
+Wetenschappelijk onderzoek wordt pas echt nuttig, als de resultaten
+ervan verspreid worden. Onderzoek dat niet wordt gerapporteerd, zou net
+zo goed *niet* kunnen zijn uitgevoerd, en de kosten van dat onderzoek
+zijn dan feitelijk tevergeefs geweest. Een belangrijk deel van het
+wetenschappelijk werk bestaat daarom uit verslaglegging ervan.
+Publicaties (en octrooien) vormen een zeer belangrijk deel van de
+"output" van wetenschappelijk onderzoek. Onderzoekers worden gemeten
+naar het aantal publicaties, en naar de "impact" daarvan (het aantal
+malen dat die publicaties weer geciteerd worden door anderen die erop
+voortbouwen). Mede gezien de grote belangen dienen we dus zorgvuldig om
+te gaan met teksten van anderen en van onszelf.
+
+De onderzoekers die betrokken zijn bij een onderzoek, moeten met elkaar
+overleggen wie de auteurs van het verslag of van de publicatie zullen
+zijn, en in welke volgorde. Mede-auteurs van een wetenschappelijk
+verslag moeten voldoen aan drie voorwaarden [@ORI12, Ch.10]. Ten eerste
+moeten zij een substantiële wetenschappelijke bijdrage hebben geleverd
+aan één of meer fasen in het onderzoek: het oorspronkelijke idee
+bedenken, het onderzoek opzetten en ontwerpen, de gegevens verzamelen,
+en de gegevens analyseren en interpreteren. Ten tweede moeten ze hebben
+meegewerkt aan het verslag, als schrijver en/of als commentator. Ten
+derde moeten ze instemmen met de definitieve tekst van het verslag
+(meestal impliciet, soms expliciet), en tevens instemmen met hun
+mede-auteurschap daarvan. De auteurs doen er goed aan om af te spreken
+in welke volgorde hun namen vermeld worden. Meestal correspondeert die
+volgorde met het afnemend belang en de afnemende omvang van de
+respectievelijke bijdragen van de auteurs. Als de eindverantwoordelijke
+hoofd-onderzoeker tevens mede-auteur is, dan wordt deze vaak als laatste
+genoemd.
+
+---
+
+> *Voorbeeld 3.4*: 
+Student-assistent A heeft geholpen bij het verzamelen van de gegevens,
+maar deze assistent heeft geen andere bijdragen geleverd, en weet niet
+goed waar het onderzoek eigenlijk over gaat. A hoeft geen mede-auteur te
+worden van het verslag, maar de auteurs dienen de bijdrage van A wel te
+beschrijven en te erkennen in hun verslag.
+
+> Student B heeft één van de delen van een onderzoeksproject uitgevoerd
+onder begeleiding van onderzoeker C. Deze begeleider C heeft het hele
+project bedacht, maar B heeft literatuur verzameld, een deelonderzoek
+opgezet en uitgevoerd, data verzameld, geanalyseerd en geïnterpreteerd,
+en daarvan verslag gedaan in een werkstuk. Student B en begeleider C
+zijn daarom beiden mede-auteurs van een publicatie over B's deel van het
+onderzoeksproject. Zij spreken af in welke volgorde de auteurs genoemd
+worden. Omdat student B het belangrijkste was voor dit werk, en C de
+eindverantwoordelijke was, spreken zij af dat B de eerste auteur wordt
+en C de tweede en laatste.
+
+---
+
+Onderzoekers bouwen voort op het werk van hun voorgangers (zie voorbeeld 3.1). 
+Dat kan ook gelden voor hun
+redeneringen, en zelfs hun teksten, maar daarbij moeten we dan altijd
+correct verwijzen naar de juiste bron, d.w.z. naar het werk van die
+voorgangers. Anders is immers niet meer te onderscheiden wie
+verantwoordelijk is voor welke gedachte of tekstfragment. Plagiaat is
+"het overnemen van stukken, gedachten, redeneringen van anderen en deze
+laten doorgaan voor eigen werk" (*Van Dale*, 12e druk). Ook deze vorm
+van fraude is een wetenschappelijke doodzonde, waar krachtige sancties
+op kunnen volgen. De Faculteit Geesteswetenschappen van de UU zegt
+daarover het volgende:
+
+> "Van plagiaat is sprake bij het in een scriptie of ander werkstuk
+> gegevens of tekstgedeelten van anderen overnemen zonder
+> bronvermelding. Onder plagiaat valt onder meer:
+>
+> -   het knippen en plakken van tekst van digitale bronnen zoals
+>     encyclopedieën en digitale tijdschriften zonder aanhalingstekens
+>     en verwijzing;
+>
+> -   het knippen en plakken van teksten van het internet zonder
+>     aanhalingstekens en verwijzing;
+>
+> -   het overnemen van gedrukt materiaal zoals boeken, tijdschriften en
+>     encyclopedieën zonder aanhalingstekens en verwijzing;
+>
+> -   het opnemen van een vertaling van bovengenoemde teksten zonder
+>     aanhalingstekens en verwijzing;
+>
+> -   het parafraseren van bovengenoemde teksten zonder (deugdelijke)
+>     verwijzing: parafrasen moeten als zodanig gemarkeerd zijn (door de
+>     tekst uitdrukkelijk te verbinden met de oorspronkelijke auteur in
+>     tekst of noot), zodat niet de indruk wordt gewekt dat het gaat om
+>     eigen gedachtegoed van de student;
+>
+> -   het overnemen van beeld-, geluids- of testmateriaal van anderen
+>     zonder verwijzing en zodoende laten doorgaan voor eigen werk;
+>
+> -   het zonder bronvermelding opnieuw inleveren van eerder door de
+>     student gemaakt eigen werk en dit laten doorgaan voor in het kader
+>     van de cursus vervaardigd oorspronkelijk werk, tenzij dit in de
+>     cursus of door de docent uitdrukkelijk is toegestaan;
+>
+> -   het overnemen van werk van andere studenten en dit laten doorgaan
+>     voor eigen werk. Indien dit gebeurt met toestemming van de andere
+>     student is de laatste medeplichtig aan plagiaat;
+>
+> -   ook wanneer in een gezamenlijk werkstuk door een van de auteurs
+>     plagiaat wordt gepleegd, zijn de andere auteurs medeplichtig aan
+>     plagiaat, indien zij hadden kunnen of moeten weten dat de ander
+>     plagiaat pleegde;
+>
+> -   het indienen van werkstukken die verworven zijn van een
+>     commerciële instelling (zoals een internetsite met uittreksels of
+>     papers) of die tegen betaling door iemand anders zijn geschreven."
+>
+> <http://students.uu.nl/praktische-zaken/regelingen-en-procedures/fraude-en-plagiaat>
+
+Bij plagiaat van eigen werk worden de teksten of gedachten niet
+overgenomen van anderen maar van één van de auteurs. Over dit
+zelf-plagiaat wordt verschillend gedacht; het is echter raadzaam om in
+voorkomende gevallen wel de bron te vermelden, vanuit de principes van
+zorgvuldigheid, betrouwbaarheid, controleerbaarheid, en
+verantwoordelijkheid.
+
+Een verwijzing of citatie of referentie is een verkorte bronvermelding
+in de tekst; in dit boek ben je er al vele tegengekomen. Aan het
+einde van de tekst volgt dan de volledige
+lijst van bronnen, meestal aangeduid als bronvermeldingen, geraadpleegde
+bronnen, referenties, literatuur, of bibliografie ("boekbeschrijving").
+Een foutieve bronvermelding kan worden beschouwd als plagiaat [@UBVU15]
+omdat de lezer niet verwezen wordt naar de juiste bron. Onderzoekers
+dienen hun bronnen daarom op correcte wijze te vermelden. Daarvoor
+bestaan verschillende conventies, afhankelijk van het vakgebied. Meestal
+zal een docent aangeven volgens welke stijl of conventie je je bronnen
+moet vermelden. In dit boek volgen we zoveel mogelijk de stijl van de [@APA10], die
+gebruikelijk is in de sociale wetenschappen en een deel van de
+geesteswetenschappen.
+
+De regels voor bronvermelding zijn soms ingewikkeld. Bovendien moeten de
+auteurs zorgen dat de citaties in de tekst overeenkomen met de lijst van
+referenties. Deze taken kunnen beter worden bijgehouden door een
+zgn."reference manager", een programma dat referenties of
+bronvermeldingen verzamelt en op de juiste wijze invoegt in de tekst.
+Een overzicht van zulke programma's is te vinden via
+<https://en.wikipedia.org/wiki/Comparison_of_reference_management_software>.
+Voor dit tekstboek is gebruik gemaakt van Zotero,
+gecombineerd met BibTeX.
+
+[^fn03-1]: Een kopie van de brief is te lezen via <http://digitallibrary.hsp.org/index.php/Detail/Object/Show/object_id/9285>; voor achtergrond-informatie zie <http://www.bbc.co.uk/worldservice/learningenglish/movingwords/shortlist/newton.shtml>.
+
+[^fn03-2]: Medewerkers van de UU kunnen SurfDrive (<https://www.surfdrive.nl>) gebruiken om gegevens veilig en makkelijk te bewaren op een beveiligde netwerk-schijf.
