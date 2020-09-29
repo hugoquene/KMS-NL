@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.9.28)  28 SEP 2020 23:53
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.9.28)  29 SEP 2020 08:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -419,9 +419,6 @@ LaTeX Info: Redefining \cite on input line 694.
 ) (./KMS-NL.aux
 
 LaTeX Warning: Label `eq:t-onesampleCI' multiply defined.
-
-
-LaTeX Warning: Label `eq:t-homoskedastic' multiply defined.
 
 )
 \openout1 = `KMS-NL.aux'.

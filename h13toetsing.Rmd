@@ -257,7 +257,7 @@ dus $N-1 = 34-1 = 33$ vrijheidsgraden.
 
 ### aannames {#sec:ttoets-aannames}
 
-De voor een enkele steekproef vereist drie aannames (assumpties) waaraan
+De $t$-toets voor een enkele steekproef vereist drie aannames (assumpties) waaraan
 voldaan moet zijn, om de toets te mogen gebruiken.
 
 * De gegevens moeten gemeten zijn op intervalniveau (zie
@@ -501,7 +501,7 @@ with( gramm2013, t.test( score[opleiding=="TW"] ) )
 
 ## $t$-toets voor twee onafhankelijke steekproeven {#sec:ttoets-onafh}
 
-De Student wordt toegepast om een verschil te kunnen onderzoeken tussen
+De Student $t$-toets wordt toegepast om een verschil te kunnen onderzoeken tussen
 de gemiddelde scores van twee onafhankelijke steekproeven, bv van
 vergelijkbare jongens en meisjes. Op grond van de gemiddelden en de
 standaarddeviaties van de twee steekproeven bepalen we de
@@ -524,7 +524,7 @@ oud. Uit de resultaten blijkt dat de meisjes een gemiddelde woordenschat
 hebben van $\overline{x_1}=95$ woorden ($s_1=82$), en voor de jongens is
 dat $\overline{x_2}=85$ woorden ($s_2=98$). Met deze gegevens bepalen we
 de toetsingsgrootheid $t$ volgens formule
-\@ref(#eq:t-homoskedastic), resulterend in $t=0.88$ met 122 d.f. De
+\@ref(eq:t-homoskedastic), resulterend in $t=0.88$ met 122 d.f. De
 bijbehorende kritieke grenswaarde $t^*$ zoeken we wederom op in
 Bijlage \@ref(app:kritieketwaarden). In de regel voor 100 d.f. (na
 afronding naar beneden) vinden we $t^*=1.984$ in de vierde kolom. Voor
@@ -571,7 +571,7 @@ om H0 *wel* te verwerpen, en rapporteren dat als volgt:
 
 ### aannames {#aannames}
 
-De Student voor twee onafhankelijke steekproeven vereist vier aannames
+De Student $t$-toets voor twee onafhankelijke steekproeven vereist vier aannames
 (of assumpties) waaraan voldaan moet zijn, om de toets te mogen
 gebruiken.
 
@@ -781,7 +781,7 @@ H0 *wel* te verwerpen, en rapporteren dat als volgt:
 
 ### aannames {#aannames-1}
 
-De voor gepaarde waarnemingen binnen een enkele steekproef vereist drie
+De $t$-toets voor gepaarde waarnemingen binnen een enkele steekproef vereist drie
 aannames (assumpties) waaraan voldaan moet zijn, om deze toets te mogen
 gebruiken.
 

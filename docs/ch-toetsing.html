@@ -695,7 +695,7 @@ dus <span class="math inline">\(N-1 = 34-1 = 33\)</span> vrijheidsgraden.</p>
 </div>
 <div id="sec:ttoets-aannames" class="section level3" number="13.2.3">
 <h3><span class="header-section-number">13.2.3</span> aannames</h3>
-<p>De voor een enkele steekproef vereist drie aannames (assumpties) waaraan
+<p>De <span class="math inline">\(t\)</span>-toets voor een enkele steekproef vereist drie aannames (assumpties) waaraan
 voldaan moet zijn, om de toets te mogen gebruiken.</p>
 <ul>
 <li><p>De gegevens moeten gemeten zijn op intervalniveau (zie
@@ -861,7 +861,7 @@ Figuur 13.2: 95%-Betrouwbaarheidsintervallen en steekproefgemiddelden, over 100 
 <h3><span class="header-section-number">13.5.1</span> formules</h3>
 <p>Het tweezijdige betrouwbaarheidsinterval voor <span class="math inline">\(B\)</span>% betrouwbaarheid voor
 een populatie-gemiddelde <span class="math inline">\(\overline{y}\)</span> is
-<span class="math display" id="eq:t-homoskedastic" id="eq:t-onesampleCI">\[\begin{equation}
+<span class="math display" id="eq:t-onesampleCI">\[\begin{equation}
     \overline{y} \pm t^*_{N-1} \times \frac{s}{\sqrt{N}}
   \tag{10.12}
 \end{equation}\]</span></p>
@@ -898,7 +898,7 @@ uitvoer.</p>
 </div>
 <div id="sec:ttoets-onafh" class="section level2" number="13.6">
 <h2><span class="header-section-number">13.6</span> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven</h2>
-<p>De Student wordt toegepast om een verschil te kunnen onderzoeken tussen
+<p>De Student <span class="math inline">\(t\)</span>-toets wordt toegepast om een verschil te kunnen onderzoeken tussen
 de gemiddelde scores van twee onafhankelijke steekproeven, bv van
 vergelijkbare jongens en meisjes. Op grond van de gemiddelden en de
 standaarddeviaties van de twee steekproeven bepalen we de
@@ -920,7 +920,7 @@ oud. Uit de resultaten blijkt dat de meisjes een gemiddelde woordenschat
 hebben van <span class="math inline">\(\overline{x_1}=95\)</span> woorden (<span class="math inline">\(s_1=82\)</span>), en voor de jongens is
 dat <span class="math inline">\(\overline{x_2}=85\)</span> woorden (<span class="math inline">\(s_2=98\)</span>). Met deze gegevens bepalen we
 de toetsingsgrootheid <span class="math inline">\(t\)</span> volgens formule
-@ref\tag{13.2}, resulterend in <span class="math inline">\(t=0.88\)</span> met 122 d.f. De
+<a href="ch-toetsing.html#eq:t-homoskedastic">(13.3)</a>, resulterend in <span class="math inline">\(t=0.88\)</span> met 122 d.f. De
 bijbehorende kritieke grenswaarde <span class="math inline">\(t^*\)</span> zoeken we wederom op in
 Bijlage <a href="app-kritieketwaarden.html#app:kritieketwaarden">C</a>. In de regel voor 100 d.f. (na
 afronding naar beneden) vinden we <span class="math inline">\(t^*=1.984\)</span> in de vierde kolom. Voor
@@ -947,7 +947,7 @@ tweezijdige toetsing. Uit de resultaten blijkt dat de westerlingen
 <span class="math inline">\(\overline{x_W}=0.235\)</span> s (<span class="math inline">\(s=0.028\)</span>), en voor de noorderlingen (ook
 <span class="math inline">\(n=20\)</span>) is dat <span class="math inline">\(\overline{x_N}=0.269\)</span> s (<span class="math inline">\(s=0.029\)</span>). Met deze gegevens
 bepalen we wederom de toetsingsgrootheid <span class="math inline">\(t\)</span> volgens formule
-<a href="ch-toetsing.html#eq:t-homoskedastic">(13.2)</a>, resulterend in <span class="math inline">\(t=-3.76\)</span> met 38 d.f. De
+<a href="ch-toetsing.html#eq:t-homoskedastic">(13.3)</a>, resulterend in <span class="math inline">\(t=-3.76\)</span> met 38 d.f. De
 bijbehorende kritieke grenswaarde <span class="math inline">\(t^*\)</span> zoeken we wederom op in
 Bijlage <a href="app-kritieketwaarden.html#app:kritieketwaarden">C</a>. De juiste d.f. zijn niet in de tabel
 vermeld, dus ronden we naar beneden af (d.i. in conservatieve richting)
@@ -967,7 +967,7 @@ sneller dan die uit het Noorden van Nederland.</p>
 </blockquote>
 <div id="aannames" class="section level3" number="13.6.1">
 <h3><span class="header-section-number">13.6.1</span> aannames</h3>
-<p>De Student voor twee onafhankelijke steekproeven vereist vier aannames
+<p>De Student <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven vereist vier aannames
 (of assumpties) waaraan voldaan moet zijn, om de toets te mogen
 gebruiken.</p>
 <ul>
@@ -996,11 +996,11 @@ standaarddeviaties van de twee steekproeven worden daarin gewogen naar
 hun steekproefomvang.
 <span class="math display" id="eq:sd-pooled">\[\begin{equation}
     s_p = \sqrt{ \frac{(n_1-1) s^2_1 + (n_2-1) s^2_2} {n_1+n_2-2} }
-    \tag{13.3}
+    \tag{13.2}
 \end{equation}\]</span>
 Vervolgens
 <span class="math display" id="eq:t-homoskedastic">\[\begin{equation}
-  \tag{13.2}
+  \tag{13.3}
   t = \frac{ \overline{x_1}-\overline{x_2} } { s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}} }
 \end{equation}\]</span></p>
 <p>Indien de steekproeven <em>niet</em> gelijke variantie hebben, en de vierde
@@ -1235,7 +1235,7 @@ significant verschil (<span class="math inline">\(t(9)=-6.74, p&lt;.002\)</span>
 </blockquote>
 <div id="aannames-1" class="section level3" number="13.7.1">
 <h3><span class="header-section-number">13.7.1</span> aannames</h3>
-<p>De voor gepaarde waarnemingen binnen een enkele steekproef vereist drie
+<p>De <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen binnen een enkele steekproef vereist drie
 aannames (assumpties) waaraan voldaan moet zijn, om deze toets te mogen
 gebruiken.</p>
 <ul>
@@ -1445,7 +1445,7 @@ verschil. Dit verschil heeft een 95% betrouwbaarheidsinterval van
 waarbij <span class="math inline">\(s\)</span> de standaarddeviatie <span class="math inline">\(s\)</span>
 van de score <span class="math inline">\(x\)</span> voorstelt.</p>
 <p>Voor twee onafhankelijke steekproeven (zie
-formule <a href="ch-toetsing.html#eq:sd-pooled">(13.3)</a>):
+formule <a href="ch-toetsing.html#eq:sd-pooled">(13.2)</a>):
 <span class="math display" id="eq:d-homoskedastic">\[\begin{equation}
   \tag{13.11}
   d = \frac{ \overline{x_1}-\overline{x_2} } { s_p }
@@ -1475,7 +1475,7 @@ aangevinkt. In de uitvoer staan vervolgens de benodigde gegevens:<br />
 effectgrootte het beste met de hand uitrekenen op basis van de
 gemiddelden, standaarddeviaties, en omvang van de twee steekproeven,
 gebruik makend van
-formules <a href="ch-toetsing.html#eq:sd-pooled">(13.3)</a> en
+formules <a href="ch-toetsing.html#eq:sd-pooled">(13.2)</a> en
 <a href="ch-toetsing.html#eq:d-homoskedastic">(13.11)</a> hierboven.</p>
 <p>Voor een enkele steekproef met twee gepaarde observaties
 (formule <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>) kunnen we de effectgrootte weer eenvoudiger
@@ -1627,7 +1627,7 @@ niet verwerpen) <span class="citation">(Cumming <a href="#ref-Cumm12" role="doc-
 <hr />
 <ol start="29">
 <li id="fn29"><p>Wij danken Els Rose voor het beschikbaar stellen van deze gegevens.<a href="ch-toetsing.html#fnref29" class="footnote-back">↩︎</a></p></li>
-<li id="fn30"><p>In dit geval gebruiken we <span class="math inline">\(s_p = \sqrt{ \frac{122\times82^2+128\times98^2} {122+128} } = 90.5\)</span>, zie formules <a href="ch-toetsing.html#eq:sd-pooled">(13.3)</a> en <a href="ch-toetsing.html#eq:d-homoskedastic">(13.11)</a>.<a href="ch-toetsing.html#fnref30" class="footnote-back">↩︎</a></p></li>
+<li id="fn30"><p>In dit geval gebruiken we <span class="math inline">\(s_p = \sqrt{ \frac{122\times82^2+128\times98^2} {122+128} } = 90.5\)</span>, zie formules <a href="ch-toetsing.html#eq:sd-pooled">(13.2)</a> en <a href="ch-toetsing.html#eq:d-homoskedastic">(13.11)</a>.<a href="ch-toetsing.html#fnref30" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
