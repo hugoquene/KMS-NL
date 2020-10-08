@@ -166,22 +166,23 @@ table( enq2011$schoen, useNA="ifany" )
 De uitvoer van bovenstaande `table` commando is weergegeven in Tabel \@ref(tab:schoenmaat). 
 De code `NA` (Not Available) wordt in R gebruikt om ontbrekende gegevens aan te duiden. 
 
-```{r troonredes12-1, echo=FALSE}
+```{r troonredes2012-1}
+# lees dataset 
 load(file="data/pauses6.Rda")
+# haal daaruit pauzeduren (kolom 12) voor jaar 2012, in aparte variabele `troon2012`
 troon2012 <- pauses6[ pauses6$jaar==2012, 12 ] # save col_12 as single vector
-# troon2012 <- subset(pauses6[,c(12)], pauses6$jaar==2012)
 ```
 
 ```{r troonredes2012-2, eval=FALSE}
 table( cut( troon2012, breaks=seq(from=0,to=5,by=0.5) ) )
 ```
 
-Ontleed deze opdracht van de binnenste haakjes naar buiten: 
+Ontleed bovenstaande opdracht vanuit de binnenste haakjes naar buiten: 
 (i) `seq`: maak een reeks (sequence) van 0 tot 5 (eenheden, hier: seconden) in stappen van 0.5 seconden,
-(ii) `cut`: hak de afhankelijke variabele `dur` op in intervallen op basis van deze reeks, 
+(ii) `cut`: hak de afhankelijke variabele `troon2012` (duren van pauzes in de Troonrede van 2012) op in intervallen op basis van deze reeks, 
 (iii) `table`: maak een frequentieverdeling van deze intervallen.
 
-De uitvoer van deze opdracht is weergegeven (in aangepaste vorm) in Tabel \@ref(tab:troonrede2012pauzes).
+De uitvoer van deze laatste opdracht is weergegeven (in aangepaste vorm) in Tabel \@ref(tab:troonrede2012pauzes), en wordt hier onderdrukt. 
 
 ## Staafdiagrammen {#sec:staafdiagrammen}
 
@@ -297,7 +298,7 @@ maak je in R met de volgende commando's:
 ```{r troonrede2012-hist-voorbeeld, eval=FALSE}
 # lees dataset 
 load(file="data/pauses6.Rda")
-# haal daaruit pauzeduren (kolom 12) voor jaar 2012, in aparte dataset `troon2012`
+# haal daaruit pauzeduren (kolom 12) voor jaar 2012, in aparte variabele `troon2012`
 troon2012 <- pauses6[ pauses6$jaar==2012, 12 ] # save col_12 as single vector
 # maak histogram
 hist( troon2012, 

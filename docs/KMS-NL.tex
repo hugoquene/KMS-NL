@@ -119,7 +119,7 @@
 
 \title{Kwantitatieve Methoden en Statistiek}
 \author{true}
-\date{Versie gecompileerd op 29 Sep 2020}
+\date{Versie gecompileerd op 08 Oct 2020}
 
 \begin{document}
 \maketitle
@@ -605,8 +605,7 @@ In deel II (hoofdstukken 8 tot en met 12) van het tekstboek behandelen we de bes
 elementaire technieken uit de toetsende statistiek (Eng. `inferential
 statistics'). Met deze laatste twee delen streven we drie doelen na.
 
-Allereerst
-willen we dat je in staat bent om artikelen en andere verslagen waarin
+Allereerst willen we dat je in staat bent om artikelen en andere verslagen waarin
 statistische verwerkings- en toetsingstechnieken zijn gebruikt, kritisch
 te beoordelen.
 Ten tweede willen we dat je dat je de noodzakelijke
@@ -619,11 +618,14 @@ Deze drie doelen zijn geordend in volgorde van belangrijkheid. Wij menen
 dat een adequate en kritische interpretatie van statistische resultaten
 en de conclusies die daaraan verbonden kunnen worden van groot belang is
 voor alle studenten. Om die reden besteden we in dit tekstboek dan ook
-relatief veel aandacht (in deel I) aan de `filosofie' of methodologie achter de besproken statistische technieken en analyses. Ook geven we
+relatief veel aandacht (in deel I) aan de `filosofie' of methodologie achter de besproken statistische technieken en analyses.
+
+In aparte secties geven we
 aan hoe je de besproken statistische analyses zelf kunt uitvoeren in
 SPSS (een populair pakket voor statistische analyses) en in R (een wat
 moeilijker, maar ook krachtiger en veelzijdiger pakket, met stijgende
-populariteit). Beide statistische pakketten zijn geïnstalleerd in de computerleerzalen van de Faculteit Geesteswetenschappen. SPSS is beschikbaar via SurfSpot.nl voor een sterk gereduceerde prijs. R is vrijelijk beschikbaar via www.R-project.org. Meer achtergrond over het gebruik van R is te vinden via \url{https://hugoquene.github.io/emlar2020/}.
+populariteit).
+Voor studenten en medewerkers van de Universiteit Utrecht zijn beide statistische pakketten geïnstalleerd in \texttt{MyWorkSpace}. SPSS is beschikbaar via \url{https://SurfSpot.nl} voor een sterk gereduceerde prijs. R is vrijelijk beschikbaar via \url{https://www.R-project.org}. Een korte inleiding in het gebruik van R is te vinden via \url{https://hugoquene.github.io/emlar2020/}.
 
 \hypertarget{ch:onderzoek}{%
 \chapter{Hypothese-toetsend onderzoek}\label{ch:onderzoek}}
@@ -3817,8 +3819,8 @@ altijd beïnvloed door volgorde-effecten (transfer): de respondenten
 hebben iets onthouden en dus geleerd van de eerste meting. Deze transfer
 werkt nu altijd dezelfde kant op, met daardoor (vermoedelijk) relatief
 hogere prestaties bij de toets met gesloten vragen (op het tweede
-tijdstip). Het is dus beter om de toetsen met open en gesloten vragen at
-random te verdelen over het eerste en tweede tijdstip van afname.
+tijdstip). Het is dus beter om de toetsen met open en gesloten vragen
+gelijkelijk te verdelen over het eerste en tweede tijdstip van afname.
 
 Ten tweede kunnen alle respondenten beïnvloed zijn door eventuele
 gebeurtenissen tussen de twee tijdstippen (geschiedenis), bijvoorbeeld
@@ -3840,16 +3842,16 @@ toetsen maken met dezelfde vraagvorm. Voor alle zekerheid voegen we niet
 één maar twee controle-groepen toe, met open resp. gesloten toetsvragen
 op beide tijdstippen.
 
-We hebben het ontwerp zo in tenminste twee opzichten verbeterd: (1) de
-toetsen zijn gerandomiseerd over de opname-tijdstippen, en (2) er zijn
+We hebben het ontwerp zo in tenminste twee opzichten verbeterd: (1) de open en gesloten
+toetsen zijn gelijkelijk verdeeld over de twee opname-tijdstippen, en (2) er zijn
 relevante controle-groepen toegevoegd. Schematisch ziet het
 onderzoeksontwerp er nu als volgt uit:
 
 \begin{verbatim}
        Exp. groep 1       Open     O1   Gesloten   O2
        Exp. groep 2     Gesloten   O3     Open     O4
-      Controlegroep 1     Open     O5     Open     O5
-      Controlegroep 2   Gesloten   O7   Gesloten   O6
+      Controlegroep 1     Open     O5     Open     O6
+      Controlegroep 2   Gesloten   O7   Gesloten   O8
 \end{verbatim}
 
 Voor alle vier de groepen kan nu de samenhang tussen de prestaties op
@@ -4508,16 +4510,25 @@ De code \texttt{NA} (Not Available) wordt in R gebruikt om ontbrekende gegevens 
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\# lees dataset }
+\KeywordTok{load}\NormalTok{(}\DataTypeTok{file=}\StringTok{"data/pauses6.Rda"}\NormalTok{)}
+\CommentTok{\# haal daaruit pauzeduren (kolom 12) voor jaar 2012, in aparte variabele \textasciigrave{}troon2012\textasciigrave{}}
+\NormalTok{troon2012 \textless{}{-}}\StringTok{ }\NormalTok{pauses6[ pauses6}\OperatorTok{$}\NormalTok{jaar}\OperatorTok{==}\DecValTok{2012}\NormalTok{, }\DecValTok{12}\NormalTok{ ] }\CommentTok{\# save col\_12 as single vector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \KeywordTok{table}\NormalTok{( }\KeywordTok{cut}\NormalTok{( troon2012, }\DataTypeTok{breaks=}\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from=}\DecValTok{0}\NormalTok{,}\DataTypeTok{to=}\DecValTok{5}\NormalTok{,}\DataTypeTok{by=}\FloatTok{0.5}\NormalTok{) ) )}
 \end{Highlighting}
 \end{Shaded}
 
-Ontleed deze opdracht van de binnenste haakjes naar buiten:
+Ontleed bovenstaande opdracht vanuit de binnenste haakjes naar buiten:
 (i) \texttt{seq}: maak een reeks (sequence) van 0 tot 5 (eenheden, hier: seconden) in stappen van 0.5 seconden,
-(ii) \texttt{cut}: hak de afhankelijke variabele \texttt{dur} op in intervallen op basis van deze reeks,
+(ii) \texttt{cut}: hak de afhankelijke variabele \texttt{troon2012} (duren van pauzes in de Troonrede van 2012) op in intervallen op basis van deze reeks,
 (iii) \texttt{table}: maak een frequentieverdeling van deze intervallen.
 
-De uitvoer van deze opdracht is weergegeven (in aangepaste vorm) in Tabel \ref{tab:troonrede2012pauzes}.
+De uitvoer van deze laatste opdracht is weergegeven (in aangepaste vorm) in Tabel \ref{tab:troonrede2012pauzes}, en wordt hier onderdrukt.
 
 \hypertarget{sec:staafdiagrammen}{%
 \section{Staafdiagrammen}\label{sec:staafdiagrammen}}
@@ -4630,7 +4641,7 @@ maak je in R met de volgende commando's:
 \begin{Highlighting}[]
 \CommentTok{\# lees dataset }
 \KeywordTok{load}\NormalTok{(}\DataTypeTok{file=}\StringTok{"data/pauses6.Rda"}\NormalTok{)}
-\CommentTok{\# haal daaruit pauzeduren (kolom 12) voor jaar 2012, in aparte dataset \textasciigrave{}troon2012\textasciigrave{}}
+\CommentTok{\# haal daaruit pauzeduren (kolom 12) voor jaar 2012, in aparte variabele \textasciigrave{}troon2012\textasciigrave{}}
 \NormalTok{troon2012 \textless{}{-}}\StringTok{ }\NormalTok{pauses6[ pauses6}\OperatorTok{$}\NormalTok{jaar}\OperatorTok{==}\DecValTok{2012}\NormalTok{, }\DecValTok{12}\NormalTok{ ] }\CommentTok{\# save col\_12 as single vector}
 \CommentTok{\# maak histogram}
 \KeywordTok{hist}\NormalTok{( troon2012, }

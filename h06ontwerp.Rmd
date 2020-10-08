@@ -626,8 +626,8 @@ altijd beïnvloed door volgorde-effecten (transfer): de respondenten
 hebben iets onthouden en dus geleerd van de eerste meting. Deze transfer
 werkt nu altijd dezelfde kant op, met daardoor (vermoedelijk) relatief
 hogere prestaties bij de toets met gesloten vragen (op het tweede
-tijdstip). Het is dus beter om de toetsen met open en gesloten vragen at
-random te verdelen over het eerste en tweede tijdstip van afname.
+tijdstip). Het is dus beter om de toetsen met open en gesloten vragen 
+gelijkelijk te verdelen over het eerste en tweede tijdstip van afname.
 
 Ten tweede kunnen alle respondenten beïnvloed zijn door eventuele
 gebeurtenissen tussen de twee tijdstippen (geschiedenis), bijvoorbeeld
@@ -649,16 +649,16 @@ toetsen maken met dezelfde vraagvorm. Voor alle zekerheid voegen we niet
 één maar twee controle-groepen toe, met open resp. gesloten toetsvragen
 op beide tijdstippen.
 
-We hebben het ontwerp zo in tenminste twee opzichten verbeterd: (1) de
-toetsen zijn gerandomiseerd over de opname-tijdstippen, en (2) er zijn
+We hebben het ontwerp zo in tenminste twee opzichten verbeterd: (1) de open en gesloten
+toetsen zijn gelijkelijk verdeeld over de twee opname-tijdstippen, en (2) er zijn
 relevante controle-groepen toegevoegd. Schematisch ziet het
 onderzoeksontwerp er nu als volgt uit:
 
 ```
        Exp. groep 1       Open     O1   Gesloten   O2
        Exp. groep 2     Gesloten   O3     Open     O4
-      Controlegroep 1     Open     O5     Open     O5
-      Controlegroep 2   Gesloten   O7   Gesloten   O6
+      Controlegroep 1     Open     O5     Open     O6
+      Controlegroep 2   Gesloten   O7   Gesloten   O8
 ```
 
 Voor alle vier de groepen kan nu de samenhang tussen de prestaties op

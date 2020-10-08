@@ -1093,10 +1093,10 @@ beoordelaar een ander construct beoordeeld dan de anderen.</p>
 <p>Voor een betrouwbaarheidsanalyse van de <span class="math inline">\(k=3\)</span> oordelen over
 spreekvaardigheid in Tabel <a href="ch-betrouwbaarheid.html#tab:betrouwbaarheid">12.1</a>:<br />
 </p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="ch-betrouwbaarheid.html#cb78-1" aria-hidden="true"></a>beoordelaars &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
-<span id="cb78-2"><a href="ch-betrouwbaarheid.html#cb78-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># voor psych::alpha</span></span>
-<span id="cb78-3"><a href="ch-betrouwbaarheid.html#cb78-3" aria-hidden="true"></a>  <span class="kw">alpha</span>( beoordelaars[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># kolommen 2 t/m 4</span></span>
-<span id="cb78-4"><a href="ch-betrouwbaarheid.html#cb78-4" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="ch-betrouwbaarheid.html#cb79-1" aria-hidden="true"></a>beoordelaars &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
+<span id="cb79-2"><a href="ch-betrouwbaarheid.html#cb79-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># voor psych::alpha</span></span>
+<span id="cb79-3"><a href="ch-betrouwbaarheid.html#cb79-3" aria-hidden="true"></a>  <span class="kw">alpha</span>( beoordelaars[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># kolommen 2 t/m 4</span></span>
+<span id="cb79-4"><a href="ch-betrouwbaarheid.html#cb79-4" aria-hidden="true"></a>}</span></code></pre></div>
 <pre><code>## 
 ## Reliability analysis   
 ## Call: alpha(x = beoordelaars[, 2:4])
@@ -1126,7 +1126,7 @@ zelfs toe (van 0.68 naar 0.84). Over alle drie de beoordelaars is
 <p>Correlaties tussen de <span class="math inline">\(k\)</span> beoordelaars of items worden niet expliciet
 meegeleverd (al zijn ze wel af te leiden uit bovenstaande uitvoer), dus
 vragen we die nog op:</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="ch-betrouwbaarheid.html#cb80-1" aria-hidden="true"></a><span class="kw">cor</span>( beoordelaars[ ,<span class="kw">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># expliciete kolomnamen</span></span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="ch-betrouwbaarheid.html#cb81-1" aria-hidden="true"></a><span class="kw">cor</span>( beoordelaars[ ,<span class="kw">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># expliciete kolomnamen</span></span></code></pre></div>
 <pre><code>##           B1         B2         B3
 ## B1 1.0000000 0.74494845 0.40979738
 ## B2 0.7449484 1.00000000 0.08845909

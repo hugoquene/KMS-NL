@@ -687,13 +687,13 @@ overnemen in of omzetten naar een eigen tabel die daar wel aan voldoet.</p>
 </div>
 <div id="r-6" class="section level3" number="11.2.3">
 <h3><span class="header-section-number">11.2.3</span> R</h3>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="ch-samenhang.html#cb54-1" aria-hidden="true"></a>cito &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/cito.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
-<span id="cb54-2"><a href="ch-samenhang.html#cb54-2" aria-hidden="true"></a><span class="kw">cor</span>( cito[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># correlatie-matrix van kolommen 2,3,4</span></span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="ch-samenhang.html#cb55-1" aria-hidden="true"></a>cito &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file=</span><span class="st">&quot;data/cito.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
+<span id="cb55-2"><a href="ch-samenhang.html#cb55-2" aria-hidden="true"></a><span class="kw">cor</span>( cito[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># correlatie-matrix van kolommen 2,3,4</span></span></code></pre></div>
 <pre><code>##                       Lezen    Rekenen Wereldoriëntatie
 ## Lezen             1.0000000 0.74921033      -0.50881738
 ## Rekenen           0.7492103 1.00000000       0.06351024
 ## Wereldoriëntatie -0.5088174 0.06351024       1.00000000</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="ch-samenhang.html#cb56-1" aria-hidden="true"></a><span class="kw">with</span>( cito, <span class="kw">cor.test</span>( Lezen, Rekenen ) )</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="ch-samenhang.html#cb57-1" aria-hidden="true"></a><span class="kw">with</span>( cito, <span class="kw">cor.test</span>( Lezen, Rekenen ) )</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -854,7 +854,7 @@ dat de standaarddeviatie van de residuen <span class="math inline">\(3.212\)</sp
 </div>
 <div id="r-7" class="section level3" number="11.3.3">
 <h3><span class="header-section-number">11.3.3</span> R</h3>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="ch-samenhang.html#cb59-1" aria-hidden="true"></a><span class="kw">summary</span>( m1 &lt;-<span class="st"> </span><span class="kw">lm</span>( Rekenen<span class="op">~</span>Lezen, <span class="dt">data=</span>cito ) )</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="ch-samenhang.html#cb60-1" aria-hidden="true"></a><span class="kw">summary</span>( m1 &lt;-<span class="st"> </span><span class="kw">lm</span>( Rekenen<span class="op">~</span>Lezen, <span class="dt">data=</span>cito ) )</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Rekenen ~ Lezen, data = cito)
@@ -878,7 +878,7 @@ als afhankelijke variabele en <code>Lezen</code> als predictor. Dit model wordt
 bewaard als een object genaamd <code>m1</code>, en dat wordt meteen weer gebruikt
 als argument (invoer) om te rapporteren. In die rapportage van model
 <code>m1</code> wordt de constante coëfficient <span class="math inline">\(a\)</span> aangeduid als <code>Intercept</code>.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="ch-samenhang.html#cb61-1" aria-hidden="true"></a><span class="kw">sd</span>( <span class="kw">resid</span>( m1 ) ) <span class="co"># s.d. van residuen volgens `m1`</span></span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="ch-samenhang.html#cb62-1" aria-hidden="true"></a><span class="kw">sd</span>( <span class="kw">resid</span>( m1 ) ) <span class="co"># s.d. van residuen volgens `m1`</span></span></code></pre></div>
 <pre><code>## [1] 3.211533</code></pre>
 </div>
 </div>
@@ -1050,7 +1050,7 @@ correlatie-analyse.</p>
 </div>
 <div id="r-8" class="section level3" number="11.5.3">
 <h3><span class="header-section-number">11.5.3</span> R</h3>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="ch-samenhang.html#cb64-1" aria-hidden="true"></a><span class="kw">with</span>(cito, <span class="kw">cor.test</span>( Lezen,Rekenen, <span class="dt">method=</span><span class="st">&quot;spearman&quot;</span> ) )</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="ch-samenhang.html#cb65-1" aria-hidden="true"></a><span class="kw">with</span>(cito, <span class="kw">cor.test</span>( Lezen,Rekenen, <span class="dt">method=</span><span class="st">&quot;spearman&quot;</span> ) )</span></code></pre></div>
 <pre><code>## Warning in cor.test.default(Lezen, Rekenen, method = &quot;spearman&quot;): Cannot
 ## compute exact p-value with ties</code></pre>
 <pre><code>## 
@@ -1176,19 +1176,19 @@ Bevestig eerst met <code>Continue</code> en daarna nogmaals met <code>OK</code>.
 <div id="r-9" class="section level3" number="11.6.3">
 <h3><span class="header-section-number">11.6.3</span> R</h3>
 <p>De dataset <code>cito</code> bevat al een variabele StadPlat die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve laten we toch zien hoe je zo’n variabele zelf kunt construeren.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="ch-samenhang.html#cb69-1" aria-hidden="true"></a>StadPlat2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>( cito<span class="op">$</span>Leerling<span class="op">&lt;</span><span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="co"># 1=stad, 0=plat</span></span>
-<span id="cb69-2"><a href="ch-samenhang.html#cb69-2" aria-hidden="true"></a>Reken2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>( cito<span class="op">$</span>Rekenen<span class="op">&gt;</span><span class="kw">mean</span>(cito<span class="op">$</span>Rekenen), <span class="dv">1</span>, <span class="dv">0</span> ) <span class="co"># 1=hoog, 0=laag</span></span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="ch-samenhang.html#cb70-1" aria-hidden="true"></a>StadPlat2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>( cito<span class="op">$</span>Leerling<span class="op">&lt;</span><span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="co"># 1=stad, 0=plat</span></span>
+<span id="cb70-2"><a href="ch-samenhang.html#cb70-2" aria-hidden="true"></a>Reken2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>( cito<span class="op">$</span>Rekenen<span class="op">&gt;</span><span class="kw">mean</span>(cito<span class="op">$</span>Rekenen), <span class="dv">1</span>, <span class="dv">0</span> ) <span class="co"># 1=hoog, 0=laag</span></span></code></pre></div>
 <p>Maak een nieuwe variabele <code>Reken2</code>, met de waarde 1 indien de score
 voor Rekenen groter is dan het gemiddelde, en anders de waarde 0.</p>
 <p>Ook in R maken we eerst een kruistabel (Tabel <a href="ch-samenhang.html#tab:cito-kruis">11.3</a>) en daarna berekenen we de <span class="math inline">\(r_\Phi\)</span> over die kruistabel.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="ch-samenhang.html#cb70-1" aria-hidden="true"></a><span class="kw">print</span>( <span class="kw">table</span>(StadPlat2,Reken2) -&gt;<span class="st"> </span>citokruistabel ) <span class="co"># maak en bewaar en toon kruistabel</span></span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="ch-samenhang.html#cb71-1" aria-hidden="true"></a><span class="kw">print</span>( <span class="kw">table</span>(StadPlat2,Reken2) -&gt;<span class="st"> </span>citokruistabel ) <span class="co"># maak en bewaar en toon kruistabel</span></span></code></pre></div>
 <pre><code>##          Reken2
 ## StadPlat2 0 1
 ##         0 5 0
 ##         1 2 3</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="ch-samenhang.html#cb72-1" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># voor psych::phi</span></span>
-<span id="cb72-2"><a href="ch-samenhang.html#cb72-2" aria-hidden="true"></a>  <span class="kw">phi</span>(citokruistabel) <span class="co"># eerder gemaakte kruistabel is hier invoer!</span></span>
-<span id="cb72-3"><a href="ch-samenhang.html#cb72-3" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="ch-samenhang.html#cb73-1" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># voor psych::phi</span></span>
+<span id="cb73-2"><a href="ch-samenhang.html#cb73-2" aria-hidden="true"></a>  <span class="kw">phi</span>(citokruistabel) <span class="co"># eerder gemaakte kruistabel is hier invoer!</span></span>
+<span id="cb73-3"><a href="ch-samenhang.html#cb73-3" aria-hidden="true"></a>}</span></code></pre></div>
 <pre><code>## Loading required package: psych</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;psych&#39;</code></pre>

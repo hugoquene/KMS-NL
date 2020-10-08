@@ -384,8 +384,7 @@ In deel II (hoofdstukken 8 tot en met 12) van het tekstboek behandelen we de bes
 elementaire technieken uit de toetsende statistiek (Eng. 'inferential
 statistics'). Met deze laatste twee delen streven we drie doelen na. 
 
-Allereerst
-willen we dat je in staat bent om artikelen en andere verslagen waarin
+Allereerst willen we dat je in staat bent om artikelen en andere verslagen waarin
 statistische verwerkings- en toetsingstechnieken zijn gebruikt, kritisch
 te beoordelen. 
 Ten tweede willen we dat je dat je de noodzakelijke
@@ -398,10 +397,13 @@ Deze drie doelen zijn geordend in volgorde van belangrijkheid. Wij menen
 dat een adequate en kritische interpretatie van statistische resultaten
 en de conclusies die daaraan verbonden kunnen worden van groot belang is
 voor alle studenten. Om die reden besteden we in dit tekstboek dan ook
-relatief veel aandacht (in deel I) aan de 'filosofie' of methodologie achter de besproken statistische technieken en analyses. Ook geven we
+relatief veel aandacht (in deel I) aan de 'filosofie' of methodologie achter de besproken statistische technieken en analyses. 
+
+In aparte secties geven we
 aan hoe je de besproken statistische analyses zelf kunt uitvoeren in
 SPSS (een populair pakket voor statistische analyses) en in R (een wat
 moeilijker, maar ook krachtiger en veelzijdiger pakket, met stijgende
-populariteit). Beide statistische pakketten zijn geïnstalleerd in de computerleerzalen van de Faculteit Geesteswetenschappen. SPSS is beschikbaar via SurfSpot.nl voor een sterk gereduceerde prijs. R is vrijelijk beschikbaar via www.R-project.org. Meer achtergrond over het gebruik van R is te vinden via <https://hugoquene.github.io/emlar2020/>. 
+populariteit). 
+Voor studenten en medewerkers van de Universiteit Utrecht zijn beide statistische pakketten  geïnstalleerd in `MyWorkSpace`. SPSS is beschikbaar via <https://SurfSpot.nl> voor een sterk gereduceerde prijs. R is vrijelijk beschikbaar via <https://www.R-project.org>. Een korte inleiding in het gebruik van R is te vinden via <https://hugoquene.github.io/emlar2020/>. 
 
 [^fn01-1]: Het is zelfs mogelijk dat het onderzochte voedingspatroon de oorzaak is van een relatief *kortere* levensduur, maar dat dit negatieve effect gemaskeerd wordt door de sterkere, positieve effecten van opleidingsniveau en welvaartsniveau op de levensduur.
