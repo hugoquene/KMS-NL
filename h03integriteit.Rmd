@@ -458,9 +458,10 @@ omdat de lezer niet verwezen wordt naar de juiste bron. Onderzoekers
 dienen hun bronnen daarom op correcte wijze te vermelden. Daarvoor
 bestaan verschillende conventies, afhankelijk van het vakgebied. Meestal
 zal een docent aangeven volgens welke stijl of conventie je je bronnen
-moet vermelden. In dit boek volgen we zoveel mogelijk de stijl van de [@APA10], die
+moet vermelden. Voor de bronvermeldingen in dit boek hebben we ernaar gestreefd om aan te sluiten bij  de stijl van de @APA10, die
 gebruikelijk is in de sociale wetenschappen en een deel van de
-geesteswetenschappen.
+geesteswetenschappen. 
+(Om technische redenen wijken de bronvermeldingen in dit boek soms toch af van de APA-stijl.)
 
 De regels voor bronvermelding zijn soms ingewikkeld. Bovendien moeten de
 auteurs zorgen dat de citaties in de tekst overeenkomen met de lijst van
@@ -469,9 +470,9 @@ zgn."reference manager", een programma dat referenties of
 bronvermeldingen verzamelt en op de juiste wijze invoegt in de tekst.
 Een overzicht van zulke programma's is te vinden via
 <https://en.wikipedia.org/wiki/Comparison_of_reference_management_software>.
-Voor dit tekstboek is gebruik gemaakt van Zotero,
-gecombineerd met BibTeX.
+Voor dit tekstboek is gebruik gemaakt van Zotero (<https://www.zotero.org>),
+gecombineerd met BibTeX (<https://www.bibtex.org>).
 
 [^fn03-1]: Een kopie van de brief is te lezen via <http://digitallibrary.hsp.org/index.php/Detail/Object/Show/object_id/9285>; voor achtergrond-informatie zie <http://www.bbc.co.uk/worldservice/learningenglish/movingwords/shortlist/newton.shtml>.
 
-[^fn03-2]: Medewerkers van de UU kunnen SurfDrive (<https://www.surfdrive.nl>) gebruiken om gegevens veilig en makkelijk te bewaren op een beveiligde netwerk-schijf.
+[^fn03-2]: Medewerkers en studenten van de de meeste Nederlandse onderwijsinstellingen kunnen SurfDrive gebruiken (<https://www.surfdrive.nl>)  om gegevens veilig en makkelijk te bewaren op een beveiligde netwerk-schijf.

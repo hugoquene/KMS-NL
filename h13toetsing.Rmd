@@ -39,7 +39,7 @@ is het gemiddeld aantal goede antwoorden uit 100 vragen. We
 operationaliseren dus eerst H1: $\mu > 73$, en daaruit leiden we de
 bijbehorende nulhypothese af die daadwerkelijk getoetst wordt:
 $\mu = 73$.
-(In §\@ref(sec:ttoets.eenzijdigtweezijdig) hieronder gaan we nader in
+(In §\@ref(sec:ttoets-eenzijdigtweezijdig) hieronder gaan we nader in
 op het al dan niet noemen van de *richting* van het verschil in H1).
 
 Voor de
@@ -86,10 +86,12 @@ gramm2013 <- read.csv( file="data/grammaticatoets2013.csv",header=F)
 dimnames(gramm2013)[[2]] <- c("score","opleiding")
 # N=233
 source( url("http://www.hugoquene.nl/R/eda.fnc.R"), echo=FALSE) # echo=FALSE
-mean(gramm2013$score[gramm2013$opleiding!="TW"]) -> testmean # gemiddelde score van NIET-TW studenten
+# mean(gramm2013$score[gramm2013$opleiding!="TW"]) -> testmean # gemiddelde score van NIET-TW studenten
 # gebruik die als mu in one-sample t test
+testmean <- 73
 # with(gramm2013, t.test(score[opleiding=="TW"], mu=round(testmean)) )
-sd(gramm2013$score[gramm2013$opleiding!="TW"]) -> testsd 
+# sd(gramm2013$score[gramm2013$opleiding!="TW"]) -> testsd 
+testsd <- 14
 # 
 curve( dnorm(x, mean=testmean, sd=(testsd/sqrt(34)) ), 
        n=500, lwd=2, from=65, to=95, xlab="Gemiddelde score (n=34)", ylab="Kansdichtheid" )

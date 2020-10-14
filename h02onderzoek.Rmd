@@ -215,7 +215,7 @@ methode desalniettemin veel beter blijken te presteren dan de leerlingen
 van de oude methode, dan vormt dat waargenomen verschil de figuurlijke
 zwarte zwaan: het gevonden verschil (dat in tegenspraak is met H0) maakt
 het onwaarschijnlijk dat H0 waar is (*mits* het onderzoek valide was;
-meer daarover in het volgende hoofdstuk). Omdat H0 en H1 elkaar
+meer daarover in Hoofdstuk @\ref(ch:validiteit)). Omdat H0 en H1 elkaar
 uitsluiten, is het dan dus ook erg waarschijnlijk dat H1 wèl waar is. En
 omdat we onze onderbouwing baseerden op H0 en niet op H1, kunnen
 sceptici ons niet van partijdigheid beschuldigen: we probeerden immers
@@ -679,7 +679,7 @@ om na te gaan of de gegevens die met deze instrumenten verkregen worden,
 voldoen aan de kwaliteitseisen die de onderzoeker zich gesteld heeft, of
 die in het algemeen aan de instrumenten in wetenschappelijk onderzoek
 gesteld mogen worden (in termen van betrouwbaarheid en validiteit, zie
-Hoofdstukken \@ref(ch:validiteit) en \@ref(ch:betrouwbaarheid).
+Hoofdstukken \@ref(ch:validiteit) en \@ref(ch:betrouwbaarheid)).
 
 Pas nadat ook de instrumenten in gereedheid gebracht zijn begint het
 eigenlijke empirische onderzoek: de gekozen gegevens van de gekozen
