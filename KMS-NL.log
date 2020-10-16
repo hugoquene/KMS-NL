@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.9.28)  14 OCT 2020 20:29
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.9.28)  16 OCT 2020 16:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1398,18 +1398,18 @@ e pdf)
 <use KMS-NL_files/figure-latex/underpoweredeffectsizes-1.pdf>
 
 LaTeX Warning: Reference `fig:underpoweredeffectsizes' on page 220 undefined on
- input line 9450.
+ input line 9462.
 
 
 LaTeX Warning: Reference `fig:underpoweredeffectsizes' on page 220 undefined on
- input line 9451.
+ input line 9463.
 
-[220]
+[220] [221]
 
-LaTeX Warning: Reference `fig:underpoweredeffectsizes' on page 221 undefined on
- input line 9496.
+LaTeX Warning: Reference `fig:underpoweredeffectsizes' on page 222 undefined on
+ input line 9508.
 
-[221] [222]
+[222]
 Chapter 15.
 [223
 
@@ -1429,25 +1429,25 @@ Underfull \vbox (badness 6825) has occurred while \output is active []
 Underfull \vbox (badness 3078) has occurred while \output is active []
 
 [241]
-Underfull \hbox (badness 1259) in paragraph at lines 10517--10529
+Underfull \hbox (badness 1259) in paragraph at lines 10529--10541
 []\TU/lmr/m/n/10 De geobserveerde spreeksnelheden verschillen significant tusse
 n
  []
 
 [242] [243] [244]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 10669--10669
+Overfull \hbox (48.75pt too wide) in paragraph at lines 10681--10681
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored:[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 10674--10674
+Overfull \hbox (48.75pt too wide) in paragraph at lines 10686--10686
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored:[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 10690--10690
+Overfull \hbox (38.25pt too wide) in paragraph at lines 10702--10702
 []\TU/lmtt/m/n/10 ## Fit: aov(formula = syldur ~ region * sex, data = talkers, 
 subset = ok)[] 
  []
@@ -1466,17 +1466,17 @@ LE STEEKPROEF \TU/lmr/m/n/10 249
  []
 
 [249] [250] [251] [252] [253]
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11087--11092
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11099--11104
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11092--11096
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11104--11108
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11096--11101
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11108--11113
  [] [] [] [] [] [] [] 
  []
 
@@ -1513,28 +1513,28 @@ File: KMS-NL_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file
 ] [266]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 11495.
+(Font)              scaled to size 24.88pt on input line 11507.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 11495.
+(Font)              scaled to size 20.74pt on input line 11507.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 11495.
+(Font)              scaled to size 17.28pt on input line 11507.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 11495.
+(Font)              scaled to size 24.88228pt on input line 11507.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 11495.
+(Font)              scaled to size 20.7419pt on input line 11507.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 11495.
+(Font)              scaled to size 17.28157pt on input line 11507.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 11495.
+(Font)              scaled to size 24.87733pt on input line 11507.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 11495.
+(Font)              scaled to size 20.73778pt on input line 11507.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 11495.
+(Font)              scaled to size 17.27815pt on input line 11507.
 File: KMS-NL_files/figure-latex/kritieketwaarden-hulpfiguur-1.pdf Graphic file 
 (type pdf)
 <use KMS-NL_files/figure-latex/kritieketwaarden-hulpfiguur-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 11506--11551
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 11518--11563
  [][] 
  []
 
@@ -1549,7 +1549,7 @@ File: KMS-NL_files/figure-latex/kritiekechi2waarden-hulpfiguur-1.pdf Graphic fi
 le (type pdf)
 <use KMS-NL_files/figure-latex/kritiekechi2waarden-hulpfiguur-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 11562--11605
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 11574--11617
  [][] 
  []
 
@@ -1561,12 +1561,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ] [270] [271
 
 ] [272] [273] [274] [275])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 11608.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 11620.
 [276]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 11608.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 11620.
 (./KMS-NL.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 11608.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 11608
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 11620.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 11620
 .
 Package rerunfilecheck Info: File `KMS-NL.out' has not changed.
 (rerunfilecheck)             Checksum: C4D2F8A53933AB6BB52EE6D331400CDD;22532.
@@ -1576,15 +1576,15 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 11608.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 11620.
  ) 
 Here is how much of TeX's memory you used:
- 18371 strings out of 481648
- 328591 string characters out of 5931234
- 778751 words of memory out of 5000000
- 35202 multiletter control sequences out of 15000+600000
+ 18377 strings out of 481648
+ 328672 string characters out of 5931234
+ 778810 words of memory out of 5000000
+ 35208 multiletter control sequences out of 15000+600000
  545455 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 52i,10n,118p,1133b,571s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 52i,10n,118p,1133b,573s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on KMS-NL.pdf (276 pages).

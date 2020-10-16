@@ -119,7 +119,7 @@
 
 \title{Kwantitatieve Methoden en Statistiek}
 \author{true}
-\date{Versie gecompileerd op 14 Oct 2020}
+\date{Versie gecompileerd op 16 Oct 2020}
 
 \begin{document}
 \maketitle
@@ -625,7 +625,7 @@ aan hoe je de besproken statistische analyses zelf kunt uitvoeren in
 SPSS (een populair pakket voor statistische analyses) en in R (een wat
 moeilijker, maar ook krachtiger en veelzijdiger pakket, met stijgende
 populariteit).
-Voor studenten en medewerkers van de Universiteit Utrecht zijn beide statistische pakketten geïnstalleerd in \texttt{MyWorkSpace}. SPSS is beschikbaar via \url{https://SurfSpot.nl} voor een sterk gereduceerde prijs. R is vrijelijk beschikbaar via \url{https://www.R-project.org}. Een korte inleiding in het gebruik van R is te vinden via \url{https://hugoquene.github.io/emlar2020/}.
+Voor studenten en medewerkers van de Universiteit Utrecht zijn beide statistische pakketten geïnstalleerd in \texttt{MyWorkSpace}. SPSS is beschikbaar via \url{https://SurfSpot.nl} voor een sterk gereduceerde prijs. R is vrijelijk beschikbaar via \url{https://www.R-project.org}. Een korte inleiding in het gebruik van R is te vinden via \url{https://hugoquene.github.io/emlar2020/}; \citet{Dalg02} biedt een langere inleiding.
 
 \hypertarget{ch:onderzoek}{%
 \chapter{Hypothese-toetsend onderzoek}\label{ch:onderzoek}}
@@ -9406,6 +9406,18 @@ effecten (rechterkant) dan bij kleinere effecten (linkerkant). Anders gezegd: bi
 kleine effecten is de steekproef eigenlijk bijna altijd te klein om deze
 kleine effecten met voldoende power te kunnen opsporen. We zagen dat al
 eerder in voorbeeld~13.3 (Hoofdstuk \ref{ch:toetsing}).
+
+De twee figuren~\ref{fig:powercontours-alpha01} en
+\ref{fig:powercontours-alpha05} zijn gebaseerd op de vergelijking tussen twee groepen die even groot zijn, elk met precies de helft van de observaties (\(n_1=n_2=N/2\)). Dat is ook het meest efficiënt.
+De power is gebaseerd op het \emph{harmonisch gemiddelde} van \(n_1\) en \(n_2\) (zie §\ref{sec:harmonischgemiddelde}), en dat harmonisch gemiddelde is altijd kleiner dan het rekenkundig gemiddelde van die twee getallen. Het is dus raadzaam om ervoor te zorgen dat de groepen of steekproeven die je vergelijkt ongeveer even groot zijn.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Voorbeeld 14.1}: In een studie worden twee groepen proefpersonen vergeleken, met \(n_1=10\) en \(n_2=50\) (\(N=n_1+n_2=10+50=60\)). Het harmonisch gemiddelde van \(n_1=10\) en \(n_2=50\) is \(H=17\). Deze studie heeft dus dezelfde power als een kleinere studie met twee groepen van elk 17 proefpersonen, dus 34 proefpersonen in totaal. Voor deze studie zijn er dus 26 proefpersonen méér onderzocht (en belast) dan noodzakelijk (zie ook §\ref{sec:ontwerp}) \citep[p.295]{ACA11}.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \hypertarget{sec:significantieniveau-power}{%
 \section{Verband tussen significantieniveau en power}\label{sec:significantieniveau-power}}

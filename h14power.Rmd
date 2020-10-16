@@ -171,6 +171,16 @@ kleine effecten is de steekproef eigenlijk bijna altijd te klein om deze
 kleine effecten met voldoende power te kunnen opsporen. We zagen dat al
 eerder in voorbeeld 13.3 (Hoofdstuk \@ref(ch:toetsing)).
 
+De twee figuren \@ref(fig:powercontours-alpha01) en
+\@ref(fig:powercontours-alpha05) zijn gebaseerd op de vergelijking tussen twee groepen die even groot zijn, elk met precies de helft van de observaties ($n_1=n_2=N/2$). Dat is ook het meest efficiënt. 
+De power is gebaseerd op het *harmonisch gemiddelde* van $n_1$ en $n_2$ (zie §\@ref(sec:harmonischgemiddelde)), en dat harmonisch gemiddelde is altijd kleiner dan het rekenkundig gemiddelde van die twee getallen. Het is dus raadzaam om ervoor te zorgen dat de groepen of steekproeven die je vergelijkt ongeveer even groot zijn.
+
+---
+
+> *Voorbeeld 14.1*: In een studie worden twee groepen proefpersonen vergeleken, met $n_1=10$ en $n_2=50$ ($N=n_1+n_2=10+50=60$). Het harmonisch gemiddelde van $n_1=10$ en $n_2=50$ is $H=17$. Deze studie heeft dus dezelfde power als een kleinere studie met twee groepen van elk 17 proefpersonen, dus 34 proefpersonen in totaal. Voor deze studie zijn er dus 26 proefpersonen méér onderzocht (en belast) dan noodzakelijk (zie ook §\@ref(sec:ontwerp)) [@ACA11, p.295]. 
+
+---
+
 ## Verband tussen significantieniveau en power {#sec:significantieniveau-power}
 
 Het verband tussen het significantieniveau $\alpha$ en de power wordt
