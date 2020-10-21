@@ -70,8 +70,10 @@ Retrieved 28 Sept 2020 from https://hugoquene.github.io/KMS-NL/ .
 
 ## Technische details {-}
 
+Alle materialen voor dit tekstboek zijn beschikbaar via 
+[![DOI](https://zenodo.org/badge/299423552.svg)](https://zenodo.org/badge/latestdoi/299423552) of rechtstreeks via https://github.com/hugoquene/KMS-NL: men vinde daar andere versies van deze tekst (EPUB, PDF, HTML), de broncode (Rmarkdown en R) van de tekst inclusief figuren en voorbeelden en uitwerkingen, de databestanden die worden gebruikt in tekst, en de figuren als afzonderlijke bestanden.
+
 De tekst is geschreven in LaTeX, en daarna omgezet naar Rmarkdown, met behulp van `pandoc` [@pandoc] en het `bookdown` package [@R-bookdown] in [Rstudio](https://www.rstudio.com).\
-Andere versies van dit tekstboek (EPUB, PDF, HTML), de broncode (in Rmarkdown) van de tekst inclusief voorbeelden, bijbehorende databestanden, en de figuren als afzonderlijke bestanden, zijn alle beschikbaar via https://github.com/hugoquene/KMS-NL/ . 
 
 ## Over de auteurs {-}
 
