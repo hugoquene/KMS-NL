@@ -858,10 +858,10 @@ geboorteweek, vermoedelijk omdat babies uit "zomerzwangerschappen"
 gemiddeld iets gezonder zijn (of waren) dan die uit
 "winterzwangerschappen". In dit onderzoek waren de verschillen in
 levensduur zeer gering ($\pm 0.30$ jaar in Oostenrijk, $\pm 0.15$ jaar
-in Denemarken), maar het aantal observaties was echter zeer groot.
+in Denemarken), maar het aantal observaties (overledenen) was zeer groot.
 
 > Daarentegen is het verschil in lichaamslengte tussen dwergen (korter dan
-1.5 m) en reuzen (langer dan 2.0 m) zo groot dat het goed kan worden
+1.5 m) en reuzen (langer dan 2.0 m) zo groot dat het verschil empirisch goed kan worden
 vastgesteld op basis van slechts $n=2$ in elke groep.
 
 ---
@@ -935,7 +935,7 @@ Als $d$ ligt rond 0.2 spreken we van een klein effect. Een effectgrootte
 $d$ rond 0.5 noemen we een middelmatig (medium) effect, en een $d$ rond
 0.8 of groter noemen we een groot effect [@Cohen88; @Rose08].
 
-```{r kleinstesignifverschil, echo=FALSE, fig.cap="Relatie tussen de steekproefgrootte en het kleinste effect (d) dat significant is volgens een voor ongepaarde, onafhankelijke waarnemingen, met foutkansen alpha=.05 en beta=.10."}
+```{r kleinstesignifverschil, echo=FALSE, fig.cap="Relatie tussen de steekproefgrootte en het kleinste effect (d) dat significant is volgens een *t*-toets voor ongepaarde, onafhankelijke waarnemingen, met foutkansen alpha=.05 en beta=.10."}
 # adapted from `plotkleinstesignifverschil.R`
 # plot figure of smallest signif difference, based on power.t.test
 # to illustrate that significance = effect size * size of study
