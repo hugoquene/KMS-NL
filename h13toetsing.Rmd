@@ -272,7 +272,7 @@ hoofdstuk \@ref(ch:Meetniveau)).
 
 ### SPSS
 
-De hierboven gegevens zijn te vinden in het bestand `data/grammaticatoets2013.csv`. 
+De hierboven besproken gegevens zijn te vinden in het bestand `data/grammaticatoets2013.csv`. 
 
 Om onze eerdere hypothese te toetsen, moeten we in SPSS eerst de
 observaties selecteren van de studenten Taalwetenschap.
@@ -310,7 +310,6 @@ dimnames(gramm2013)[[2]] <- c("score","opleiding")
 with( gramm2013,
       t.test( score[opleiding=="TW"], mu=73, alt="greater" ) )
 ```
-
 
 De notatie `1.913e-09` moet gelezen worden als het getal
 $(1.913 \times 10^{-9})$.
