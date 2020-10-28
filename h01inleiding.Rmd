@@ -404,6 +404,10 @@ aan hoe je de besproken statistische analyses zelf kunt uitvoeren in
 SPSS (een populair pakket voor statistische analyses) en in R (een wat
 moeilijker, maar ook krachtiger en veelzijdiger pakket, met stijgende
 populariteit). 
-Voor studenten en medewerkers van de Universiteit Utrecht zijn beide statistische pakketten  geïnstalleerd in `MyWorkSpace`. SPSS is beschikbaar via <https://SurfSpot.nl> voor een sterk gereduceerde prijs. R is vrijelijk beschikbaar via <https://www.R-project.org>. Een korte inleiding in het gebruik van R is te vinden via <https://hugoquene.github.io/emlar2020/>; @Dalg02 biedt een langere inleiding. 
+Voor studenten en medewerkers van de Universiteit Utrecht zijn beide statistische pakketten  geïnstalleerd in `MyWorkSpace`. 
+SPSS is beschikbaar via <https://SurfSpot.nl> voor een sterk gereduceerde prijs. 
+R is vrijelijk beschikbaar via <https://www.R-project.org>. 
+Een korte inleiding in het gebruik van R is te vinden via <https://hugoquene.github.io/emlar2020/>. 
+Langere inleidingen zijn te vinden bij de uitstekende "free web books" die je kunt vinden via <https://statisticalhorizons.com/resources/free-web-books-for-learning-r> en in @Dalg02. 
 
 [^fn01-1]: Het is zelfs mogelijk dat het onderzochte voedingspatroon de oorzaak is van een relatief *kortere* levensduur, maar dat dit negatieve effect gemaskeerd wordt door de sterkere, positieve effecten van opleidingsniveau en welvaartsniveau op de levensduur.
