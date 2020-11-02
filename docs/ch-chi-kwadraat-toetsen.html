@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Hoofdstuk 16 Chi-kwadraat-toetsen | Kwantitatieve Methoden en Statistiek</title>
   <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Hoofdstuk 16 Chi-kwadraat-toetsen | Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 <link rel="prev" href="ch-variantieanalyse.html"/>
 <link rel="next" href="ch-andere-nonpar-toetsen.html"/>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,6 +49,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -363,7 +365,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.6.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#aannames"><i class="fa fa-check"></i><b>13.6.1</b> aannames</a></li>
 <li class="chapter" data-level="13.6.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-formules"><i class="fa fa-check"></i><b>13.6.2</b> formules</a></li>
 <li class="chapter" data-level="13.6.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:SPSS-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.3</b> SPSS</a></li>
-<li class="chapter" data-level="13.6.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.4</b> </a></li>
+<li class="chapter" data-level="13.6.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.7" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-gepaard"><i class="fa fa-check"></i><b>13.7</b> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen</a>
 <ul>
@@ -781,7 +783,7 @@ Kies <code>Statistics…</code> en vink de optie <code>Chi-square</code> aan. 
 <h2><span class="header-section-number">16.8</span> R</h2>
 <div id="goodness-of-fit-toetsing-1" class="section level3" number="16.8.1">
 <h3><span class="header-section-number">16.8.1</span> goodness of fit: toetsing</h3>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="ch-chi-kwadraat-toetsen.html#cb147-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( <span class="kw">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="co"># dobbelsteen §16.1</span></span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="ch-chi-kwadraat-toetsen.html#cb148-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( <span class="kw">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="co"># dobbelsteen §16.1</span></span></code></pre></div>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
 ## 
@@ -791,9 +793,9 @@ Kies <code>Statistics…</code> en vink de optie <code>Chi-square</code> aan. 
 <div id="kruistabellen-voorbereiding-en-toetsing" class="section level3" number="16.8.2">
 <h3><span class="header-section-number">16.8.2</span> kruistabellen: voorbereiding en toetsing</h3>
 <p>In R is de dataset <code>Titanic</code> gegeven als een multidimensionele matrix. We tellen de observaties op en maken een kruistabel van de eerste dimensie (klasse) en de vierde dimensie (uitkomst).</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="ch-chi-kwadraat-toetsen.html#cb149-1" aria-hidden="true"></a><span class="kw">apply</span>( Titanic, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) -&gt;<span class="st"> </span>Titanic.klasseuitkomst</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ch-chi-kwadraat-toetsen.html#cb150-1" aria-hidden="true"></a><span class="kw">apply</span>( Titanic, <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) -&gt;<span class="st"> </span>Titanic.klasseuitkomst</span></code></pre></div>
 <p>Vervolgens gebruiken we deze kruistabel weer als invoer voor een <code>chisq.test</code>.</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ch-chi-kwadraat-toetsen.html#cb150-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( Titanic.klasseuitkomst )  <span class="co"># p&lt;.0001</span></span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="ch-chi-kwadraat-toetsen.html#cb151-1" aria-hidden="true"></a><span class="kw">chisq.test</span>( Titanic.klasseuitkomst )  <span class="co"># p&lt;.0001</span></span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 

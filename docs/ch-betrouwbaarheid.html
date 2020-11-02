@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Hoofdstuk 12 Betrouwbaarheid | Kwantitatieve Methoden en Statistiek</title>
   <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Hoofdstuk 12 Betrouwbaarheid | Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 <link rel="prev" href="ch-samenhang.html"/>
 <link rel="next" href="ch-toetsing.html"/>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,6 +49,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -363,7 +365,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.6.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#aannames"><i class="fa fa-check"></i><b>13.6.1</b> aannames</a></li>
 <li class="chapter" data-level="13.6.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-formules"><i class="fa fa-check"></i><b>13.6.2</b> formules</a></li>
 <li class="chapter" data-level="13.6.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:SPSS-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.3</b> SPSS</a></li>
-<li class="chapter" data-level="13.6.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.4</b> </a></li>
+<li class="chapter" data-level="13.6.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.7" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-gepaard"><i class="fa fa-check"></i><b>13.7</b> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen</a>
 <ul>
@@ -1097,6 +1099,7 @@ spreekvaardigheid in Tabel <a href="ch-betrouwbaarheid.html#tab:betrouwbaarheid"
 <span id="cb79-2"><a href="ch-betrouwbaarheid.html#cb79-2" aria-hidden="true"></a><span class="cf">if</span> (<span class="kw">require</span>(psych)) { <span class="co"># voor psych::alpha</span></span>
 <span id="cb79-3"><a href="ch-betrouwbaarheid.html#cb79-3" aria-hidden="true"></a>  <span class="kw">alpha</span>( beoordelaars[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>] ) <span class="co"># kolommen 2 t/m 4</span></span>
 <span id="cb79-4"><a href="ch-betrouwbaarheid.html#cb79-4" aria-hidden="true"></a>}</span></code></pre></div>
+<pre><code>## Number of categories should be increased  in order to count frequencies.</code></pre>
 <pre><code>## 
 ## Reliability analysis   
 ## Call: alpha(x = beoordelaars[, 2:4])
@@ -1126,7 +1129,7 @@ zelfs toe (van 0.68 naar 0.84). Over alle drie de beoordelaars is
 <p>Correlaties tussen de <span class="math inline">\(k\)</span> beoordelaars of items worden niet expliciet
 meegeleverd (al zijn ze wel af te leiden uit bovenstaande uitvoer), dus
 vragen we die nog op:</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="ch-betrouwbaarheid.html#cb81-1" aria-hidden="true"></a><span class="kw">cor</span>( beoordelaars[ ,<span class="kw">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># expliciete kolomnamen</span></span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="ch-betrouwbaarheid.html#cb82-1" aria-hidden="true"></a><span class="kw">cor</span>( beoordelaars[ ,<span class="kw">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># expliciete kolomnamen</span></span></code></pre></div>
 <pre><code>##           B1         B2         B3
 ## B1 1.0000000 0.74494845 0.40979738
 ## B2 0.7449484 1.00000000 0.08845909

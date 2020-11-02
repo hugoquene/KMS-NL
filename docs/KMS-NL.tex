@@ -119,7 +119,7 @@
 
 \title{Kwantitatieve Methoden en Statistiek}
 \author{true}
-\date{Versie gecompileerd op 22 Oct 2020}
+\date{Versie gecompileerd op 02 Nov 2020}
 
 \begin{document}
 \maketitle
@@ -626,7 +626,11 @@ aan hoe je de besproken statistische analyses zelf kunt uitvoeren in
 SPSS (een populair pakket voor statistische analyses) en in R (een wat
 moeilijker, maar ook krachtiger en veelzijdiger pakket, met stijgende
 populariteit).
-Voor studenten en medewerkers van de Universiteit Utrecht zijn beide statistische pakketten geïnstalleerd in \texttt{MyWorkSpace}. SPSS is beschikbaar via \url{https://SurfSpot.nl} voor een sterk gereduceerde prijs. R is vrijelijk beschikbaar via \url{https://www.R-project.org}. Een korte inleiding in het gebruik van R is te vinden via \url{https://hugoquene.github.io/emlar2020/}; \citet{Dalg02} biedt een langere inleiding.
+Voor studenten en medewerkers van de Universiteit Utrecht zijn beide statistische pakketten geïnstalleerd in \texttt{MyWorkSpace}.
+SPSS is beschikbaar via \url{https://SurfSpot.nl} voor een sterk gereduceerde prijs.
+R is vrijelijk beschikbaar via \url{https://www.R-project.org}.
+Een korte inleiding in het gebruik van R is te vinden via \url{https://hugoquene.github.io/emlar2020/}.
+Langere inleidingen zijn te vinden bij de uitstekende ``free web books'' die je kunt vinden via \url{https://statisticalhorizons.com/resources/free-web-books-for-learning-r} en in \citet{Dalg02}.
 
 \hypertarget{ch:onderzoek}{%
 \chapter{Hypothese-toetsend onderzoek}\label{ch:onderzoek}}
@@ -4371,14 +4375,14 @@ frequentieverdeling van een discrete variabele van \emph{nominaal}
 meetniveau, nl. de fonologische klasse van spraakklanken in het
 Nederlands \citep{LKCG07}.
 
-\begin{table}[t]
+\begin{table}
 
 \caption{\label{tab:klankfreq}Frequentieverdeling 
               van fonologische klasse van spraakklanken 
               in het *Corpus Gesproken Nederlands* 
               (C=consonant=medeklinker, V=vocaal=klinker).}
 \centering
-\begin{tabular}{llr}
+\begin{tabular}[t]{llr}
 \toprule
 hoofdklasse & onderklasse & aantal\\
 \midrule
@@ -7123,8 +7127,8 @@ correlatie-analyse.
 \end{Shaded}
 
 \begin{verbatim}
-## Warning in cor.test.default(Lezen, Rekenen, method = "spearman"): Cannot
-## compute exact p-value with ties
+## Warning in cor.test.default(Lezen, Rekenen, method = "spearman"): Cannot compute
+## exact p-value with ties
 \end{verbatim}
 
 \begin{verbatim}
@@ -7287,6 +7291,21 @@ Ook in R maken we eerst een kruistabel (Tabel \ref{tab:cito-kruis}) en daarna be
 \NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## Loading required package: psych
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'psych'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from '.hqenv':
+## 
+##     harmonic.mean, logit
+\end{verbatim}
 
 \begin{verbatim}
 ## [1] 0.65
@@ -7942,6 +7961,10 @@ spreekvaardigheid in Tabel \ref{tab:betrouwbaarheid}:\\
 \end{Shaded}
 
 \begin{verbatim}
+## Number of categories should be increased  in order to count frequencies.
+\end{verbatim}
+
+\begin{verbatim}
 ## 
 ## Reliability analysis   
 ## Call: alpha(x = beoordelaars[, 2:4])
@@ -8256,7 +8279,7 @@ voldaan moet zijn, om de toets te mogen gebruiken.
 \hypertarget{spss-10}{%
 \subsection{SPSS}\label{spss-10}}
 
-De hierboven gegevens zijn te vinden in het bestand \texttt{data/grammaticatoets2013.csv}.
+De hierboven besproken gegevens zijn te vinden in het bestand \texttt{data/grammaticatoets2013.csv}.
 
 Om onze eerdere hypothese te toetsen, moeten we in SPSS eerst de
 observaties selecteren van de studenten Taalwetenschap.
@@ -8672,7 +8695,7 @@ Sleep de onafhankelijke variabele \texttt{region} naar paneel Grouping
 Variable. Definieer de twee groepen: waarde W voor regio groep 1 en
 waarde N voor regrio groep 2. Bevestig met \texttt{Continue} en \texttt{OK}.
 
-Zoals je hierboven kon zien, is de berekening van de afhankelijk van het
+Zoals je hierboven kon zien, is de berekening van de \(t\)-toets afhankelijk van het
 antwoord op de vraag of de standaarddeviaties van de twee groepen
 ongeveer gelijk zijn. SPSS lost dat zeer onhandig op: je krijgt alle
 relevante uitvoer te zien, en moet daar zelf een keuze uit maken.
@@ -8699,7 +8722,7 @@ Levene's test ook aangeeft. We gebruiken dus de eerste regel van de
 uitvoer, en rapporteren \(t(38)=-3.765, p=.001\).
 
 \hypertarget{sec:R-ttoets-ongepaard}{%
-\subsection{}\label{sec:R-ttoets-ongepaard}}
+\subsection{R}\label{sec:R-ttoets-ongepaard}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -8735,7 +8758,7 @@ vervolgens twee observaties verzamelen, nl. één observatie onder elk van
 beide condities. De twee observaties zijn dan gepaard, d.w.z. aan elkaar
 gerelateerd, en deze observaties zijn dus niet onafhankelijk (want
 afkomstig van hetzelfde lid van de steekproef). Eén van de assumpties
-van de is daarmee geschonden.
+van de \(t\)-toets is daarmee geschonden.
 
 Als voorbeeld nemen we een denkbeeldig onderzoek naar het gebruik van
 \emph{U} of \emph{je} als aanspreekvorm op een website. De onderzoeker maakt twee
@@ -8782,7 +8805,7 @@ Tabel~\ref{tab:data-uje-paired}.
 
 Deze verschilscore \(D\) wordt vervolgens eigenlijk geanalyseerd met de
 eerder besproken \(t\)-toets voor één enkele steekproef (zie
-§\ref{sec:ttoets-onesample}), waarbij H0: \(\mu_D=0\). d.w.z. geen verschil
+§\ref{sec:ttoets-onesample}), waarbij H0: \(\mu_D=0\), d.w.z. volgens H0 is er geen verschil
 tussen condities. We berekenen het gemiddelde van de verschilscore,
 \(\overline{D}\), en de standaarddeviatie van de verschilscore, \(s_{D}\),
 op de gebruikelijke wijze (zie
@@ -8831,7 +8854,7 @@ gebruiken.
 \item
   De \emph{verschilscores} \(D\) moeten normaal verdeeld zijn (zie
   §\ref{sec:isvarnormaalverdeeld}); als het aantal paren van
-  waarnemingen in de steekproef echter groter is dan ca 30 dan is de
+  waarnemingen in de steekproef echter groter is dan ca 30 dan is de \(t\)-toets
   doorgaans goed bruikbaar.
 \end{itemize}
 
@@ -9956,7 +9979,7 @@ De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep
 \hypertarget{sec:anova-oneway-effectgrootte}{%
 \subsection{Effectgrootte}\label{sec:anova-oneway-effectgrootte}}
 
-Net als bij de is het niet alleen van belang om een binaire beslissing
+Net als bij de \(t\)-toets is het niet alleen van belang om een binaire beslissing
 te nemen over H0, maar is het minstens zo belangrijk om te weten hoe
 groot het geobserveerde effect is (zie ook
 §\ref{sec:ttoets-effectgrootte}). Deze effectgrootte bij
@@ -10027,7 +10050,7 @@ of de grijze en blauwe groepen van elkaar verschillen (H0:
 \(\mu_\textrm{grijs} = \mu_\textrm{blauw}\))
 \footnote{Als (1) rood wel verschilt van grijs en blauw, en als (2) grijs en blauw bovendien onderling niet verschillen, dan impliceert dat dat rood verschilt van grijs (een nieuwe bevinding) en dat rood verschilt van blauw (dat wisten we al).}.
 
-De factor `groep' heeft 2 vrijheidsgraden, en dat betekent dat we
+De factor `groep' of `kleur' heeft 2 vrijheidsgraden, en dat betekent dat we
 precies 2 van zulke gerichte vergelijkingen of `contrasten' kunnen maken
 die onafhankelijk zijn van elkaar. Dergelijke onafhankelijke contrasten
 worden `orthogonaal' genoemd.
@@ -10275,7 +10298,8 @@ Lees eerst de benodigde gegevens, en controleer deze:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# zelfde data als gebruikt in Fig.15.2}
-\NormalTok{kleurgroepen \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{( }\StringTok{"data/kleurgroepen.txt"}\NormalTok{, }\DataTypeTok{header=}\NormalTok{T )}
+\NormalTok{kleurgroepen \textless{}{-}}\StringTok{ }\KeywordTok{read.table}\NormalTok{( }\StringTok{"data/kleurgroepen.txt"}\NormalTok{, }
+                            \DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{, }\DataTypeTok{stringsAsFactors=}\OtherTok{TRUE}\NormalTok{ )}
 \end{Highlighting}
 \end{Shaded}
 
@@ -10683,13 +10707,12 @@ We gebruiken hiervoor de eerder geprogrammeerde functie \texttt{omegasq} (§\ref
 \end{Shaded}
 
 \begin{verbatim}
-## Warning in replications(paste("~", xx), data = mf): non-factors ignored:
-## sex
+## Warning in replications(paste("~", xx), data = mf): non-factors ignored: sex
 \end{verbatim}
 
 \begin{verbatim}
-## Warning in replications(paste("~", xx), data = mf): non-factors ignored:
-## region, sex
+## Warning in replications(paste("~", xx), data = mf): non-factors ignored: region,
+## sex
 \end{verbatim}
 
 \begin{verbatim}
@@ -11439,11 +11462,11 @@ dan wordt de kans \(P(H)\) exact berekend.
 \hypertarget{app:randomgetallen}{%
 \chapter{Willekeurige getallen}\label{app:randomgetallen}}
 
-\begin{table}[t]
+\begin{table}
 
 \caption{\label{tab:A1}Onderstaande tabel bevat 200 willekeurige getallen tussen 0 en 9999.}
 \centering
-\begin{tabular}{rrrrrrrrrr}
+\begin{tabular}[t]{rrrrrrrrrr}
 \toprule
  &  &  &  &  &  &  &  &  & \\
 \midrule

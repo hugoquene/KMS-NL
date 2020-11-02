@@ -439,7 +439,7 @@ De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep
 
 ### Effectgrootte {#sec:anova-oneway-effectgrootte}
 
-Net als bij de is het niet alleen van belang om een binaire beslissing
+Net als bij de $t$-toets is het niet alleen van belang om een binaire beslissing
 te nemen over H0, maar is het minstens zo belangrijk om te weten hoe
 groot het geobserveerde effect is (zie ook
 §\@ref(sec:ttoets-effectgrootte)). Deze effectgrootte bij
@@ -508,7 +508,7 @@ of de grijze en blauwe groepen van elkaar verschillen (H0:
 $\mu_\textrm{grijs} = \mu_\textrm{blauw}$) 
 [^fn15-1].
 
-De factor 'groep' heeft 2 vrijheidsgraden, en dat betekent dat we
+De factor 'groep' of 'kleur' heeft 2 vrijheidsgraden, en dat betekent dat we
 precies 2 van zulke gerichte vergelijkingen of 'contrasten' kunnen maken
 die onafhankelijk zijn van elkaar. Dergelijke onafhankelijke contrasten
 worden 'orthogonaal' genoemd.
@@ -728,7 +728,8 @@ groepen niet verschillen.
 Lees eerst de benodigde gegevens, en controleer deze:
 ```{r}
 # zelfde data als gebruikt in Fig.15.2
-kleurgroepen <- read.table( "data/kleurgroepen.txt", header=T )
+kleurgroepen <- read.table( "data/kleurgroepen.txt", 
+                            header=TRUE, stringsAsFactors=TRUE )
 ```
 
 Onderzoek of de responsies normaal verdeeld zijn, met behulp van de

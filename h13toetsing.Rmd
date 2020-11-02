@@ -667,7 +667,7 @@ Sleep de onafhankelijke variabele `region` naar paneel Grouping
 Variable. Definieer de twee groepen: waarde W voor regio groep 1 en
 waarde N voor regrio groep 2. Bevestig met `Continue` en `OK`.
 
-Zoals je hierboven kon zien, is de berekening van de afhankelijk van het
+Zoals je hierboven kon zien, is de berekening van de $t$-toets afhankelijk van het
 antwoord op de vraag of de standaarddeviaties van de twee groepen
 ongeveer gelijk zijn. SPSS lost dat zeer onhandig op: je krijgt alle
 relevante uitvoer te zien, en moet daar zelf een keuze uit maken.
@@ -691,7 +691,7 @@ zijn). In dit voorbeeld zijn de varianties ongeveer gelijk, zoals de
 Levene's test ook aangeeft. We gebruiken dus de eerste regel van de
 uitvoer, en rapporteren $t(38)=-3.765, p=.001$.
 
-###  {#sec:R-ttoets-ongepaard}
+### R {#sec:R-ttoets-ongepaard}
 
 ```{r}
 require(hqmisc)
@@ -710,7 +710,7 @@ vervolgens twee observaties verzamelen, nl. één observatie onder elk van
 beide condities. De twee observaties zijn dan gepaard, d.w.z. aan elkaar
 gerelateerd, en deze observaties zijn dus niet onafhankelijk (want
 afkomstig van hetzelfde lid van de steekproef). Eén van de assumpties
-van de is daarmee geschonden.
+van de $t$-toets is daarmee geschonden.
 
 Als voorbeeld nemen we een denkbeeldig onderzoek naar het gebruik van
 *U* of *je* als aanspreekvorm op een website. De onderzoeker maakt twee
@@ -750,7 +750,7 @@ Tabel \@ref(tab:data-uje-paired).
 
 Deze verschilscore $D$ wordt vervolgens eigenlijk geanalyseerd met de
 eerder besproken $t$-toets voor één enkele steekproef (zie
-§\@ref(sec:ttoets-onesample)), waarbij H0: $\mu_D=0$. d.w.z. geen verschil
+§\@ref(sec:ttoets-onesample)), waarbij H0: $\mu_D=0$, d.w.z. volgens H0 is er geen verschil
 tussen condities. We berekenen het gemiddelde van de verschilscore,
 $\overline{D}$, en de standaarddeviatie van de verschilscore, $s_{D}$,
 op de gebruikelijke wijze (zie
@@ -794,7 +794,7 @@ zijn.
 
 * De *verschilscores* $D$ moeten normaal verdeeld zijn (zie
 §\@ref(sec:isvarnormaalverdeeld)); als het aantal paren van
-waarnemingen in de steekproef echter groter is dan ca 30 dan is de
+waarnemingen in de steekproef echter groter is dan ca 30 dan is de $t$-toets
 doorgaans goed bruikbaar.
 
 ### formules {#sec:formules13-4}

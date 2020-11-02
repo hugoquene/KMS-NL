@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Appendix D Kritieke waarden van \(\chi^2\)-verdeling | Kwantitatieve Methoden en Statistiek</title>
   <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Appendix D Kritieke waarden van \(\chi^2\)-verdeling | Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 <link rel="prev" href="app-kritieketwaarden.html"/>
 <link rel="next" href="referenties.html"/>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,6 +49,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -363,7 +365,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.6.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#aannames"><i class="fa fa-check"></i><b>13.6.1</b> aannames</a></li>
 <li class="chapter" data-level="13.6.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-formules"><i class="fa fa-check"></i><b>13.6.2</b> formules</a></li>
 <li class="chapter" data-level="13.6.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:SPSS-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.3</b> SPSS</a></li>
-<li class="chapter" data-level="13.6.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.4</b> </a></li>
+<li class="chapter" data-level="13.6.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.7" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-gepaard"><i class="fa fa-check"></i><b>13.7</b> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen</a>
 <ul>
@@ -485,7 +487,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="center"></th>
 <th align="center">p</th>
 <th align="center">0.2</th>
 <th align="center">0.1</th>
@@ -499,7 +501,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
+<td align="center">1</td>
 <td align="center"></td>
 <td align="center">1.64</td>
 <td align="center">2.71</td>
@@ -511,7 +513,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">10.83</td>
 </tr>
 <tr class="even">
-<td>2</td>
+<td align="center">2</td>
 <td align="center"></td>
 <td align="center">3.22</td>
 <td align="center">4.61</td>
@@ -523,7 +525,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">13.82</td>
 </tr>
 <tr class="odd">
-<td>3</td>
+<td align="center">3</td>
 <td align="center"></td>
 <td align="center">4.64</td>
 <td align="center">6.25</td>
@@ -535,7 +537,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">16.27</td>
 </tr>
 <tr class="even">
-<td>4</td>
+<td align="center">4</td>
 <td align="center"></td>
 <td align="center">5.99</td>
 <td align="center">7.78</td>
@@ -547,7 +549,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">18.47</td>
 </tr>
 <tr class="odd">
-<td>5</td>
+<td align="center">5</td>
 <td align="center"></td>
 <td align="center">7.29</td>
 <td align="center">9.24</td>
@@ -559,7 +561,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">20.52</td>
 </tr>
 <tr class="even">
-<td>6</td>
+<td align="center">6</td>
 <td align="center"></td>
 <td align="center">8.56</td>
 <td align="center">10.64</td>
@@ -571,7 +573,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">22.46</td>
 </tr>
 <tr class="odd">
-<td>7</td>
+<td align="center">7</td>
 <td align="center"></td>
 <td align="center">9.80</td>
 <td align="center">12.02</td>
@@ -583,7 +585,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">24.32</td>
 </tr>
 <tr class="even">
-<td>8</td>
+<td align="center">8</td>
 <td align="center"></td>
 <td align="center">11.03</td>
 <td align="center">13.36</td>
@@ -595,7 +597,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">26.12</td>
 </tr>
 <tr class="odd">
-<td>9</td>
+<td align="center">9</td>
 <td align="center"></td>
 <td align="center">12.24</td>
 <td align="center">14.68</td>
@@ -607,7 +609,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">27.88</td>
 </tr>
 <tr class="even">
-<td>10</td>
+<td align="center">10</td>
 <td align="center"></td>
 <td align="center">13.44</td>
 <td align="center">15.99</td>
@@ -619,7 +621,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">29.59</td>
 </tr>
 <tr class="odd">
-<td>11</td>
+<td align="center">11</td>
 <td align="center"></td>
 <td align="center">14.63</td>
 <td align="center">17.28</td>
@@ -631,7 +633,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">31.26</td>
 </tr>
 <tr class="even">
-<td>12</td>
+<td align="center">12</td>
 <td align="center"></td>
 <td align="center">15.81</td>
 <td align="center">18.55</td>
@@ -643,7 +645,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">32.91</td>
 </tr>
 <tr class="odd">
-<td>13</td>
+<td align="center">13</td>
 <td align="center"></td>
 <td align="center">16.98</td>
 <td align="center">19.81</td>
@@ -655,7 +657,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">34.53</td>
 </tr>
 <tr class="even">
-<td>14</td>
+<td align="center">14</td>
 <td align="center"></td>
 <td align="center">18.15</td>
 <td align="center">21.06</td>
@@ -667,7 +669,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">36.12</td>
 </tr>
 <tr class="odd">
-<td>15</td>
+<td align="center">15</td>
 <td align="center"></td>
 <td align="center">19.31</td>
 <td align="center">22.31</td>
@@ -679,7 +681,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">37.70</td>
 </tr>
 <tr class="even">
-<td>16</td>
+<td align="center">16</td>
 <td align="center"></td>
 <td align="center">20.47</td>
 <td align="center">23.54</td>
@@ -691,7 +693,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">39.25</td>
 </tr>
 <tr class="odd">
-<td>17</td>
+<td align="center">17</td>
 <td align="center"></td>
 <td align="center">21.61</td>
 <td align="center">24.77</td>
@@ -703,7 +705,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">40.79</td>
 </tr>
 <tr class="even">
-<td>18</td>
+<td align="center">18</td>
 <td align="center"></td>
 <td align="center">22.76</td>
 <td align="center">25.99</td>
@@ -715,7 +717,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">42.31</td>
 </tr>
 <tr class="odd">
-<td>19</td>
+<td align="center">19</td>
 <td align="center"></td>
 <td align="center">23.90</td>
 <td align="center">27.20</td>
@@ -727,7 +729,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">43.82</td>
 </tr>
 <tr class="even">
-<td>20</td>
+<td align="center">20</td>
 <td align="center"></td>
 <td align="center">25.04</td>
 <td align="center">28.41</td>
@@ -739,7 +741,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">45.31</td>
 </tr>
 <tr class="odd">
-<td>21</td>
+<td align="center">21</td>
 <td align="center"></td>
 <td align="center">26.17</td>
 <td align="center">29.62</td>
@@ -751,7 +753,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">46.80</td>
 </tr>
 <tr class="even">
-<td>22</td>
+<td align="center">22</td>
 <td align="center"></td>
 <td align="center">27.30</td>
 <td align="center">30.81</td>
@@ -763,7 +765,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">48.27</td>
 </tr>
 <tr class="odd">
-<td>23</td>
+<td align="center">23</td>
 <td align="center"></td>
 <td align="center">28.43</td>
 <td align="center">32.01</td>
@@ -775,7 +777,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">49.73</td>
 </tr>
 <tr class="even">
-<td>24</td>
+<td align="center">24</td>
 <td align="center"></td>
 <td align="center">29.55</td>
 <td align="center">33.20</td>
@@ -787,7 +789,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">51.18</td>
 </tr>
 <tr class="odd">
-<td>25</td>
+<td align="center">25</td>
 <td align="center"></td>
 <td align="center">30.68</td>
 <td align="center">34.38</td>
@@ -799,7 +801,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">52.62</td>
 </tr>
 <tr class="even">
-<td>30</td>
+<td align="center">30</td>
 <td align="center"></td>
 <td align="center">36.25</td>
 <td align="center">40.26</td>
@@ -811,7 +813,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">59.70</td>
 </tr>
 <tr class="odd">
-<td>40</td>
+<td align="center">40</td>
 <td align="center"></td>
 <td align="center">47.27</td>
 <td align="center">51.81</td>
@@ -823,7 +825,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">73.40</td>
 </tr>
 <tr class="even">
-<td>50</td>
+<td align="center">50</td>
 <td align="center"></td>
 <td align="center">58.16</td>
 <td align="center">63.17</td>
@@ -835,7 +837,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">86.66</td>
 </tr>
 <tr class="odd">
-<td>100</td>
+<td align="center">100</td>
 <td align="center"></td>
 <td align="center">111.67</td>
 <td align="center">118.50</td>
@@ -847,7 +849,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">149.45</td>
 </tr>
 <tr class="even">
-<td>200</td>
+<td align="center">200</td>
 <td align="center"></td>
 <td align="center">216.61</td>
 <td align="center">226.02</td>
@@ -859,7 +861,7 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
 <td align="center">267.54</td>
 </tr>
 <tr class="odd">
-<td>400</td>
+<td align="center">400</td>
 <td align="center"></td>
 <td align="center">423.59</td>
 <td align="center">436.65</td>

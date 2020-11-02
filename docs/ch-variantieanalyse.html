@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Hoofdstuk 15 Variantieanalyse | Kwantitatieve Methoden en Statistiek</title>
   <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Hoofdstuk 15 Variantieanalyse | Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 <link rel="prev" href="ch-power.html"/>
 <link rel="next" href="ch-chi-kwadraat-toetsen.html"/>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,6 +49,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -363,7 +365,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.6.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#aannames"><i class="fa fa-check"></i><b>13.6.1</b> aannames</a></li>
 <li class="chapter" data-level="13.6.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-formules"><i class="fa fa-check"></i><b>13.6.2</b> formules</a></li>
 <li class="chapter" data-level="13.6.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:SPSS-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.3</b> SPSS</a></li>
-<li class="chapter" data-level="13.6.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.4</b> </a></li>
+<li class="chapter" data-level="13.6.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.7" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-gepaard"><i class="fa fa-check"></i><b>13.7</b> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen</a>
 <ul>
@@ -951,7 +953,7 @@ De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep
 </div>
 <div id="sec:anova-oneway-effectgrootte" class="section level3" number="15.3.3">
 <h3><span class="header-section-number">15.3.3</span> Effectgrootte</h3>
-<p>Net als bij de is het niet alleen van belang om een binaire beslissing
+<p>Net als bij de <span class="math inline">\(t\)</span>-toets is het niet alleen van belang om een binaire beslissing
 te nemen over H0, maar is het minstens zo belangrijk om te weten hoe
 groot het geobserveerde effect is (zie ook
 §<a href="ch-toetsing.html#sec:ttoets-effectgrootte">13.8</a>). Deze effectgrootte bij
@@ -1014,7 +1016,7 @@ groep lager scoort dan de andere twee groepen, (H0:
 (2)
 of de grijze en blauwe groepen van elkaar verschillen (H0:
 <span class="math inline">\(\mu_\textrm{grijs} = \mu_\textrm{blauw}\)</span>).<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a></p>
-<p>De factor ‘groep’ heeft 2 vrijheidsgraden, en dat betekent dat we
+<p>De factor ‘groep’ of ‘kleur’ heeft 2 vrijheidsgraden, en dat betekent dat we
 precies 2 van zulke gerichte vergelijkingen of ‘contrasten’ kunnen maken
 die onafhankelijk zijn van elkaar. Dergelijke onafhankelijke contrasten
 worden ‘orthogonaal’ genoemd.</p>
@@ -1271,8 +1273,9 @@ groepen niet verschillen.</p>
 <div id="voorbereiding-1" class="section level4" number="15.3.7.1">
 <h4><span class="header-section-number">15.3.7.1</span> voorbereiding</h4>
 <p>Lees eerst de benodigde gegevens, en controleer deze:</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="ch-variantieanalyse.html#cb108-1" aria-hidden="true"></a><span class="co"># zelfde data als gebruikt in Fig.15.2</span></span>
-<span id="cb108-2"><a href="ch-variantieanalyse.html#cb108-2" aria-hidden="true"></a>kleurgroepen &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="st">&quot;data/kleurgroepen.txt&quot;</span>, <span class="dt">header=</span>T )</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="ch-variantieanalyse.html#cb109-1" aria-hidden="true"></a><span class="co"># zelfde data als gebruikt in Fig.15.2</span></span>
+<span id="cb109-2"><a href="ch-variantieanalyse.html#cb109-2" aria-hidden="true"></a>kleurgroepen &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="st">&quot;data/kleurgroepen.txt&quot;</span>, </span>
+<span id="cb109-3"><a href="ch-variantieanalyse.html#cb109-3" aria-hidden="true"></a>                            <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">stringsAsFactors=</span><span class="ot">TRUE</span> )</span></code></pre></div>
 <p>Onderzoek of de responsies normaal verdeeld zijn, met behulp van de
 technieken uit Deel II van dit tekstboek (met name
 §<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p>
@@ -1280,7 +1283,7 @@ technieken uit Deel II van dit tekstboek (met name
 voor variantieanalyse. De H0 die we daarbij toetsen luidt:
 <span class="math inline">\(s^2_\textrm{rood} = s^2_\textrm{grijs} = s^2_\textrm{blauw}\)</span>. We
 toetsen deze H0 met behulp van Bartlett’s toets.</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="ch-variantieanalyse.html#cb109-1" aria-hidden="true"></a><span class="kw">bartlett.test</span>( <span class="dt">x=</span>kleurgroepen<span class="op">$</span>score, <span class="dt">g=</span>kleurgroepen<span class="op">$</span>kleur )</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="ch-variantieanalyse.html#cb110-1" aria-hidden="true"></a><span class="kw">bartlett.test</span>( <span class="dt">x=</span>kleurgroepen<span class="op">$</span>score, <span class="dt">g=</span>kleurgroepen<span class="op">$</span>kleur )</span></code></pre></div>
 <pre><code>## 
 ##  Bartlett test of homogeneity of variances
 ## 
@@ -1289,7 +1292,7 @@ toetsen deze H0 met behulp van Bartlett’s toets.</p>
 </div>
 <div id="anova-1" class="section level4" number="15.3.7.2">
 <h4><span class="header-section-number">15.3.7.2</span> ANOVA</h4>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="ch-variantieanalyse.html#cb111-1" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>( score<span class="op">~</span>kleur, <span class="dt">data=</span>kleurgroepen) -&gt;<span class="st"> </span>m01 ) <span class="co"># zie Tabel 15.3</span></span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="ch-variantieanalyse.html#cb112-1" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>( score<span class="op">~</span>kleur, <span class="dt">data=</span>kleurgroepen) -&gt;<span class="st"> </span>m01 ) <span class="co"># zie Tabel 15.3</span></span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## kleur        2  14.50   7.248   9.356 0.000436 ***
 ## Residuals   42  32.54   0.775                     
@@ -1298,32 +1301,32 @@ toetsen deze H0 met behulp van Bartlett’s toets.</p>
 </div>
 <div id="R:omega-kwadraat" class="section level4" number="15.3.7.3">
 <h4><span class="header-section-number">15.3.7.3</span> effectgrootte</h4>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="ch-variantieanalyse.html#cb113-1" aria-hidden="true"></a><span class="co"># eigen functie om omega2 te berekenen, zie vergelijking (15.7) in de hoofdtekst, </span></span>
-<span id="cb113-2"><a href="ch-variantieanalyse.html#cb113-2" aria-hidden="true"></a><span class="co"># voor effect genaamd `term` in summary(`model`)</span></span>
-<span id="cb113-3"><a href="ch-variantieanalyse.html#cb113-3" aria-hidden="true"></a>omegasq &lt;-<span class="st"> </span><span class="cf">function</span> ( model, term ) {   </span>
-<span id="cb113-4"><a href="ch-variantieanalyse.html#cb113-4" aria-hidden="true"></a>     mtab &lt;-<span class="st"> </span><span class="kw">anova</span>(model)</span>
-<span id="cb113-5"><a href="ch-variantieanalyse.html#cb113-5" aria-hidden="true"></a>     rterm &lt;-<span class="st"> </span><span class="kw">dim</span>(mtab)[<span class="dv">1</span>] <span class="co"># resid term</span></span>
-<span id="cb113-6"><a href="ch-variantieanalyse.html#cb113-6" aria-hidden="true"></a>     <span class="kw">return</span>( (mtab[term,<span class="dv">2</span>]<span class="op">-</span>mtab[term,<span class="dv">1</span>]<span class="op">*</span>mtab[rterm,<span class="dv">3</span>]) <span class="op">/</span><span class="st"> </span></span>
-<span id="cb113-7"><a href="ch-variantieanalyse.html#cb113-7" aria-hidden="true"></a><span class="st">             </span>(mtab[rterm,<span class="dv">3</span>]<span class="op">+</span><span class="kw">sum</span>(mtab[,<span class="dv">2</span>])) )</span>
-<span id="cb113-8"><a href="ch-variantieanalyse.html#cb113-8" aria-hidden="true"></a>     }</span>
-<span id="cb113-9"><a href="ch-variantieanalyse.html#cb113-9" aria-hidden="true"></a><span class="kw">omegasq</span>( m01, <span class="st">&quot;kleur&quot;</span> ) <span class="co"># roep functie aan met 2 argumenten</span></span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="ch-variantieanalyse.html#cb114-1" aria-hidden="true"></a><span class="co"># eigen functie om omega2 te berekenen, zie vergelijking (15.7) in de hoofdtekst, </span></span>
+<span id="cb114-2"><a href="ch-variantieanalyse.html#cb114-2" aria-hidden="true"></a><span class="co"># voor effect genaamd `term` in summary(`model`)</span></span>
+<span id="cb114-3"><a href="ch-variantieanalyse.html#cb114-3" aria-hidden="true"></a>omegasq &lt;-<span class="st"> </span><span class="cf">function</span> ( model, term ) {   </span>
+<span id="cb114-4"><a href="ch-variantieanalyse.html#cb114-4" aria-hidden="true"></a>     mtab &lt;-<span class="st"> </span><span class="kw">anova</span>(model)</span>
+<span id="cb114-5"><a href="ch-variantieanalyse.html#cb114-5" aria-hidden="true"></a>     rterm &lt;-<span class="st"> </span><span class="kw">dim</span>(mtab)[<span class="dv">1</span>] <span class="co"># resid term</span></span>
+<span id="cb114-6"><a href="ch-variantieanalyse.html#cb114-6" aria-hidden="true"></a>     <span class="kw">return</span>( (mtab[term,<span class="dv">2</span>]<span class="op">-</span>mtab[term,<span class="dv">1</span>]<span class="op">*</span>mtab[rterm,<span class="dv">3</span>]) <span class="op">/</span><span class="st"> </span></span>
+<span id="cb114-7"><a href="ch-variantieanalyse.html#cb114-7" aria-hidden="true"></a><span class="st">             </span>(mtab[rterm,<span class="dv">3</span>]<span class="op">+</span><span class="kw">sum</span>(mtab[,<span class="dv">2</span>])) )</span>
+<span id="cb114-8"><a href="ch-variantieanalyse.html#cb114-8" aria-hidden="true"></a>     }</span>
+<span id="cb114-9"><a href="ch-variantieanalyse.html#cb114-9" aria-hidden="true"></a><span class="kw">omegasq</span>( m01, <span class="st">&quot;kleur&quot;</span> ) <span class="co"># roep functie aan met 2 argumenten</span></span></code></pre></div>
 <pre><code>## [1] 0.2708136</code></pre>
 </div>
 <div id="gerichte-vergelijking-1" class="section level4" number="15.3.7.4">
 <h4><span class="header-section-number">15.3.7.4</span> gerichte vergelijking</h4>
 <p>Bij het specificeren van de contrasten moeten we rekening houden met de <em>alfabetische</em> ordening van de condities: <em>blauw, grijs, rood</em>.</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="ch-variantieanalyse.html#cb115-1" aria-hidden="true"></a><span class="co"># maak matrix van twee orthogonale contrasten (per kolom, niet per rij) </span></span>
-<span id="cb115-2"><a href="ch-variantieanalyse.html#cb115-2" aria-hidden="true"></a>conmat &lt;-<span class="st"> </span><span class="kw">matrix</span>( <span class="kw">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>), <span class="dt">byrow=</span>F, <span class="dt">nrow=</span><span class="dv">3</span> )</span>
-<span id="cb115-3"><a href="ch-variantieanalyse.html#cb115-3" aria-hidden="true"></a><span class="kw">dimnames</span>(conmat)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;.R.GB&quot;</span>,<span class="st">&quot;.0G.B&quot;</span>) <span class="co"># (1) R vs G+B, (2) G vs B </span></span>
-<span id="cb115-4"><a href="ch-variantieanalyse.html#cb115-4" aria-hidden="true"></a><span class="kw">contrasts</span>(kleurgroepen<span class="op">$</span>kleur) &lt;-<span class="st"> </span>conmat <span class="co"># wijs contrasten toe aan factor</span></span>
-<span id="cb115-5"><a href="ch-variantieanalyse.html#cb115-5" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>( score<span class="op">~</span>kleur, <span class="dt">data=</span>kleurgroepen) -&gt;<span class="st"> </span>m02 ) <span class="co"># uitvoer is nodig voor omega2</span></span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="ch-variantieanalyse.html#cb116-1" aria-hidden="true"></a><span class="co"># maak matrix van twee orthogonale contrasten (per kolom, niet per rij) </span></span>
+<span id="cb116-2"><a href="ch-variantieanalyse.html#cb116-2" aria-hidden="true"></a>conmat &lt;-<span class="st"> </span><span class="kw">matrix</span>( <span class="kw">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>, <span class="op">+</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>), <span class="dt">byrow=</span>F, <span class="dt">nrow=</span><span class="dv">3</span> )</span>
+<span id="cb116-3"><a href="ch-variantieanalyse.html#cb116-3" aria-hidden="true"></a><span class="kw">dimnames</span>(conmat)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;.R.GB&quot;</span>,<span class="st">&quot;.0G.B&quot;</span>) <span class="co"># (1) R vs G+B, (2) G vs B </span></span>
+<span id="cb116-4"><a href="ch-variantieanalyse.html#cb116-4" aria-hidden="true"></a><span class="kw">contrasts</span>(kleurgroepen<span class="op">$</span>kleur) &lt;-<span class="st"> </span>conmat <span class="co"># wijs contrasten toe aan factor</span></span>
+<span id="cb116-5"><a href="ch-variantieanalyse.html#cb116-5" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>( score<span class="op">~</span>kleur, <span class="dt">data=</span>kleurgroepen) -&gt;<span class="st"> </span>m02 ) <span class="co"># uitvoer is nodig voor omega2</span></span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## kleur        2  14.50   7.248   9.356 0.000436 ***
 ## Residuals   42  32.54   0.775                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="ch-variantieanalyse.html#cb117-1" aria-hidden="true"></a><span class="co"># zie https://blogs.uoregon.edu/rclub/2015/11/03/anova-contrasts-in-r/</span></span>
-<span id="cb117-2"><a href="ch-variantieanalyse.html#cb117-2" aria-hidden="true"></a><span class="kw">summary.aov</span>( m02, <span class="dt">split=</span><span class="kw">list</span>(<span class="dt">kleur=</span><span class="kw">list</span>(<span class="dv">1</span>,<span class="dv">2</span>)) )</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="ch-variantieanalyse.html#cb118-1" aria-hidden="true"></a><span class="co"># zie https://blogs.uoregon.edu/rclub/2015/11/03/anova-contrasts-in-r/</span></span>
+<span id="cb118-2"><a href="ch-variantieanalyse.html#cb118-2" aria-hidden="true"></a><span class="kw">summary.aov</span>( m02, <span class="dt">split=</span><span class="kw">list</span>(<span class="dt">kleur=</span><span class="kw">list</span>(<span class="dv">1</span>,<span class="dv">2</span>)) )</span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## kleur        2  14.50   7.248   9.356 0.000436 ***
 ##   kleur: C1  1  14.31  14.308  18.470 0.000100 ***
@@ -1332,14 +1335,14 @@ toetsen deze H0 met behulp van Bartlett’s toets.</p>
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Als we gerichte vergelijkingen hebben (planned contrasts) dan is de eerder geconstrueerde functie <code>omegasq</code> niet bruikbaar (en evenmin de eerder gegeven formule). We moeten de <span class="math inline">\(\omega^2\)</span> nu met de hand uitrekenen met gebruik van de uitvoer van de samenvatting van model <code>m02</code>:</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="ch-variantieanalyse.html#cb119-1" aria-hidden="true"></a>(<span class="fl">14.308</span><span class="dv">-1</span><span class="op">*</span><span class="fl">0.775</span>)<span class="op">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># 0.2830402</span></span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="ch-variantieanalyse.html#cb120-1" aria-hidden="true"></a>(<span class="fl">14.308</span><span class="dv">-1</span><span class="op">*</span><span class="fl">0.775</span>)<span class="op">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># 0.2830402</span></span></code></pre></div>
 <pre><code>## [1] 0.2830402</code></pre>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="ch-variantieanalyse.html#cb121-1" aria-hidden="true"></a>(<span class="fl">0.188</span><span class="dv">-1</span><span class="op">*</span><span class="fl">0.775</span>)<span class="op">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># afgerond 0.00</span></span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="ch-variantieanalyse.html#cb122-1" aria-hidden="true"></a>(<span class="fl">0.188</span><span class="dv">-1</span><span class="op">*</span><span class="fl">0.775</span>)<span class="op">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># afgerond 0.00</span></span></code></pre></div>
 <pre><code>## [1] -0.012277</code></pre>
 </div>
 <div id="post-hoc-vergelijkingen" class="section level4" number="15.3.7.5">
 <h4><span class="header-section-number">15.3.7.5</span> post-hoc-vergelijkingen</h4>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="ch-variantieanalyse.html#cb123-1" aria-hidden="true"></a><span class="kw">TukeyHSD</span>(m02)</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="ch-variantieanalyse.html#cb124-1" aria-hidden="true"></a><span class="kw">TukeyHSD</span>(m02)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
 ## 
@@ -1534,11 +1537,11 @@ Voor de post-hoc toetsen, kies de knop <code>Post Hoc...</code>. Selecteer facto
 <h3><span class="header-section-number">15.4.4</span> R</h3>
 <div id="voorbereiding-3" class="section level4" number="15.4.4.1">
 <h4><span class="header-section-number">15.4.4.1</span> voorbereiding</h4>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="ch-variantieanalyse.html#cb127-1" aria-hidden="true"></a><span class="kw">require</span>(hqmisc) <span class="co"># voor hqmisc::talkers data set</span></span>
-<span id="cb127-2"><a href="ch-variantieanalyse.html#cb127-2" aria-hidden="true"></a><span class="kw">data</span>(talkers)</span>
-<span id="cb127-3"><a href="ch-variantieanalyse.html#cb127-3" aria-hidden="true"></a>ok &lt;-<span class="st"> </span>talkers<span class="op">$</span>syldur<span class="op">&lt;</span><span class="fl">0.4</span> <span class="co"># TRUE voor 79 van 80 talkers</span></span>
-<span id="cb127-4"><a href="ch-variantieanalyse.html#cb127-4" aria-hidden="true"></a><span class="co"># tabel van gemiddelden, zie Table 15.2 in hoofdtekst</span></span>
-<span id="cb127-5"><a href="ch-variantieanalyse.html#cb127-5" aria-hidden="true"></a><span class="kw">with</span>(talkers, <span class="kw">tapply</span>( syldur[ok], <span class="kw">list</span>(region[ok],sex[ok]), mean ))</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="ch-variantieanalyse.html#cb128-1" aria-hidden="true"></a><span class="kw">require</span>(hqmisc) <span class="co"># voor hqmisc::talkers data set</span></span>
+<span id="cb128-2"><a href="ch-variantieanalyse.html#cb128-2" aria-hidden="true"></a><span class="kw">data</span>(talkers)</span>
+<span id="cb128-3"><a href="ch-variantieanalyse.html#cb128-3" aria-hidden="true"></a>ok &lt;-<span class="st"> </span>talkers<span class="op">$</span>syldur<span class="op">&lt;</span><span class="fl">0.4</span> <span class="co"># TRUE voor 79 van 80 talkers</span></span>
+<span id="cb128-4"><a href="ch-variantieanalyse.html#cb128-4" aria-hidden="true"></a><span class="co"># tabel van gemiddelden, zie Table 15.2 in hoofdtekst</span></span>
+<span id="cb128-5"><a href="ch-variantieanalyse.html#cb128-5" aria-hidden="true"></a><span class="kw">with</span>(talkers, <span class="kw">tapply</span>( syldur[ok], <span class="kw">list</span>(region[ok],sex[ok]), mean ))</span></code></pre></div>
 <pre><code>##           0       1
 ## M 0.2707400 0.23460
 ## N 0.2846000 0.25282
@@ -1547,8 +1550,8 @@ Voor de post-hoc toetsen, kies de knop <code>Post Hoc...</code>. Selecteer facto
 </div>
 <div id="anova-2" class="section level4" number="15.4.4.2">
 <h4><span class="header-section-number">15.4.4.2</span> ANOVA</h4>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="ch-variantieanalyse.html#cb129-1" aria-hidden="true"></a><span class="co"># zie Table 15.5 in hoofdtekst</span></span>
-<span id="cb129-2"><a href="ch-variantieanalyse.html#cb129-2" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>(syldur<span class="op">~</span>region<span class="op">*</span>sex, <span class="dt">data=</span>talkers, <span class="dt">subset=</span>ok) -&gt;<span class="st"> </span>m03 )</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="ch-variantieanalyse.html#cb130-1" aria-hidden="true"></a><span class="co"># zie Table 15.5 in hoofdtekst</span></span>
+<span id="cb130-2"><a href="ch-variantieanalyse.html#cb130-2" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>(syldur<span class="op">~</span>region<span class="op">*</span>sex, <span class="dt">data=</span>talkers, <span class="dt">subset=</span>ok) -&gt;<span class="st"> </span>m03 )</span></code></pre></div>
 <pre><code>##             Df  Sum Sq  Mean Sq F value   Pr(&gt;F)    
 ## region       3 0.01234 0.004114   6.039 0.001009 ** 
 ## sex          1 0.01031 0.010310  15.135 0.000223 ***
@@ -1560,20 +1563,19 @@ Voor de post-hoc toetsen, kies de knop <code>Post Hoc...</code>. Selecteer facto
 <div id="effectgrootte" class="section level4" number="15.4.4.3">
 <h4><span class="header-section-number">15.4.4.3</span> effectgrootte</h4>
 <p>We gebruiken hiervoor de eerder geprogrammeerde functie <code>omegasq</code> (§<a href="ch-variantieanalyse.html#R:omega-kwadraat">15.3.7.3</a>):</p>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="ch-variantieanalyse.html#cb131-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region&quot;</span>)      <span class="co"># [1] 0.1380875</span></span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="ch-variantieanalyse.html#cb132-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region&quot;</span>)      <span class="co"># [1] 0.1380875</span></span></code></pre></div>
 <pre><code>## [1] 0.1380875</code></pre>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="ch-variantieanalyse.html#cb133-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;sex&quot;</span>)         <span class="co"># [1] 0.1291232</span></span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="ch-variantieanalyse.html#cb134-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;sex&quot;</span>)         <span class="co"># [1] 0.1291232</span></span></code></pre></div>
 <pre><code>## [1] 0.1291232</code></pre>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="ch-variantieanalyse.html#cb135-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region:sex&quot;</span>)  <span class="co"># [1] 0.01112131</span></span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="ch-variantieanalyse.html#cb136-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region:sex&quot;</span>)  <span class="co"># [1] 0.01112131</span></span></code></pre></div>
 <pre><code>## [1] 0.01112131</code></pre>
 </div>
 <div id="post-hoc-toetsen" class="section level4" number="15.4.4.4">
 <h4><span class="header-section-number">15.4.4.4</span> post-hoc toetsen</h4>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="ch-variantieanalyse.html#cb137-1" aria-hidden="true"></a><span class="kw">TukeyHSD</span>(<span class="dt">x=</span>m03, <span class="dt">which=</span><span class="st">&quot;region&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning in replications(paste(&quot;~&quot;, xx), data = mf): non-factors ignored:
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="ch-variantieanalyse.html#cb138-1" aria-hidden="true"></a><span class="kw">TukeyHSD</span>(<span class="dt">x=</span>m03, <span class="dt">which=</span><span class="st">&quot;region&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in replications(paste(&quot;~&quot;, xx), data = mf): non-factors ignored: sex</code></pre>
+<pre><code>## Warning in replications(paste(&quot;~&quot;, xx), data = mf): non-factors ignored: region,
 ## sex</code></pre>
-<pre><code>## Warning in replications(paste(&quot;~&quot;, xx), data = mf): non-factors ignored:
-## region, sex</code></pre>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
 ## 

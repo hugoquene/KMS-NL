@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Hoofdstuk 13 Toetsing | Kwantitatieve Methoden en Statistiek</title>
   <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Hoofdstuk 13 Toetsing | Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
 <link rel="prev" href="ch-betrouwbaarheid.html"/>
 <link rel="next" href="ch-power.html"/>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,6 +49,8 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -363,7 +365,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.6.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#aannames"><i class="fa fa-check"></i><b>13.6.1</b> aannames</a></li>
 <li class="chapter" data-level="13.6.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-formules"><i class="fa fa-check"></i><b>13.6.2</b> formules</a></li>
 <li class="chapter" data-level="13.6.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:SPSS-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.3</b> SPSS</a></li>
-<li class="chapter" data-level="13.6.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.4</b> </a></li>
+<li class="chapter" data-level="13.6.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.7" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-gepaard"><i class="fa fa-check"></i><b>13.7</b> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen</a>
 <ul>
@@ -707,7 +709,7 @@ hoofdstuk <a href="ch-Meetniveau.html#ch:Meetniveau">4</a>).</p></li>
 </div>
 <div id="spss-10" class="section level3" number="13.2.4">
 <h3><span class="header-section-number">13.2.4</span> SPSS</h3>
-<p>De hierboven gegevens zijn te vinden in het bestand <code>data/grammaticatoets2013.csv</code>.</p>
+<p>De hierboven besproken gegevens zijn te vinden in het bestand <code>data/grammaticatoets2013.csv</code>.</p>
 <p>Om onze eerdere hypothese te toetsen, moeten we in SPSS eerst de
 observaties selecteren van de studenten Taalwetenschap.</p>
 <pre><code>Data &gt; Select cases...</code></pre>
@@ -729,10 +731,10 @@ een <em>tweezijdige</em> <span class="math inline">\(t\)</span>-toets.</p>
 <div id="r-11" class="section level3" number="13.2.5">
 <h3><span class="header-section-number">13.2.5</span> R</h3>
 <p>Onze hierboven besproken hypothese kan worden getoetst met de volgende opdrachten:</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="ch-toetsing.html#cb85-1" aria-hidden="true"></a>gramm2013 &lt;-<span class="st"> </span><span class="kw">read.csv</span>( <span class="dt">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="dt">header=</span>F)</span>
-<span id="cb85-2"><a href="ch-toetsing.html#cb85-2" aria-hidden="true"></a><span class="kw">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;opleiding&quot;</span>)</span>
-<span id="cb85-3"><a href="ch-toetsing.html#cb85-3" aria-hidden="true"></a><span class="kw">with</span>( gramm2013,</span>
-<span id="cb85-4"><a href="ch-toetsing.html#cb85-4" aria-hidden="true"></a>      <span class="kw">t.test</span>( score[opleiding<span class="op">==</span><span class="st">&quot;TW&quot;</span>], <span class="dt">mu=</span><span class="dv">73</span>, <span class="dt">alt=</span><span class="st">&quot;greater&quot;</span> ) )</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="ch-toetsing.html#cb86-1" aria-hidden="true"></a>gramm2013 &lt;-<span class="st"> </span><span class="kw">read.csv</span>( <span class="dt">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="dt">header=</span>F)</span>
+<span id="cb86-2"><a href="ch-toetsing.html#cb86-2" aria-hidden="true"></a><span class="kw">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;opleiding&quot;</span>)</span>
+<span id="cb86-3"><a href="ch-toetsing.html#cb86-3" aria-hidden="true"></a><span class="kw">with</span>( gramm2013,</span>
+<span id="cb86-4"><a href="ch-toetsing.html#cb86-4" aria-hidden="true"></a>      <span class="kw">t.test</span>( score[opleiding<span class="op">==</span><span class="st">&quot;TW&quot;</span>], <span class="dt">mu=</span><span class="dv">73</span>, <span class="dt">alt=</span><span class="st">&quot;greater&quot;</span> ) )</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -882,7 +884,7 @@ ook het 95% betrouwbaarheidsinterval van het gemiddelde.</p>
 op te geven betrouwbaarheidsniveau) bij een <span class="math inline">\(t\)</span>-toets. We voeren dus wederom een <span class="math inline">\(t\)</span>-toets
 uit en vinden het betrouwbaarheidsinterval van het gemiddelde in de
 uitvoer.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="ch-toetsing.html#cb88-1" aria-hidden="true"></a><span class="kw">with</span>( gramm2013, <span class="kw">t.test</span>( score[opleiding<span class="op">==</span><span class="st">&quot;TW&quot;</span>] ) )</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="ch-toetsing.html#cb89-1" aria-hidden="true"></a><span class="kw">with</span>( gramm2013, <span class="kw">t.test</span>( score[opleiding<span class="op">==</span><span class="st">&quot;TW&quot;</span>] ) )</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -1052,7 +1054,7 @@ vrijheidsgraden.)</p>
 Sleep de onafhankelijke variabele <code>region</code> naar paneel Grouping
 Variable. Definieer de twee groepen: waarde W voor regio groep 1 en
 waarde N voor regrio groep 2. Bevestig met <code>Continue</code> en <code>OK</code>.</p>
-<p>Zoals je hierboven kon zien, is de berekening van de afhankelijk van het
+<p>Zoals je hierboven kon zien, is de berekening van de <span class="math inline">\(t\)</span>-toets afhankelijk van het
 antwoord op de vraag of de standaarddeviaties van de twee groepen
 ongeveer gelijk zijn. SPSS lost dat zeer onhandig op: je krijgt alle
 relevante uitvoer te zien, en moet daar zelf een keuze uit maken.</p>
@@ -1077,11 +1079,11 @@ uitvoer, en rapporteren <span class="math inline">\(t(38)=-3.765, p=.001\)</span
 </div>
 </div>
 <div id="sec:R-ttoets-ongepaard" class="section level3" number="13.6.4">
-<h3><span class="header-section-number">13.6.4</span> </h3>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="ch-toetsing.html#cb91-1" aria-hidden="true"></a><span class="kw">require</span>(hqmisc)</span>
-<span id="cb91-2"><a href="ch-toetsing.html#cb91-2" aria-hidden="true"></a><span class="kw">data</span>(talkers)</span>
-<span id="cb91-3"><a href="ch-toetsing.html#cb91-3" aria-hidden="true"></a><span class="kw">with</span>(talkers, <span class="kw">t.test</span>( syldur[region<span class="op">==</span><span class="st">&quot;W&quot;</span>], syldur[region<span class="op">==</span><span class="st">&quot;N&quot;</span>], </span>
-<span id="cb91-4"><a href="ch-toetsing.html#cb91-4" aria-hidden="true"></a>            <span class="dt">paired=</span>F, <span class="dt">var.equal=</span>T ) )</span></code></pre></div>
+<h3><span class="header-section-number">13.6.4</span> R</h3>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="ch-toetsing.html#cb92-1" aria-hidden="true"></a><span class="kw">require</span>(hqmisc)</span>
+<span id="cb92-2"><a href="ch-toetsing.html#cb92-2" aria-hidden="true"></a><span class="kw">data</span>(talkers)</span>
+<span id="cb92-3"><a href="ch-toetsing.html#cb92-3" aria-hidden="true"></a><span class="kw">with</span>(talkers, <span class="kw">t.test</span>( syldur[region<span class="op">==</span><span class="st">&quot;W&quot;</span>], syldur[region<span class="op">==</span><span class="st">&quot;N&quot;</span>], </span>
+<span id="cb92-4"><a href="ch-toetsing.html#cb92-4" aria-hidden="true"></a>            <span class="dt">paired=</span>F, <span class="dt">var.equal=</span>T ) )</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -1105,7 +1107,7 @@ vervolgens twee observaties verzamelen, nl. één observatie onder elk van
 beide condities. De twee observaties zijn dan gepaard, d.w.z. aan elkaar
 gerelateerd, en deze observaties zijn dus niet onafhankelijk (want
 afkomstig van hetzelfde lid van de steekproef). Eén van de assumpties
-van de is daarmee geschonden.</p>
+van de <span class="math inline">\(t\)</span>-toets is daarmee geschonden.</p>
 <p>Als voorbeeld nemen we een denkbeeldig onderzoek naar het gebruik van
 <em>U</em> of <em>je</em> als aanspreekvorm op een website. De onderzoeker maakt twee
 versies van een webpagina, de ene met <em>U</em> en de andere met <em>je</em>. Elke
@@ -1204,7 +1206,7 @@ verschilscore is ook vermeld in
 Tabel <a href="ch-toetsing.html#tab:data-uje-paired">13.1</a>.</p>
 <p>Deze verschilscore <span class="math inline">\(D\)</span> wordt vervolgens eigenlijk geanalyseerd met de
 eerder besproken <span class="math inline">\(t\)</span>-toets voor één enkele steekproef (zie
-§<a href="ch-toetsing.html#sec:ttoets-onesample">13.2</a>), waarbij H0: <span class="math inline">\(\mu_D=0\)</span>. d.w.z. geen verschil
+§<a href="ch-toetsing.html#sec:ttoets-onesample">13.2</a>), waarbij H0: <span class="math inline">\(\mu_D=0\)</span>, d.w.z. volgens H0 is er geen verschil
 tussen condities. We berekenen het gemiddelde van de verschilscore,
 <span class="math inline">\(\overline{D}\)</span>, en de standaarddeviatie van de verschilscore, <span class="math inline">\(s_{D}\)</span>,
 op de gebruikelijke wijze (zie
@@ -1245,7 +1247,7 @@ gebruiken.</p>
 zijn.</p></li>
 <li><p>De <em>verschilscores</em> <span class="math inline">\(D\)</span> moeten normaal verdeeld zijn (zie
 §<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>); als het aantal paren van
-waarnemingen in de steekproef echter groter is dan ca 30 dan is de
+waarnemingen in de steekproef echter groter is dan ca 30 dan is de <span class="math inline">\(t\)</span>-toets
 doorgaans goed bruikbaar.</p></li>
 </ul>
 </div>
@@ -1267,8 +1269,8 @@ zelfde paneel onder Variable2. Bevestig met <code>OK</code>.</p>
 <div id="sec:R-ttoets-gepaard" class="section level3" number="13.7.4">
 <h3><span class="header-section-number">13.7.4</span> </h3>
 <p>De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand <code>data/ujedata.csv</code>.</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="ch-toetsing.html#cb94-1" aria-hidden="true"></a>ujedata &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;;&quot;</span> )</span>
-<span id="cb94-2"><a href="ch-toetsing.html#cb94-2" aria-hidden="true"></a><span class="kw">with</span>(ujedata, <span class="kw">t.test</span>( cond.u, cond.je, <span class="dt">paired=</span><span class="ot">TRUE</span> ) )</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="ch-toetsing.html#cb95-1" aria-hidden="true"></a>ujedata &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;;&quot;</span> )</span>
+<span id="cb95-2"><a href="ch-toetsing.html#cb95-2" aria-hidden="true"></a><span class="kw">with</span>(ujedata, <span class="kw">t.test</span>( cond.u, cond.je, <span class="dt">paired=</span><span class="ot">TRUE</span> ) )</span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 
@@ -1491,13 +1493,13 @@ De gegevens staan in de uitvoer van de paarsgewijze <span class="math inline">\(
 <p>Voor een enkele steekproef
 (formule <a href="ch-toetsing.html#eq:d-onesample">(13.10)</a>):<br />
 </p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="ch-toetsing.html#cb97-1" aria-hidden="true"></a>gramm2013 &lt;-<span class="st"> </span><span class="kw">read.csv</span>( <span class="dt">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="dt">header=</span>F)</span>
-<span id="cb97-2"><a href="ch-toetsing.html#cb97-2" aria-hidden="true"></a><span class="kw">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;opleiding&quot;</span>)</span>
-<span id="cb97-3"><a href="ch-toetsing.html#cb97-3" aria-hidden="true"></a><span class="kw">with</span>(gramm2013, score[opleiding<span class="op">==</span><span class="st">&quot;TW&quot;</span>]) -&gt;<span class="st"> </span>score.TW <span class="co"># hulpvariabele</span></span>
-<span id="cb97-4"><a href="ch-toetsing.html#cb97-4" aria-hidden="true"></a>( <span class="kw">mean</span>(score.TW)<span class="op">-</span><span class="dv">73</span> ) <span class="op">/</span><span class="st"> </span><span class="kw">sd</span>(score.TW) </span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="ch-toetsing.html#cb98-1" aria-hidden="true"></a>gramm2013 &lt;-<span class="st"> </span><span class="kw">read.csv</span>( <span class="dt">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="dt">header=</span>F)</span>
+<span id="cb98-2"><a href="ch-toetsing.html#cb98-2" aria-hidden="true"></a><span class="kw">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;opleiding&quot;</span>)</span>
+<span id="cb98-3"><a href="ch-toetsing.html#cb98-3" aria-hidden="true"></a><span class="kw">with</span>(gramm2013, score[opleiding<span class="op">==</span><span class="st">&quot;TW&quot;</span>]) -&gt;<span class="st"> </span>score.TW <span class="co"># hulpvariabele</span></span>
+<span id="cb98-4"><a href="ch-toetsing.html#cb98-4" aria-hidden="true"></a>( <span class="kw">mean</span>(score.TW)<span class="op">-</span><span class="dv">73</span> ) <span class="op">/</span><span class="st"> </span><span class="kw">sd</span>(score.TW) </span></code></pre></div>
 <pre><code>## [1] 1.359783</code></pre>
 <p>De kans op een score groter dan het populatiegemiddelde (de toetswaarde) <code>73</code> voor een willekeurige student Taalwetenschap (waarvan we aannemen dat <span class="math inline">\(\mu=84.4\)</span> en <span class="math inline">\(s=8.4\)</span>):</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="ch-toetsing.html#cb99-1" aria-hidden="true"></a><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>( <span class="dv">73</span>, <span class="dt">mean=</span><span class="fl">84.4</span>, <span class="dt">sd=</span><span class="fl">8.4</span> ) </span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="ch-toetsing.html#cb100-1" aria-hidden="true"></a><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>( <span class="dv">73</span>, <span class="dt">mean=</span><span class="fl">84.4</span>, <span class="dt">sd=</span><span class="fl">8.4</span> ) </span></code></pre></div>
 <pre><code>## [1] 0.9126321</code></pre>
 <p>Voor ongepaarde, onafhankelijke waarnemingen kunnen we het kleinste
 significante effect uitrekenen (zie ook
@@ -1505,7 +1507,7 @@ Fig. <a href="ch-toetsing.html#fig:kleinstesignifverschil">13.3</a>); daarvoor 
 Je moet bij die functie de gewenste <code>power</code> als
 argument opgeven (power = <span class="math inline">\(1-\beta\)</span>; zie
 §<a href="ch-power.html#sec:power-inleiding">14.1</a>).</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="ch-toetsing.html#cb101-1" aria-hidden="true"></a><span class="kw">power.t.test</span>( <span class="dt">n=</span><span class="dv">122</span>, <span class="dt">sig=</span>.<span class="dv">05</span>, <span class="dt">power=</span>.<span class="dv">90</span>, <span class="dt">type=</span><span class="st">&quot;two.sample&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="ch-toetsing.html#cb102-1" aria-hidden="true"></a><span class="kw">power.t.test</span>( <span class="dt">n=</span><span class="dv">122</span>, <span class="dt">sig=</span>.<span class="dv">05</span>, <span class="dt">power=</span>.<span class="dv">90</span>, <span class="dt">type=</span><span class="st">&quot;two.sample&quot;</span> )</span></code></pre></div>
 <pre><code>## 
 ##      Two-sample t test power calculation 
 ## 
@@ -1520,8 +1522,8 @@ argument opgeven (power = <span class="math inline">\(1-\beta\)</span>; zie
 <p>In de uitvoer staat bij <code>delta</code> het kleinste significante effect aangegeven; zie ook Voorbeeld 13.3 hierboven.</p>
 <p>Voor een enkele steekproef met twee gepaarde observaties
 (formule <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>):</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="ch-toetsing.html#cb103-1" aria-hidden="true"></a>ujedata &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;;&quot;</span> )</span>
-<span id="cb103-2"><a href="ch-toetsing.html#cb103-2" aria-hidden="true"></a><span class="kw">with</span>( ujedata, <span class="kw">mean</span>(cond.u<span class="op">-</span>cond.je) <span class="op">/</span><span class="st"> </span><span class="kw">sd</span>(cond.u<span class="op">-</span>cond.je) )</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="ch-toetsing.html#cb104-1" aria-hidden="true"></a>ujedata &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;;&quot;</span> )</span>
+<span id="cb104-2"><a href="ch-toetsing.html#cb104-2" aria-hidden="true"></a><span class="kw">with</span>( ujedata, <span class="kw">mean</span>(cond.u<span class="op">-</span>cond.je) <span class="op">/</span><span class="st"> </span><span class="kw">sd</span>(cond.u<span class="op">-</span>cond.je) )</span></code></pre></div>
 <pre><code>## [1] -2.130141</code></pre>
 </div>
 <div id="betrouwbaarheidsinterval-van-de-effectgrootte" class="section level3" number="13.8.4">
