@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  2 NOV 2020 20:10
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  18 NOV 2020 20:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1569,12 +1569,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17959 strings out of 479441
- 317920 string characters out of 5880450
- 810210 words of memory out of 5000000
- 36994 multiletter control sequences out of 15000+600000
+ 17965 strings out of 479441
+ 318007 string characters out of 5880450
+ 810263 words of memory out of 5000000
+ 37000 multiletter control sequences out of 15000+600000
  545455 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,10n,118p,1133b,581s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,10n,118p,1133b,577s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on KMS-NL.pdf (278 pages).
