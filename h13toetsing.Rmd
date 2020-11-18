@@ -138,7 +138,7 @@ kunnen allerlei andere, plausibele redenen zijn waarom een wel bestaand
 effect (H0 is onwaar) toch niet goed geobserveerd wordt. Als ik geen
 vogels hoor zingen, dan betekent dat niet noodzakelijkerwijs dat er echt
 geen vogels zingen. Meer algemeen: "absence of evidence is not evidence
-of absence" (; ). Het is daarom goed om ook altijd de grootte van het
+of absence" @Sagan96, p.121; @Alde04. Het is daarom goed om ook altijd de grootte van het
 gevonden effect of verschil te rapporteren (dit wordt nader uitgelegd in
 §\@ref(#sec:ttoets-effectgrootte) hieronder).
 
