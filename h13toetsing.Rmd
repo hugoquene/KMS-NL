@@ -494,6 +494,10 @@ Bevestig met `Continue` en met `OK`.\
 De uitvoer bevat meerdere beschrijvende statistische maten, waaronder nu
 ook het 95% betrouwbaarheidsinterval van het gemiddelde.
 
+### JASP
+
+Hier komen JASP instructies.
+
 ### R
 
 R vermeldt het betrouwbaarheidsinterval van het gemiddelde (met een zelf
