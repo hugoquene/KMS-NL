@@ -301,6 +301,10 @@ een *tweezijdige* $t$-toets.
 Neem bij het overnemen van die uitvoer goede notitie van de waarschuwing in
 §\@ref(sec:pgroterdannul) hieronder: SPSS rapporteert alsof `p=.000` maar dat is onjuist. 
 
+### JASP
+
+Hier komen JASP instructies.
+
 ### R
 
 Onze hierboven besproken hypothese kan worden getoetst met de volgende opdrachten:
