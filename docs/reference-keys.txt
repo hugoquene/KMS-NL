@@ -205,12 +205,14 @@ sec:ttoets-vrijheidsgraden
 sec:formules13-1
 sec:ttoets-aannames
 spss-10
+jasp
 r-11
 sec:pgroterdannul
 sec:ttoets-eenzijdigtweezijdig
 sec:t-betrouwbaarheidsinterval-gemiddelde
 sec:formules13-2
 spss-11
+jasp-1
 r-12
 sec:ttoets-onafh
 aannames
