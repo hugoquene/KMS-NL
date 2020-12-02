@@ -304,3 +304,6 @@ app:randomgetallen
 app:kritiekeZwaarden
 app:kritieketwaarden
 app:kritiekechi2waarden
+jasp
+jasp-1
+jasp-2
