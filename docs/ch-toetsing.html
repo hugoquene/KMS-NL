@@ -350,7 +350,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-1"><i class="fa fa-check"></i><b>13.2.2</b> formules</a></li>
 <li class="chapter" data-level="13.2.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-aannames"><i class="fa fa-check"></i><b>13.2.3</b> aannames</a></li>
 <li class="chapter" data-level="13.2.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
-<li class="chapter" data-level="13.2.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-11"><i class="fa fa-check"></i><b>13.2.5</b> R</a></li>
+<li class="chapter" data-level="13.2.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#jasp"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
+<li class="chapter" data-level="13.2.6" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-11"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:pgroterdannul"><i class="fa fa-check"></i><b>13.3</b> Overschrijdingskans <span class="math inline">\(p\)</span> is altijd groter dan nul</a></li>
 <li class="chapter" data-level="13.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-eenzijdigtweezijdig"><i class="fa fa-check"></i><b>13.4</b> Eenzijdige en tweezijdige toetsen</a></li>
@@ -358,7 +359,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="13.5.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-2"><i class="fa fa-check"></i><b>13.5.1</b> formules</a></li>
 <li class="chapter" data-level="13.5.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
-<li class="chapter" data-level="13.5.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-12"><i class="fa fa-check"></i><b>13.5.3</b> R</a></li>
+<li class="chapter" data-level="13.5.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#jasp-1"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
+<li class="chapter" data-level="13.5.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-12"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.6" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-onafh"><i class="fa fa-check"></i><b>13.6</b> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven</a>
 <ul>
@@ -728,8 +730,12 @@ een <em>tweezijdige</em> <span class="math inline">\(t\)</span>-toets.</p>
 <p>Neem bij het overnemen van die uitvoer goede notitie van de waarschuwing in
 §<a href="ch-toetsing.html#sec:pgroterdannul">13.3</a> hieronder: SPSS rapporteert alsof <code>p=.000</code> maar dat is onjuist.</p>
 </div>
-<div id="r-11" class="section level3" number="13.2.5">
-<h3><span class="header-section-number">13.2.5</span> R</h3>
+<div id="jasp" class="section level3" number="13.2.5">
+<h3><span class="header-section-number">13.2.5</span> JASP</h3>
+<p>Hier komen JASP instructies.</p>
+</div>
+<div id="r-11" class="section level3" number="13.2.6">
+<h3><span class="header-section-number">13.2.6</span> R</h3>
 <p>Onze hierboven besproken hypothese kan worden getoetst met de volgende opdrachten:</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="ch-toetsing.html#cb86-1" aria-hidden="true"></a>gramm2013 &lt;-<span class="st"> </span><span class="kw">read.csv</span>( <span class="dt">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="dt">header=</span>F)</span>
 <span id="cb86-2"><a href="ch-toetsing.html#cb86-2" aria-hidden="true"></a><span class="kw">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;opleiding&quot;</span>)</span>
@@ -878,8 +884,12 @@ Bevestig met <code>Continue</code> en met <code>OK</code>.<br />
 De uitvoer bevat meerdere beschrijvende statistische maten, waaronder nu
 ook het 95% betrouwbaarheidsinterval van het gemiddelde.</p>
 </div>
-<div id="r-12" class="section level3" number="13.5.3">
-<h3><span class="header-section-number">13.5.3</span> R</h3>
+<div id="jasp-1" class="section level3" number="13.5.3">
+<h3><span class="header-section-number">13.5.3</span> JASP</h3>
+<p>Hier komen JASP instructies.</p>
+</div>
+<div id="r-12" class="section level3" number="13.5.4">
+<h3><span class="header-section-number">13.5.4</span> R</h3>
 <p>R vermeldt het betrouwbaarheidsinterval van het gemiddelde (met een zelf
 op te geven betrouwbaarheidsniveau) bij een <span class="math inline">\(t\)</span>-toets. We voeren dus wederom een <span class="math inline">\(t\)</span>-toets
 uit en vinden het betrouwbaarheidsinterval van het gemiddelde in de
