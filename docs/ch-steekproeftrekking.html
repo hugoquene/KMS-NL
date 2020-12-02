@@ -351,7 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-1"><i class="fa fa-check"></i><b>13.2.2</b> formules</a></li>
 <li class="chapter" data-level="13.2.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-aannames"><i class="fa fa-check"></i><b>13.2.3</b> aannames</a></li>
 <li class="chapter" data-level="13.2.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
-<li class="chapter" data-level="13.2.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#jasp"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
+<li class="chapter" data-level="13.2.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#jasp-1"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
 <li class="chapter" data-level="13.2.6" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-11"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:pgroterdannul"><i class="fa fa-check"></i><b>13.3</b> Overschrijdingskans <span class="math inline">\(p\)</span> is altijd groter dan nul</a></li>
@@ -360,7 +360,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="13.5.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-2"><i class="fa fa-check"></i><b>13.5.1</b> formules</a></li>
 <li class="chapter" data-level="13.5.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
-<li class="chapter" data-level="13.5.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#jasp-1"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
+<li class="chapter" data-level="13.5.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#jasp-2"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
 <li class="chapter" data-level="13.5.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-12"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.6" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-onafh"><i class="fa fa-check"></i><b>13.6</b> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven</a>
@@ -734,8 +734,8 @@ Het is niet mogelijk een eigen beginwaarde te geven om zo reproduceerbare analys
 <p>In R kunnen we random getallen genereren met de functie <code>runif</code>. Deze functie kiest aselect (<strong>r</strong>andom) waarden uit een vlakke (<strong>unif</strong>orme) kansverdeling, d.w.z. dat elk getal tussen de ondergrens en bovengrens een gelijke kans heeft om getrokken te worden. De standaard grenzen zijn <span class="math inline">\((0,1)\)</span>. De waarden kunnen we afronden tot gehele getallen, zoals gedaan is voor Appendix <a href="app-randomgetallen.html#app:randomgetallen">A</a>.</p>
 <p>Als je random getallen wilt genereren volgens een normale kansverdeling (zie Hoofdstuk <a href="ch-kansverdelingen.html#ch:kansverdelingen">10</a>), gebruik dan de functie <code>rnorm(n,mean,sd)</code>.</p>
 <p>Met de opdracht <code>set.seed</code> geven we een eigen beginwaarde mee aan de “random number generator”, om zo reproduceerbare analyses (en demonstraties) te kunnen maken.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="ch-steekproeftrekking.html#cb4-1" aria-hidden="true"></a><span class="kw">set.seed</span>(<span class="dv">20200912</span>) <span class="co"># reproduceerbaar voorbeeld (bijv datum als getal)</span></span>
-<span id="cb4-2"><a href="ch-steekproeftrekking.html#cb4-2" aria-hidden="true"></a><span class="kw">round</span> ( <span class="kw">runif</span>( <span class="dt">n=</span><span class="dv">5</span>, <span class="dt">min=</span><span class="dv">0</span>, <span class="dt">max=</span><span class="dv">9999</span> ) )</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="ch-steekproeftrekking.html#cb13-1" aria-hidden="true"></a><span class="kw">set.seed</span>(<span class="dv">20200912</span>) <span class="co"># reproduceerbaar voorbeeld (bijv datum als getal)</span></span>
+<span id="cb13-2"><a href="ch-steekproeftrekking.html#cb13-2" aria-hidden="true"></a><span class="kw">round</span> ( <span class="kw">runif</span>( <span class="dt">n=</span><span class="dv">5</span>, <span class="dt">min=</span><span class="dv">0</span>, <span class="dt">max=</span><span class="dv">9999</span> ) )</span></code></pre></div>
 <pre><code>## [1] 8193 7482 4206 1684 5653</code></pre>
 <p>Je kunt deze random getallen gebruiken om op aselecte wijze eenheden (bijv. proefpersonen) te kiezen voor een steekproef, maar uiteraard ook om op aselecte wijze de geselecteerde eenheden toe te wijzen aan condities, enzovoort.</p>
 </div>

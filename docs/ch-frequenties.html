@@ -217,7 +217,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:aselectesteekproef"><i class="fa fa-check"></i><b>7.3</b> Aselecte steekproeven</a>
 <ul>
 <li class="chapter" data-level="7.3.1" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#spss"><i class="fa fa-check"></i><b>7.3.1</b> SPSS</a></li>
-<li class="chapter" data-level="7.3.2" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#r"><i class="fa fa-check"></i><b>7.3.2</b> R</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#jasp"><i class="fa fa-check"></i><b>7.3.2</b> JASP</a></li>
+<li class="chapter" data-level="7.3.3" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#r"><i class="fa fa-check"></i><b>7.3.3</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:steekproefgrootte"><i class="fa fa-check"></i><b>7.4</b> Steekproefgrootte</a></li>
 </ul></li>
@@ -350,7 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.2.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-1"><i class="fa fa-check"></i><b>13.2.2</b> formules</a></li>
 <li class="chapter" data-level="13.2.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-aannames"><i class="fa fa-check"></i><b>13.2.3</b> aannames</a></li>
 <li class="chapter" data-level="13.2.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
-<li class="chapter" data-level="13.2.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#jasp"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
+<li class="chapter" data-level="13.2.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#jasp-1"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
 <li class="chapter" data-level="13.2.6" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-11"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:pgroterdannul"><i class="fa fa-check"></i><b>13.3</b> Overschrijdingskans <span class="math inline">\(p\)</span> is altijd groter dan nul</a></li>
@@ -359,7 +360,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="13.5.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-2"><i class="fa fa-check"></i><b>13.5.1</b> formules</a></li>
 <li class="chapter" data-level="13.5.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
-<li class="chapter" data-level="13.5.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#jasp-1"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
+<li class="chapter" data-level="13.5.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#jasp-2"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
 <li class="chapter" data-level="13.5.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-12"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="13.6" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-onafh"><i class="fa fa-check"></i><b>13.6</b> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven</a>
@@ -736,17 +737,17 @@ Bevestig met <code>OK</code>.<br />
 </div>
 <div id="r-1" class="section level3" number="8.2.3">
 <h3><span class="header-section-number">8.2.3</span> R</h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="ch-frequenties.html#cb15-1" aria-hidden="true"></a>enq2011 &lt;-<span class="st"> </span><span class="kw">read.table</span>( </span>
-<span id="cb15-2"><a href="ch-frequenties.html#cb15-2" aria-hidden="true"></a>    <span class="dt">file=</span><span class="kw">url</span>(<span class="st">&quot;http://www.hugoquene.nl/R/enq2011.txt&quot;</span>), </span>
-<span id="cb15-3"><a href="ch-frequenties.html#cb15-3" aria-hidden="true"></a>    <span class="dt">header=</span><span class="ot">TRUE</span> )</span>
-<span id="cb15-4"><a href="ch-frequenties.html#cb15-4" aria-hidden="true"></a><span class="kw">table</span>( enq2011<span class="op">$</span>schoen, <span class="dt">useNA=</span><span class="st">&quot;ifany&quot;</span> ) </span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="ch-frequenties.html#cb16-1" aria-hidden="true"></a>enq2011 &lt;-<span class="st"> </span><span class="kw">read.table</span>( </span>
+<span id="cb16-2"><a href="ch-frequenties.html#cb16-2" aria-hidden="true"></a>    <span class="dt">file=</span><span class="kw">url</span>(<span class="st">&quot;http://www.hugoquene.nl/R/enq2011.txt&quot;</span>), </span>
+<span id="cb16-3"><a href="ch-frequenties.html#cb16-3" aria-hidden="true"></a>    <span class="dt">header=</span><span class="ot">TRUE</span> )</span>
+<span id="cb16-4"><a href="ch-frequenties.html#cb16-4" aria-hidden="true"></a><span class="kw">table</span>( enq2011<span class="op">$</span>schoen, <span class="dt">useNA=</span><span class="st">&quot;ifany&quot;</span> ) </span></code></pre></div>
 <p>De uitvoer van bovenstaande <code>table</code> commando is weergegeven in Tabel <a href="ch-frequenties.html#tab:schoenmaat">8.2</a>.
 De code <code>NA</code> (Not Available) wordt in R gebruikt om ontbrekende gegevens aan te duiden.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="ch-frequenties.html#cb16-1" aria-hidden="true"></a><span class="co"># lees dataset </span></span>
-<span id="cb16-2"><a href="ch-frequenties.html#cb16-2" aria-hidden="true"></a><span class="kw">load</span>(<span class="dt">file=</span><span class="st">&quot;data/pauses6.Rda&quot;</span>)</span>
-<span id="cb16-3"><a href="ch-frequenties.html#cb16-3" aria-hidden="true"></a><span class="co"># haal daaruit pauzeduren (kolom 12) voor jaar 2012, in aparte variabele `troon2012`</span></span>
-<span id="cb16-4"><a href="ch-frequenties.html#cb16-4" aria-hidden="true"></a>troon2012 &lt;-<span class="st"> </span>pauses6[ pauses6<span class="op">$</span>jaar<span class="op">==</span><span class="dv">2012</span>, <span class="dv">12</span> ] <span class="co"># save col_12 as single vector</span></span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="ch-frequenties.html#cb17-1" aria-hidden="true"></a><span class="kw">table</span>( <span class="kw">cut</span>( troon2012, <span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">5</span>,<span class="dt">by=</span><span class="fl">0.5</span>) ) )</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="ch-frequenties.html#cb17-1" aria-hidden="true"></a><span class="co"># lees dataset </span></span>
+<span id="cb17-2"><a href="ch-frequenties.html#cb17-2" aria-hidden="true"></a><span class="kw">load</span>(<span class="dt">file=</span><span class="st">&quot;data/pauses6.Rda&quot;</span>)</span>
+<span id="cb17-3"><a href="ch-frequenties.html#cb17-3" aria-hidden="true"></a><span class="co"># haal daaruit pauzeduren (kolom 12) voor jaar 2012, in aparte variabele `troon2012`</span></span>
+<span id="cb17-4"><a href="ch-frequenties.html#cb17-4" aria-hidden="true"></a>troon2012 &lt;-<span class="st"> </span>pauses6[ pauses6<span class="op">$</span>jaar<span class="op">==</span><span class="dv">2012</span>, <span class="dv">12</span> ] <span class="co"># save col_12 as single vector</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="ch-frequenties.html#cb18-1" aria-hidden="true"></a><span class="kw">table</span>( <span class="kw">cut</span>( troon2012, <span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>,<span class="dt">to=</span><span class="dv">5</span>,<span class="dt">by=</span><span class="fl">0.5</span>) ) )</span></code></pre></div>
 <p>Ontleed bovenstaande opdracht vanuit de binnenste haakjes naar buiten:
 (i) <code>seq</code>: maak een reeks (sequence) van 0 tot 5 (eenheden, hier: seconden) in stappen van 0.5 seconden,
 (ii) <code>cut</code>: hak de afhankelijke variabele <code>troon2012</code> (duren van pauzes in de Troonrede van 2012) op in intervallen op basis van deze reeks,
@@ -830,29 +831,29 @@ Bevestig met <code>OK</code>.<br />
 <div id="r-2" class="section level3" number="8.4.2">
 <h3><span class="header-section-number">8.4.2</span> R</h3>
 <p>Een staafdiagram zoals Figuur <a href="ch-frequenties.html#fig:klankfreq-barplot">8.1</a> maak je in R met de volgende commando’s:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="ch-frequenties.html#cb19-1" aria-hidden="true"></a><span class="co"># lees data</span></span>
-<span id="cb19-2"><a href="ch-frequenties.html#cb19-2" aria-hidden="true"></a>klankfreq &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/klankfreq.txt&quot;</span>, <span class="dt">header=</span>T )</span>
-<span id="cb19-3"><a href="ch-frequenties.html#cb19-3" aria-hidden="true"></a><span class="co"># maak barplot van kolom `aantal` in dataset `klankfreq`</span></span>
-<span id="cb19-4"><a href="ch-frequenties.html#cb19-4" aria-hidden="true"></a><span class="kw">with</span>( klankfreq, <span class="kw">barplot</span>( aantal, <span class="dt">beside=</span>T, </span>
-<span id="cb19-5"><a href="ch-frequenties.html#cb19-5" aria-hidden="true"></a>                          <span class="dt">ylab=</span><span class="st">&quot;Aantal&quot;</span>,</span>
-<span id="cb19-6"><a href="ch-frequenties.html#cb19-6" aria-hidden="true"></a>                          <span class="dt">main=</span><span class="st">&quot;Klankfrequenties in het Nederlands (N=2968220)&quot;</span>,</span>
-<span id="cb19-7"><a href="ch-frequenties.html#cb19-7" aria-hidden="true"></a>                          <span class="dt">col=</span><span class="kw">ifelse</span>(klankfreq[,<span class="dv">1</span>]<span class="op">==</span><span class="st">&quot;V&quot;</span>,<span class="st">&quot;grey40&quot;</span>,<span class="st">&quot;grey20&quot;</span>) ) ) -&gt;<span class="st"> </span>klankfreq_barplot</span>
-<span id="cb19-8"><a href="ch-frequenties.html#cb19-8" aria-hidden="true"></a><span class="co"># maak labels langs onderste horizontale as</span></span>
-<span id="cb19-9"><a href="ch-frequenties.html#cb19-9" aria-hidden="true"></a><span class="kw">axis</span>(<span class="dt">side=</span><span class="dv">1</span>, <span class="dt">at=</span>klankfreq_barplot, <span class="dt">labels=</span>klankfreq<span class="op">$</span>hoofdklasse)</span>
-<span id="cb19-10"><a href="ch-frequenties.html#cb19-10" aria-hidden="true"></a><span class="kw">axis</span>(<span class="dt">side=</span><span class="dv">1</span>, <span class="dt">at=</span>klankfreq_barplot, <span class="dt">tick=</span>F, <span class="dt">line=</span><span class="dv">1</span>, <span class="dt">labels=</span>klankfreq<span class="op">$</span>onderklasse )</span>
-<span id="cb19-11"><a href="ch-frequenties.html#cb19-11" aria-hidden="true"></a><span class="co"># of eenvoudiger: with(klankfreq, barplot(aantal) ) # alle defaults </span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="ch-frequenties.html#cb20-1" aria-hidden="true"></a><span class="co"># lees data</span></span>
+<span id="cb20-2"><a href="ch-frequenties.html#cb20-2" aria-hidden="true"></a>klankfreq &lt;-<span class="st"> </span><span class="kw">read.table</span>( <span class="dt">file=</span><span class="st">&quot;data/klankfreq.txt&quot;</span>, <span class="dt">header=</span>T )</span>
+<span id="cb20-3"><a href="ch-frequenties.html#cb20-3" aria-hidden="true"></a><span class="co"># maak barplot van kolom `aantal` in dataset `klankfreq`</span></span>
+<span id="cb20-4"><a href="ch-frequenties.html#cb20-4" aria-hidden="true"></a><span class="kw">with</span>( klankfreq, <span class="kw">barplot</span>( aantal, <span class="dt">beside=</span>T, </span>
+<span id="cb20-5"><a href="ch-frequenties.html#cb20-5" aria-hidden="true"></a>                          <span class="dt">ylab=</span><span class="st">&quot;Aantal&quot;</span>,</span>
+<span id="cb20-6"><a href="ch-frequenties.html#cb20-6" aria-hidden="true"></a>                          <span class="dt">main=</span><span class="st">&quot;Klankfrequenties in het Nederlands (N=2968220)&quot;</span>,</span>
+<span id="cb20-7"><a href="ch-frequenties.html#cb20-7" aria-hidden="true"></a>                          <span class="dt">col=</span><span class="kw">ifelse</span>(klankfreq[,<span class="dv">1</span>]<span class="op">==</span><span class="st">&quot;V&quot;</span>,<span class="st">&quot;grey40&quot;</span>,<span class="st">&quot;grey20&quot;</span>) ) ) -&gt;<span class="st"> </span>klankfreq_barplot</span>
+<span id="cb20-8"><a href="ch-frequenties.html#cb20-8" aria-hidden="true"></a><span class="co"># maak labels langs onderste horizontale as</span></span>
+<span id="cb20-9"><a href="ch-frequenties.html#cb20-9" aria-hidden="true"></a><span class="kw">axis</span>(<span class="dt">side=</span><span class="dv">1</span>, <span class="dt">at=</span>klankfreq_barplot, <span class="dt">labels=</span>klankfreq<span class="op">$</span>hoofdklasse)</span>
+<span id="cb20-10"><a href="ch-frequenties.html#cb20-10" aria-hidden="true"></a><span class="kw">axis</span>(<span class="dt">side=</span><span class="dv">1</span>, <span class="dt">at=</span>klankfreq_barplot, <span class="dt">tick=</span>F, <span class="dt">line=</span><span class="dv">1</span>, <span class="dt">labels=</span>klankfreq<span class="op">$</span>onderklasse )</span>
+<span id="cb20-11"><a href="ch-frequenties.html#cb20-11" aria-hidden="true"></a><span class="co"># of eenvoudiger: with(klankfreq, barplot(aantal) ) # alle defaults </span></span></code></pre></div>
 <p>Een histogram zoals in Figuur <a href="ch-frequenties.html#fig:troonrede2012-hist">8.2</a>
 maak je in R met de volgende commando’s:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="ch-frequenties.html#cb20-1" aria-hidden="true"></a><span class="co"># lees dataset </span></span>
-<span id="cb20-2"><a href="ch-frequenties.html#cb20-2" aria-hidden="true"></a><span class="kw">load</span>(<span class="dt">file=</span><span class="st">&quot;data/pauses6.Rda&quot;</span>)</span>
-<span id="cb20-3"><a href="ch-frequenties.html#cb20-3" aria-hidden="true"></a><span class="co"># haal daaruit pauzeduren (kolom 12) voor jaar 2012, in aparte variabele `troon2012`</span></span>
-<span id="cb20-4"><a href="ch-frequenties.html#cb20-4" aria-hidden="true"></a>troon2012 &lt;-<span class="st"> </span>pauses6[ pauses6<span class="op">$</span>jaar<span class="op">==</span><span class="dv">2012</span>, <span class="dv">12</span> ] <span class="co"># save col_12 as single vector</span></span>
-<span id="cb20-5"><a href="ch-frequenties.html#cb20-5" aria-hidden="true"></a><span class="co"># maak histogram</span></span>
-<span id="cb20-6"><a href="ch-frequenties.html#cb20-6" aria-hidden="true"></a><span class="kw">hist</span>( troon2012, </span>
-<span id="cb20-7"><a href="ch-frequenties.html#cb20-7" aria-hidden="true"></a>      <span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dt">by=</span><span class="fl">0.25</span>),</span>
-<span id="cb20-8"><a href="ch-frequenties.html#cb20-8" aria-hidden="true"></a>      <span class="dt">col=</span><span class="st">&quot;grey80&quot;</span>,</span>
-<span id="cb20-9"><a href="ch-frequenties.html#cb20-9" aria-hidden="true"></a>      <span class="dt">xlab=</span><span class="st">&quot;Duur van pauze (s)&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Aantal&quot;</span>, </span>
-<span id="cb20-10"><a href="ch-frequenties.html#cb20-10" aria-hidden="true"></a>      <span class="dt">main=</span><span class="st">&quot;Troonrede 2012 (N=305 pauzes)&quot;</span> ) -&gt;<span class="st"> </span>troonrede2012pauzes_hist</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="ch-frequenties.html#cb21-1" aria-hidden="true"></a><span class="co"># lees dataset </span></span>
+<span id="cb21-2"><a href="ch-frequenties.html#cb21-2" aria-hidden="true"></a><span class="kw">load</span>(<span class="dt">file=</span><span class="st">&quot;data/pauses6.Rda&quot;</span>)</span>
+<span id="cb21-3"><a href="ch-frequenties.html#cb21-3" aria-hidden="true"></a><span class="co"># haal daaruit pauzeduren (kolom 12) voor jaar 2012, in aparte variabele `troon2012`</span></span>
+<span id="cb21-4"><a href="ch-frequenties.html#cb21-4" aria-hidden="true"></a>troon2012 &lt;-<span class="st"> </span>pauses6[ pauses6<span class="op">$</span>jaar<span class="op">==</span><span class="dv">2012</span>, <span class="dv">12</span> ] <span class="co"># save col_12 as single vector</span></span>
+<span id="cb21-5"><a href="ch-frequenties.html#cb21-5" aria-hidden="true"></a><span class="co"># maak histogram</span></span>
+<span id="cb21-6"><a href="ch-frequenties.html#cb21-6" aria-hidden="true"></a><span class="kw">hist</span>( troon2012, </span>
+<span id="cb21-7"><a href="ch-frequenties.html#cb21-7" aria-hidden="true"></a>      <span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dt">by=</span><span class="fl">0.25</span>),</span>
+<span id="cb21-8"><a href="ch-frequenties.html#cb21-8" aria-hidden="true"></a>      <span class="dt">col=</span><span class="st">&quot;grey80&quot;</span>,</span>
+<span id="cb21-9"><a href="ch-frequenties.html#cb21-9" aria-hidden="true"></a>      <span class="dt">xlab=</span><span class="st">&quot;Duur van pauze (s)&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Aantal&quot;</span>, </span>
+<span id="cb21-10"><a href="ch-frequenties.html#cb21-10" aria-hidden="true"></a>      <span class="dt">main=</span><span class="st">&quot;Troonrede 2012 (N=305 pauzes)&quot;</span> ) -&gt;<span class="st"> </span>troonrede2012pauzes_hist</span></code></pre></div>
 
 </div>
 </div>

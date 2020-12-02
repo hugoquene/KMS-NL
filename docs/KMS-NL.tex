@@ -119,7 +119,7 @@
 
 \title{Kwantitatieve Methoden en Statistiek}
 \author{true}
-\date{Versie gecompileerd op 30 Nov 2020}
+\date{Versie gecompileerd op 02 Dec 2020}
 
 \begin{document}
 \maketitle
@@ -4213,6 +4213,30 @@ Transform > Random Number Generators...
 \end{verbatim}
 
 Vink in het paneel ``Active Generator Initialization'' de optie \texttt{Set\ Starting\ Point} aan, en vul een eigen beginwaarde in, bijvoorbeeld je lievelingsgetal. Bevestig met \texttt{OK}.
+
+Je kunt deze random getallen gebruiken om op aselecte wijze eenheden (bijv. proefpersonen) te kiezen voor een steekproef, maar uiteraard ook om op aselecte wijze de geselecteerde eenheden toe te wijzen aan condities, enzovoort.
+
+\hypertarget{jasp}{%
+\subsection{JASP}\label{jasp}}
+
+In JASP kan een kolom met random getallen worden aangemaakt door eerst een nieuwe variabele (kolom) aan te maken en deze daarna te vullen met random getallen.
+
+Het aanmaken van een nieuwe variabele gaat door in het tabblad met data op de \textbf{+}-button te klikken rechts van de naam van de laatste kolom. Er verschijnt een paneel ``Create Computed Column'', waar je een naam voor de nieuwe variabele kunt invullen. Ook kun je kiezen uit \texttt{R} en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of handmatig. Hieronder wordt voor allebei de opties uitgelegd hoe er random getallen mee kunnen worden gegenereerd. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen. Voor random getallen kan dit op \texttt{Scale} blijven staan. Klik vervolgens op \texttt{Create\ Column} om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.
+
+Als \textbf{R} is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met ``\#Enter your R code here :)''. Hier kan R code worden gegeven die met behulp van R functies random getallen genereert. Vul de R code in en klik onderaan het veld op \texttt{Compute\ column} om de lege variabele te vullen met de gegenereerde getallen.\\
+De functie \texttt{runif(n,\ min,\ max)} kan worden gebruikt om aselect (\textbf{r}andom) waarden uit een vlakke (\textbf{unif}orme) kansverdeling te genereren, d.w.z. dat elk getal tussen de ondergrens en bovengrens een gelijke kans heeft om getrokken te worden. De standaard grenzen zijn \((0,1)\). De waarden kunnen worden afgerond tot gehele getallen door de functie \texttt{round()} te gebruiken. De volgende code geeft bijvoorbeeld 5 gehele getallen tussen 0 en 9999:
+
+\begin{verbatim}
+round( runif(5, 0, 9999) )
+\end{verbatim}
+
+Als je random getallen wilt genereren volgens een normale kansverdeling (zie Hoofdstuk \ref{ch:kansverdelingen}), gebruik dan de functie \texttt{rnorm(n,mean,sd)}.~
+De \texttt{set.seed} functie uit R, om een eigen beginwaarde te geven aan de ``random number generator'' en zo reproduceerbare analyses te kunnen maken, doet het hier niet in JASP. Met dezelfde code zullen er dus telkens andere random getallen worden gegenereerd.
+
+Als het \textbf{aanwijshandje} is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een werkblad. Links daarvan staan de variabelen, erboven wiskundige symbolen, en rechts van het werkblad staan een aantal functies. Hieruit kan handmatig de functie worden geselecteerd om random getallen te genereren. Als er iets fout gaat kun je iets van het werkblad verwijderen door het naar de prullenbak rechtsonderin te slepen. Als de specificatie op het werkblad klaar is, klik dan onder het werkblad op \texttt{Compute\ column} om de lege variabele te vullen met de gegenereerde getallen.\\
+Om aselect getallen uit een vlakke (\textbf{unif}orme) kansverdeling te genereren, d.w.z. dat elk getal tussen de ondergrens en bovengrens een gelijke kans heeft om getrokken te worden, scroll je rechts van het werkblad bij de functies naar beneden en klik op \texttt{unifDist()}. De functie verschijnt dan in het werkblad en hier kunnen ``min'' en ``max'' worden vervangen door de gewenste ondergrens en bovengrens (bijvoorbeeld \texttt{0} en \texttt{9999}). De gegenereerde getallen kunnen ook worden afgerond tot gehele getallen, door rechts van het werkblad de functie \texttt{round(y)} aan te klikken, en de \texttt{unifDist()} functie met ingevulde ``min'' en ``max'' op de plek van ``y'' in te vullen, en als ``n'' het aantal getallen achter de komma, dus in dit geval \texttt{0}, in te vullen. Op het werkblad staat dan \texttt{round(unifDist(0,9999),0)} als instructie.\\
+Als je random getallen wilt genereren volgens een normale kansverdeling (zie Hoofdstuk \ref{ch:kansverdelingen}), kies rechts van het werkblad dan de functie \texttt{normalDist} en vul de gewenste ``mean'' en ``sd'' in.~
+Het is niet mogelijk een eigen beginwaarde te geven om zo reproduceerbare analyses te kunnen maken. Met dezelfde gespecificeerde functies, en ook elke keer als er opnieuw op \texttt{Compute\ column} wordt geklikt, zullen er dus andere random getallen worden gegenereerd.
 
 Je kunt deze random getallen gebruiken om op aselecte wijze eenheden (bijv. proefpersonen) te kiezen voor een steekproef, maar uiteraard ook om op aselecte wijze de geselecteerde eenheden toe te wijzen aan condities, enzovoort.
 
@@ -8310,8 +8334,8 @@ een \emph{tweezijdige} \(t\)-toets.
 Neem bij het overnemen van die uitvoer goede notitie van de waarschuwing in
 §\ref{sec:pgroterdannul} hieronder: SPSS rapporteert alsof \texttt{p=.000} maar dat is onjuist.
 
-\hypertarget{jasp}{%
-\subsection{JASP}\label{jasp}}
+\hypertarget{jasp-1}{%
+\subsection{JASP}\label{jasp-1}}
 
 Hier komen JASP instructies.
 
@@ -8492,8 +8516,8 @@ Bevestig met \texttt{Continue} en met \texttt{OK}.\\
 De uitvoer bevat meerdere beschrijvende statistische maten, waaronder nu
 ook het 95\% betrouwbaarheidsinterval van het gemiddelde.
 
-\hypertarget{jasp-1}{%
-\subsection{JASP}\label{jasp-1}}
+\hypertarget{jasp-2}{%
+\subsection{JASP}\label{jasp-2}}
 
 Hier komen JASP instructies.
 

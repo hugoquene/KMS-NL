@@ -114,6 +114,7 @@ sec:gelegenheidssteekproef
 sec:systematischesteekproef
 sec:aselectesteekproef
 spss
+jasp
 r
 sec:steekproefgrootte
 ch:frequenties
@@ -205,14 +206,14 @@ sec:ttoets-vrijheidsgraden
 sec:formules13-1
 sec:ttoets-aannames
 spss-10
-jasp
+jasp-1
 r-11
 sec:pgroterdannul
 sec:ttoets-eenzijdigtweezijdig
 sec:t-betrouwbaarheidsinterval-gemiddelde
 sec:formules13-2
 spss-11
-jasp-1
+jasp-2
 r-12
 sec:ttoets-onafh
 aannames
@@ -304,6 +305,3 @@ app:randomgetallen
 app:kritiekeZwaarden
 app:kritieketwaarden
 app:kritiekechi2waarden
-jasp
-jasp-1
-jasp-2
