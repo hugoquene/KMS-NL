@@ -196,7 +196,7 @@ onwaar is (zie
 Tabel \@ref(tab:H0H1uitkomsten)). Maar helaas neemt met een hoger
 significantieniveau $\alpha$ ook de kans toe om H0 ten onrechte te
 verwerpen als H0 waar is (d.w.z. om een Type-I-fout te maken). De
-onderzoeker moet een afweging maken tussen tussen fouten van Type-I (met
+onderzoeker moet een afweging maken tussen fouten van Type-I (met
 kans $\alpha$) of van Type-II (met kans $\beta$); zoals eerder gezegd
 moet deze afweging afhangen van de ernst van (de consequenties van) deze
 twee typen van fouten.
@@ -216,7 +216,7 @@ belemmert de groei van onze kennis en ons inzicht, en belemmert de
 wetenschappelijke vooruitgang (zie ook
 voorbeeld 3.2 in Hoofdstuk \@ref(ch:integriteit)).
 
-```{r underpoweredeffectsizes, echo=FALSE, fig.cap="Gevonden effectgroottes (langs horizontale as) in gesimuleerde experimenten (tweezijdige t-toets voor onafhankelijke waarnemingen, alpha=.05), uitgesplitst naar steekproefgrootte (links $n=20$, rechts $n=80$) en naar toetsingsresultaat (donkere symbolen: wel significant; lichte symbolen: niet significant). De ware effectgrootte tussen groepen is altijd $d=0.5$, aangegeven met grijze stippellijn. De gemiddelde gevonden effectgrootte van de significante uitkomsten is aangegeven met zwarte stippellijn. Voor iedere steekproefgrootte zijn 100 stimulaties uitgevoerd (langs verticale as)."}
+```{r underpoweredeffectsizes, echo=FALSE, fig.cap="Gevonden effectgroottes (langs horizontale as) in gesimuleerde experimenten (tweezijdige t-toets voor onafhankelijke waarnemingen, alpha=.05), uitgesplitst naar steekproefgrootte (links $n=20$, rechts $n=80$) en naar toetsingsresultaat (donkere symbolen: wel significant; lichte symbolen: niet significant). De ware effectgrootte tussen groepen is altijd $d=0.5$, aangegeven met grijze stippellijn. De gemiddelde gevonden effectgrootte van de significante uitkomsten is aangegeven met zwarte stippellijn. Voor iedere steekproefgrootte zijn 100 simulaties uitgevoerd (langs verticale as)."}
 # adapted from plot.underpoweredeffectsizes.20170225.R
 # HQ 20150707
 # aangepast HQ 20170225 voor oratie, met 2 panelen
