@@ -424,6 +424,28 @@ voorspelde waarden als de residuen. Controleer of het gemiddelde van de
 residuen inderdaad nul is. In deze tabel zien we ook (regel 2, kolom 4)
 dat de standaarddeviatie van de residuen $3.212$ is.
 
+### JASP
+
+Voor lineaire regressie klik je in de bovenbalk op:
+
+```
+Regression > Linear Regression (onder 'Classical')
+```
+
+Selecteer de variabele *Rekenen* in het veld "Dependent Variable", en de variabele *Lezen* in het veld "Covariates". Klik vervolgens de balk `Model` open en controleer of *Lezen* onder "Model Terms" staat. Ook moet `Include intercept` aangevinkt zijn, om de constante coëfficiënt $a$ te laten berekenen. Open ook de balk `Statistics` en zorg dat `Estimates`, `Model fit` en `R squared change` aangevinkt zijn. Vink onder "Residuals" ook `Statistics` aan om een numerieke samenvatting te krijgen over de residuals. Onder de balk `Plots` mogen ook `Residuals vs. histogram` en `Q-Q plot standardized residuals` worden aangevinkt voor een weergave van de residuals. 
+
+De resulterende uitvoer omvat meerdere tabellen en figuren; deze kan je
+niet rechtstreeks overnemen in je verslag. De tabel getiteld *Model
+Summary* bevat de correlatie-coëfficiënt, hier aangeduid met hoofdletter
+$R=.749$.\
+De tabel getiteld *Coefficients* bevat de regressie-coëfficienten. De
+regel met aanduiding `(Intercept)` vermeldt coëfficient $a=13.25$; de
+regel getiteld `Lezen` vermeldt coëfficient $b=0.51$.\
+De tabel getiteld *Residual Statistics* geeft informatie over zowel de
+voorspelde waarden als de residuen. Controleer of het gemiddelde van de
+residuen inderdaad nul is. In deze tabel zien we ook (regel 2, kolom 4)
+dat de standaarddeviatie van de residuen $3.212$ is.
+
 ### R
 
 ```{r}
