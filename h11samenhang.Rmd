@@ -443,7 +443,7 @@ regel met aanduiding `(Intercept)` vermeldt coëfficient $a=13.25$; de
 regel getiteld `Lezen` vermeldt coëfficient $b=0.51$.\
 De tabel getiteld *Residual Statistics* geeft informatie over zowel de
 voorspelde waarden als de residuen. Controleer of het gemiddelde van de
-residuen inderdaad nul is. In deze tabel zien we ook (regel 2, kolom 4)
+residuen inderdaad (zo goed als gelijk aan) nul is. In deze tabel zien we ook (regel 2, kolom 4)
 dat de standaarddeviatie van de residuen $3.212$ is.
 
 ### R
@@ -727,7 +727,7 @@ Als `R` is aangeklikt als optie om de nieuwe variabele te definiëren, kan de vo
 ```
 ifelse(Rekenen < mean(Rekenen), 0, 1)
 ```
-Dit betekent: als de score op de oude variabele (Rekenen) kleiner is dan (<) de gemiddelde score (mean(Rekenen), dan wordt de score een 0, en anders een 1. Dus: if Rekenen < mean(Rekenen), then 0, else 1. Vul de R code in en klik onderaan op `Compute column` om lege variabele te vullen met de gekozen waardes.
+Dit betekent: als de score op de oude variabele (Rekenen) kleiner is dan (<) de gemiddelde score (mean(Rekenen)), dan wordt de score een 0, en anders een 1. Dus: if Rekenen < mean(Rekenen), then 0, else 1. Vul de R code in en klik onderaan op `Compute column` om lege variabele te vullen met de gekozen waardes.
 
 Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, selecteer je weer de functie `ifElse(y)`. Klik op "test" en selecteer bovenaan $<$. Sleep vervolgens de variabele 'Rekenen' naar de puntjes aan de linkerkant van het teken, en sleep de functie `mean(y)` (uit het scrolmenu rechts) naar de puntjes aan de rechterkant. Sleep de variabele 'Rekenen' nu ook naar de plek waar "values" staat. Vul voor "then" en "else" $0$ en $1$ in. Je hebt dan: `ifElse(Rekenen < mean(Rekenen),0,1)`, en deze formule werkt hetzelfde als de R code van hierboven. Klik op `Compute column` om lege variabele te vullen met de gekozen waardes.
 
