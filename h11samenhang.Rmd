@@ -234,6 +234,16 @@ Kies `Pearsons` correlatiecoëfficiënt, vink aan:
 uitvoer (tabel) voldoet niet aan de stijl-eisen; je moet de gegevens dus
 overnemen in of omzetten naar een eigen tabel die daar wel aan voldoet.
 
+### JASP
+
+Voor Pearson's product-moment-correlatiecoëfficiënt klik je in de bovenbalk op:
+
+```
+Regression > Correlation (onder 'Classical')
+```
+
+Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld "Variables". Zorg dat onder "Sample Correlation Coefficient" `Pearson's r` aangevinkt is, en onder "Additional Options" `Report significance`, `Flag significant correlations` en `Sample size`. Je kunt ook `Display pairwise` aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren. 
+
 ### R
 
 ```{r cito-voorbeeld}
