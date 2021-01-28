@@ -315,3 +315,16 @@ app:randomgetallen
 app:kritiekeZwaarden
 app:kritieketwaarden
 app:kritiekechi2waarden
+eq:kans-scrabble-1-A
+eq:kans-somregel
+eq:complementregel
+eq:kans-productregel
+eq:prob-binomial
+eq:choose
+eq:normaalverdeeld
+eq:prob-normal
+eq:prob-standaardnormaal
+eq:meanofmean
+eq:sem
+eq:t-onesampleCI
+r-17

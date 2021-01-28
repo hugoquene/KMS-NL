@@ -532,6 +532,17 @@ Als `Distributions` nog niet in de bovenbalk staat kun je dit toevoegen door rec
 In de "Normal" invoer is de balk `Show Distribution` als het goed is open. Automatisch staan de waarden voor de standaard-normale kansverdeling al ingevuld en `Probability density function` aangevinkt; je ziet deze verdeling dus meteen in de uitvoer onder *Density Plot*. \
 Voor andere normale kansverdelingen kunnen de waarden voor $\mu$ en $\sigma$ worden aangepast, en ook de range die wordt weergegeven (onder "Options"). Let op dat je bij "Parameters" `$\mu$, $\sigma$` selecteert als je het gemiddelde en de standaarddeviatie ingeeft (voor de standaard-normale kansverdeling maakt dit niet uit, want bij $\sigma=1$ geldt ook $\sigma^2=1$). 
 
+### R
+
+De normale kansverdeling van Figuur \@ref(fig:normaalkansverdeling) kan in R worden verkregen 
+met het onderstaande commando. Hierin wordt een `curve` getekend, waarbij `x` loopt tussen de aangegeven waarden, en `y` is de normale kansverdeling van `x` volgens formule \@ref(eq:prob-normal):
+```{r normkansverdeling.dnorm}
+curve( dnorm( x, mean=0, sd=1 ), 
+       from=-5, to=+5, lwd=4, xlab="x", ylab="P(x)" )
+```
+
+Als je een extra argument `curve( ..., add=TRUE )` toevoegt, dan wordt de curve toegevoegd aan een reeds bestaande plot.  
+
 ## Heeft mijn variabele een normale kansverdeling? {#sec:isvarnormaalverdeeld}
 
 ```{r itunestimeshist-prep, echo=FALSE}
