@@ -154,6 +154,29 @@ Vink aan: `Display frequency tables`.\
 Kies `Format`, kies: `Order by: Descending values`.\
 Bevestig met `OK`.\
 
+### JASP 
+
+Klik in de bovenbalk op `Descriptives`. Selecteer vervolgens de gewenste variabele(n) en plaats ze in het veld "Variables". Vink `Frequency tables (nominal and ordinal variables)` (onder het veld met alle variabelen) aan om voor alle geselecteerde variabelen van nominaal en ordinaal meetniveau een frequentietabel als uitvoer te krijgen.\
+Mocht een variabele als meetniveau "Scale" hebben en je wilt hiervan een frequentietabel, dan moet je eerst het meetniveau aanpassen naar "Nominal" of "Ordinal" door in het data tabblad op het meetniveau-icoontje voor de naam van de variabele te klikken. 
+
+Een variabele van interval of ratio meetniveau kan ook eerst worden opgedeeld in een aantal intervallen. Dit doe je door een nieuwe variabele aan te maken waarbij de originele scores worden omgezet in een interval. Maak de nieuwe variabele aan door op de **+**-button te klikken rechts van de naam van de laatste kolom in de dataset. Er verschijnt een paneel "Create Computed Column", waar je een naam voor de nieuwe variabele kunt invullen, bijvoorbeeld `troon12_interval`. Ook kun je kiezen uit `R` en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of handmatig. Hieronder wordt voor allebei de opties uitgelegd hoe we hiermee de variabele met intervallen maken. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen; dat is in dit geval "Ordinal". Klik vervolgens op `Create Column` om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.
+
+Als `R` is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met "#Enter your R code here :)". Hier kan R code worden gegeven die met behulp van R functies de nieuwe variabele definieert. Vul de R code in en klik onderaan op `Compute column` om de lege variabele te vullen met de gekozen waardes.\
+Om de variabele 'troon2012' op te delen zoals in Tabel \@ref(tab:troonrede2012pauzes) kan de volgende code worden gebruikt:
+```
+cut(troon2012, breaks = seq(0, 5, 0.5)) 
+```
+Hiermee worden de duren van de spreekpauzes van Koningin Beatrix in de Troonrede van 2012 opgedeeld in intervallen van halve seconden (0.5 = breedte interval), en alle intervallen samen lopen van 0 (ondergrens eerste interval) tot 5 (bovengrens laatste interval) seconden. Als je niet precies de breedte en het totale bereik van de intervallen wil bepalen, maar een x aantal gelijke intervallen wilt, kan de volgende code worden gebruikt: 
+```
+cut(troon2012, 10) 
+```
+Hiermee worden de scores opgedeeld in 10 even brede intervallen, waarbij de ondergrens van het eerste interval gelijk is aan de laagste score die er was, en de bovengrens van het laatste interval is gelijk aan de hoogste score die er was. 
+
+Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met links daarvan de variabelen, boven wiskundige symbolen, en rechts een aantal functies. Hier kan handmatig de functie worden geselecteerd die de nieuwe variabele definieert. Klik onderaan op `Compute column` om de lege variabele vervolgens te vullen met de gekozen waardes.\
+Om een variabele op te delen in een aantal gelijke intervallen selecteer je rechts de functie `cut(y)`. Sleep de variabele die je wilt opdelen naar "values" en typ het aantal intervallen dat je wilt op de plek van "numBreaks". Om zelf de breedte en het totale bereik van de intervallen te bepalen zul je de R code optie moeten gebruiken (hierboven beschreven). 
+
+Voor de nieuwe variabele opgedeeld in intervallen kan de frequentietabel worden verkregen zoals helemaal bovenaan beschreven. Ga naar `Descriptives`, selecteer de gewenste variabele (`troon12_interval`) in het veld "Variables" en vink `Frequency tables (nominal and ordinal variables)` (onder het veld met alle variabelen) aan.
+
 ### R
 
 ```{r schoenmaat02, eval=FALSE}
@@ -273,6 +296,10 @@ Kies `Charts`, kies daarna `Chart type: Bar chart` voor een
 staafdiagram of `Chart type: Histogram` voor een histogram (zie
 bovenstaande tekst voor het verschil tussen deze opties).\
 Bevestig met `OK`.\
+
+### JASP
+
+Klik in de bovenbalk op `Descriptives`. Selecteer vervolgens de gewenste variabele(n) en plaats ze in het veld "Variables". Klik de balk `Plots` open en vink `Distribution plots` aan onder "Basic plots". Je zult zien dat JASP automatisch een staafdiagram maakt voor variabelen die het meetniveau "Ordinal" of "Nominal" hebben, en een histogram voor variabelen met meetniveau "Scale". Zorg dus dat het meetniveau van alle variabelen goed staat ingesteld. Je kunt het meetniveau veranderen door in het data tabblad op het meetniveau-icoontje voor de variabele-naam te klikken). 
 
 ### R
 
