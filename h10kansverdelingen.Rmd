@@ -289,6 +289,15 @@ $\sigma = \sqrt{n \times p \times (1-p)} = \sqrt{ 3 \times .38 \times .62} = 0.8
 
 ---
 
+### JASP
+
+De binomiale kansverdeling van Figuur \@ref(fig:binomkansverdeling3) kan in JASP worden verkregen door in de bovenbalk te klikken op:
+```
+Distributions > Binomial (onder 'Discrete')
+```
+Als `Distributions` nog niet in de bovenbalk staat kun je dit toevoegen door rechtsbovenin op de blauwe **+**-button te klikken en `Distributions` aan te vinken.\ 
+In de "Binomial" invoer is de balk `Show Distribution` als het goed is open. Pas hier de waarden voor $p$ (onder "free parameter") en $n$ (onder "Fixed parameter") aan naar $p=0.38$ en $n=3$. Pas onder "Options" ook de range aan naar `Range of $x$ from $0$ to $3$`. Onder "Display" moet `Probability mass function` aangevinkt zijn. In de uitvoer zie je onder *Probability Mass Plot* de binomiale kansverdeling. 
+
 ### R
 
 ```{r binomkansverdeling3.dbinom}
