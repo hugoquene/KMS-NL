@@ -608,7 +608,7 @@ uitvoer bevat eerst de resultaten van de Shapiro-Wilks-toets en de
 Kolmogorov-Smirnov toets. Volgens beide toetsen is de kans om deze
 verdeling te vinden, als H0 waar is, bijna nul --- zie echter de
 waarschuwing in
-§ \@ref(#sec:pgroterdannul)! We verwerpen daarom H0 en concluderen
+§\@ref(sec:pgroterdannul)! We verwerpen daarom H0 en concluderen
 dat de duren van muzieknummers niet normaal verdeeld zijn. Na deze
 toetsresultaten volgt o.a. een QQ-plot.
 
