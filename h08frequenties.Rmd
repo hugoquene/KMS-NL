@@ -166,7 +166,7 @@ Om de variabele 'troon2012' op te delen zoals in Tabel \@ref(tab:troonrede2012pa
 ```
 cut(troon2012, breaks = seq(0, 5, 0.5)) 
 ```
-Hiermee worden de duren van de spreekpauzes van Koningin Beatrix in de Troonrede van 2012 opgedeeld in intervallen van halve secondes (0.5 = breedte interval), en alle intervallen samen lopen van 0 (ondergrens eerste interval) tot 5 (bovengrens laatste interval) seconden. Als je niet precies de breedte en het totale bereik van de intervallen wil bepalen, maar een x aantal gelijke intervallen wilt, kan de volgende code worden gebruikt: 
+Hiermee worden de duren van de spreekpauzes van Koningin Beatrix in de Troonrede van 2012 opgedeeld in intervallen van halve seconden (0.5 = breedte interval), en alle intervallen samen lopen van 0 (ondergrens eerste interval) tot 5 (bovengrens laatste interval) seconden. Als je niet precies de breedte en het totale bereik van de intervallen wil bepalen, maar een x aantal gelijke intervallen wilt, kan de volgende code worden gebruikt: 
 ```
 cut(troon2012, 10) 
 ```
@@ -296,6 +296,10 @@ Kies `Charts`, kies daarna `Chart type: Bar chart` voor een
 staafdiagram of `Chart type: Histogram` voor een histogram (zie
 bovenstaande tekst voor het verschil tussen deze opties).\
 Bevestig met `OK`.\
+
+### JASP
+
+Klik in de bovenbalk op `Descriptives`. Selecteer vervolgens de gewenste variabele(n) en plaats ze in het veld "Variables". Klik de balk `Plots` open en vink `Distribution plots` aan onder "Basic plots". Je zult zien dat JASP automatisch een staafdiagram maakt voor variabelen die het meetniveau "Ordinal" of "Nominal" hebben, en een histogram voor variabelen met meetniveau "Scale". Zorg dus dat het meetniveau van alle variabelen goed staat ingesteld. Je kunt het meetniveau veranderen door in het data tabblad op het meetniveau-icoontje voor de variabele-naam te klikken). 
 
 ### R
 
