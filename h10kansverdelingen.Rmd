@@ -608,9 +608,14 @@ uitvoer bevat eerst de resultaten van de Shapiro-Wilks-toets en de
 Kolmogorov-Smirnov toets. Volgens beide toetsen is de kans om deze
 verdeling te vinden, als H0 waar is, bijna nul --- zie echter de
 waarschuwing in
-§\@ref(#sec:pgroterdannul)! We verwerpen daarom H0 en concluderen
+§ \@ref(#sec:pgroterdannul)! We verwerpen daarom H0 en concluderen
 dat de duren van muzieknummers niet normaal verdeeld zijn. Na deze
 toetsresultaten volgt o.a. een QQ-plot.
+
+### JASP
+
+Klik in de bovenbalk op `Descriptives` en selecteer variabele Time in het veld "Variables". Klik de balk `Plots` open en vink `Distribution plots` aan onder "Basic plots" voor een histogram. Vink ook `Q-Q plots` aan voor een quantile-quantile plot. Klik vervolgens de balk `Statistics` open en vink `Shapiro-Wilk test` aan onder "Distribution".\
+De uitvoer geeft de uitkomst van de Shapiro-Wilk-toets in de tabel *Descriptive Statistics*. We zien dat de kans om deze verdeling te vinden, als H0 waar is, bijna nul is. H0 wordt dus verworpen en we concluderen dat de duren van de muzieknummers niet normaal verdeeld zijn. Dit kun je ook terugzien in de histogram en Q-Q plot. 
 
 ### R
 
