@@ -234,6 +234,16 @@ Kies `Pearsons` correlatiecoëfficiënt, vink aan:
 uitvoer (tabel) voldoet niet aan de stijl-eisen; je moet de gegevens dus
 overnemen in of omzetten naar een eigen tabel die daar wel aan voldoet.
 
+### JASP
+
+Voor Pearson's product-moment-correlatiecoëfficiënt klik je in de bovenbalk op:
+
+```
+Regression > Correlation (onder 'Classical')
+```
+
+Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld "Variables". Zorg dat onder "Sample Correlation Coefficient" `Pearson's r` aangevinkt is, en onder "Additional Options" `Report significance`, `Flag significant correlations` en `Sample size`. Je kunt ook `Display pairwise` aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren. 
+
 ### R
 
 ```{r cito-voorbeeld}
@@ -414,6 +424,28 @@ voorspelde waarden als de residuen. Controleer of het gemiddelde van de
 residuen inderdaad nul is. In deze tabel zien we ook (regel 2, kolom 4)
 dat de standaarddeviatie van de residuen $3.212$ is.
 
+### JASP
+
+Voor lineaire regressie klik je in de bovenbalk op:
+
+```
+Regression > Linear Regression (onder 'Classical')
+```
+
+Selecteer de variabele *Rekenen* in het veld "Dependent Variable", en de variabele *Lezen* in het veld "Covariates". Klik vervolgens de balk `Model` open en controleer of *Lezen* onder "Model Terms" staat. Ook moet `Include intercept` aangevinkt zijn, om de constante coëfficiënt $a$ te laten berekenen. Open ook de balk `Statistics` en zorg dat `Estimates`, `Model fit` en `R squared change` aangevinkt zijn. Vink onder "Residuals" ook `Statistics` aan om een numerieke samenvatting te krijgen over de residuals. Onder de balk `Plots` mogen ook `Residuals vs. histogram` en `Q-Q plot standardized residuals` worden aangevinkt voor een weergave van de residuals. 
+
+De resulterende uitvoer omvat meerdere tabellen en figuren; deze kan je
+niet rechtstreeks overnemen in je verslag. De tabel getiteld *Model
+Summary* bevat de correlatie-coëfficiënt, hier aangeduid met hoofdletter
+$R=.749$.\
+De tabel getiteld *Coefficients* bevat de regressie-coëfficienten. De
+regel met aanduiding `(Intercept)` vermeldt coëfficient $a=13.25$; de
+regel getiteld `Lezen` vermeldt coëfficient $b=0.51$.\
+De tabel getiteld *Residual Statistics* geeft informatie over zowel de
+voorspelde waarden als de residuen. Controleer of het gemiddelde van de
+residuen inderdaad (zo goed als gelijk aan) nul is. In deze tabel zien we ook (regel 2, kolom 4)
+dat de standaarddeviatie van de residuen $3.212$ is.
+
 ### R
 
 ```{r}
@@ -557,6 +589,16 @@ overnemen in of omzetten naar een eigen tabel die daar wel aan voldoet,
 en rapporteren volgens de gebruikelijke conventies voor
 correlatie-analyse.
 
+### JASP
+
+Voor Spearmans rangorde-correlatiecoëfficiënt klik je in de bovenbalk op:
+
+```
+Regression > Correlation (onder 'Classical')
+```
+
+Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld "Variables". Zorg dat onder "Sample Correlation Coefficient" `Spearman's rho` aangevinkt is, en onder "Additional Options" `Report significance`, `Flag significant correlations` en `Sample size`. Je kunt ook `Display pairwise` aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren. 
+
 ### R
 
 ```{r}
@@ -662,6 +704,39 @@ Selecteer de variabelen `StadPlat2` (in "Rows" paneel) en `Reken2`
 kruistabel \@ref(tab:cito-kruis).\
 Kies `Statistics…` en vink optie `Phi and Cramer’s V`aan!\
 Bevestig eerst met `Continue` en daarna nogmaals met `OK`.
+
+### JASP
+
+De dataset `cito` bevat al een variabele `StadPlat` die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve leggen we toch uit hoe je zo'n variabele zelf kunt construeren. 
+
+Maak eerst een nieuwe variabele aan door op de **+**-button te klikken rechts van de naam van de laatste kolom in de dataset. Er verschijnt een paneel "Create Computed Column", waar je een naam voor de nieuwe variabele kunt invullen, bijvoorbeeld `StadPlat2`. Ook kun je kiezen uit `R` en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of handmatig. Hieronder wordt voor allebei de opties uitgelegd hoe we hiermee de herkomst variabele maken. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen. Voor de herkomst variabele zet je dit op `Nominal`. Klik vervolgens op `Create Column` om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg. 
+
+Als `R` is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met "#Enter your R code here :)". Hier kan R code worden gegeven die met behulp van R functies de nieuwe variabele definieert. Vul de R code in en klik onderaan op `Compute column` om de lege variabele te vullen met de gekozen waardes.\
+Voor de herkomst variabele kunnen we de volgende code gebruiken:
+```
+ifelse(Leerling <= 5, 1, 0) 
+```
+Dit betekent: als de score op de oude variabele (Leerling) kleiner dan of gelijk is aan (<=) 5, dan wordt de score een 1, en anders een 0. Dus: if Leerling <= 5, then 1, else 0. Let op dat dit alleen werkt in JASP als de gebruikte variabele (Leerling) op "Scale" meetniveau staat (want alleen dan kun je wiskundige operatoren zoals <= gebruiken). Als het meetniveau van de variabele niet op "Scale" staat pas je dit aan door in het data tabblad op het meetniveau-icoontje voor de variabele-naam te klikken, en "Scale" te selecteren. 
+
+Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met links daarvan de variabelen, boven wiskundige symbolen, en rechts een aantal functies. Hier kan handmatig de functie worden geselecteerd die de nieuwe variabele definieert. Klik onderaan op `Compute column` om de lege variabele vervolgens te vullen met de gekozen waardes.\
+Voor de herkomst variabele scrol je rechts van het veld bij de functies naar beneden en klik op `ifElse(y)`. De functie verschijnt in het veld en hier kunnen "test", "then" en "else" worden vervangen door de gewenste gegevens. Klik op "test" en selecteer bovenaan $\leq$. Sleep vervolgens de variabele 'Leerling' naar de puntjes aan de linkerkant van het teken, en vul rechts $5$ in. Vul voor "then" en "else" $1$ en $0$ in. Je hebt dan: `ifElse(Leerling $\leq$ 5,1,0)`, en deze formule werkt hetzelfde als de R code van hierboven. Let ook hier op dat dit alleen werkt in JASP als de gebruikte variabele (Leerling) op "Scale" meetniveau staat (want alleen dan kun je wiskundige operatoren zoals $\leq$ gebruiken). 
+
+Voor `Rekenen` maak je eerst ook weer een nieuwe variabele aan door op de **+**-button te klikken rechts van de naam van de laatste kolom in de dataset. Geef de nieuwe variabele een naam (`Reken2`), kies `R` of het aanwijshandje, en geef de variabele het meetniveau `Nominal`. Klik vervolgens op `Create Column` om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg. 
+
+Als `R` is aangeklikt als optie om de nieuwe variabele te definiëren, kan de volgende code worden gebruikt: 
+```
+ifelse(Rekenen < mean(Rekenen), 0, 1)
+```
+Dit betekent: als de score op de oude variabele (Rekenen) kleiner is dan (<) de gemiddelde score (mean(Rekenen)), dan wordt de score een 0, en anders een 1. Dus: if Rekenen < mean(Rekenen), then 0, else 1. Vul de R code in en klik onderaan op `Compute column` om de lege variabele te vullen met de gekozen waardes.
+
+Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, selecteer je weer de functie `ifElse(y)`. Klik op "test" en selecteer bovenaan $<$. Sleep vervolgens de variabele 'Rekenen' naar de puntjes aan de linkerkant van het teken, en sleep de functie `mean(y)` (uit het scrolmenu rechts) naar de puntjes aan de rechterkant. Sleep de variabele 'Rekenen' nu ook naar de plek waar "values" staat. Vul voor "then" en "else" $0$ en $1$ in. Je hebt dan: `ifElse(Rekenen < mean(Rekenen),0,1)`, en deze formule werkt hetzelfde als de R code van hierboven. Klik op `Compute column` om de lege variabele te vullen met de gekozen waardes.
+
+Na dit voorbereidend werk kunnen we eindelijk $r_\Phi$ gaan berekenen. Klik in de bovenbalk op:
+```
+Frequencies > Contingency Tables (onder 'Classical')
+```
+Selecteer de variabelen `StadPlat2` (in "Rows" paneel) en `Reken2` (in "Columns" paneel) voor kruistabel \@ref(tab:cito-kruis).\
+Open de `Statistics` balk en vink `Phi and Cramer’s V`aan onder "Nominal".
 
 ### R
 
