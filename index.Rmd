@@ -25,7 +25,7 @@ Dit tekstboek wordt gebruikt als leesstof bij de cursus *Methoden en Statistiek 
 
 De hoofdtekst is gevrijwaard van wiskundige afleidingen en formules, die voor geesteswetenschappers immers weinig bruikbaar zijn. De uitleg is vooral conceptueel, en rijk aan voorbeelden van geesteswetenschappelijk onderzoek. Waar nodig worden formules aangeboden in een aparte paragraaf. 
 
-Dit boek bevat ook aanwijzingen over hoe de besproken statistische analyses en visualisaties uitgevoerd kunnen worden in twee veelgebruikte programma's, nl. SPSS (versie 22 en later) en R (versie 3.0 en later). Ook deze aanwijzingen staan los van de hoofdtekst, in afzonderlijke paragrafen. 
+Dit boek bevat ook aanwijzingen over hoe de besproken statistische analyses en visualisaties uitgevoerd kunnen worden in drie statistische pakketten, nl. SPSS, JASP, en R. In §\@ref(sec:vooruitblik) worden deze pakketten nader besproken. De technische aanwijzingen voor het gebruik van deze pakketten staan eveneens los van de hoofdtekst, in afzonderlijke paragrafen. 
 
 Graag willen we onze mede-docenten danken voor de vele discussies en voorbeelden die op enige wijze verwerkt zijn in dit tekstboek. Onze studenten danken we voor hun nieuwsgierigheid en nauwkeurigheid die geleid heeft tot deze versie van dit tekstboek.  
 
@@ -33,6 +33,7 @@ Ook betonen wij grote dank aan
 Gerrit Bloothooft, 
 Margot van den Berg, 
 Willemijn Heeren, 
+Rianne Kraakman, 
 Caspar van Lissa,
 Els Rose, 
 Tobias Quené, 
@@ -40,13 +41,23 @@ Kirsten Schutter
 en Marijn Struiksma, 
 voor hun adviezen, data, en/of commentaar bij eerdere versies.
 
-Utrecht, december 2016 - september 2020
+Tenslotte danken we Rianne Kraakman voor het schrijven van de subsecties met JASP-instructies. 
+
+Utrecht, september 2020 - januari 2021
 
 Hugo Quené, <https://www.hugoquene.nl>
 
 Huub van den Bergh
 
 ---
+
+## In English please? {-}
+
+Dit is de Nederlandstalige versie van het tekstboek, getiteld *Kwantitatieve Methoden en Statistiek*.
+
+You are currently reading the Dutch version of the textbook. 
+The parallel English version of this textbook, titled *Quantitative Methods and Statistics*, is available at <https://hugoquene.github.io/QMS-EN/>
+
 
 ## Notatie {-}
 
@@ -62,11 +73,11 @@ https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 Gebruik een van de volgende manieren om te verwijzen naar dit tekstboek (in APA-formaat):
 
-Quené, H. \& Van den Bergh, H. (2020). *Kwantitatieve Methoden en Statistiek*. 
-Geraadpleegd op 28 sept 2020 via https://hugoquene.github.io/KMS-NL/ .
+Quené, H. \& Van den Bergh, H. (2021). *Kwantitatieve Methoden en Statistiek*. 
+Geraadpleegd op 28 januari 2021 via https://hugoquene.github.io/KMS-NL/ .
 
-Quené, H. \& Van den Bergh, H. (2020). *Kwantitatieve Methoden en Statistiek* [in Dutch]. 
-Retrieved 28 Sept 2020 from https://hugoquene.github.io/KMS-NL/ .
+Quené, H. \& Van den Bergh, H. (2021). *Kwantitatieve Methoden en Statistiek* [in Dutch]. 
+Retrieved 28 January 2020 from https://hugoquene.github.io/KMS-NL/ .
 
 ## Technische details {-}
 

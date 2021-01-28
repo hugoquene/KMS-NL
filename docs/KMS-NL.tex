@@ -119,7 +119,7 @@
 
 \title{Kwantitatieve Methoden en Statistiek}
 \author{true}
-\date{Versie gecompileerd op 23 Jan 2021}
+\date{Versie gecompileerd op 28 Jan 2021}
 
 \begin{document}
 \maketitle
@@ -140,7 +140,7 @@ Dit tekstboek wordt gebruikt als leesstof bij de cursus \emph{Methoden en Statis
 
 De hoofdtekst is gevrijwaard van wiskundige afleidingen en formules, die voor geesteswetenschappers immers weinig bruikbaar zijn. De uitleg is vooral conceptueel, en rijk aan voorbeelden van geesteswetenschappelijk onderzoek. Waar nodig worden formules aangeboden in een aparte paragraaf.
 
-Dit boek bevat ook aanwijzingen over hoe de besproken statistische analyses en visualisaties uitgevoerd kunnen worden in twee veelgebruikte programma's, nl. SPSS (versie 22 en later) en R (versie 3.0 en later). Ook deze aanwijzingen staan los van de hoofdtekst, in afzonderlijke paragrafen.
+Dit boek bevat ook aanwijzingen over hoe de besproken statistische analyses en visualisaties uitgevoerd kunnen worden in drie statistische pakketten, nl. SPSS, JASP, en R. In §\ref{sec:vooruitblik} worden deze pakketten nader besproken. De technische aanwijzingen voor het gebruik van deze pakketten staan eveneens los van de hoofdtekst, in afzonderlijke paragrafen.
 
 Graag willen we onze mede-docenten danken voor de vele discussies en voorbeelden die op enige wijze verwerkt zijn in dit tekstboek. Onze studenten danken we voor hun nieuwsgierigheid en nauwkeurigheid die geleid heeft tot deze versie van dit tekstboek.
 
@@ -148,6 +148,7 @@ Ook betonen wij grote dank aan
 Gerrit Bloothooft,
 Margot van den Berg,
 Willemijn Heeren,
+Rianne Kraakman,
 Caspar van Lissa,
 Els Rose,
 Tobias Quené,
@@ -155,13 +156,24 @@ Kirsten Schutter
 en Marijn Struiksma,
 voor hun adviezen, data, en/of commentaar bij eerdere versies.
 
-Utrecht, december 2016 - september 2020
+Tenslotte danken we Rianne Kraakman voor het schrijven van de subsecties met JASP-instructies.
+
+Utrecht, september 2020 - januari 2021
 
 Hugo Quené, \url{https://www.hugoquene.nl}
 
 Huub van den Bergh
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{in-english-please}{%
+\section*{In English please?}\label{in-english-please}}
+\addcontentsline{toc}{section}{In English please?}
+
+Dit is de Nederlandstalige versie van het tekstboek, getiteld \emph{Kwantitatieve Methoden en Statistiek}.
+
+You are currently reading the Dutch version of the textbook.
+The parallel English version of this textbook, titled \emph{Quantitative Methods and Statistics}, is available at \url{https://hugoquene.github.io/QMS-EN/}
 
 \hypertarget{notatie}{%
 \section*{Notatie}\label{notatie}}
@@ -182,11 +194,11 @@ This document is licensed under the \emph{GNU GPL 3} license (for details see
 
 Gebruik een van de volgende manieren om te verwijzen naar dit tekstboek (in APA-formaat):
 
-Quené, H. \& Van den Bergh, H. (2020). \emph{Kwantitatieve Methoden en Statistiek}.
-Geraadpleegd op 28 sept 2020 via \url{https://hugoquene.github.io/KMS-NL/} .
+Quené, H. \& Van den Bergh, H. (2021). \emph{Kwantitatieve Methoden en Statistiek}.
+Geraadpleegd op 28 januari 2021 via \url{https://hugoquene.github.io/KMS-NL/} .
 
-Quené, H. \& Van den Bergh, H. (2020). \emph{Kwantitatieve Methoden en Statistiek} {[}in Dutch{]}.
-Retrieved 28 Sept 2020 from \url{https://hugoquene.github.io/KMS-NL/} .
+Quené, H. \& Van den Bergh, H. (2021). \emph{Kwantitatieve Methoden en Statistiek} {[}in Dutch{]}.
+Retrieved 28 January 2020 from \url{https://hugoquene.github.io/KMS-NL/} .
 
 \hypertarget{technische-details}{%
 \section*{Technische details}\label{technische-details}}
@@ -593,8 +605,8 @@ beter in laboratoriumsituaties onderzoeken, terwijl andere beter in
 veldsituaties onderzocht kunnen worden (zoals bovenstaande voorbeelden
 illustreren).
 
-\hypertarget{vooruitblik}{%
-\section{Vooruitblik}\label{vooruitblik}}
+\hypertarget{sec:vooruitblik}{%
+\section{Vooruitblik}\label{sec:vooruitblik}}
 
 Dit tekstboek bestaat uit drie delen. Deel I (hoofdstukken 1 tot en met 7) van dit tekstboek behandelt
 methoden van onderzoek, en geeft een toelichting bij allerlei termen en
@@ -621,16 +633,23 @@ en de conclusies die daaraan verbonden kunnen worden van groot belang is
 voor alle studenten. Om die reden besteden we in dit tekstboek dan ook
 relatief veel aandacht (in deel I) aan de `filosofie' of methodologie achter de besproken statistische technieken en analyses.
 
-In aparte secties geven we
-aan hoe je de besproken statistische analyses zelf kunt uitvoeren in
-SPSS (een populair pakket voor statistische analyses) en in R (een wat
-moeilijker, maar ook krachtiger en veelzijdiger pakket, met stijgende
-populariteit).
-Voor studenten en medewerkers van de Universiteit Utrecht zijn beide statistische pakketten geïnstalleerd in \texttt{MyWorkSpace}.
-SPSS is beschikbaar via \url{https://SurfSpot.nl} voor een sterk gereduceerde prijs.
-R is vrijelijk beschikbaar via \url{https://www.R-project.org}.
-Een korte inleiding in het gebruik van R is te vinden via \url{https://hugoquene.github.io/emlar2020/}.
-Langere inleidingen zijn te vinden bij de uitstekende ``free web books'' die je kunt vinden via \url{https://statisticalhorizons.com/resources/free-web-books-for-learning-r} en in \citet{Dalg02}.
+In aparte secties leggen we uit hoe je de besproken statistische analyses zelf kunt uitvoeren in drie statistische pakketten:
+
+\begin{itemize}
+\item
+  \textbf{SPSS} (versie 22.0 en hoger): een populair pakket voor statistische analyses.\\
+  SPSS is beschikbaar via \url{https://SurfSpot.nl} voor een sterk gereduceerde prijs.
+\item
+  \textbf{JASP} (versie 0.13 en hoger): een aantrekkelijk open-source pakket, met een gebruikersvriendelijke bediening, en met handige presentatie van resultaten.\\
+  JASP is gratis beschikbaar via \url{https://jasp-stats.org/}. Op de website zijn ook inleidingen en instructies te vinden.
+\item
+  \textbf{R} (versie 3.0 en hoger): een wat moeilijker, maar ook krachtiger en veelzijdiger pakket, met snel stijgende populariteit bij onderzoekers.\\
+  R is gratis beschikbaar via \url{https://www.R-project.org}.
+  Een korte inleiding in het gebruik van R is te vinden via \url{https://hugoquene.github.io/emlar2020/}.
+  Langere inleidingen zijn te vinden in \citet{Dalg02} en in diverse uitstekende ``free web books''; een lijst van aanbevolen boeken is te vinden op \url{https://statisticalhorizons.com/resources/free-web-books-for-learning-r}.
+\end{itemize}
+
+Voor studenten en medewerkers van de Universiteit Utrecht zijn al deze statistische pakketten geïnstalleerd in \texttt{MyWorkPlace}.
 
 \hypertarget{ch:onderzoek}{%
 \chapter{Hypothese-toetsend onderzoek}\label{ch:onderzoek}}
@@ -4529,6 +4548,34 @@ Vink aan: \texttt{Display\ frequency\ tables}.\\
 Kies \texttt{Format}, kies: \texttt{Order\ by:\ Descending\ values}.\\
 Bevestig met \texttt{OK}.\\
 
+\hypertarget{jasp-1}{%
+\subsection{JASP}\label{jasp-1}}
+
+Klik in de bovenbalk op \texttt{Descriptives}. Selecteer vervolgens de gewenste variabele(n) en plaats ze in het veld ``Variables''. Vink \texttt{Frequency\ tables\ (nominal\ and\ ordinal\ variables)} (onder het veld met alle variabelen) aan om voor alle geselecteerde variabelen van nominaal en ordinaal meetniveau een frequentietabel als uitvoer te krijgen.\\
+Mocht een variabele als meetniveau ``Scale'' hebben en je wilt hiervan een frequentietabel, dan moet je eerst het meetniveau aanpassen naar ``Nominal'' of ``Ordinal'' door in het data tabblad op het meetniveau-icoontje voor de naam van de variabele te klikken.
+
+Een variabele van interval of ratio meetniveau kan ook eerst worden opgedeeld in een aantal intervallen. Dit doe je door een nieuwe variabele aan te maken waarbij de originele scores worden omgezet in een interval. Maak de nieuwe variabele aan door op de \textbf{+}-button te klikken rechts van de naam van de laatste kolom in de dataset. Er verschijnt een paneel ``Create Computed Column'', waar je een naam voor de nieuwe variabele kunt invullen, bijvoorbeeld \texttt{troon12\_interval}. Ook kun je kiezen uit \texttt{R} en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of handmatig. Hieronder wordt voor allebei de opties uitgelegd hoe we hiermee de variabele met intervallen maken. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen; dat is in dit geval ``Ordinal''. Klik vervolgens op \texttt{Create\ Column} om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.
+
+Als \texttt{R} is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met ``\#Enter your R code here :)''. Hier kan R code worden gegeven die met behulp van R functies de nieuwe variabele definieert. Vul de R code in en klik onderaan op \texttt{Compute\ column} om de lege variabele te vullen met de gekozen waardes.\\
+Om de variabele `troon2012' op te delen zoals in Tabel \ref{tab:troonrede2012pauzes} kan de volgende code worden gebruikt:
+
+\begin{verbatim}
+cut(troon2012, breaks = seq(0, 5, 0.5)) 
+\end{verbatim}
+
+Hiermee worden de duren van de spreekpauzes van Koningin Beatrix in de Troonrede van 2012 opgedeeld in intervallen van halve seconden (0.5 = breedte interval), en alle intervallen samen lopen van 0 (ondergrens eerste interval) tot 5 (bovengrens laatste interval) seconden. Als je niet precies de breedte en het totale bereik van de intervallen wil bepalen, maar een x aantal gelijke intervallen wilt, kan de volgende code worden gebruikt:
+
+\begin{verbatim}
+cut(troon2012, 10) 
+\end{verbatim}
+
+Hiermee worden de scores opgedeeld in 10 even brede intervallen, waarbij de ondergrens van het eerste interval gelijk is aan de laagste score die er was, en de bovengrens van het laatste interval is gelijk aan de hoogste score die er was.
+
+Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met links daarvan de variabelen, boven wiskundige symbolen, en rechts een aantal functies. Hier kan handmatig de functie worden geselecteerd die de nieuwe variabele definieert. Klik onderaan op \texttt{Compute\ column} om de lege variabele vervolgens te vullen met de gekozen waardes.\\
+Om een variabele op te delen in een aantal gelijke intervallen selecteer je rechts de functie \texttt{cut(y)}. Sleep de variabele die je wilt opdelen naar ``values'' en typ het aantal intervallen dat je wilt op de plek van ``numBreaks''. Om zelf de breedte en het totale bereik van de intervallen te bepalen zul je de R code optie moeten gebruiken (hierboven beschreven).
+
+Voor de nieuwe variabele opgedeeld in intervallen kan de frequentietabel worden verkregen zoals helemaal bovenaan beschreven. Ga naar \texttt{Descriptives}, selecteer de gewenste variabele (\texttt{troon12\_interval}) in het veld ``Variables'' en vink \texttt{Frequency\ tables\ (nominal\ and\ ordinal\ variables)} (onder het veld met alle variabelen) aan.
+
 \hypertarget{r-1}{%
 \subsection{R}\label{r-1}}
 
@@ -4648,6 +4695,11 @@ Kies \texttt{Charts}, kies daarna \texttt{Chart\ type:\ Bar\ chart} voor een
 staafdiagram of \texttt{Chart\ type:\ Histogram} voor een histogram (zie
 bovenstaande tekst voor het verschil tussen deze opties).\\
 Bevestig met \texttt{OK}.\\
+
+\hypertarget{jasp-2}{%
+\subsection{JASP}\label{jasp-2}}
+
+Klik in de bovenbalk op \texttt{Descriptives}. Selecteer vervolgens de gewenste variabele(n) en plaats ze in het veld ``Variables''. Klik de balk \texttt{Plots} open en vink \texttt{Distribution\ plots} aan onder ``Basic plots''. Je zult zien dat JASP automatisch een staafdiagram maakt voor variabelen die het meetniveau ``Ordinal'' of ``Nominal'' hebben, en een histogram voor variabelen met meetniveau ``Scale''. Zorg dus dat het meetniveau van alle variabelen goed staat ingesteld. Je kunt het meetniveau veranderen door in het data tabblad op het meetniveau-icoontje voor de variabele-naam te klikken.
 
 \hypertarget{r-2}{%
 \subsection{R}\label{r-2}}
@@ -5536,6 +5588,30 @@ Vink aan: \texttt{Save\ standardized\ values\ as\ variables} en bevestig met \te
 De nieuwe variabele(n) met z-scores worden toegevoegd als nieuwe
 kolom(men) aan het databestand.\\
 
+\hypertarget{jasp-3}{%
+\section{JASP}\label{jasp-3}}
+
+Voor \textbf{histogram en boxplot}:\\
+Klik in de bovenbalk op \texttt{Descriptives}. Selecteer vervolgens de gewenste variabele(n) en plaats ze in het veld ``Variables''. Klik de balk \texttt{Plots} open en vink \texttt{Distribution\ plots} aan onder ``Basic plots'' voor een histogram (of staafdiagram, afhankelijk van het meetniveau). Vink \texttt{Boxplots} (met \texttt{Boxplot\ element}) aan onder ``Customizable plots'' voor een boxplot.
+
+Voor \textbf{kenmerkende getallen en kwartielen/percentielen}:\\
+Klik in de bovenbalk op \texttt{Descriptives}. Selecteer vervolgens de gewenste variabele(n) en plaats ze in het veld ``Variables''. Klik de balk \texttt{Statistics} open en vink \texttt{Quartiles} aan onder ``Percentile Values'' om kwartielen te krijgen. Door \texttt{Cut\ points\ for:} aan te vinken en een getal in te vullen, kun je ook andere fractielen krijgen (bijvoorbeeld sextielen als je 6 invult). Door \texttt{Percentiles:} aan te vinken en een getal in te vullen, kun je ook een specifiek percentiel krijgen (bijvoorbeeld 44e percentiel als je 44 invult).\\
+Voor kenmerkende getallen, zoals centrummaten en spreidingsmaten, vink je \texttt{Mean}, \texttt{Median}, \texttt{Mode} en \texttt{Sum} aan onder ``Central Tendency'', en \texttt{Variance}, \texttt{Std.deviation}, \texttt{MAD\ Robust} (bij \texttt{MAD} is de constante op 1 gezet), \texttt{IQR}, \texttt{Minimum} en \texttt{Maximum} aan onder ``Dispersion''.\\
+De uitvoer is een tabel met alle opgevraagde beschrijvende statistiek van de variabele(n).
+
+\textbf{Standaardscores} moeten zelf worden uitgerekend als nieuwe variabele. Maak de nieuwe variabele aan door op de \textbf{+}-button te klikken rechts van de naam van de laatste kolom in de dataset. Er verschijnt een paneel ``Create Computed Column'', waar je een naam voor de nieuwe variabele kunt invullen, bijvoorbeeld \texttt{zLezen}. Ook kun je kiezen uit \texttt{R} en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of handmatig. Hieronder wordt voor allebei de opties uitgelegd hoe we hiermee de variabele met intervallen maken. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen; dat is in dit geval ``Scale'', net als de originele variabele. Klik vervolgens op \texttt{Create\ Column} om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.
+
+Als \texttt{R} is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met ``\#Enter your R code here :)''. Hier kan R code worden gegeven die met behulp van R functies de nieuwe variabele definieert. Om een standaardscore te berekenen kan de volgende code worden gebruikt (hier voor de variabele `Lezen'):
+
+\begin{verbatim}
+((Lezen - mean(Lezen)) / sd(Lezen))
+\end{verbatim}
+
+Vul de R code in en klik onderaan op \texttt{Compute\ column} om de lege variabele te vullen met de standaardscores.
+
+Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met links daarvan de variabelen, boven wiskundige symbolen, en rechts een aantal functies. Hier kan handmatig de functie worden geselecteerd die de nieuwe variabele definieert. Om standaardscores te berekenen sleep je de variabele die je wilt omzetten in het lege veld. Klik dan bovenaan op \(-\) en selecteer daarna uit het rechter menu de functie \texttt{mean(y)}. Sleep de om te zette variabele naar ``values'' en klik daarna bovenaan op \(\div\). Selecteer in het rechter menu de functie \texttt{\$\textbackslash{}sigma\$y} voor op de puntjes onder het breukteken (als noemer) en sleep ook hier de om te zette variabele naar ``values''. Voor de variabele `Lezen' zou dit er zo uitzien: \[\frac{(Lezen-mean(Lezen)}{\sigma Lezen}\]
+Klik onderaan op \texttt{Compute\ column} om de lege variabele vervolgens te vullen met de standaardscores.
+
 \hypertarget{r-3}{%
 \section{R}\label{r-3}}
 
@@ -5986,6 +6062,18 @@ standaarddeviatie
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
+\hypertarget{jasp-4}{%
+\subsection{JASP}\label{jasp-4}}
+
+De binomiale kansverdeling van Figuur \ref{fig:binomkansverdeling3} kan in JASP worden verkregen door in de bovenbalk te klikken op:
+
+\begin{verbatim}
+Distributions > Binomial (onder 'Discrete')
+\end{verbatim}
+
+Als \texttt{Distributions} nog niet in de bovenbalk staat kun je dit toevoegen door rechtsbovenin op de blauwe \textbf{+}-button te klikken en \texttt{Distributions} aan te vinken.~
+In de ``Binomial'' invoer is de balk \texttt{Show\ Distribution} als het goed is open. Pas hier de waarden voor \(p\) (onder ``free parameter'') en \(n\) (onder ``Fixed parameter'') aan naar \(p=0.38\) en \(n=3\). Pas onder ``Options'' ook de range aan naar \texttt{Range\ of\ \$x\$\ from\ \$0\$\ to\ \$3\$}. Onder ``Display'' moet \texttt{Probability\ mass\ function} aangevinkt zijn. In de uitvoer zie je onder \emph{Probability Mass Plot} de binomiale kansverdeling.
+
 \hypertarget{r-4}{%
 \subsection{R}\label{r-4}}
 
@@ -6220,6 +6308,19 @@ De standaard-normale kansverdeling van variabele \(Z\) met gemiddelde
   \label{eq:prob-standaardnormaal}
 \end{equation}
 
+\hypertarget{jasp-5}{%
+\subsection{JASP}\label{jasp-5}}
+
+De normale kansverdeling van Figuur \ref{fig:normaalkansverdeling} kan in JASP worden verkregen door in de bovenbalk te klikken op:
+
+\begin{verbatim}
+Distributions > Normal (onder 'Continuous')
+\end{verbatim}
+
+Als \texttt{Distributions} nog niet in de bovenbalk staat kun je dit toevoegen door rechtsbovenin op de blauwe \textbf{+}-button te klikken en \texttt{Distributions} aan te vinken.~
+In de ``Normal'' invoer is de balk \texttt{Show\ Distribution} als het goed is open. Automatisch staan de waarden voor de standaard-normale kansverdeling al ingevuld en \texttt{Probability\ density\ function} aangevinkt; je ziet deze verdeling dus meteen in de uitvoer onder \emph{Density Plot}.\\
+Voor andere normale kansverdelingen kunnen de waarden voor \(\mu\) en \(\sigma\) worden aangepast, en ook de range die wordt weergegeven (onder ``Options''). Let op dat je bij ``Parameters'' \texttt{\$\textbackslash{}mu\$,\ \$\textbackslash{}sigma\$} selecteert als je het gemiddelde en de standaarddeviatie ingeeft (voor de standaard-normale kansverdeling maakt dit niet uit, want bij \(\sigma=1\) geldt ook \(\sigma^2=1\)).
+
 \hypertarget{sec:isvarnormaalverdeeld}{%
 \section{Heeft mijn variabele een normale kansverdeling?}\label{sec:isvarnormaalverdeeld}}
 
@@ -6285,9 +6386,15 @@ uitvoer bevat eerst de resultaten van de Shapiro-Wilks-toets en de
 Kolmogorov-Smirnov toets. Volgens beide toetsen is de kans om deze
 verdeling te vinden, als H0 waar is, bijna nul --- zie echter de
 waarschuwing in
-§@ref(\#sec:pgroterdannul)! We verwerpen daarom H0 en concluderen
+§\ref{sec:pgroterdannul}! We verwerpen daarom H0 en concluderen
 dat de duren van muzieknummers niet normaal verdeeld zijn. Na deze
 toetsresultaten volgt o.a. een QQ-plot.
+
+\hypertarget{jasp-6}{%
+\subsection{JASP}\label{jasp-6}}
+
+Klik in de bovenbalk op \texttt{Descriptives} en selecteer variabele Time in het veld ``Variables''. Klik de balk \texttt{Plots} open en vink \texttt{Distribution\ plots} aan onder ``Basic plots'' voor een histogram. Vink ook \texttt{Q-Q\ plots} aan voor een quantile-quantile plot. Klik vervolgens de balk \texttt{Statistics} open en vink \texttt{Shapiro-Wilk\ test} aan onder ``Distribution''.\\
+De uitvoer geeft de uitkomst van de Shapiro-Wilk-toets in de tabel \emph{Descriptive Statistics}. We zien dat de kans om deze verdeling te vinden, als H0 waar is, bijna nul is. H0 wordt dus verworpen en we concluderen dat de duren van de muzieknummers niet normaal verdeeld zijn. Dit kun je ook terugzien in het histogram en de Q-Q plot.
 
 \hypertarget{r-5}{%
 \subsection{R}\label{r-5}}
@@ -6494,7 +6601,8 @@ Volgens
 formule \eqref{eq:t-onesampleCI} weten we dan met 95\% betrouwbaarheid dat het onbekende populatiegemiddelde \(\mu\) ligt tussen
 \(\bar{x}-2.05\times s_{\bar{x}}\) en \(\bar{x}+2.05\times s_{\bar{x}}\),
 oftewel tussen \(0.215-2.05\times0.0037\) en \(0.215+2.05\times0.0037\),
-oftewel tussen \(0.208\) en \(0.223\) seconde.
+oftewel tussen \(0.208\) en \(0.223\) seconde
+Als de werkelijke waarde in de populatie tussen deze grenzen ligt, dan is er een kans van 95\% om dit gemiddelde te vinden in een aselecte steekproef \citep[p.241]{Spie19}.
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -6752,6 +6860,17 @@ Kies \texttt{Pearsons} correlatiecoëfficiënt, vink aan:
 uitvoer (tabel) voldoet niet aan de stijl-eisen; je moet de gegevens dus
 overnemen in of omzetten naar een eigen tabel die daar wel aan voldoet.
 
+\hypertarget{jasp-7}{%
+\subsection{JASP}\label{jasp-7}}
+
+Voor Pearson's product-moment-correlatiecoëfficiënt klik je in de bovenbalk op:
+
+\begin{verbatim}
+Regression > Correlation (onder 'Classical')
+\end{verbatim}
+
+Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld ``Variables''. Zorg dat onder ``Sample Correlation Coefficient'' \texttt{Pearson\textquotesingle{}s\ r} aangevinkt is, en onder ``Additional Options'' \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} en \texttt{Sample\ size}. Je kunt ook \texttt{Display\ pairwise} aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren.
+
 \hypertarget{r-6}{%
 \subsection{R}\label{r-6}}
 
@@ -6957,6 +7076,29 @@ voorspelde waarden als de residuen. Controleer of het gemiddelde van de
 residuen inderdaad nul is. In deze tabel zien we ook (regel 2, kolom 4)
 dat de standaarddeviatie van de residuen \(3.212\) is.
 
+\hypertarget{jasp-8}{%
+\subsection{JASP}\label{jasp-8}}
+
+Voor lineaire regressie klik je in de bovenbalk op:
+
+\begin{verbatim}
+Regression > Linear Regression (onder 'Classical')
+\end{verbatim}
+
+Selecteer de variabele \emph{Rekenen} in het veld ``Dependent Variable'', en de variabele \emph{Lezen} in het veld ``Covariates''. Klik vervolgens de balk \texttt{Model} open en controleer of \emph{Lezen} onder ``Model Terms'' staat. Ook moet \texttt{Include\ intercept} aangevinkt zijn, om de constante coëfficiënt \(a\) te laten berekenen. Open ook de balk \texttt{Statistics} en zorg dat \texttt{Estimates}, \texttt{Model\ fit} en \texttt{R\ squared\ change} aangevinkt zijn. Vink onder ``Residuals'' ook \texttt{Statistics} aan om een numerieke samenvatting te krijgen over de residuals. Onder de balk \texttt{Plots} mogen ook \texttt{Residuals\ vs.\ histogram} en \texttt{Q-Q\ plot\ standardized\ residuals} worden aangevinkt voor een weergave van de residuals.
+
+De resulterende uitvoer omvat meerdere tabellen en figuren; deze kan je
+niet rechtstreeks overnemen in je verslag. De tabel getiteld \emph{Model
+Summary} bevat de correlatie-coëfficiënt, hier aangeduid met hoofdletter
+\(R=.749\).\\
+De tabel getiteld \emph{Coefficients} bevat de regressie-coëfficienten. De
+regel met aanduiding \texttt{(Intercept)} vermeldt coëfficient \(a=13.25\); de
+regel getiteld \texttt{Lezen} vermeldt coëfficient \(b=0.51\).\\
+De tabel getiteld \emph{Residual Statistics} geeft informatie over zowel de
+voorspelde waarden als de residuen. Controleer of het gemiddelde van de
+residuen inderdaad (zo goed als gelijk aan) nul is. In deze tabel zien we ook (regel 2, kolom 4)
+dat de standaarddeviatie van de residuen \(3.212\) is.
+
 \hypertarget{r-7}{%
 \subsection{R}\label{r-7}}
 
@@ -7141,6 +7283,17 @@ overnemen in of omzetten naar een eigen tabel die daar wel aan voldoet,
 en rapporteren volgens de gebruikelijke conventies voor
 correlatie-analyse.
 
+\hypertarget{jasp-9}{%
+\subsection{JASP}\label{jasp-9}}
+
+Voor Spearmans rangorde-correlatiecoëfficiënt klik je in de bovenbalk op:
+
+\begin{verbatim}
+Regression > Correlation (onder 'Classical')
+\end{verbatim}
+
+Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld ``Variables''. Zorg dat onder ``Sample Correlation Coefficient'' \texttt{Spearman\textquotesingle{}s\ rho} aangevinkt is, en onder ``Additional Options'' \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} en \texttt{Sample\ size}. Je kunt ook \texttt{Display\ pairwise} aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren.
+
 \hypertarget{r-8}{%
 \subsection{R}\label{r-8}}
 
@@ -7277,6 +7430,46 @@ Selecteer de variabelen \texttt{StadPlat2} (in ``Rows'' paneel) en \texttt{Reken
 kruistabel \ref{tab:cito-kruis}.\\
 Kies \texttt{Statistics\ldots{}} en vink optie \texttt{Phi\ and\ Cramer’s\ V}aan!\\
 Bevestig eerst met \texttt{Continue} en daarna nogmaals met \texttt{OK}.
+
+\hypertarget{jasp-10}{%
+\subsection{JASP}\label{jasp-10}}
+
+De dataset \texttt{cito} bevat al een variabele \texttt{StadPlat} die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve leggen we toch uit hoe je zo'n variabele zelf kunt construeren.
+
+Maak eerst een nieuwe variabele aan door op de \textbf{+}-button te klikken rechts van de naam van de laatste kolom in de dataset. Er verschijnt een paneel ``Create Computed Column'', waar je een naam voor de nieuwe variabele kunt invullen, bijvoorbeeld \texttt{StadPlat2}. Ook kun je kiezen uit \texttt{R} en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of handmatig. Hieronder wordt voor allebei de opties uitgelegd hoe we hiermee de herkomst variabele maken. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen. Voor de herkomst variabele zet je dit op \texttt{Nominal}. Klik vervolgens op \texttt{Create\ Column} om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.
+
+Als \texttt{R} is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met ``\#Enter your R code here :)''. Hier kan R code worden gegeven die met behulp van R functies de nieuwe variabele definieert. Vul de R code in en klik onderaan op \texttt{Compute\ column} om de lege variabele te vullen met de gekozen waardes.\\
+Voor de herkomst variabele kunnen we de volgende code gebruiken:
+
+\begin{verbatim}
+ifelse(Leerling <= 5, 1, 0) 
+\end{verbatim}
+
+Dit betekent: als de score op de oude variabele (Leerling) kleiner dan of gelijk is aan (\textless=) 5, dan wordt de score een 1, en anders een 0. Dus: if Leerling \textless= 5, then 1, else 0. Let op dat dit alleen werkt in JASP als de gebruikte variabele (Leerling) op ``Scale'' meetniveau staat (want alleen dan kun je wiskundige operatoren zoals \textless= gebruiken). Als het meetniveau van de variabele niet op ``Scale'' staat pas je dit aan door in het data tabblad op het meetniveau-icoontje voor de variabele-naam te klikken, en ``Scale'' te selecteren.
+
+Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met links daarvan de variabelen, boven wiskundige symbolen, en rechts een aantal functies. Hier kan handmatig de functie worden geselecteerd die de nieuwe variabele definieert. Klik onderaan op \texttt{Compute\ column} om de lege variabele vervolgens te vullen met de gekozen waardes.\\
+Voor de herkomst variabele scrol je rechts van het veld bij de functies naar beneden en klik op \texttt{ifElse(y)}. De functie verschijnt in het veld en hier kunnen ``test'', ``then'' en ``else'' worden vervangen door de gewenste gegevens. Klik op ``test'' en selecteer bovenaan \(\leq\). Sleep vervolgens de variabele `Leerling' naar de puntjes aan de linkerkant van het teken, en vul rechts \(5\) in. Vul voor ``then'' en ``else'' \(1\) en \(0\) in. Je hebt dan: \texttt{ifElse(Leerling\ \$\textbackslash{}leq\$\ 5,1,0)}, en deze formule werkt hetzelfde als de R code van hierboven. Let ook hier op dat dit alleen werkt in JASP als de gebruikte variabele (Leerling) op ``Scale'' meetniveau staat (want alleen dan kun je wiskundige operatoren zoals \(\leq\) gebruiken).
+
+Voor \texttt{Rekenen} maak je eerst ook weer een nieuwe variabele aan door op de \textbf{+}-button te klikken rechts van de naam van de laatste kolom in de dataset. Geef de nieuwe variabele een naam (\texttt{Reken2}), kies \texttt{R} of het aanwijshandje, en geef de variabele het meetniveau \texttt{Nominal}. Klik vervolgens op \texttt{Create\ Column} om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.
+
+Als \texttt{R} is aangeklikt als optie om de nieuwe variabele te definiëren, kan de volgende code worden gebruikt:
+
+\begin{verbatim}
+ifelse(Rekenen < mean(Rekenen), 0, 1)
+\end{verbatim}
+
+Dit betekent: als de score op de oude variabele (Rekenen) kleiner is dan (\textless) de gemiddelde score (mean(Rekenen)), dan wordt de score een 0, en anders een 1. Dus: if Rekenen \textless{} mean(Rekenen), then 0, else 1. Vul de R code in en klik onderaan op \texttt{Compute\ column} om de lege variabele te vullen met de gekozen waardes.
+
+Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, selecteer je weer de functie \texttt{ifElse(y)}. Klik op ``test'' en selecteer bovenaan \(<\). Sleep vervolgens de variabele `Rekenen' naar de puntjes aan de linkerkant van het teken, en sleep de functie \texttt{mean(y)} (uit het scrolmenu rechts) naar de puntjes aan de rechterkant. Sleep de variabele `Rekenen' nu ook naar de plek waar ``values'' staat. Vul voor ``then'' en ``else'' \(0\) en \(1\) in. Je hebt dan: \texttt{ifElse(Rekenen\ \textless{}\ mean(Rekenen),0,1)}, en deze formule werkt hetzelfde als de R code van hierboven. Klik op \texttt{Compute\ column} om de lege variabele te vullen met de gekozen waardes.
+
+Na dit voorbereidend werk kunnen we eindelijk \(r_\Phi\) gaan berekenen. Klik in de bovenbalk op:
+
+\begin{verbatim}
+Frequencies > Contingency Tables (onder 'Classical')
+\end{verbatim}
+
+Selecteer de variabelen \texttt{StadPlat2} (in ``Rows'' paneel) en \texttt{Reken2} (in ``Columns'' paneel) voor kruistabel \ref{tab:cito-kruis}.\\
+Open de \texttt{Statistics} balk en vink \texttt{Phi\ and\ Cramer’s\ V}aan onder ``Nominal''.
 
 \hypertarget{r-9}{%
 \subsection{R}\label{r-9}}
@@ -8334,8 +8527,8 @@ een \emph{tweezijdige} \(t\)-toets.
 Neem bij het overnemen van die uitvoer goede notitie van de waarschuwing in
 §\ref{sec:pgroterdannul} hieronder: SPSS rapporteert alsof \texttt{p=.000} maar dat is onjuist.
 
-\hypertarget{jasp-1}{%
-\subsection{JASP}\label{jasp-1}}
+\hypertarget{jasp-11}{%
+\subsection{JASP}\label{jasp-11}}
 
 Hier komen JASP instructies.
 
@@ -8516,8 +8709,8 @@ Bevestig met \texttt{Continue} en met \texttt{OK}.\\
 De uitvoer bevat meerdere beschrijvende statistische maten, waaronder nu
 ook het 95\% betrouwbaarheidsinterval van het gemiddelde.
 
-\hypertarget{jasp-2}{%
-\subsection{JASP}\label{jasp-2}}
+\hypertarget{jasp-12}{%
+\subsection{JASP}\label{jasp-12}}
 
 Hier komen JASP instructies.
 

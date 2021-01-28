@@ -299,7 +299,7 @@ Bevestig met `OK`.\
 
 ### JASP
 
-Klik in de bovenbalk op `Descriptives`. Selecteer vervolgens de gewenste variabele(n) en plaats ze in het veld "Variables". Klik de balk `Plots` open en vink `Distribution plots` aan onder "Basic plots". Je zult zien dat JASP automatisch een staafdiagram maakt voor variabelen die het meetniveau "Ordinal" of "Nominal" hebben, en een histogram voor variabelen met meetniveau "Scale". Zorg dus dat het meetniveau van alle variabelen goed staat ingesteld. Je kunt het meetniveau veranderen door in het data tabblad op het meetniveau-icoontje voor de variabele-naam te klikken). 
+Klik in de bovenbalk op `Descriptives`. Selecteer vervolgens de gewenste variabele(n) en plaats ze in het veld "Variables". Klik de balk `Plots` open en vink `Distribution plots` aan onder "Basic plots". Je zult zien dat JASP automatisch een staafdiagram maakt voor variabelen die het meetniveau "Ordinal" of "Nominal" hebben, en een histogram voor variabelen met meetniveau "Scale". Zorg dus dat het meetniveau van alle variabelen goed staat ingesteld. Je kunt het meetniveau veranderen door in het data tabblad op het meetniveau-icoontje voor de variabele-naam te klikken. 
 
 ### R
 

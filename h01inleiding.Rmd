@@ -372,7 +372,7 @@ beter in laboratoriumsituaties onderzoeken, terwijl andere beter in
 veldsituaties onderzocht kunnen worden (zoals bovenstaande voorbeelden
 illustreren).
 
-## Vooruitblik 
+## Vooruitblik {#sec:vooruitblik}
 
 Dit tekstboek bestaat uit drie delen. Deel I (hoofdstukken 1 tot en met 7) van dit tekstboek behandelt
 methoden van onderzoek, en geeft een toelichting bij allerlei termen en
@@ -399,15 +399,20 @@ en de conclusies die daaraan verbonden kunnen worden van groot belang is
 voor alle studenten. Om die reden besteden we in dit tekstboek dan ook
 relatief veel aandacht (in deel I) aan de 'filosofie' of methodologie achter de besproken statistische technieken en analyses. 
 
-In aparte secties geven we
-aan hoe je de besproken statistische analyses zelf kunt uitvoeren in
-SPSS (een populair pakket voor statistische analyses) en in R (een wat
-moeilijker, maar ook krachtiger en veelzijdiger pakket, met stijgende
-populariteit). 
-Voor studenten en medewerkers van de Universiteit Utrecht zijn beide statistische pakketten  geïnstalleerd in `MyWorkSpace`. 
+In aparte secties leggen we uit hoe je de besproken statistische analyses zelf kunt uitvoeren in drie statistische pakketten:
+
+* **SPSS** (versie 22.0 en hoger): een populair pakket voor statistische analyses.    
 SPSS is beschikbaar via <https://SurfSpot.nl> voor een sterk gereduceerde prijs. 
-R is vrijelijk beschikbaar via <https://www.R-project.org>. 
+
+* **JASP** (versie 0.13 en hoger): een aantrekkelijk open-source pakket, met een gebruikersvriendelijke bediening, en met handige presentatie van resultaten.     
+JASP is gratis beschikbaar via <https://jasp-stats.org/>. Op de website zijn ook inleidingen en instructies te vinden. 
+
+* **R** (versie 3.0 en hoger): een wat moeilijker, maar ook krachtiger en veelzijdiger pakket, met snel stijgende populariteit bij onderzoekers.    
+R is gratis beschikbaar via <https://www.R-project.org>. 
 Een korte inleiding in het gebruik van R is te vinden via <https://hugoquene.github.io/emlar2020/>. 
-Langere inleidingen zijn te vinden bij de uitstekende "free web books" die je kunt vinden via <https://statisticalhorizons.com/resources/free-web-books-for-learning-r> en in @Dalg02. 
+Langere inleidingen zijn te vinden in @Dalg02 en in diverse uitstekende "free web books"; een lijst van aanbevolen boeken is te vinden op <https://statisticalhorizons.com/resources/free-web-books-for-learning-r>. 
+
+Voor studenten en medewerkers van de Universiteit Utrecht zijn al deze statistische pakketten  geïnstalleerd in `MyWorkPlace`. 
+
 
 [^fn01-1]: Het is zelfs mogelijk dat het onderzochte voedingspatroon de oorzaak is van een relatief *kortere* levensduur, maar dat dit negatieve effect gemaskeerd wordt door de sterkere, positieve effecten van opleidingsniveau en welvaartsniveau op de levensduur.

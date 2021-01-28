@@ -820,7 +820,8 @@ Volgens
 formule \@ref(eq:t-onesampleCI) weten we dan met 95% betrouwbaarheid dat het onbekende populatiegemiddelde $\mu$ ligt tussen
 $\bar{x}-2.05\times s_{\bar{x}}$ en $\bar{x}+2.05\times s_{\bar{x}}$,
 oftewel tussen $0.215-2.05\times0.0037$ en $0.215+2.05\times0.0037$,
-oftewel tussen $0.208$ en $0.223$ seconde.
+oftewel tussen $0.208$ en $0.223$ seconde
+Als de werkelijke waarde in de populatie tussen deze grenzen ligt, dan is er een kans van 95% om dit gemiddelde te vinden in een aselecte steekproef [@Spie19, p.241]. 
 
 ---
 
