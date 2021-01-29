@@ -719,7 +719,7 @@ ifelse(Leerling <= 5, 1, 0)
 Dit betekent: als de score op de oude variabele (Leerling) kleiner dan of gelijk is aan (<=) 5, dan wordt de score een 1, en anders een 0. Dus: if Leerling <= 5, then 1, else 0. Let op dat dit alleen werkt in JASP als de gebruikte variabele (Leerling) op "Scale" meetniveau staat (want alleen dan kun je wiskundige operatoren zoals <= gebruiken). Als het meetniveau van de variabele niet op "Scale" staat pas je dit aan door in het data tabblad op het meetniveau-icoontje voor de variabele-naam te klikken, en "Scale" te selecteren. 
 
 Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met links daarvan de variabelen, boven wiskundige symbolen, en rechts een aantal functies. Hier kan handmatig de functie worden geselecteerd die de nieuwe variabele definieert. Klik onderaan op `Compute column` om de lege variabele vervolgens te vullen met de gekozen waardes.\
-Voor de herkomst variabele scrol je rechts van het veld bij de functies naar beneden en klik op `ifElse(y)`. De functie verschijnt in het veld en hier kunnen "test", "then" en "else" worden vervangen door de gewenste gegevens. Klik op "test" en selecteer bovenaan $\leq$. Sleep vervolgens de variabele 'Leerling' naar de puntjes aan de linkerkant van het teken, en vul rechts $5$ in. Vul voor "then" en "else" $1$ en $0$ in. Je hebt dan: `ifElse(Leerling $\leq$ 5,1,0)`, en deze formule werkt hetzelfde als de R code van hierboven. Let ook hier op dat dit alleen werkt in JASP als de gebruikte variabele (Leerling) op "Scale" meetniveau staat (want alleen dan kun je wiskundige operatoren zoals $\leq$ gebruiken). 
+Voor de herkomst variabele scrol je rechts van het veld bij de functies naar beneden en klik op `ifElse(y)`. De functie verschijnt in het veld en hier kunnen "test", "then" en "else" worden vervangen door de gewenste gegevens. Klik op "test" en selecteer bovenaan $\leq$. Sleep vervolgens de variabele 'Leerling' naar de puntjes aan de linkerkant van het teken, en vul rechts $5$ in. Vul voor "then" en "else" $1$ en $0$ in. Je hebt dan: <span style="background-color:#f7f7f7"> ifElse(Leerling $\leq$ 5,1,0) </span>, en deze formule werkt hetzelfde als de R code van hierboven. Let ook hier op dat dit alleen werkt in JASP als de gebruikte variabele (Leerling) op "Scale" meetniveau staat (want alleen dan kun je wiskundige operatoren zoals $\leq$ gebruiken). 
 
 Voor `Rekenen` maak je eerst ook weer een nieuwe variabele aan door op de **+**-button te klikken rechts van de naam van de laatste kolom in de dataset. Geef de nieuwe variabele een naam (`Reken2`), kies `R` of het aanwijshandje, en geef de variabele het meetniveau `Nominal`. Klik vervolgens op `Create Column` om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg. 
 
@@ -735,8 +735,7 @@ Na dit voorbereidend werk kunnen we eindelijk $r_\Phi$ gaan berekenen. Klik in d
 ```
 Frequencies > Contingency Tables (onder 'Classical')
 ```
-Selecteer de variabelen `StadPlat2` (in "Rows" paneel) en `Reken2` (in "Columns" paneel) voor kruistabel \@ref(tab:cito-kruis).\
-Open de `Statistics` balk en vink `Phi and Cramer’s V`aan onder "Nominal".
+Selecteer de variabelen `StadPlat2` (in het "Rows" paneel) en `Reken2` (in het "Columns" paneel) voor kruistabel \@ref(tab:cito-kruis). Open de `Statistics` balk en vink `Phi and Cramer’s V`aan onder "Nominal". De waarde voor $r_\Phi$ verschijnt dan ook in de uitvoer (als "Phi-coefficient"). 
 
 ### R
 
