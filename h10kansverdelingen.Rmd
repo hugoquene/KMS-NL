@@ -295,8 +295,8 @@ De binomiale kansverdeling van Figuur \@ref(fig:binomkansverdeling3) kan in JASP
 ```
 Distributions > Binomial (onder 'Discrete')
 ```
-Als `Distributions` nog niet in de bovenbalk staat kun je dit toevoegen door rechtsbovenin op de blauwe **+**-button te klikken en `Distributions` aan te vinken.\ 
-In de "Binomial" invoer is de balk `Show Distribution` als het goed is open. Pas hier de waarden voor $p$ (onder "free parameter") en $n$ (onder "Fixed parameter") aan naar $p=0.38$ en $n=3$. Pas onder "Options" ook de range aan naar `Range of $x$ from $0$ to $3$`. Onder "Display" moet `Probability mass function` aangevinkt zijn. In de uitvoer zie je onder *Probability Mass Plot* de binomiale kansverdeling. 
+Als `Distributions` nog niet in de bovenbalk staat kun je dit toevoegen door rechtsbovenin op de blauwe **+**-button te klikken en `Distributions` aan te vinken.\
+In de "Binomial" invoer is de balk `Show Distribution` als het goed is open. Pas hier de waarden voor $p$ (onder "free parameter") en $n$ (onder "Fixed parameter") aan naar $p=0.38$ en $n=3$. Pas onder "Options" ook de range aan naar `Range of x from 0 to 3`. Onder "Display" moet `Probability mass function` aangevinkt zijn. In de uitvoer zie je onder *Probability Mass Plot* de binomiale kansverdeling. 
 
 ### R
 
@@ -528,9 +528,9 @@ De normale kansverdeling van Figuur \@ref(fig:normaalkansverdeling) kan in JASP 
 ```
 Distributions > Normal (onder 'Continuous')
 ```
-Als `Distributions` nog niet in de bovenbalk staat kun je dit toevoegen door rechtsbovenin op de blauwe **+**-button te klikken en `Distributions` aan te vinken.\ 
-In de "Normal" invoer is de balk `Show Distribution` als het goed is open. Automatisch staan de waarden voor de standaard-normale kansverdeling al ingevuld en `Probability density function` aangevinkt; je ziet deze verdeling dus meteen in de uitvoer onder *Density Plot*. \
-Voor andere normale kansverdelingen kunnen de waarden voor $\mu$ en $\sigma$ worden aangepast, en ook de range die wordt weergegeven (onder "Options"). Let op dat je bij "Parameters" `$\mu$, $\sigma$` selecteert als je het gemiddelde en de standaarddeviatie ingeeft (voor de standaard-normale kansverdeling maakt dit niet uit, want bij $\sigma=1$ geldt ook $\sigma^2=1$). 
+Als `Distributions` nog niet in de bovenbalk staat kun je dit toevoegen door rechtsbovenin op de blauwe **+**-button te klikken en `Distributions` aan te vinken.\
+In de "Normal" invoer is de balk `Show Distribution` als het goed is open. Automatisch staan de waarden voor de standaard-normale kansverdeling al ingevuld en `Probability density function` aangevinkt; je ziet deze verdeling dus meteen in de uitvoer onder *Density Plot*.\
+Voor andere normale kansverdelingen kunnen de waarden voor $\mu$ en $\sigma$ worden aangepast, en ook de range die wordt weergegeven (onder "Options"). Let op dat je bij "Parameters" <span style="background-color:#f7f7f7"> $\mu$, $\sigma$ </span> selecteert als je het gemiddelde en de standaarddeviatie ingeeft (voor de standaard-normale kansverdeling maakt dit niet uit, want bij $\sigma=1$ geldt ook $\sigma^2=1$). 
 
 ### R
 
