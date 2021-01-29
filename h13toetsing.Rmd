@@ -303,23 +303,27 @@ Neem bij het overnemen van die uitvoer goede notitie van de waarschuwing in
 
 ### JASP
 
-Om de hierboven besproken hypothese te toetsen, moeten we eerst alleen de observaties van studenten Taalwetenschap selecteren. Dit doe je door in het data tabblad op de variabele-naam *opleiding* te klikken. Er opent een veld met daarin de verschillende waardes ('Values'; in dit geval opleidingen) van de nominale variabele. Hier kan je deze een label geven door de tekst in de kolom "Label" aan te passen (schrijf bijvoorbeeld de hele opleidingsnaam uit). Je kunt hier ook bepaalde waardes (opleidingen) van de nominale variabele tijdelijk filteren. In de kolom "Filter" staan standaard alleen maar vinkjes, wat betekent dat alle observaties worden meegenomen. Klik op de vinkjes bij alle opleidingen die je tijdelijk niet mee wilt nemen zodat het kruizen worden. In het data tabblad zie je de bijbehorende observaties dan grijs worden. Zorg dus dat er alleen nog maar bij *TW* een vinkje staat (en bij alle andere opleidingen kruizen) om alleen de observaties van studenten Taalwetenschap te selecteren. 
+De hierboven besproken gegevens zijn te vinden in het bestand `data/grammaticatoets2013.csv`.
 
-Klik daarna in de bovenbalk op:
+Om de eerder besproken hypothese te toetsen, moeten we eerst alleen de observaties van studenten Taalwetenschap selecteren ('filteren'). Ga daarvoor naar het tabblad met data, en klik op het trechtersymbool (filter) in de cel linksboven. Er verschijnt dan een werkblad waar je je selectie kunt specificeren.\
+Klik 1x op de variabele `opleiding` (links), die verspringt dan naar het werkblad. Klik daarna 1x op het symbool `=` (boven) en plaats de cursor achter het `=` teken op het werkblad, en typ de twee letters `TW` (in hoofdletters en zonder aanhalingstekens; exact hetzelfde zoals in de variabele *opleiding*). Op het werkblad staat nu het selectiecriterium: `opleiding = TW`.\
+Klik op de tekst `Apply pass-through filter` onder het werkblad om dit filter toe te passen. In het tabblad met data zie je nu direct dat de regels van studenten anders dan `TW` grijs gemaakt zijn. Die regels (observaties) worden niet verder gebruikt. 
+
+Klik daarna voor het toetsen van de hypothese in de bovenbalk op:
 ```
 T-Tests > One Sample T-Test (onder 'Classical)
 ```
-Selecteer de variabele *score* en plaats deze in het veld "Variables". Zorg dat `Student` aangevinkt is onder "Tests" en geef bij `Test value:` op tegen welke waarde van $\mu$ getoetst moet worden; 73. Onder "Alt.Hypothesis" moet <span style="background-color:#f7f7f7"> $\neq$ Test value </span> zijn geselecteerd (voor een *tweezijdige* $t$-toets). Voor meer inzicht kunnen onder "Additional Statistics" ook `Descriptives` en `Descriptive plots` worden aangevinkt. 
+Selecteer de variabele *score* en plaats deze in het veld "Variables". Zorg dat `Student` aangevinkt is onder "Tests" en geef bij `Test value:` op tegen welke waarde van $\mu$ getoetst moet worden; 73. Onder "Alt.Hypothesis" moet `> Test value`  worden geselecteerd voor een eenzijdige $t$-toets (want H1: $\mu > 73$). Voor meer inzicht kunnen onder "Additional Statistics" ook `Descriptives` en `Descriptive plots` worden aangevinkt. Vink hier ook `Effect size` aan (zie §\@ref(sec:ttoets-effectgrootte) hieronder). Vink als laatste onder het kopje "Assumption checks" ook de optie `Normality` aan (zie §\@ref(sec:isvarnormaalverdeeld)).
 
-De uitvoer geeft de resultaten van een *tweezijdige* $t$-toets. Als dit is aangevinkt wordt ook een tabel met beschrijvende statistiek en een "Descriptive plot" gegeven. Hiermee kun je goed zien waar de waarde $\mu$ ligt waartegen wordt getoetst ten opzichte van de scores van de studenten Taalwetenschap. 
+De uitvoer geeft de resultaten van de eenzijdige $t$-toets, inclusief effectgrootte. De tabel *Assumption Checks* geeft de resultaten van de Shapiro-Wilk-toets (die toetst of de afhankelijke variabele normaal verdeeld is). Als dit is aangevinkt wordt ook een tabel met beschrijvende statistiek en een "Descriptive plot" gegeven. Hiermee kun je goed zien waar de waarde $\mu$ ligt waartegen wordt getoetst ten opzichte van de scores van de studenten Taalwetenschap. 
 
-Let op! Voor de toets hebben we een filter aangezet om alleen de studenten Taalwetenschap mee te nemen, en dit filter blijft aan staan als je niks doet. Als je later weer alle observaties wilt gebruiken, maak het filteren dan ongedaan door weer in het data tabblad op *opleiding* te klikken en daarna op alle kruizen te klikken in de kolom "Filter". Alle waardes krijgen dan weer een vinkje en alle observaties worden weer zwart in het data tabblad. 
+Let op! Voor de toets hebben we een filter aangezet om alleen de studenten Taalwetenschap mee te nemen, en dit filter blijft aan staan als je niks doet. Als je later weer alle observaties wilt gebruiken, maak het filteren dan ongedaan door weer in het data tabblad naar het filter werkblad te gaan en 2x op de prullenbak te klikken. Als het goed gaat staat er "Filter cleared" en worden alle observaties weer zwart in het data tabblad. 
 
 ### R
 
 Onze hierboven besproken hypothese kan worden getoetst met de volgende opdrachten:
 ```{r gramm2013onesample-test}
-gramm2013 <- read.csv( file="data/grammaticatoets2013.csv",header=F)
+gramm2013 <- read.csv( file="data/grammaticatoets2013.csv",header=TRUE)
 dimnames(gramm2013)[[2]] <- c("score","opleiding")
 with( gramm2013,
       t.test( score[opleiding=="TW"], mu=73, alt="greater" ) )
