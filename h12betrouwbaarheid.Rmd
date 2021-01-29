@@ -581,6 +581,24 @@ maar als we beoordelaar 3 zouden verwijderen dan neemt de
 betrouwbaarheid zelfs toe (van 0.68 naar 0.84). Vermoedelijk heeft deze
 beoordelaar een ander construct beoordeeld dan de anderen.
 
+## JASP
+
+Klik voor een betrouwbaarheidsanalyse van de $k=3$ oordelen over spreekvaardigheid in Tabel \@ref(tab:betrouwbaarheid) in de bovenbalk op:\
+```
+Reliability > Single-Test Reliability Analysis (onder 'Classical)
+```
+Als `Reliability` nog niet in de bovenbalk staat kun je dit toevoegen door rechtsbovenin op de blauwe **+**-button te klikken en `Reliability` aan te vinken.\
+Selecteer de variabelen die geacht worden hetzelfde construct te meten, hier zijn dat de drie beoordelaars, en plaats ze in het veld "Variables". We beschouwen deze $k=3$ beoordelaars als "items" die de eigenschap "spreekvaardigheid" meten van 10 studenten.\
+Klik de balk `Single-Test Reliability` open en vink `Cronbach's a` aan onder "Scale Statistics" voor Cronbach's Alpha (zie formule \@ref(eq:cronbach-corr)). Vink ook `Average interitem correlation`, `Mean` en `Standard deviation` aan om deze waardes voor de schaal (die het construct 'spreekvaardigheid' meet met behulp van de scores van de drie beoordelaars) te krijgen. Vink onder "Individual Item Statistics" `Cronbach's a (if item dropped)` en `Item-rest correlation` aan, en ook `Mean` en `Standard deviation` om deze waardes ook voor de items (beoordelaars) afzonderlijk te krijgen.\
+
+De uitvoer bevat Cronbach's Alpha in de tabel *Frequentist Scale Reliability Statistics*. In de tabel *Frequentist Individual Item Reliability Statistics* in de kolom "If item dropped" vind je de betrouwbaarheid indien we een bepaalde beoordelaar zouden verwijderen. Dit laat zien dat beoordelaars 1 en 2 van groter belang zijn dan beoordelaar 3. Als we beoordelaar 1 of 2 zouden verwijderen dan stort de betrouwbaarheid in, maar als we beoordelaar 3 zouden verwijderen dan neemt de betrouwbaarheid zelfs toe (van 0.68 naar 0.84). Vermoedelijk heeft deze beoordelaar een ander construct beoordeeld dan de anderen.
+
+De uitvoer geeft alleen de gemiddelde inter-item-correlaties (in de tabel *Frequentist Scale Reliability Statistics*), en niet ook die van de beoordelaars onderling. Om deze te krijgen moet je zelf de correlaties opvragen. Hiervoor klik je in de bovenbalk op:
+```
+Regression > Correlation (onder 'Classical')
+```
+Selecteer de variabelen waarvan je de correlatie wilt berekenen (de drie beoordelaars) in het veld "Variables". Zorg dat onder "Sample Correlation Coefficient" `Pearson's r` aangevinkt is, en onder "Additional Options" `Report significance`, `Flag significant correlations` en `Sample size`. Je kunt ook `Display pairwise` aanvinken voor een simpelere tabel als uitvoer. De uitvoer laat zien dat vooral de inter-item-correlatie tussen beoordelaars 1 en 2 hoog is. 
+
 ## R
 
 Voor een betrouwbaarheidsanalyse van de $k=3$ oordelen over
