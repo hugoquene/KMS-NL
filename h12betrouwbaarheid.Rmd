@@ -280,7 +280,7 @@ betrouwbaarheid is het zinvol om stil te staan bij verschillende
 interpretaties van betrouwbaarheidsschattingen.
 
 Ten eerste kan de betrouwbaarheid geïnterpreteerd worden als de
-proportie ware-score-variantie (zie formule \@ref (eq:rho-betrouwbaarheid)), 
+proportie ware-score-variantie (zie formule \@ref(eq:rho-betrouwbaarheid)), 
 oftewel als de proportie van
 variantie die "systematisch" is. Dit is vanzelfsprekend nog lang niet
 hetzelfde als de proportie variantie ten gevolge van het
