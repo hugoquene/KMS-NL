@@ -291,7 +291,7 @@ Daarna kunnen we onze eerdere hypothese toetsen als volgt:
 Analyze > Compare Means > One-Sample T Test...
 ```
 
-Selecteer variabele (sleep naar Test variable(s) paneel).\
+Selecteer variabele `score` (sleep naar Test variable(s) paneel).\
 Geef op tegen welke waarde van $\mu$ getoetst moet worden: geef op als
 Test Value `73`. Bevestig met `OK`.
 
@@ -303,7 +303,17 @@ Neem bij het overnemen van die uitvoer goede notitie van de waarschuwing in
 
 ### JASP
 
-Hier komen JASP instructies.
+Om de hierboven besproken hypothese te toetsen, moeten we eerst alleen de observaties van studenten Taalwetenschap selecteren. Dit doe je door in het data tabblad op de variabele-naam *opleiding* te klikken. Er opent een veld met daarin de verschillende waardes ('Values'; in dit geval opleidingen) van de nominale variabele. Hier kan je deze een label geven door de tekst in de kolom "Label" aan te passen (schrijf bijvoorbeeld de hele opleidingsnaam uit). Je kunt hier ook bepaalde waardes (opleidingen) van de nominale variabele tijdelijk filteren. In de kolom "Filter" staan standaard alleen maar vinkjes, wat betekent dat alle observaties worden meegenomen. Klik op de vinkjes bij alle opleidingen die je tijdelijk niet mee wilt nemen zodat het kruizen worden. In het data tabblad zie je de bijbehorende observaties dan grijs worden. Zorg dus dat er alleen nog maar bij *TW* een vinkje staat (en bij alle andere opleidingen kruizen) om alleen de observaties van studenten Taalwetenschap te selecteren. 
+
+Klik daarna in de bovenbalk op:
+```
+T-Tests > One Sample T-Test (onder 'Classical)
+```
+Selecteer de variabele *score* en plaats deze in het veld "Variables". Zorg dat `Student` aangevinkt is onder "Tests" en geef bij `Test value:` op tegen welke waarde van $\mu$ getoetst moet worden; 73. Onder "Alt.Hypothesis" moet <span style="background-color:#f7f7f7"> $\neq$ Test value </span> zijn geselecteerd (voor een *tweezijdige* $t$-toets). Voor meer inzicht kunnen onder "Additional Statistics" ook `Descriptives` en `Descriptive plots` worden aangevinkt. 
+
+De uitvoer geeft de resultaten van een *tweezijdige* $t$-toets. Als dit is aangevinkt wordt ook een tabel met beschrijvende statistiek en een "Descriptive plot" gegeven. Hiermee kun je goed zien waar de waarde $\mu$ ligt waartegen wordt getoetst ten opzichte van de scores van de studenten Taalwetenschap. 
+
+Let op! Voor de toets hebben we een filter aangezet om alleen de studenten Taalwetenschap mee te nemen, en dit filter blijft aan staan als je niks doet. Als je later weer alle observaties wilt gebruiken, maak het filteren dan ongedaan door weer in het data tabblad op *opleiding* te klikken en daarna op alle kruizen te klikken in de kolom "Filter". Alle waardes krijgen dan weer een vinkje en alle observaties worden weer zwart in het data tabblad. 
 
 ### R
 
