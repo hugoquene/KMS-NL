@@ -862,7 +862,22 @@ Sleep eerste afhankelijke variabele `cond.u` naar paneel Paired
 Variables onder Variable1, en sleep tweede variabele `cond.je` naar
 zelfde paneel onder Variable2. Bevestig met `OK`.
 
-###  {#sec:R-ttoets-gepaard}
+### JASP {#sec:jaspttoetsgepaard}
+
+Het bovenstaande voorbeeld wordt hier uitgewerkt. De gegevens zijn te vinden in bestand `data/ujedata.csv`. 
+
+Klik in de bovenbalk op:
+```
+T-Tests > Paired Samples T-Test (onder 'Classical)
+```
+Selecteer de variabelen *cond.u* en *cond.je* in het veld "Variable pairs". Ze komen naast elkaar te staan, want deze twee condities ga je met elkaar vergelijken.\
+Zorg dat `Student` aangevinkt is onder "Tests" en onder "Alt.Hypothesis" moet de eerste optie (de metingen zijn niet hetzelfde) worden aangevinkt voor een tweezijdige $t$-toets. Voor meer inzicht kunnen onder "Additional Statistics" ook `Descriptives` en `Descriptive plots` worden aangevinkt. Vink hier ook `Effect size` (Cohen's d) aan (zie §\@ref(sec:ttoets-effectgrootte) hieronder). Vink als laatste onder het kopje "Assumption checks" ook de optie `Normality` aan (zie §\@ref(sec:isvarnormaalverdeeld)).
+
+De uitvoer geeft de resultaten van de tweezijdige $t$-toets, inclusief effectgrootte. Je ziet onder 'Measure 1' en 'Measure 2' in de tabel dat de verschilscore ($cond.u - cond.je$) wordt geanalyseerd.\
+Onder *Assumption Checks* vind je de resultaten van de Shapiro-Wilk-toets, die toetst of de verschilscores ($cond.u - cond.je$) normaal verdeeld zijn.\
+Als dit is aangevinkt wordt als laatste in de uitvoer een tabel met beschrijvende statistiek en een "Descriptive plot" gegeven. Hiermee kun je goed zien hoe de twee condities van elkaar verschillen in scores.
+
+### R {#sec:R-ttoets-gepaard}
 
 De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand `data/ujedata.csv`.
 ```{r ttoets-gepaard}
