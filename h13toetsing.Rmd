@@ -1133,6 +1133,11 @@ De gegevens staan in de uitvoer van de paarsgewijze $t$-toets
 `Std.Deviation`:\
 $d = -2.200 / 1.033 = 2.130$, een super groot effect.
 
+### JASP
+
+In JASP kan de effectgrootte worden opgevraagd bij het doen van een $t$-toets, door simpelweg `Effect size` aan te vinken onder "Additional Statistics". Zie hiervoor de JASP instructies voor een $t$-toets voor een enkele steekproef (§\@ref(sec:jaspttoetsenkel)), een $t$-toets voor twee onafhankelijke groepen (§\@ref(sec:jaspttoetsongepaard)) en een $t$-toets voor gepaarde waarnemingen (§\@ref(sec:jaspttoetsgepaard)).\
+De uitvoer van de $t$-toets zal (Cohen's) d aangeven: de effectgrootte. Onder `Effect size` kan ook `Confidence interval` worden aangevinkt (dit staat standaard op 95%, maar kan ook worden veranderd) voor het betrouwbaarheidsinterval van de effectgrootte (zie §\@ref(sec:betrouwbaarheidsinterval-effectgrootte) hieronder). 
+
 ### R
 
 In R is het wat makkelijker om de effectgrootte te laten uitrekenen.
@@ -1170,7 +1175,7 @@ ujedata <- read.table( file="data/ujedata.csv", header=TRUE, sep=";" )
 with( ujedata, mean(cond.u-cond.je) / sd(cond.u-cond.je) )
 ```
 
-### Betrouwbaarheidsinterval van de effectgrootte
+### Betrouwbaarheidsinterval van de effectgrootte {#sec:betrouwbaarheidsinterval-effectgrootte}
 
 We hebben al eerder gezien
 (§\@ref(sec:betrouwbaarheidsinterval-gemiddelde) en §\@ref(sec:t-betrouwbaarheidsinterval-gemiddelde))
