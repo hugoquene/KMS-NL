@@ -517,7 +517,7 @@ Klik daarna in de bovenbalk op:
 ```
 T-Tests > One Sample T-Test (onder 'Classical)
 ```
-Selecteer de variabele *score* en plaats deze in het veld "Variables". Zorg dat `Student` aangevinkt is onder "Tests" en houd `Test value:` op 0 staan. Vink onder "Additional Statistics" `Location parameter` aan en ook `Confidence interval`. Hier kun je zelf het betrouwbaarheidsniveau opgeven; hij staat standaard op 95%.  
+Selecteer de variabele *score* en plaats deze in het veld "Variables". Zorg dat `Student` aangevinkt is onder "Tests" en laat `Test value:` op 0 staan. Vink onder "Additional Statistics" `Location parameter` aan en ook `Confidence interval`. Hier kun je zelf het betrouwbaarheidsniveau opgeven; dit staat standaard op 95%.  
 
 De uitvoer geeft nu als 'Mean Difference' het gemiddelde aan (want er wordt vergeleken met 0; dat is de 'Test value'). In dezelfde tabel zie je het '95% CI for Mean Difference', wat in dit geval dus het betrouwbaarheidsinterval van het gemiddelde is. 
 
@@ -658,7 +658,7 @@ Vervolgens
 
 #### vrijheidsgraden {#vrijheidsgraden}
 
-Meestal wordt de uitgevoerd door een computerprogramma. Daarbij wordt
+Meestal wordt de $t-toets$ uitgevoerd door een computerprogramma. Daarbij wordt
 dan meestal de volgende benadering gebruikt van de vrijheidsgraden
 ($\nu$, zie §\@ref(sec:ttoets-vrijheidsgraden)). 
 Eerst worden $g_1=s^2_1/n_1$
@@ -721,6 +721,23 @@ tweede regel gebruiken van de uitvoer van de Independent-Samples Test
 zijn). In dit voorbeeld zijn de varianties ongeveer gelijk, zoals de
 Levene's test ook aangeeft. We gebruiken dus de eerste regel van de
 uitvoer, en rapporteren $t(38)=-3.765, p=.001$.
+
+### JASP {#sec:jaspttoetsongepaard}
+
+Het tweede bovenstaande voorbeeld wordt hier uitgewerkt: het spreektempo van sprekers uit het Westen en Noorden van Nederland wordt vergeleken.\
+Hiervoor moeten we eerst zorgen dat alleen de regio's Noord en West zijn geselecteerd. Dit doe je door in het data tabblad op de variabele-naam *region* te klikken. Er opent een veld met daarin de verschillende waardes ('Values'; in dit geval regio's) van de nominale variabele. Je kunt hier bepaalde waardes (regio's) van de nominale variabele tijdelijk filteren. In de kolom "Filter" staan standaard alleen maar vinkjes, wat betekent dat alle observaties worden meegenomen. Klik op de vinkjes bij de waardes (regio's) die je tijdelijk niet mee wilt nemen, *S* (Zuid) en *M* (Midden), zodat het kruizen worden. In het data tabblad zie je de bijbehorende observaties dan grijs worden. Zorg dus dat er alleen nog maar bij *N* (Noord) en *W* (West) een vinkje staat om alleen de observaties van sprekers uit het Westen en Noorden van Nederland te selecteren.\
+(Vergeet niet later de kruizen weer terug te veranderen in vinkjes als je wel weer alle observaties wilt meenemen!). 
+
+Klik na het filteren van de goede regio's in de bovenbalk op:
+```
+T-Tests > Independent Samples T-Test (onder 'Classical)
+```
+Selecteer de variabele *syldur* en plaats deze in het veld "Variables". Plaats de variabele *region* in het veld "Grouping Variable". Als een variabele meer dan twee groepen bevat geeft JASP aan dat er een probleem is (je kunt immers maar twee groepen vergelijken); daarom filteren we hierboven zo dat we alleen Noord en West meenemen in de variabele *region*.\
+Zorg dat `Student` aangevinkt is onder "Tests" en onder "Alt.Hypothesis" moet de eerste optie (de groepen zijn niet hetzelfde) worden aangevinkt voor een tweezijdige $t$-toets. Voor meer inzicht kunnen onder "Additional Statistics" ook `Descriptives` en `Descriptive plots` worden aangevinkt. Vink hier ook `Effect size` (Cohen's d) aan (zie §\@ref(sec:ttoets-effectgrootte) hieronder). Vink als laatste onder het kopje "Assumption checks" ook de optie `Normality` aan (zie §\@ref(sec:isvarnormaalverdeeld)) en `Equality of variances`.
+
+De uitvoer geeft de resultaten van de tweezijdige $t$-toets, inclusief effectgrootte.\
+Onder *Assumption Checks* vind je de resultaten van de Shapiro-Wilk-toets, die toetst of de afhankelijke variabele normaal verdeeld is in beide groepen. Ook zie je de tabel 'Test of Equality of Variances (Levene's)'. Met Levene's test wordt onderzocht H0: $s^2_1 = s^2_2$, d.w.z. of de varianties (en daarmee de standaarddeviaties) van de twee groepen gelijk zijn. Als je een kleine waarde vindt voor de toetsingsgrootheid $F$, en een $p>.05$, dan hoef je deze H0 niet te verwerpen. Je mag dan aannemen dat de varianties gelijk zijn. Als je een grote waarde vindt voor $F$, met $p<.05$, dan dien je deze H0 wel te verwerpen, en je mag niet aannemen dat de varianties van de twee groepen gelijk zijn. Zowel de tests voor een normale verdeling als Levene's test geven geen significant resultaat; er wordt dus aan deze assumpties voldaan.\
+Als dit is aangevinkt wordt als laatste in de uitvoer een tabel met beschrijvende statistiek en een "Descriptive plot" gegeven. Hiermee kun je goed zien hoe de scores van de twee groepen van elkaar verschillen.
 
 ### R {#sec:R-ttoets-ongepaard}
 
