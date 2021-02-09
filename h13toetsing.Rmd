@@ -301,7 +301,7 @@ een *tweezijdige* $t$-toets.
 Neem bij het overnemen van die uitvoer goede notitie van de waarschuwing in
 §\@ref(sec:pgroterdannul) hieronder: SPSS rapporteert alsof `p=.000` maar dat is onjuist. 
 
-### JASP
+### JASP {#sec:jaspttoetsenkel}
 
 De hierboven besproken gegevens zijn te vinden in het bestand `data/grammaticatoets2013.csv`.
 
@@ -324,7 +324,6 @@ Let op! Voor de toets hebben we een filter aangezet om alleen de studenten Taalw
 Onze hierboven besproken hypothese kan worden getoetst met de volgende opdrachten:
 ```{r gramm2013onesample-test}
 gramm2013 <- read.csv( file="data/grammaticatoets2013.csv",header=TRUE)
-dimnames(gramm2013)[[2]] <- c("score","opleiding")
 with( gramm2013,
       t.test( score[opleiding=="TW"], mu=73, alt="greater" ) )
 ```
@@ -510,7 +509,17 @@ ook het 95% betrouwbaarheidsinterval van het gemiddelde.
 
 ### JASP
 
-Hier komen JASP instructies.
+In JASP kun je het betrouwsbaarheidsinterval van het gemiddelde aanvragen bij een $t$-toets. We voeren dus wederom een $t$-toets uit en vinden het betrouwbaarheidsinterval van het gemiddelde in de uitvoer.
+
+Zorg dat het filter aanstaat zodat alleen de observaties van studenten Taalwetenschap geselecteerd zijn (zie §\@ref(sec:jaspttoetsenkel)). 
+
+Klik daarna in de bovenbalk op:
+```
+T-Tests > One Sample T-Test (onder 'Classical)
+```
+Selecteer de variabele *score* en plaats deze in het veld "Variables". Zorg dat `Student` aangevinkt is onder "Tests" en houd `Test value:` op 0 staan. Vink onder "Additional Statistics" `Location parameter` aan en ook `Confidence interval`. Hier kun je zelf het betrouwbaarheidsniveau opgeven; hij staat standaard op 95%.  
+
+De uitvoer geeft nu als 'Mean Difference' het gemiddelde aan (want er wordt vergeleken met 0; dat is de 'Test value'). In dezelfde tabel zie je het '95% CI for Mean Difference', wat in dit geval dus het betrouwbaarheidsinterval van het gemiddelde is. 
 
 ### R
 
