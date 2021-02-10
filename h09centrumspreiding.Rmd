@@ -439,7 +439,7 @@ kijken naar de afwijking van iedere observatie ten opzichte van het
 gemiddelde, dus $(x_i-\overline{x})$. Maar als we al die afwijkingen
 optellen, dan is de som daarvan altijd nul! De positieve en negatieve
 afwijkingen heffen elkaar immers op (ga dat zelf na in
-Tabel \@#ref(tab:cito)).
+Tabel \@ref(tab:cito)).
 Daarom middelen we niet de afwijkingen zelf, maar de kwadraten van die
 afwijkingen. Zowel de positieve als de negatieve afwijkingen resulteren
 in positieve gekwadrateerde-afwijkingen. Van al die
@@ -499,7 +499,7 @@ De standaarddeviatie hebben we nodig
 willen omzetten naar standaardscores (zie §\@ref(sec:standaardscores) hieronder), 
 (b) als we een variabele
 willen beschrijven die normaal verdeeld is (zie §\@ref(sec:normaalverdeling), en 
-(c) als we hypotheses willen toetsen met behulp van een normaal verdeelde variabele (zie §\@ref(sec:ttoets.onesample) e.v.).
+(c) als we hypotheses willen toetsen met behulp van een normaal verdeelde variabele (zie §\@ref(sec:ttoets-onesample) e.v.).
 
 ### MAD
 
@@ -823,7 +823,7 @@ Als `R` is aangeklikt als optie om de nieuwe variabele te definiëren, verschijn
 ```
 Vul de R code in en klik onderaan op `Compute column` om de lege variabele te vullen met de standaardscores.
 
-Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met links daarvan de variabelen, boven wiskundige symbolen, en rechts een aantal functies. Hier kan handmatig de functie worden geselecteerd die de nieuwe variabele definieert. Om standaardscores te berekenen sleep je de variabele die je wilt omzetten in het lege veld. Klik dan bovenaan op $-$ en selecteer daarna uit het rechter menu de functie `mean(y)`. Sleep de om te zette variabele naar "values" en klik daarna bovenaan op $\div$. Selecteer in het rechter menu de functie `$\sigma$y` voor op de puntjes onder het breukteken (als noemer) en sleep ook hier de om te zette variabele naar "values". Voor de variabele 'Lezen' zou dit er zo uitzien in het werkblad: \[\frac{(Lezen-mean(Lezen)}{\sigma Lezen}\]
+Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met links daarvan de variabelen, boven wiskundige symbolen, en rechts een aantal functies. Hier kan handmatig de functie worden geselecteerd die de nieuwe variabele definieert. Om standaardscores te berekenen sleep je de variabele die je wilt omzetten in het lege veld. Klik dan bovenaan op $-$ en selecteer daarna uit het rechter menu de functie `mean(y)`. Sleep de om te zette variabele naar "values" en klik daarna bovenaan op $\div$. Selecteer in het rechter menu de functie `σy` voor op de puntjes onder het breukteken (als noemer) en sleep ook hier de om te zette variabele naar "values". Voor de variabele 'Lezen' zou dit er zo uitzien in het werkblad: \[\frac{(Lezen-mean(Lezen)}{\sigma Lezen}\]
 Klik onderaan op `Compute column` om de lege variabele vervolgens te vullen met de standaardscores.
 
 ## R
