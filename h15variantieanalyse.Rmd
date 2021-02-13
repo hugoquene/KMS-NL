@@ -554,7 +554,7 @@ Die hypotheses kunnen gebaseerd zijn op theoretische overwegingen, of op
 eerdere onderzoeksresultaten.
 
 
-#### Orthogonale contrasten
+#### Orthogonale contrasten {#sec:anova-oneway-contrasts}
 
 Elk contrast kan worden uitgedrukt in de vorm van gewichten voor iedere
 conditie. Voor de hierboven besproken contrasten kan dat in de vorm van
@@ -704,7 +704,7 @@ betrouwbaarheidsinterval van het getoetste contrast. Het eerste contrast
 is wel significant (`Sig. .000`, rapporteer als $p<.001$, zie §\@ref(sec:pgroterdannul)), en het tweede niet, zie
 Tabel \@ref(tab:kleurtjes-anova-contrast).
 
-#### post-hoc-vergelijking
+#### post-hoc vergelijking
 
 Herhaal eerst de instructies hierboven.\
 Kies de knop `Post Hoc...`, en selecteer de factor `kleur`
@@ -718,6 +718,65 @@ Als dat interval *niet* nul omvat, dan is het verschil tussen de twee
 groepen of condities dus waarschijnlijk niet gelijk aan nul. De
 gecorrigeerde overschrijdingskans volgens Tukey's HSD toets is bovendien
 gegeven in de derde kolom. We zien dat rood verschilt van blauw, dat
+rood verschilt van grijs, en dat de scores van de grijze en blauwe
+groepen niet verschillen.
+
+### JASP
+
+#### voorbereiding
+
+We gebruiken de gegevens in het bestand `data/kleurgroepen.txt`; deze gegevens zijn ook weergegeven in Figuur \@ref(fig:kleurtjes-obs).
+Lees de data in en controleer deze. 
+
+Onderzoek of de responsies normaal verdeeld zijn, met behulp van de
+technieken uit Deel II van dit tekstboek (met name
+§\@ref(sec:isvarnormaalverdeeld)).
+
+Het toetsen of de varianties gelijk zijn in de
+drie groepen, zoals vereist voor variantieanalyse, doen we tegelijk
+met de variantieanalyse zelf.
+
+#### ANOVA
+
+Klik in de bovenbalk op:
+```
+ANOVA > ANOVA (onder 'Classical)
+```
+Selecteer de variabele *score* en plaats deze in het veld "Dependent Variable", en plaats variabele *kleur* in het veld "Fixed Factors".\
+Zorg dat onder "Display" `Estimates of effect size` is aangevinkt, en kies hier tussen $\omega^2$ en (partial) $\eta^2$. In dit boek houden we $\omega^2$ aan. Je kunt ook `Descriptive statistics` aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.\
+Open de balk "Assumption Checks" en vink `Homogeneity tests` aan. "Homogeneity corrections" mag op `None` blijven staan. 
+
+In de uitvoer wordt de variantieanalyse samgevat in een tabel gelijkend op Tabel \@ref(tab:kleurtjes-anova), waarbij ook de effectgrootte vermeld wordt in de vorm van $\omega^2$ en/of (partial) $\eta^2$.
+
+In de uitvoer vind je onder *Assumption Checks* ook de uitslag van Levene's toets op gelijke
+varianties (homogeniteit van variantie), die geen aanleiding geeft om H0
+te verwerpen. We mogen dus een variantieanalyse uitvoeren.
+
+#### gerichte vergelijking
+
+Voor een variantieanalyse met gerichte vergelijkingen moeten we de
+gewenste contrasten aangeven voor de factor `kleur`. De werkwijze is in het begin
+hetzelfde als hierboven, herhaal dus de instructies onder **ANOVA**. 
+
+Open vervolgens de balk "Contrasts". In het veld "Factors" staat als het goed is de variabele *kleur* en hierachter "none". Selecteer in plaats van deze "none" de optie "custom". Onder het veld verschijnt nu een werkblad "Custom for kleur". Vul hier de gewenste waarden voor de contrasten in zoals eerder beschreven (zie §\@ref(sec:anova-oneway-contrasts)). Voor contrast 1 $-1$ voor rood en $0.5$ voor blauw en grijs. Klik hierna op `Add contrast` en vul bij contrast 2 $0$ in voor rood, $-1$ voor grijs en $1$ voor blauw. 
+
+De uitvoer geeft voor ieder contrast (*Comparison*) de significantie. Let op! Er wordt gebruik gemaakt van een t-toets (voor twee onafhankelijke steekproeven). De p-waarde is hetzelfde, maar er wordt een andere toetsingsgrootheid gebruikt ($F$ in plaats van $t$). Dit maakt voor het resultaat niets uit, maar rapporteer het resultaat nu wel zoals je bij een t-toets doet. 
+
+#### post-hoc vergelijking
+
+Voor een variantieanalyse met post-hoc vergelijkingen moeten we de
+gewenste vergelijkingen aanvragen. De werkwijze is in het begin
+hetzelfde als hierboven, herhaal dus de instructies onder **ANOVA**. 
+
+Open vervolgens de balk "Post Hoc Tests" en verplaats variabele *kleur* naar het veld rechts. Zorg dat onder "Type" `Standard` is aangevinkt en daaronder ook `Effect size`. Vink onder "Correction" `Tukey` aan, en onder "Display" ook `Confidence intervals`.
+
+De uitvoer geeft nu onder *Post Hoc Tests* de resultaten. 
+Voor iedere paarsgewijze vergelijking zien we het verschil, de
+standaardfout, en de ondergrens en bovengrens van het 95% betrouwbaarheidsinterval van dat verschil.
+Als dat interval *niet* nul omvat, dan is het verschil tussen de twee
+groepen of condities dus waarschijnlijk niet gelijk aan nul. De
+gecorrigeerde overschrijdingskans volgens Tukey's HSD toets is bovendien
+gegeven in de laatste kolom. We zien dat rood verschilt van blauw, dat
 rood verschilt van grijs, en dat de scores van de grijze en blauwe
 groepen niet verschillen.
 
@@ -784,7 +843,7 @@ Als we gerichte vergelijkingen hebben (planned contrasts) dan is de eerder gecon
 (0.188-1*0.775)/(0.775+14.308+0.19+32.54) # afgerond 0.00
 ```
 
-#### post-hoc-vergelijkingen {#post-hoc-vergelijkingen}
+#### post-hoc vergelijkingen {#post-hoc-vergelijkingen}
 
 ```{r}
 TukeyHSD(m02)
