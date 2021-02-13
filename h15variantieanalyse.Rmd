@@ -1001,6 +1001,49 @@ Voor de post-hoc toetsen, kies de knop `Post Hoc...`. Selecteer factor
 `region` en kies `Tukey`. Bevestig met `Continue` en daarna nogmaals met
 `OK`.
 
+### JASP
+
+#### voorbereiding
+
+Eén spreker heeft een zeer lange gemiddelde syllabeduur; deze observatie
+zullen we verder negeren. We zetten hiervoor een filter aan waarbij de observatie wordt uitgesloten.\
+Ga naar het tabblad met data, en klik op het trechtersymbool (filter) in de cel linksboven. Er verschijnt dan een werkblad waar je je selectie kunt specificeren.\
+Klik 1x op de variabele `syldur` (links), die verspringt dan naar het werkblad. Klik daarna 1x op het symbool `<` (boven) en plaats de cursor achter het `<` teken op het werkblad, en typ $0.4$. Op het werkblad staat nu het selectiecriterium: `syldur < 0.4`.\
+Klik op de tekst `Apply pass-through filter` onder het werkblad om dit filter toe te passen. In het tabblad met data zie je nu direct dat de regel van de spreker met zeer lange syllabeduur (groter dan $0.4$) grijs is gemaakt. Die regel (observatie) wordt niet verder gebruikt. 
+
+#### ANOVA
+Klik in de bovenbalk op:
+```
+ANOVA > ANOVA (onder 'Classical)
+```
+Selecteer de variabele *syldur* en plaats deze in het veld "Dependent Variable", en plaats variabelen *region* en *sex* in het veld "Fixed Factors".\
+Zorg dat onder "Display" `Estimates of effect size` is aangevinkt, en kies hier tussen $\omega^2$ en (partial) $\eta^2$. In dit boek houden we $\omega^2$ aan. Je kunt ook `Descriptive statistics` aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.\
+Open de balk "Model" en selecteer onderin bij "Sum of squares" `Type I`.\
+Open de balk "Assumption Checks" en vink `Homogeneity tests` aan. "Homogeneity corrections" mag op `None` blijven staan.\
+Open ook de balk "Descriptive Plots" en selecteer variabele *region* in het veld "Horizontal Axis" en variabele *sex* in het veld "Separate Lines". 
+
+In de uitvoer wordt de variantieanalyse samgevat in een tabel gelijkend op Tabel \@ref(tab:syldur2way-anova), waarbij ook de effectgrootte vermeld wordt in de vorm van $\omega^2$ en/of (partial) $\eta^2$. Onder *Descriptive plots* zie je een visuele weergave van wat er wordt getoetst; dit helpt om het eventuele interactie-effect beter te begrijpen. 
+
+In de uitvoer vind je onder *Assumption Checks* ook de uitslag van Levene's toets op gelijke
+varianties (homogeniteit van variantie), die geen aanleiding geeft om H0
+te verwerpen. We mogen dus een variantieanalyse uitvoeren.
+
+#### post-hoc vergelijking
+
+Voor een variantieanalyse met post-hoc vergelijkingen moeten we de
+gewenste vergelijkingen aanvragen. De werkwijze is in het begin
+hetzelfde als hierboven, herhaal dus de instructies onder **ANOVA**. 
+
+Open vervolgens de balk "Post Hoc Tests" en verplaats variabele *region* naar het veld rechts. Zorg dat onder "Type" `Standard` is aangevinkt en daaronder ook `Effect size`. Vink onder "Correction" `Tukey` aan, en onder "Display" ook `Confidence intervals`.
+
+De uitvoer geeft nu onder *Post Hoc Tests* de resultaten. 
+Voor iedere paarsgewijze vergelijking zien we het verschil, de
+standaardfout, en de ondergrens en bovengrens van het 95% betrouwbaarheidsinterval van dat verschil.
+Als dat interval *niet* nul omvat, dan is het verschil tussen de twee
+groepen of condities dus waarschijnlijk niet gelijk aan nul. De
+gecorrigeerde overschrijdingskans volgens Tukey's HSD toets is bovendien
+gegeven in de laatste kolom. We zien dat alleen Noord en West, en Zuid en West van elkaar verschillen. 
+
 ### R 
 
 #### voorbereiding
