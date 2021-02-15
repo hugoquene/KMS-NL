@@ -37,13 +37,14 @@ Rianne Kraakman,
 Caspar van Lissa,
 Els Rose, 
 Tobias Quené, 
-Kirsten Schutter
-en Marijn Struiksma, 
+Kirsten Schutter, 
+Marijn Struiksma, 
+en Joanna Wall,
 voor hun adviezen, data, en/of commentaar bij eerdere versies.
 
 Tenslotte danken we Rianne Kraakman voor het schrijven van de subsecties met JASP-instructies. 
 
-Utrecht, september 2020 - januari 2021
+Utrecht, januari 2021
 
 Hugo Quené, <https://www.hugoquene.nl>
 

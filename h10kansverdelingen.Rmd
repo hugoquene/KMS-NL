@@ -534,14 +534,17 @@ Voor andere normale kansverdelingen kunnen de waarden voor $\mu$ en $\sigma$ wor
 
 ### R
 
-De normale kansverdeling van Figuur \@ref(fig:normaalkansverdeling) kan in R worden verkregen 
-met het onderstaande commando. Hierin wordt een `curve` getekend, waarbij `x` loopt tussen de aangegeven waarden, en `y` is de normale kansverdeling van `x` volgens formule \@ref(eq:prob-normal):
+De normale kansverdeling van Figuur \@ref(fig:normaalkansverdeling) kan in R worden afgebeeld 
+met het onderstaande commando. Hierin wordt een `curve` getekend, met `x` in het aangegeven domein, en waarbij `y` het resultaat is van de functie die de normale kansverdeling berekent volgens formule \@ref(eq:prob-normal):
 ```{r normkansverdeling.dnorm}
-curve( dnorm( x, mean=0, sd=1 ), 
-       from=-5, to=+5, lwd=4, xlab="x", ylab="P(x)" )
+curve( dnorm( x, mean=0, sd=1 ), # functie die y-waarden geeft, normal density
+       from=-5, to=+5, # domein van x
+       lwd=4, # line width is 4x normaal
+       xlab="x", ylab="P(x)" # labels langs x-as en y-as
+       )
 ```
 
-Als je een extra argument `curve( ..., add=TRUE )` toevoegt, dan wordt de curve toegevoegd aan een reeds bestaande plot.  
+Als je een extra argument `curve( ..., add=TRUE )` opgeeft, dan wordt de curve toegevoegd aan de meest recente plot (zie bijv. Figuur \@ref(fig:itunesmeanshist) hieronder).  
 
 ## Heeft mijn variabele een normale kansverdeling? {#sec:isvarnormaalverdeeld}
 
