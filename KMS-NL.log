@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  15 FEB 2021 21:39
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  15 FEB 2021 21:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -800,7 +800,7 @@ hun
 [9
 
 ] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
 
  []
 
@@ -811,7 +811,7 @@ Chapter 1.
 [15
 
 ] [16] [17] [18] [19]
-Underfull \hbox (badness 1622) in paragraph at lines 462--473
+Underfull \hbox (badness 1622) in paragraph at lines 463--474
 \TU/lmr/m/n/10 gegevens (klankvormen, toonhoogteverloop) beschreven zijn. Vaak 
 zijn
  []
@@ -821,66 +821,66 @@ Chapter 2.
 [25
 
 ] [26] [27] [28] [29] [30]
-Underfull \hbox (badness 1163) in paragraph at lines 999--1006
+Underfull \hbox (badness 1163) in paragraph at lines 1000--1007
 \TU/lmr/m/n/10 geopperd waarvan de onderzoeker vermoedt dat die algemeen geldig
  is.
  []
 
 [31] [32] [33] [34]
-Overfull \hbox (33.83005pt too wide) in alignment at lines 1195--1200
+Overfull \hbox (33.83005pt too wide) in alignment at lines 1196--1201
  [] [] [] 
  []
 
 
-Overfull \hbox (33.83005pt too wide) in alignment at lines 1200--1204
+Overfull \hbox (33.83005pt too wide) in alignment at lines 1201--1205
  [] [] [] 
  []
 
 
-Overfull \hbox (33.83005pt too wide) in alignment at lines 1204--1215
+Overfull \hbox (33.83005pt too wide) in alignment at lines 1205--1216
  [] [] [] 
  []
 
 [35] [36] [37] [38] [39] [40]
 Chapter 3.
 
-Underfull \hbox (badness 3281) in paragraph at lines 1420--1427
+Underfull \hbox (badness 3281) in paragraph at lines 1421--1428
 \TU/lmr/m/n/10 Wetenschappelijk onderzoek heeft de mensheid onmetelijk grote ba
 ten
  []
 
 
-Underfull \hbox (badness 3375) in paragraph at lines 1434--1434
+Underfull \hbox (badness 3375) in paragraph at lines 1435--1435
 [][][]\TU/lmr/m/n/8 Een kopie van de brief is te lezen via []$[][][][] [] [] []
  [][][][][][][][][][][][][][] [] [][][] [] [][][] [] [][][][][] [] [][][] []
  []
 
 
-Underfull \hbox (badness 3826) in paragraph at lines 1445--1453
+Underfull \hbox (badness 3826) in paragraph at lines 1446--1454
 []\TU/lmr/m/n/10 In dit hoofdstuk bespreken we de ethische en morele aspecten v
 an
  []
 
 
-Underfull \hbox (badness 1057) in paragraph at lines 1445--1453
+Underfull \hbox (badness 1057) in paragraph at lines 1446--1454
 \TU/lmr/m/n/10 wetenschappelijk onderzoek. Wetenschap is mensenwerk, en het ver
 eist
  []
 
 
-Underfull \hbox (badness 3000) in paragraph at lines 1445--1453
+Underfull \hbox (badness 3000) in paragraph at lines 1446--1454
 \TU/lmr/m/n/10 een goed ontwikkeld beoordelingsvermogen van de onderzoekers. De
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1445--1453
+Underfull \hbox (badness 10000) in paragraph at lines 1446--1454
 \TU/lmr/m/it/10 Nederlandse Gedragscode Wetenschappelijke Integriteit \TU/lmr/m
 /n/10 ([]VSNU[], []2018[])
  []
 
 
-Underfull \hbox (badness 7273) in paragraph at lines 1445--1453
+Underfull \hbox (badness 7273) in paragraph at lines 1446--1454
 \TU/lmr/m/n/10 ([]$[][][][] [] [] [] [][][] [] [][][][] [] [][] [] [][][][][][]
 [][][][][][][][][][][] [] [][][][][][][][][][][]$[]) beschrijft hoe weten-
  []
@@ -888,59 +888,59 @@ Underfull \hbox (badness 7273) in paragraph at lines 1445--1453
 [41
 
 ] [42] [43] [44] [45]
-Underfull \hbox (badness 2173) in paragraph at lines 1668--1679
+Underfull \hbox (badness 2173) in paragraph at lines 1669--1680
 []\TU/lmr/m/n/10 Foto’s en opnames van personen (audio, video, fysiologische ge
 gevens,
  []
 
 
-Underfull \hbox (badness 1184) in paragraph at lines 1668--1679
+Underfull \hbox (badness 1184) in paragraph at lines 1669--1680
 \TU/lmr/m/n/10 opnames worden dus als portretten beschouwd. Bij publicatie kan 
 de
  []
 
 [46]
-Underfull \hbox (badness 1297) in paragraph at lines 1720--1732
+Underfull \hbox (badness 1297) in paragraph at lines 1721--1733
 []\TU/lmr/m/n/10 De zorgvuldigheid vereist ook dat we goed bijhouden wat de geg
 evens
  []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 1740--1752
+Underfull \hbox (badness 1776) in paragraph at lines 1741--1753
 []\TU/lmr/m/it/10 Voorbeeld 3.4\TU/lmr/m/n/10 : Het bestand []$[][][][] [] [] [
 ] [][][][][][][] [] [][][] [] [][][][][][][]$[] bevat
  []
 
 [47] [48]
-Underfull \hbox (badness 2393) in paragraph at lines 1857--1860
+Underfull \hbox (badness 2393) in paragraph at lines 1858--1861
 []\TU/lmr/m/n/10 het overnemen van gedrukt materiaal zoals boeken, ti-
  []
 
 
-Underfull \hbox (badness 2119) in paragraph at lines 1857--1860
+Underfull \hbox (badness 2119) in paragraph at lines 1858--1861
 \TU/lmr/m/n/10 jdschriften en encyclopedieën zonder aanhalingstekens en
  []
 
 [49]
-Underfull \hbox (badness 1527) in paragraph at lines 1881--1886
+Underfull \hbox (badness 1527) in paragraph at lines 1882--1887
 \TU/lmr/m/n/10 auteurs plagiaat wordt gepleegd, zijn de andere auteurs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1891--1892
+Underfull \hbox (badness 10000) in paragraph at lines 1892--1893
 [][]$[][][][] [] [] [] [][][][][][][][] [] [][] [] [][] [] [][][][][][][][][][]
  [][] [][][][][] [] [][][][][][][][][][] [][] [][] [][] [][][][][][][][][][] []
 
  []
 
 
-Underfull \hbox (badness 2837) in paragraph at lines 1916--1925
+Underfull \hbox (badness 2837) in paragraph at lines 1917--1926
 \TU/lmr/m/n/10 van zulke programma’s is te vinden via []$[][][][][] [] [] [] []
 [] [] [][][][][][][][][] [] [][][] [] [][][][] []
  []
 
 
-Underfull \hbox (badness 1496) in paragraph at lines 1916--1925
+Underfull \hbox (badness 1496) in paragraph at lines 1917--1926
 [][][][][][][][][][] [] [][] [] [][][][][][][][][] [] [][][][][][][][][][] [] [
 ][][][][][][][]$[]\TU/lmr/m/n/10 . Voor dit tekstboek is
  []
@@ -957,18 +957,18 @@ Chapter 5.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [66] [67]
-Underfull \hbox (badness 2680) in paragraph at lines 2654--2661
+Underfull \hbox (badness 2680) in paragraph at lines 2655--2662
 []\TU/lmr/m/it/10 Voorbeeld 5.7\TU/lmr/m/n/10 : Zoals hierboven aangegeven kan 
 het begrip
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2666--2670
+Underfull \hbox (badness 10000) in paragraph at lines 2667--2671
 
  []
 
 [68] [69]
-Underfull \hbox (badness 1442) in paragraph at lines 2799--2814
+Underfull \hbox (badness 1442) in paragraph at lines 2800--2815
 \TU/lmr/m/n/10 conditie werd het gestructureerde leesonderwijs verzorgd door
  []
 
@@ -977,59 +977,59 @@ Chapter 6.
 [79
 
 ] [80]
-Underfull \hbox (badness 1092) in paragraph at lines 3302--3320
+Underfull \hbox (badness 1092) in paragraph at lines 3303--3321
 \TU/lmr/m/n/10 toegepast, maar er zijn desalniettemin diverse factoren die de v
 aliditeit
  []
 
 [81]
-Overfull \hbox (7.82867pt too wide) in paragraph at lines 3356--3356
+Overfull \hbox (7.82867pt too wide) in paragraph at lines 3357--3357
 []\TU/lmr/bx/n/14.4 Het één-groep-voormeting-nameting-ontwerp 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3393--3393
+Underfull \hbox (badness 10000) in paragraph at lines 3394--3394
 []\TU/lmr/bx/n/14.4 Het voormeting-nameting-controlegroep-
  []
 
 [82] [83] [84]
-Underfull \hbox (badness 1365) in paragraph at lines 3521--3526
+Underfull \hbox (badness 1365) in paragraph at lines 3522--3527
 \TU/lmr/m/n/10 Het Solomon-vier-groepen-ontwerp wordt veel minder vaak gebruikt
  dan
  []
 
 [85] [86] [87]
-Underfull \hbox (badness 1226) in paragraph at lines 3665--3681
+Underfull \hbox (badness 1226) in paragraph at lines 3666--3682
 \TU/lmr/m/n/10 hogere nivo’s (synthetisch of voorspellend luisteren): hij tikt
  []
 
 File: figures/DrakeBenElHeni2003Fig2.pdf Graphic file (type pdf)
 <use figures/DrakeBenElHeni2003Fig2.pdf>
 [88] [89] [90]
-Underfull \hbox (badness 6032) in paragraph at lines 3766--3766
+Underfull \hbox (badness 6032) in paragraph at lines 3767--3767
 []\TU/lmr/bx/n/14.4 Afhankelijke- en onafhankelijke-groepen-
  []
 
 [91] [92]
-Underfull \hbox (badness 2790) in paragraph at lines 3905--3915
+Underfull \hbox (badness 2790) in paragraph at lines 3906--3916
 \TU/lmr/m/n/10 iets mis is in de onderzoeksvragen, operationalisatie, onderzoek
 sopzet,
  []
 
 
-Underfull \hbox (badness 3449) in paragraph at lines 3905--3915
+Underfull \hbox (badness 3449) in paragraph at lines 3906--3916
 \TU/lmr/m/n/10 steekproeftrekking, en/of dataverwerking. Die problemen veroorza
 ken
  []
 
 
-Underfull \hbox (badness 1655) in paragraph at lines 3905--3915
+Underfull \hbox (badness 1655) in paragraph at lines 3906--3916
 \TU/lmr/m/n/10 ook in kennis die minder betrouwbaar, valide en robuust is dan m
 o-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3905--3915
+Underfull \hbox (badness 10000) in paragraph at lines 3906--3916
 []$[][][][][] [] [] [] [][][] [] [][][][][][][][] [] [][][] [] [][][][][][] [] 
 [][][][][][][] [] [][][][][][][] [][] [][][][][][][][][][][][][][][][][][][]$[]
 \TU/lmr/m/n/10 )
@@ -1041,7 +1041,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3905--3915
 Chapter 7.
 [97] [98] [99] [100] [101] [102] [103]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 4274.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 4275.
 [104] [105] [106] [107
 
 ] [108]
@@ -1049,12 +1049,12 @@ Chapter 8.
 [109
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 4427--4427
+Underfull \hbox (badness 10000) in paragraph at lines 4428--4428
 \TU/lmr/m/n/10 in het *Corpus Gesproken Nederlands* (C=consonant=medeklinker,
  []
 
 [110] [111]
-Underfull \hbox (badness 10000) in paragraph at lines 4547--4551
+Underfull \hbox (badness 10000) in paragraph at lines 4548--4552
 
  []
 
@@ -1063,13 +1063,13 @@ File: KMS-NL_files/figure-latex/klankfreq-barplot-1.pdf Graphic file (type pdf)
 
 <use KMS-NL_files/figure-latex/klankfreq-barplot-1.pdf>
 
-Underfull \hbox (badness 6691) in paragraph at lines 4633--4633
+Underfull \hbox (badness 6691) in paragraph at lines 4634--4634
 []\TU/lmr/m/n/10 Figure 8.1: [][]Staafdiagram van de frequentieverdeling van fo
 nologis-
  []
 
 
-Underfull \hbox (badness 6428) in paragraph at lines 4633--4633
+Underfull \hbox (badness 6428) in paragraph at lines 4634--4634
 \TU/lmr/m/n/10 che klasse van spraakklanken in het Corpus Gesproken Nederlands
  []
 
@@ -1081,7 +1081,7 @@ File: KMS-NL_files/figure-latex/troonrede2012-hist-1.pdf Graphic file (type pdf
 )
 <use KMS-NL_files/figure-latex/troonrede2012-hist-1.pdf>
 [116]
-Underfull \hbox (badness 10000) in paragraph at lines 4694--4699
+Underfull \hbox (badness 10000) in paragraph at lines 4695--4700
 
  []
 
@@ -1093,14 +1093,14 @@ Chapter 9.
 File: KMS-NL_files/figure-latex/wachttijden-hist-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/wachttijden-hist-1.pdf>
 [121] [122]
-Underfull \hbox (badness 10000) in paragraph at lines 4915--4915
+Underfull \hbox (badness 10000) in paragraph at lines 4916--4916
 [][][][]$[][][][] [] [] [] [][][] [] [][][] [] [][] [] [][] [][] [][] [] [][][]
 [] [] [][][][][][] [] [][][][][][][] [][] [][][][][][][][][][][] [] [][][][][][
 ][] [] [][][][][] []
  []
 
 [123]
-Underfull \hbox (badness 1303) in paragraph at lines 4960--4970
+Underfull \hbox (badness 1303) in paragraph at lines 4961--4971
 \TU/lmr/m/n/10 den/uur), vormt het harmonische gemiddelde hier een betere
  []
 
@@ -1115,32 +1115,32 @@ Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 [132] [133] [134] [135]
-Underfull \hbox (badness 10000) in paragraph at lines 5555--5556
+Underfull \hbox (badness 10000) in paragraph at lines 5556--5557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5561--5567
+Underfull \hbox (badness 10000) in paragraph at lines 5562--5568
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5568--5569
+Underfull \hbox (badness 10000) in paragraph at lines 5569--5570
 
  []
 
 [136]
-Underfull \hbox (badness 10000) in paragraph at lines 5574--5580
+Underfull \hbox (badness 10000) in paragraph at lines 5575--5581
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5581--5582
+Underfull \hbox (badness 10000) in paragraph at lines 5582--5583
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5587--5591
+Underfull \hbox (badness 10000) in paragraph at lines 5588--5592
 
  []
 
@@ -1151,7 +1151,7 @@ File: KMS-NL_files/figure-latex/cito-summary-boxplot-1.pdf Graphic file (type p
 df)
 <use KMS-NL_files/figure-latex/cito-summary-boxplot-1.pdf>
 [139]
-Overfull \hbox (33.0pt too wide) in paragraph at lines 5744--5744
+Overfull \hbox (33.0pt too wide) in paragraph at lines 5745--5745
 []\TU/lmtt/m/n/10 ## [1] -1.1575990  0.6776189  2.3716662 -0.3105753  0.1129365
  -0.7340872[] 
  []
@@ -1165,7 +1165,7 @@ File: KMS-NL_files/figure-latex/binomkansverdeling3-1.pdf Graphic file (type pd
 f)
 <use KMS-NL_files/figure-latex/binomkansverdeling3-1.pdf>
 
-Underfull \hbox (badness 1337) in paragraph at lines 5971--5975
+Underfull \hbox (badness 1337) in paragraph at lines 5972--5976
 []\TU/lmr/m/n/10 De kansverdeling van een binomiale variabele noemen we de bino
 miale
  []
@@ -1174,7 +1174,7 @@ miale
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 5981.
+(amsmath)                 on input line 5982.
 
 [146] [147]
 File: KMS-NL_files/figure-latex/binomkansverdeling50n500-1.pdf Graphic file (ty
@@ -1188,13 +1188,13 @@ File: KMS-NL_files/figure-latex/normkansverdeling.dnorm-1.pdf Graphic file (typ
 e pdf)
 <use KMS-NL_files/figure-latex/normkansverdeling.dnorm-1.pdf>
 
-Overfull \hbox (11.1839pt too wide) in paragraph at lines 6346--6346
+Overfull \hbox (11.1839pt too wide) in paragraph at lines 6347--6347
 []\TU/lmr/bx/n/14.4 Heeft mijn variabele een normale kansverdel-
  []
 
 
 LaTeX Warning: Reference `fig:itunestimeshist' on page 153 undefined on input l
-ine 6351.
+ine 6352.
 
 [153]
 File: KMS-NL_files/figure-latex/itunestimeshist-1.pdf Graphic file (type pdf)
@@ -1204,13 +1204,13 @@ File: KMS-NL_files/figure-latex/itunestimesqqplot-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/itunestimesqqplot-1.pdf>
 
 LaTeX Warning: Reference `fig:itunestimeshist' on page 154 undefined on input l
-ine 6385.
+ine 6386.
 
 [154]
 Underfull \vbox (badness 1681) has occurred while \output is active []
 
 [155]
-Underfull \hbox (badness 4084) in paragraph at lines 6453--6453
+Underfull \hbox (badness 4084) in paragraph at lines 6454--6454
 []\TU/lmr/bx/n/14.4 Wat als mijn variabele niet normaal
  []
 
@@ -1240,12 +1240,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: KMS-NL_files/figure-latex/cor-scatter-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/cor-scatter-1.pdf>
 [165]
-Underfull \hbox (badness 2310) in paragraph at lines 6816--6816
+Underfull \hbox (badness 2310) in paragraph at lines 6817--6817
 []\TU/lmr/m/n/10 Table 11.1: []Correlaties tussen de drie onderdelen van de
  []
 
 [166] [167]
-Overfull \hbox (7.90701pt too wide) in paragraph at lines 6879--6883
+Overfull \hbox (7.90701pt too wide) in paragraph at lines 6880--6884
 []\TU/lmr/m/n/10 Kies \TU/lmtt/m/n/10 Pearsons \TU/lmr/m/n/10 correlatiecoëffic
 iënt, vink aan: \TU/lmtt/m/n/10 Flag significant correlations\TU/lmr/m/n/10 .
  []
@@ -1254,7 +1254,7 @@ iënt, vink aan: \TU/lmtt/m/n/10 Flag significant correlations\TU/lmr/m/n/10 .
 File: KMS-NL_files/figure-latex/cito-linearmodel-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/cito-linearmodel-1.pdf>
 [169] [170] [171] [172] [173] [174] [175] [176]
-Overfull \hbox (90.75pt too wide) in paragraph at lines 7330--7330
+Overfull \hbox (90.75pt too wide) in paragraph at lines 7331--7331
 []\TU/lmtt/m/n/10 ## Warning in cor.test.default(Lezen, Rekenen, method = "spea
 rman"): Cannot compute[] 
  []
@@ -1267,24 +1267,24 @@ Chapter 12.
 [183
 
 ]
-Underfull \hbox (badness 1688) in paragraph at lines 7628--7633
+Underfull \hbox (badness 1688) in paragraph at lines 7629--7634
 \TU/lmr/m/n/10 verschillende vragen \TU/lmr/m/it/10 hetzelfde \TU/lmr/m/n/10 co
 nstruct meten, hier het con-
  []
 
 [184]
-Underfull \hbox (badness 1189) in paragraph at lines 7702--7714
+Underfull \hbox (badness 1189) in paragraph at lines 7703--7715
 []\TU/lmr/m/it/10 Voorbeeld 12.3: \TU/lmr/m/n/10 ([]Lata-Caneda et al.[], []200
 9[]) ontwikkelden een
  []
 
 
-Underfull \hbox (badness 2158) in paragraph at lines 7702--7714
+Underfull \hbox (badness 2158) in paragraph at lines 7703--7715
 \TU/lmr/m/n/10 Spaanstalige vragenlijst van 39 vragen, bedoeld voor afasie-
  []
 
 
-Underfull \hbox (badness 2671) in paragraph at lines 7702--7714
+Underfull \hbox (badness 2671) in paragraph at lines 7703--7715
 \TU/lmr/m/n/10 tweemaal afgenomen bij een steekproef van 23 Spaanstalige
  []
 
@@ -1295,87 +1295,87 @@ Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;
 [186]
 Missing character: There is no   in font [lmroman8-regular]:mapping=tex-text;!
 [187] [188]
-Underfull \hbox (badness 2088) in paragraph at lines 7922--7936
+Underfull \hbox (badness 2088) in paragraph at lines 7923--7937
 []\TU/lmr/m/n/10 Hierboven hebben we gesproken over metingen met behulp van mee
 t-
  []
 
 [189] [190] [191] [192] [193]
-Underfull \hbox (badness 10000) in paragraph at lines 8151--8154
+Underfull \hbox (badness 10000) in paragraph at lines 8152--8155
 
  []
 
 
-Overfull \hbox (6.50201pt too wide) in paragraph at lines 8159--8171
+Overfull \hbox (6.50201pt too wide) in paragraph at lines 8160--8172
 \TU/lmr/m/n/10 Vul als Scale label in een aanduiding van het construct, bijv. \
 TU/lmtt/m/n/10 Spreekvaardigheid\TU/lmr/m/n/10 . 
  []
 
 
-Underfull \hbox (badness 1895) in paragraph at lines 8159--8171
+Underfull \hbox (badness 1895) in paragraph at lines 8160--8172
 \TU/lmr/m/n/10 Kies \TU/lmtt/m/n/10 Statistics…\TU/lmr/m/n/10 , vink aan: Descr
 iptives for \TU/lmtt/m/n/10 Item, Scale, Scale if
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8185--8186
+Underfull \hbox (badness 10000) in paragraph at lines 8186--8187
 
  []
 
 
-Underfull \hbox (badness 1540) in paragraph at lines 8191--8194
+Underfull \hbox (badness 1540) in paragraph at lines 8192--8195
 \TU/lmr/m/n/10 Statistics” \TU/lmtt/m/n/10 Cronbach[]s a (if item dropped) \TU/
 lmr/m/n/10 en \TU/lmtt/m/n/10 Item-rest correlation
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8191--8194
+Underfull \hbox (badness 10000) in paragraph at lines 8192--8195
 
  []
 
 [194]
-Underfull \hbox (badness 10000) in paragraph at lines 8208--8210
+Underfull \hbox (badness 10000) in paragraph at lines 8209--8211
 
  []
 
 [195]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 8222--8222
+Overfull \hbox (48.75pt too wide) in paragraph at lines 8223--8223
 []\TU/lmtt/m/n/10 ## Number of categories should be increased  in order to coun
 t frequencies.[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 8246--8246
+Overfull \hbox (17.25pt too wide) in paragraph at lines 8247--8247
 []\TU/lmtt/m/n/10 ##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean  sd 
 median_r[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 8246--8246
+Overfull \hbox (12.0pt too wide) in paragraph at lines 8247--8247
 []\TU/lmtt/m/n/10 ##       0.68      0.68    0.74      0.41 2.1 0.17   72 4.6  
    0.41[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 8246--8246
+Overfull \hbox (17.25pt too wide) in paragraph at lines 8247--8247
 []\TU/lmtt/m/n/10 ##    raw_alpha std.alpha G6(smc) average_r  S/N alpha se var
 .r med.r[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 8246--8246
+Overfull \hbox (17.25pt too wide) in paragraph at lines 8247--8247
 []\TU/lmtt/m/n/10 ## B1      0.15      0.16   0.088     0.088 0.19    0.497    
 NA 0.088[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 8246--8246
+Overfull \hbox (17.25pt too wide) in paragraph at lines 8247--8247
 []\TU/lmtt/m/n/10 ## B2      0.58      0.58   0.410     0.410 1.39    0.264    
 NA 0.410[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 8246--8246
+Overfull \hbox (17.25pt too wide) in paragraph at lines 8247--8247
 []\TU/lmtt/m/n/10 ## B3      0.84      0.85   0.745     0.745 5.84    0.095    
 NA 0.745[] 
  []
@@ -1392,19 +1392,19 @@ File: KMS-NL_files/figure-latex/gramm2013onesample-1.pdf Graphic file (type pdf
 <use KMS-NL_files/figure-latex/gramm2013onesample-1.pdf>
 [200]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 8410.
+(Font)              scaled to size 14.4pt on input line 8411.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.4013pt on input line 8410.
+(Font)              scaled to size 14.4013pt on input line 8411.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 8410.
+(Font)              scaled to size 14.39845pt on input line 8411.
 [201] [202] [203]
-Overfull \hbox (72.65001pt too wide) in paragraph at lines 8539--8540
+Overfull \hbox (72.65001pt too wide) in paragraph at lines 8540--8541
 \TU/lmr/m/n/10 De hierboven besproken gegevens zijn te vinden in het bestand \T
 U/lmtt/m/n/10 data/grammaticatoets2013.csv\TU/lmr/m/n/10 . 
  []
 
 
-Overfull \hbox (72.65001pt too wide) in paragraph at lines 8573--8574
+Overfull \hbox (72.65001pt too wide) in paragraph at lines 8574--8575
 \TU/lmr/m/n/10 De hierboven besproken gegevens zijn te vinden in het bestand \T
 U/lmtt/m/n/10 data/grammaticatoets2013.csv\TU/lmr/m/n/10 . 
  []
@@ -1413,7 +1413,7 @@ U/lmtt/m/n/10 data/grammaticatoets2013.csv\TU/lmr/m/n/10 .
 Underfull \vbox (badness 2245) has occurred while \output is active []
 
 [206]
-Underfull \hbox (badness 1152) in paragraph at lines 8683--8686
+Underfull \hbox (badness 1152) in paragraph at lines 8684--8687
 []\TU/lmr/m/n/10 De gemiddelde score van de studenten Taalwetenschap (licht-
  []
 
@@ -1421,7 +1421,7 @@ Underfull \hbox (badness 1152) in paragraph at lines 8683--8686
 File: KMS-NL_files/figure-latex/gramm2013CIs-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/gramm2013CIs-1.pdf>
 [208] [209]
-Overfull \hbox (14.32307pt too wide) in paragraph at lines 8813--8813
+Overfull \hbox (14.32307pt too wide) in paragraph at lines 8814--8814
 []$[]$\TU/lmr/bx/n/14.4 -toets voor twee onafhankelijke steekproeven 
  []
 
@@ -1430,13 +1430,13 @@ Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 [211] [212] [213] [214]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 9062--9062
+Overfull \hbox (17.25pt too wide) in paragraph at lines 9063--9063
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means is not eq
 ual to 0[] 
  []
 
 [215] [216] [217]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 9238--9238
+Overfull \hbox (17.25pt too wide) in paragraph at lines 9239--9239
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means is not eq
 ual to 0[] 
  []
@@ -1451,18 +1451,18 @@ File: KMS-NL_files/figure-latex/kleinstesignifverschil-1.pdf Graphic file (type
  pdf)
 <use KMS-NL_files/figure-latex/kleinstesignifverschil-1.pdf>
 
-Underfull \hbox (badness 1454) in paragraph at lines 9370--9380
+Underfull \hbox (badness 1454) in paragraph at lines 9371--9381
 []\TU/lmr/m/it/10 Voorbeeld 13.3: \TU/lmr/m/n/10 Kijk nog eens naar formule [] 
 en naar
  []
 
 [221] [222]
-Underfull \hbox (badness 10000) in paragraph at lines 9487--9489
+Underfull \hbox (badness 10000) in paragraph at lines 9488--9490
 
  []
 
 [223]
-Overfull \hbox (90.75pt too wide) in paragraph at lines 9502--9502
+Overfull \hbox (90.75pt too wide) in paragraph at lines 9503--9503
 []\TU/lmtt/m/n/10 ## Warning in mean.default(score.TW): argument is not numeric
  or logical: returning[] 
  []
@@ -1485,7 +1485,7 @@ Underfull \vbox (badness 1655) has occurred while \output is active []
 Underfull \vbox (badness 2521) has occurred while \output is active []
 
 [230]
-Underfull \hbox (badness 10000) in paragraph at lines 9796--9796
+Underfull \hbox (badness 10000) in paragraph at lines 9797--9797
 []\TU/lmr/bx/n/14.4 Verband tussen significantieniveau en
  []
 
@@ -1495,21 +1495,21 @@ e pdf)
 <use KMS-NL_files/figure-latex/underpoweredeffectsizes-1.pdf>
 
 LaTeX Warning: Reference `fig:underpoweredeffectsizes' on page 232 undefined on
- input line 9835.
-
-
-LaTeX Warning: Reference `fig:underpoweredeffectsizes' on page 232 undefined on
  input line 9836.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9832--9851
+LaTeX Warning: Reference `fig:underpoweredeffectsizes' on page 232 undefined on
+ input line 9837.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9833--9852
 [][]
  []
 
 [232]
 
 LaTeX Warning: Reference `fig:underpoweredeffectsizes' on page 233 undefined on
- input line 9881.
+ input line 9882.
 
 [233] [234]
 Chapter 15.
@@ -1522,23 +1522,23 @@ File: KMS-NL_files/figure-latex/syldur-boxplot-1.pdf Graphic file (type pdf)
 File: KMS-NL_files/figure-latex/kleurtjes-obs-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/kleurtjes-obs-1.pdf>
 [239] [240] [241] [242] [243] [244] [245] [246]
-Underfull \hbox (badness 10000) in paragraph at lines 10545--10548
+Underfull \hbox (badness 10000) in paragraph at lines 10546--10549
 
  []
 
 [247]
-Underfull \hbox (badness 1122) in paragraph at lines 10570--10574
+Underfull \hbox (badness 1122) in paragraph at lines 10571--10575
 []\TU/lmr/m/n/10 Daarna wordt de variantieanalyse samengevat in een tabel gelij
 kend op
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10578--10594
+Underfull \hbox (badness 10000) in paragraph at lines 10579--10595
 
  []
 
 [248] [249] [250] [251] [252] [253]
-Underfull \hbox (badness 1259) in paragraph at lines 10903--10915
+Underfull \hbox (badness 1259) in paragraph at lines 10904--10916
 []\TU/lmr/m/n/10 De geobserveerde spreeksnelheden verschillen significant tusse
 n
  []
@@ -1547,19 +1547,19 @@ n
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [254] [255]
-Overfull \hbox (69.75pt too wide) in paragraph at lines 11054--11054
+Overfull \hbox (69.75pt too wide) in paragraph at lines 11055--11055
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored: sex[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 11059--11059
+Overfull \hbox (90.75pt too wide) in paragraph at lines 11060--11060
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored: region,[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 11075--11075
+Overfull \hbox (38.25pt too wide) in paragraph at lines 11076--11076
 []\TU/lmtt/m/n/10 ## Fit: aov(formula = syldur ~ region * sex, data = talkers, 
 subset = ok)[] 
  []
@@ -1569,13 +1569,13 @@ subset = ok)[]
 ]
 Chapter 16.
 
-Underfull \hbox (badness 1072) in paragraph at lines 11083--11097
+Underfull \hbox (badness 1072) in paragraph at lines 11084--11098
 \TU/lmr/m/n/10 We zagen al eerder dat we niet altijd gebruik kunnen maken van e
 en
  []
 
 
-Underfull \hbox (badness 1609) in paragraph at lines 11083--11097
+Underfull \hbox (badness 1609) in paragraph at lines 11084--11098
 \TU/lmr/m/n/10 parametrische toets zoals de of variantie-analyse, omdat de verz
 amelde
  []
@@ -1590,28 +1590,28 @@ LE STEEKPROEF \TU/lmr/m/n/10 261
  []
 
 [261] [262] [263] [264]
-Underfull \hbox (badness 1178) in paragraph at lines 11399--11404
+Underfull \hbox (badness 1178) in paragraph at lines 11400--11405
 []\TU/lmr/m/n/10 Selecteer de variabelen \TU/lmtt/m/n/10 klasse \TU/lmr/m/n/10 
 (in “Rows” paneel) en \TU/lmtt/m/n/10 overlevende \TU/lmr/m/n/10 (in
  []
 
 [265]
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11472--11477
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11473--11478
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11477--11481
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11478--11482
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11481--11486
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11482--11487
  [] [] [] [] [] [] [] 
  []
 
 [266]
-Underfull \hbox (badness 6608) in paragraph at lines 11496--11502
+Underfull \hbox (badness 6608) in paragraph at lines 11497--11503
 \TU/lmr/m/n/10 83 sterfgevallen-door-longkanker tegenover 21178 niet-sterfgeval
 len-door-
  []
@@ -1621,18 +1621,18 @@ len-door-
 ]
 Chapter 17.
 [269] [270]
-Underfull \hbox (badness 10000) in paragraph at lines 11642--11642
+Underfull \hbox (badness 10000) in paragraph at lines 11643--11643
 []\TU/lmr/bx/n/14.4 Onafhankelijke observaties, meerdere
  []
 
 
-Underfull \hbox (badness 1342) in paragraph at lines 11647--11656
+Underfull \hbox (badness 1342) in paragraph at lines 11648--11657
 \TU/lmr/m/n/10 De mediaantoets (Eng. ‘median test’) is te beschouwen als een no
 n-
  []
 
 
-Underfull \hbox (badness 3758) in paragraph at lines 11647--11656
+Underfull \hbox (badness 3758) in paragraph at lines 11648--11657
 \TU/lmr/m/n/10 parametrische, nominale tegenhanger van de \TU/lmr/m/it/10 t\TU/
 lmr/m/n/10 -toets voor ongepaarde,
  []
@@ -1663,28 +1663,28 @@ File: KMS-NL_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file
 ] [278]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 11880.
+(Font)              scaled to size 24.88pt on input line 11881.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 11880.
+(Font)              scaled to size 20.74pt on input line 11881.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 11880.
+(Font)              scaled to size 17.28pt on input line 11881.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 11880.
+(Font)              scaled to size 24.88228pt on input line 11881.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 11880.
+(Font)              scaled to size 20.7419pt on input line 11881.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 11880.
+(Font)              scaled to size 17.28157pt on input line 11881.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 11880.
+(Font)              scaled to size 24.87733pt on input line 11881.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 11880.
+(Font)              scaled to size 20.73778pt on input line 11881.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 11880.
+(Font)              scaled to size 17.27815pt on input line 11881.
 File: KMS-NL_files/figure-latex/kritieketwaarden-hulpfiguur-1.pdf Graphic file 
 (type pdf)
 <use KMS-NL_files/figure-latex/kritieketwaarden-hulpfiguur-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 11891--11936
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 11892--11937
 [][] 
  []
 
@@ -1699,7 +1699,7 @@ File: KMS-NL_files/figure-latex/kritiekechi2waarden-hulpfiguur-1.pdf Graphic fi
 le (type pdf)
 <use KMS-NL_files/figure-latex/kritiekechi2waarden-hulpfiguur-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 11947--11990
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 11948--11991
 [][] 
  []
 
