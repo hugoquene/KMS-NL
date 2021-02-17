@@ -760,7 +760,7 @@ hetzelfde als hierboven, herhaal dus de instructies onder **ANOVA**.
 
 Open vervolgens de balk "Contrasts". In het veld "Factors" staat als het goed is de variabele *kleur* en hierachter "none". Selecteer in plaats van deze "none" de optie "custom". Onder het veld verschijnt nu een werkblad "Custom for kleur". Vul hier de gewenste waarden voor de contrasten in zoals eerder beschreven (zie §\@ref(sec:anova-oneway-contrasts)). Voor contrast 1 $-1$ voor rood en $0.5$ voor blauw en grijs. Klik hierna op `Add contrast` en vul bij contrast 2 $0$ in voor rood, $-1$ voor grijs en $1$ voor blauw. 
 
-De uitvoer geeft voor ieder contrast (*Comparison*) de significantie. Let op! Er wordt gebruik gemaakt van een t-toets (voor twee onafhankelijke steekproeven). De p-waarde is hetzelfde, maar er wordt een andere toetsingsgrootheid gebruikt ($F$ in plaats van $t$). Dit maakt voor het resultaat niets uit, maar rapporteer het resultaat nu wel zoals je bij een t-toets doet. 
+De uitvoer geeft voor ieder contrast (*Comparison*) de significantie. Let op! Er wordt gebruik gemaakt van een t-toets (voor twee onafhankelijke steekproeven). De p-waarde is hetzelfde, maar er wordt een andere toetsingsgrootheid gebruikt ($t$ in plaats van $F$). Dit maakt voor het resultaat niets uit, maar rapporteer het resultaat nu wel zoals je bij een t-toets doet. 
 
 #### post-hoc vergelijking
 
