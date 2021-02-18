@@ -327,7 +327,43 @@ Als je `Expected proportions (chi-square test)` kiest, kun je de verwachte aanta
 
 Je kunt ook nog `Descriptives` en `Confidence interval` aanvinken onder "Additional Statistics" en `Descriptives plot` onder "Plots" om meer inzicht te krijgen in wat je toetst. 
 
+### kruistabellen: voorbereiding
 
+Als we twee nominale variabelen willen onderzoeken, dan moeten die allebei als kolommen in het databestand zijn aangemerkt. 
+Het is gebruikelijk dat iedere observatie dan een aparte regel vormt in dit databestand. Voor de $\chi^2$-toets met twee nominale variabelen kan zo'n "lang" databestand ook worden gebruikt in JASP. Voor het voorbeeld 16.1 hierboven zouden we dan $N=2201$ regels hebben: voor elke opvarende een aparte regel, met tenminste twee kolommen, voor `klasse` en `overlevende`.\
+
+Soms beschikken we niet over de afzonderlijke observaties (regels) maar
+wel over de kruistabel van aantallen observaties voor iedere combinatie
+van categorieën van de de nominale variabelen. We kunnen daarmee ook
+verder werken in JASP. Hierdoor hoeven we niet $N=2201$ regels in te vullen (voor elke observatie een regel), maar slechts 8 regels (voor elke cel een regel).
+Voor voorbeeld 16.1 ziet dit er als volgt uit: 
+```
+klasse overlevende aantal
+1st     niet       122
+1st     wel        203
+2nd     niet       167
+2nd     wel        118
+3rd     niet       528
+3rd     wel        178
+crew    niet       673
+crew    wel        212
+```
+Om deze data in JASP te krijgen maak je een Excel-bestand aan waar je de data invoert (precies zoals hierboven weergegeven, met de variabele-namen erbij). 
+Sla dit bestand op als CSV-bestand (.csv, dus niet .xlsx), en open het in JASP. 
+
+### kruistabellen: toetsing
+
+De toetsing verloopt op dezelfde wijze als beschreven in
+§\@ref(sec:Phi) voor de samenhang tussen twee nominale variabelen.
+
+Klik in de bovenbalk op:
+```
+Frequencies > Contingency Tables (onder 'Classical')
+```
+Selecteer de variabele `klasse` in het "Rows" paneel, de variabele `overlevende` in het "Columns" paneel en variabele `aantal` in het "Counts" paneel voor kruistabel \@ref(tab:titanic). Open de `Statistics` balk 
+en zorg dat `Chi-square` ($\chi^2$) is aangevinkt. De waarde voor $\chi^2$ verschijnt dan in de uitvoer in de tabel getiteld *Chi-Squared Tests*. 
+
+Mocht je toch een "lang" databestand hebben, waarbij elke regel een aparte observatie is, dan hoef je alleen de variabele `klasse` in het "Rows" paneel en de variabele `overlevende` in het "Columns" paneel te selecteren. 
 
 ## R
 
