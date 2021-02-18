@@ -3,7 +3,7 @@
 ## Inleiding {#sec:h16inleiding}
 
 We zagen al eerder dat we niet altijd gebruik kunnen maken van een
-parametrische toets zoals de of variantie-analyse, omdat de verzamelde
+parametrische toets zoals de $t$-toets of variantie-analyse, omdat de verzamelde
 gegevens niet voldoen aan de aannames. Als de verzamelde gegevens niet
 op interval-niveau gemeten zijn (zie hoofdstuk
 \@ref(ch:Meetniveau)), of als de kansverdeling van de gegevens
@@ -68,7 +68,7 @@ De $\chi^2$-toets is ook goed bruikbaar bij een onderzoeksontwerp met *een* nomi
 variabele, die we geobserveerd hebben in twee of meer steekproeven. De
 vraag is dan of de verdeling van de observaties over de categorieën
 gelijk is voor de verschillende steekproeven. Deze toets is
-vergelijkbaar met *t*-toets de voor twee onafhankelijke steekproeven
+vergelijkbaar met $t$-toets de voor twee onafhankelijke steekproeven
 (§\@ref(sec:ttoets-onafh)). De aantallen observaties vatten we dan
 doorgaans samen in een kruistabel met meerdere rijen voor de
 verschillende steekproeven, en meerdere kolommen voor de categorieën van
@@ -145,14 +145,14 @@ Herlees en onthoud de waarschuwingen over correlatie en causaliteit (§\@ref(sec
 
 ## aannames {#sec:chi2toets-aannames}
 
-De vereist drie aannames (assumpties) waaraan voldaan moet zijn, om de
+De $\chi^2$-toets vereist drie aannames (assumpties) waaraan voldaan moet zijn, om de
 toets te mogen gebruiken.
 
 * De gegevens moeten gemeten zijn op nominaal niveau, of moeten
 zijn versimpeld tot nominaal niveau (zie hoofdstuk \@ref(ch:Meetniveau)).
 
 * Alle observaties moeten onafhankelijk van elkaar zijn, en
-gebaseerd op (een) aselecte steekproe(f/ven) uit de populatie(s) (zie
+gebaseerd op (een) aselecte steekproef(/ven) uit de populatie(s) (zie
 §\@ref(sec:aselectesteekproef)), of op aselecte toewijzing van de
 elementen uit een steekproef aan onderzoekscondities (randomisatie, zie §\@ref(sec:internevaliditeit), punt 5). Ieder element uit de steekproef mag dus maar één observatie aan één
 cel bijdragen[^fn16-2].
@@ -224,7 +224,7 @@ elke cel een regel).
 Data > Weigh Cases... 
 ```
 Kies `Weigh cases by...` en selecteer de variabele `aantal` in
-invulveld. Bevestig met `OK`.
+het invulveld. Bevestig met `OK`.
 
 ### goodness of fit: toetsing
 
@@ -277,7 +277,7 @@ elke cel een regel).
 Data > Weigh Cases... 
 ```
 Kies `Weigh cases by...` en selecteer de variabele `aantal` in
-invulveld. Bevestig met `OK`.
+het invulveld. Bevestig met `OK`.
 
 ### kruistabellen: toetsing
 
