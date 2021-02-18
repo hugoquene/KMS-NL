@@ -299,7 +299,8 @@ Kies `Statistics…` en vink de optie `Chi-square` aan. Bevestig eerst met
 
 ### goodness of fit: voorbereiding
 
-Het is gebruikelijk dat iedere observatie een aparte regel vormt in een databestand. Voor de "goodness of fit" $\chi^2$-toets moet de data echter net iets anders worden ingevoerd. Niet alle afzonderlijke observaties moeten worden ingevoerd, maar de aantallen (ook wel 'frequenties' of 'counts') observaties per categorie van de nominale variabele. Hierdoor hoeven we niet $N=60$ regels in te vullen (voor elke observatie een regel), maar slechts 6 regels (voor elke categorie een regel). Voor het voorbeeld uit §\@ref(sec:chi2gof) ziet dit er als volgt uit:
+Als we een nominale variabele willen onderzoeken, dan moet die uiteraard
+als kolom in het databestand zijn aangemerkt. Het is gebruikelijk dat iedere observatie dan een aparte regel vormt in dit databestand. Voor de "goodness of fit" $\chi^2$-toets moet de data echter net iets anders worden ingevoerd. Niet alle afzonderlijke observaties moeten worden ingevoerd, maar de aantallen (ook wel 'frequenties' of 'counts') observaties per categorie van de nominale variabele. Hierdoor hoeven we niet $N=60$ regels in te vullen (voor elke observatie een regel), maar slechts 6 regels (voor elke categorie een regel). Voor het voorbeeld uit §\@ref(sec:chi2gof) ziet dit er als volgt uit:
 
 ```
 uitkomst aantal
@@ -321,9 +322,9 @@ Frequencies > Multinomial Test (onder 'Classical')
 ```
 Selecteer de variabele `uitkomst` en plaats deze in het veld "Factor". Plaats de variabele `aantal` in het veld "Count".\
 
-Onder "Test Values" kun je kiezen voor `Equal proportions (multinomial test)` en `Expected proportions (chi-square test)`. 
+Onder "Test Values" kun je kiezen voor `Equal proportions (multinomial test)` en `Expected proportions (chi-square test)`.\
 De multinomial test is een speciale versie van een $\chi^2$-toets waarbij de nul-hypothese wordt getoetst dat de aantallen gelijk zijn, m.a.w. de verwachte frequentie is identiek voor iedere cel (dat wordt een uniforme verdeling genoemd). Dat betekent in dit voorbeeld dat de dobbelsteen eerlijk is, en dat is ook wat we willen toetsen. Je kan in dit geval dus `Equal proportions (multinomial test)` kiezen.\
-Als je `Expected proportions (chi-square test)` kiest, kun je de verwachte aantallen observaties in elke cel aanpassen. Als er volgens H0 andere, ongelijke frequenties verwacht worden, kies je dus deze optie en vul je de verwachting in onder *H0* in de tabel die verschijnt (je geeft de cellen een ander 'gewicht', d.w.z. hoe vaak ze meetellen). De waardes onder *H0* voor elke cel staan echter standaard op 1, waarmee je dus ook gelijke frequenties test. Je krijgt dan dezelfde resultaten als met de multinomial test, dus voor ons voorbeeld maakt het niet zoveel uit welke van de twee opties je kiest.
+Als je `Expected proportions (chi-square test)` kiest, kun je de verwachte aantallen observaties in elke cel aanpassen. Als er volgens H0 andere, ongelijke frequenties verwacht worden, kies je dus deze optie en vul je de verwachting in onder *H0* in de tabel die verschijnt (je geeft de cellen een ander 'gewicht', d.w.z. hoe vaak ze meetellen). De waardes onder *H0* voor elke cel staan echter standaard op 1, waarmee je gelijke frequenties test. Je krijgt dan dezelfde resultaten als met de multinomial test, dus voor ons voorbeeld maakt het niet zoveel uit welke van de twee opties je kiest.
 
 Je kunt ook nog `Descriptives` en `Confidence interval` aanvinken onder "Additional Statistics" en `Descriptives plot` onder "Plots" om meer inzicht te krijgen in wat je toetst. 
 
