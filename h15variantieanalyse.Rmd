@@ -170,8 +170,8 @@ overeen met die van de *t*-toets
 
 * Alle observaties moeten onafhankelijk van elkaar zijn.
 
-* De scores moeten normaal verdeeld zijn (zie
-§\@ref(sec:isvarnormaalverdeeld)).
+* De scores moeten normaal verdeeld zijn 
+binnen elke groep (zie §\@ref(sec:isvarnormaalverdeeld)).
 
 * De variantie van de scores moet (ongeveer) gelijk zijn in de
 scores van de respectievelijke groepen of condities (zie
@@ -626,7 +626,7 @@ te definiëren, de standaardopties van SPSS werken hier goed.\
 Bevestig het laatste keuzescherm met `Done`. De gegevens
 worden dan ingelezen.
 
-Onderzoek of de responsies normaal verdeeld zijn, met behulp van de
+Onderzoek of de responsies normaal verdeeld zijn binnen elke groep, met behulp van de
 technieken uit Deel II van dit tekstboek (met name
 §\@ref(sec:isvarnormaalverdeeld)).
 
@@ -728,7 +728,7 @@ groepen niet verschillen.
 We gebruiken de gegevens in het bestand `data/kleurgroepen.txt`; deze gegevens zijn ook weergegeven in Figuur \@ref(fig:kleurtjes-obs).
 Lees de data in en controleer deze. 
 
-Onderzoek of de responsies normaal verdeeld zijn, met behulp van de
+Onderzoek of de responsies normaal verdeeld zijn binnen elke groep, met behulp van de
 technieken uit Deel II van dit tekstboek (met name
 §\@ref(sec:isvarnormaalverdeeld)).
 
@@ -760,7 +760,9 @@ hetzelfde als hierboven, herhaal dus de instructies onder **ANOVA**.
 
 Open vervolgens de balk "Contrasts". In het veld "Factors" staat als het goed is de variabele *kleur* en hierachter "none". Selecteer in plaats van deze "none" de optie "custom". Onder het veld verschijnt nu een werkblad "Custom for kleur". Vul hier de gewenste waarden voor de contrasten in zoals eerder beschreven (zie §\@ref(sec:anova-oneway-contrasts)). Voor contrast 1 $-1$ voor rood en $0.5$ voor blauw en grijs. Klik hierna op `Add contrast` en vul bij contrast 2 $0$ in voor rood, $-1$ voor grijs en $1$ voor blauw. 
 
-De uitvoer geeft voor ieder contrast (*Comparison*) de significantie. Let op! Er wordt gebruik gemaakt van een t-toets (voor twee onafhankelijke steekproeven). De p-waarde is hetzelfde, maar er wordt een andere toetsingsgrootheid gebruikt ($t$ in plaats van $F$). Dit maakt voor het resultaat niets uit, maar rapporteer het resultaat nu wel zoals je bij een t-toets doet. 
+De uitvoer geeft voor ieder contrast (*Comparison*) de significantie. Let op! 
+In de tekst hierboven (§\@ref(sec:anova-oneway-gericht)) werden de gerichte contrasten getoetst met behulp van de toetsingsgrootheid $F$;
+JASP gebruikt daarvoor echter de $t$-toets (voor twee onafhankelijke steekproeven). De $p$-waarde is hetzelfde. Rapporteer de toetsing van deze contrasten met behulp van de $t$-toets en $p$-waarde in de uitvoer van JASP, net zoals je bij een $t$-toets doet. 
 
 #### post-hoc vergelijking
 
@@ -791,7 +793,7 @@ kleurgroepen <- read.table( "data/kleurgroepen.txt",
                             header=TRUE, stringsAsFactors=TRUE )
 ```
 
-Onderzoek of de responsies normaal verdeeld zijn, met behulp van de
+Onderzoek of de responsies normaal verdeeld zijn binnen elke groep, met behulp van de
 technieken uit Deel II van dit tekstboek (met name
 §\@ref(sec:isvarnormaalverdeeld)).
 
