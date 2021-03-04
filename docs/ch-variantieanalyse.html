@@ -937,7 +937,7 @@ die overschrijdingskans.</p>
 opbouw in een zgn. ANOVA-tabel, zoals
 Tabel <a href="ch-variantieanalyse.html#tab:kleurtjes-anova">15.3</a>. Daarin staat de belangrijkste
 informatie samengevat. Maar de hele tabel kan ook in één zin samengevat
-worden, zie Voorbeeld 15.2</p>
+worden, zie Voorbeeld 15.2.</p>
 <table>
 <caption><span id="tab:kleurtjes-anova">Tabel 15.3: </span> Samenvatting van variantieanalyse van de observaties in Figuur <a href="ch-variantieanalyse.html#fig:kleurtjes-obs">15.2</a>.</caption>
 <thead>
@@ -1191,6 +1191,14 @@ vergelijkingen tezamen gelijk is aan de opgegeven overschrijdingskans
 <span class="math inline">\(\alpha\)</span> (zie §<a href="ch-variantieanalyse.html#sec:anova-voorbeelden">15.2</a>). De Tukey HSD toets resulteert in
 een 95% betrouwbaarheidsinterval van het verschil tussen twee condities,
 en/of in een <span class="math inline">\(p\)</span>-waarde van het verschil tussen twee condities.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 15.4</em>:
+De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep
+[<span class="math inline">\(F(2,42) = 9.35, p = .0004, \omega^2 = 0.28\)</span>].
+Post-hoc vergelijkingen met Tukey’s HSD-toets laten zien dat de grijze en blauwe groep niet van elkaar verschillen (<span class="math inline">\(p=.875\)</span>), maar dat er wel significante verschillen zijn tussen de blauwe en rode groep (<span class="math inline">\(p&lt;.001\)</span>) en tussen de grijze en de rode groep (<span class="math inline">\(p=.003\)</span>).</p>
+</blockquote>
+<hr />
 </div>
 <div id="spss-12" class="section level3" number="15.3.6">
 <h3><span class="header-section-number">15.3.6</span> SPSS</h3>
@@ -1343,7 +1351,7 @@ groepen of condities dus waarschijnlijk niet gelijk aan nul.
 Voor iedere paarsgewijze vergelijking rapporteert JASP een <span class="math inline">\(t\)</span>-toets, met aangepaste d.f. volgens Tukey’s HSD-toets. De
 aangepaste overschrijdingskans volgens Tukey’s HSD toets wordt gegeven in de laatste kolom. We zien dat rood verschilt van blauw, dat
 rood verschilt van grijs, en dat de scores van de grijze en blauwe
-groepen niet verschillen. In je eigen rapportage moet je vermelden dat Tukey’s HSD-toets is gebruikt, en wat de overschrijdingskansen zijn van elke post-hoc vergelijking.</p>
+groepen niet verschillen. In je eigen rapportage moet je vermelden dat Tukey’s HSD-toets is gebruikt, en wat de overschrijdingskansen zijn van elke post-hoc vergelijking (zie <em>Voorbeeld 15.4</em>).</p>
 </div>
 </div>
 <div id="r-15" class="section level3" number="15.3.8">

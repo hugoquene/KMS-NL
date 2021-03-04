@@ -10293,7 +10293,7 @@ De resultaten van een variantieanalyse worden samengevat met een vaste
 opbouw in een zgn. ANOVA-tabel, zoals
 Tabel~\ref{tab:kleurtjes-anova}. Daarin staat de belangrijkste
 informatie samengevat. Maar de hele tabel kan ook in één zin samengevat
-worden, zie Voorbeeld 15.2
+worden, zie Voorbeeld 15.2.
 
 \begin{longtable}[]{@{}lrcccc@{}}
 \caption{\label{tab:kleurtjes-anova} Samenvatting van variantieanalyse van de observaties in Figuur~\ref{fig:kleurtjes-obs}.}\tabularnewline
@@ -10509,6 +10509,17 @@ vergelijkingen tezamen gelijk is aan de opgegeven overschrijdingskans
 een 95\% betrouwbaarheidsinterval van het verschil tussen twee condities,
 en/of in een \(p\)-waarde van het verschil tussen twee condities.
 
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{quote}
+\emph{Voorbeeld 15.4}:
+De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep
+{[}\(F(2,42) = 9.35, p = .0004, \omega^2 = 0.28\){]}.
+Post-hoc vergelijkingen met Tukey's HSD-toets laten zien dat de grijze en blauwe groep niet van elkaar verschillen (\(p=.875\)), maar dat er wel significante verschillen zijn tussen de blauwe en rode groep (\(p<.001\)) en tussen de grijze en de rode groep (\(p=.003\)).
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
 \hypertarget{spss-12}{%
 \subsection{SPSS}\label{spss-12}}
 
@@ -10698,7 +10709,7 @@ groepen of condities dus waarschijnlijk niet gelijk aan nul.
 Voor iedere paarsgewijze vergelijking rapporteert JASP een \(t\)-toets, met aangepaste d.f. volgens Tukey's HSD-toets. De
 aangepaste overschrijdingskans volgens Tukey's HSD toets wordt gegeven in de laatste kolom. We zien dat rood verschilt van blauw, dat
 rood verschilt van grijs, en dat de scores van de grijze en blauwe
-groepen niet verschillen. In je eigen rapportage moet je vermelden dat Tukey's HSD-toets is gebruikt, en wat de overschrijdingskansen zijn van elke post-hoc vergelijking.
+groepen niet verschillen. In je eigen rapportage moet je vermelden dat Tukey's HSD-toets is gebruikt, en wat de overschrijdingskansen zijn van elke post-hoc vergelijking (zie \emph{Voorbeeld 15.4}).
 
 \hypertarget{r-15}{%
 \subsection{R}\label{r-15}}
