@@ -119,7 +119,7 @@
 
 \title{Kwantitatieve Methoden en Statistiek}
 \author{true}
-\date{Versie gecompileerd op 15 Feb 2021}
+\date{Versie gecompileerd op 04 Mar 2021}
 
 \begin{document}
 \maketitle
@@ -10080,8 +10080,8 @@ overeen met die van de \emph{t}-toets
 \item
   Alle observaties moeten onafhankelijk van elkaar zijn.
 \item
-  De scores moeten normaal verdeeld zijn (zie
-  §\ref{sec:isvarnormaalverdeeld}).
+  De scores moeten normaal verdeeld zijn
+  binnen elke groep (zie §\ref{sec:isvarnormaalverdeeld}).
 \item
   De variantie van de scores moet (ongeveer) gelijk zijn in de
   scores van de respectievelijke groepen of condities (zie
@@ -10449,8 +10449,8 @@ over verschillen tussen bepaalde (combinaties van) groepen of condities.
 Die hypotheses kunnen gebaseerd zijn op theoretische overwegingen, of op
 eerdere onderzoeksresultaten.
 
-\hypertarget{orthogonale-contrasten}{%
-\subsubsection{Orthogonale contrasten}\label{orthogonale-contrasten}}
+\hypertarget{sec:anova-oneway-contrasts}{%
+\subsubsection{Orthogonale contrasten}\label{sec:anova-oneway-contrasts}}
 
 Elk contrast kan worden uitgedrukt in de vorm van gewichten voor iedere
 conditie. Voor de hierboven besproken contrasten kan dat in de vorm van
@@ -10532,7 +10532,7 @@ te definiëren, de standaardopties van SPSS werken hier goed.\\
 Bevestig het laatste keuzescherm met \texttt{Done}. De gegevens
 worden dan ingelezen.
 
-Onderzoek of de responsies normaal verdeeld zijn, met behulp van de
+Onderzoek of de responsies normaal verdeeld zijn binnen elke groep, met behulp van de
 technieken uit Deel II van dit tekstboek (met name
 §\ref{sec:isvarnormaalverdeeld}).
 
@@ -10614,7 +10614,7 @@ is wel significant (\texttt{Sig.\ .000}, rapporteer als \(p<.001\), zie §\ref{s
 Tabel~\ref{tab:kleurtjes-anova-contrast}.
 
 \hypertarget{post-hoc-vergelijking}{%
-\subsubsection{post-hoc-vergelijking}\label{post-hoc-vergelijking}}
+\subsubsection{post-hoc vergelijking}\label{post-hoc-vergelijking}}
 
 Herhaal eerst de instructies hierboven.\\
 Kies de knop \texttt{Post\ Hoc...}, en selecteer de factor \texttt{kleur}
@@ -10631,11 +10631,80 @@ gegeven in de derde kolom. We zien dat rood verschilt van blauw, dat
 rood verschilt van grijs, en dat de scores van de grijze en blauwe
 groepen niet verschillen.
 
-\hypertarget{r-15}{%
-\subsection{R}\label{r-15}}
+\hypertarget{jasp-14}{%
+\subsection{JASP}\label{jasp-14}}
 
 \hypertarget{voorbereiding-1}{%
 \subsubsection{voorbereiding}\label{voorbereiding-1}}
+
+We gebruiken de gegevens in het bestand \texttt{data/kleurgroepen.txt}; deze gegevens zijn ook weergegeven in Figuur \ref{fig:kleurtjes-obs}.
+Lees de data in en controleer deze.
+
+Onderzoek of de responsies normaal verdeeld zijn binnen elke groep, met behulp van de
+technieken uit Deel II van dit tekstboek (met name
+§\ref{sec:isvarnormaalverdeeld}). Let op: Dit kan in JASP ook tegelijk met de variantieanalyse zelf, zie hieronder.
+
+Het toetsen of de varianties gelijk zijn in de
+drie groepen, zoals vereist voor variantieanalyse, doen we tegelijk
+met de variantieanalyse zelf, zie hieronder.
+
+\hypertarget{anova-1}{%
+\subsubsection{ANOVA}\label{anova-1}}
+
+Klik in de bovenbalk op:
+
+\begin{verbatim}
+ANOVA > ANOVA (onder 'Classical)
+\end{verbatim}
+
+Selecteer de variabele \emph{score} en plaats deze in het veld ``Dependent Variable'', en plaats variabele \emph{kleur} in het veld ``Fixed Factors''.\\
+Zorg dat onder ``Display'' \texttt{Estimates\ of\ effect\ size} is aangevinkt, en kies hier tussen \(\omega^2\) en (partial) \(\eta^2\). In dit boek houden we \(\omega^2\) aan. Je kunt ook \texttt{Descriptive\ statistics} aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.
+
+Open de balk ``Assumption Checks'' en vink \texttt{Homogeneity\ tests} aan. ``Homogeneity corrections'' mag op \texttt{None} blijven staan. Je kunt hier ook onderzoeken of de verdeling binnen iedere groep normaal is, dat is equivalent aan een normale verdeling van de \emph{residuen} van de variantieanalyse. Dat inspecteer je door hier ook \texttt{Q-Q\ plot\ of\ residuals} aan te vinken; in de resulterende Q-Q-plot zouden de residuen ongeveer op een rechte lijn moeten liggen (zie §\ref{sec:isvarnormaalverdeeld}).
+
+In de uitvoer wordt de variantieanalyse samengevat in een tabel gelijkend op Tabel \ref{tab:kleurtjes-anova}, waarbij ook de effectgrootte vermeld wordt in de vorm van \(\omega^2\) en/of (partial) \(\eta^2\).
+
+In de uitvoer vind je onder \emph{Assumption Checks} ook de uitslag van Levene's toets op gelijke
+varianties (homogeniteit van variantie). Die geeft geen aanleiding om H0
+te verwerpen; we mogen dus een variantieanalyse uitvoeren.
+
+\hypertarget{gerichte-vergelijking-1}{%
+\subsubsection{gerichte vergelijking}\label{gerichte-vergelijking-1}}
+
+Voor een variantieanalyse met gerichte vergelijkingen moeten we de
+gewenste contrasten aangeven voor de factor \texttt{kleur}. De werkwijze is in het begin
+hetzelfde als hierboven, herhaal dus de instructies onder \textbf{ANOVA}.
+
+Open vervolgens de balk ``Contrasts''. In het veld ``Factors'' staat als het goed is de variabele \emph{kleur} en hierachter ``none''. Selecteer in plaats van deze ``none'' de optie ``custom''. Onder het veld verschijnt nu een werkblad ``Custom for kleur''. Vul hier de gewenste waarden voor de contrasten in zoals eerder beschreven (zie §\ref{sec:anova-oneway-contrasts}). Voor contrast 1 \(-1\) voor rood en \(0.5\) voor blauw en grijs. Klik hierna op \texttt{Add\ contrast} en vul bij contrast 2 \(0\) in voor rood, \(-1\) voor grijs en \(1\) voor blauw.
+
+De uitvoer geeft voor ieder contrast (\emph{Comparison}) de significantie. Let op!
+In de tekst hierboven (§\ref{sec:anova-oneway-gericht}) werden de gerichte contrasten getoetst met behulp van de toetsingsgrootheid \(F\);
+JASP gebruikt daarvoor echter de \(t\)-toets (voor twee onafhankelijke steekproeven). De \(p\)-waarde is hetzelfde. Rapporteer de toetsing van deze contrasten met behulp van de \(t\)-toets en \(p\)-waarde in de uitvoer van JASP, net zoals je bij een \(t\)-toets doet.
+
+\hypertarget{post-hoc-vergelijking-1}{%
+\subsubsection{post-hoc vergelijking}\label{post-hoc-vergelijking-1}}
+
+Voor een variantieanalyse met post-hoc vergelijkingen moeten we de
+gewenste vergelijkingen aanvragen. De werkwijze is in het begin
+hetzelfde als hierboven, herhaal dus de instructies onder \textbf{ANOVA}.
+
+Open vervolgens de balk ``Post Hoc Tests'' en verplaats variabele \emph{kleur} naar het veld rechts. Zorg dat onder ``Type'' \texttt{Standard} is aangevinkt en daaronder ook \texttt{Effect\ size}. Vink onder ``Correction'' \texttt{Tukey} aan, en onder ``Display'' ook \texttt{Confidence\ intervals}.
+
+De uitvoer geeft nu onder \emph{Post Hoc Tests} de resultaten.
+Voor iedere paarsgewijze vergelijking zien we het verschil, de
+standaardfout, en de ondergrens en bovengrens van het 95\% betrouwbaarheidsinterval van dat verschil.
+Als dat interval \emph{niet} nul omvat, dan is het verschil tussen de twee
+groepen of condities dus waarschijnlijk niet gelijk aan nul.
+Voor iedere paarsgewijze vergelijking rapporteert JASP een \(t\)-toets, met aangepaste d.f. volgens Tukey's HSD-toets. De
+aangepaste overschrijdingskans volgens Tukey's HSD toets wordt gegeven in de laatste kolom. We zien dat rood verschilt van blauw, dat
+rood verschilt van grijs, en dat de scores van de grijze en blauwe
+groepen niet verschillen. In je eigen rapportage moet je vermelden dat Tukey's HSD-toets is gebruikt, en wat de overschrijdingskansen zijn van elke post-hoc vergelijking.
+
+\hypertarget{r-15}{%
+\subsection{R}\label{r-15}}
+
+\hypertarget{voorbereiding-2}{%
+\subsubsection{voorbereiding}\label{voorbereiding-2}}
 
 Lees eerst de benodigde gegevens, en controleer deze:
 
@@ -10647,7 +10716,7 @@ Lees eerst de benodigde gegevens, en controleer deze:
 \end{Highlighting}
 \end{Shaded}
 
-Onderzoek of de responsies normaal verdeeld zijn, met behulp van de
+Onderzoek of de responsies normaal verdeeld zijn binnen elke groep, met behulp van de
 technieken uit Deel II van dit tekstboek (met name
 §\ref{sec:isvarnormaalverdeeld}).
 
@@ -10670,8 +10739,8 @@ toetsen deze H0 met behulp van Bartlett's toets.
 ## Bartlett's K-squared = 3.0941, df = 2, p-value = 0.2129
 \end{verbatim}
 
-\hypertarget{anova-1}{%
-\subsubsection{ANOVA}\label{anova-1}}
+\hypertarget{anova-2}{%
+\subsubsection{ANOVA}\label{anova-2}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10708,8 +10777,8 @@ toetsen deze H0 met behulp van Bartlett's toets.
 ## [1] 0.2708136
 \end{verbatim}
 
-\hypertarget{gerichte-vergelijking-1}{%
-\subsubsection{gerichte vergelijking}\label{gerichte-vergelijking-1}}
+\hypertarget{gerichte-vergelijking-2}{%
+\subsubsection{gerichte vergelijking}\label{gerichte-vergelijking-2}}
 
 Bij het specificeren van de contrasten moeten we rekening houden met de \emph{alfabetische} ordening van de condities: \emph{blauw, grijs, rood}.
 
@@ -10771,7 +10840,7 @@ Als we gerichte vergelijkingen hebben (planned contrasts) dan is de eerder gecon
 \end{verbatim}
 
 \hypertarget{post-hoc-vergelijkingen}{%
-\subsubsection{post-hoc-vergelijkingen}\label{post-hoc-vergelijkingen}}
+\subsubsection{post-hoc vergelijkingen}\label{post-hoc-vergelijkingen}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10935,8 +11004,8 @@ within & 71 & 0.04837 & 0.000681 & &\tabularnewline
 \hypertarget{spss-13}{%
 \subsection{SPSS}\label{spss-13}}
 
-\hypertarget{voorbereiding-2}{%
-\subsubsection{voorbereiding}\label{voorbereiding-2}}
+\hypertarget{voorbereiding-3}{%
+\subsubsection{voorbereiding}\label{voorbereiding-3}}
 
 Eén spreker heeft een zeer lange gemiddelde syllabeduur; deze observatie
 zullen we verder negeren.
@@ -10962,11 +11031,61 @@ Voor de post-hoc toetsen, kies de knop \texttt{Post\ Hoc...}. Selecteer factor
 \texttt{region} en kies \texttt{Tukey}. Bevestig met \texttt{Continue} en daarna nogmaals met
 \texttt{OK}.
 
+\hypertarget{jasp-15}{%
+\subsection{JASP}\label{jasp-15}}
+
+\hypertarget{voorbereiding-4}{%
+\subsubsection{voorbereiding}\label{voorbereiding-4}}
+
+Eén spreker heeft een zeer lange gemiddelde syllabeduur; deze observatie
+zullen we verder negeren. We zetten hiervoor een filter aan waarbij de observatie wordt uitgesloten.\\
+Ga naar het tabblad met data, en klik op het trechtersymbool (filter) in de cel linksboven. Er verschijnt dan een werkblad waar je je selectie kunt specificeren.\\
+Klik 1x op de variabele \texttt{syldur} (links), die verspringt dan naar het werkblad. Klik daarna 1x op het symbool \texttt{\textless{}} (boven) en plaats de cursor achter het \texttt{\textless{}} teken op het werkblad, en typ \(0.4\). Op het werkblad staat nu het selectiecriterium: \texttt{syldur\ \textless{}\ 0.4}.\\
+Klik op de tekst \texttt{Apply\ pass-through\ filter} onder het werkblad om dit filter toe te passen. In het tabblad met data zie je nu direct dat de regel van de spreker met zeer lange syllabeduur (groter dan \(0.4\)) grijs is gemaakt. Die regel (observatie) wordt niet verder gebruikt.
+
+\hypertarget{anova-3}{%
+\subsubsection{ANOVA}\label{anova-3}}
+
+Klik in de bovenbalk op:
+
+\begin{verbatim}
+ANOVA > ANOVA (onder 'Classical)
+\end{verbatim}
+
+Selecteer de variabele \emph{syldur} en plaats deze in het veld ``Dependent Variable'', en plaats variabelen \emph{region} en \emph{sex} in het veld ``Fixed Factors''.\\
+Zorg dat onder ``Display'' \texttt{Estimates\ of\ effect\ size} is aangevinkt, en kies hier tussen \(\omega^2\) en (partial) \(\eta^2\). In dit boek houden we \(\omega^2\) aan. Je kunt ook \texttt{Descriptive\ statistics} aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.\\
+Open de balk ``Model'' en selecteer onderin bij ``Sum of squares'' \texttt{Type\ I}.\\
+Open de balk ``Assumption Checks'' en vink \texttt{Homogeneity\ tests} aan. ``Homogeneity corrections'' mag op \texttt{None} blijven staan.\\
+Open ook de balk ``Descriptive Plots'' en selecteer variabele \emph{region} in het veld ``Horizontal Axis'' en variabele \emph{sex} in het veld ``Separate Lines''.
+
+In de uitvoer wordt de variantieanalyse samgevat in een tabel gelijkend op Tabel \ref{tab:syldur2way-anova}, waarbij ook de effectgrootte vermeld wordt in de vorm van \(\omega^2\) en/of (partial) \(\eta^2\). Onder \emph{Descriptive plots} zie je een visuele weergave van wat er wordt getoetst; dit helpt om het eventuele interactie-effect beter te begrijpen.
+
+In de uitvoer vind je onder \emph{Assumption Checks} ook de uitslag van Levene's toets op gelijke
+varianties (homogeniteit van variantie), die geen aanleiding geeft om H0
+te verwerpen. We mogen dus een variantieanalyse uitvoeren.
+
+\hypertarget{post-hoc-vergelijking-2}{%
+\subsubsection{post-hoc vergelijking}\label{post-hoc-vergelijking-2}}
+
+Voor een variantieanalyse met post-hoc vergelijkingen moeten we de
+gewenste vergelijkingen aanvragen. De werkwijze is in het begin
+hetzelfde als hierboven, herhaal dus de instructies onder \textbf{ANOVA}.
+
+Open vervolgens de balk ``Post Hoc Tests'' en verplaats variabele \emph{region} naar het veld rechts. Zorg dat onder ``Type'' \texttt{Standard} is aangevinkt en daaronder ook \texttt{Effect\ size}. Vink onder ``Correction'' \texttt{Tukey} aan, en onder ``Display'' ook \texttt{Confidence\ intervals}.
+
+De uitvoer geeft nu onder \emph{Post Hoc Tests} de resultaten.
+Voor iedere paarsgewijze vergelijking zien we het verschil, de
+standaardfout, en de ondergrens en bovengrens van het 95\% betrouwbaarheidsinterval van dat verschil.
+Als dat interval \emph{niet} nul omvat, dan is het verschil tussen de twee
+groepen of condities dus waarschijnlijk niet gelijk aan nul. De
+gecorrigeerde overschrijdingskans volgens Tukey's HSD toets is bovendien
+gegeven in de laatste kolom. We zien dat alleen Noord en West, en Zuid en West van elkaar verschillen.
+
 \hypertarget{r-16}{%
 \subsection{R}\label{r-16}}
 
-\hypertarget{voorbereiding-3}{%
-\subsubsection{voorbereiding}\label{voorbereiding-3}}
+\hypertarget{voorbereiding-5}{%
+\subsubsection{voorbereiding}\label{voorbereiding-5}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10986,8 +11105,8 @@ Voor de post-hoc toetsen, kies de knop \texttt{Post\ Hoc...}. Selecteer factor
 ## W 0.2378100 0.23199
 \end{verbatim}
 
-\hypertarget{anova-2}{%
-\subsubsection{ANOVA}\label{anova-2}}
+\hypertarget{anova-4}{%
+\subsubsection{ANOVA}\label{anova-4}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11082,7 +11201,7 @@ We gebruiken hiervoor de eerder geprogrammeerde functie \texttt{omegasq} (§\ref
 \section{Inleiding}\label{sec:h16inleiding}}
 
 We zagen al eerder dat we niet altijd gebruik kunnen maken van een
-parametrische toets zoals de of variantie-analyse, omdat de verzamelde
+parametrische toets zoals de \(t\)-toets of variantie-analyse, omdat de verzamelde
 gegevens niet voldoen aan de aannames. Als de verzamelde gegevens niet
 op interval-niveau gemeten zijn (zie hoofdstuk
 \ref{ch:Meetniveau}), of als de kansverdeling van de gegevens
@@ -11149,7 +11268,7 @@ De \(\chi^2\)-toets is ook goed bruikbaar bij een onderzoeksontwerp met \emph{ee
 variabele, die we geobserveerd hebben in twee of meer steekproeven. De
 vraag is dan of de verdeling van de observaties over de categorieën
 gelijk is voor de verschillende steekproeven. Deze toets is
-vergelijkbaar met \emph{t}-toets de voor twee onafhankelijke steekproeven
+vergelijkbaar met \(t\)-toets de voor twee onafhankelijke steekproeven
 (§\ref{sec:ttoets-onafh}). De aantallen observaties vatten we dan
 doorgaans samen in een kruistabel met meerdere rijen voor de
 verschillende steekproeven, en meerdere kolommen voor de categorieën van
@@ -11240,7 +11359,7 @@ Herlees en onthoud de waarschuwingen over correlatie en causaliteit (§\ref{sec:
 \hypertarget{sec:chi2toets-aannames}{%
 \section{aannames}\label{sec:chi2toets-aannames}}
 
-De vereist drie aannames (assumpties) waaraan voldaan moet zijn, om de
+De \(\chi^2\)-toets vereist drie aannames (assumpties) waaraan voldaan moet zijn, om de
 toets te mogen gebruiken.
 
 \begin{itemize}
@@ -11249,7 +11368,7 @@ toets te mogen gebruiken.
   zijn versimpeld tot nominaal niveau (zie hoofdstuk \ref{ch:Meetniveau}).
 \item
   Alle observaties moeten onafhankelijk van elkaar zijn, en
-  gebaseerd op (een) aselecte steekproe(f/ven) uit de populatie(s) (zie
+  gebaseerd op (een) aselecte steekproef(/ven) uit de populatie(s) (zie
   §\ref{sec:aselectesteekproef}), of op aselecte toewijzing van de
   elementen uit een steekproef aan onderzoekscondities (randomisatie, zie §\ref{sec:internevaliditeit}, punt 5). Ieder element uit de steekproef mag dus maar één observatie aan één
   cel bijdragen\footnote{Als de observaties van één variabele niet onafhankelijk maar gepaard zijn (bijv. voor/na behandeling, wel/niet geslaagd, enz), dan biedt de McNemar test een bruikbaar alternatief.}.
@@ -11327,7 +11446,7 @@ Data > Weigh Cases...
 \end{verbatim}
 
 Kies \texttt{Weigh\ cases\ by...} en selecteer de variabele \texttt{aantal} in
-invulveld. Bevestig met \texttt{OK}.
+het invulveld. Bevestig met \texttt{OK}.
 
 \hypertarget{goodness-of-fit-toetsing}{%
 \subsection{goodness of fit: toetsing}\label{goodness-of-fit-toetsing}}
@@ -11384,7 +11503,7 @@ Data > Weigh Cases...
 \end{verbatim}
 
 Kies \texttt{Weigh\ cases\ by...} en selecteer de variabele \texttt{aantal} in
-invulveld. Bevestig met \texttt{OK}.
+het invulveld. Bevestig met \texttt{OK}.
 
 \hypertarget{kruistabellen-toetsing}{%
 \subsection{kruistabellen: toetsing}\label{kruistabellen-toetsing}}
@@ -11403,11 +11522,94 @@ kruistabel~\ref{tab:titanic}.\\
 Kies \texttt{Statistics\ldots{}} en vink de optie~\texttt{Chi-square}~aan. Bevestig eerst met
 \texttt{Continue} en daarna nogmaals met \texttt{OK}.
 
-\hypertarget{r-17}{%
-\section{R}\label{r-17}}
+\hypertarget{jasp-16}{%
+\section{JASP}\label{jasp-16}}
+
+\hypertarget{goodness-of-fit-voorbereiding-1}{%
+\subsection{goodness of fit: voorbereiding}\label{goodness-of-fit-voorbereiding-1}}
+
+Als we een nominale variabele willen onderzoeken, dan moet die uiteraard
+als kolom in het databestand zijn aangemerkt. Het is gebruikelijk dat iedere observatie dan een aparte regel vormt in dit databestand. Voor de ``goodness of fit'' \(\chi^2\)-toets moet de data echter net iets anders worden ingevoerd. Niet alle afzonderlijke observaties moeten worden ingevoerd, maar de aantallen (ook wel `frequenties' of `counts') observaties per categorie van de nominale variabele. Hierdoor hoeven we niet \(N=60\) regels in te vullen (voor elke observatie een regel), maar slechts 6 regels (voor elke categorie een regel). Voor het voorbeeld uit §\ref{sec:chi2gof} ziet dit er als volgt uit:
+
+\begin{verbatim}
+uitkomst aantal
+ 1        14
+ 2         9
+ 3        11
+ 4        10
+ 5        15
+ 6         1
+\end{verbatim}
+
+Om deze data in JASP te krijgen maak je een Excel-bestand aan waar je de data invoert (precies zoals hierboven weergegeven, met de variabele-namen erbij).
+Sla dit bestand op als CSV-bestand (.csv, dus niet .xlsx), en open het in JASP.
 
 \hypertarget{goodness-of-fit-toetsing-1}{%
 \subsection{goodness of fit: toetsing}\label{goodness-of-fit-toetsing-1}}
+
+Klik in de bovenbalk op:
+
+\begin{verbatim}
+Frequencies > Multinomial Test (onder 'Classical')
+\end{verbatim}
+
+Selecteer de variabele \texttt{uitkomst} en plaats deze in het veld ``Factor''. Plaats de variabele \texttt{aantal} in het veld ``Count''.\\
+
+Onder ``Test Values'' kun je kiezen voor \texttt{Equal\ proportions\ (multinomial\ test)} en \texttt{Expected\ proportions\ (chi-square\ test)}.\\
+De multinomial test is een speciale versie van een \(\chi^2\)-toets waarbij de nul-hypothese wordt getoetst dat de aantallen gelijk zijn, m.a.w. de verwachte frequentie is identiek voor iedere cel (dat wordt een uniforme verdeling genoemd). Dat betekent in dit voorbeeld dat de dobbelsteen eerlijk is, en dat is ook wat we willen toetsen. Je kan in dit geval dus \texttt{Equal\ proportions\ (multinomial\ test)} kiezen.\\
+Als je \texttt{Expected\ proportions\ (chi-square\ test)} kiest, kun je de verwachte aantallen observaties in elke cel aanpassen. Als er volgens H0 andere, ongelijke frequenties verwacht worden, kies je dus deze optie en vul je de verwachting in onder \emph{H0} in de tabel die verschijnt (je geeft de cellen een ander `gewicht', d.w.z. hoe vaak ze meetellen). De waardes onder \emph{H0} voor elke cel staan echter standaard op 1, waarmee je gelijke frequenties test. Je krijgt dan dezelfde resultaten als met de multinomial test, dus voor ons voorbeeld maakt het niet zoveel uit welke van de twee opties je kiest.
+
+Je kunt ook nog \texttt{Descriptives} en \texttt{Confidence\ interval} aanvinken onder ``Additional Statistics'' en \texttt{Descriptives\ plot} onder ``Plots'' om meer inzicht te krijgen in wat je toetst.
+
+\hypertarget{kruistabellen-voorbereiding-1}{%
+\subsection{kruistabellen: voorbereiding}\label{kruistabellen-voorbereiding-1}}
+
+Als we twee nominale variabelen willen onderzoeken, dan moeten die allebei als kolommen in het databestand zijn aangemerkt.
+Het is gebruikelijk dat iedere observatie dan een aparte regel vormt in dit databestand. Voor de \(\chi^2\)-toets met twee nominale variabelen kan zo'n ``lang'' databestand ook worden gebruikt in JASP. Voor het voorbeeld 16.1 hierboven zouden we dan \(N=2201\) regels hebben: voor elke opvarende een aparte regel, met tenminste twee kolommen, voor \texttt{klasse} en \texttt{overlevende}.\\
+
+Soms beschikken we niet over de afzonderlijke observaties (regels) maar
+wel over de kruistabel van aantallen observaties voor iedere combinatie
+van categorieën van de de nominale variabelen. We kunnen daarmee ook
+verder werken in JASP. Hierdoor hoeven we niet \(N=2201\) regels in te vullen (voor elke observatie een regel), maar slechts 8 regels (voor elke cel een regel).
+Voor voorbeeld 16.1 ziet dit er als volgt uit:
+
+\begin{verbatim}
+klasse overlevende aantal
+1st     niet       122
+1st     wel        203
+2nd     niet       167
+2nd     wel        118
+3rd     niet       528
+3rd     wel        178
+crew    niet       673
+crew    wel        212
+\end{verbatim}
+
+Om deze data in JASP te krijgen maak je een Excel-bestand aan waar je de data invoert (precies zoals hierboven weergegeven, met de variabele-namen erbij).
+Sla dit bestand op als CSV-bestand (.csv, dus niet .xlsx), en open het in JASP.
+
+\hypertarget{kruistabellen-toetsing-1}{%
+\subsection{kruistabellen: toetsing}\label{kruistabellen-toetsing-1}}
+
+De toetsing verloopt op dezelfde wijze als beschreven in
+§\ref{sec:Phi} voor de samenhang tussen twee nominale variabelen.
+
+Klik in de bovenbalk op:
+
+\begin{verbatim}
+Frequencies > Contingency Tables (onder 'Classical')
+\end{verbatim}
+
+Selecteer de variabele \texttt{klasse} in het ``Rows'' paneel, de variabele \texttt{overlevende} in het ``Columns'' paneel en variabele \texttt{aantal} in het ``Counts'' paneel voor kruistabel \ref{tab:titanic}. Open de \texttt{Statistics} balk
+en zorg dat \texttt{Chi-square} (\(\chi^2\)) is aangevinkt. De waarde voor \(\chi^2\) verschijnt dan in de uitvoer in de tabel getiteld \emph{Chi-Squared Tests}.
+
+Mocht je toch een ``lang'' databestand hebben, waarbij elke regel een aparte observatie is, dan hoef je alleen de variabele \texttt{klasse} in het ``Rows'' paneel en de variabele \texttt{overlevende} in het ``Columns'' paneel te selecteren.
+
+\hypertarget{r-17}{%
+\section{R}\label{r-17}}
+
+\hypertarget{goodness-of-fit-toetsing-2}{%
+\subsection{goodness of fit: toetsing}\label{goodness-of-fit-toetsing-2}}
 
 \begin{Shaded}
 \begin{Highlighting}[]

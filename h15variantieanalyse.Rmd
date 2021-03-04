@@ -730,11 +730,11 @@ Lees de data in en controleer deze.
 
 Onderzoek of de responsies normaal verdeeld zijn binnen elke groep, met behulp van de
 technieken uit Deel II van dit tekstboek (met name
-§\@ref(sec:isvarnormaalverdeeld)).
+§\@ref(sec:isvarnormaalverdeeld)). Let op: Dit kan in JASP ook tegelijk met de variantieanalyse zelf, zie hieronder. 
 
 Het toetsen of de varianties gelijk zijn in de
 drie groepen, zoals vereist voor variantieanalyse, doen we tegelijk
-met de variantieanalyse zelf.
+met de variantieanalyse zelf, zie hieronder.
 
 #### ANOVA
 
@@ -743,14 +743,15 @@ Klik in de bovenbalk op:
 ANOVA > ANOVA (onder 'Classical)
 ```
 Selecteer de variabele *score* en plaats deze in het veld "Dependent Variable", en plaats variabele *kleur* in het veld "Fixed Factors".\
-Zorg dat onder "Display" `Estimates of effect size` is aangevinkt, en kies hier tussen $\omega^2$ en (partial) $\eta^2$. In dit boek houden we $\omega^2$ aan. Je kunt ook `Descriptive statistics` aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.\
-Open de balk "Assumption Checks" en vink `Homogeneity tests` aan. "Homogeneity corrections" mag op `None` blijven staan. 
+Zorg dat onder "Display" `Estimates of effect size` is aangevinkt, en kies hier tussen $\omega^2$ en (partial) $\eta^2$. In dit boek houden we $\omega^2$ aan. Je kunt ook `Descriptive statistics` aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.
 
-In de uitvoer wordt de variantieanalyse samgevat in een tabel gelijkend op Tabel \@ref(tab:kleurtjes-anova), waarbij ook de effectgrootte vermeld wordt in de vorm van $\omega^2$ en/of (partial) $\eta^2$.
+Open de balk "Assumption Checks" en vink `Homogeneity tests` aan. "Homogeneity corrections" mag op `None` blijven staan. Je kunt hier ook onderzoeken of de verdeling binnen iedere groep normaal is, dat is equivalent aan een normale verdeling van de *residuen* van de variantieanalyse. Dat inspecteer je door hier ook `Q-Q plot of residuals` aan te vinken; in de resulterende Q-Q-plot zouden de residuen ongeveer op een rechte lijn moeten liggen (zie §\@ref(sec:isvarnormaalverdeeld)).
+
+In de uitvoer wordt de variantieanalyse samengevat in een tabel gelijkend op Tabel \@ref(tab:kleurtjes-anova), waarbij ook de effectgrootte vermeld wordt in de vorm van $\omega^2$ en/of (partial) $\eta^2$.
 
 In de uitvoer vind je onder *Assumption Checks* ook de uitslag van Levene's toets op gelijke
-varianties (homogeniteit van variantie), die geen aanleiding geeft om H0
-te verwerpen. We mogen dus een variantieanalyse uitvoeren.
+varianties (homogeniteit van variantie). Die geeft geen aanleiding om H0
+te verwerpen; we mogen dus een variantieanalyse uitvoeren.
 
 #### gerichte vergelijking
 
