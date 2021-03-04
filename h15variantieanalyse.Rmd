@@ -776,11 +776,11 @@ De uitvoer geeft nu onder *Post Hoc Tests* de resultaten.
 Voor iedere paarsgewijze vergelijking zien we het verschil, de
 standaardfout, en de ondergrens en bovengrens van het 95% betrouwbaarheidsinterval van dat verschil.
 Als dat interval *niet* nul omvat, dan is het verschil tussen de twee
-groepen of condities dus waarschijnlijk niet gelijk aan nul. De
-gecorrigeerde overschrijdingskans volgens Tukey's HSD toets is bovendien
-gegeven in de laatste kolom. We zien dat rood verschilt van blauw, dat
+groepen of condities dus waarschijnlijk niet gelijk aan nul. 
+Voor iedere paarsgewijze vergelijking rapporteert JASP een $t$-toets, met aangepaste d.f. volgens Tukey's HSD-toets. De
+aangepaste overschrijdingskans volgens Tukey's HSD toets wordt gegeven in de laatste kolom. We zien dat rood verschilt van blauw, dat
 rood verschilt van grijs, en dat de scores van de grijze en blauwe
-groepen niet verschillen.
+groepen niet verschillen. In je eigen rapportage moet je vermelden dat Tukey's HSD-toets is gebruikt, en wat de overschrijdingskansen zijn van elke post-hoc vergelijking. 
 
 ### R
 
