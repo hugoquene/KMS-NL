@@ -895,8 +895,7 @@ vrouwen, of andersom gezegd als de verschillen tussen mannen en vrouwen
 anders zijn voor de verschillende regio's, dan spreken we van interactie
 of wisselwerking. Door een tweede factor toe te voegen in het onderzoek,
 krijgen we dus ook te maken met een derde effect, nl. de interactie
-tussen de eerste en tweede factor 
-[^fn15-2].
+tussen de eerste en tweede factor[^fn15-2].
 
 Als er een significante interactie aanwezig is, dan kunnen we niet meer
 algemene uitspraken doen over de betrokken hoofdeffecten. Immers, de
@@ -1031,7 +1030,7 @@ ANOVA > ANOVA (onder 'Classical)
 ```
 Selecteer de variabele *syldur* en plaats deze in het veld "Dependent Variable", en plaats variabelen *region* en *sex* in het veld "Fixed Factors".\
 Zorg dat onder "Display" `Estimates of effect size` is aangevinkt, en kies hier tussen $\omega^2$ en (partial) $\eta^2$. In dit boek houden we $\omega^2$ aan. Je kunt ook `Descriptive statistics` aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.\
-Open de balk "Model" en selecteer onderin bij "Sum of squares" `Type I`.\
+Open de balk "Model" en selecteer onderin bij "Sum of squares" `Type III`.\
 Open de balk "Assumption Checks" en vink `Homogeneity tests` aan. "Homogeneity corrections" mag op `None` blijven staan. Je kunt hier ook onderzoeken of de verdeling binnen iedere groep of cel normaal is, dat is equivalent aan een normale verdeling van de *residuen* van de variantieanalyse. Dat inspecteer je door hier ook `Q-Q plot of residuals` aan te vinken; in de resulterende Q-Q-plot zouden de residuen ongeveer op een rechte lijn moeten liggen (zie §\@ref(sec:isvarnormaalverdeeld)).
 
 Open ook de balk "Descriptive Plots" en selecteer variabele *region* in het veld "Horizontal Axis" en variabele *sex* in het veld "Separate Lines". 
@@ -1073,11 +1072,10 @@ with(talkers, tapply( syldur[ok], list(region[ok],sex[ok]), mean ))
 #### ANOVA
 
 ```{r}
-# zie Table 15.5 in hoofdtekst
 summary( aov(syldur~region*sex, data=talkers, subset=ok) -> m03 )
 ```
 
-De uitkomsten wijken enigszins af van die in Tabel \@ref(tab:syldur2way-anova) omdat R de Sums of Squares op een iets andere wijze berekent. 
+De uitkomsten wijken enigszins af van die in Tabel \@ref(tab:syldur2way-anova) omdat R de Sums of Squares op een iets andere wijze berekent[^fn15-3].
 
 #### effectgrootte {#effectgrootte}
 
@@ -1103,3 +1101,5 @@ Ook hier wijken de uitkomsten enigszins af van die in de tekst hierboven omdat R
 [^fn15-1]: Als (1) rood wel verschilt van grijs en blauw, en als (2) grijs en blauw bovendien onderling niet verschillen, dan impliceert dat dat rood verschilt van grijs (een nieuwe bevinding) en dat rood verschilt van blauw (dat wisten we al).
 
 [^fn15-2]: Als we nog meer factoren toevoegen, dan wordt de situatie al snel onoverzichtelijk. Met drie hoofdeffecten zijn er al 3  tweeweg-interacties plus 1 drieweg-interactie. Met vier hoofdeffecten zijn er al 6 tweeweg-interacties, plus 4 drieweg-interacties, plus 1 vierweg-interactie.
+
+[^fn15-3]: De berekeningswijze van R is na te bootsen in JASP met de keuze: Model, Sum of squares: Type I.

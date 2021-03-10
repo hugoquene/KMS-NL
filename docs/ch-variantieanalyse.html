@@ -1474,7 +1474,7 @@ vrouwen, of andersom gezegd als de verschillen tussen mannen en vrouwen
 anders zijn voor de verschillende regio’s, dan spreken we van interactie
 of wisselwerking. Door een tweede factor toe te voegen in het onderzoek,
 krijgen we dus ook te maken met een derde effect, nl. de interactie
-tussen de eerste en tweede factor.<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a></p>
+tussen de eerste en tweede factor<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.</p>
 <p>Als er een significante interactie aanwezig is, dan kunnen we niet meer
 algemene uitspraken doen over de betrokken hoofdeffecten. Immers, de
 werking van een hoofdeffect hangt dan tevens af van de wisselwerking met
@@ -1635,7 +1635,7 @@ Klik op de tekst <code>Apply pass-through filter</code> onder het werkblad om di
 <pre><code>ANOVA &gt; ANOVA (onder &#39;Classical)</code></pre>
 <p>Selecteer de variabele <em>syldur</em> en plaats deze in het veld “Dependent Variable”, en plaats variabelen <em>region</em> en <em>sex</em> in het veld “Fixed Factors”.<br />
 Zorg dat onder “Display” <code>Estimates of effect size</code> is aangevinkt, en kies hier tussen <span class="math inline">\(\omega^2\)</span> en (partial) <span class="math inline">\(\eta^2\)</span>. In dit boek houden we <span class="math inline">\(\omega^2\)</span> aan. Je kunt ook <code>Descriptive statistics</code> aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.<br />
-Open de balk “Model” en selecteer onderin bij “Sum of squares” <code>Type I</code>.<br />
+Open de balk “Model” en selecteer onderin bij “Sum of squares” <code>Type III</code>.<br />
 Open de balk “Assumption Checks” en vink <code>Homogeneity tests</code> aan. “Homogeneity corrections” mag op <code>None</code> blijven staan. Je kunt hier ook onderzoeken of de verdeling binnen iedere groep of cel normaal is, dat is equivalent aan een normale verdeling van de <em>residuen</em> van de variantieanalyse. Dat inspecteer je door hier ook <code>Q-Q plot of residuals</code> aan te vinken; in de resulterende Q-Q-plot zouden de residuen ongeveer op een rechte lijn moeten liggen (zie §<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p>
 <p>Open ook de balk “Descriptive Plots” en selecteer variabele <em>region</em> in het veld “Horizontal Axis” en variabele <em>sex</em> in het veld “Separate Lines”.</p>
 <p>In de uitvoer wordt de variantieanalyse samengevat in een tabel gelijkend op Tabel <a href="ch-variantieanalyse.html#tab:syldur2way-anova">15.5</a>, waarbij ook de effectgrootte vermeld wordt in de vorm van <span class="math inline">\(\omega^2\)</span> en/of (partial) <span class="math inline">\(\eta^2\)</span>. Onder <em>Descriptive plots</em> zie je een visuele weergave van wat er wordt getoetst; dit helpt om het eventuele interactie-effect beter te begrijpen.</p>
@@ -1675,8 +1675,7 @@ gegeven in de laatste kolom. We zien dat alleen Noord en West, en Zuid en West v
 </div>
 <div id="anova-4" class="section level4" number="15.4.5.2">
 <h4><span class="header-section-number">15.4.5.2</span> ANOVA</h4>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch-variantieanalyse.html#cb152-1" aria-hidden="true"></a><span class="co"># zie Table 15.5 in hoofdtekst</span></span>
-<span id="cb152-2"><a href="ch-variantieanalyse.html#cb152-2" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>(syldur<span class="op">~</span>region<span class="op">*</span>sex, <span class="dt">data=</span>talkers, <span class="dt">subset=</span>ok) -&gt;<span class="st"> </span>m03 )</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch-variantieanalyse.html#cb152-1" aria-hidden="true"></a><span class="kw">summary</span>( <span class="kw">aov</span>(syldur<span class="op">~</span>region<span class="op">*</span>sex, <span class="dt">data=</span>talkers, <span class="dt">subset=</span>ok) -&gt;<span class="st"> </span>m03 )</span></code></pre></div>
 <pre><code>##             Df  Sum Sq  Mean Sq F value   Pr(&gt;F)    
 ## region       3 0.01234 0.004114   6.039 0.001009 ** 
 ## sex          1 0.01031 0.010310  15.135 0.000223 ***
@@ -1684,7 +1683,7 @@ gegeven in de laatste kolom. We zien dat alleen Noord en West, en Zuid en West v
 ## Residuals   71 0.04837 0.000681                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>De uitkomsten wijken enigszins af van die in Tabel <a href="ch-variantieanalyse.html#tab:syldur2way-anova">15.5</a> omdat R de Sums of Squares op een iets andere wijze berekent.</p>
+<p>De uitkomsten wijken enigszins af van die in Tabel <a href="ch-variantieanalyse.html#tab:syldur2way-anova">15.5</a> omdat R de Sums of Squares op een iets andere wijze berekent<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.</p>
 </div>
 <div id="effectgrootte" class="section level4" number="15.4.5.3">
 <h4><span class="header-section-number">15.4.5.3</span> effectgrootte</h4>
@@ -1745,6 +1744,7 @@ gegeven in de laatste kolom. We zien dat alleen Noord en West, en Zuid en West v
 <ol start="32">
 <li id="fn32"><p>Als (1) rood wel verschilt van grijs en blauw, en als (2) grijs en blauw bovendien onderling niet verschillen, dan impliceert dat dat rood verschilt van grijs (een nieuwe bevinding) en dat rood verschilt van blauw (dat wisten we al).<a href="ch-variantieanalyse.html#fnref32" class="footnote-back">↩︎</a></p></li>
 <li id="fn33"><p>Als we nog meer factoren toevoegen, dan wordt de situatie al snel onoverzichtelijk. Met drie hoofdeffecten zijn er al 3 tweeweg-interacties plus 1 drieweg-interactie. Met vier hoofdeffecten zijn er al 6 tweeweg-interacties, plus 4 drieweg-interacties, plus 1 vierweg-interactie.<a href="ch-variantieanalyse.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<li id="fn34"><p>De berekeningswijze van R is na te bootsen in JASP met de keuze: Model, Sum of squares: Type I.<a href="ch-variantieanalyse.html#fnref34" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

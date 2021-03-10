@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  10 MAR 2021 10:02
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  10 MAR 2021 10:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1541,19 +1541,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 10590--10606
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [256] [257] [258] [259]
-Overfull \hbox (69.75pt too wide) in paragraph at lines 11191--11191
+Overfull \hbox (69.75pt too wide) in paragraph at lines 11189--11189
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored: sex[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 11196--11196
+Overfull \hbox (90.75pt too wide) in paragraph at lines 11194--11194
 []\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
 ctors ignored: region,[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 11212--11212
+Overfull \hbox (38.25pt too wide) in paragraph at lines 11210--11210
 []\TU/lmtt/m/n/10 ## Fit: aov(formula = syldur ~ region * sex, data = talkers, 
 subset = ok)[] 
  []
@@ -1561,7 +1561,7 @@ subset = ok)[]
 [260]
 Chapter 16.
 
-Underfull \hbox (badness 1072) in paragraph at lines 11222--11236
+Underfull \hbox (badness 1072) in paragraph at lines 11220--11234
 \TU/lmr/m/n/10 We zagen al eerder dat we niet altijd gebruik kunnen maken van e
 en
  []
@@ -1578,38 +1578,38 @@ LE STEEKPROEF \TU/lmr/m/n/10 263
  []
 
 [263] [264] [265] [266]
-Underfull \hbox (badness 1178) in paragraph at lines 11538--11543
+Underfull \hbox (badness 1178) in paragraph at lines 11536--11541
 []\TU/lmr/m/n/10 Selecteer de variabelen \TU/lmtt/m/n/10 klasse \TU/lmr/m/n/10 
 (in “Rows” paneel) en \TU/lmtt/m/n/10 overlevende \TU/lmr/m/n/10 (in
  []
 
 [267]
-Underfull \hbox (badness 10000) in paragraph at lines 11575--11576
+Underfull \hbox (badness 10000) in paragraph at lines 11573--11574
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11586--11588
+Underfull \hbox (badness 10000) in paragraph at lines 11584--11586
 
  []
 
 [268] [269] [270]
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11694--11699
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11692--11697
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11699--11703
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11697--11701
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11703--11708
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11701--11706
  [] [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 6608) in paragraph at lines 11718--11724
+Underfull \hbox (badness 6608) in paragraph at lines 11716--11722
 \TU/lmr/m/n/10 83 sterfgevallen-door-longkanker tegenover 21178 niet-sterfgeval
 len-door-
  []
@@ -1619,18 +1619,18 @@ len-door-
 ]
 Chapter 17.
 [273] [274]
-Underfull \hbox (badness 10000) in paragraph at lines 11864--11864
+Underfull \hbox (badness 10000) in paragraph at lines 11862--11862
 []\TU/lmr/bx/n/14.4 Onafhankelijke observaties, meerdere
  []
 
 
-Underfull \hbox (badness 1342) in paragraph at lines 11869--11878
+Underfull \hbox (badness 1342) in paragraph at lines 11867--11876
 \TU/lmr/m/n/10 De mediaantoets (Eng. ‘median test’) is te beschouwen als een no
 n-
  []
 
 
-Underfull \hbox (badness 3758) in paragraph at lines 11869--11878
+Underfull \hbox (badness 3758) in paragraph at lines 11867--11876
 \TU/lmr/m/n/10 parametrische, nominale tegenhanger van de \TU/lmr/m/it/10 t\TU/
 lmr/m/n/10 -toets voor ongepaarde,
  []
@@ -1661,28 +1661,28 @@ File: KMS-NL_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file
 ] [282]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 12102.
+(Font)              scaled to size 24.88pt on input line 12100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 12102.
+(Font)              scaled to size 20.74pt on input line 12100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 12102.
+(Font)              scaled to size 17.28pt on input line 12100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 12102.
+(Font)              scaled to size 24.88228pt on input line 12100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 12102.
+(Font)              scaled to size 20.7419pt on input line 12100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 12102.
+(Font)              scaled to size 17.28157pt on input line 12100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 12102.
+(Font)              scaled to size 24.87733pt on input line 12100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 12102.
+(Font)              scaled to size 20.73778pt on input line 12100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 12102.
+(Font)              scaled to size 17.27815pt on input line 12100.
 File: KMS-NL_files/figure-latex/kritieketwaarden-hulpfiguur-1.pdf Graphic file 
 (type pdf)
 <use KMS-NL_files/figure-latex/kritieketwaarden-hulpfiguur-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 12113--12158
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 12111--12156
 [][] 
  []
 
@@ -1697,7 +1697,7 @@ File: KMS-NL_files/figure-latex/kritiekechi2waarden-hulpfiguur-1.pdf Graphic fi
 le (type pdf)
 <use KMS-NL_files/figure-latex/kritiekechi2waarden-hulpfiguur-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 12169--12212
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 12167--12210
 [][] 
  []
 

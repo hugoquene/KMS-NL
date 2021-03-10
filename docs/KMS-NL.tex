@@ -10908,8 +10908,7 @@ vrouwen, of andersom gezegd als de verschillen tussen mannen en vrouwen
 anders zijn voor de verschillende regio's, dan spreken we van interactie
 of wisselwerking. Door een tweede factor toe te voegen in het onderzoek,
 krijgen we dus ook te maken met een derde effect, nl. de interactie
-tussen de eerste en tweede factor
-\footnote{Als we nog meer factoren toevoegen, dan wordt de situatie al snel onoverzichtelijk. Met drie hoofdeffecten zijn er al 3 tweeweg-interacties plus 1 drieweg-interactie. Met vier hoofdeffecten zijn er al 6 tweeweg-interacties, plus 4 drieweg-interacties, plus 1 vierweg-interactie.}.
+tussen de eerste en tweede factor\footnote{Als we nog meer factoren toevoegen, dan wordt de situatie al snel onoverzichtelijk. Met drie hoofdeffecten zijn er al 3 tweeweg-interacties plus 1 drieweg-interactie. Met vier hoofdeffecten zijn er al 6 tweeweg-interacties, plus 4 drieweg-interacties, plus 1 vierweg-interactie.}.
 
 Als er een significante interactie aanwezig is, dan kunnen we niet meer
 algemene uitspraken doen over de betrokken hoofdeffecten. Immers, de
@@ -11066,7 +11065,7 @@ ANOVA > ANOVA (onder 'Classical)
 
 Selecteer de variabele \emph{syldur} en plaats deze in het veld ``Dependent Variable'', en plaats variabelen \emph{region} en \emph{sex} in het veld ``Fixed Factors''.\\
 Zorg dat onder ``Display'' \texttt{Estimates\ of\ effect\ size} is aangevinkt, en kies hier tussen \(\omega^2\) en (partial) \(\eta^2\). In dit boek houden we \(\omega^2\) aan. Je kunt ook \texttt{Descriptive\ statistics} aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.\\
-Open de balk ``Model'' en selecteer onderin bij ``Sum of squares'' \texttt{Type\ I}.\\
+Open de balk ``Model'' en selecteer onderin bij ``Sum of squares'' \texttt{Type\ III}.\\
 Open de balk ``Assumption Checks'' en vink \texttt{Homogeneity\ tests} aan. ``Homogeneity corrections'' mag op \texttt{None} blijven staan. Je kunt hier ook onderzoeken of de verdeling binnen iedere groep of cel normaal is, dat is equivalent aan een normale verdeling van de \emph{residuen} van de variantieanalyse. Dat inspecteer je door hier ook \texttt{Q-Q\ plot\ of\ residuals} aan te vinken; in de resulterende Q-Q-plot zouden de residuen ongeveer op een rechte lijn moeten liggen (zie §\ref{sec:isvarnormaalverdeeld}).
 
 Open ook de balk ``Descriptive Plots'' en selecteer variabele \emph{region} in het veld ``Horizontal Axis'' en variabele \emph{sex} in het veld ``Separate Lines''.
@@ -11123,7 +11122,6 @@ gegeven in de laatste kolom. We zien dat alleen Noord en West, en Zuid en West v
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# zie Table 15.5 in hoofdtekst}
 \KeywordTok{summary}\NormalTok{( }\KeywordTok{aov}\NormalTok{(syldur}\OperatorTok{\textasciitilde{}}\NormalTok{region}\OperatorTok{*}\NormalTok{sex, }\DataTypeTok{data=}\NormalTok{talkers, }\DataTypeTok{subset=}\NormalTok{ok) {-}\textgreater{}}\StringTok{ }\NormalTok{m03 )}
 \end{Highlighting}
 \end{Shaded}
@@ -11138,7 +11136,7 @@ gegeven in de laatste kolom. We zien dat alleen Noord en West, en Zuid en West v
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 \end{verbatim}
 
-De uitkomsten wijken enigszins af van die in Tabel \ref{tab:syldur2way-anova} omdat R de Sums of Squares op een iets andere wijze berekent.
+De uitkomsten wijken enigszins af van die in Tabel \ref{tab:syldur2way-anova} omdat R de Sums of Squares op een iets andere wijze berekent\footnote{De berekeningswijze van R is na te bootsen in JASP met de keuze: Model, Sum of squares: Type I.}.
 
 \hypertarget{effectgrootte}{%
 \subsubsection{effectgrootte}\label{effectgrootte}}
