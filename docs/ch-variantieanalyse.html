@@ -1196,7 +1196,7 @@ en/of in een <span class="math inline">\(p\)</span>-waarde van het verschil tuss
 <p><em>Voorbeeld 15.4</em>:
 De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep
 [<span class="math inline">\(F(2,42) = 9.35, p = .0004, \omega^2 = 0.28\)</span>].
-Post-hoc vergelijkingen met Tukey’s HSD-toets laten zien dat de grijze en blauwe groep niet van elkaar verschillen (<span class="math inline">\(p=.875\)</span>), maar dat er wel significante verschillen zijn tussen de blauwe en rode groep (<span class="math inline">\(p&lt;.001\)</span>) en tussen de grijze en de rode groep (<span class="math inline">\(p=.003\)</span>).</p>
+Post-hoc vergelijkingen met Tukey’s HSD-toets laten zien dat de grijze en blauwe groep niet van elkaar verschillen (<span class="math inline">\(p=.875\)</span>), maar dat er wel significante verschillen zijn tussen de rode en de blauwe groep (<span class="math inline">\(p&lt;.001\)</span>) en tussen de rode en de grijze groep (<span class="math inline">\(p=.003\)</span>).</p>
 </blockquote>
 <hr />
 </div>
@@ -1539,15 +1539,13 @@ interactie-effect.</p>
 <blockquote>
 <p>De geobserveerde spreeksnelheden verschillen significant tussen de vier
 regio’s van herkomst van de sprekers
-[<span class="math inline">\(F(3,71)=6.0, p=.0010, \omega^2=.14\)</span>], en mannen spreken significant
-sneller dan vrouwen [<span class="math inline">\(F(1,71)=15.1, p=.0002, \omega^2=.13\)</span>].
-De twee
-factoren vertoonden geen interactie
-[<span class="math inline">\(F(3,71)=1.4, \textrm{n.s.}, \omega^2=.01\)</span>].
-Een
-post-hoc-vergelijking tussen de regio’s liet zien dat de sprekers uit
+<span class="math inline">\([F(3,71)=6.09, p=.0010, \omega^2=.14]\)</span>, en mannen spreken significant
+sneller dan vrouwen <span class="math inline">\([F(1,71)=15.03, p=.0002, \omega^2=.13]\)</span>.
+De twee factoren vertoonden geen interactie
+<span class="math inline">\([F(3,71)=1.41, \textrm{n.s.}, \omega^2=.01]\)</span>.
+Een post-hoc-vergelijking tussen de regio’s liet zien dat de sprekers uit
 het Westen significant sneller spreken dan die uit het Noorden (Tukey’s
-HSD-toets, <span class="math inline">\(p=.0006\)</span>) en dan die uit het Zuiden (<span class="math inline">\(p=.0190\)</span>); andere
+HSD-toets, <span class="math inline">\(p=.0006\)</span>) en dan die uit het Zuiden (<span class="math inline">\(p=.0164\)</span>); andere
 paarsgewijze verschillen tussen regio’s waren niet significant.</p>
 </blockquote>
 <table>
@@ -1566,32 +1564,32 @@ paarsgewijze verschillen tussen regio’s waren niet significant.</p>
 <tr class="odd">
 <td align="left">(i) regio</td>
 <td align="right">3</td>
-<td align="center">0.01234</td>
-<td align="center">0.004114</td>
-<td align="center">6.039</td>
-<td align="center">0.0010</td>
+<td align="center">0.0124</td>
+<td align="center">0.0041</td>
+<td align="center">6.09</td>
+<td align="center">&lt;.001</td>
 </tr>
 <tr class="even">
 <td align="left">(ii) geslacht</td>
 <td align="right">1</td>
-<td align="center">0.01031</td>
-<td align="center">0.010310</td>
-<td align="center">15.135</td>
-<td align="center">0.0002</td>
+<td align="center">0.0102</td>
+<td align="center">0.0102</td>
+<td align="center">15.03</td>
+<td align="center">&lt;.001</td>
 </tr>
 <tr class="odd">
 <td align="left">(iii) regio <span class="math inline">\(\times\)</span> geslacht</td>
 <td align="right">3</td>
-<td align="center">0.00287</td>
-<td align="center">0.000958</td>
-<td align="center">1.406</td>
-<td align="center">0.2482</td>
+<td align="center">0.0029</td>
+<td align="center">0.0010</td>
+<td align="center">1.41</td>
+<td align="center">.248</td>
 </tr>
 <tr class="even">
 <td align="left">within</td>
 <td align="right">71</td>
-<td align="center">0.04837</td>
-<td align="center">0.000681</td>
+<td align="center">0.0484</td>
+<td align="center">0.0007</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr>
@@ -1628,6 +1626,8 @@ zullen we verder negeren. We zetten hiervoor een filter aan waarbij de observati
 Ga naar het tabblad met data, en klik op het trechtersymbool (filter) in de cel linksboven. Er verschijnt dan een werkblad waar je je selectie kunt specificeren.<br />
 Klik 1x op de variabele <code>syldur</code> (links), die verspringt dan naar het werkblad. Klik daarna 1x op het symbool <code>&lt;</code> (boven) en plaats de cursor achter het <code>&lt;</code> teken op het werkblad, en typ <span class="math inline">\(0.4\)</span>. Op het werkblad staat nu het selectiecriterium: <code>syldur &lt; 0.4</code>.<br />
 Klik op de tekst <code>Apply pass-through filter</code> onder het werkblad om dit filter toe te passen. In het tabblad met data zie je nu direct dat de regel van de spreker met zeer lange syllabeduur (groter dan <span class="math inline">\(0.4\)</span>) grijs is gemaakt. Die regel (observatie) wordt niet verder gebruikt.</p>
+<p>Onderzoek of de resterende observaties normaal verdeeld zijn binnen elke groep of cel, met behulp van de technieken uit Deel II van dit tekstboek (met name
+§<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>). Let op: Dit kan in JASP ook tegelijk met de variantieanalyse zelf, zie hieronder.</p>
 </div>
 <div id="anova-3" class="section level4" number="15.4.4.2">
 <h4><span class="header-section-number">15.4.4.2</span> ANOVA</h4>
@@ -1636,9 +1636,9 @@ Klik op de tekst <code>Apply pass-through filter</code> onder het werkblad om di
 <p>Selecteer de variabele <em>syldur</em> en plaats deze in het veld “Dependent Variable”, en plaats variabelen <em>region</em> en <em>sex</em> in het veld “Fixed Factors”.<br />
 Zorg dat onder “Display” <code>Estimates of effect size</code> is aangevinkt, en kies hier tussen <span class="math inline">\(\omega^2\)</span> en (partial) <span class="math inline">\(\eta^2\)</span>. In dit boek houden we <span class="math inline">\(\omega^2\)</span> aan. Je kunt ook <code>Descriptive statistics</code> aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.<br />
 Open de balk “Model” en selecteer onderin bij “Sum of squares” <code>Type I</code>.<br />
-Open de balk “Assumption Checks” en vink <code>Homogeneity tests</code> aan. “Homogeneity corrections” mag op <code>None</code> blijven staan.<br />
-Open ook de balk “Descriptive Plots” en selecteer variabele <em>region</em> in het veld “Horizontal Axis” en variabele <em>sex</em> in het veld “Separate Lines”.</p>
-<p>In de uitvoer wordt de variantieanalyse samgevat in een tabel gelijkend op Tabel <a href="ch-variantieanalyse.html#tab:syldur2way-anova">15.5</a>, waarbij ook de effectgrootte vermeld wordt in de vorm van <span class="math inline">\(\omega^2\)</span> en/of (partial) <span class="math inline">\(\eta^2\)</span>. Onder <em>Descriptive plots</em> zie je een visuele weergave van wat er wordt getoetst; dit helpt om het eventuele interactie-effect beter te begrijpen.</p>
+Open de balk “Assumption Checks” en vink <code>Homogeneity tests</code> aan. “Homogeneity corrections” mag op <code>None</code> blijven staan. Je kunt hier ook onderzoeken of de verdeling binnen iedere groep of cel normaal is, dat is equivalent aan een normale verdeling van de <em>residuen</em> van de variantieanalyse. Dat inspecteer je door hier ook <code>Q-Q plot of residuals</code> aan te vinken; in de resulterende Q-Q-plot zouden de residuen ongeveer op een rechte lijn moeten liggen (zie §<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p>
+<p>Open ook de balk “Descriptive Plots” en selecteer variabele <em>region</em> in het veld “Horizontal Axis” en variabele <em>sex</em> in het veld “Separate Lines”.</p>
+<p>In de uitvoer wordt de variantieanalyse samengevat in een tabel gelijkend op Tabel <a href="ch-variantieanalyse.html#tab:syldur2way-anova">15.5</a>, waarbij ook de effectgrootte vermeld wordt in de vorm van <span class="math inline">\(\omega^2\)</span> en/of (partial) <span class="math inline">\(\eta^2\)</span>. Onder <em>Descriptive plots</em> zie je een visuele weergave van wat er wordt getoetst; dit helpt om het eventuele interactie-effect beter te begrijpen.</p>
 <p>In de uitvoer vind je onder <em>Assumption Checks</em> ook de uitslag van Levene’s toets op gelijke
 varianties (homogeniteit van variantie), die geen aanleiding geeft om H0
 te verwerpen. We mogen dus een variantieanalyse uitvoeren.</p>
@@ -1684,6 +1684,7 @@ gegeven in de laatste kolom. We zien dat alleen Noord en West, en Zuid en West v
 ## Residuals   71 0.04837 0.000681                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>De uitkomsten wijken enigszins af van die in Tabel <a href="ch-variantieanalyse.html#tab:syldur2way-anova">15.5</a> omdat R de Sums of Squares op een iets andere wijze berekent.</p>
 </div>
 <div id="effectgrootte" class="section level4" number="15.4.5.3">
 <h4><span class="header-section-number">15.4.5.3</span> effectgrootte</h4>
@@ -1694,6 +1695,7 @@ gegeven in de laatste kolom. We zien dat alleen Noord en West, en Zuid en West v
 <pre><code>## [1] 0.1291232</code></pre>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="ch-variantieanalyse.html#cb158-1" aria-hidden="true"></a><span class="kw">omegasq</span>(m03, <span class="st">&quot;region:sex&quot;</span>)  <span class="co"># [1] 0.01112131</span></span></code></pre></div>
 <pre><code>## [1] 0.01112131</code></pre>
+<p>De uitkomsten wijken enigszins af van die in de tekst hierboven omdat R de Sums of Squares op een iets andere wijze berekent.</p>
 </div>
 <div id="post-hoc-toetsen" class="section level4" number="15.4.5.4">
 <h4><span class="header-section-number">15.4.5.4</span> post-hoc toetsen</h4>
@@ -1714,6 +1716,7 @@ gegeven in de laatste kolom. We zien dat alleen Noord en West, en Zuid en West v
 ## S-N -0.008720526 -0.030718836  0.013277783 0.7248801
 ## W-N -0.033810000 -0.055524448 -0.012095552 0.0006238
 ## W-S -0.025089474 -0.047087783 -0.003091164 0.0190285</code></pre>
+<p>Ook hier wijken de uitkomsten enigszins af van die in de tekst hierboven omdat R de Sums of Squares op een iets andere wijze berekent.</p>
 
 </div>
 </div>

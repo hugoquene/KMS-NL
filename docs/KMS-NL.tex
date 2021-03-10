@@ -119,7 +119,7 @@
 
 \title{Kwantitatieve Methoden en Statistiek}
 \author{true}
-\date{Versie gecompileerd op 04 Mar 2021}
+\date{Versie gecompileerd op 10 Mar 2021}
 
 \begin{document}
 \maketitle
@@ -8201,7 +8201,7 @@ De uitvoer geeft alleen de gemiddelde inter-item-correlaties (in de tabel \emph{
 Regression > Correlation (onder 'Classical')
 \end{verbatim}
 
-Selecteer de variabelen waarvan je de correlatie wilt berekenen (de drie beoordelaars) in het veld ``Variables''. Zorg dat onder ``Sample Correlation Coefficient'' \texttt{Pearson\textquotesingle{}s\ r} aangevinkt is, en onder ``Additional Options'' \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} en \texttt{Sample\ size}. Je kunt ook \texttt{Display\ pairwise} aanvinken voor een simpelere tabel als uitvoer. De uitvoer laat zien dat vooral de inter-item-correlatie tussen beoordelaars 1 en 2 hoog is.
+Selecteer de variabelen waarvan je de correlatie wilt berekenen (de drie beoordelaars) in het veld ``Variables''. Zorg dat onder ``Sample Correlation Coefficient'' \texttt{Pearson\textquotesingle{}s\ r} aangevinkt is, en onder ``Additional Options'' \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} en \texttt{Sample\ size}. Je kunt ook \texttt{Display\ pairwise} aanvinken voor een simpelere tabel als uitvoer. De uitvoer laat zien dat de inter-rater-correlatie tussen beoordelaars 1 en 2 tamelijk hoog is (en significant), en dat de inter-rater-correlaties waarbij beoordelaar 3 meedoet tamelijk laag zijn (en niet significant).
 
 \hypertarget{r-11}{%
 \section{R}\label{r-11}}
@@ -8899,16 +8899,16 @@ gebruiken.
 \item
   Alle observaties moeten onafhankelijk van elkaar zijn.
 \item
-  De scores van beide groepen moeten normaal verdeeld zijn (zie
+  De scores moeten normaal verdeeld zijn in beide groepen (zie
   §\ref{sec:isvarnormaalverdeeld}).
+\item
+  De variantie van de scores moet gelijk zijn in beide
+  steekproeven. Schending van deze aanname is ernstiger naarmate de twee
+  steekproeven meer in grootte verschillen. Het is daarom verstandig om te
+  werken met even grote, en liefst niet te kleine steekproeven. Als de
+  steekproeven even groot zijn dan is het schenden van deze aanname van
+  gelijke varianties niet zo ernstig.
 \end{itemize}
-
-De variantie van de scores moet gelijk zijn in beide
-steekproeven. Schending van deze aanname is ernstiger naarmate de twee
-steekproeven meer in grootte verschillen. Het is daarom verstandig om te
-werken met even grote, en liefst niet te kleine steekproeven. Als de
-steekproeven even groot zijn dan is het schenden van deze aanname van
-gelijke varianties niet zo ernstig.
 
 \hypertarget{sec:ttoets-formules}{%
 \subsection{formules}\label{sec:ttoets-formules}}
@@ -10515,7 +10515,7 @@ en/of in een \(p\)-waarde van het verschil tussen twee condities.
 \emph{Voorbeeld 15.4}:
 De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep
 {[}\(F(2,42) = 9.35, p = .0004, \omega^2 = 0.28\){]}.
-Post-hoc vergelijkingen met Tukey's HSD-toets laten zien dat de grijze en blauwe groep niet van elkaar verschillen (\(p=.875\)), maar dat er wel significante verschillen zijn tussen de blauwe en rode groep (\(p<.001\)) en tussen de grijze en de rode groep (\(p=.003\)).
+Post-hoc vergelijkingen met Tukey's HSD-toets laten zien dat de grijze en blauwe groep niet van elkaar verschillen (\(p=.875\)), maar dat er wel significante verschillen zijn tussen de rode en de blauwe groep (\(p<.001\)) en tussen de rode en de grijze groep (\(p=.003\)).
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -10983,15 +10983,13 @@ interactie-effect.
 \begin{quote}
 De geobserveerde spreeksnelheden verschillen significant tussen de vier
 regio's van herkomst van de sprekers
-{[}\(F(3,71)=6.0, p=.0010, \omega^2=.14\){]}, en mannen spreken significant
-sneller dan vrouwen {[}\(F(1,71)=15.1, p=.0002, \omega^2=.13\){]}.
-De twee
-factoren vertoonden geen interactie
-{[}\(F(3,71)=1.4, \textrm{n.s.}, \omega^2=.01\){]}.
-Een
-post-hoc-vergelijking tussen de regio's liet zien dat de sprekers uit
+\([F(3,71)=6.09, p=.0010, \omega^2=.14]\), en mannen spreken significant
+sneller dan vrouwen \([F(1,71)=15.03, p=.0002, \omega^2=.13]\).
+De twee factoren vertoonden geen interactie
+\([F(3,71)=1.41, \textrm{n.s.}, \omega^2=.01]\).
+Een post-hoc-vergelijking tussen de regio's liet zien dat de sprekers uit
 het Westen significant sneller spreken dan die uit het Noorden (Tukey's
-HSD-toets, \(p=.0006\)) en dan die uit het Zuiden (\(p=.0190\)); andere
+HSD-toets, \(p=.0006\)) en dan die uit het Zuiden (\(p=.0164\)); andere
 paarsgewijze verschillen tussen regio's waren niet significant.
 \end{quote}
 
@@ -11005,10 +11003,10 @@ variantiebron & df & SS & MS & \(F\) & \(p\)\tabularnewline
 variantiebron & df & SS & MS & \(F\) & \(p\)\tabularnewline
 \midrule
 \endhead
-(i) regio & 3 & 0.01234 & 0.004114 & 6.039 & 0.0010\tabularnewline
-(ii) geslacht & 1 & 0.01031 & 0.010310 & 15.135 & 0.0002\tabularnewline
-(iii) regio \(\times\) geslacht & 3 & 0.00287 & 0.000958 & 1.406 & 0.2482\tabularnewline
-within & 71 & 0.04837 & 0.000681 & &\tabularnewline
+(i) regio & 3 & 0.0124 & 0.0041 & 6.09 & \textless.001\tabularnewline
+(ii) geslacht & 1 & 0.0102 & 0.0102 & 15.03 & \textless.001\tabularnewline
+(iii) regio \(\times\) geslacht & 3 & 0.0029 & 0.0010 & 1.41 & .248\tabularnewline
+within & 71 & 0.0484 & 0.0007 & &\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -11054,6 +11052,9 @@ Ga naar het tabblad met data, en klik op het trechtersymbool (filter) in de cel 
 Klik 1x op de variabele \texttt{syldur} (links), die verspringt dan naar het werkblad. Klik daarna 1x op het symbool \texttt{\textless{}} (boven) en plaats de cursor achter het \texttt{\textless{}} teken op het werkblad, en typ \(0.4\). Op het werkblad staat nu het selectiecriterium: \texttt{syldur\ \textless{}\ 0.4}.\\
 Klik op de tekst \texttt{Apply\ pass-through\ filter} onder het werkblad om dit filter toe te passen. In het tabblad met data zie je nu direct dat de regel van de spreker met zeer lange syllabeduur (groter dan \(0.4\)) grijs is gemaakt. Die regel (observatie) wordt niet verder gebruikt.
 
+Onderzoek of de resterende observaties normaal verdeeld zijn binnen elke groep of cel, met behulp van de technieken uit Deel II van dit tekstboek (met name
+§\ref{sec:isvarnormaalverdeeld}). Let op: Dit kan in JASP ook tegelijk met de variantieanalyse zelf, zie hieronder.
+
 \hypertarget{anova-3}{%
 \subsubsection{ANOVA}\label{anova-3}}
 
@@ -11066,10 +11067,11 @@ ANOVA > ANOVA (onder 'Classical)
 Selecteer de variabele \emph{syldur} en plaats deze in het veld ``Dependent Variable'', en plaats variabelen \emph{region} en \emph{sex} in het veld ``Fixed Factors''.\\
 Zorg dat onder ``Display'' \texttt{Estimates\ of\ effect\ size} is aangevinkt, en kies hier tussen \(\omega^2\) en (partial) \(\eta^2\). In dit boek houden we \(\omega^2\) aan. Je kunt ook \texttt{Descriptive\ statistics} aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.\\
 Open de balk ``Model'' en selecteer onderin bij ``Sum of squares'' \texttt{Type\ I}.\\
-Open de balk ``Assumption Checks'' en vink \texttt{Homogeneity\ tests} aan. ``Homogeneity corrections'' mag op \texttt{None} blijven staan.\\
+Open de balk ``Assumption Checks'' en vink \texttt{Homogeneity\ tests} aan. ``Homogeneity corrections'' mag op \texttt{None} blijven staan. Je kunt hier ook onderzoeken of de verdeling binnen iedere groep of cel normaal is, dat is equivalent aan een normale verdeling van de \emph{residuen} van de variantieanalyse. Dat inspecteer je door hier ook \texttt{Q-Q\ plot\ of\ residuals} aan te vinken; in de resulterende Q-Q-plot zouden de residuen ongeveer op een rechte lijn moeten liggen (zie §\ref{sec:isvarnormaalverdeeld}).
+
 Open ook de balk ``Descriptive Plots'' en selecteer variabele \emph{region} in het veld ``Horizontal Axis'' en variabele \emph{sex} in het veld ``Separate Lines''.
 
-In de uitvoer wordt de variantieanalyse samgevat in een tabel gelijkend op Tabel \ref{tab:syldur2way-anova}, waarbij ook de effectgrootte vermeld wordt in de vorm van \(\omega^2\) en/of (partial) \(\eta^2\). Onder \emph{Descriptive plots} zie je een visuele weergave van wat er wordt getoetst; dit helpt om het eventuele interactie-effect beter te begrijpen.
+In de uitvoer wordt de variantieanalyse samengevat in een tabel gelijkend op Tabel \ref{tab:syldur2way-anova}, waarbij ook de effectgrootte vermeld wordt in de vorm van \(\omega^2\) en/of (partial) \(\eta^2\). Onder \emph{Descriptive plots} zie je een visuele weergave van wat er wordt getoetst; dit helpt om het eventuele interactie-effect beter te begrijpen.
 
 In de uitvoer vind je onder \emph{Assumption Checks} ook de uitslag van Levene's toets op gelijke
 varianties (homogeniteit van variantie), die geen aanleiding geeft om H0
@@ -11136,6 +11138,8 @@ gegeven in de laatste kolom. We zien dat alleen Noord en West, en Zuid en West v
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 \end{verbatim}
 
+De uitkomsten wijken enigszins af van die in Tabel \ref{tab:syldur2way-anova} omdat R de Sums of Squares op een iets andere wijze berekent.
+
 \hypertarget{effectgrootte}{%
 \subsubsection{effectgrootte}\label{effectgrootte}}
 
@@ -11171,6 +11175,8 @@ We gebruiken hiervoor de eerder geprogrammeerde functie \texttt{omegasq} (§\ref
 ## [1] 0.01112131
 \end{verbatim}
 
+De uitkomsten wijken enigszins af van die in de tekst hierboven omdat R de Sums of Squares op een iets andere wijze berekent.
+
 \hypertarget{post-hoc-toetsen}{%
 \subsubsection{post-hoc toetsen}\label{post-hoc-toetsen}}
 
@@ -11204,6 +11210,8 @@ We gebruiken hiervoor de eerder geprogrammeerde functie \texttt{omegasq} (§\ref
 ## W-N -0.033810000 -0.055524448 -0.012095552 0.0006238
 ## W-S -0.025089474 -0.047087783 -0.003091164 0.0190285
 \end{verbatim}
+
+Ook hier wijken de uitkomsten enigszins af van die in de tekst hierboven omdat R de Sums of Squares op een iets andere wijze berekent.
 
 \hypertarget{ch:chi-kwadraat-toetsen}{%
 \chapter{Chi-kwadraat-toetsen}\label{ch:chi-kwadraat-toetsen}}

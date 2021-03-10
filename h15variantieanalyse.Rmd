@@ -612,7 +612,7 @@ en/of in een $p$-waarde van het verschil tussen twee condities.
 > *Voorbeeld 15.4*:
 De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep 
 [$F(2,42) = 9.35, p = .0004, \omega^2 = 0.28$].
-Post-hoc vergelijkingen met Tukey's HSD-toets laten zien dat de grijze en blauwe groep niet van elkaar verschillen ($p=.875$), maar dat er wel significante verschillen zijn tussen de blauwe en rode groep ($p<.001$) en tussen de grijze en de rode groep ($p=.003$).
+Post-hoc vergelijkingen met Tukey's HSD-toets laten zien dat de grijze en blauwe groep niet van elkaar verschillen ($p=.875$), maar dat er wel significante verschillen zijn tussen de rode en de blauwe groep ($p<.001$) en tussen de rode en de grijze groep ($p=.003$).
 
 ---
 
@@ -968,25 +968,23 @@ interactie-effect.
 
 > De geobserveerde spreeksnelheden verschillen significant tussen de vier
 regio's van herkomst van de sprekers
-[$F(3,71)=6.0, p=.0010, \omega^2=.14$], en mannen spreken significant
-sneller dan vrouwen [$F(1,71)=15.1, p=.0002, \omega^2=.13$]. 
-De twee
-factoren vertoonden geen interactie
-[$F(3,71)=1.4, \textrm{n.s.}, \omega^2=.01$]. 
-Een
-post-hoc-vergelijking tussen de regio's liet zien dat de sprekers uit
+$[F(3,71)=6.09, p=.0010, \omega^2=.14]$, en mannen spreken significant
+sneller dan vrouwen $[F(1,71)=15.03, p=.0002, \omega^2=.13]$. 
+De twee factoren vertoonden geen interactie
+$[F(3,71)=1.41, \textrm{n.s.}, \omega^2=.01]$. 
+Een post-hoc-vergelijking tussen de regio's liet zien dat de sprekers uit
 het Westen significant sneller spreken dan die uit het Noorden (Tukey's
-HSD-toets, $p=.0006$) en dan die uit het Zuiden ($p=.0190$); andere
+HSD-toets, $p=.0006$) en dan die uit het Zuiden ($p=.0164$); andere
 paarsgewijze verschillen tussen regio's waren niet significant.
 
 Table: (#tab:syldur2way-anova) Samenvatting van tweewegs-variantieanalyse van de spreeksnelheden in Tabel \@ref(tab:syldur2way).
 
   variantiebron                       df    SS         MS       $F$      $p$
   --------------------------------- ---- --------- ---------- -------- --------
-  (i) regio                           3   0.01234   0.004114   6.039    0.0010
-  (ii) geslacht                       1   0.01031   0.010310   15.135   0.0002
-  (iii) regio $\times$ geslacht       3   0.00287   0.000958   1.406    0.2482
-  within                             71   0.04837   0.000681           
+  (i) regio                           3   0.0124    0.0041     6.09     <.001
+  (ii) geslacht                       1   0.0102    0.0102    15.03     <.001
+  (iii) regio $\times$ geslacht       3   0.0029    0.0010     1.41      .248
+  within                             71   0.0484    0.0007           
 
 
 ### SPSS
@@ -1023,6 +1021,9 @@ Ga naar het tabblad met data, en klik op het trechtersymbool (filter) in de cel 
 Klik 1x op de variabele `syldur` (links), die verspringt dan naar het werkblad. Klik daarna 1x op het symbool `<` (boven) en plaats de cursor achter het `<` teken op het werkblad, en typ $0.4$. Op het werkblad staat nu het selectiecriterium: `syldur < 0.4`.\
 Klik op de tekst `Apply pass-through filter` onder het werkblad om dit filter toe te passen. In het tabblad met data zie je nu direct dat de regel van de spreker met zeer lange syllabeduur (groter dan $0.4$) grijs is gemaakt. Die regel (observatie) wordt niet verder gebruikt. 
 
+Onderzoek of de resterende observaties normaal verdeeld zijn binnen elke groep of cel, met behulp van de technieken uit Deel II van dit tekstboek (met name
+§\@ref(sec:isvarnormaalverdeeld)). Let op: Dit kan in JASP ook tegelijk met de variantieanalyse zelf, zie hieronder. 
+
 #### ANOVA
 Klik in de bovenbalk op:
 ```
@@ -1031,10 +1032,11 @@ ANOVA > ANOVA (onder 'Classical)
 Selecteer de variabele *syldur* en plaats deze in het veld "Dependent Variable", en plaats variabelen *region* en *sex* in het veld "Fixed Factors".\
 Zorg dat onder "Display" `Estimates of effect size` is aangevinkt, en kies hier tussen $\omega^2$ en (partial) $\eta^2$. In dit boek houden we $\omega^2$ aan. Je kunt ook `Descriptive statistics` aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.\
 Open de balk "Model" en selecteer onderin bij "Sum of squares" `Type I`.\
-Open de balk "Assumption Checks" en vink `Homogeneity tests` aan. "Homogeneity corrections" mag op `None` blijven staan.\
+Open de balk "Assumption Checks" en vink `Homogeneity tests` aan. "Homogeneity corrections" mag op `None` blijven staan. Je kunt hier ook onderzoeken of de verdeling binnen iedere groep of cel normaal is, dat is equivalent aan een normale verdeling van de *residuen* van de variantieanalyse. Dat inspecteer je door hier ook `Q-Q plot of residuals` aan te vinken; in de resulterende Q-Q-plot zouden de residuen ongeveer op een rechte lijn moeten liggen (zie §\@ref(sec:isvarnormaalverdeeld)).
+
 Open ook de balk "Descriptive Plots" en selecteer variabele *region* in het veld "Horizontal Axis" en variabele *sex* in het veld "Separate Lines". 
 
-In de uitvoer wordt de variantieanalyse samgevat in een tabel gelijkend op Tabel \@ref(tab:syldur2way-anova), waarbij ook de effectgrootte vermeld wordt in de vorm van $\omega^2$ en/of (partial) $\eta^2$. Onder *Descriptive plots* zie je een visuele weergave van wat er wordt getoetst; dit helpt om het eventuele interactie-effect beter te begrijpen. 
+In de uitvoer wordt de variantieanalyse samengevat in een tabel gelijkend op Tabel \@ref(tab:syldur2way-anova), waarbij ook de effectgrootte vermeld wordt in de vorm van $\omega^2$ en/of (partial) $\eta^2$. Onder *Descriptive plots* zie je een visuele weergave van wat er wordt getoetst; dit helpt om het eventuele interactie-effect beter te begrijpen. 
 
 In de uitvoer vind je onder *Assumption Checks* ook de uitslag van Levene's toets op gelijke
 varianties (homogeniteit van variantie), die geen aanleiding geeft om H0
@@ -1075,6 +1077,8 @@ with(talkers, tapply( syldur[ok], list(region[ok],sex[ok]), mean ))
 summary( aov(syldur~region*sex, data=talkers, subset=ok) -> m03 )
 ```
 
+De uitkomsten wijken enigszins af van die in Tabel \@ref(tab:syldur2way-anova) omdat R de Sums of Squares op een iets andere wijze berekent. 
+
 #### effectgrootte {#effectgrootte}
 
 We gebruiken hiervoor de eerder geprogrammeerde functie `omegasq` (§\@ref(R:omega-kwadraat)):
@@ -1085,11 +1089,15 @@ omegasq(m03, "sex")         # [1] 0.1291232
 omegasq(m03, "region:sex")  # [1] 0.01112131
 ```
 
+De uitkomsten wijken enigszins af van die in de tekst hierboven omdat R de Sums of Squares op een iets andere wijze berekent. 
+
 #### post-hoc toetsen
 
 ```{r}
 TukeyHSD(x=m03, which="region")
 ```
+
+Ook hier wijken de uitkomsten enigszins af van die in de tekst hierboven omdat R de Sums of Squares op een iets andere wijze berekent. 
 
 
 [^fn15-1]: Als (1) rood wel verschilt van grijs en blauw, en als (2) grijs en blauw bovendien onderling niet verschillen, dan impliceert dat dat rood verschilt van grijs (een nieuwe bevinding) en dat rood verschilt van blauw (dat wisten we al).

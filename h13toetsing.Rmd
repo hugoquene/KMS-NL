@@ -612,10 +612,10 @@ gebruiken.
 
 * Alle observaties moeten onafhankelijk van elkaar zijn.
 
-* De scores van beide groepen moeten normaal verdeeld zijn (zie
+* De scores moeten normaal verdeeld zijn  in beide groepen (zie
 §\@ref(sec:isvarnormaalverdeeld)).
 
-De variantie van de scores moet gelijk zijn in beide
+* De variantie van de scores moet gelijk zijn in beide
 steekproeven. Schending van deze aanname is ernstiger naarmate de twee
 steekproeven meer in grootte verschillen. Het is daarom verstandig om te
 werken met even grote, en liefst niet te kleine steekproeven. Als de

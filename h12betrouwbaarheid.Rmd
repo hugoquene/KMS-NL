@@ -597,7 +597,8 @@ De uitvoer geeft alleen de gemiddelde inter-item-correlaties (in de tabel *Frequ
 ```
 Regression > Correlation (onder 'Classical')
 ```
-Selecteer de variabelen waarvan je de correlatie wilt berekenen (de drie beoordelaars) in het veld "Variables". Zorg dat onder "Sample Correlation Coefficient" `Pearson's r` aangevinkt is, en onder "Additional Options" `Report significance`, `Flag significant correlations` en `Sample size`. Je kunt ook `Display pairwise` aanvinken voor een simpelere tabel als uitvoer. De uitvoer laat zien dat vooral de inter-item-correlatie tussen beoordelaars 1 en 2 hoog is. 
+Selecteer de variabelen waarvan je de correlatie wilt berekenen (de drie beoordelaars) in het veld "Variables". Zorg dat onder "Sample Correlation Coefficient" `Pearson's r` aangevinkt is, en onder "Additional Options" `Report significance`, `Flag significant correlations` en `Sample size`. Je kunt ook `Display pairwise` aanvinken voor een simpelere tabel als uitvoer. De uitvoer laat zien dat de inter-rater-correlatie tussen beoordelaars 1 en 2 tamelijk hoog is (en significant), en dat de inter-rater-correlaties waarbij beoordelaar 3 meedoet tamelijk laag zijn (en niet significant). 
+
 
 ## R
 
