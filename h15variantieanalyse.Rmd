@@ -1102,4 +1102,4 @@ Ook hier wijken de uitkomsten enigszins af van die in de tekst hierboven omdat R
 
 [^fn15-2]: Als we nog meer factoren toevoegen, dan wordt de situatie al snel onoverzichtelijk. Met drie hoofdeffecten zijn er al 3  tweeweg-interacties plus 1 drieweg-interactie. Met vier hoofdeffecten zijn er al 6 tweeweg-interacties, plus 4 drieweg-interacties, plus 1 vierweg-interactie.
 
-[^fn15-3]: De berekeningswijze van R is na te bootsen in JASP met de keuze: Model, Sum of squares: Type I.
+[^fn15-3]: De standaard berekeningswijze van R (Type I) is na te bootsen in JASP met de keuze: Model, Sum of squares: Type I. De standaard berekeningswijze van JASP (Type III) is ook na te bootsen in R, zie <https://www.r-bloggers.com/2011/03/anova-%E2%80%93-type-iiiiii-ss-explained>. 
