@@ -376,7 +376,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="13.6" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-onafh"><i class="fa fa-check"></i><b>13.6</b> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven</a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#aannames"><i class="fa fa-check"></i><b>13.6.1</b> aannames</a></li>
+<li class="chapter" data-level="13.6.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-ongepaard-aannames"><i class="fa fa-check"></i><b>13.6.1</b> aannames</a></li>
 <li class="chapter" data-level="13.6.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-formules"><i class="fa fa-check"></i><b>13.6.2</b> formules</a></li>
 <li class="chapter" data-level="13.6.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:SPSS-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.3</b> SPSS</a></li>
 <li class="chapter" data-level="13.6.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:jaspttoetsongepaard"><i class="fa fa-check"></i><b>13.6.4</b> JASP</a></li>
@@ -412,7 +412,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:inleiding"><i class="fa fa-check"></i><b>15.1</b> Inleiding</a></li>
 <li class="chapter" data-level="15.2" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-voorbeelden"><i class="fa fa-check"></i><b>15.2</b> Enkele voorbeelden</a>
 <ul>
-<li class="chapter" data-level="15.2.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#aannames-2"><i class="fa fa-check"></i><b>15.2.1</b> aannames</a></li>
+<li class="chapter" data-level="15.2.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#aannames"><i class="fa fa-check"></i><b>15.2.1</b> aannames</a></li>
 </ul></li>
 <li class="chapter" data-level="15.3" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#eén-weg-variantieanalyse"><i class="fa fa-check"></i><b>15.3</b> Eén-weg-variantieanalyse</a>
 <ul>
@@ -761,7 +761,7 @@ een <em>tweezijdige</em> <span class="math inline">\(t\)</span>-toets.</p>
 Klik 1x op de variabele <code>opleiding</code> (links), die verspringt dan naar het werkblad. Klik daarna 1x op het symbool <code>=</code> (boven) en plaats de cursor achter het <code>=</code> teken op het werkblad, en typ de twee letters <code>TW</code> (in hoofdletters en zonder aanhalingstekens; exact hetzelfde zoals in de variabele <em>opleiding</em>). Op het werkblad staat nu het selectiecriterium: <code>opleiding = TW</code>.<br />
 Klik op de tekst <code>Apply pass-through filter</code> onder het werkblad om dit filter toe te passen. In het tabblad met data zie je nu direct dat de regels van studenten anders dan <code>TW</code> grijs gemaakt zijn. Die regels (observaties) worden niet verder gebruikt.</p>
 <p>Klik daarna voor het toetsen van de hypothese in de bovenbalk op:</p>
-<pre><code>T-Tests &gt; One Sample T-Test (onder &#39;Classical)</code></pre>
+<pre><code>T-Tests &gt; Classical: One Sample T-Test</code></pre>
 <p>Selecteer de variabele <em>score</em> en plaats deze in het veld “Variables”. Zorg dat <code>Student</code> aangevinkt is onder “Tests” en geef bij <code>Test value:</code> op tegen welke waarde van <span class="math inline">\(\mu\)</span> getoetst moet worden; 73. Onder “Alt.Hypothesis” moet <code>&gt; Test value</code> worden geselecteerd voor een eenzijdige <span class="math inline">\(t\)</span>-toets (want H1: <span class="math inline">\(\mu &gt; 73\)</span>). Voor meer inzicht kunnen onder “Additional Statistics” ook <code>Descriptives</code> en <code>Descriptive plots</code> worden aangevinkt. Vink hier ook <code>Effect size</code> aan (zie §<a href="ch-toetsing.html#sec:ttoets-effectgrootte">13.8</a> hieronder). Vink als laatste onder het kopje “Assumption checks” ook de optie <code>Normality</code> aan (zie §<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p>
 <p>De uitvoer geeft de resultaten van de eenzijdige <span class="math inline">\(t\)</span>-toets, inclusief effectgrootte. De tabel <em>Assumption Checks</em> geeft de resultaten van de Shapiro-Wilk-toets (die toetst of de afhankelijke variabele normaal verdeeld is). Als dit is aangevinkt wordt ook een tabel met beschrijvende statistiek en een “Descriptive plot” gegeven. Hiermee kun je goed zien waar de waarde <span class="math inline">\(\mu\)</span> ligt waartegen wordt getoetst ten opzichte van de scores van de studenten Taalwetenschap.</p>
 <p>Let op! Voor de toets hebben we een filter aangezet om alleen de studenten Taalwetenschap mee te nemen, en dit filter blijft aan staan als je niks doet. Als je later weer alle observaties wilt gebruiken, maak het filteren dan ongedaan door weer in het data tabblad naar het filter werkblad te gaan en 2x op de prullenbak te klikken. Als het goed gaat staat er “Filter cleared” en worden alle observaties weer zwart in het data tabblad.</p>
@@ -920,7 +920,7 @@ ook het 95% betrouwbaarheidsinterval van het gemiddelde.</p>
 <p>In JASP kun je het betrouwsbaarheidsinterval van het gemiddelde aanvragen bij een <span class="math inline">\(t\)</span>-toets. We voeren dus wederom een <span class="math inline">\(t\)</span>-toets uit en vinden het betrouwbaarheidsinterval van het gemiddelde in de uitvoer.</p>
 <p>Zorg dat het filter aanstaat zodat alleen de observaties van studenten Taalwetenschap geselecteerd zijn (zie §<a href="ch-toetsing.html#sec:jaspttoetsenkel">13.2.5</a>).</p>
 <p>Klik daarna in de bovenbalk op:</p>
-<pre><code>T-Tests &gt; One Sample T-Test (onder &#39;Classical)</code></pre>
+<pre><code>T-Tests &gt; Classical: One Sample T-Test</code></pre>
 <p>Selecteer de variabele <em>score</em> en plaats deze in het veld “Variables”. Zorg dat <code>Student</code> aangevinkt is onder “Tests” en laat <code>Test value:</code> op 0 staan. Vink onder “Additional Statistics” <code>Location parameter</code> aan en ook <code>Confidence interval</code>. Hier kun je zelf het betrouwbaarheidsniveau opgeven; dit staat standaard op 95%.</p>
 <p>De uitvoer geeft nu als ‘Mean Difference’ het gemiddelde aan (want er wordt vergeleken met 0; dat is de ‘Test value’). In dezelfde tabel zie je het ‘95% CI for Mean Difference’, wat in dit geval dus het betrouwbaarheidsinterval van het gemiddelde is.</p>
 </div>
@@ -1013,7 +1013,7 @@ significant korter dan bij sprekers uit het Noorden van Nederland
 onderzochte opnames uit 1999 praten de sprekers uit het Westen dus
 sneller dan die uit het Noorden van Nederland.</p>
 </blockquote>
-<div id="aannames" class="section level3" number="13.6.1">
+<div id="sec:ttoets-ongepaard-aannames" class="section level3" number="13.6.1">
 <h3><span class="header-section-number">13.6.1</span> aannames</h3>
 <p>De Student <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven vereist vier aannames
 (of assumpties) waaraan voldaan moet zijn, om de toets te mogen
@@ -1022,14 +1022,15 @@ gebruiken.</p>
 <li><p>De gegevens moeten gemeten zijn op intervalniveau (zie
 §<a href="ch-Meetniveau.html#sec:interval">4.4</a>).</p></li>
 <li><p>Alle observaties moeten onafhankelijk van elkaar zijn.</p></li>
-<li><p>De scores moeten normaal verdeeld zijn in beide groepen (zie
+<li><p>De scores moeten normaal verdeeld zijnin beide groepen (zie
 §<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p></li>
 <li><p>De variantie van de scores moet gelijk zijn in beide
 steekproeven. Schending van deze aanname is ernstiger naarmate de twee
 steekproeven meer in grootte verschillen. Het is daarom verstandig om te
 werken met even grote, en liefst niet te kleine steekproeven. Als de
 steekproeven even groot zijn dan is het schenden van deze aanname van
-gelijke varianties niet zo ernstig.</p></li>
+gelijke varianties niet zo ernstig.
+Zie ook §<a href="ch-toetsing.html#sec:ttoets-formules">13.6.2</a> direct hieronder.</p></li>
 </ul>
 </div>
 <div id="sec:ttoets-formules" class="section level3" number="13.6.2">
@@ -1038,7 +1039,7 @@ gelijke varianties niet zo ernstig.</p></li>
 <h4><span class="header-section-number">13.6.2.1</span> toetsingsgrootheid</h4>
 <p>Voor de berekening van de toetsingsgrootheid <span class="math inline">\(t\)</span> zijn verschillende
 formules in gebruik.</p>
-<p>Indien de steekproeven ongeveer gelijke variantie hebben, dan gebruiken
+<p>Indien de steekproeven ongeveer <strong>gelijke variantie</strong> hebben, dan gebruiken
 we eerst de “pooled standard deviation” <span class="math inline">\(s_p\)</span> als tussenstap. De beide
 standaarddeviaties van de twee steekproeven worden daarin gewogen naar
 hun steekproefomvang.
@@ -1051,7 +1052,7 @@ Vervolgens
   \tag{13.3}
   t = \frac{ \overline{x_1}-\overline{x_2} } { s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}} }
 \end{equation}\]</span></p>
-<p>Indien de steekproeven <em>niet</em> gelijke variantie hebben, en de vierde
+<p>Indien de steekproeven <strong>niet gelijke varianties</strong> hebben, en de vierde
 aanname hierboven dus is geschonden, dan wordt Welch’s benadering
 gebruikt:
 <span class="math display" id="eq:sd-WS">\[\begin{equation}
@@ -1112,7 +1113,8 @@ zijn. Als je een kleine waarde vindt voor de toetsingsgrootheid <span class="mat
 een <span class="math inline">\(p&gt;.05\)</span>, dan hoef je deze H0 niet te verwerpen. Je mag dan aannemen
 dat de varianties gelijk zijn. Als je een grote waarde vindt voor <span class="math inline">\(F\)</span>,
 met <span class="math inline">\(p&lt;.05\)</span>, dan dien je deze H0 wel te verwerpen, en je mag niet
-aannemen dat de varianties van de twee groepen gelijk zijn.</p>
+aannemen dat de varianties van de twee groepen gelijk zijn.
+Gebruik en rapporteer de juiste t-toets uit de uitvoer.</p>
 </div>
 <div id="test-for-equality-of-means" class="section level4" number="13.6.3.2">
 <h4><span class="header-section-number">13.6.3.2</span> Test for equality of means</h4>
@@ -1126,16 +1128,28 @@ uitvoer, en rapporteren <span class="math inline">\(t(38)=-3.765, p=.001\)</span
 </div>
 <div id="sec:jaspttoetsongepaard" class="section level3" number="13.6.4">
 <h3><span class="header-section-number">13.6.4</span> JASP</h3>
-<p>Het tweede bovenstaande voorbeeld wordt hier uitgewerkt: het spreektempo van sprekers uit het Westen en Noorden van Nederland wordt vergeleken.<br />
-Hiervoor moeten we eerst zorgen dat alleen de regio’s Noord en West zijn geselecteerd. Dit doe je door in het data tabblad op de variabele-naam <em>region</em> te klikken. Er opent een veld met daarin de verschillende waardes (‘Values’; in dit geval regio’s) van de nominale variabele. Je kunt hier bepaalde waardes (regio’s) van de nominale variabele tijdelijk filteren. In de kolom “Filter” staan standaard alleen maar vinkjes, wat betekent dat alle observaties worden meegenomen. Klik op de vinkjes bij de waardes (regio’s) die je tijdelijk niet mee wilt nemen, <em>S</em> (Zuid) en <em>M</em> (Midden), zodat het kruizen worden. In het data tabblad zie je de bijbehorende observaties dan grijs worden. Zorg dus dat er alleen nog maar bij <em>N</em> (Noord) en <em>W</em> (West) een vinkje staat om alleen de observaties van sprekers uit het Westen en Noorden van Nederland te selecteren.<br />
+<p>Het tweede bovenstaande voorbeeld wordt hier uitgewerkt: het spreektempo van sprekers uit het Westen en Noorden van Nederland wordt vergeleken.</p>
+<div id="voorbereiding" class="section level4" number="13.6.4.1">
+<h4><span class="header-section-number">13.6.4.1</span> voorbereiding</h4>
+<p>Hiervoor moeten we eerst zorgen dat alleen de regio’s Noord en West zijn geselecteerd. Dit doe je door in het data tabblad op de variabele-naam <em>region</em> te klikken. Er opent een veld met daarin de verschillende waardes (‘Values’; in dit geval regio’s) van de nominale variabele. Je kunt hier bepaalde waardes (regio’s) van de nominale variabele tijdelijk filteren. In de kolom “Filter” staan standaard alleen maar vinkjes, wat betekent dat alle observaties worden meegenomen. Klik op de vinkjes bij de waardes (regio’s) die je tijdelijk niet mee wilt nemen, <em>S</em> (Zuid) en <em>M</em> (Midden), zodat het kruizen worden. In het data tabblad zie je de bijbehorende observaties dan grijs worden. Zorg dus dat er alleen nog maar bij <em>N</em> (Noord) en <em>W</em> (West) een vinkje staat om alleen de observaties van sprekers uit het Westen en Noorden van Nederland te selecteren.<br />
 (Vergeet niet later de kruizen weer terug te veranderen in vinkjes als je wel weer alle observaties wilt meenemen!).</p>
+</div>
+<div id="t-toets" class="section level4" number="13.6.4.2">
+<h4><span class="header-section-number">13.6.4.2</span> <em>t</em>-toets</h4>
 <p>Klik na het filteren van de goede regio’s in de bovenbalk op:</p>
-<pre><code>T-Tests &gt; Independent Samples T-Test (onder &#39;Classical)</code></pre>
+<pre><code>T-Tests &gt; Classical: Independent Samples T-Test</code></pre>
 <p>Selecteer de variabele <em>syldur</em> en plaats deze in het veld “Variables”. Plaats de variabele <em>region</em> in het veld “Grouping Variable”. Als een variabele meer dan twee groepen bevat geeft JASP aan dat er een probleem is (je kunt immers maar twee groepen vergelijken); daarom filteren we hierboven zo dat we alleen Noord en West meenemen in de variabele <em>region</em>.<br />
-Zorg dat <code>Student</code> aangevinkt is onder “Tests” en onder “Alt.Hypothesis” moet de eerste optie (de groepen zijn niet hetzelfde) worden aangevinkt voor een tweezijdige <span class="math inline">\(t\)</span>-toets. Voor meer inzicht kunnen onder “Additional Statistics” ook <code>Descriptives</code> en <code>Descriptive plots</code> worden aangevinkt. Vink hier ook <code>Effect size</code> (Cohen’s d) aan (zie §<a href="ch-toetsing.html#sec:ttoets-effectgrootte">13.8</a> hieronder). Vink als laatste onder het kopje “Assumption checks” ook de optie <code>Normality</code> aan (zie §<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>) en <code>Equality of variances</code>.</p>
+Zorg dat <code>Student</code> aangevinkt is onder “Tests” en onder “Alt.Hypothesis” moet de eerste optie (de groepen zijn niet hetzelfde) worden aangevinkt voor een tweezijdige <span class="math inline">\(t\)</span>-toets. Voor meer inzicht kunnen onder “Additional Statistics” ook <code>Descriptives</code> en <code>Descriptive plots</code> worden aangevinkt. Vink hier ook <code>Effect size</code> (Cohen’s d) aan (zie §<a href="ch-toetsing.html#sec:ttoets-effectgrootte">13.8</a> hieronder).<br />
+Vink onder het kopje “Assumption checks” ook de optie <code>Normality</code> aan (§@ref(#sec:ttoets-indep-aannames), derde assumptie, zie ook §<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>) en eveneens <code>Equality of variances</code> (§@ref(#sec:ttoets-indep-aannames), vierde assumptie).</p>
 <p>De uitvoer geeft de resultaten van de tweezijdige <span class="math inline">\(t\)</span>-toets, inclusief effectgrootte.<br />
-Onder <em>Assumption Checks</em> vind je de resultaten van de Shapiro-Wilk-toets, die toetst of de afhankelijke variabele normaal verdeeld is in beide groepen. Ook zie je de tabel ‘Test of Equality of Variances (Levene’s)’. Met Levene’s test wordt onderzocht H0: <span class="math inline">\(s^2_1 = s^2_2\)</span>, d.w.z. of de varianties (en daarmee de standaarddeviaties) van de twee groepen gelijk zijn. Als je een kleine waarde vindt voor de toetsingsgrootheid <span class="math inline">\(F\)</span>, en een <span class="math inline">\(p&gt;.05\)</span>, dan hoef je deze H0 niet te verwerpen. Je mag dan aannemen dat de varianties gelijk zijn. Als je een grote waarde vindt voor <span class="math inline">\(F\)</span>, met <span class="math inline">\(p&lt;.05\)</span>, dan dien je deze H0 wel te verwerpen, en je mag niet aannemen dat de varianties van de twee groepen gelijk zijn. Zowel de tests voor een normale verdeling als Levene’s test geven geen significant resultaat; er wordt dus aan deze assumpties voldaan.<br />
-Als dit is aangevinkt wordt als laatste in de uitvoer een tabel met beschrijvende statistiek en een “Descriptive plot” gegeven. Hiermee kun je goed zien hoe de scores van de twee groepen van elkaar verschillen.</p>
+</p>
+<p>Onder <em>Assumption Checks</em> vind je de resultaten van de Shapiro-Wilk-toets, die toetst of de afhankelijke variabele normaal verdeeld is in beide groepen. Ook zie je de tabel ‘Test of Equality of Variances (Levene’s)’. Met Levene’s test wordt onderzocht H0: <span class="math inline">\(s^2_1 = s^2_2\)</span>, d.w.z. of de varianties (en daarmee de standaarddeviaties) van de twee groepen gelijk of ongelijk zijn (zie §<a href="ch-toetsing.html#sec:ttoets-formules">13.6.2</a> hierboven).
+Als je een kleine waarde vindt voor de toetsingsgrootheid <span class="math inline">\(F\)</span>, en een <span class="math inline">\(p&gt;.05\)</span>, dan hoef je deze H0 niet te verwerpen. Je mag dan aannemen dat de varianties wel gelijk zijn. Gebruik en rapporteer dan de <em>Student</em> versie van de <span class="math inline">\(t\)</span>-toets (die is hierboven gekozen onder “Tests”).
+Als je een grote waarde vindt voor <span class="math inline">\(F\)</span>, met <span class="math inline">\(p&lt;.05\)</span>, dan dien je deze H0 wel te verwerpen, en je mag dan niet aannemen dat de varianties van de twee groepen gelijk zijn. Kies dan onder het kopje “Tests” de optie <code>Welch</code>, en gebruik en rapporteer dan de <em>Welch</em> versie van de <em>t</em>-toets.<br />
+</p>
+<p>In dit voorbeeld geven de toetsen voor normaliteit en voor gelijke varianties geen significante resultaten. Dat betekent dat aan de derde en vierde bovengenoemde assumptie is voldaan; we gebruiken en rapporteren dan de Student <span class="math inline">\(t\)</span>-toets: <span class="math inline">\(t(38)=3.76, p&lt;.001, d=1.2\)</span>.</p>
+<p>Als dit is aangevinkt wordt als laatste in de uitvoer een tabel met beschrijvende statistiek en een “Descriptive plot” gegeven. Hiermee kun je goed zien hoe de scores van de twee groepen van elkaar verschillen.</p>
+</div>
 </div>
 <div id="sec:R-ttoets-ongepaard" class="section level3" number="13.6.5">
 <h3><span class="header-section-number">13.6.5</span> R</h3>
@@ -1329,7 +1343,7 @@ zelfde paneel onder Variable2. Bevestig met <code>OK</code>.</p>
 <h3><span class="header-section-number">13.7.4</span> JASP</h3>
 <p>Het bovenstaande voorbeeld wordt hier uitgewerkt. De gegevens zijn te vinden in bestand <code>data/ujedata.csv</code>.</p>
 <p>Klik in de bovenbalk op:</p>
-<pre><code>T-Tests &gt; Paired Samples T-Test (onder &#39;Classical)</code></pre>
+<pre><code>T-Tests &gt; Classical: Paired Samples T-Test</code></pre>
 <p>Selecteer de variabelen <em>cond.u</em> en <em>cond.je</em> in het veld “Variable pairs”. Ze komen naast elkaar te staan, want deze twee condities ga je met elkaar vergelijken.<br />
 Zorg dat <code>Student</code> aangevinkt is onder “Tests” en onder “Alt.Hypothesis” moet de eerste optie (de metingen zijn niet hetzelfde) worden aangevinkt voor een tweezijdige <span class="math inline">\(t\)</span>-toets. Voor meer inzicht kunnen onder “Additional Statistics” ook <code>Descriptives</code> en <code>Descriptive plots</code> worden aangevinkt. Vink hier ook <code>Effect size</code> (Cohen’s d) aan (zie §<a href="ch-toetsing.html#sec:ttoets-effectgrootte">13.8</a> hieronder). Vink als laatste onder het kopje “Assumption checks” ook de optie <code>Normality</code> aan (zie §<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p>
 <p>De uitvoer geeft de resultaten van de tweezijdige <span class="math inline">\(t\)</span>-toets, inclusief effectgrootte. Je ziet onder ‘Measure 1’ en ‘Measure 2’ in de tabel dat de verschilscore (<span class="math inline">\(cond.u - cond.je\)</span>) wordt geanalyseerd.<br />

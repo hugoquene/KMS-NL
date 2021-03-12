@@ -311,7 +311,7 @@ Klik op de tekst `Apply pass-through filter` onder het werkblad om dit filter to
 
 Klik daarna voor het toetsen van de hypothese in de bovenbalk op:
 ```
-T-Tests > One Sample T-Test (onder 'Classical)
+T-Tests > Classical: One Sample T-Test
 ```
 Selecteer de variabele *score* en plaats deze in het veld "Variables". Zorg dat `Student` aangevinkt is onder "Tests" en geef bij `Test value:` op tegen welke waarde van $\mu$ getoetst moet worden; 73. Onder "Alt.Hypothesis" moet `> Test value`  worden geselecteerd voor een eenzijdige $t$-toets (want H1: $\mu > 73$). Voor meer inzicht kunnen onder "Additional Statistics" ook `Descriptives` en `Descriptive plots` worden aangevinkt. Vink hier ook `Effect size` aan (zie §\@ref(sec:ttoets-effectgrootte) hieronder). Vink als laatste onder het kopje "Assumption checks" ook de optie `Normality` aan (zie §\@ref(sec:isvarnormaalverdeeld)).
 
@@ -515,7 +515,7 @@ Zorg dat het filter aanstaat zodat alleen de observaties van studenten Taalweten
 
 Klik daarna in de bovenbalk op:
 ```
-T-Tests > One Sample T-Test (onder 'Classical)
+T-Tests > Classical: One Sample T-Test
 ```
 Selecteer de variabele *score* en plaats deze in het veld "Variables". Zorg dat `Student` aangevinkt is onder "Tests" en laat `Test value:` op 0 staan. Vink onder "Additional Statistics" `Location parameter` aan en ook `Confidence interval`. Hier kun je zelf het betrouwbaarheidsniveau opgeven; dit staat standaard op 95%.  
 
@@ -601,7 +601,7 @@ om H0 *wel* te verwerpen, en rapporteren dat als volgt:
 > onderzochte opnames uit 1999 praten de sprekers uit het Westen dus
 > sneller dan die uit het Noorden van Nederland.
 
-### aannames {#aannames}
+### aannames {#sec:ttoets-ongepaard-aannames}
 
 De Student $t$-toets voor twee onafhankelijke steekproeven vereist vier aannames
 (of assumpties) waaraan voldaan moet zijn, om de toets te mogen
@@ -612,7 +612,7 @@ gebruiken.
 
 * Alle observaties moeten onafhankelijk van elkaar zijn.
 
-* De scores moeten normaal verdeeld zijn  in beide groepen (zie
+* De scores moeten normaal verdeeld zijnin beide groepen (zie
 §\@ref(sec:isvarnormaalverdeeld)).
 
 * De variantie van de scores moet gelijk zijn in beide
@@ -621,6 +621,7 @@ steekproeven meer in grootte verschillen. Het is daarom verstandig om te
 werken met even grote, en liefst niet te kleine steekproeven. Als de
 steekproeven even groot zijn dan is het schenden van deze aanname van
 gelijke varianties niet zo ernstig.
+Zie ook §\@ref(sec:ttoets-formules) direct hieronder. 
 
 ### formules {#sec:ttoets-formules}
 
@@ -629,7 +630,7 @@ gelijke varianties niet zo ernstig.
 Voor de berekening van de toetsingsgrootheid $t$ zijn verschillende
 formules in gebruik.
 
-Indien de steekproeven ongeveer gelijke variantie hebben, dan gebruiken
+Indien de steekproeven ongeveer **gelijke variantie** hebben, dan gebruiken
 we eerst de "pooled standard deviation" $s_p$ als tussenstap. De beide
 standaarddeviaties van de twee steekproeven worden daarin gewogen naar
 hun steekproefomvang. 
@@ -643,7 +644,7 @@ Vervolgens
   t = \frac{ \overline{x_1}-\overline{x_2} } { s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}} }
 \end{equation}
 
-Indien de steekproeven *niet* gelijke variantie hebben, en de vierde
+Indien de steekproeven **niet gelijke varianties** hebben, en de vierde
 aanname hierboven dus is geschonden, dan wordt Welch's benadering
 gebruikt: 
 \begin{equation}
@@ -711,7 +712,8 @@ zijn. Als je een kleine waarde vindt voor de toetsingsgrootheid $F$, en
 een $p>.05$, dan hoef je deze H0 niet te verwerpen. Je mag dan aannemen
 dat de varianties gelijk zijn. Als je een grote waarde vindt voor $F$,
 met $p<.05$, dan dien je deze H0 wel te verwerpen, en je mag niet
-aannemen dat de varianties van de twee groepen gelijk zijn.
+aannemen dat de varianties van de twee groepen gelijk zijn. 
+Gebruik en rapporteer de juiste t-toets uit de uitvoer. 
 
 #### Test for equality of means
 
@@ -724,19 +726,31 @@ uitvoer, en rapporteren $t(38)=-3.765, p=.001$.
 
 ### JASP {#sec:jaspttoetsongepaard}
 
-Het tweede bovenstaande voorbeeld wordt hier uitgewerkt: het spreektempo van sprekers uit het Westen en Noorden van Nederland wordt vergeleken.\
+Het tweede bovenstaande voorbeeld wordt hier uitgewerkt: het spreektempo van sprekers uit het Westen en Noorden van Nederland wordt vergeleken.
+
+#### voorbereiding 
+
 Hiervoor moeten we eerst zorgen dat alleen de regio's Noord en West zijn geselecteerd. Dit doe je door in het data tabblad op de variabele-naam *region* te klikken. Er opent een veld met daarin de verschillende waardes ('Values'; in dit geval regio's) van de nominale variabele. Je kunt hier bepaalde waardes (regio's) van de nominale variabele tijdelijk filteren. In de kolom "Filter" staan standaard alleen maar vinkjes, wat betekent dat alle observaties worden meegenomen. Klik op de vinkjes bij de waardes (regio's) die je tijdelijk niet mee wilt nemen, *S* (Zuid) en *M* (Midden), zodat het kruizen worden. In het data tabblad zie je de bijbehorende observaties dan grijs worden. Zorg dus dat er alleen nog maar bij *N* (Noord) en *W* (West) een vinkje staat om alleen de observaties van sprekers uit het Westen en Noorden van Nederland te selecteren.\
 (Vergeet niet later de kruizen weer terug te veranderen in vinkjes als je wel weer alle observaties wilt meenemen!). 
 
+#### *t*-toets 
+
 Klik na het filteren van de goede regio's in de bovenbalk op:
 ```
-T-Tests > Independent Samples T-Test (onder 'Classical)
+T-Tests > Classical: Independent Samples T-Test
 ```
 Selecteer de variabele *syldur* en plaats deze in het veld "Variables". Plaats de variabele *region* in het veld "Grouping Variable". Als een variabele meer dan twee groepen bevat geeft JASP aan dat er een probleem is (je kunt immers maar twee groepen vergelijken); daarom filteren we hierboven zo dat we alleen Noord en West meenemen in de variabele *region*.\
-Zorg dat `Student` aangevinkt is onder "Tests" en onder "Alt.Hypothesis" moet de eerste optie (de groepen zijn niet hetzelfde) worden aangevinkt voor een tweezijdige $t$-toets. Voor meer inzicht kunnen onder "Additional Statistics" ook `Descriptives` en `Descriptive plots` worden aangevinkt. Vink hier ook `Effect size` (Cohen's d) aan (zie §\@ref(sec:ttoets-effectgrootte) hieronder). Vink als laatste onder het kopje "Assumption checks" ook de optie `Normality` aan (zie §\@ref(sec:isvarnormaalverdeeld)) en `Equality of variances`.
+Zorg dat `Student` aangevinkt is onder "Tests" en onder "Alt.Hypothesis" moet de eerste optie (de groepen zijn niet hetzelfde) worden aangevinkt voor een tweezijdige $t$-toets. Voor meer inzicht kunnen onder "Additional Statistics" ook `Descriptives` en `Descriptive plots` worden aangevinkt. Vink hier ook `Effect size` (Cohen's d) aan (zie §\@ref(sec:ttoets-effectgrootte) hieronder). \
+Vink onder het kopje "Assumption checks" ook de optie `Normality` aan (§\@ref(#sec:ttoets-indep-aannames), derde assumptie, zie ook §\@ref(sec:isvarnormaalverdeeld)) en eveneens `Equality of variances` (§\@ref(#sec:ttoets-indep-aannames), vierde assumptie).
 
 De uitvoer geeft de resultaten van de tweezijdige $t$-toets, inclusief effectgrootte.\
-Onder *Assumption Checks* vind je de resultaten van de Shapiro-Wilk-toets, die toetst of de afhankelijke variabele normaal verdeeld is in beide groepen. Ook zie je de tabel 'Test of Equality of Variances (Levene's)'. Met Levene's test wordt onderzocht H0: $s^2_1 = s^2_2$, d.w.z. of de varianties (en daarmee de standaarddeviaties) van de twee groepen gelijk zijn. Als je een kleine waarde vindt voor de toetsingsgrootheid $F$, en een $p>.05$, dan hoef je deze H0 niet te verwerpen. Je mag dan aannemen dat de varianties gelijk zijn. Als je een grote waarde vindt voor $F$, met $p<.05$, dan dien je deze H0 wel te verwerpen, en je mag niet aannemen dat de varianties van de twee groepen gelijk zijn. Zowel de tests voor een normale verdeling als Levene's test geven geen significant resultaat; er wordt dus aan deze assumpties voldaan.\
+
+Onder *Assumption Checks* vind je de resultaten van de Shapiro-Wilk-toets, die toetst of de afhankelijke variabele normaal verdeeld is in beide groepen. Ook zie je de tabel 'Test of Equality of Variances (Levene's)'. Met Levene's test wordt onderzocht H0: $s^2_1 = s^2_2$, d.w.z. of de varianties (en daarmee de standaarddeviaties) van de twee groepen gelijk of ongelijk zijn (zie §\@ref(sec:ttoets-formules) hierboven). 
+Als je een kleine waarde vindt voor de toetsingsgrootheid $F$, en een $p>.05$, dan hoef je deze H0 niet te verwerpen. Je mag dan aannemen dat de varianties wel gelijk zijn. Gebruik en rapporteer dan de *Student* versie van de $t$-toets (die is hierboven gekozen onder "Tests").
+Als je een grote waarde vindt voor $F$, met $p<.05$, dan dien je deze H0 wel te verwerpen, en je mag dan niet aannemen dat de varianties van de twee groepen gelijk zijn. Kies dan onder het kopje "Tests" de optie `Welch`, en gebruik en rapporteer dan de *Welch* versie van de *t*-toets.\
+
+In dit voorbeeld geven de toetsen voor normaliteit en voor gelijke varianties geen significante resultaten. Dat betekent dat aan de derde en vierde bovengenoemde assumptie is voldaan; we gebruiken en rapporteren dan de Student $t$-toets: $t(38)=3.76, p<.001, d=1.2$.
+
 Als dit is aangevinkt wordt als laatste in de uitvoer een tabel met beschrijvende statistiek en een "Descriptive plot" gegeven. Hiermee kun je goed zien hoe de scores van de twee groepen van elkaar verschillen.
 
 ### R {#sec:R-ttoets-ongepaard}
@@ -868,7 +882,7 @@ Het bovenstaande voorbeeld wordt hier uitgewerkt. De gegevens zijn te vinden in 
 
 Klik in de bovenbalk op:
 ```
-T-Tests > Paired Samples T-Test (onder 'Classical)
+T-Tests > Classical: Paired Samples T-Test
 ```
 Selecteer de variabelen *cond.u* en *cond.je* in het veld "Variable pairs". Ze komen naast elkaar te staan, want deze twee condities ga je met elkaar vergelijken.\
 Zorg dat `Student` aangevinkt is onder "Tests" en onder "Alt.Hypothesis" moet de eerste optie (de metingen zijn niet hetzelfde) worden aangevinkt voor een tweezijdige $t$-toets. Voor meer inzicht kunnen onder "Additional Statistics" ook `Descriptives` en `Descriptive plots` worden aangevinkt. Vink hier ook `Effect size` (Cohen's d) aan (zie §\@ref(sec:ttoets-effectgrootte) hieronder). Vink als laatste onder het kopje "Assumption checks" ook de optie `Normality` aan (zie §\@ref(sec:isvarnormaalverdeeld)).
