@@ -6888,7 +6888,7 @@ overnemen in of omzetten naar een eigen tabel die daar wel aan voldoet.
 Voor Pearson's product-moment-correlatiecoëfficiënt klik je in de bovenbalk op:
 
 \begin{verbatim}
-Regression > Correlation (onder 'Classical')
+Regression > Classical: Correlation
 \end{verbatim}
 
 Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld ``Variables''. Zorg dat onder ``Sample Correlation Coefficient'' \texttt{Pearson\textquotesingle{}s\ r} aangevinkt is, en onder ``Additional Options'' \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} en \texttt{Sample\ size}. Je kunt ook \texttt{Display\ pairwise} aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren.
@@ -7104,7 +7104,7 @@ dat de standaarddeviatie van de residuen \(3.212\) is.
 Voor lineaire regressie klik je in de bovenbalk op:
 
 \begin{verbatim}
-Regression > Linear Regression (onder 'Classical')
+Regression > Classical: Linear Regression
 \end{verbatim}
 
 Selecteer de variabele \emph{Rekenen} in het veld ``Dependent Variable'', en de variabele \emph{Lezen} in het veld ``Covariates''. Klik vervolgens de balk \texttt{Model} open en controleer of \emph{Lezen} onder ``Model Terms'' staat. Ook moet \texttt{Include\ intercept} aangevinkt zijn, om de constante coëfficiënt \(a\) te laten berekenen. Open ook de balk \texttt{Statistics} en zorg dat \texttt{Estimates}, \texttt{Model\ fit} en \texttt{R\ squared\ change} aangevinkt zijn. Vink onder ``Residuals'' ook \texttt{Statistics} aan om een numerieke samenvatting te krijgen over de residuals. Onder de balk \texttt{Plots} mogen ook \texttt{Residuals\ vs.\ histogram} en \texttt{Q-Q\ plot\ standardized\ residuals} worden aangevinkt voor een weergave van de residuals.
@@ -7311,7 +7311,7 @@ correlatie-analyse.
 Voor Spearmans rangorde-correlatiecoëfficiënt klik je in de bovenbalk op:
 
 \begin{verbatim}
-Regression > Correlation (onder 'Classical')
+Regression > Classical: Correlation
 \end{verbatim}
 
 Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld ``Variables''. Zorg dat onder ``Sample Correlation Coefficient'' \texttt{Spearman\textquotesingle{}s\ rho} aangevinkt is, en onder ``Additional Options'' \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} en \texttt{Sample\ size}. Je kunt ook \texttt{Display\ pairwise} aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren.
@@ -7423,6 +7423,9 @@ Voor het hierboven besproken voorbeeld vinden we dan
 
 De dataset \texttt{cito} bevat al een variabele \texttt{StadPlat} die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve leggen we toch uit hoe je zo'n variabele zelf kunt construeren.
 
+\hypertarget{nieuwe-variabele-construeren}{%
+\subsubsection{nieuwe variabele construeren}\label{nieuwe-variabele-construeren}}
+
 \begin{verbatim}
 Transform > Recode into different variables...
 \end{verbatim}
@@ -7441,6 +7444,9 @@ omgezet naar nieuwe waarde 0 voor die nieuwe variabele. Alle waarden
 vanaf het gemiddelde (\(27.2\)) tot de hoogste waarde worden omgezet naar
 nieuwe waarde 1.
 
+\hypertarget{correlatie-analyse}{%
+\subsubsection{correlatie-analyse}\label{correlatie-analyse}}
+
 Na dit voorbereidend werk kunnen we eindelijk \(r_\Phi\) gaan berekenen.
 
 \begin{verbatim}
@@ -7457,6 +7463,9 @@ Bevestig eerst met \texttt{Continue} en daarna nogmaals met \texttt{OK}.
 \subsection{JASP}\label{jasp-10}}
 
 De dataset \texttt{cito} bevat al een variabele \texttt{StadPlat} die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve leggen we toch uit hoe je zo'n variabele zelf kunt construeren.
+
+\hypertarget{nieuwe-variabele-construeren-1}{%
+\subsubsection{nieuwe variabele construeren}\label{nieuwe-variabele-construeren-1}}
 
 Maak eerst een nieuwe variabele aan door op de \textbf{+}-button te klikken rechts van de naam van de laatste kolom in de dataset. Er verschijnt een paneel ``Create Computed Column'', waar je een naam voor de nieuwe variabele kunt invullen, bijvoorbeeld \texttt{StadPlat2}. Ook kun je kiezen uit \texttt{R} en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of handmatig. Hieronder wordt voor allebei de opties uitgelegd hoe we hiermee de herkomst variabele maken. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen. Voor de herkomst variabele zet je dit op \texttt{Nominal}. Klik vervolgens op \texttt{Create\ Column} om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.
 
@@ -7484,10 +7493,13 @@ Dit betekent: als de score op de oude variabele (Rekenen) kleiner is dan (\textl
 
 Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, selecteer je weer de functie \texttt{ifElse(y)}. Klik op ``test'' en selecteer bovenaan \(<\). Sleep vervolgens de variabele `Rekenen' naar de puntjes aan de linkerkant van het teken, en sleep de functie \texttt{mean(y)} (uit het scrolmenu rechts) naar de puntjes aan de rechterkant. Sleep de variabele `Rekenen' nu ook naar de plek waar ``values'' staat. Vul voor ``then'' en ``else'' \(0\) en \(1\) in. Je hebt dan: \texttt{ifElse(Rekenen\ \textless{}\ mean(Rekenen),0,1)}, en deze formule werkt hetzelfde als de R code van hierboven. Klik op \texttt{Compute\ column} om de lege variabele te vullen met de gekozen waardes.
 
+\hypertarget{correlatie-analyse-1}{%
+\subsubsection{correlatie-analyse}\label{correlatie-analyse-1}}
+
 Na dit voorbereidend werk kunnen we eindelijk \(r_\Phi\) gaan berekenen. Klik in de bovenbalk op:
 
 \begin{verbatim}
-Frequencies > Contingency Tables (onder 'Classical')
+Frequencies > Classical: Contingency Tables
 \end{verbatim}
 
 Selecteer de variabelen \texttt{StadPlat2} (in het ``Rows'' paneel) en \texttt{Reken2} (in het ``Columns'' paneel) voor kruistabel \ref{tab:cito-kruis}. Open de \texttt{Statistics} balk en vink \texttt{Phi\ and\ Cramer’s\ V}aan onder ``Nominal''. De waarde voor \(r_\Phi\) verschijnt dan ook in de uitvoer (als ``Phi-coefficient'').
@@ -7496,6 +7508,9 @@ Selecteer de variabelen \texttt{StadPlat2} (in het ``Rows'' paneel) en \texttt{R
 \subsection{R}\label{r-10}}
 
 De dataset \texttt{cito} bevat al een variabele StadPlat die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve laten we toch zien hoe je zo'n variabele zelf kunt construeren.
+
+\hypertarget{nieuwe-variabele-construeren-2}{%
+\subsubsection{nieuwe variabele construeren}\label{nieuwe-variabele-construeren-2}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7506,6 +7521,9 @@ De dataset \texttt{cito} bevat al een variabele StadPlat die de herkomst van de 
 
 Maak een nieuwe variabele \texttt{Reken2}, met de waarde 1 indien de score
 voor Rekenen groter is dan het gemiddelde, en anders de waarde 0.
+
+\hypertarget{correlatie-analyse-2}{%
+\subsubsection{correlatie-analyse}\label{correlatie-analyse-2}}
 
 Ook in R maken we eerst een kruistabel (Tabel \ref{tab:cito-kruis}) en daarna berekenen we de \(r_\Phi\) over die kruistabel.
 

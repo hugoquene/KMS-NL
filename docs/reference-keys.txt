@@ -197,8 +197,14 @@ r-9
 sec:Phi
 formules-5
 spss-8
+nieuwe-variabele-construeren
+correlatie-analyse
 jasp-10
+nieuwe-variabele-construeren-1
+correlatie-analyse-1
 r-10
+nieuwe-variabele-construeren-2
+correlatie-analyse-2
 sec:correlationcausation
 ch:betrouwbaarheid
 inleiding-6

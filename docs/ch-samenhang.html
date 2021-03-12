@@ -716,7 +716,7 @@ overnemen in of omzetten naar een eigen tabel die daar wel aan voldoet.</p>
 <div id="jasp-7" class="section level3" number="11.2.3">
 <h3><span class="header-section-number">11.2.3</span> JASP</h3>
 <p>Voor Pearson’s product-moment-correlatiecoëfficiënt klik je in de bovenbalk op:</p>
-<pre><code>Regression &gt; Correlation (onder &#39;Classical&#39;)</code></pre>
+<pre><code>Regression &gt; Classical: Correlation</code></pre>
 <p>Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld “Variables”. Zorg dat onder “Sample Correlation Coefficient” <code>Pearson's r</code> aangevinkt is, en onder “Additional Options” <code>Report significance</code>, <code>Flag significant correlations</code> en <code>Sample size</code>. Je kunt ook <code>Display pairwise</code> aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren.</p>
 </div>
 <div id="r-7" class="section level3" number="11.2.4">
@@ -889,7 +889,7 @@ dat de standaarddeviatie van de residuen <span class="math inline">\(3.212\)</sp
 <div id="jasp-8" class="section level3" number="11.3.3">
 <h3><span class="header-section-number">11.3.3</span> JASP</h3>
 <p>Voor lineaire regressie klik je in de bovenbalk op:</p>
-<pre><code>Regression &gt; Linear Regression (onder &#39;Classical&#39;)</code></pre>
+<pre><code>Regression &gt; Classical: Linear Regression</code></pre>
 <p>Selecteer de variabele <em>Rekenen</em> in het veld “Dependent Variable”, en de variabele <em>Lezen</em> in het veld “Covariates”. Klik vervolgens de balk <code>Model</code> open en controleer of <em>Lezen</em> onder “Model Terms” staat. Ook moet <code>Include intercept</code> aangevinkt zijn, om de constante coëfficiënt <span class="math inline">\(a\)</span> te laten berekenen. Open ook de balk <code>Statistics</code> en zorg dat <code>Estimates</code>, <code>Model fit</code> en <code>R squared change</code> aangevinkt zijn. Vink onder “Residuals” ook <code>Statistics</code> aan om een numerieke samenvatting te krijgen over de residuals. Onder de balk <code>Plots</code> mogen ook <code>Residuals vs. histogram</code> en <code>Q-Q plot standardized residuals</code> worden aangevinkt voor een weergave van de residuals.</p>
 <p>De resulterende uitvoer omvat meerdere tabellen en figuren; deze kan je
 niet rechtstreeks overnemen in je verslag. De tabel getiteld <em>Model
@@ -1102,7 +1102,7 @@ correlatie-analyse.</p>
 <div id="jasp-9" class="section level3" number="11.5.3">
 <h3><span class="header-section-number">11.5.3</span> JASP</h3>
 <p>Voor Spearmans rangorde-correlatiecoëfficiënt klik je in de bovenbalk op:</p>
-<pre><code>Regression &gt; Correlation (onder &#39;Classical&#39;)</code></pre>
+<pre><code>Regression &gt; Classical: Correlation</code></pre>
 <p>Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld “Variables”. Zorg dat onder “Sample Correlation Coefficient” <code>Spearman's rho</code> aangevinkt is, en onder “Additional Options” <code>Report significance</code>, <code>Flag significant correlations</code> en <code>Sample size</code>. Je kunt ook <code>Display pairwise</code> aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren.</p>
 </div>
 <div id="r-9" class="section level3" number="11.5.4">
@@ -1209,6 +1209,8 @@ kruistabel (zie Tabel <a href="ch-samenhang.html#tab:cito-kruis">11.3</a>):
 <div id="spss-8" class="section level3" number="11.6.2">
 <h3><span class="header-section-number">11.6.2</span> SPSS</h3>
 <p>De dataset <code>cito</code> bevat al een variabele <code>StadPlat</code> die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve leggen we toch uit hoe je zo’n variabele zelf kunt construeren.</p>
+<div id="nieuwe-variabele-construeren" class="section level4" number="11.6.2.1">
+<h4><span class="header-section-number">11.6.2.1</span> nieuwe variabele construeren</h4>
 <pre><code>Transform &gt; Recode into different variables...</code></pre>
 <p>Kies <code>Leerling</code> als oude variabele en vul als nieuwe naam <code>StadPlat2</code>
 in voor de nieuwe variabele. Geef aan dat de oude waarden in <code>Range</code> van
@@ -1222,6 +1224,9 @@ Alle waarden vanaf de laagste waarde tot het gemiddelde (<span class="math inlin
 omgezet naar nieuwe waarde 0 voor die nieuwe variabele. Alle waarden
 vanaf het gemiddelde (<span class="math inline">\(27.2\)</span>) tot de hoogste waarde worden omgezet naar
 nieuwe waarde 1.</p>
+</div>
+<div id="correlatie-analyse" class="section level4" number="11.6.2.2">
+<h4><span class="header-section-number">11.6.2.2</span> correlatie-analyse</h4>
 <p>Na dit voorbereidend werk kunnen we eindelijk <span class="math inline">\(r_\Phi\)</span> gaan berekenen.</p>
 <pre><code>Analyze &gt; Descriptives &gt; Crosstabs...</code></pre>
 <p>Selecteer de variabelen <code>StadPlat2</code> (in “Rows” paneel) en <code>Reken2</code>
@@ -1230,9 +1235,12 @@ kruistabel <a href="ch-samenhang.html#tab:cito-kruis">11.3</a>.<br />
 Kies <code>Statistics…</code> en vink optie <code>Phi and Cramer’s V</code>aan!<br />
 Bevestig eerst met <code>Continue</code> en daarna nogmaals met <code>OK</code>.</p>
 </div>
+</div>
 <div id="jasp-10" class="section level3" number="11.6.3">
 <h3><span class="header-section-number">11.6.3</span> JASP</h3>
 <p>De dataset <code>cito</code> bevat al een variabele <code>StadPlat</code> die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve leggen we toch uit hoe je zo’n variabele zelf kunt construeren.</p>
+<div id="nieuwe-variabele-construeren-1" class="section level4" number="11.6.3.1">
+<h4><span class="header-section-number">11.6.3.1</span> nieuwe variabele construeren</h4>
 <p>Maak eerst een nieuwe variabele aan door op de <strong>+</strong>-button te klikken rechts van de naam van de laatste kolom in de dataset. Er verschijnt een paneel “Create Computed Column”, waar je een naam voor de nieuwe variabele kunt invullen, bijvoorbeeld <code>StadPlat2</code>. Ook kun je kiezen uit <code>R</code> en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of handmatig. Hieronder wordt voor allebei de opties uitgelegd hoe we hiermee de herkomst variabele maken. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen. Voor de herkomst variabele zet je dit op <code>Nominal</code>. Klik vervolgens op <code>Create Column</code> om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.</p>
 <p>Als <code>R</code> is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met “#Enter your R code here :)”. Hier kan R code worden gegeven die met behulp van R functies de nieuwe variabele definieert. Vul de R code in en klik onderaan op <code>Compute column</code> om de lege variabele te vullen met de gekozen waardes.<br />
 Voor de herkomst variabele kunnen we de volgende code gebruiken:</p>
@@ -1245,17 +1253,26 @@ Voor de herkomst variabele scrol je rechts van het veld bij de functies naar ben
 <pre><code>ifelse(Rekenen &lt; mean(Rekenen), 0, 1)</code></pre>
 <p>Dit betekent: als de score op de oude variabele (Rekenen) kleiner is dan (&lt;) de gemiddelde score (mean(Rekenen)), dan wordt de score een 0, en anders een 1. Dus: if Rekenen &lt; mean(Rekenen), then 0, else 1. Vul de R code in en klik onderaan op <code>Compute column</code> om de lege variabele te vullen met de gekozen waardes.</p>
 <p>Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, selecteer je weer de functie <code>ifElse(y)</code>. Klik op “test” en selecteer bovenaan <span class="math inline">\(&lt;\)</span>. Sleep vervolgens de variabele ‘Rekenen’ naar de puntjes aan de linkerkant van het teken, en sleep de functie <code>mean(y)</code> (uit het scrolmenu rechts) naar de puntjes aan de rechterkant. Sleep de variabele ‘Rekenen’ nu ook naar de plek waar “values” staat. Vul voor “then” en “else” <span class="math inline">\(0\)</span> en <span class="math inline">\(1\)</span> in. Je hebt dan: <code>ifElse(Rekenen &lt; mean(Rekenen),0,1)</code>, en deze formule werkt hetzelfde als de R code van hierboven. Klik op <code>Compute column</code> om de lege variabele te vullen met de gekozen waardes.</p>
+</div>
+<div id="correlatie-analyse-1" class="section level4" number="11.6.3.2">
+<h4><span class="header-section-number">11.6.3.2</span> correlatie-analyse</h4>
 <p>Na dit voorbereidend werk kunnen we eindelijk <span class="math inline">\(r_\Phi\)</span> gaan berekenen. Klik in de bovenbalk op:</p>
-<pre><code>Frequencies &gt; Contingency Tables (onder &#39;Classical&#39;)</code></pre>
+<pre><code>Frequencies &gt; Classical: Contingency Tables</code></pre>
 <p>Selecteer de variabelen <code>StadPlat2</code> (in het “Rows” paneel) en <code>Reken2</code> (in het “Columns” paneel) voor kruistabel <a href="ch-samenhang.html#tab:cito-kruis">11.3</a>. Open de <code>Statistics</code> balk en vink <code>Phi and Cramer’s V</code>aan onder “Nominal”. De waarde voor <span class="math inline">\(r_\Phi\)</span> verschijnt dan ook in de uitvoer (als “Phi-coefficient”).</p>
+</div>
 </div>
 <div id="r-10" class="section level3" number="11.6.4">
 <h3><span class="header-section-number">11.6.4</span> R</h3>
 <p>De dataset <code>cito</code> bevat al een variabele StadPlat die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve laten we toch zien hoe je zo’n variabele zelf kunt construeren.</p>
+<div id="nieuwe-variabele-construeren-2" class="section level4" number="11.6.4.1">
+<h4><span class="header-section-number">11.6.4.1</span> nieuwe variabele construeren</h4>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="ch-samenhang.html#cb83-1" aria-hidden="true"></a>StadPlat2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>( cito<span class="op">$</span>Leerling<span class="op">&lt;</span><span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="co"># 1=stad, 0=plat</span></span>
 <span id="cb83-2"><a href="ch-samenhang.html#cb83-2" aria-hidden="true"></a>Reken2 &lt;-<span class="st"> </span><span class="kw">ifelse</span>( cito<span class="op">$</span>Rekenen<span class="op">&gt;</span><span class="kw">mean</span>(cito<span class="op">$</span>Rekenen), <span class="dv">1</span>, <span class="dv">0</span> ) <span class="co"># 1=hoog, 0=laag</span></span></code></pre></div>
 <p>Maak een nieuwe variabele <code>Reken2</code>, met de waarde 1 indien de score
 voor Rekenen groter is dan het gemiddelde, en anders de waarde 0.</p>
+</div>
+<div id="correlatie-analyse-2" class="section level4" number="11.6.4.2">
+<h4><span class="header-section-number">11.6.4.2</span> correlatie-analyse</h4>
 <p>Ook in R maken we eerst een kruistabel (Tabel <a href="ch-samenhang.html#tab:cito-kruis">11.3</a>) en daarna berekenen we de <span class="math inline">\(r_\Phi\)</span> over die kruistabel.</p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="ch-samenhang.html#cb84-1" aria-hidden="true"></a><span class="kw">print</span>( <span class="kw">table</span>(StadPlat2,Reken2) -&gt;<span class="st"> </span>citokruistabel ) <span class="co"># maak en bewaar en toon kruistabel</span></span></code></pre></div>
 <pre><code>##          Reken2
@@ -1272,6 +1289,7 @@ voor Rekenen groter is dan het gemiddelde, en anders de waarde 0.</p>
 ## 
 ##     harmonic.mean, logit</code></pre>
 <pre><code>## [1] 0.65</code></pre>
+</div>
 </div>
 </div>
 <div id="sec:correlationcausation" class="section level2" number="11.7">

@@ -239,7 +239,7 @@ overnemen in of omzetten naar een eigen tabel die daar wel aan voldoet.
 Voor Pearson's product-moment-correlatiecoëfficiënt klik je in de bovenbalk op:
 
 ```
-Regression > Correlation (onder 'Classical')
+Regression > Classical: Correlation
 ```
 
 Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld "Variables". Zorg dat onder "Sample Correlation Coefficient" `Pearson's r` aangevinkt is, en onder "Additional Options" `Report significance`, `Flag significant correlations` en `Sample size`. Je kunt ook `Display pairwise` aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren. 
@@ -429,7 +429,7 @@ dat de standaarddeviatie van de residuen $3.212$ is.
 Voor lineaire regressie klik je in de bovenbalk op:
 
 ```
-Regression > Linear Regression (onder 'Classical')
+Regression > Classical: Linear Regression
 ```
 
 Selecteer de variabele *Rekenen* in het veld "Dependent Variable", en de variabele *Lezen* in het veld "Covariates". Klik vervolgens de balk `Model` open en controleer of *Lezen* onder "Model Terms" staat. Ook moet `Include intercept` aangevinkt zijn, om de constante coëfficiënt $a$ te laten berekenen. Open ook de balk `Statistics` en zorg dat `Estimates`, `Model fit` en `R squared change` aangevinkt zijn. Vink onder "Residuals" ook `Statistics` aan om een numerieke samenvatting te krijgen over de residuals. Onder de balk `Plots` mogen ook `Residuals vs. histogram` en `Q-Q plot standardized residuals` worden aangevinkt voor een weergave van de residuals. 
@@ -594,7 +594,7 @@ correlatie-analyse.
 Voor Spearmans rangorde-correlatiecoëfficiënt klik je in de bovenbalk op:
 
 ```
-Regression > Correlation (onder 'Classical')
+Regression > Classical: Correlation
 ```
 
 Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld "Variables". Zorg dat onder "Sample Correlation Coefficient" `Spearman's rho` aangevinkt is, en onder "Additional Options" `Report significance`, `Flag significant correlations` en `Sample size`. Je kunt ook `Display pairwise` aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren. 
@@ -675,6 +675,9 @@ $$
 ### SPSS
 
 De dataset `cito` bevat al een variabele `StadPlat` die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve leggen we toch uit hoe je zo'n variabele zelf kunt construeren. 
+
+#### nieuwe variabele construeren
+
 ```
 Transform > Recode into different variables...
 ```
@@ -693,6 +696,8 @@ omgezet naar nieuwe waarde 0 voor die nieuwe variabele. Alle waarden
 vanaf het gemiddelde ($27.2$) tot de hoogste waarde worden omgezet naar
 nieuwe waarde 1.
 
+#### correlatie-analyse
+
 Na dit voorbereidend werk kunnen we eindelijk $r_\Phi$ gaan berekenen.
 
 ```
@@ -708,6 +713,8 @@ Bevestig eerst met `Continue` en daarna nogmaals met `OK`.
 ### JASP
 
 De dataset `cito` bevat al een variabele `StadPlat` die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve leggen we toch uit hoe je zo'n variabele zelf kunt construeren. 
+
+#### nieuwe variabele construeren
 
 Maak eerst een nieuwe variabele aan door op de **+**-button te klikken rechts van de naam van de laatste kolom in de dataset. Er verschijnt een paneel "Create Computed Column", waar je een naam voor de nieuwe variabele kunt invullen, bijvoorbeeld `StadPlat2`. Ook kun je kiezen uit `R` en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of handmatig. Hieronder wordt voor allebei de opties uitgelegd hoe we hiermee de herkomst variabele maken. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen. Voor de herkomst variabele zet je dit op `Nominal`. Klik vervolgens op `Create Column` om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg. 
 
@@ -731,21 +738,28 @@ Dit betekent: als de score op de oude variabele (Rekenen) kleiner is dan (<) de 
 
 Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, selecteer je weer de functie `ifElse(y)`. Klik op "test" en selecteer bovenaan $<$. Sleep vervolgens de variabele 'Rekenen' naar de puntjes aan de linkerkant van het teken, en sleep de functie `mean(y)` (uit het scrolmenu rechts) naar de puntjes aan de rechterkant. Sleep de variabele 'Rekenen' nu ook naar de plek waar "values" staat. Vul voor "then" en "else" $0$ en $1$ in. Je hebt dan: `ifElse(Rekenen < mean(Rekenen),0,1)`, en deze formule werkt hetzelfde als de R code van hierboven. Klik op `Compute column` om de lege variabele te vullen met de gekozen waardes.
 
+#### correlatie-analyse
+
 Na dit voorbereidend werk kunnen we eindelijk $r_\Phi$ gaan berekenen. Klik in de bovenbalk op:
 ```
-Frequencies > Contingency Tables (onder 'Classical')
+Frequencies > Classical: Contingency Tables
 ```
 Selecteer de variabelen `StadPlat2` (in het "Rows" paneel) en `Reken2` (in het "Columns" paneel) voor kruistabel \@ref(tab:cito-kruis). Open de `Statistics` balk en vink `Phi and Cramer’s V`aan onder "Nominal". De waarde voor $r_\Phi$ verschijnt dan ook in de uitvoer (als "Phi-coefficient"). 
 
 ### R
 
 De dataset `cito` bevat al een variabele StadPlat die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve laten we toch zien hoe je zo’n variabele zelf kunt construeren.
+
+#### nieuwe variabele construeren
+
 ```{r phi1}
 StadPlat2 <- ifelse( cito$Leerling<6, 1, 0) # 1=stad, 0=plat
 Reken2 <- ifelse( cito$Rekenen>mean(cito$Rekenen), 1, 0 ) # 1=hoog, 0=laag
 ```
 Maak een nieuwe variabele `Reken2`, met de waarde 1 indien de score
 voor Rekenen groter is dan het gemiddelde, en anders de waarde 0.
+
+#### correlatie-analyse
 
 Ook in R maken we eerst een kruistabel (Tabel \@ref(tab:cito-kruis)) en daarna berekenen we de $r_\Phi$ over die kruistabel. 
 ``` {r}
