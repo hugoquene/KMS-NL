@@ -311,7 +311,7 @@ sec:chi2gof
 chi2-toets-voor-homogeniteit-van-een-variabele-in-meerdere-steekproeven
 chi2-toets-voor-verband-tussen-twee-variabelen-in-enkele-steekproef
 sec:chi2toets-aannames
-formule
+formules-6
 spss-14
 goodness-of-fit-voorbereiding
 goodness-of-fit-toetsing
@@ -331,13 +331,13 @@ sec:h17inleiding
 gepaarde-observaties-enkele-steekproef
 sec:tekentoets
 sec:Wilcoxon-signed-rank
-formules-6
+formules-7
 onafhankelijke-observaties-meerdere-steekproeven
 mediaantoets
 sec:wilcoxon-rank-sum
-formules-7
+formules-8
 kruskall-wallis-h-test
-formule-1
+formule
 app:randomgetallen
 app:kritiekeZwaarden
 app:kritieketwaarden

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  12 MAR 2021 21:00
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  23 MAR 2021 21:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1590,59 +1590,65 @@ LE STEEKPROEF \TU/lmr/m/n/10 265
  []
 
 [265] [266] [267] [268]
-Underfull \hbox (badness 1178) in paragraph at lines 11570--11575
+Underfull \hbox (badness 1178) in paragraph at lines 11579--11584
 []\TU/lmr/m/n/10 Selecteer de variabelen \TU/lmtt/m/n/10 klasse \TU/lmr/m/n/10 
 (in “Rows” paneel) en \TU/lmtt/m/n/10 overlevende \TU/lmr/m/n/10 (in
  []
 
 [269]
-Underfull \hbox (badness 10000) in paragraph at lines 11607--11608
+Underfull \hbox (badness 10000) in paragraph at lines 11616--11617
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 11618--11620
+[270]
+Underfull \hbox (badness 10000) in paragraph at lines 11629--11631
 
  []
 
-[270] [271] [272]
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11726--11731
+[271]
+Overfull \hbox (33.0pt too wide) in paragraph at lines 11702--11702
+[]\TU/lmtt/m/n/10 ## [1]  1.2649111 -0.3162278  0.3162278  0.0000000  1.5811388
+ -2.8460499[] 
+ []
+
+[272] [273]
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11769--11774
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11731--11735
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11774--11778
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11735--11740
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11778--11783
  [] [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 6608) in paragraph at lines 11750--11756
+Underfull \hbox (badness 6608) in paragraph at lines 11793--11799
 \TU/lmr/m/n/10 83 sterfgevallen-door-longkanker tegenover 21178 niet-sterfgeval
 len-door-
  []
 
-[273] [274
-
-]
+[274]
 Chapter 17.
-[275] [276]
-Underfull \hbox (badness 10000) in paragraph at lines 11896--11896
+[275
+
+] [276]
+Underfull \hbox (badness 10000) in paragraph at lines 11939--11939
 []\TU/lmr/bx/n/14.4 Onafhankelijke observaties, meerdere
  []
 
 
-Underfull \hbox (badness 1342) in paragraph at lines 11901--11910
+Underfull \hbox (badness 1342) in paragraph at lines 11944--11953
 \TU/lmr/m/n/10 De mediaantoets (Eng. ‘median test’) is te beschouwen als een no
 n-
  []
 
 
-Underfull \hbox (badness 3758) in paragraph at lines 11901--11910
+Underfull \hbox (badness 3758) in paragraph at lines 11944--11953
 \TU/lmr/m/n/10 parametrische, nominale tegenhanger van de \TU/lmr/m/it/10 t\TU/
 lmr/m/n/10 -toets voor ongepaarde,
  []
@@ -1673,28 +1679,28 @@ File: KMS-NL_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file
 ] [284]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 12134.
+(Font)              scaled to size 24.88pt on input line 12177.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 12134.
+(Font)              scaled to size 20.74pt on input line 12177.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 12134.
+(Font)              scaled to size 17.28pt on input line 12177.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 12134.
+(Font)              scaled to size 24.88228pt on input line 12177.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 12134.
+(Font)              scaled to size 20.7419pt on input line 12177.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 12134.
+(Font)              scaled to size 17.28157pt on input line 12177.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 12134.
+(Font)              scaled to size 24.87733pt on input line 12177.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 12134.
+(Font)              scaled to size 20.73778pt on input line 12177.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 12134.
+(Font)              scaled to size 17.27815pt on input line 12177.
 File: KMS-NL_files/figure-latex/kritieketwaarden-hulpfiguur-1.pdf Graphic file 
 (type pdf)
 <use KMS-NL_files/figure-latex/kritieketwaarden-hulpfiguur-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 12145--12190
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 12188--12233
 [][] 
  []
 
@@ -1709,7 +1715,7 @@ File: KMS-NL_files/figure-latex/kritiekechi2waarden-hulpfiguur-1.pdf Graphic fi
 le (type pdf)
 <use KMS-NL_files/figure-latex/kritiekechi2waarden-hulpfiguur-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 12201--12244
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 12244--12287
 [][] 
  []
 
@@ -1722,7 +1728,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ] [290] [291] [292] [293]) [294] (./KMS-NL.aux)
 Package rerunfilecheck Info: File `KMS-NL.out' has not changed.
-(rerunfilecheck)             Checksum: D4A05385ABD4F506163398E48ECA468B;22925.
+(rerunfilecheck)             Checksum: 150E8C32D4BED77B3EB92013B2823AD6;22930.
 
 LaTeX Warning: There were undefined references.
 
@@ -1731,10 +1737,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18006 strings out of 479441
- 318948 string characters out of 5880450
- 812911 words of memory out of 5000000
- 37043 multiletter control sequences out of 15000+600000
+ 18007 strings out of 479441
+ 318965 string characters out of 5880450
+ 812960 words of memory out of 5000000
+ 37044 multiletter control sequences out of 15000+600000
  545455 words of font info for 115 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,10n,118p,1133b,571s stack positions out of 5000i,500n,10000p,200000b,80000s

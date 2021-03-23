@@ -163,7 +163,7 @@ cel bijdragen[^fn16-2].
 cellen door aangrenzende cellen samen te voegen, en de verwachte
 frequenties opnieuw te bepalen.
 
-## formule
+## formules
 
 De toetsingsgrootheid $\chi^2$ is gedefinieerd als
 \begin{equation}
@@ -188,6 +188,16 @@ vrijheidsgraden gelijk aan het aantal cellen minus 1. Bij een $\chi^2$-toets met
 meerdere steekproeven (homogeniteit) en/of met twee variabelen
 (verband), met respectievelijk $k$ en $m$ categorieën, is het aantal
 vrijheidsgraden gelijk aan $(k-1)\times(m-1)$.
+
+Voor iedere cel van de frequentietabel kunnen we ook het gestandaardiseerde residu berekenen:
+\begin{equation}
+  (\#eq:chi2-residu)
+    e = \frac{(O-E)}{\sqrt{E}}
+\end{equation}
+Als we al deze residuen $e$ kwadrateren en de kwadraten optellen, dan levert dat de bovenstaande toetsingsgrootheid $\chi2$ op (formule \@ref(eq:chikwadraat)). De gestandaardiseerde residuen $e$ kunnen bovendien geïnterpreteerd worden alsof het $Z$-waarden zijn (zie Bijlage \@ref(app:kritiekeZwaarden)). Als het residu $e>2$ dan is het geobserveerde aantal significant groter dan het verwachte aantal ($\alpha=.05$); als het residu kleiner is dan $-2$ dan geldt het omgekeerd. De gestandaardiseerde residuen geven daarmee inzicht in de herkomst van een significant toetsresultaat. 
+
+Voor het bovenstaande voorbeeld in §\@ref(sec:chi2gof) vinden we de volgende zes gestandaardiseerde residuen voor de zes mogelijke uitkomsten van de dobbelsteen: $(1.26, -0.32, -0.32, 0.00, 1.58, -2.85)$. De eerste vijf uitkomsten komen ongeveer even vaak voor als verwacht, maar de zesde mogelijke uitkomst is veel minder vaak geobserveerd dan verwacht.  
+
 
 ## SPSS
 
@@ -328,6 +338,9 @@ Als je `Expected proportions (chi-square test)` kiest, kun je de verwachte aanta
 
 Je kunt ook nog `Descriptives` en `Confidence interval` aanvinken onder "Additional Statistics" en `Descriptives plot` onder "Plots" om meer inzicht te krijgen in wat je toetst. 
 
+Het is in JASP niet mogelijk om gestandaardiseerde residuen op te vragen; je kunt die wel zelf uitrekenen met de geobserveerde en verwachte aantallen. 
+
+
 ### kruistabellen: voorbereiding
 
 Als we twee nominale variabelen willen onderzoeken, dan moeten die allebei als kolommen in het databestand zijn aangemerkt. 
@@ -363,15 +376,21 @@ Frequencies > Contingency Tables (onder 'Classical')
 ```
 Selecteer de variabele `klasse` in het "Rows" paneel, de variabele `overlevende` in het "Columns" paneel en variabele `aantal` in het "Counts" paneel voor kruistabel \@ref(tab:titanic). Open de `Statistics` balk 
 en zorg dat `Chi-square` ($\chi^2$) is aangevinkt. De waarde voor $\chi^2$ verschijnt dan in de uitvoer in de tabel getiteld *Chi-Squared Tests*. 
+Open de `Cells` balk en zorg dat `Expected counts` zijn aangevinkt. 
 
 Mocht je toch een "lang" databestand hebben, waarbij elke regel een aparte observatie is, dan hoef je alleen de variabele `klasse` in het "Rows" paneel en de variabele `overlevende` in het "Columns" paneel te selecteren. 
+
+Het is in JASP niet mogelijk om gestandaardiseerde residuen op te vragen; je kunt die wel zelf uitrekenen met de geobserveerde en verwachte aantallen. 
+
 
 ## R
 
 ### goodness of fit: toetsing
 
 ```{r}
-chisq.test( c( 14, 9, 11, 10, 15, 1 ) ) # dobbelsteen §16.1
+chisq.test( c( 14, 9, 11, 10, 15, 1 ) ) -> dobbel.chi2.htest # dobbelsteen §16.2
+print(dobbel.chi2.htest)
+dobbel.chi2.htest$residuals # STD.resid. in ...chisq.htest$residuals
 ```
 
 ### kruistabellen: voorbereiding  en toetsing
@@ -381,18 +400,21 @@ In R is de dataset `Titanic` gegeven als een multidimensionele matrix. We tellen
 apply( Titanic, c(1,4), sum ) -> Titanic.klasseuitkomst
 ```
 
-Vervolgens gebruiken we deze kruistabel weer als invoer voor een `chisq.test`. 
+Vervolgens gebruiken we deze kruistabel weer als invoer voor een `chisq.test`. Die `chisq.test` slaan we op zijn beurt weer op, om de residuals te inspecteren. 
 ```{r}
-chisq.test( Titanic.klasseuitkomst )  # p<.0001
+chisq.test( Titanic.klasseuitkomst ) -> Titanic.chisq.htest
+print(Titanic.chisq.htest)
+Titanic.chisq.htest$residuals
 ```
 
+Opvallend zijn het geringe aantal doden onder de eerste-klasse-passagiers, en het grote aantal doden onder de bemanning. 
 
 ## Effectgrootte: odds ratio
 
 Bij het gebruik van de $\chi^2$-toets kan de effectgrootte worden gerapporteerd in de
 vorm van de zgn. "odds ratio". De 'odds ratio' wordt afgeleid van de
-kruistabel met frequenties per cel. We leggen een en ander uit aan de
-hand van het volgende voorbeeld.
+kruistabel met frequenties per cel; de 'odds ratio' is het meest gebruikelijk bij een $2\times2$ kruistabel. 
+We leggen een en ander uit aan de hand van het volgende voorbeeld met een $2\times2$ kruistabel. 
 
 ---
 
