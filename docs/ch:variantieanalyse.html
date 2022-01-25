@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hoofdstuk 15 Variantieanalyse | Kwantitatieve Methoden en Statistiek</title>
+  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hoofdstuk 15 Variantieanalyse | Kwantitatieve Methoden en Statistiek" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta name="github-repo" content="rstudio/KMS-NL" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hoofdstuk 15 Variantieanalyse | Kwantitatieve Methoden en Statistiek" />
+  
+  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch:power.html"/>
+<link rel="next" href="ch:chi-kwadraat-toetsen.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Kwantitatieve Methoden en Statistiek</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Voorwoord</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#in-english-please"><i class="fa fa-check"></i>In English please?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#notatie"><i class="fa fa-check"></i>Notatie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licentie"><i class="fa fa-check"></i>Licentie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citatie"><i class="fa fa-check"></i>Citatie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technische-details"><i class="fa fa-check"></i>Technische details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#over-de-auteurs"><i class="fa fa-check"></i>Over de auteurs</a></li>
+</ul></li>
+<li class="part"><span><b>Deel I: Methodologie</b></span></li>
+<li class="chapter" data-level="1" data-path="ch:inleiding.html"><a href="ch:inleiding.html"><i class="fa fa-check"></i><b>1</b> Inleiding</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch:inleiding.html"><a href="ch:inleiding.html#sec:wetenschappelijk-onderzoek"><i class="fa fa-check"></i><b>1.1</b> Wetenschappelijk onderzoek</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="ch:inleiding.html"><a href="ch:inleiding.html#sec:theorie"><i class="fa fa-check"></i><b>1.1.1</b> Theorie</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="ch:inleiding.html"><a href="ch:inleiding.html#sec:paradigmata"><i class="fa fa-check"></i><b>1.2</b> Paradigmata</a></li>
+<li class="chapter" data-level="1.3" data-path="ch:inleiding.html"><a href="ch:inleiding.html#sec:instrumentatie-onderzoek"><i class="fa fa-check"></i><b>1.3</b> Instrumentatie-onderzoek</a></li>
+<li class="chapter" data-level="1.4" data-path="ch:inleiding.html"><a href="ch:inleiding.html#sec:beschrijvend-onderzoek"><i class="fa fa-check"></i><b>1.4</b> Beschrijvend onderzoek</a></li>
+<li class="chapter" data-level="1.5" data-path="ch:inleiding.html"><a href="ch:inleiding.html#sec:experimenteel-onderzoek"><i class="fa fa-check"></i><b>1.5</b> Experimenteel onderzoek</a></li>
+<li class="chapter" data-level="1.6" data-path="ch:inleiding.html"><a href="ch:inleiding.html#sec:vooruitblik"><i class="fa fa-check"></i><b>1.6</b> Vooruitblik</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html"><i class="fa fa-check"></i><b>2</b> Hypothese-toetsend onderzoek</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#inleiding"><i class="fa fa-check"></i><b>2.1</b> Inleiding</a></li>
+<li class="chapter" data-level="2.2" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#sec:variabelen"><i class="fa fa-check"></i><b>2.2</b> Variabelen</a></li>
+<li class="chapter" data-level="2.3" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#sec:onafhankelijkeafhankelijkevariabelen"><i class="fa fa-check"></i><b>2.3</b> Onafhankelijke en afhankelijke variabelen</a></li>
+<li class="chapter" data-level="2.4" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#sec:falsificatie"><i class="fa fa-check"></i><b>2.4</b> Falsificatie en nul-hypothese</a></li>
+<li class="chapter" data-level="2.5" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#sec:empirischecyclus"><i class="fa fa-check"></i><b>2.5</b> De empirische cyclus</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#observatie"><i class="fa fa-check"></i><b>2.5.1</b> observatie</a></li>
+<li class="chapter" data-level="2.5.2" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#inductie"><i class="fa fa-check"></i><b>2.5.2</b> inductie</a></li>
+<li class="chapter" data-level="2.5.3" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#deductie"><i class="fa fa-check"></i><b>2.5.3</b> deductie</a></li>
+<li class="chapter" data-level="2.5.4" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#toetsing"><i class="fa fa-check"></i><b>2.5.4</b> toetsing</a></li>
+<li class="chapter" data-level="2.5.5" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#evaluatie"><i class="fa fa-check"></i><b>2.5.5</b> evaluatie</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#sec:keuzemomenten"><i class="fa fa-check"></i><b>2.6</b> Keuzemomenten</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch:integriteit.html"><a href="ch:integriteit.html"><i class="fa fa-check"></i><b>3</b> Integriteit</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ch:integriteit.html"><a href="ch:integriteit.html#sec:integriteit-inleiding"><i class="fa fa-check"></i><b>3.1</b> Inleiding</a></li>
+<li class="chapter" data-level="3.2" data-path="ch:integriteit.html"><a href="ch:integriteit.html#sec:ontwerp"><i class="fa fa-check"></i><b>3.2</b> Ontwerp</a></li>
+<li class="chapter" data-level="3.3" data-path="ch:integriteit.html"><a href="ch:integriteit.html#proefpersonen-en-informanten"><i class="fa fa-check"></i><b>3.3</b> Proefpersonen en informanten</a></li>
+<li class="chapter" data-level="3.4" data-path="ch:integriteit.html"><a href="ch:integriteit.html#gegevens"><i class="fa fa-check"></i><b>3.4</b> Gegevens</a></li>
+<li class="chapter" data-level="3.5" data-path="ch:integriteit.html"><a href="ch:integriteit.html#teksten"><i class="fa fa-check"></i><b>3.5</b> Teksten</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch:Meetniveau.html"><a href="ch:Meetniveau.html"><i class="fa fa-check"></i><b>4</b> Meetniveau</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch:Meetniveau.html"><a href="ch:Meetniveau.html#inleiding-1"><i class="fa fa-check"></i><b>4.1</b> Inleiding</a></li>
+<li class="chapter" data-level="4.2" data-path="ch:Meetniveau.html"><a href="ch:Meetniveau.html#sec:nominaal"><i class="fa fa-check"></i><b>4.2</b> Nominaal</a></li>
+<li class="chapter" data-level="4.3" data-path="ch:Meetniveau.html"><a href="ch:Meetniveau.html#sec:ordinaal"><i class="fa fa-check"></i><b>4.3</b> Ordinaal</a></li>
+<li class="chapter" data-level="4.4" data-path="ch:Meetniveau.html"><a href="ch:Meetniveau.html#sec:interval"><i class="fa fa-check"></i><b>4.4</b> Interval</a></li>
+<li class="chapter" data-level="4.5" data-path="ch:Meetniveau.html"><a href="ch:Meetniveau.html#sec:ratio"><i class="fa fa-check"></i><b>4.5</b> Ratio</a></li>
+<li class="chapter" data-level="4.6" data-path="ch:Meetniveau.html"><a href="ch:Meetniveau.html#sec:ordeningvanmeetniveaus"><i class="fa fa-check"></i><b>4.6</b> Ordening van meetniveaus</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch:validiteit.html"><a href="ch:validiteit.html"><i class="fa fa-check"></i><b>5</b> Validiteit</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ch:validiteit.html"><a href="ch:validiteit.html#inleiding-2"><i class="fa fa-check"></i><b>5.1</b> Inleiding</a></li>
+<li class="chapter" data-level="5.2" data-path="ch:validiteit.html"><a href="ch:validiteit.html#sec:causaliteit"><i class="fa fa-check"></i><b>5.2</b> Causaliteit</a></li>
+<li class="chapter" data-level="5.3" data-path="ch:validiteit.html"><a href="ch:validiteit.html#sec:validiteit"><i class="fa fa-check"></i><b>5.3</b> Validiteit</a></li>
+<li class="chapter" data-level="5.4" data-path="ch:validiteit.html"><a href="ch:validiteit.html#sec:internevaliditeit"><i class="fa fa-check"></i><b>5.4</b> Interne validiteit</a></li>
+<li class="chapter" data-level="5.5" data-path="ch:validiteit.html"><a href="ch:validiteit.html#sec:constructvaliditeit"><i class="fa fa-check"></i><b>5.5</b> Constructvaliditeit</a></li>
+<li class="chapter" data-level="5.6" data-path="ch:validiteit.html"><a href="ch:validiteit.html#sec:externevaliditeit"><i class="fa fa-check"></i><b>5.6</b> Externe validiteit</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html"><i class="fa fa-check"></i><b>6</b> Ontwerp</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#sec:ontwerp-inleiding"><i class="fa fa-check"></i><b>6.1</b> Inleiding</a></li>
+<li class="chapter" data-level="6.2" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#sec:tussenbinnenproefpersonen"><i class="fa fa-check"></i><b>6.2</b> Tussen of binnen ?</a></li>
+<li class="chapter" data-level="6.3" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#het-one-shot-single-case-ontwerp"><i class="fa fa-check"></i><b>6.3</b> Het one-shot single-case-ontwerp</a></li>
+<li class="chapter" data-level="6.4" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#het-één-groep-voormeting-nameting-ontwerp"><i class="fa fa-check"></i><b>6.4</b> Het één-groep-voormeting-nameting-ontwerp</a></li>
+<li class="chapter" data-level="6.5" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#sec:voormeting-nameting-controlegroep-ontwerp"><i class="fa fa-check"></i><b>6.5</b> Het voormeting-nameting-controlegroep-ontwerp</a></li>
+<li class="chapter" data-level="6.6" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#sec:solomon-vier-groepen-ontwerp"><i class="fa fa-check"></i><b>6.6</b> Het Solomon-vier-groepen-ontwerp</a></li>
+<li class="chapter" data-level="6.7" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#het-nameting-controlegroep-ontwerp"><i class="fa fa-check"></i><b>6.7</b> Het nameting-controlegroep-ontwerp</a></li>
+<li class="chapter" data-level="6.8" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#sec:ontwerp-factorieel"><i class="fa fa-check"></i><b>6.8</b> Factoriële ontwerpen</a></li>
+<li class="chapter" data-level="6.9" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#sec:afhankelijkegroepen"><i class="fa fa-check"></i><b>6.9</b> Afhankelijke- en onafhankelijke-groepen-ontwerp</a></li>
+<li class="chapter" data-level="6.10" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#onderzoek-ontwerpen"><i class="fa fa-check"></i><b>6.10</b> Onderzoek ontwerpen</a></li>
+<li class="chapter" data-level="6.11" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#tenslotte"><i class="fa fa-check"></i><b>6.11</b> Tenslotte</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html"><i class="fa fa-check"></i><b>7</b> Steekproeven</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html#sec:gelegenheidssteekproef"><i class="fa fa-check"></i><b>7.1</b> Gelegenheidssteekproeven</a></li>
+<li class="chapter" data-level="7.2" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html#sec:systematischesteekproef"><i class="fa fa-check"></i><b>7.2</b> Systematische steekproeven</a></li>
+<li class="chapter" data-level="7.3" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html#sec:aselectesteekproef"><i class="fa fa-check"></i><b>7.3</b> Aselecte steekproeven</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html#spss"><i class="fa fa-check"></i><b>7.3.1</b> SPSS</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html#jasp"><i class="fa fa-check"></i><b>7.3.2</b> JASP</a></li>
+<li class="chapter" data-level="7.3.3" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html#r"><i class="fa fa-check"></i><b>7.3.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html#sec:steekproefgrootte"><i class="fa fa-check"></i><b>7.4</b> Steekproefgrootte</a></li>
+</ul></li>
+<li class="part"><span><b>Deel II: Beschrijvende statistiek</b></span></li>
+<li class="chapter" data-level="8" data-path="ch:frequenties.html"><a href="ch:frequenties.html"><i class="fa fa-check"></i><b>8</b> Frequenties</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ch:frequenties.html"><a href="ch:frequenties.html#inleiding-3"><i class="fa fa-check"></i><b>8.1</b> Inleiding</a></li>
+<li class="chapter" data-level="8.2" data-path="ch:frequenties.html"><a href="ch:frequenties.html#sec:frequenties"><i class="fa fa-check"></i><b>8.2</b> Frequenties</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="ch:frequenties.html"><a href="ch:frequenties.html#sec:intervallen"><i class="fa fa-check"></i><b>8.2.1</b> Intervallen</a></li>
+<li class="chapter" data-level="8.2.2" data-path="ch:frequenties.html"><a href="ch:frequenties.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="8.2.3" data-path="ch:frequenties.html"><a href="ch:frequenties.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
+<li class="chapter" data-level="8.2.4" data-path="ch:frequenties.html"><a href="ch:frequenties.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="ch:frequenties.html"><a href="ch:frequenties.html#sec:staafdiagrammen"><i class="fa fa-check"></i><b>8.3</b> Staafdiagrammen</a></li>
+<li class="chapter" data-level="8.4" data-path="ch:frequenties.html"><a href="ch:frequenties.html#sec:histogrammen"><i class="fa fa-check"></i><b>8.4</b> Histogrammen</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="ch:frequenties.html"><a href="ch:frequenties.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="8.4.2" data-path="ch:frequenties.html"><a href="ch:frequenties.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
+<li class="chapter" data-level="8.4.3" data-path="ch:frequenties.html"><a href="ch:frequenties.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html"><i class="fa fa-check"></i><b>9</b> Centrum en spreiding</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#inleiding-4"><i class="fa fa-check"></i><b>9.1</b> Inleiding</a></li>
+<li class="chapter" data-level="9.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#symbolen"><i class="fa fa-check"></i><b>9.2</b> Symbolen</a></li>
+<li class="chapter" data-level="9.3" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#centrummaten"><i class="fa fa-check"></i><b>9.3</b> Centrummaten</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:gemiddelde"><i class="fa fa-check"></i><b>9.3.1</b> gemiddelde</a></li>
+<li class="chapter" data-level="9.3.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:mediaan"><i class="fa fa-check"></i><b>9.3.2</b> mediaan</a></li>
+<li class="chapter" data-level="9.3.3" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#modus"><i class="fa fa-check"></i><b>9.3.3</b> modus</a></li>
+<li class="chapter" data-level="9.3.4" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:harmonischgemiddelde"><i class="fa fa-check"></i><b>9.3.4</b> harmonisch gemiddelde</a></li>
+<li class="chapter" data-level="9.3.5" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#gewinsoriseerde-gemiddelde"><i class="fa fa-check"></i><b>9.3.5</b> gewinsoriseerde gemiddelde</a></li>
+<li class="chapter" data-level="9.3.6" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#getrimde-gemiddelde"><i class="fa fa-check"></i><b>9.3.6</b> getrimde gemiddelde</a></li>
+<li class="chapter" data-level="9.3.7" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#vergelijking-van-centrummaten"><i class="fa fa-check"></i><b>9.3.7</b> vergelijking van centrummaten</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:kwartielen-en-boxplots"><i class="fa fa-check"></i><b>9.4</b> Kwartielen en boxplots</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#kwartielen"><i class="fa fa-check"></i><b>9.4.1</b> Kwartielen</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:uitbijters"><i class="fa fa-check"></i><b>9.4.2</b> Uitbijters</a></li>
+<li class="chapter" data-level="9.4.3" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:boxplot"><i class="fa fa-check"></i><b>9.4.3</b> Boxplots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:spreidingsmaten"><i class="fa fa-check"></i><b>9.5</b> Spreidingsmaten</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:variantie"><i class="fa fa-check"></i><b>9.5.1</b> variantie</a></li>
+<li class="chapter" data-level="9.5.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:standaarddeviatie"><i class="fa fa-check"></i><b>9.5.2</b> standaarddeviatie</a></li>
+<li class="chapter" data-level="9.5.3" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#mad"><i class="fa fa-check"></i><b>9.5.3</b> MAD</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:significantecijfers"><i class="fa fa-check"></i><b>9.6</b> Over significante cijfers</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:significantecijfers-gemiddelde"><i class="fa fa-check"></i><b>9.6.1</b> Gemiddelde en standaarddeviatie</a></li>
+<li class="chapter" data-level="9.6.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#percentages"><i class="fa fa-check"></i><b>9.6.2</b> Percentages</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:robuustefficient"><i class="fa fa-check"></i><b>9.7</b> Keuzemoment</a></li>
+<li class="chapter" data-level="9.8" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:standaardscores"><i class="fa fa-check"></i><b>9.8</b> Standaardscores</a></li>
+<li class="chapter" data-level="9.9" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
+<li class="chapter" data-level="9.10" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#jasp-3"><i class="fa fa-check"></i><b>9.10</b> JASP</a></li>
+<li class="chapter" data-level="9.11" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#r-3"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html"><i class="fa fa-check"></i><b>10</b> Kansverdelingen</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:kansen"><i class="fa fa-check"></i><b>10.1</b> Kansen</a></li>
+<li class="chapter" data-level="10.2" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:binomiaalverdeling"><i class="fa fa-check"></i><b>10.2</b> Binomiale kansverdeling</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#formules"><i class="fa fa-check"></i><b>10.2.1</b> formules</a></li>
+<li class="chapter" data-level="10.2.2" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#jasp-4"><i class="fa fa-check"></i><b>10.2.2</b> JASP</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#r-4"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:normaalverdeling"><i class="fa fa-check"></i><b>10.3</b> Normale kansverdeling</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#formules-1"><i class="fa fa-check"></i><b>10.3.1</b> formules</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#jasp-5"><i class="fa fa-check"></i><b>10.3.2</b> JASP</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#r-5"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:isvarnormaalverdeeld"><i class="fa fa-check"></i><b>10.4</b> Heeft mijn variabele een normale kansverdeling?</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#jasp-6"><i class="fa fa-check"></i><b>10.4.2</b> JASP</a></li>
+<li class="chapter" data-level="10.4.3" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#r-6"><i class="fa fa-check"></i><b>10.4.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:watalsnietnormaal"><i class="fa fa-check"></i><b>10.5</b> Wat als mijn variabele niet normaal verdeeld is?</a></li>
+<li class="chapter" data-level="10.6" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:CentraalLimietTheorema"><i class="fa fa-check"></i><b>10.6</b> Kansverdeling van gemiddelde</a></li>
+<li class="chapter" data-level="10.7" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:betrouwbaarheidsinterval-gemiddelde"><i class="fa fa-check"></i><b>10.7</b> Betrouwbaarheidsinterval van het gemiddelde</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#formules-2"><i class="fa fa-check"></i><b>10.7.1</b> formules</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ch:samenhang.html"><a href="ch:samenhang.html"><i class="fa fa-check"></i><b>11</b> Samenhang</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#inleiding-5"><i class="fa fa-check"></i><b>11.1</b> Inleiding</a></li>
+<li class="chapter" data-level="11.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:Pearson"><i class="fa fa-check"></i><b>11.2</b> Pearson product-moment-correlatie</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#formules-3"><i class="fa fa-check"></i><b>11.2.1</b> Formules</a></li>
+<li class="chapter" data-level="11.2.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.2.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#jasp-7"><i class="fa fa-check"></i><b>11.2.3</b> JASP</a></li>
+<li class="chapter" data-level="11.2.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#r-7"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:regressie"><i class="fa fa-check"></i><b>11.3</b> Regressie</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:regressie-formules"><i class="fa fa-check"></i><b>11.3.1</b> Formules</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.3.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#jasp-8"><i class="fa fa-check"></i><b>11.3.3</b> JASP</a></li>
+<li class="chapter" data-level="11.3.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#r-8"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#invloedrijke-observaties"><i class="fa fa-check"></i><b>11.4</b> Invloedrijke observaties</a></li>
+<li class="chapter" data-level="11.5" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearmans rangorde-correlatie</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#formules-4"><i class="fa fa-check"></i><b>11.5.1</b> Formules</a></li>
+<li class="chapter" data-level="11.5.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.5.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#jasp-9"><i class="fa fa-check"></i><b>11.5.3</b> JASP</a></li>
+<li class="chapter" data-level="11.5.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#r-9"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
+<ul>
+<li class="chapter" data-level="11.6.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#formules-5"><i class="fa fa-check"></i><b>11.6.1</b> Formules</a></li>
+<li class="chapter" data-level="11.6.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.6.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#jasp-10"><i class="fa fa-check"></i><b>11.6.3</b> JASP</a></li>
+<li class="chapter" data-level="11.6.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#r-10"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Tenslotte</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html"><i class="fa fa-check"></i><b>12</b> Betrouwbaarheid</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#inleiding-6"><i class="fa fa-check"></i><b>12.1</b> Inleiding</a></li>
+<li class="chapter" data-level="12.2" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#wat-is-betrouwbaarheid"><i class="fa fa-check"></i><b>12.2</b> Wat is betrouwbaarheid?</a></li>
+<li class="chapter" data-level="12.3" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#testtheorie"><i class="fa fa-check"></i><b>12.3</b> Testtheorie</a></li>
+<li class="chapter" data-level="12.4" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#interpretaties"><i class="fa fa-check"></i><b>12.4</b> Interpretaties</a></li>
+<li class="chapter" data-level="12.5" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#methoden-om-betrouwbaarheid-te-schatten"><i class="fa fa-check"></i><b>12.5</b> Methoden om betrouwbaarheid te schatten</a></li>
+<li class="chapter" data-level="12.6" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#betrouwbaarheid-tussen-beoordelaars"><i class="fa fa-check"></i><b>12.6</b> Betrouwbaarheid tussen beoordelaars</a></li>
+<li class="chapter" data-level="12.7" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#betrouwbaarheid-en-constructvaliditeit"><i class="fa fa-check"></i><b>12.7</b> Betrouwbaarheid en constructvaliditeit</a></li>
+<li class="chapter" data-level="12.8" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
+<li class="chapter" data-level="12.9" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#jasp-11"><i class="fa fa-check"></i><b>12.9</b> JASP</a></li>
+<li class="chapter" data-level="12.10" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#r-11"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
+</ul></li>
+<li class="part"><span><b>Deel III: Toetsende statistiek</b></span></li>
+<li class="chapter" data-level="13" data-path="ch:toetsing.html"><a href="ch:toetsing.html"><i class="fa fa-check"></i><b>13</b> Toetsing</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:toetsing-inleiding"><i class="fa fa-check"></i><b>13.1</b> Inleiding</a></li>
+<li class="chapter" data-level="13.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-onesample"><i class="fa fa-check"></i><b>13.2</b> <span class="math inline">\(t\)</span>-toets voor enkele steekproef</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-vrijheidsgraden"><i class="fa fa-check"></i><b>13.2.1</b> vrijheidsgraden</a></li>
+<li class="chapter" data-level="13.2.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-1"><i class="fa fa-check"></i><b>13.2.2</b> formules</a></li>
+<li class="chapter" data-level="13.2.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-aannames"><i class="fa fa-check"></i><b>13.2.3</b> aannames</a></li>
+<li class="chapter" data-level="13.2.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
+<li class="chapter" data-level="13.2.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:jaspttoetsenkel"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
+<li class="chapter" data-level="13.2.6" data-path="ch:toetsing.html"><a href="ch:toetsing.html#r-12"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:pgroterdannul"><i class="fa fa-check"></i><b>13.3</b> Overschrijdingskans <span class="math inline">\(p\)</span> is altijd groter dan nul</a></li>
+<li class="chapter" data-level="13.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-eenzijdigtweezijdig"><i class="fa fa-check"></i><b>13.4</b> Eenzijdige en tweezijdige toetsen</a></li>
+<li class="chapter" data-level="13.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:t-betrouwbaarheidsinterval-gemiddelde"><i class="fa fa-check"></i><b>13.5</b> Betrouwbaarheidsinterval van het gemiddelde</a>
+<ul>
+<li class="chapter" data-level="13.5.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-2"><i class="fa fa-check"></i><b>13.5.1</b> formules</a></li>
+<li class="chapter" data-level="13.5.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="13.5.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#jasp-12"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
+<li class="chapter" data-level="13.5.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#r-13"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-onafh"><i class="fa fa-check"></i><b>13.6</b> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven</a>
+<ul>
+<li class="chapter" data-level="13.6.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-ongepaard-aannames"><i class="fa fa-check"></i><b>13.6.1</b> aannames</a></li>
+<li class="chapter" data-level="13.6.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-formules"><i class="fa fa-check"></i><b>13.6.2</b> formules</a></li>
+<li class="chapter" data-level="13.6.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:SPSS-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.3</b> SPSS</a></li>
+<li class="chapter" data-level="13.6.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:jaspttoetsongepaard"><i class="fa fa-check"></i><b>13.6.4</b> JASP</a></li>
+<li class="chapter" data-level="13.6.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.5</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.7" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-gepaard"><i class="fa fa-check"></i><b>13.7</b> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen</a>
+<ul>
+<li class="chapter" data-level="13.7.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#aannames-1"><i class="fa fa-check"></i><b>13.7.1</b> aannames</a></li>
+<li class="chapter" data-level="13.7.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-4"><i class="fa fa-check"></i><b>13.7.2</b> formules</a></li>
+<li class="chapter" data-level="13.7.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:SPSS-ttoets-gepaard"><i class="fa fa-check"></i><b>13.7.3</b> SPSS</a></li>
+<li class="chapter" data-level="13.7.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:jaspttoetsgepaard"><i class="fa fa-check"></i><b>13.7.4</b> JASP</a></li>
+<li class="chapter" data-level="13.7.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:R-ttoets-gepaard"><i class="fa fa-check"></i><b>13.7.5</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-effectgrootte"><i class="fa fa-check"></i><b>13.8</b> Effectgrootte</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-5"><i class="fa fa-check"></i><b>13.8.1</b> formules</a></li>
+<li class="chapter" data-level="13.8.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#spss-13-2"><i class="fa fa-check"></i><b>13.8.2</b> SPSS</a></li>
+<li class="chapter" data-level="13.8.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#jasp-13"><i class="fa fa-check"></i><b>13.8.3</b> JASP</a></li>
+<li class="chapter" data-level="13.8.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#r-14"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
+<li class="chapter" data-level="13.8.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:betrouwbaarheidsinterval-effectgrootte"><i class="fa fa-check"></i><b>13.8.5</b> Betrouwbaarheidsinterval van de effectgrootte</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="ch:power.html"><a href="ch:power.html"><i class="fa fa-check"></i><b>14</b> Power</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="ch:power.html"><a href="ch:power.html#sec:power-inleiding"><i class="fa fa-check"></i><b>14.1</b> Inleiding</a></li>
+<li class="chapter" data-level="14.2" data-path="ch:power.html"><a href="ch:power.html#sec:effectgrootte-power"><i class="fa fa-check"></i><b>14.2</b> Verband tussen effectgrootte en power</a></li>
+<li class="chapter" data-level="14.3" data-path="ch:power.html"><a href="ch:power.html#sec:steekproefgrootte-power"><i class="fa fa-check"></i><b>14.3</b> Verband tussen steekproefgrootte en power</a></li>
+<li class="chapter" data-level="14.4" data-path="ch:power.html"><a href="ch:power.html#sec:significantieniveau-power"><i class="fa fa-check"></i><b>14.4</b> Verband tussen significantieniveau en power</a></li>
+<li class="chapter" data-level="14.5" data-path="ch:power.html"><a href="ch:power.html#nadelen-van-onvoldoende-power"><i class="fa fa-check"></i><b>14.5</b> Nadelen van onvoldoende power</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html"><i class="fa fa-check"></i><b>15</b> Variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:inleiding"><i class="fa fa-check"></i><b>15.1</b> Inleiding</a></li>
+<li class="chapter" data-level="15.2" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-voorbeelden"><i class="fa fa-check"></i><b>15.2</b> Enkele voorbeelden</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#aannames"><i class="fa fa-check"></i><b>15.2.1</b> aannames</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#eén-weg-variantieanalyse"><i class="fa fa-check"></i><b>15.3</b> Eén-weg-variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.3.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-uitleg"><i class="fa fa-check"></i><b>15.3.1</b> Een intuïtieve uitleg</a></li>
+<li class="chapter" data-level="15.3.2" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-formeel"><i class="fa fa-check"></i><b>15.3.2</b> Een formele uitleg</a></li>
+<li class="chapter" data-level="15.3.3" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-effectgrootte"><i class="fa fa-check"></i><b>15.3.3</b> Effectgrootte</a></li>
+<li class="chapter" data-level="15.3.4" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-gericht"><i class="fa fa-check"></i><b>15.3.4</b> Gerichte vergelijkingen</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc vergelijkingen</a></li>
+<li class="chapter" data-level="15.3.6" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
+<li class="chapter" data-level="15.3.7" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#jasp-14"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
+<li class="chapter" data-level="15.3.8" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="15.4" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:tweeweg-anova"><i class="fa fa-check"></i><b>15.4</b> Tweeweg-variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#een-intuïtieve-uitleg"><i class="fa fa-check"></i><b>15.4.1</b> Een intuïtieve uitleg</a></li>
+<li class="chapter" data-level="15.4.2" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#een-formele-uitleg"><i class="fa fa-check"></i><b>15.4.2</b> Een formele uitleg</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-twoway-posthoc"><i class="fa fa-check"></i><b>15.4.3</b> Post-hoc vergelijkingen</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#spss-13"><i class="fa fa-check"></i><b>15.4.4</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#jasp-15"><i class="fa fa-check"></i><b>15.4.5</b> JASP</a></li>
+<li class="chapter" data-level="15.4.6" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#r-16"><i class="fa fa-check"></i><b>15.4.6</b> R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html"><i class="fa fa-check"></i><b>16</b> Chi-kwadraat-toetsen</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#sec:h16inleiding"><i class="fa fa-check"></i><b>16.1</b> Inleiding</a></li>
+<li class="chapter" data-level="16.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#sec:chi2gof"><i class="fa fa-check"></i><b>16.2</b> <span class="math inline">\(\chi^2\)</span>-toets voor “goodness of fit” in enkele steekproef</a></li>
+<li class="chapter" data-level="16.3" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#chi2-toets-voor-homogeniteit-van-een-variabele-in-meerdere-steekproeven"><i class="fa fa-check"></i><b>16.3</b> <span class="math inline">\(\chi^2\)</span>-toets voor homogeniteit van een variabele in meerdere steekproeven</a></li>
+<li class="chapter" data-level="16.4" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#chi2-toets-voor-verband-tussen-twee-variabelen-in-enkele-steekproef"><i class="fa fa-check"></i><b>16.4</b> <span class="math inline">\(\chi^2\)</span>-toets voor verband tussen twee variabelen in enkele steekproef</a></li>
+<li class="chapter" data-level="16.5" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#sec:chi2toets-aannames"><i class="fa fa-check"></i><b>16.5</b> aannames</a></li>
+<li class="chapter" data-level="16.6" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#formules-6"><i class="fa fa-check"></i><b>16.6</b> formules</a></li>
+<li class="chapter" data-level="16.7" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#spss-14"><i class="fa fa-check"></i><b>16.7</b> SPSS</a>
+<ul>
+<li class="chapter" data-level="16.7.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-voorbereiding"><i class="fa fa-check"></i><b>16.7.1</b> goodness of fit: voorbereiding</a></li>
+<li class="chapter" data-level="16.7.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-toetsing"><i class="fa fa-check"></i><b>16.7.2</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.7.3" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-voorbereiding"><i class="fa fa-check"></i><b>16.7.3</b> kruistabellen: voorbereiding</a></li>
+<li class="chapter" data-level="16.7.4" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-toetsing"><i class="fa fa-check"></i><b>16.7.4</b> kruistabellen: toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.8" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#jasp-16"><i class="fa fa-check"></i><b>16.8</b> JASP</a>
+<ul>
+<li class="chapter" data-level="16.8.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-voorbereiding-1"><i class="fa fa-check"></i><b>16.8.1</b> goodness of fit: voorbereiding</a></li>
+<li class="chapter" data-level="16.8.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-toetsing-1"><i class="fa fa-check"></i><b>16.8.2</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.8.3" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-voorbereiding-1"><i class="fa fa-check"></i><b>16.8.3</b> kruistabellen: voorbereiding</a></li>
+<li class="chapter" data-level="16.8.4" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-toetsing-1"><i class="fa fa-check"></i><b>16.8.4</b> kruistabellen: toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.9" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#r-17"><i class="fa fa-check"></i><b>16.9</b> R</a>
+<ul>
+<li class="chapter" data-level="16.9.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-toetsing-2"><i class="fa fa-check"></i><b>16.9.1</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.9.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-voorbereiding-en-toetsing"><i class="fa fa-check"></i><b>16.9.2</b> kruistabellen: voorbereiding en toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.10" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#effectgrootte-odds-ratio"><i class="fa fa-check"></i><b>16.10</b> Effectgrootte: odds ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html"><i class="fa fa-check"></i><b>17</b> Andere nonparametrische toetsen</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:h17inleiding"><i class="fa fa-check"></i><b>17.1</b> Inleiding</a></li>
+<li class="chapter" data-level="17.2" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#gepaarde-observaties-enkele-steekproef"><i class="fa fa-check"></i><b>17.2</b> Gepaarde observaties, enkele steekproef</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:tekentoets"><i class="fa fa-check"></i><b>17.2.1</b> Tekentoets</a></li>
+<li class="chapter" data-level="17.2.2" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:Wilcoxon-signed-rank"><i class="fa fa-check"></i><b>17.2.2</b> Wilcoxon signed-ranks test</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#onafhankelijke-observaties-meerdere-steekproeven"><i class="fa fa-check"></i><b>17.3</b> Onafhankelijke observaties, meerdere steekproeven</a>
+<ul>
+<li class="chapter" data-level="17.3.1" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#mediaantoets"><i class="fa fa-check"></i><b>17.3.1</b> Mediaantoets</a></li>
+<li class="chapter" data-level="17.3.2" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:wilcoxon-rank-sum"><i class="fa fa-check"></i><b>17.3.2</b> Wilcoxon rank sum test, ofwel Mann-Whitney U test</a></li>
+<li class="chapter" data-level="17.3.3" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>17.3.3</b> Kruskall-Wallis H test</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Bijlagen</b></span></li>
+<li class="chapter" data-level="A" data-path="app:randomgetallen.html"><a href="app:randomgetallen.html"><i class="fa fa-check"></i><b>A</b> Willekeurige getallen</a></li>
+<li class="chapter" data-level="B" data-path="app:kritiekeZwaarden.html"><a href="app:kritiekeZwaarden.html"><i class="fa fa-check"></i><b>B</b> Standaard-normale kansverdeling</a></li>
+<li class="chapter" data-level="C" data-path="app:kritieketwaarden.html"><a href="app:kritieketwaarden.html"><i class="fa fa-check"></i><b>C</b> Kritieke waarden van <span class="math inline">\(t\)</span>-verdeling</a></li>
+<li class="chapter" data-level="D" data-path="app:kritiekechi2waarden.html"><a href="app:kritiekechi2waarden.html"><i class="fa fa-check"></i><b>D</b> Kritieke waarden van <span class="math inline">\(\chi^2\)</span>-verdeling</a></li>
+<li class="chapter" data-level="" data-path="referenties.html"><a href="referenties.html"><i class="fa fa-check"></i>Referenties</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Gemaakt met bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kwantitatieve Methoden en Statistiek</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch:variantieanalyse" class="section level1" number="15">
+<h1><span class="header-section-number">Hoofdstuk 15</span> Variantieanalyse</h1>
+<div id="sec:inleiding" class="section level2" number="15.1">
+<h2><span class="header-section-number">15.1</span> Inleiding</h2>
+<p>Dit hoofdstuk gaat over een veel gebruikte statistische analyse, genaamd
+<em>variantie-analyse</em> (Eng. ‘analysis of variance,’ vaak afgekort als
+ANOVA). In dit hoofdstuk gebruiken we relatief veel Engelse
+terminologie, ten eerste omdat de Nederlandse termen nauwelijks gebruikt
+worden, en daarmee samenhangend om goed aan te sluiten bij de
+Engelstalige vakliteratuur over variantieanalyse.</p>
+<p>Hoe zit dit hoofdstuk in elkaar? We beginnen in
+paragraaf <a href="ch:variantieanalyse.html#sec:anova-voorbeelden">15.2</a> met enkele voorbeelden van onderzoek
+waarvan de uitkomsten getoetst kunnen worden met variantieanalyse. De
+bedoeling van de paragraaf is je vertrouwd te maken met de techniek, met
+de nieuwe terminologie, en met de voorwaarden waaronder van deze
+techniek gebruik mag worden gemaakt. In
+§<a href="ch:variantieanalyse.html#sec:anova-oneway-uitleg">15.3.1</a> introduceren we de techniek op een
+intuïtieve wijze door in te gaan op de gedachtegang achter de toets. In
+§<a href="ch:variantieanalyse.html#sec:anova-oneway-formeel">15.3.2</a> leiden we een formele vorm af voor
+de belangrijkste toetsingsgrootheid, de <span class="math inline">\(F\)</span>-ratio.</p>
+</div>
+<div id="sec:anova-voorbeelden" class="section level2" number="15.2">
+<h2><span class="header-section-number">15.2</span> Enkele voorbeelden</h2>
+<p>Variantieanalyse is, net als de <em>t</em>-toets, een statistische
+generalisatietechniek, dat wil zeggen: een instrument dat gebruikt kan
+worden bij de formulering van uitspraken over de eigenschappen van
+populaties, op basis van gegevens ontleend aan steekproeven uit die
+populaties. In het geval van de <em>t</em>-toets en van ANOVA gaan die uitspraken over het al dan niet gelijk zijn van de gemiddelden van (twee of meer)
+populaties. In deze zin kan variantieanalyse dan ook opgevat worden als
+een uitgebreide versie van de <em>t</em>-toets: met ANOVA kunnen we gegevens analyseren van meer dan twee steekproeven.
+Bovendien is het mogelijk om de effecten
+van meerdere onafhankelijke variabelen simultaan in de analyse te
+betrekken. Dat komt van pas als we gegevens willen analyseren uit een
+factorieel ontwerp (§<a href="ch:ontwerp.html#sec:ontwerp-factorieel">6.8</a>).</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 15.1</em>: In dit voorbeeld
+onderzoeken we het spreektempo ofwel de spreeksnelheid van vier groepen
+sprekers, nl. afkomstig uit het Midden, Noorden, Zuiden en Westen van
+Nederland. De spreeksnelheid is uitgedrukt als de gemiddelde duur van
+een lettergreep, gemiddeld over een interview van ca 15 minuten met elke
+spreker <span class="citation">(<a href="#ref-Quene08" role="doc-biblioref">Quené 2008</a>)</span> <span class="citation">(<a href="#ref-R-hqmisc" role="doc-biblioref">Quené 2014</a>)</span>. Een kortere gemiddelde syllabeduur
+correspondeert
+dus met een snellere spreker (vgl. de schaatssport: een kortere
+rondetijd correspondeert met een snellere schaatser). Er waren 20
+sprekers per groep, maar 1 spreker (uit het Zuiden) met een extreem hoge
+waarde is hier verwijderd uit de steekproef.</p>
+</blockquote>
+<hr />
+<p>De geobserveerde spreeksnelheden per spreker uit bovenstaand voorbeeld 15.1
+zijn samengevat in Tabel <a href="ch:variantieanalyse.html#tab:syldur">15.1</a> en
+Figuur <a href="ch:variantieanalyse.html#fig:syldur-boxplot">15.1</a>. Hierbij is de regio van herkomst een
+onafhankelijke categoriale variabele of ‘factor.’ De waarden van deze
+factor worden ook aangeduid als ‘niveaus's’ (Eng. ‘levels’), of in veel
+onderzoeken als ‘groepen’ of ‘condities.’ Ieder niveau of iedere groep of
+conditie vormt een ‘cel’ van het ontwerp, en de observaties uit die cel
+worden ook ‘replicaties’ genoemd (bedenk waarom die zo genoemd worden).
+De spreeksnelheid vormt de afhankelijke variabele. De nulhypothese luidt
+dat de gemiddelden van de afhankelijke variabele gelijk zijn voor alle
+groepen, dus H0: <span class="math inline">\(\mu_M = \mu_N = \mu_Z = \mu_W\)</span>. Als we H0 verwerpen,
+dan betekent dat dus <em>alleen</em> dat niet alle gemiddelden gelijk zijn,
+maar het betekent <em>niet</em> dat ieder groepsgemiddelde afwijkt van ieder
+ander groepsgemiddelde. Daarvoor is nader (post-hoc) onderzoek nodig; we
+komen daar later nog op terug.</p>
+<table>
+<caption><span id="tab:syldur">Tabel 15.1: </span> Gemiddelde spreeksnelheden, met standaarddeviatie en aantallen sprekers, verdeeld naar regio van herkomst van de spreker (zie voorbeeld 15.1).</caption>
+<thead>
+<tr class="header">
+<th align="left">regio</th>
+<th align="center">gemiddelde</th>
+<th align="center">s.d.</th>
+<th align="center">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Midden</td>
+<td align="center">0.253</td>
+<td align="center">0.028</td>
+<td align="center">20</td>
+</tr>
+<tr class="even">
+<td align="left">Noord</td>
+<td align="center">0.269</td>
+<td align="center">0.029</td>
+<td align="center">20</td>
+</tr>
+<tr class="odd">
+<td align="left">Zuid</td>
+<td align="center">0.260</td>
+<td align="center">0.030</td>
+<td align="center">19</td>
+</tr>
+<tr class="even">
+<td align="left">West</td>
+<td align="center">0.235</td>
+<td align="center">0.028</td>
+<td align="center">20</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span style="display:block;" id="fig:syldur-boxplot"></span>
+<img src="KMS-NL_files/figure-html/syldur-boxplot-1.png" alt="Boxplot van de gemiddelde duur van de lettergrepen, opgesplitst naar regio van herkomst van de spreker." width="672" />
+<p class="caption">
+Figuur 15.1: Boxplot van de gemiddelde duur van de lettergrepen, opgesplitst naar regio van herkomst van de spreker.
+</p>
+</div>
+<p>Om nu te onderzoeken of de vier populaties verschillen in hun gemiddelde
+spreeksnelheid, zouden we in eerste instantie <span class="math inline">\(t\)</span>-toetsen kunnen uitvoeren voor
+alle paren van niveaus. (Met 4 niveaus zou dat 6 toetsen vereisen, zie
+vergelijking <a href="ch:kansverdelingen.html#eq:choose">(10.6)</a> met <span class="math inline">\(n=4\)</span> en <span class="math inline">\(x=2\)</span>). Er kleven echter
+verschillende bezwaren aan deze aanpak. Eén daarvan bespreken we hier.
+Bij iedere <span class="math inline">\(t\)</span>-toets gebruiken we een overschrijdingskans van <span class="math inline">\(\alpha=.05\)</span>. We
+hebben dus een kans van .95 op een juiste beslissing zonder Type-I-fout.
+De kans dat we bij alle 6 toetsen een juiste beslissing nemen is
+<span class="math inline">\(.95^6 = .73\)</span> (volgens de productregel,
+vergelijking <a href="ch:kansverdelingen.html#eq:kans-productregel">(10.4)</a>). De gezamenlijke kans op één of meer
+Type-I-fout(en) in de 6 toetsen is dus niet meer <span class="math inline">\(.05\)</span>, maar is nu
+opgelopen tot <span class="math inline">\(1-.73 = .27\)</span>, ruim een kwart!</p>
+<p>Variantieanalyse nu biedt de mogelijkheid om op grond van één enkele
+toetsing (dus niet 6 toetsen) de houdbaarheid te onderzoeken van de
+bovengenoemde nulhypothese. Variantieanalyse kan dus het beste
+gekenschetst worden als een globale toetsingstechniek, die het meest
+geschikt is als je a priori geen specifieke voorspellingen kan of wil
+doen omtrent de verschillen tussen de populaties.</p>
+<p>Een variantieanalyse toegepast op de scores samengevat in
+Tabel <a href="ch:variantieanalyse.html#tab:syldur">15.1</a>
+zal tot verwerping van de nul-hypothese leiden: de 4 regionale
+gemiddelden zijn niet gelijk. De gevonden verschillen zijn
+hoogstwaarschijnlijk niet toe te schrijven aan toevallige
+steekproeffluctuaties, maar aan systematische verschillen tussen de
+groepen (<span class="math inline">\(\alpha=.05\)</span>). Kan nu geconcludeerd worden dat de gevonden
+verschillen in spreeksnelheid <em>veroorzaakt</em> worden door verschil in
+herkomst van de spreker? Hier is terughoudendheid geboden (zie
+§<a href="ch:validiteit.html#sec:causaliteit">5.2</a>). Het is immers niet uit te sluiten dat de
+vier populaties niet alleen in spreeksnelheid systematisch van elkaar
+verschillen, maar ook in andere relevante factoren, die niet in het
+onderzoek opgenomen zijn, zoals gezondheid, welvaart, of onderwijs. Die
+andere factoren zouden we alleen kunnen uitsluiten als we proefpersonen
+aselect zouden toewijzen aan de gekozen niveaus van de onafhankelijke
+variabele. Dat is echter niet mogelijk als het gaat om de regio van
+herkomst van de spreker: we kunnen een spreker meestal wel (aselect)
+toewijzen aan een behandelvorm of conditie, maar niet aan een regio van
+herkomst. In feite is het onderzoek in voorbeeld 15.1
+dus quasi-experimenteel.</p>
+<p>Voor ons tweede voorbeeld betrekken we een tweede factor in hetzelfde
+onderzoek naar spreeksnelheid, nl. ook het geslacht van de spreker.
+ANOVA stelt ons in staat om in één enkele analyse te toetsen of (i) de vier
+regio’s van elkaar verschillen (H0: <span class="math inline">\(\mu_M = \mu_N = \mu_Z = \mu_W\)</span>), en
+of (ii) de twee geslachten van elkaar verschillen (H0:
+<span class="math inline">\(\mu_\textrm{vrouw} = \mu_\textrm{man}\)</span>), en of (iii) de verschillen
+tussen de regio’s hetzelfde zijn voor beide geslachten (of, anders
+gezegd, of de verschillen tussen de geslachten hetzelfde zijn voor alle
+regio’s). Dat laatste noemen we de ‘interactie’ tussen de twee factoren.</p>
+<table>
+<caption><span id="tab:syldur2way">Tabel 15.2: </span> Gemiddelde spreeksnelheden, met standaarddeviatie en aantallen sprekers, verdeeld naar geslacht en regio van herkomst van de spreker (zie voorbeeld 15.1).</caption>
+<thead>
+<tr class="header">
+<th align="left">geslacht</th>
+<th align="left">regio</th>
+<th align="center">gemiddelde</th>
+<th align="center">s.d.</th>
+<th align="center">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">vrouw</td>
+<td align="left">Midden</td>
+<td align="center">0.271</td>
+<td align="center">0.021</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td align="left">vrouw</td>
+<td align="left">Noord</td>
+<td align="center">0.285</td>
+<td align="center">0.025</td>
+<td align="center">10</td>
+</tr>
+<tr class="odd">
+<td align="left">vrouw</td>
+<td align="left">Zuid</td>
+<td align="center">0.269</td>
+<td align="center">0.028</td>
+<td align="center">9</td>
+</tr>
+<tr class="even">
+<td align="left">vrouw</td>
+<td align="left">West</td>
+<td align="center">0.238</td>
+<td align="center">0.028</td>
+<td align="center">10</td>
+</tr>
+<tr class="odd">
+<td align="left">man</td>
+<td align="left">Midden</td>
+<td align="center">0.235</td>
+<td align="center">0.022</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td align="left">man</td>
+<td align="left">Noord</td>
+<td align="center">0.253</td>
+<td align="center">0.025</td>
+<td align="center">10</td>
+</tr>
+<tr class="odd">
+<td align="left">man</td>
+<td align="left">Zuid</td>
+<td align="center">0.252</td>
+<td align="center">0.030</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td align="left">man</td>
+<td align="left">West</td>
+<td align="center">0.232</td>
+<td align="center">0.028</td>
+<td align="center">10</td>
+</tr>
+</tbody>
+</table>
+<p>De resultaten in Tabel <a href="ch:variantieanalyse.html#tab:syldur2way">15.2</a> suggereren dat (i) sprekers uit het Westen
+sneller spreken dan de anderen, en dat (ii) mannen sneller spreken dan
+vrouwen (!). En (iii) het verschil tussen mannen en vrouwen lijkt
+kleiner voor sprekers uit het Westen dan voor sprekers uit andere
+regionen. Uiteraard zouden we deze effecten moeten toetsen om de bovenstaande uitspraken te onderbouwen (zie daarvoor §<a href="ch:variantieanalyse.html#sec:tweeweg-anova">15.4</a> hieronder).</p>
+<div id="aannames" class="section level3" number="15.2.1">
+<h3><span class="header-section-number">15.2.1</span> aannames</h3>
+<p>De variantie-analyse vereist vier aannames (of assumpties) waaraan
+voldaan moet zijn, om deze toets te mogen gebruiken; deze aannames komen
+overeen met die van de <em>t</em>-toets
+(§<a href="ch:toetsing.html#sec:ttoets-aannames">13.2.3</a>).</p>
+<ul>
+<li><p>De gegevens moeten gemeten zijn op intervalniveau (zie
+§<a href="ch:Meetniveau.html#sec:interval">4.4</a>).</p></li>
+<li><p>Alle observaties moeten onafhankelijk van elkaar zijn.</p></li>
+<li><p>De scores moeten normaal verdeeld zijn
+binnen elke groep (zie §<a href="ch:kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p></li>
+<li><p>De variantie van de scores moet (ongeveer) gelijk zijn in de
+scores van de respectievelijke groepen of condities (zie
+§<a href="ch:centrumenspreiding.html#sec:variantie">9.5.1</a>).
+Schending van deze aanname is ernstiger
+naarmate de steekproeven meer in grootte verschillen. Het is daarom
+verstandig om te werken met even grote, en liefst niet te kleine
+steekproeven.</p></li>
+</ul>
+<p>Samenvattend: variantieanalyse kan gebruikt worden om meerdere
+populatiegemiddelden te vergelijken, en om de effecten van meerdere
+factoren en combinaties van factoren (interacties) te bepalen.
+Variantieanalyse vereist wel dat de gegevens aan meerdere voorwaarden
+voldoen.</p>
+</div>
+</div>
+<div id="eén-weg-variantieanalyse" class="section level2" number="15.3">
+<h2><span class="header-section-number">15.3</span> Eén-weg-variantieanalyse</h2>
+<div id="sec:anova-oneway-uitleg" class="section level3" number="15.3.1">
+<h3><span class="header-section-number">15.3.1</span> Een intuïtieve uitleg</h3>
+<p>Zoals gezegd gebruiken we variantieanalyse om te onderzoeken of de
+scores van verschillende groepen, of verzameld onder verschillende
+condities, van elkaar verschillen. Maar — scores verschillen <em>altijd</em>
+van elkaar, door toevallige fluctuaties tussen de replicaties binnen
+elke steekproef. In de voorgaande hoofdstukken zijn we al vele
+voorbeelden tegengekomen van toevalsfluctuaties binnen dezelfde
+steekproef en binnen dezelfde conditie. De vraag wordt dan, of de scores
+<em>tussen</em> de verschillende groepen (of verzameld onder verschillende
+condities) méér van elkaar verschillen dan je zou verwachten op grond
+van toevallige fluctuaties <em>binnen</em> elke groep of cel.</p>
+<p>De bovengenoemde “verschillen tussen scores” vormen bij elkaar de
+variantie van die scores
+(§<a href="ch:centrumenspreiding.html#sec:variantie">9.5.1</a>). Bij variantieanalyse verdelen we de totale
+variantie in twee delen: ten eerste de variantie veroorzaakt door
+(systematische) verschillen <em>tussen</em> groepen, en ten tweede de variantie
+veroorzaakt door (toevallige) verschillen <em>binnen</em> groepen. Als H0 waar
+is, en als er dus (in de populaties) géén verschillen tussen de groepen
+zijn, dan verwachten we desalniettemin (in de steekproeven van de
+groepen) wèl enige verschillen tussen de gemiddelde scores van de
+groepen, zij het dat de laatstgenoemde verschillen niet groter zullen
+zijn dan de toevallige verschillen binnen de groepen, als H0 waar is.
+Lees deze alinea nog eens aandachtig door.</p>
+<p>Deze aanpak wordt geïllustreerd in
+Figuur <a href="ch:variantieanalyse.html#fig:kleurtjes-obs">15.2</a>, waarin de scores zijn afgebeeld uit drie
+experimentele groepen (met aselecte toewijzing van proefpersonen aan de
+groepen): de rode, grijze en blauwe groep. De scores verschillen van
+elkaar, in ieder geval door toevallige fluctuaties van de scores binnen
+elke groep. Er zijn misschien ook systematische verschillen tussen (de
+gemiddelde scores van) de drie groepen. Maar zijn deze systematische
+verschillen nu relatief groter dan de toevallige verschillen binnen
+groepen? Zo ja, dan verwerpen we H0.</p>
+<div class="figure"><span style="display:block;" id="fig:kleurtjes-obs"></span>
+<img src="KMS-NL_files/figure-html/kleurtjes-obs-1.png" alt="Gesimuleerde observaties van drie experimentele groepen: rood (neerwaartse driehoek), grijs (ruit), en blauw (opwaartse driehoek) (n=15 per groep), met het gemiddelde per groep (in streeplijnen), en met het gemiddelde over alle observaties (stippellijn)." width="672" />
+<p class="caption">
+Figuur 15.2: Gesimuleerde observaties van drie experimentele groepen: rood (neerwaartse driehoek), grijs (ruit), en blauw (opwaartse driehoek) (n=15 per groep), met het gemiddelde per groep (in streeplijnen), en met het gemiddelde over alle observaties (stippellijn).
+</p>
+</div>
+<p>De systematische verschillen <em>tussen</em> de groepen corresponderen met de
+verschillen van de rode, grijze en blauwe groepsgemiddelden
+(streepjeslijnen in
+Figuur <a href="ch:variantieanalyse.html#fig:kleurtjes-obs">15.2</a>) ten opzichte van het gemiddelde over
+alle observaties (stippellijn). Voor de eerste observatie is dat een
+negatieve afwijking, want de score ligt onder het algemene gemiddelde
+(stippellijn). De toevallige verschillen <em>binnen</em> de groepen
+corresponderen met de afwijking van iedere observatie ten opzichte van
+het groepsgemiddelde (voor de eerste observatie is dat dus een positieve
+afwijking, want de score ligt boven het groepsgemiddelde van de rode
+groep).</p>
+<p>Laten we nu de overstap maken van ‘verschillen’ naar ‘variantie.’ We
+splitsen dan de afwijking van iedere observatie t.o.v. het algemene
+gemiddelde op in twee afwijkingen: ten eerste de afwijking van
+groepsgemiddelde t.o.v. algemene gemiddelde, en ten tweede de afwijking
+van iedere replicatie t.o.v. het groepsgemiddelde. Dat zijn twee stukjes
+variantie, die tezamen de totale variantie vormen. Omgekeerd kunnen we
+dus de totale variantie opdelen in deze twee componenten, vandaar de
+naam ‘variantieanalyse.’ (We zullen in de volgende paragraaf uitleggen
+hoe die componenten berekend worden, rekening houdend met het aantal
+observaties en aantal groepen.)</p>
+<p>Die verdeling van de totale variantie in twee variantiecomponenten is
+nuttig, omdat we daarna de <em>verhouding</em> of ratio tussen die twee delen
+kunnen bepalen. Die verhouding tussen varianties wordt de <span class="math inline">\(F\)</span>-ratio
+genoemd, en we gebruiken deze verhouding om H0 te toetsen.</p>
+<p><span class="math display">\[\textrm{H0}: \textrm{variantie tussen groepen} = \textrm{variantie binnen groepen}\]</span></p>
+<p><span class="math display">\[\textrm{H0}: F = \frac{\textrm{variantie tussen groepen}}{\textrm{variantie binnen groepen}} = 1\]</span></p>
+<p>De <span class="math inline">\(F\)</span>-ratio is dus een toetsingsgrootheid, waarvan de kansverdeling
+bekend is indien H0 waar is. In het voorbeeld van
+Figuur <a href="ch:variantieanalyse.html#fig:kleurtjes-obs">15.2</a> vinden we <span class="math inline">\(F=3.22\)</span>, met 3 groepen en 45
+observaties, <span class="math inline">\(p&lt;.001\)</span>. We vinden hier dus een relatief grote
+systematische variantie <em>tussen</em> groepen, ten opzichte van de relatief
+kleine toevallige variantie <em>binnen</em> groepen: de eerstgenoemde variantie
+(teller van verhouding <span class="math inline">\(F\)</span>) is meer dan <span class="math inline">\(3\times\)</span> zo groot als de
+laatstgenoemde variantie (noemer van verhouding <span class="math inline">\(F\)</span>). De kans <span class="math inline">\(p\)</span> om
+deze verhouding te vinden als H0 waar is, is buitengewoon gering, en we
+verwerpen daarom H0. (We zullen in de volgende paragraaf uitleggen hoe
+die kans bepaald wordt, weer rekening houdend met het aantal observaties
+en aantal groepen.) We spreken dan van een significant effect van de
+factor op de afhankelijke variabele.</p>
+<p>Aan het slot van deze paragraaf herhalen we de essentie van de
+variantieanalyse. We verdelen de totale variantie in twee delen: de
+mogelijk systematische variantie tussen groepen of condities, en de
+variantie binnen groepen of condities (d.i. altijd aanwezige, toevallige
+fluctuatie tussen replicaties). De toetsingsgrootheid <span class="math inline">\(F\)</span> bestaat uit de
+verhouding tussen deze twee varianties. We toetsen eenzijdig of <span class="math inline">\(F=1\)</span>,
+en verwerpen H0 als <span class="math inline">\(F&gt;1\)</span> zodanig dat de kans
+<span class="math inline">\(P(F|\textrm{H0}) &lt; \alpha\)</span>. De gemiddelde scores van de groepen of
+condities zijn dan hoogstwaarschijnlijk niet alle gelijk. We weten
+daarmee nog niet welke groepen van elkaar verschillen, daarvoor is nog
+verdere (post-hoc) analyse nodig
+(§<a href="ch:variantieanalyse.html#sec:anova-oneway-posthoc">15.3.5</a> hieronder).</p>
+</div>
+<div id="sec:anova-oneway-formeel" class="section level3" number="15.3.2">
+<h3><span class="header-section-number">15.3.2</span> Een formele uitleg</h3>
+<p>Voor onze uitleg beginnen we met de geobserveerde scores. We nemen aan
+dat de scores zijn opgebouwd volgens een bepaald statistisch model, nl.
+als de optelsom van het populatiegemiddelde (<span class="math inline">\(\mu\)</span>), een systematisch
+effect (<span class="math inline">\(\alpha_j\)</span>) van de <span class="math inline">\(j\)</span>’de conditie of groep (over <span class="math inline">\(k\)</span> condities
+of groepen), en een toevallig effect (<span class="math inline">\(e_{ij}\)</span>) voor de <span class="math inline">\(i\)</span>’de
+replicatie binnen de <span class="math inline">\(j\)</span>’de conditie of groep (over <span class="math inline">\(N\)</span> replicaties in
+totaal). In formule:
+<span class="math display">\[x_{ij} = \mu + \alpha_{j} + e_{ij}\]</span>
+Ook hier
+weer ontleden we dus iedere score in een systematisch deel en een
+toevallig deel. Dat geldt niet alleen voor de scores zelf, maar ook voor
+de afwijkingen van iedere score ten opzichte van het totale gemiddelde
+(zie §<a href="ch:variantieanalyse.html#sec:anova-oneway-uitleg">15.3.1</a>).</p>
+<p>Er zijn derhalve drie varianties van belang. Ten eerste de totale
+variantie (zie vergelijking
+<a href="ch:centrumenspreiding.html#eq:variantie">(9.3)</a>, afgekort tot <code>t</code>) over alle <span class="math inline">\(N\)</span>
+observaties uit alle groepen of condities tezamen:
+<span class="math display" id="eq:MStotal">\[\begin{equation}
+  \tag{15.1}
+    s^2_t = \frac{ \sum (x_{ij} - \overline{x})^2 } {N-1}
+\end{equation}\]</span>
+Ten tweede de variantie tussen (Eng. ‘between,’ afgekort tot<code>b</code>) de
+groepen of condities:
+<span class="math display" id="eq:MSbetween">\[\begin{equation}
+  \tag{15.2}
+    s^2_b = \frac{ \sum_{j=1}^{j=k} n_j (\overline{x_j} - \overline{x})^2 } {k-1}
+\end{equation}\]</span>
+en ten derde de variantie binnen (Eng. ‘within,’ afgekort tot <code>w</code>) de
+groepen of condities:
+<span class="math display" id="eq:MSwithin">\[\begin{equation}
+  \tag{15.3}
+    s^2_w = \frac{ \sum_{j=1}^{j=k} \sum_i (x_{ij} - \overline{x_j})^2 } {N-k}
+\end{equation}\]</span></p>
+<p>In deze vergelijkingen worden de <em>tellers</em> gevormd door de som van de
+gekwadrateerde afwijkingen (‘sums of squares,’ afgekort <code>SS</code>). In de
+vorige paragraaf hebben we aangegeven dat de afwijkingen bij elkaar
+optellen, en dat geldt dan ook voor de gesommeerde en gekwadrateerde
+afwijkingen:
+<span class="math display" id="eq:SStotal">\[\begin{align}
+  \tag{15.4}
+    { \sum (x_{ij} - \overline{x})^2 } &amp;= 
+    { \sum_{j=1}^{j=k} n_j (\overline{x_j} - \overline{x})^2 } + 
+    { \sum_{j=1}^{j=k} \sum_i (x_{ij} - \overline{x_j})^2 } \\
+    \textrm{SS}_t &amp;= \textrm{SS}_b + \textrm{SS}_w
+\end{align}\]</span>
+De
+<em>noemers</em> van de varianties worden gevormd door de vrijheidsgraden
+(‘degrees of freedom,’ afgekort <code>df</code>, zie
+§<a href="ch:toetsing.html#sec:ttoets-vrijheidsgraden">13.2.1</a>). Voor de variantie tussen
+groepen <span class="math inline">\(s^2_b\)</span> is dat het aantal groepen of condities, minus 1 (<span class="math inline">\(k-1\)</span>).
+Voor de variantie binnen groepen <span class="math inline">\(s^2_w\)</span> is dat het aantal observaties,
+minus het aantal groepen (<span class="math inline">\(N-k\)</span>). Voor de totale variantie is dat het
+aantal observaties minus 1 (<span class="math inline">\(N-1\)</span>). Ook de vrijheidsgraden van de
+afwijkingen tellen bij elkaar op:
+<span class="math display" id="eq:dftotal1">\[\begin{align}
+  \tag{15.5}
+    { (N-1) } &amp;= { (k-1) } + { (N-k) } \\
+    \textrm{df}_t &amp;= \textrm{df}_b + \textrm{df}_w
+\end{align}\]</span></p>
+<p>De bovenstaande breuken die de varianties <span class="math inline">\(s^2_t\)</span>, <span class="math inline">\(s^2_b\)</span> en <span class="math inline">\(s^2_w\)</span>
+beschrijven, worden ook aangeduid als de ‘mean squares’ (afgekort <code>MS</code>).
+<span class="math inline">\(\textrm{MS}_{t}\)</span> is per definitie gelijk aan de ‘gewone’ variantie
+<span class="math inline">\(s^2_x\)</span> (zie de identieke vergelijkingen
+<a href="ch:centrumenspreiding.html#eq:variantie">(9.3)</a> en
+<a href="ch:variantieanalyse.html#eq:MStotal">(15.1)</a>).</p>
+<p>De toetsingsgrootheid <span class="math inline">\(F\)</span> is gedefinieerd als de verhouding van de twee
+hierboven gedefinieerde variantiecomponenten:
+<span class="math display" id="eq:Fratio">\[\begin{equation}
+  \tag{15.6}
+    F = \frac{ s^2_b } { s^2_w }
+\end{equation}\]</span>
+met niet één maar twee
+vrijheidsgraden, resp. <span class="math inline">\((k-1)\)</span> voor de teller en <span class="math inline">\((N-k)\)</span> voor de noemer.</p>
+<p>De overschrijdingskans <span class="math inline">\(p\)</span> die behoort bij de gevonden <span class="math inline">\(F\)</span> kan je
+bepalen aan de hand van een tabel, maar meestal voeren we een
+variantieanalyse uit met behulp van de computer, en die berekent dan ook
+die overschrijdingskans.</p>
+<p>De resultaten van een variantieanalyse worden samengevat met een vaste
+opbouw in een zgn. ANOVA-tabel, zoals
+Tabel <a href="ch:variantieanalyse.html#tab:kleurtjes-anova">15.3</a>. Daarin staat de belangrijkste
+informatie samengevat. Maar de hele tabel kan ook in één zin samengevat
+worden, zie Voorbeeld 15.2.</p>
+<table>
+<caption><span id="tab:kleurtjes-anova">Tabel 15.3: </span> Samenvatting van variantieanalyse van de observaties in Figuur <a href="ch:variantieanalyse.html#fig:kleurtjes-obs">15.2</a>.</caption>
+<thead>
+<tr class="header">
+<th align="left">variantiebron</th>
+<th align="right">df</th>
+<th align="center">SS</th>
+<th align="center">MS</th>
+<th align="center"><span class="math inline">\(F\)</span></th>
+<th align="center"><span class="math inline">\(p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">groep</td>
+<td align="right">2</td>
+<td align="center">14.50</td>
+<td align="center">7.248</td>
+<td align="center">9.36</td>
+<td align="center">&lt;.001</td>
+</tr>
+<tr class="even">
+<td align="left">(within)</td>
+<td align="right">42</td>
+<td align="center">32.54</td>
+<td align="center">0.775</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 15.2</em>:
+De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep
+[<span class="math inline">\(F(2,42) = 9.35, p&lt;.001, \omega^2 = 0.28\)</span>].</p>
+</blockquote>
+<hr />
+</div>
+<div id="sec:anova-oneway-effectgrootte" class="section level3" number="15.3.3">
+<h3><span class="header-section-number">15.3.3</span> Effectgrootte</h3>
+<p>Net als bij de <span class="math inline">\(t\)</span>-toets is het niet alleen van belang om een binaire beslissing
+te nemen over H0, maar is het minstens zo belangrijk om te weten hoe
+groot het geobserveerde effect is (zie ook
+§<a href="ch:toetsing.html#sec:ttoets-effectgrootte">13.8</a>). Deze effectgrootte bij
+variantieanalyse kan worden uitgedrukt in verschillende maten, waarvan
+wij er twee bespreken (deze paragraaf is gebaseerd op <span class="citation"><a href="#ref-KL00" role="doc-biblioref">Kerlinger and Lee</a> (<a href="#ref-KL00" role="doc-biblioref">2000</a>)</span>; zie ook <span class="citation"><a href="#ref-Olej03" role="doc-biblioref">Olejnik and Algina</a> (<a href="#ref-Olej03" role="doc-biblioref">2003</a>)</span>).</p>
+<p>De eenvoudigste maat is de zgn. <span class="math inline">\(\eta^2\)</span> (“èta-kwadraat” of “eta
+squared”), de proportie van de totale SS die toe te schrijven is aan de
+verschillen tussen de groepen of condities: <span class="math display">\[\label{eq:etasq}
+    \eta^2 = \frac{ \textrm{SS}_b } { \textrm{SS}_t }\]</span> De effectgrootte
+<span class="math inline">\(\eta^2\)</span> is een proportie tussen 0 en 1, die aangeeft hoeveel van de
+variantie in de <em>steekproef</em> toe te schrijven is aan de onafhankelijke
+variabele.</p>
+<p>De tweede maat voor effectgrootte bij variantieanalyse is de zgn.
+<span class="math inline">\(\omega^2\)</span> (“omega-kwadraat” of “omega squared”):
+<span class="math display" id="eq:omegasq">\[\begin{equation}
+  \tag{15.7}
+    \omega^2 = \frac{ \textrm{SS}_b - (k-1) \textrm{MS}_w} { \textrm{SS}_t + \textrm{MS}_w }
+\end{equation}\]</span>
+De effectgrootte <span class="math inline">\(\omega^2\)</span> is ook een proportie; dit is een schatting
+van de proportie van de variantie in de <em>populatie</em> die toe te schrijven
+is aan de onafhankelijke variabele, waarbij de schatting uiteraard
+gebaseerd is op de onderzochte steekproef. Omdat we in het algemeen meer
+geïnteresseerd zijn in generalisatie naar de populatie dan naar de
+steekproef, geven wij de voorkeur aan <span class="math inline">\(\omega^2\)</span> als maat voor de
+effectgrootte.</p>
+<p>We dienen niet alleen de <span class="math inline">\(F\)</span>-ratio, vrijheidsgraden, en
+overschrijdingskans te rapporteren, maar ook de effectgrootte (zie
+voorbeeld 15.2 hierboven).</p>
+<blockquote>
+<p>“It is not enough to report
+<span class="math inline">\(F\)</span>-ratios and whether they are statistically significant. We must know
+how strong relations are. After all, with large enough <span class="math inline">\(N\)</span>s, <span class="math inline">\(F\)</span>- and
+<span class="math inline">\(t\)</span>-ratios can almost always be statistically significant. While often
+sobering in their effect, especially when they are low, coefficients of
+association of independent and dependent variables [i.e., effect size
+coefficients] are <em>indispensable</em> parts of research results” <span class="citation">(<a href="#ref-KL00" role="doc-biblioref">Kerlinger and Lee 2000, 327</a>, nadruk toegevoegd)</span>.</p>
+</blockquote>
+</div>
+<div id="sec:anova-oneway-gericht" class="section level3" number="15.3.4">
+<h3><span class="header-section-number">15.3.4</span> Gerichte vergelijkingen</h3>
+<p>In voorbeeld 15.2 (zie
+Figuur <a href="ch:variantieanalyse.html#fig:kleurtjes-obs">15.2</a>) onderzochten we de verschillen tussen
+scores uit de rode, zwarte en blauwe groepen. De nulhypothese die
+getoetst werd was H0:
+<span class="math inline">\(\mu_\textrm{rood} = \mu_\textrm{grijs} = \mu_\textrm{blauw}\)</span>.
+Het is
+echter ook goed mogelijk dat een onderzoeker al bepaalde ideeën heeft
+over de verschillen tussen de groepen, en <em>gericht</em> op zoek is naar
+bepaalde verschillen, en andere verschillen juist wil negeren. De
+gerichte vergelijkingen (Eng. ‘planned comparisons’) worden ook wel
+‘contrasten’ genoemd.</p>
+<p>Laten we voor hetzelfde voorbeeld aannemen dat de onderzoeker al
+verwacht, uit eerder onderzoek, dat de scores van de rode en blauwe
+groepen van elkaar zullen verschillen. De bovenstaande H0 is dan niet
+meer interessant om te onderzoeken, omdat we bij voorbaat verwachten H0
+te zullen verwerpen. De onderzoeker wil nu gericht weten
+(1) of de rode
+groep lager scoort dan de andere twee groepen, (H0:
+<span class="math inline">\(\mu_\textrm{rood} = (\mu_\textrm{grijs}+\mu_\textrm{blauw})/2\)</span>), en
+(2)
+of de grijze en blauwe groepen van elkaar verschillen (H0:
+<span class="math inline">\(\mu_\textrm{grijs} = \mu_\textrm{blauw}\)</span>).<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a></p>
+<p>De factor ‘groep’ of ‘kleur’ heeft 2 vrijheidsgraden, en dat betekent dat we
+precies 2 van zulke gerichte vergelijkingen of ‘contrasten’ kunnen maken
+die onafhankelijk zijn van elkaar. Dergelijke onafhankelijke contrasten
+worden ‘orthogonaal’ genoemd.</p>
+<p>In een variantieanalyse met gerichte vergelijkingen wordt de variantie
+tussen groepen of condities nog verder opgedeeld, nl. in de gerichte
+contrasten zoals de twee hierboven (zie
+Tabel <a href="ch:variantieanalyse.html#tab:kleurtjes-anova-contrast">15.4</a>). We laten een verdere uitleg
+over gerichte vergelijkingen hier achterwege, maar adviseren wel om waar
+mogelijk slim gebruik te maken van deze gerichte vergelijkingen, indien
+je een meer specifieke nulhypothese kunt opstellen dan H0: “de
+gemiddelde scores zijn gelijk in alle groepen of condities.” We kunnen
+zo gerichte uitspraken doen over de verschillen tussen de groepen in ons
+voorbeeld:</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 15.3</em>:
+De gemiddelde score van de rode
+groep is significant lager dan van de beide andere groepen gecombineerd
+[<span class="math inline">\(F(1,42)=18.47, p&lt;.001, \omega^2=0.28\)</span>]. De gemiddelde score is
+nagenoeg gelijk voor de grijze en blauwe groep
+[<span class="math inline">\(F(1,42)&lt;1, \textrm{n.s.}, \omega^2=0.00\)</span>].
+Dit impliceert dat de
+rode groep significant lagere scores behaalt dan de grijze groep en dan
+de blauwe groep.</p>
+</blockquote>
+<hr />
+<table>
+<caption><span id="tab:kleurtjes-anova-contrast">Tabel 15.4: </span> Samenvatting van variantieanalyse van de observaties in Figuur <a href="ch:variantieanalyse.html#fig:kleurtjes-obs">15.2</a>, met gerichte contrasten tussen groepen.</caption>
+<thead>
+<tr class="header">
+<th align="left">variantiebron</th>
+<th align="right">df</th>
+<th align="center">SS</th>
+<th align="center">MS</th>
+<th align="center"><span class="math inline">\(F\)</span></th>
+<th align="center"><span class="math inline">\(p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">groep</td>
+<td align="right">2</td>
+<td align="center">14.50</td>
+<td align="center">7.248</td>
+<td align="center">9.36</td>
+<td align="center">&lt;.001</td>
+</tr>
+<tr class="even">
+<td align="left">  groep, contrast 1</td>
+<td align="right">1</td>
+<td align="center">14.31</td>
+<td align="center">14.308</td>
+<td align="center">18.47</td>
+<td align="center">&lt;.001</td>
+</tr>
+<tr class="odd">
+<td align="left">  groep, contrast 2</td>
+<td align="right">1</td>
+<td align="center">0.19</td>
+<td align="center">0.188</td>
+<td align="center">0.24</td>
+<td align="center">.625</td>
+</tr>
+<tr class="even">
+<td align="left">(within)</td>
+<td align="right">42</td>
+<td align="center">32.54</td>
+<td align="center">0.775</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>De variantie-analyse met gerichte vergelijkingen is dus vooral bruikbaar
+als je, voordat de observaties zijn gedaan, al gerichte hypotheses hebt
+over verschillen tussen bepaalde (combinaties van) groepen of condities.
+Die hypotheses kunnen gebaseerd zijn op theoretische overwegingen, of op
+eerdere onderzoeksresultaten.</p>
+<div id="sec:anova-oneway-contrasts" class="section level4" number="15.3.4.1">
+<h4><span class="header-section-number">15.3.4.1</span> Orthogonale contrasten</h4>
+<p>Elk contrast kan worden uitgedrukt in de vorm van gewichten voor iedere
+conditie. Voor de hierboven besproken contrasten kan dat in de vorm van
+deze gewichten:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">conditie</th>
+<th align="center">contrast 1</th>
+<th align="center">contrast 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">  rood</td>
+<td align="center">-1</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">  grijs</td>
+<td align="center">+0.5</td>
+<td align="center">-1</td>
+</tr>
+<tr class="odd">
+<td align="center">  blauw</td>
+<td align="center">+0.5</td>
+<td align="center">+1</td>
+</tr>
+</tbody>
+</table>
+<p>De H0 voor contrast 2 (<span class="math inline">\(\mu_\textrm{grijs} = \mu_\textrm{blauw}\)</span>) is uit
+te drukken in gewichten als volgt:
+<span class="math inline">\(\textrm{C2} = 0\times \mu_\textrm{rood} -1 \times \mu_\textrm{grijs} +1 \times \mu_\textrm{blauw} = 0\)</span>.</p>
+<p>Om te bepalen of twee contrasten orthogonaal zijn, vermenigvuldigen we
+hun respectievelijke gewichten voor iedere conditie (rij):<br />
+<span class="math inline">\(( (-1)(0), (+0.5)(-1), (+0.5)(+1) )= (0, -0.5, +0.5)\)</span>.<br />
+Vervolgens tellen we al deze producten bij elkaar op:
+<span class="math inline">\(0 -0.5 + 0.5 = 0\)</span>. Als de som van deze producten nul is, dan zijn de
+twee contrasten orthogonaal.</p>
+</div>
+</div>
+<div id="sec:anova-oneway-posthoc" class="section level3" number="15.3.5">
+<h3><span class="header-section-number">15.3.5</span> Post-hoc vergelijkingen</h3>
+<p>In veel onderzoeken heeft een onderzoeker géén idee over de te
+verwachten verschillen tussen de groepen of condities. Pas na afloop van
+de variantieanalyse, <em>nadat</em> er een significant effect gevonden is,
+besluit de onderzoeker om nader te inspecteren welke condities van
+elkaar verschillen. We spreken dan van <em>post-hoc</em> vergelijkingen,
+“suggested by the data” <span class="citation">(<a href="#ref-MD04" role="doc-biblioref">Maxwell and Delaney 2004, 200</a>)</span>. We moeten daarbij conservatief te
+werk gaan, juist omdat we na de variantieanalyse al kunnen vermoeden dat
+sommige vergelijkingen een significant resultaat zullen opleveren,
+d.w.z., de nulhypotheses zijn al niet neutraal.</p>
+<p>Er zijn vele tientallen statistische toetsen voor post-hoc
+vergelijkingen. Het belangrijkste verschil is hun mate van conservatisme
+(neiging om H0 niet te verwerpen) vs. liberalisme (neiging om H0 wel te
+verwerpen). Daarnaast zijn sommige toetsen meer ingericht op
+paarsgewijze vergelijkingen tussen condities (‘pairwise comparisons,’
+zoals contrast 2 hierboven) en andere meer op complexe vergelijkingen
+(zoals contrast 1 hierboven). En de toetsen verschillen in de aannames
+die ze doen over de varianties in de cellen. We noemen hier één toets
+voor post-hoc-vergelijkingen tussen paren van condities: <em>Tukey’s
+Honestly Significant Difference</em>, afgekort Tukey’s HSD. Deze toets neemt
+een goede middenpositie in tussen te conservatief of te liberaal. Een
+belangrijke eigenschap van de Tukey HSD toets is dat de <em>gezamenlijke</em>
+overschrijdingskans (Eng. ‘family-wise error’) over alle paarsgewijze
+vergelijkingen tezamen gelijk is aan de opgegeven overschrijdingskans
+<span class="math inline">\(\alpha\)</span> (zie §<a href="ch:variantieanalyse.html#sec:anova-voorbeelden">15.2</a>). De Tukey HSD toets resulteert in
+een 95% betrouwbaarheidsinterval van het verschil tussen twee condities,
+en/of in een <span class="math inline">\(p\)</span>-waarde van het verschil tussen twee condities.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 15.4</em>:
+De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep
+[<span class="math inline">\(F(2,42) = 9.35, p &lt;.001, \omega^2 = 0.28\)</span>].
+Post-hoc vergelijkingen met Tukey’s HSD-toets laten zien dat de grijze en blauwe groep niet van elkaar verschillen (<span class="math inline">\(p=.88\)</span>), maar dat er wel significante verschillen zijn tussen de rode en de blauwe groep (<span class="math inline">\(p&lt;.001\)</span>) en tussen de rode en de grijze groep (<span class="math inline">\(p=.003\)</span>).</p>
+</blockquote>
+<hr />
+</div>
+<div id="spss-12" class="section level3" number="15.3.6">
+<h3><span class="header-section-number">15.3.6</span> SPSS</h3>
+<div id="voorbereiding-1" class="section level4" number="15.3.6.1">
+<h4><span class="header-section-number">15.3.6.1</span> voorbereiding</h4>
+<p>We gebruiken de gegevens in het bestand <code>data/kleurgroepen.txt</code>; deze gegevens zijn ook weergegeven in Figuur <a href="ch:variantieanalyse.html#fig:kleurtjes-obs">15.2</a>.
+Lees eerst de benodigde gegevens, en controleer deze:</p>
+<pre><code>File &gt; Import Data &gt; Text Data...</code></pre>
+<p>Selecteer <code>Files of type: Text</code> en selecteer bestand
+<code>data/kleurgroepen.txt</code>. Bevestig met <code>Open</code>.<br />
+Namen van variabelen staan op regel 1. Decimale symbool is punt
+(period). Data beginnen op regel 2. Elke regel is een observatie. De
+gebruikte scheiding (delimiter) tussen variabelen is een spatie. Tekst
+staat tussen dubbele aanhalingstekens. De variabelen hoef je niet verder
+te definiëren, de standaardopties van SPSS werken hier goed.<br />
+Bevestig het laatste keuzescherm met <code>Done</code>. De gegevens
+worden dan ingelezen.</p>
+<p>Onderzoek of de responsies normaal verdeeld zijn binnen elke groep, met behulp van de
+technieken uit Deel II van dit tekstboek (met name
+§<a href="ch:kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p>
+<p>We kunnen in SPSS niet vooraf toetsen of de varianties gelijk zijn in de
+drie groepen, zoals vereist voor variantieanalyse. We doen dat tegelijk
+met de variantieanalyse zelf.</p>
+</div>
+<div id="anova" class="section level4" number="15.3.6.2">
+<h4><span class="header-section-number">15.3.6.2</span> ANOVA</h4>
+<p>In SPSS kan je een variantieanalyse op meerdere manieren uitvoeren. We
+gebruiken hier een algemeen bruikbare aanpak, waarbij we aangeven dat er
+één afhankelijke variabele in het spel is.<br />
+</p>
+<pre><code>Analyze &gt; General Linear Model &gt; Univariate...</code></pre>
+<p>Selecteer <code>score</code> als afhankelijke variabele (sleep naar paneel
+“Dependent variable”).<br />
+Selecteer <code>kleur</code> als onafhankelijke variabele (sleep naar paneel “Fixed
+Factor(s)”).<br />
+Kies <code class="console">Model...</code> en daarna <code>Full factorial</code> model, <code>Type I</code> Sum
+of squares, en vink aan: <code>Include intercept in model</code>, en bevestig met
+<code class="console">Continue</code>.<br />
+Kies <code class="console">Options...</code> en vraag om gemiddelden voor de condities
+van de factor <code>kleur</code> (sleep naar paneel “Display Means for”). Vink aan:
+<code>Estimates of effect size</code> en <code>Homogeneity tests</code>, en bevestig weer met
+<code class="console">Continue</code>.<br />
+Bevestig alle keuzes met <code class="console">OK</code>.</p>
+<p>In de uitvoer vinden we eerst de uitslag van Levene’s toets op gelijke
+varianties (homogeniteit van variantie), die geen aanleiding geeft om H0
+te verwerpen. We mogen dus een variantieanalyse uitvoeren.</p>
+<p>Daarna wordt de variantieanalyse samengevat in een tabel gelijkend op
+Tabel <a href="ch:variantieanalyse.html#tab:kleurtjes-anova">15.3</a>, waarbij ook de effectgrootte vermeld
+wordt in de vorm van <code> Partial eta square</code>. Het is echter beter om
+<span class="math inline">\(\omega^2\)</span> te rapporteren, maar je moet die dan wel zelf uitrekenen!</p>
+</div>
+<div id="gerichte-vergelijking" class="section level4" number="15.3.6.3">
+<h4><span class="header-section-number">15.3.6.3</span> gerichte vergelijking</h4>
+<p>Voor een variantieanalyse met gerichte vergelijkingen moeten we de
+gewenste contrasten aangeven voor de factor <code>kleur</code>. De werkwijze is
+echter anders dan hierboven. We kunnen de gerichte contrasten in SPSS
+niet opgeven via het menu-systeem dat we tot nu toe gebruikten. We
+moeten hiervoor “onder de motorkap” gaan werken!<br />
+Herhaal daartoe eerst de instructies hierboven. Maar, in plaats van
+alles te bevestigen, kies je nu de knop <code>Paste</code>. Er wordt dan
+een zgn. Syntax-venster geopend (of geactiveerd, als het al open was).
+Je ziet daarin het SPSS-commando dat je via het menu hebt opgebouwd. We
+gaan dit commando bewerken om onze eigen, speciale contrasten aan te
+geven. Bij het specificeren van de contrasten moeten we wel rekening
+houden met de <em>alfabetische</em> ordening van de condities: blauw, grijs,
+rood.<br />
+Het commando in het Syntax-venster moet er uiteindelijk uitzien als
+hieronder, nadat je de regel <code>/CONTRAST</code> hebt toegevoegd. Het commando
+moet worden afgesloten met een punt.<br />
+</p>
+<pre class="console"><code>UNIANOVA score BY kleur
+  /METHOD=SSTYPE(1)
+  /INTERCEPT=INCLUDE
+  /EMMEANS=TABLES(kleur) 
+  /PRINT=ETASQ HOMOGENEITY
+  /CRITERIA=ALPHA(.05)
+  /DESIGN=kleur
+  /CONTRAST(kleur)=special(0.5 0.5 -1, 1 -1 0).</code></pre>
+<p>Plaats de cursor ergens tussen het woord <code>UNIANOVA</code> en de afsluitende
+punt, en klik dan op de grote groene pijl naar rechts (<code>Run Selection</code>)
+in het menu van het Syntax-venster.</p>
+<p>De uitvoer geeft voor ieder contrast de significantie en het
+betrouwbaarheidsinterval van het getoetste contrast. Het eerste contrast
+is wel significant (<code>Sig. .000</code>, rapporteer als <span class="math inline">\(p&lt;.001\)</span>, zie §<a href="ch:toetsing.html#sec:pgroterdannul">13.3</a>), en het tweede niet, zie
+Tabel <a href="ch:variantieanalyse.html#tab:kleurtjes-anova-contrast">15.4</a>.</p>
+</div>
+<div id="post-hoc-vergelijking" class="section level4" number="15.3.6.4">
+<h4><span class="header-section-number">15.3.6.4</span> post-hoc vergelijking</h4>
+<p>Herhaal eerst de instructies hierboven.<br />
+Kies de knop <code>Post Hoc...</code>, en selecteer de factor <code>kleur</code>
+(verplaats naar venster “Post Hoc Tests for:”). Vink aan: <code>Tukey</code>, en
+daarna <code>Continue</code>. Bevestig alle keuzes met <code>OK</code>.</p>
+<p>Voor iedere paarsgewijze vergelijking zien we het verschil, de
+standaardfout, en de ondergrens (<code>Lower Bound</code>) en bovengrens
+(<code>Upper Bound</code>) van het 95% betrouwbaarheidsinterval van dat verschil.
+Als dat interval <em>niet</em> nul omvat, dan is het verschil tussen de twee
+groepen of condities dus waarschijnlijk niet gelijk aan nul. De
+gecorrigeerde overschrijdingskans volgens Tukey’s HSD toets is bovendien
+gegeven in de derde kolom. We zien dat rood verschilt van blauw, dat
+rood verschilt van grijs, en dat de scores van de grijze en blauwe
+groepen niet verschillen.</p>
+</div>
+</div>
+<div id="jasp-14" class="section level3" number="15.3.7">
+<h3><span class="header-section-number">15.3.7</span> JASP</h3>
+<div id="voorbereiding-2" class="section level4" number="15.3.7.1">
+<h4><span class="header-section-number">15.3.7.1</span> voorbereiding</h4>
+<p>We gebruiken de gegevens in het bestand <code>data/kleurgroepen.txt</code>; deze gegevens zijn ook weergegeven in Figuur <a href="ch:variantieanalyse.html#fig:kleurtjes-obs">15.2</a>.
+Lees de data in en controleer deze.</p>
+<p>Onderzoek of de responsies normaal verdeeld zijn binnen elke groep, met behulp van de
+technieken uit Deel II van dit tekstboek (met name
+§<a href="ch:kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>). Let op: Dit kan in JASP ook tegelijk met de variantieanalyse zelf, zie hieronder.</p>
+<p>Het toetsen of de varianties gelijk zijn in de
+drie groepen, zoals vereist voor variantieanalyse, doen we tegelijk
+met de variantieanalyse zelf, zie hieronder.</p>
+</div>
+<div id="anova-1" class="section level4" number="15.3.7.2">
+<h4><span class="header-section-number">15.3.7.2</span> ANOVA</h4>
+<p>Klik in de bovenbalk op:</p>
+<pre><code>ANOVA &gt; ANOVA (onder &#39;Classical)</code></pre>
+<p>Selecteer de variabele <em>score</em> en plaats deze in het veld “Dependent Variable,” en plaats variabele <em>kleur</em> in het veld “Fixed Factors.”<br />
+Zorg dat onder “Display” <code>Estimates of effect size</code> is aangevinkt, en kies hier tussen <span class="math inline">\(\omega^2\)</span> en (partial) <span class="math inline">\(\eta^2\)</span>. In dit boek houden we <span class="math inline">\(\omega^2\)</span> aan. Je kunt ook <code>Descriptive statistics</code> aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.</p>
+<p>Open de balk “Assumption Checks” en vink <code>Homogeneity tests</code> aan. “Homogeneity corrections” mag op <code>None</code> blijven staan. Je kunt hier ook onderzoeken of de verdeling binnen iedere groep normaal is, dat is equivalent aan een normale verdeling van de <em>residuen</em> van de variantieanalyse. Dat inspecteer je door hier ook <code>Q-Q plot of residuals</code> aan te vinken; in de resulterende Q-Q-plot zouden de residuen ongeveer op een rechte lijn moeten liggen (zie §<a href="ch:kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p>
+<p>In de uitvoer wordt de variantieanalyse samengevat in een tabel gelijkend op Tabel <a href="ch:variantieanalyse.html#tab:kleurtjes-anova">15.3</a>, waarbij ook de effectgrootte vermeld wordt in de vorm van <span class="math inline">\(\omega^2\)</span> en/of (partial) <span class="math inline">\(\eta^2\)</span>.</p>
+<p>In de uitvoer vind je onder <em>Assumption Checks</em> ook de uitslag van Levene’s toets op gelijke
+varianties (homogeniteit van variantie). Die geeft geen aanleiding om H0
+te verwerpen; we mogen dus een variantieanalyse uitvoeren.</p>
+</div>
+<div id="gerichte-vergelijking-1" class="section level4" number="15.3.7.3">
+<h4><span class="header-section-number">15.3.7.3</span> gerichte vergelijking</h4>
+<p>Voor een variantieanalyse met gerichte vergelijkingen moeten we de
+gewenste contrasten aangeven voor de factor <code>kleur</code>. De werkwijze is in het begin
+hetzelfde als hierboven, herhaal dus de instructies onder <strong>ANOVA</strong>.</p>
+<p>Open vervolgens de balk “Contrasts.” In het veld “Factors” staat als het goed is de variabele <em>kleur</em> en hierachter “none.” Selecteer in plaats van deze “none” de optie “custom.” Onder het veld verschijnt nu een werkblad “Custom for kleur.” Vul hier de gewenste waarden voor de contrasten in zoals eerder beschreven (zie §<a href="ch:variantieanalyse.html#sec:anova-oneway-contrasts">15.3.4.1</a>). Voor contrast 1 <span class="math inline">\(-1\)</span> voor rood en <span class="math inline">\(0.5\)</span> voor blauw en grijs. Klik hierna op <code>Add contrast</code> en vul bij contrast 2 <span class="math inline">\(0\)</span> in voor rood, <span class="math inline">\(-1\)</span> voor grijs en <span class="math inline">\(1\)</span> voor blauw.</p>
+<p>De uitvoer geeft voor ieder contrast (<em>Comparison</em>) de significantie. Let op!
+In de tekst hierboven (§<a href="ch:variantieanalyse.html#sec:anova-oneway-gericht">15.3.4</a>) werden de gerichte contrasten getoetst met behulp van de toetsingsgrootheid <span class="math inline">\(F\)</span>;
+JASP gebruikt daarvoor echter de <span class="math inline">\(t\)</span>-toets (voor twee onafhankelijke steekproeven). De <span class="math inline">\(p\)</span>-waarde is hetzelfde. Rapporteer de toetsing van deze contrasten met behulp van de <span class="math inline">\(t\)</span>-toets en <span class="math inline">\(p\)</span>-waarde in de uitvoer van JASP, net zoals je bij een <span class="math inline">\(t\)</span>-toets doet.</p>
+</div>
+<div id="post-hoc-vergelijking-1" class="section level4" number="15.3.7.4">
+<h4><span class="header-section-number">15.3.7.4</span> post-hoc vergelijking</h4>
+<p>Voor een variantieanalyse met post-hoc vergelijkingen moeten we de
+gewenste vergelijkingen aanvragen. De werkwijze is in het begin
+hetzelfde als hierboven, herhaal dus de instructies onder <strong>ANOVA</strong>.</p>
+<p>Open vervolgens de balk “Post Hoc Tests” en verplaats variabele <em>kleur</em> naar het veld rechts. Zorg dat onder “Type” <code>Standard</code> is aangevinkt en daaronder ook <code>Effect size</code>. Vink onder “Correction” <code>Tukey</code> aan, en onder “Display” ook <code>Confidence intervals</code>.</p>
+<p>De uitvoer geeft nu onder <em>Post Hoc Tests</em> de resultaten.
+Voor iedere paarsgewijze vergelijking zien we het verschil, de
+standaardfout, en de ondergrens en bovengrens van het 95% betrouwbaarheidsinterval van dat verschil.
+Als dat interval <em>niet</em> nul omvat, dan is het verschil tussen de twee
+groepen of condities dus waarschijnlijk niet gelijk aan nul.
+Voor iedere paarsgewijze vergelijking rapporteert JASP een <span class="math inline">\(t\)</span>-toets, met aangepaste d.f. volgens Tukey’s HSD-toets. De
+aangepaste overschrijdingskans volgens Tukey’s HSD toets wordt gegeven in de laatste kolom. We zien dat rood verschilt van blauw, dat
+rood verschilt van grijs, en dat de scores van de grijze en blauwe
+groepen niet verschillen. In je eigen rapportage moet je vermelden dat Tukey’s HSD-toets is gebruikt, en wat de overschrijdingskansen zijn van elke post-hoc vergelijking (zie <em>Voorbeeld 15.4</em>).</p>
+</div>
+</div>
+<div id="r-15" class="section level3" number="15.3.8">
+<h3><span class="header-section-number">15.3.8</span> R</h3>
+<div id="voorbereiding-3" class="section level4" number="15.3.8.1">
+<h4><span class="header-section-number">15.3.8.1</span> voorbereiding</h4>
+<p>Lees eerst de benodigde gegevens, en controleer deze:</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="ch:variantieanalyse.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zelfde data als gebruikt in Fig.15.2</span></span>
+<span id="cb129-2"><a href="ch:variantieanalyse.html#cb129-2" aria-hidden="true" tabindex="-1"></a>kleurgroepen <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="st">&quot;data/kleurgroepen.txt&quot;</span>, </span>
+<span id="cb129-3"><a href="ch:variantieanalyse.html#cb129-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors=</span><span class="cn">TRUE</span> )</span></code></pre></div>
+<p>Onderzoek of de responsies normaal verdeeld zijn binnen elke groep, met behulp van de
+technieken uit Deel II van dit tekstboek (met name
+§<a href="ch:kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p>
+<p>Onderzoek of de varianties gelijk zijn in de drie groepen, zoals vereist
+voor variantieanalyse. De H0 die we daarbij toetsen luidt:
+<span class="math inline">\(s^2_\textrm{rood} = s^2_\textrm{grijs} = s^2_\textrm{blauw}\)</span>. We
+toetsen deze H0 met behulp van Bartlett’s toets.</p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="ch:variantieanalyse.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bartlett.test</span>( <span class="at">x=</span>kleurgroepen<span class="sc">$</span>score, <span class="at">g=</span>kleurgroepen<span class="sc">$</span>kleur )</span></code></pre></div>
+<pre><code>## 
+##  Bartlett test of homogeneity of variances
+## 
+## data:  kleurgroepen$score and kleurgroepen$kleur
+## Bartlett&#39;s K-squared = 3.0941, df = 2, p-value = 0.2129</code></pre>
+</div>
+<div id="anova-2" class="section level4" number="15.3.8.2">
+<h4><span class="header-section-number">15.3.8.2</span> ANOVA</h4>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="ch:variantieanalyse.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>( score<span class="sc">~</span>kleur, <span class="at">data=</span>kleurgroepen) <span class="ot">-&gt;</span> m01 ) <span class="co"># zie Tabel 15.3</span></span></code></pre></div>
+<pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## kleur        2  14.50   7.248   9.356 0.000436 ***
+## Residuals   42  32.54   0.775                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
+<div id="R:omega-kwadraat" class="section level4" number="15.3.8.3">
+<h4><span class="header-section-number">15.3.8.3</span> effectgrootte</h4>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="ch:variantieanalyse.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="co"># eigen functie om omega2 te berekenen, zie vergelijking (15.7) in de hoofdtekst, </span></span>
+<span id="cb134-2"><a href="ch:variantieanalyse.html#cb134-2" aria-hidden="true" tabindex="-1"></a><span class="co"># voor effect genaamd `term` in summary(`model`)</span></span>
+<span id="cb134-3"><a href="ch:variantieanalyse.html#cb134-3" aria-hidden="true" tabindex="-1"></a>omegasq <span class="ot">&lt;-</span> <span class="cf">function</span> ( model, term ) {   </span>
+<span id="cb134-4"><a href="ch:variantieanalyse.html#cb134-4" aria-hidden="true" tabindex="-1"></a>     mtab <span class="ot">&lt;-</span> <span class="fu">anova</span>(model)</span>
+<span id="cb134-5"><a href="ch:variantieanalyse.html#cb134-5" aria-hidden="true" tabindex="-1"></a>     rterm <span class="ot">&lt;-</span> <span class="fu">dim</span>(mtab)[<span class="dv">1</span>] <span class="co"># resid term</span></span>
+<span id="cb134-6"><a href="ch:variantieanalyse.html#cb134-6" aria-hidden="true" tabindex="-1"></a>     <span class="fu">return</span>( (mtab[term,<span class="dv">2</span>]<span class="sc">-</span>mtab[term,<span class="dv">1</span>]<span class="sc">*</span>mtab[rterm,<span class="dv">3</span>]) <span class="sc">/</span> </span>
+<span id="cb134-7"><a href="ch:variantieanalyse.html#cb134-7" aria-hidden="true" tabindex="-1"></a>             (mtab[rterm,<span class="dv">3</span>]<span class="sc">+</span><span class="fu">sum</span>(mtab[,<span class="dv">2</span>])) )</span>
+<span id="cb134-8"><a href="ch:variantieanalyse.html#cb134-8" aria-hidden="true" tabindex="-1"></a>     }</span>
+<span id="cb134-9"><a href="ch:variantieanalyse.html#cb134-9" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>( m01, <span class="st">&quot;kleur&quot;</span> ) <span class="co"># roep functie aan met 2 argumenten</span></span></code></pre></div>
+<pre><code>## [1] 0.2708136</code></pre>
+</div>
+<div id="gerichte-vergelijking-2" class="section level4" number="15.3.8.4">
+<h4><span class="header-section-number">15.3.8.4</span> gerichte vergelijking</h4>
+<p>Bij het specificeren van de contrasten moeten we rekening houden met de <em>alfabetische</em> ordening van de condities: <em>blauw, grijs, rood</em>.</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="ch:variantieanalyse.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># maak matrix van twee orthogonale contrasten (per kolom, niet per rij) </span></span>
+<span id="cb136-2"><a href="ch:variantieanalyse.html#cb136-2" aria-hidden="true" tabindex="-1"></a>conmat <span class="ot">&lt;-</span> <span class="fu">matrix</span>( <span class="fu">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>,<span class="sc">-</span><span class="dv">1</span>, <span class="sc">+</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>), <span class="at">byrow=</span>F, <span class="at">nrow=</span><span class="dv">3</span> )</span>
+<span id="cb136-3"><a href="ch:variantieanalyse.html#cb136-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(conmat)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;.R.GB&quot;</span>,<span class="st">&quot;.0G.B&quot;</span>) <span class="co"># (1) R vs G+B, (2) G vs B </span></span>
+<span id="cb136-4"><a href="ch:variantieanalyse.html#cb136-4" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(kleurgroepen<span class="sc">$</span>kleur) <span class="ot">&lt;-</span> conmat <span class="co"># wijs contrasten toe aan factor</span></span>
+<span id="cb136-5"><a href="ch:variantieanalyse.html#cb136-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>( score<span class="sc">~</span>kleur, <span class="at">data=</span>kleurgroepen) <span class="ot">-&gt;</span> m02 ) <span class="co"># uitvoer is nodig voor omega2</span></span></code></pre></div>
+<pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## kleur        2  14.50   7.248   9.356 0.000436 ***
+## Residuals   42  32.54   0.775                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="ch:variantieanalyse.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zie https://blogs.uoregon.edu/rclub/2015/11/03/anova-contrasts-in-r/</span></span>
+<span id="cb138-2"><a href="ch:variantieanalyse.html#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary.aov</span>( m02, <span class="at">split=</span><span class="fu">list</span>(<span class="at">kleur=</span><span class="fu">list</span>(<span class="dv">1</span>,<span class="dv">2</span>)) )</span></code></pre></div>
+<pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## kleur        2  14.50   7.248   9.356 0.000436 ***
+##   kleur: C1  1  14.31  14.308  18.470 0.000100 ***
+##   kleur: C2  1   0.19   0.188   0.243 0.624782    
+## Residuals   42  32.54   0.775                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Als we gerichte vergelijkingen hebben (planned contrasts) dan is de eerder geconstrueerde functie <code>omegasq</code> niet bruikbaar (en evenmin de eerder gegeven formule). We moeten de <span class="math inline">\(\omega^2\)</span> nu met de hand uitrekenen met gebruik van de uitvoer van de samenvatting van model <code>m02</code>:</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="ch:variantieanalyse.html#cb140-1" aria-hidden="true" tabindex="-1"></a>(<span class="fl">14.308</span><span class="dv">-1</span><span class="sc">*</span><span class="fl">0.775</span>)<span class="sc">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># 0.28</span></span></code></pre></div>
+<pre><code>## [1] 0.2830402</code></pre>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="ch:variantieanalyse.html#cb142-1" aria-hidden="true" tabindex="-1"></a>(<span class="fl">0.188</span><span class="dv">-1</span><span class="sc">*</span><span class="fl">0.775</span>)<span class="sc">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># afgerond 0.00</span></span></code></pre></div>
+<pre><code>## [1] -0.012277</code></pre>
+</div>
+<div id="post-hoc-vergelijkingen" class="section level4" number="15.3.8.5">
+<h4><span class="header-section-number">15.3.8.5</span> post-hoc vergelijkingen</h4>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="ch:variantieanalyse.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(m02)</span></code></pre></div>
+<pre><code>##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = score ~ kleur, data = kleurgroepen)
+## 
+## $kleur
+##                  diff        lwr        upr     p adj
+## grey50-blue -0.158353 -0.9391681  0.6224622 0.8751603
+## red-blue    -1.275352 -2.0561668 -0.4945365 0.0007950
+## red-grey50  -1.116999 -1.8978139 -0.3361835 0.0033646</code></pre>
+<p>Voor iedere paarsgewijze vergelijking zien we het verschil, en de
+ondergrens (<code>lwr</code>) en bovengrens (<code>upr</code>) van het 95%
+betrouwbaarheidsinterval van dat verschil. Als dat interval <em>niet</em> nul
+omvat, dan is het verschil tussen de twee groepen of condities dus
+waarschijnlijk niet gelijk aan nul. De gecorrigeerde overschrijdingskans
+volgens Tukey’s HSD toets is bovendien gegeven in de laatste kolom.
+Wederom zien we dat rood verschilt van grijs, dat rood verschilt van
+blauw, en dat de scores van de grijze en blauwe groepen niet
+verschillen.</p>
+</div>
+</div>
+</div>
+<div id="sec:tweeweg-anova" class="section level2" number="15.4">
+<h2><span class="header-section-number">15.4</span> Tweeweg-variantieanalyse</h2>
+<p>In §<a href="ch:variantieanalyse.html#sec:anova-voorbeelden">15.2</a> hebben we al een voorbeeld gegeven
+van een onderzoek met twee factoren die in één variantieanalyse
+onderzocht worden. We kunnen op deze manier onderzoeken (i) of er een
+hoofdeffect is van de eerste factor (bijv. regio van herkomst van de
+spreker), (ii) of er een hoofdeffect is van de tweede factor (bijv.
+geslacht van de spreker), en (iii) of er een interactie-effect is. Zo’n
+interactie houdt in dat de verschillen tussen condities van de ene
+factor niet hetzelfde zijn voor de condities van de andere factor, of
+anders gezegd, dat de gemiddelde score van een cel afwijkt van de
+voorspelde waarde op grond van de twee hoofdeffecten.</p>
+<div id="een-intuïtieve-uitleg" class="section level3" number="15.4.1">
+<h3><span class="header-section-number">15.4.1</span> Een intuïtieve uitleg</h3>
+<p>In veel studies zijn we geïnteresseerd in de <em>gecombineerde</em> effecten
+van twee of meer factoren, zoals in het onderstaande voorbeeld dat we gebruiken voor onze uitleg.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 15.5</em>:
+Scholieren en studenten moeten veel studieteksten lezen én begrijpen (zoals deze!). Vermoedelijk is een studietekst beter te begrijpen, als die voorzien is van markeringen van de tekststructuur: tussenkopjes, signaalwoorden (bijv. <em>echter</em>, <em>omdat</em>), en dergelijke. <span class="citation"><a href="#ref-DBE12" role="doc-biblioref">Van Dooren, Van den Bergh, and Evers-Vermeul</a> (<a href="#ref-DBE12" role="doc-biblioref">2012</a>)</span> onderzochten of studieteksten mét dergelijke structuurmarkeringen beter te begrijpen zijn dan alternatieve versies van dezelfde teksten, maar dan zonder structuurmarkeringen. De eerste factor is dus de aanwezigheid danwel afwezigheid van structuurmarkeringen in de te bestuderen teksten.</p>
+</blockquote>
+<blockquote>
+<p>Ook verwachten de onderzoekers een effect van de leesvaardigheid van de proefpersonen. Zwakke lezers zullen een tekst minder goed begrijpen dan sterke lezers. De tweede factor is dus het “lezerstype,” hier verdeeld in de drie categorieën ‘zwak,’ ‘gemiddeld,’ of ‘sterk.’</p>
+</blockquote>
+<blockquote>
+<p>Bovendien verwachten de onderzoekers dat zwakke lezers de structuurmarkeringen meer nodig hebben, en dus meer baat erbij hebben, dan sterke lezers; “sterke lezers zijn in staat studieteksten met begrip te lezen, ongeacht de aanwezigheid van structuurmarkeringen” <span class="citation">(<a href="#ref-DBE12" role="doc-biblioref">Van Dooren, Van den Bergh, and Evers-Vermeul 2012, 33</a>)</span>.
+De onderzoekers verwachten dus een <strong>interactie</strong> of wisselwerking tussen de factoren: de verschillen tussen de tekstversies zijn anders voor de verschillende lezerstypen, of anders gezegd, de verschillen tussen de lezerstypen zijn anders voor de verschillende tekstversies.</p>
+</blockquote>
+<blockquote>
+<p>De resultaten in Figuur 15.3 tonen de drie onderzochte effecten in de begripsscore, voor een van de onderzochte teksten. Ten eerste zijn de begripsscores beter (hoger) voor de versie met structuurmarkeringen (licht) dan voor de versie zonder markeringen (donker). Ten tweede worden de verschillen tussen de lezerstypen bevestigd: zwakke lezers behalen over het algemeen lagere begripsscores dan gemiddelde lezers, en sterke lezers behalen over het algemeen hogere begripsscores.</p>
+</blockquote>
+<blockquote>
+<p>Maar het meest opvallende effect is de interactie: het effect van tekstmarkeringen is veel groter bij zwakke lezers dan bij sterke lezers, conform de voorspelling. Of anders gezegd, de verschillen tussen zwakke, gemiddelde en sterke lezers zijn groot in de tekstversie zonder structuurmarkeringen, maar klein of nihil in de tekstversie met structuurmarkeringen.</p>
+</blockquote>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:DBE12interaction"></span>
+<img src="figures/DBE12interaction.png" alt="Gemiddelde begripsscores (met 95%-betrouwbaarheidsintervallen), voor twee tekstversies en drie groepen lezers (naar Van Dooren, Van den Bergh en Evers-Vermeul, 2012)." width="814" />
+<p class="caption">
+Figuur 15.3: Gemiddelde begripsscores (met 95%-betrouwbaarheidsintervallen), voor twee tekstversies en drie groepen lezers (naar Van Dooren, Van den Bergh en Evers-Vermeul, 2012).
+</p>
+</div>
+<hr />
+<p>Als er een significante interactie aanwezig is, zoals in het bovenstaande voorbeeld, dan kunnen we niet meer
+algemene uitspraken doen over de betrokken hoofdeffecten. Immers, de
+werking van een hoofdeffect hangt dan tevens af van de wisselwerking met
+(een) ander(e) hoofdeffect(en).<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a> In het bovenstaande voorbeeld: het verschil tussen de tekstversies (factor A) is groot voor zwakke lezers, maar nihil voor sterke lezers. Het verschil tussen de lezerstypen (factor B) is groot bij een tekst zonder markeringen, maar veel kleiner bij een tekst met structuurmarkeringen.</p>
+<p>Een ander interactie-patroon zagen we al eerder, in
+Figuur <a href="ch:ontwerp.html#fig:drakebenelheni2003fig2">6.1</a> (§<a href="ch:ontwerp.html#sec:ontwerp-factorieel">6.8</a>).
+De scores zijn <em>gemiddeld</em>
+niet hoger voor de ene groep luisteraars dan voor de andere groep, en de
+scores zijn ook niet <em>gemiddeld</em> hoger in de ene conditie dan in de
+andere. De twee hoofdeffecten zijn dus niet significant, maar hun interactie
+is daarentegen wel significant. In dat onderzoek is het effect van de
+ene factor precies tegengesteld in de twee verschillende niveaus
+van de andere factor.</p>
+</div>
+<div id="een-formele-uitleg" class="section level3" number="15.4.2">
+<h3><span class="header-section-number">15.4.2</span> Een formele uitleg</h3>
+<p>We nemen wederom aan dat de scores zijn opgebouwd volgens een
+statistisch model, nl. als de optelsom van het populatiegemiddelde
+<span class="math inline">\(\mu\)</span>, een systematisch effect <span class="math inline">\(\alpha_j\)</span> van de <span class="math inline">\(j\)</span>’de conditie van
+factor A, een systematisch effect <span class="math inline">\(\beta_k\)</span> van de <span class="math inline">\(k\)</span>’de conditie van
+factor B, een systematisch effect <span class="math inline">\((\alpha\beta)_{jk}\)</span> van de combinatie
+van condities <span class="math inline">\((j,k)\)</span> van factoren A en B, en een toevallig effect
+<span class="math inline">\(e_{ijk}\)</span> voor de <span class="math inline">\(i\)</span>’de replicatie binnen de <span class="math inline">\(jk\)</span>’de cel. In formule:</p>
+<p><span class="math display">\[x_{ijk} = \mu + \alpha_{j} + \beta_{k} + (\alpha\beta)_{jk} + e_{ijk}\]</span></p>
+<p>Bij de éénweg-variantieanalyse wordt de totale ‘sums of squares’
+opgesplitst in twee componenten, nl. één tussen en één binnen condities (zie
+vergelijking <a href="ch:variantieanalyse.html#eq:SStotal">(15.4)</a>).
+Bij de tweeweg-variantieanalyse zijn er nu
+echter <em>vier</em> componenten, nl. drie tussen condities en één binnen condities (<em>w</em>ithin):</p>
+<p><span class="math display" id="eq:SStotal2way-short">\[\begin{equation}
+  \tag{15.8}
+    { SS_t } = SS_A + SS_B + SS_{AB} + SS_{within} 
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:SStotal2way">\[\begin{align}
+  \tag{15.9}
+    { \sum (x_{ijk} - \overline{x})^2 } = &amp;  { \sum_j n_j (\bar{x}_j - \bar{x})^2 } + \\ 
+    &amp; { \sum_k n_k (\bar{x}_k - \bar{x})^2 } +  \\
+    &amp; { \sum_j \sum_k n_{jk} (\bar{x}_{jk} - \bar{x}_j - \bar{x}_k + \bar{x})^2 } + \\
+    &amp; { \sum_i \sum_j \sum_k (x_{ijk} - \bar{x}_{jk})^2 } 
+\end{align}\]</span></p>
+<p>Ook de vrijheidsgraden van deze kwadratensommen tellen weer bij elkaar
+op:</p>
+<p><span class="math display" id="eq:dftotal2-short">\[\begin{equation}
+  \tag{15.10}
+    { \textrm{df}_t } = \textrm{df}_A + \textrm{df}_B + \textrm{df}_{AB} + \textrm{df}_{within}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:dftotal2">\[\begin{equation}
+  \tag{15.11}
+    { (N-1) } = (A-1) + (B-1) + (A-1)(B-1) + (N-AB)
+\end{equation}\]</span></p>
+<p>Net als bij de eenweg-variantieanalyse berekenen we weer de ‘mean
+squares’ door de kwadratensommen te delen door hun vrijheidsgraden.</p>
+<p>We toetsen nu <em>drie</em> nulhypotheses, nl voor de twee hoofdeffecten en
+voor hun interactie. Voor elke toets bepalen we de betreffende
+<span class="math inline">\(F\)</span>-ratio. De teller wordt gevormd door de geobserveerde variantie,
+zoals hierboven geformuleerd; de noemer wordt gevormd door <span class="math inline">\(s^2_{within}\)</span>, de
+toevallige variantie tussen de replicaties <em>binnen</em> de cellen. Alle
+noodzakelijke berekeningen voor variantieanalyse, inclusief bepalen van
+vrijheidsgraden en overschrijdingskansen, worden tegenwoordig door de
+computer uitgevoerd.</p>
+<p>De resultaten worden weer samengevat in een ANOVA-tabel, die nu iets is
+uitgebreid in Tabel <a href="ch:variantieanalyse.html#tab:DBE12anova">15.5</a>. We toetsen en rapporteren nu drie hypothesen.</p>
+<table>
+<caption><span id="tab:DBE12anova">Tabel 15.5: </span> Samenvatting van tweewegs-variantieanalyse van de begripsscores van twee tekstversies en drie lezerstypen.</caption>
+<thead>
+<tr class="header">
+<th align="left">variantiebron</th>
+<th align="center">df</th>
+<th align="center">SS</th>
+<th align="center">MS</th>
+<th align="center"><span class="math inline">\(F\)</span></th>
+<th align="center"><span class="math inline">\(p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(A) tekstversie</td>
+<td align="center">1</td>
+<td align="center">91.2663</td>
+<td align="center">91.2663</td>
+<td align="center">63.75</td>
+<td align="center">&lt;.001</td>
+</tr>
+<tr class="even">
+<td align="left">(B) lezerstype</td>
+<td align="center">2</td>
+<td align="center">96.0800</td>
+<td align="center">48.0400</td>
+<td align="center">33.56</td>
+<td align="center">&lt;.001</td>
+</tr>
+<tr class="odd">
+<td align="left">(C) interactie</td>
+<td align="center">2</td>
+<td align="center">30.7416</td>
+<td align="center">15.3708</td>
+<td align="center">10.74</td>
+<td align="center">&lt;.001</td>
+</tr>
+<tr class="even">
+<td align="left">within</td>
+<td align="center">88</td>
+<td align="center">125.9830</td>
+<td align="center">1.4316</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>Daarbij rapporteren we doorgaans eerst de hoofdeffecten, en daarna de interactie.
+Voor de interpretatie is het van belang of de <em>interactie</em> wel of niet significant is.
+Als de interactie wel significant is, dan rapporteren we eerst de hoofdeffecten zonder die te interpreteren, daarna rapporteren en interpreteren we de interactie, en tenslotte interpreteren we de eventuele significante hoofdeffecten die niet bij de interactie geïnterpreteerd zijn.
+Als de interactie niet significant is, dan kan het makkelijker zijn om eerst de hoofdeffecten te rapporteren en te interpreteren, en daarna rapporteren we de interactie (die dan niet geïnterpreteerd wordt).</p>
+</div>
+<div id="sec:anova-twoway-posthoc" class="section level3" number="15.4.3">
+<h3><span class="header-section-number">15.4.3</span> Post-hoc vergelijkingen</h3>
+<p>Ook bij tweeweg-variantieanalyse kunnen we weer post-hoc vergelijkingen uitvoeren (vgl. §@(sec:anova-oneway-posthoc)) om te onderzoeken welke cellen of combinaties van condities van elkaar verschillen. We gebruiken daarvoor wederom de Tukey HSD toets.</p>
+<p>De Tukey HSD toets resulteert in
+een 95% betrouwbaarheidsinterval van het verschil tussen twee condities,
+en/of in een <span class="math inline">\(p\)</span>-waarde van het verschil tussen twee condities.</p>
+<blockquote>
+<p>De begripsscores lieten een significant hoofdeffect zien van de structuurmarkeringen <span class="math inline">\([F(1,88)=63.75, p&lt;.001, \omega^2=0.26]\)</span>, alsmede een significant hoofdeffect van het lezerstype <span class="math inline">\([F(2,88)=33.56, p&lt;.001, \omega^2=0.27]\)</span>.
+Ook was er een significante interactie zien tussen de tekstversie en het lezerstype <span class="math inline">\([F(2,88)=10.74, p&lt;.001, \omega^2=0.08]\)</span>, zie Figuur <a href="ch:variantieanalyse.html#fig:DBE12interaction">15.3</a>; deze interactie werd nader onderzocht met de Tukey HSD-toets (tussen 6 cellen).
+Zwakke lezers presteren slechter dan gemiddelde lezers, bij de tekstversie zonder markeringen (p&lt;.001), maar niet bij de versie met markeringen (p=.999). Sterke lezers presteren beter dan gemiddelde lezers, zowel zonder markeringen (p&lt;.001) als met markeringen (p=.013). Tekstmarkeringen hebben wel effect bij zwakke lezers (p&lt;.001) en bij gemiddelde lezers (p&lt;.001) maar niet bij sterke lezers (p=.888); sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst, maar zwakke en gemiddelde lezers wel.</p>
+</blockquote>
+</div>
+<div id="spss-13" class="section level3" number="15.4.4">
+<h3><span class="header-section-number">15.4.4</span> SPSS</h3>
+<p>De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand <code>data/DBE2012.csv</code>.</p>
+<div id="anova-3" class="section level4" number="15.4.4.1">
+<h4><span class="header-section-number">15.4.4.1</span> ANOVA</h4>
+<pre><code>Analyze &gt; General Linear Model &gt; Univariate...</code></pre>
+<p>Sleep de afhankelijke variabele (<code>MCBiScore</code>) naar het vakje Dependent
+variable. Sleep de twee onafhankelijke variabelen (<code>Versie</code>, <code>Groep</code>) naar het
+vakje Fixed factor(s).</p>
+</div>
+</div>
+<div id="jasp-15" class="section level3" number="15.4.5">
+<h3><span class="header-section-number">15.4.5</span> JASP</h3>
+<div id="voorbereiding-4" class="section level4" number="15.4.5.1">
+<h4><span class="header-section-number">15.4.5.1</span> voorbereiding</h4>
+<p>De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand <code>data/DBE2012.csv</code>.</p>
+<p>Onderzoek of de observaties normaal verdeeld zijn binnen elke groep of cel, met behulp van de technieken uit Deel II van dit tekstboek (met name
+§<a href="ch:kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>). Let op: Dit kan in JASP ook tegelijk met de variantieanalyse zelf, zie hieronder.</p>
+</div>
+<div id="anova-4" class="section level4" number="15.4.5.2">
+<h4><span class="header-section-number">15.4.5.2</span> ANOVA</h4>
+<p>Klik in de bovenbalk op:</p>
+<pre><code>ANOVA &gt; ANOVA (onder &#39;Classical)</code></pre>
+<p>Selecteer de variabele <em>MCBiScore</em> en plaats deze in het veld “Dependent Variable,” en plaats variabelen <em>Versie</em> (tekstversie) en <em>Groep</em> (lezerstype) in het veld “Fixed Factors.”<br />
+Zorg dat onder “Display” <code>Estimates of effect size</code> is aangevinkt, en kies hier tussen <span class="math inline">\(\omega^2\)</span> en/of (partial) <span class="math inline">\(\eta^2\)</span>. In dit boek houden we <span class="math inline">\(\omega^2\)</span> aan. Je kunt ook <code>Descriptive statistics</code> aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.<br />
+Open de balk “Model” en selecteer onderin bij “Sum of squares” <code>Type III</code>.<br />
+Open de balk “Assumption Checks” en vink <code>Homogeneity tests</code> aan. “Homogeneity corrections” mag op <code>None</code> blijven staan. Je kunt hier ook onderzoeken of de verdeling binnen iedere groep of cel normaal is, dat is equivalent aan een normale verdeling van de <em>residuen</em> van de variantieanalyse. Dat inspecteer je door hier ook <code>Q-Q plot of residuals</code> aan te vinken; in de resulterende Q-Q-plot zouden de residuen ongeveer op een rechte lijn moeten liggen (zie §<a href="ch:kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p>
+<p>Open ook de balk “Descriptive Plots” en selecteer variabele <em>Groep</em> in het veld “Horizontal Axis” en variabele <em>Versie</em> in het veld “Separate Lines.”</p>
+<p>In de uitvoer wordt de variantieanalyse samengevat in een tabel gelijkend op Tabel <a href="ch:variantieanalyse.html#tab:DBE12anova">15.5</a>, waarbij ook de effectgrootte vermeld wordt in de vorm van <span class="math inline">\(\omega^2\)</span> en/of (partial) <span class="math inline">\(\eta^2\)</span>. Onder <em>Descriptive plots</em> zie je een visuele weergave van wat er wordt getoetst; dit helpt om het eventuele interactie-effect beter te begrijpen.</p>
+<p>In de uitvoer vind je onder <em>Assumption Checks</em> ook de uitslag van Levene’s toets op gelijke
+varianties (homogeniteit van variantie), die geen aanleiding geeft om H0
+te verwerpen. We mogen dus een variantieanalyse uitvoeren.</p>
+</div>
+<div id="post-hoc-vergelijking-2" class="section level4" number="15.4.5.3">
+<h4><span class="header-section-number">15.4.5.3</span> post-hoc vergelijking</h4>
+<p>Voor een variantieanalyse met post-hoc vergelijkingen moeten we de
+gewenste post-hoc vergelijkingen aanvragen. De werkwijze is in het begin
+hetzelfde als hierboven.</p>
+<p>Open vervolgens de balk “Post Hoc Tests” en verplaats de interactie <em>Versie</em> x <em>Groep</em> naar het veld rechts. Zorg dat onder “Type” <code>Standard</code> is aangevinkt en daaronder ook <code>Effect size</code>. Vink onder “Correction” <code>Tukey</code> aan, en onder “Display” ook <code>Confidence intervals</code>.</p>
+<p>De uitvoer geeft nu onder <em>Post Hoc Tests</em> de resultaten.
+Voor iedere paarsgewijze vergelijking tussen de 2x3 cellen zien we het verschil, de standaardfout, en de ondergrens en bovengrens van het 95% betrouwbaarheidsinterval van dat verschil.
+Als dat interval <em>niet</em> nul omvat, dan is het verschil tussen de twee
+groepen of condities dus waarschijnlijk niet gelijk aan nul. De
+gecorrigeerde overschrijdingskans volgens Tukey’s HSD toets is bovendien
+gegeven in de laatste kolom.</p>
+<p>Voor de versie zonder markeringen zien we dat de cel <code>zonder:zwak</code> lager scoort dan de cel <code>zonder:gemiddeld</code> (p&lt;.001), en dat de cel <code>zonder:sterk</code> hoger scoort dan de cel <code>zonder:gemiddeld</code> (p&lt;.001).
+Voor de versie met markeringen zien we dat de cel <code>met:zwak</code> ongeveer gelijk scoort met de cel <code>met:gemiddeld</code> (p=.999), en dat de cel <code>met:sterk</code> hoger scoort dan de cel <code>met:gemiddeld</code> (p=.013). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies.
+Ook zien we dat <code>zonder:zwak</code> lager scoort dan <code>met:zwak</code> (p&lt;.001), dat <code>zonder:gemiddeld</code> lager scoort dan <code>met:gemiddeld</code> (p&lt;.001), terwijl er geen verschil is tussen <code>zonder:sterk</code> en <code>met:sterk</code> (p=.888). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst.</p>
+</div>
+</div>
+<div id="r-16" class="section level3" number="15.4.6">
+<h3><span class="header-section-number">15.4.6</span> R</h3>
+<div id="voorbereiding-5" class="section level4" number="15.4.6.1">
+<h4><span class="header-section-number">15.4.6.1</span> voorbereiding</h4>
+<p>De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand <code>data/DBE2012.csv</code>.</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="ch:variantieanalyse.html#cb148-1" aria-hidden="true" tabindex="-1"></a>DBE2012 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">&quot;data/DBE2012.csv&quot;</span>)</span>
+<span id="cb148-2"><a href="ch:variantieanalyse.html#cb148-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Versie: 1=met, 2=zonder structuurmarkeringen</span></span>
+<span id="cb148-3"><a href="ch:variantieanalyse.html#cb148-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Groep: 1=zwak, 2=gemiddeld, 3=sterk</span></span>
+<span id="cb148-4"><a href="ch:variantieanalyse.html#cb148-4" aria-hidden="true" tabindex="-1"></a><span class="co"># zorg dat Versie en Groep categorische variabelen of factoren zijn:</span></span>
+<span id="cb148-5"><a href="ch:variantieanalyse.html#cb148-5" aria-hidden="true" tabindex="-1"></a>DBE2012<span class="sc">$</span>Versie <span class="ot">&lt;-</span> <span class="fu">factor</span>(DBE2012<span class="sc">$</span>Versie, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;met&quot;</span>,<span class="st">&quot;zonder&quot;</span>) )</span>
+<span id="cb148-6"><a href="ch:variantieanalyse.html#cb148-6" aria-hidden="true" tabindex="-1"></a>DBE2012<span class="sc">$</span>Groep <span class="ot">&lt;-</span> <span class="fu">factor</span>(DBE2012<span class="sc">$</span>Groep, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;zwak&quot;</span>,<span class="st">&quot;gemiddeld&quot;</span>,<span class="st">&quot;sterk&quot;</span>) )</span>
+<span id="cb148-7"><a href="ch:variantieanalyse.html#cb148-7" aria-hidden="true" tabindex="-1"></a><span class="co"># DV: MCBiScore: aantal begripsvragen (uit 10) goed beantwoord, over BIO tekst</span></span>
+<span id="cb148-8"><a href="ch:variantieanalyse.html#cb148-8" aria-hidden="true" tabindex="-1"></a><span class="co"># tabel van gemiddelden, zie Table 15.2 in hoofdtekst</span></span>
+<span id="cb148-9"><a href="ch:variantieanalyse.html#cb148-9" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( DBE2012, <span class="fu">tapply</span>( MCBiScore, <span class="fu">list</span>(Versie,Groep), mean ))</span></code></pre></div>
+<pre><code>##            zwak gemiddeld    sterk
+## met    6.800000  6.653846 8.222222
+## zonder 2.666667  4.642857 7.571429</code></pre>
+</div>
+<div id="anova-5" class="section level4" number="15.4.6.2">
+<h4><span class="header-section-number">15.4.6.2</span> ANOVA</h4>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ch:variantieanalyse.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>(MCBiScore<span class="sc">~</span>Versie<span class="sc">*</span>Groep, <span class="at">data=</span>DBE2012) <span class="ot">-&gt;</span> DBE2012.m1 )</span></code></pre></div>
+<pre><code>##              Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## Versie        1 121.18  121.18   84.64 1.59e-14 ***
+## Groep         2  81.41   40.71   28.43 2.98e-10 ***
+## Versie:Groep  2  30.74   15.37   10.74 6.72e-05 ***
+## Residuals    88 125.98    1.43                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>De uitkomsten wijken enigszins af van die in Tabel <a href="ch:variantieanalyse.html#tab:DBE12anova">15.5</a> omdat R de Sums of Squares op een andere wijze berekent<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.</p>
+</div>
+<div id="effectgrootte" class="section level4" number="15.4.6.3">
+<h4><span class="header-section-number">15.4.6.3</span> effectgrootte</h4>
+<p>We gebruiken hiervoor de eerder geprogrammeerde functie <code>omegasq</code> (§<a href="ch:variantieanalyse.html#R:omega-kwadraat">15.3.8.3</a>):</p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch:variantieanalyse.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Versie&quot;</span>)        <span class="co"># [1] 0.33</span></span></code></pre></div>
+<pre><code>## [1] 0.3319423</code></pre>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="ch:variantieanalyse.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Groep&quot;</span>)         <span class="co"># [1] 0.22</span></span></code></pre></div>
+<pre><code>## [1] 0.2177437</code></pre>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="ch:variantieanalyse.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Versie:Groep&quot;</span>)  <span class="co"># [1] 0.08</span></span></code></pre></div>
+<pre><code>## [1] 0.07727868</code></pre>
+<p>De uitkomsten wijken enigszins af van die in de tekst hierboven omdat R de Sums of Squares op een iets andere wijze berekent.</p>
+</div>
+<div id="post-hoc-toetsen" class="section level4" number="15.4.6.4">
+<h4><span class="header-section-number">15.4.6.4</span> post-hoc toetsen</h4>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="ch:variantieanalyse.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(<span class="at">x=</span>DBE2012.m1, <span class="at">which=</span><span class="st">&quot;Versie:Groep&quot;</span>)</span></code></pre></div>
+<pre><code>##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = MCBiScore ~ Versie * Groep, data = DBE2012)
+## 
+## $`Versie:Groep`
+##                                      diff         lwr        upr     p adj
+## zonder:zwak-met:zwak           -4.1333333 -5.60315087 -2.6635158 0.0000000
+## met:gemiddeld-met:zwak         -0.1461538 -1.27642935  0.9841217 0.9989799
+## zonder:gemiddeld-met:zwak      -2.1571429 -3.27255218 -1.0417335 0.0000031
+## met:sterk-met:zwak              1.4222222 -0.04759532  2.8920398 0.0637117
+## zonder:sterk-met:zwak           0.7714286 -0.82423518  2.3670923 0.7218038
+## met:gemiddeld-zonder:zwak       3.9871795  2.63899048  5.3353685 0.0000000
+## zonder:gemiddeld-zonder:zwak    1.9761905  0.64044018  3.3119408 0.0005900
+## met:sterk-zonder:zwak           5.5555556  3.91224959  7.1988615 0.0000000
+## zonder:sterk-zonder:zwak        4.9047619  3.14799393  6.6615299 0.0000000
+## zonder:gemiddeld-met:gemiddeld -2.0109890 -2.96040355 -1.0615745 0.0000003
+## met:sterk-met:gemiddeld         1.5683761  0.22018706  2.9165651 0.0130213
+## zonder:sterk-met:gemiddeld      0.9175824 -0.56680056  2.4019654 0.4704754
+## met:sterk-zonder:gemiddeld      3.5793651  2.24361478  4.9151154 0.0000000
+## zonder:sterk-zonder:gemiddeld   2.9285714  1.45547670  4.4016662 0.0000016
+## zonder:sterk-met:sterk         -0.6507937 -2.40756162  1.1059743 0.8883523</code></pre>
+<p>Ook hier wijken de uitkomsten enigszins af van die in de tekst hierboven omdat R de Sums of Squares op een iets andere wijze berekent.</p>
+<p>Voor iedere paarsgewijze vergelijking tussen de 2x3 cellen zien we het verschil, de ondergrens en bovengrens van het 95%-betrouwbaarheidsinterval van dat verschil, en de
+gecorrigeerde overschrijdingskans volgens Tukey’s HSD toets.</p>
+<p>Voor de versie zonder markeringen zien we dat de cel <code>zonder:zwak</code> lager scoort dan de cel <code>zonder:gemiddeld</code> (p&lt;.001), en dat de cel <code>zonder:sterk</code> hoger scoort dan de cel <code>zonder:gemiddeld</code> (p&lt;.001).
+Voor de versie met markeringen zien we dat de cel <code>met:zwak</code> ongeveer gelijk scoort met de cel <code>met:gemiddeld</code> (p=.999), en dat de cel <code>met:sterk</code> hoger scoort dan de cel <code>met:gemiddeld</code> (p=.013). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies.
+Ook zien we dat <code>zonder:zwak</code> lager scoort dan <code>met:zwak</code> (p&lt;.001), dat <code>zonder:gemiddeld</code> lager scoort dan <code>met:gemiddeld</code> (p&lt;.001), terwijl er geen verschil is tussen <code>zonder:sterk</code> en <code>met:sterk</code> (p=.888). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst.</p>
+
+</div>
+</div>
+</div>
+</div>
+<h3>Referenties</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-KL00" class="csl-entry">
+Kerlinger, Fred N., and Howard B. Lee. 2000. <em>Foundations of Behavioral Research</em>. 4th ed. Fort Worth: Harcourt College Publishers.
+</div>
+<div id="ref-MD04" class="csl-entry">
+Maxwell, Scott E., and Harold D. Delaney. 2004. <em>Designing Experiments and Analyzing Data: A Model Comparison Perspective</em>. Book. 2nd ed. Mahwah, NJ: Lawrence Erlbaum Associates.
+</div>
+<div id="ref-Olej03" class="csl-entry">
+Olejnik, Stephen, and James Algina. 2003. <span>“Generalized Eta and Omega Squared Statistics: Measures of Effect Size for Some Common Research Designs.”</span> <em>Psychological Methods</em> 8 (4): 434–47.
+</div>
+<div id="ref-Quene08" class="csl-entry">
+Quené, Hugo. 2008. <span>“Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.”</span> <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.
+</div>
+<div id="ref-R-hqmisc" class="csl-entry">
+———. 2014. <em>Hqmisc: Miscellaneous Convenience Functions and Dataset</em>. <a href="https://CRAN.R-project.org/package=hqmisc">https://CRAN.R-project.org/package=hqmisc</a>.
+</div>
+<div id="ref-DBE12" class="csl-entry">
+Van Dooren, Wendy, Huub Van den Bergh, and Jacqueline Evers-Vermeul. 2012. <span>“Leesbare Teksten? Over de Invloed van Structuurmarkeringen Op Het Tekstbegrip En Tekstwaardering van Zwakke En Sterke Lezers.”</span> <em>Levende Talen Tijdschrift</em> 13 (4): 31–38. <a href="https://lt-tijdschriften.nl/ojs/index.php/ltt/article/view/152">https://lt-tijdschriften.nl/ojs/index.php/ltt/article/view/152</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="32">
+<li id="fn32"><p>Als (1) rood wel verschilt van grijs en blauw, en als (2) grijs en blauw bovendien onderling niet verschillen, dan impliceert dat dat rood verschilt van grijs (een nieuwe bevinding) en dat rood verschilt van blauw (dat wisten we al).<a href="ch:variantieanalyse.html#fnref32" class="footnote-back">↩︎</a></p></li>
+<li id="fn33"><p>Als we nog meer factoren toevoegen, dan wordt de situatie al snel onoverzichtelijk. Met drie hoofdeffecten zijn er al 3 tweeweg-interacties plus 1 drieweg-interactie. Met vier hoofdeffecten zijn er al 6 tweeweg-interacties, plus 4 drieweg-interacties, plus 1 vierweg-interactie.<a href="ch:variantieanalyse.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<li id="fn34"><p>De standaard berekeningswijze van R (Type I) is na te bootsen in JASP met de keuze: Model, Sum of squares: Type I. De standaard berekeningswijze van JASP (Type III) is ook na te bootsen in R, zie <a href="https://www.r-bloggers.com/2011/03/anova-%E2%80%93-type-iiiiii-ss-explained" class="uri">https://www.r-bloggers.com/2011/03/anova-%E2%80%93-type-iiiiii-ss-explained</a>.<a href="ch:variantieanalyse.html#fnref34" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch:power.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch:chi-kwadraat-toetsen.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/h15variantieanalyse.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["KMS-NL.pdf", "KMS-NL.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

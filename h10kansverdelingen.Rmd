@@ -872,7 +872,7 @@ for (i in 1:nsim) {
 	lb <- mean(aux)-crit*se(aux)
 	ub <- mean(aux)+crit*se(aux)
 	results <- append( results, c(mean(aux),se(aux),lb,ub) )
-	hits[i] <- is.inrange( mu, c(lb,ub) )
+	hits[i] <- hqmisc::is.inrange( mu, c(lb,ub) )
 	lines( x=c(lb,ub), y=rep(i,2), type="l",lwd=2,
 	       col=ifelse(hits[i],"black","red") )
 	points( x=mean(aux), y=i, pch=20, cex=.5 ) # added 20090319

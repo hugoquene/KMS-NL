@@ -778,9 +778,9 @@ een samenhang betekent niet dat de ene variabele (bijv. behandeling) de
 oorzaak is en de andere variabele (bijv. genezing) het gevolg daarvan.
 De gangbare zegswijze daarvoor is "correlation does not imply
 causation," zie ook Voorbeeld 6.1 (Hoofdstuk \@ref(ch:ontwerp)) 
-en bijgaande Figuur \@ref(fig:xkcd552).
+en bijgaande Figuur \@ref(fig:xkcd552) (met toestemming ontleend aan https://xkcd.com/552).
 
-```{r xkcd552, echo=FALSE, fig.cap="_Correlation does not imply causation_, ontleend met toestemming aan <http://xkcd.com/552>."}
+```{r xkcd552, echo=FALSE, fig.cap="Correlation does not imply causation."}
 knitr::include_graphics("figures/correlation.png")
 ```
 

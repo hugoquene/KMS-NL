@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hoofdstuk 3 Integriteit | Kwantitatieve Methoden en Statistiek</title>
+  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hoofdstuk 3 Integriteit | Kwantitatieve Methoden en Statistiek" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta name="github-repo" content="rstudio/KMS-NL" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hoofdstuk 3 Integriteit | Kwantitatieve Methoden en Statistiek" />
+  
+  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch:onderzoek.html"/>
+<link rel="next" href="ch:Meetniveau.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Kwantitatieve Methoden en Statistiek</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Voorwoord</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#in-english-please"><i class="fa fa-check"></i>In English please?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#notatie"><i class="fa fa-check"></i>Notatie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licentie"><i class="fa fa-check"></i>Licentie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citatie"><i class="fa fa-check"></i>Citatie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technische-details"><i class="fa fa-check"></i>Technische details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#over-de-auteurs"><i class="fa fa-check"></i>Over de auteurs</a></li>
+</ul></li>
+<li class="part"><span><b>Deel I: Methodologie</b></span></li>
+<li class="chapter" data-level="1" data-path="ch:inleiding.html"><a href="ch:inleiding.html"><i class="fa fa-check"></i><b>1</b> Inleiding</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch:inleiding.html"><a href="ch:inleiding.html#sec:wetenschappelijk-onderzoek"><i class="fa fa-check"></i><b>1.1</b> Wetenschappelijk onderzoek</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="ch:inleiding.html"><a href="ch:inleiding.html#sec:theorie"><i class="fa fa-check"></i><b>1.1.1</b> Theorie</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="ch:inleiding.html"><a href="ch:inleiding.html#sec:paradigmata"><i class="fa fa-check"></i><b>1.2</b> Paradigmata</a></li>
+<li class="chapter" data-level="1.3" data-path="ch:inleiding.html"><a href="ch:inleiding.html#sec:instrumentatie-onderzoek"><i class="fa fa-check"></i><b>1.3</b> Instrumentatie-onderzoek</a></li>
+<li class="chapter" data-level="1.4" data-path="ch:inleiding.html"><a href="ch:inleiding.html#sec:beschrijvend-onderzoek"><i class="fa fa-check"></i><b>1.4</b> Beschrijvend onderzoek</a></li>
+<li class="chapter" data-level="1.5" data-path="ch:inleiding.html"><a href="ch:inleiding.html#sec:experimenteel-onderzoek"><i class="fa fa-check"></i><b>1.5</b> Experimenteel onderzoek</a></li>
+<li class="chapter" data-level="1.6" data-path="ch:inleiding.html"><a href="ch:inleiding.html#sec:vooruitblik"><i class="fa fa-check"></i><b>1.6</b> Vooruitblik</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html"><i class="fa fa-check"></i><b>2</b> Hypothese-toetsend onderzoek</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#inleiding"><i class="fa fa-check"></i><b>2.1</b> Inleiding</a></li>
+<li class="chapter" data-level="2.2" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#sec:variabelen"><i class="fa fa-check"></i><b>2.2</b> Variabelen</a></li>
+<li class="chapter" data-level="2.3" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#sec:onafhankelijkeafhankelijkevariabelen"><i class="fa fa-check"></i><b>2.3</b> Onafhankelijke en afhankelijke variabelen</a></li>
+<li class="chapter" data-level="2.4" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#sec:falsificatie"><i class="fa fa-check"></i><b>2.4</b> Falsificatie en nul-hypothese</a></li>
+<li class="chapter" data-level="2.5" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#sec:empirischecyclus"><i class="fa fa-check"></i><b>2.5</b> De empirische cyclus</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#observatie"><i class="fa fa-check"></i><b>2.5.1</b> observatie</a></li>
+<li class="chapter" data-level="2.5.2" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#inductie"><i class="fa fa-check"></i><b>2.5.2</b> inductie</a></li>
+<li class="chapter" data-level="2.5.3" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#deductie"><i class="fa fa-check"></i><b>2.5.3</b> deductie</a></li>
+<li class="chapter" data-level="2.5.4" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#toetsing"><i class="fa fa-check"></i><b>2.5.4</b> toetsing</a></li>
+<li class="chapter" data-level="2.5.5" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#evaluatie"><i class="fa fa-check"></i><b>2.5.5</b> evaluatie</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="ch:onderzoek.html"><a href="ch:onderzoek.html#sec:keuzemomenten"><i class="fa fa-check"></i><b>2.6</b> Keuzemomenten</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch:integriteit.html"><a href="ch:integriteit.html"><i class="fa fa-check"></i><b>3</b> Integriteit</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ch:integriteit.html"><a href="ch:integriteit.html#sec:integriteit-inleiding"><i class="fa fa-check"></i><b>3.1</b> Inleiding</a></li>
+<li class="chapter" data-level="3.2" data-path="ch:integriteit.html"><a href="ch:integriteit.html#sec:ontwerp"><i class="fa fa-check"></i><b>3.2</b> Ontwerp</a></li>
+<li class="chapter" data-level="3.3" data-path="ch:integriteit.html"><a href="ch:integriteit.html#proefpersonen-en-informanten"><i class="fa fa-check"></i><b>3.3</b> Proefpersonen en informanten</a></li>
+<li class="chapter" data-level="3.4" data-path="ch:integriteit.html"><a href="ch:integriteit.html#gegevens"><i class="fa fa-check"></i><b>3.4</b> Gegevens</a></li>
+<li class="chapter" data-level="3.5" data-path="ch:integriteit.html"><a href="ch:integriteit.html#teksten"><i class="fa fa-check"></i><b>3.5</b> Teksten</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch:Meetniveau.html"><a href="ch:Meetniveau.html"><i class="fa fa-check"></i><b>4</b> Meetniveau</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch:Meetniveau.html"><a href="ch:Meetniveau.html#inleiding-1"><i class="fa fa-check"></i><b>4.1</b> Inleiding</a></li>
+<li class="chapter" data-level="4.2" data-path="ch:Meetniveau.html"><a href="ch:Meetniveau.html#sec:nominaal"><i class="fa fa-check"></i><b>4.2</b> Nominaal</a></li>
+<li class="chapter" data-level="4.3" data-path="ch:Meetniveau.html"><a href="ch:Meetniveau.html#sec:ordinaal"><i class="fa fa-check"></i><b>4.3</b> Ordinaal</a></li>
+<li class="chapter" data-level="4.4" data-path="ch:Meetniveau.html"><a href="ch:Meetniveau.html#sec:interval"><i class="fa fa-check"></i><b>4.4</b> Interval</a></li>
+<li class="chapter" data-level="4.5" data-path="ch:Meetniveau.html"><a href="ch:Meetniveau.html#sec:ratio"><i class="fa fa-check"></i><b>4.5</b> Ratio</a></li>
+<li class="chapter" data-level="4.6" data-path="ch:Meetniveau.html"><a href="ch:Meetniveau.html#sec:ordeningvanmeetniveaus"><i class="fa fa-check"></i><b>4.6</b> Ordening van meetniveaus</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch:validiteit.html"><a href="ch:validiteit.html"><i class="fa fa-check"></i><b>5</b> Validiteit</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ch:validiteit.html"><a href="ch:validiteit.html#inleiding-2"><i class="fa fa-check"></i><b>5.1</b> Inleiding</a></li>
+<li class="chapter" data-level="5.2" data-path="ch:validiteit.html"><a href="ch:validiteit.html#sec:causaliteit"><i class="fa fa-check"></i><b>5.2</b> Causaliteit</a></li>
+<li class="chapter" data-level="5.3" data-path="ch:validiteit.html"><a href="ch:validiteit.html#sec:validiteit"><i class="fa fa-check"></i><b>5.3</b> Validiteit</a></li>
+<li class="chapter" data-level="5.4" data-path="ch:validiteit.html"><a href="ch:validiteit.html#sec:internevaliditeit"><i class="fa fa-check"></i><b>5.4</b> Interne validiteit</a></li>
+<li class="chapter" data-level="5.5" data-path="ch:validiteit.html"><a href="ch:validiteit.html#sec:constructvaliditeit"><i class="fa fa-check"></i><b>5.5</b> Constructvaliditeit</a></li>
+<li class="chapter" data-level="5.6" data-path="ch:validiteit.html"><a href="ch:validiteit.html#sec:externevaliditeit"><i class="fa fa-check"></i><b>5.6</b> Externe validiteit</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html"><i class="fa fa-check"></i><b>6</b> Ontwerp</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#sec:ontwerp-inleiding"><i class="fa fa-check"></i><b>6.1</b> Inleiding</a></li>
+<li class="chapter" data-level="6.2" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#sec:tussenbinnenproefpersonen"><i class="fa fa-check"></i><b>6.2</b> Tussen of binnen ?</a></li>
+<li class="chapter" data-level="6.3" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#het-one-shot-single-case-ontwerp"><i class="fa fa-check"></i><b>6.3</b> Het one-shot single-case-ontwerp</a></li>
+<li class="chapter" data-level="6.4" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#het-één-groep-voormeting-nameting-ontwerp"><i class="fa fa-check"></i><b>6.4</b> Het één-groep-voormeting-nameting-ontwerp</a></li>
+<li class="chapter" data-level="6.5" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#sec:voormeting-nameting-controlegroep-ontwerp"><i class="fa fa-check"></i><b>6.5</b> Het voormeting-nameting-controlegroep-ontwerp</a></li>
+<li class="chapter" data-level="6.6" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#sec:solomon-vier-groepen-ontwerp"><i class="fa fa-check"></i><b>6.6</b> Het Solomon-vier-groepen-ontwerp</a></li>
+<li class="chapter" data-level="6.7" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#het-nameting-controlegroep-ontwerp"><i class="fa fa-check"></i><b>6.7</b> Het nameting-controlegroep-ontwerp</a></li>
+<li class="chapter" data-level="6.8" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#sec:ontwerp-factorieel"><i class="fa fa-check"></i><b>6.8</b> Factoriële ontwerpen</a></li>
+<li class="chapter" data-level="6.9" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#sec:afhankelijkegroepen"><i class="fa fa-check"></i><b>6.9</b> Afhankelijke- en onafhankelijke-groepen-ontwerp</a></li>
+<li class="chapter" data-level="6.10" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#onderzoek-ontwerpen"><i class="fa fa-check"></i><b>6.10</b> Onderzoek ontwerpen</a></li>
+<li class="chapter" data-level="6.11" data-path="ch:ontwerp.html"><a href="ch:ontwerp.html#tenslotte"><i class="fa fa-check"></i><b>6.11</b> Tenslotte</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html"><i class="fa fa-check"></i><b>7</b> Steekproeven</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html#sec:gelegenheidssteekproef"><i class="fa fa-check"></i><b>7.1</b> Gelegenheidssteekproeven</a></li>
+<li class="chapter" data-level="7.2" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html#sec:systematischesteekproef"><i class="fa fa-check"></i><b>7.2</b> Systematische steekproeven</a></li>
+<li class="chapter" data-level="7.3" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html#sec:aselectesteekproef"><i class="fa fa-check"></i><b>7.3</b> Aselecte steekproeven</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html#spss"><i class="fa fa-check"></i><b>7.3.1</b> SPSS</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html#jasp"><i class="fa fa-check"></i><b>7.3.2</b> JASP</a></li>
+<li class="chapter" data-level="7.3.3" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html#r"><i class="fa fa-check"></i><b>7.3.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ch:steekproeftrekking.html"><a href="ch:steekproeftrekking.html#sec:steekproefgrootte"><i class="fa fa-check"></i><b>7.4</b> Steekproefgrootte</a></li>
+</ul></li>
+<li class="part"><span><b>Deel II: Beschrijvende statistiek</b></span></li>
+<li class="chapter" data-level="8" data-path="ch:frequenties.html"><a href="ch:frequenties.html"><i class="fa fa-check"></i><b>8</b> Frequenties</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ch:frequenties.html"><a href="ch:frequenties.html#inleiding-3"><i class="fa fa-check"></i><b>8.1</b> Inleiding</a></li>
+<li class="chapter" data-level="8.2" data-path="ch:frequenties.html"><a href="ch:frequenties.html#sec:frequenties"><i class="fa fa-check"></i><b>8.2</b> Frequenties</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="ch:frequenties.html"><a href="ch:frequenties.html#sec:intervallen"><i class="fa fa-check"></i><b>8.2.1</b> Intervallen</a></li>
+<li class="chapter" data-level="8.2.2" data-path="ch:frequenties.html"><a href="ch:frequenties.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="8.2.3" data-path="ch:frequenties.html"><a href="ch:frequenties.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
+<li class="chapter" data-level="8.2.4" data-path="ch:frequenties.html"><a href="ch:frequenties.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="ch:frequenties.html"><a href="ch:frequenties.html#sec:staafdiagrammen"><i class="fa fa-check"></i><b>8.3</b> Staafdiagrammen</a></li>
+<li class="chapter" data-level="8.4" data-path="ch:frequenties.html"><a href="ch:frequenties.html#sec:histogrammen"><i class="fa fa-check"></i><b>8.4</b> Histogrammen</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="ch:frequenties.html"><a href="ch:frequenties.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="8.4.2" data-path="ch:frequenties.html"><a href="ch:frequenties.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
+<li class="chapter" data-level="8.4.3" data-path="ch:frequenties.html"><a href="ch:frequenties.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html"><i class="fa fa-check"></i><b>9</b> Centrum en spreiding</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#inleiding-4"><i class="fa fa-check"></i><b>9.1</b> Inleiding</a></li>
+<li class="chapter" data-level="9.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#symbolen"><i class="fa fa-check"></i><b>9.2</b> Symbolen</a></li>
+<li class="chapter" data-level="9.3" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#centrummaten"><i class="fa fa-check"></i><b>9.3</b> Centrummaten</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:gemiddelde"><i class="fa fa-check"></i><b>9.3.1</b> gemiddelde</a></li>
+<li class="chapter" data-level="9.3.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:mediaan"><i class="fa fa-check"></i><b>9.3.2</b> mediaan</a></li>
+<li class="chapter" data-level="9.3.3" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#modus"><i class="fa fa-check"></i><b>9.3.3</b> modus</a></li>
+<li class="chapter" data-level="9.3.4" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:harmonischgemiddelde"><i class="fa fa-check"></i><b>9.3.4</b> harmonisch gemiddelde</a></li>
+<li class="chapter" data-level="9.3.5" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#gewinsoriseerde-gemiddelde"><i class="fa fa-check"></i><b>9.3.5</b> gewinsoriseerde gemiddelde</a></li>
+<li class="chapter" data-level="9.3.6" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#getrimde-gemiddelde"><i class="fa fa-check"></i><b>9.3.6</b> getrimde gemiddelde</a></li>
+<li class="chapter" data-level="9.3.7" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#vergelijking-van-centrummaten"><i class="fa fa-check"></i><b>9.3.7</b> vergelijking van centrummaten</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:kwartielen-en-boxplots"><i class="fa fa-check"></i><b>9.4</b> Kwartielen en boxplots</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#kwartielen"><i class="fa fa-check"></i><b>9.4.1</b> Kwartielen</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:uitbijters"><i class="fa fa-check"></i><b>9.4.2</b> Uitbijters</a></li>
+<li class="chapter" data-level="9.4.3" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:boxplot"><i class="fa fa-check"></i><b>9.4.3</b> Boxplots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:spreidingsmaten"><i class="fa fa-check"></i><b>9.5</b> Spreidingsmaten</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:variantie"><i class="fa fa-check"></i><b>9.5.1</b> variantie</a></li>
+<li class="chapter" data-level="9.5.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:standaarddeviatie"><i class="fa fa-check"></i><b>9.5.2</b> standaarddeviatie</a></li>
+<li class="chapter" data-level="9.5.3" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#mad"><i class="fa fa-check"></i><b>9.5.3</b> MAD</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:significantecijfers"><i class="fa fa-check"></i><b>9.6</b> Over significante cijfers</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:significantecijfers-gemiddelde"><i class="fa fa-check"></i><b>9.6.1</b> Gemiddelde en standaarddeviatie</a></li>
+<li class="chapter" data-level="9.6.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#percentages"><i class="fa fa-check"></i><b>9.6.2</b> Percentages</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:robuustefficient"><i class="fa fa-check"></i><b>9.7</b> Keuzemoment</a></li>
+<li class="chapter" data-level="9.8" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:standaardscores"><i class="fa fa-check"></i><b>9.8</b> Standaardscores</a></li>
+<li class="chapter" data-level="9.9" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
+<li class="chapter" data-level="9.10" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#jasp-3"><i class="fa fa-check"></i><b>9.10</b> JASP</a></li>
+<li class="chapter" data-level="9.11" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#r-3"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html"><i class="fa fa-check"></i><b>10</b> Kansverdelingen</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:kansen"><i class="fa fa-check"></i><b>10.1</b> Kansen</a></li>
+<li class="chapter" data-level="10.2" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:binomiaalverdeling"><i class="fa fa-check"></i><b>10.2</b> Binomiale kansverdeling</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#formules"><i class="fa fa-check"></i><b>10.2.1</b> formules</a></li>
+<li class="chapter" data-level="10.2.2" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#jasp-4"><i class="fa fa-check"></i><b>10.2.2</b> JASP</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#r-4"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:normaalverdeling"><i class="fa fa-check"></i><b>10.3</b> Normale kansverdeling</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#formules-1"><i class="fa fa-check"></i><b>10.3.1</b> formules</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#jasp-5"><i class="fa fa-check"></i><b>10.3.2</b> JASP</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#r-5"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:isvarnormaalverdeeld"><i class="fa fa-check"></i><b>10.4</b> Heeft mijn variabele een normale kansverdeling?</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#jasp-6"><i class="fa fa-check"></i><b>10.4.2</b> JASP</a></li>
+<li class="chapter" data-level="10.4.3" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#r-6"><i class="fa fa-check"></i><b>10.4.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:watalsnietnormaal"><i class="fa fa-check"></i><b>10.5</b> Wat als mijn variabele niet normaal verdeeld is?</a></li>
+<li class="chapter" data-level="10.6" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:CentraalLimietTheorema"><i class="fa fa-check"></i><b>10.6</b> Kansverdeling van gemiddelde</a></li>
+<li class="chapter" data-level="10.7" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:betrouwbaarheidsinterval-gemiddelde"><i class="fa fa-check"></i><b>10.7</b> Betrouwbaarheidsinterval van het gemiddelde</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#formules-2"><i class="fa fa-check"></i><b>10.7.1</b> formules</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ch:samenhang.html"><a href="ch:samenhang.html"><i class="fa fa-check"></i><b>11</b> Samenhang</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#inleiding-5"><i class="fa fa-check"></i><b>11.1</b> Inleiding</a></li>
+<li class="chapter" data-level="11.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:Pearson"><i class="fa fa-check"></i><b>11.2</b> Pearson product-moment-correlatie</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#formules-3"><i class="fa fa-check"></i><b>11.2.1</b> Formules</a></li>
+<li class="chapter" data-level="11.2.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.2.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#jasp-7"><i class="fa fa-check"></i><b>11.2.3</b> JASP</a></li>
+<li class="chapter" data-level="11.2.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#r-7"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:regressie"><i class="fa fa-check"></i><b>11.3</b> Regressie</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:regressie-formules"><i class="fa fa-check"></i><b>11.3.1</b> Formules</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.3.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#jasp-8"><i class="fa fa-check"></i><b>11.3.3</b> JASP</a></li>
+<li class="chapter" data-level="11.3.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#r-8"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#invloedrijke-observaties"><i class="fa fa-check"></i><b>11.4</b> Invloedrijke observaties</a></li>
+<li class="chapter" data-level="11.5" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearmans rangorde-correlatie</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#formules-4"><i class="fa fa-check"></i><b>11.5.1</b> Formules</a></li>
+<li class="chapter" data-level="11.5.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.5.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#jasp-9"><i class="fa fa-check"></i><b>11.5.3</b> JASP</a></li>
+<li class="chapter" data-level="11.5.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#r-9"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
+<ul>
+<li class="chapter" data-level="11.6.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#formules-5"><i class="fa fa-check"></i><b>11.6.1</b> Formules</a></li>
+<li class="chapter" data-level="11.6.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.6.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#jasp-10"><i class="fa fa-check"></i><b>11.6.3</b> JASP</a></li>
+<li class="chapter" data-level="11.6.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#r-10"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Tenslotte</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html"><i class="fa fa-check"></i><b>12</b> Betrouwbaarheid</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#inleiding-6"><i class="fa fa-check"></i><b>12.1</b> Inleiding</a></li>
+<li class="chapter" data-level="12.2" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#wat-is-betrouwbaarheid"><i class="fa fa-check"></i><b>12.2</b> Wat is betrouwbaarheid?</a></li>
+<li class="chapter" data-level="12.3" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#testtheorie"><i class="fa fa-check"></i><b>12.3</b> Testtheorie</a></li>
+<li class="chapter" data-level="12.4" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#interpretaties"><i class="fa fa-check"></i><b>12.4</b> Interpretaties</a></li>
+<li class="chapter" data-level="12.5" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#methoden-om-betrouwbaarheid-te-schatten"><i class="fa fa-check"></i><b>12.5</b> Methoden om betrouwbaarheid te schatten</a></li>
+<li class="chapter" data-level="12.6" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#betrouwbaarheid-tussen-beoordelaars"><i class="fa fa-check"></i><b>12.6</b> Betrouwbaarheid tussen beoordelaars</a></li>
+<li class="chapter" data-level="12.7" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#betrouwbaarheid-en-constructvaliditeit"><i class="fa fa-check"></i><b>12.7</b> Betrouwbaarheid en constructvaliditeit</a></li>
+<li class="chapter" data-level="12.8" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
+<li class="chapter" data-level="12.9" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#jasp-11"><i class="fa fa-check"></i><b>12.9</b> JASP</a></li>
+<li class="chapter" data-level="12.10" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#r-11"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
+</ul></li>
+<li class="part"><span><b>Deel III: Toetsende statistiek</b></span></li>
+<li class="chapter" data-level="13" data-path="ch:toetsing.html"><a href="ch:toetsing.html"><i class="fa fa-check"></i><b>13</b> Toetsing</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:toetsing-inleiding"><i class="fa fa-check"></i><b>13.1</b> Inleiding</a></li>
+<li class="chapter" data-level="13.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-onesample"><i class="fa fa-check"></i><b>13.2</b> <span class="math inline">\(t\)</span>-toets voor enkele steekproef</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-vrijheidsgraden"><i class="fa fa-check"></i><b>13.2.1</b> vrijheidsgraden</a></li>
+<li class="chapter" data-level="13.2.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-1"><i class="fa fa-check"></i><b>13.2.2</b> formules</a></li>
+<li class="chapter" data-level="13.2.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-aannames"><i class="fa fa-check"></i><b>13.2.3</b> aannames</a></li>
+<li class="chapter" data-level="13.2.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
+<li class="chapter" data-level="13.2.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:jaspttoetsenkel"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
+<li class="chapter" data-level="13.2.6" data-path="ch:toetsing.html"><a href="ch:toetsing.html#r-12"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:pgroterdannul"><i class="fa fa-check"></i><b>13.3</b> Overschrijdingskans <span class="math inline">\(p\)</span> is altijd groter dan nul</a></li>
+<li class="chapter" data-level="13.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-eenzijdigtweezijdig"><i class="fa fa-check"></i><b>13.4</b> Eenzijdige en tweezijdige toetsen</a></li>
+<li class="chapter" data-level="13.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:t-betrouwbaarheidsinterval-gemiddelde"><i class="fa fa-check"></i><b>13.5</b> Betrouwbaarheidsinterval van het gemiddelde</a>
+<ul>
+<li class="chapter" data-level="13.5.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-2"><i class="fa fa-check"></i><b>13.5.1</b> formules</a></li>
+<li class="chapter" data-level="13.5.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="13.5.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#jasp-12"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
+<li class="chapter" data-level="13.5.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#r-13"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-onafh"><i class="fa fa-check"></i><b>13.6</b> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven</a>
+<ul>
+<li class="chapter" data-level="13.6.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-ongepaard-aannames"><i class="fa fa-check"></i><b>13.6.1</b> aannames</a></li>
+<li class="chapter" data-level="13.6.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-formules"><i class="fa fa-check"></i><b>13.6.2</b> formules</a></li>
+<li class="chapter" data-level="13.6.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:SPSS-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.3</b> SPSS</a></li>
+<li class="chapter" data-level="13.6.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:jaspttoetsongepaard"><i class="fa fa-check"></i><b>13.6.4</b> JASP</a></li>
+<li class="chapter" data-level="13.6.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.5</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.7" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-gepaard"><i class="fa fa-check"></i><b>13.7</b> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen</a>
+<ul>
+<li class="chapter" data-level="13.7.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#aannames-1"><i class="fa fa-check"></i><b>13.7.1</b> aannames</a></li>
+<li class="chapter" data-level="13.7.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-4"><i class="fa fa-check"></i><b>13.7.2</b> formules</a></li>
+<li class="chapter" data-level="13.7.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:SPSS-ttoets-gepaard"><i class="fa fa-check"></i><b>13.7.3</b> SPSS</a></li>
+<li class="chapter" data-level="13.7.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:jaspttoetsgepaard"><i class="fa fa-check"></i><b>13.7.4</b> JASP</a></li>
+<li class="chapter" data-level="13.7.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:R-ttoets-gepaard"><i class="fa fa-check"></i><b>13.7.5</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-effectgrootte"><i class="fa fa-check"></i><b>13.8</b> Effectgrootte</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-5"><i class="fa fa-check"></i><b>13.8.1</b> formules</a></li>
+<li class="chapter" data-level="13.8.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#spss-13-2"><i class="fa fa-check"></i><b>13.8.2</b> SPSS</a></li>
+<li class="chapter" data-level="13.8.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#jasp-13"><i class="fa fa-check"></i><b>13.8.3</b> JASP</a></li>
+<li class="chapter" data-level="13.8.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#r-14"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
+<li class="chapter" data-level="13.8.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:betrouwbaarheidsinterval-effectgrootte"><i class="fa fa-check"></i><b>13.8.5</b> Betrouwbaarheidsinterval van de effectgrootte</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="ch:power.html"><a href="ch:power.html"><i class="fa fa-check"></i><b>14</b> Power</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="ch:power.html"><a href="ch:power.html#sec:power-inleiding"><i class="fa fa-check"></i><b>14.1</b> Inleiding</a></li>
+<li class="chapter" data-level="14.2" data-path="ch:power.html"><a href="ch:power.html#sec:effectgrootte-power"><i class="fa fa-check"></i><b>14.2</b> Verband tussen effectgrootte en power</a></li>
+<li class="chapter" data-level="14.3" data-path="ch:power.html"><a href="ch:power.html#sec:steekproefgrootte-power"><i class="fa fa-check"></i><b>14.3</b> Verband tussen steekproefgrootte en power</a></li>
+<li class="chapter" data-level="14.4" data-path="ch:power.html"><a href="ch:power.html#sec:significantieniveau-power"><i class="fa fa-check"></i><b>14.4</b> Verband tussen significantieniveau en power</a></li>
+<li class="chapter" data-level="14.5" data-path="ch:power.html"><a href="ch:power.html#nadelen-van-onvoldoende-power"><i class="fa fa-check"></i><b>14.5</b> Nadelen van onvoldoende power</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html"><i class="fa fa-check"></i><b>15</b> Variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:inleiding"><i class="fa fa-check"></i><b>15.1</b> Inleiding</a></li>
+<li class="chapter" data-level="15.2" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-voorbeelden"><i class="fa fa-check"></i><b>15.2</b> Enkele voorbeelden</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#aannames"><i class="fa fa-check"></i><b>15.2.1</b> aannames</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#eén-weg-variantieanalyse"><i class="fa fa-check"></i><b>15.3</b> Eén-weg-variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.3.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-uitleg"><i class="fa fa-check"></i><b>15.3.1</b> Een intuïtieve uitleg</a></li>
+<li class="chapter" data-level="15.3.2" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-formeel"><i class="fa fa-check"></i><b>15.3.2</b> Een formele uitleg</a></li>
+<li class="chapter" data-level="15.3.3" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-effectgrootte"><i class="fa fa-check"></i><b>15.3.3</b> Effectgrootte</a></li>
+<li class="chapter" data-level="15.3.4" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-gericht"><i class="fa fa-check"></i><b>15.3.4</b> Gerichte vergelijkingen</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc vergelijkingen</a></li>
+<li class="chapter" data-level="15.3.6" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
+<li class="chapter" data-level="15.3.7" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#jasp-14"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
+<li class="chapter" data-level="15.3.8" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="15.4" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:tweeweg-anova"><i class="fa fa-check"></i><b>15.4</b> Tweeweg-variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#een-intuïtieve-uitleg"><i class="fa fa-check"></i><b>15.4.1</b> Een intuïtieve uitleg</a></li>
+<li class="chapter" data-level="15.4.2" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#een-formele-uitleg"><i class="fa fa-check"></i><b>15.4.2</b> Een formele uitleg</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-twoway-posthoc"><i class="fa fa-check"></i><b>15.4.3</b> Post-hoc vergelijkingen</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#spss-13"><i class="fa fa-check"></i><b>15.4.4</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#jasp-15"><i class="fa fa-check"></i><b>15.4.5</b> JASP</a></li>
+<li class="chapter" data-level="15.4.6" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#r-16"><i class="fa fa-check"></i><b>15.4.6</b> R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html"><i class="fa fa-check"></i><b>16</b> Chi-kwadraat-toetsen</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#sec:h16inleiding"><i class="fa fa-check"></i><b>16.1</b> Inleiding</a></li>
+<li class="chapter" data-level="16.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#sec:chi2gof"><i class="fa fa-check"></i><b>16.2</b> <span class="math inline">\(\chi^2\)</span>-toets voor “goodness of fit” in enkele steekproef</a></li>
+<li class="chapter" data-level="16.3" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#chi2-toets-voor-homogeniteit-van-een-variabele-in-meerdere-steekproeven"><i class="fa fa-check"></i><b>16.3</b> <span class="math inline">\(\chi^2\)</span>-toets voor homogeniteit van een variabele in meerdere steekproeven</a></li>
+<li class="chapter" data-level="16.4" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#chi2-toets-voor-verband-tussen-twee-variabelen-in-enkele-steekproef"><i class="fa fa-check"></i><b>16.4</b> <span class="math inline">\(\chi^2\)</span>-toets voor verband tussen twee variabelen in enkele steekproef</a></li>
+<li class="chapter" data-level="16.5" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#sec:chi2toets-aannames"><i class="fa fa-check"></i><b>16.5</b> aannames</a></li>
+<li class="chapter" data-level="16.6" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#formules-6"><i class="fa fa-check"></i><b>16.6</b> formules</a></li>
+<li class="chapter" data-level="16.7" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#spss-14"><i class="fa fa-check"></i><b>16.7</b> SPSS</a>
+<ul>
+<li class="chapter" data-level="16.7.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-voorbereiding"><i class="fa fa-check"></i><b>16.7.1</b> goodness of fit: voorbereiding</a></li>
+<li class="chapter" data-level="16.7.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-toetsing"><i class="fa fa-check"></i><b>16.7.2</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.7.3" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-voorbereiding"><i class="fa fa-check"></i><b>16.7.3</b> kruistabellen: voorbereiding</a></li>
+<li class="chapter" data-level="16.7.4" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-toetsing"><i class="fa fa-check"></i><b>16.7.4</b> kruistabellen: toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.8" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#jasp-16"><i class="fa fa-check"></i><b>16.8</b> JASP</a>
+<ul>
+<li class="chapter" data-level="16.8.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-voorbereiding-1"><i class="fa fa-check"></i><b>16.8.1</b> goodness of fit: voorbereiding</a></li>
+<li class="chapter" data-level="16.8.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-toetsing-1"><i class="fa fa-check"></i><b>16.8.2</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.8.3" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-voorbereiding-1"><i class="fa fa-check"></i><b>16.8.3</b> kruistabellen: voorbereiding</a></li>
+<li class="chapter" data-level="16.8.4" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-toetsing-1"><i class="fa fa-check"></i><b>16.8.4</b> kruistabellen: toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.9" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#r-17"><i class="fa fa-check"></i><b>16.9</b> R</a>
+<ul>
+<li class="chapter" data-level="16.9.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-toetsing-2"><i class="fa fa-check"></i><b>16.9.1</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.9.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-voorbereiding-en-toetsing"><i class="fa fa-check"></i><b>16.9.2</b> kruistabellen: voorbereiding en toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.10" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#effectgrootte-odds-ratio"><i class="fa fa-check"></i><b>16.10</b> Effectgrootte: odds ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html"><i class="fa fa-check"></i><b>17</b> Andere nonparametrische toetsen</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:h17inleiding"><i class="fa fa-check"></i><b>17.1</b> Inleiding</a></li>
+<li class="chapter" data-level="17.2" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#gepaarde-observaties-enkele-steekproef"><i class="fa fa-check"></i><b>17.2</b> Gepaarde observaties, enkele steekproef</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:tekentoets"><i class="fa fa-check"></i><b>17.2.1</b> Tekentoets</a></li>
+<li class="chapter" data-level="17.2.2" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:Wilcoxon-signed-rank"><i class="fa fa-check"></i><b>17.2.2</b> Wilcoxon signed-ranks test</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#onafhankelijke-observaties-meerdere-steekproeven"><i class="fa fa-check"></i><b>17.3</b> Onafhankelijke observaties, meerdere steekproeven</a>
+<ul>
+<li class="chapter" data-level="17.3.1" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#mediaantoets"><i class="fa fa-check"></i><b>17.3.1</b> Mediaantoets</a></li>
+<li class="chapter" data-level="17.3.2" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:wilcoxon-rank-sum"><i class="fa fa-check"></i><b>17.3.2</b> Wilcoxon rank sum test, ofwel Mann-Whitney U test</a></li>
+<li class="chapter" data-level="17.3.3" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>17.3.3</b> Kruskall-Wallis H test</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Bijlagen</b></span></li>
+<li class="chapter" data-level="A" data-path="app:randomgetallen.html"><a href="app:randomgetallen.html"><i class="fa fa-check"></i><b>A</b> Willekeurige getallen</a></li>
+<li class="chapter" data-level="B" data-path="app:kritiekeZwaarden.html"><a href="app:kritiekeZwaarden.html"><i class="fa fa-check"></i><b>B</b> Standaard-normale kansverdeling</a></li>
+<li class="chapter" data-level="C" data-path="app:kritieketwaarden.html"><a href="app:kritieketwaarden.html"><i class="fa fa-check"></i><b>C</b> Kritieke waarden van <span class="math inline">\(t\)</span>-verdeling</a></li>
+<li class="chapter" data-level="D" data-path="app:kritiekechi2waarden.html"><a href="app:kritiekechi2waarden.html"><i class="fa fa-check"></i><b>D</b> Kritieke waarden van <span class="math inline">\(\chi^2\)</span>-verdeling</a></li>
+<li class="chapter" data-level="" data-path="referenties.html"><a href="referenties.html"><i class="fa fa-check"></i>Referenties</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Gemaakt met bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kwantitatieve Methoden en Statistiek</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch:integriteit" class="section level1" number="3">
+<h1><span class="header-section-number">Hoofdstuk 3</span> Integriteit</h1>
+<div id="sec:integriteit-inleiding" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Inleiding</h2>
+<p>Wetenschappelijk onderzoek heeft de mensheid onmetelijk grote baten
+opgeleverd, zoals betrouwbare computer-technologie, goede medische zorg,
+en begrip van andere talen en culturen. Al deze verworvenheden zijn
+gebaseerd op wetenschappelijk onderbouwde kennis. Onderzoekers
+produceren kennis, en de vooruitgang en groei van kennis ontstaat omdat
+onderzoekers voortbouwen op de ervaringen en inzichten van hun
+voorgangers.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 3.1</em>: Sir Isaac Newton schreef over zijn
+wetenschappelijke werk: “If I have seen further it is by standing on (the)
+shoulders of Giants” (in een brief aan Robert Hooke d.d. 5 Feb
+1676<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>). Dit beeld is te herleiden tot de middeleeuwse geleerde
+Bernard de Chartres: “…nos esse quasi nanos gigantum umeris
+insidentes” (dat wij zijn als dwergen gezeten op de schouders van
+reuzen) in vergelijking tot geleerden uit de Oudheid. Newton’s
+uitspraak is ook het motto van Google Scholar
+(<a href="scholar.google.com">scholar.google.com</a>), een zoekmachine voor
+wetenschappelijke publicaties.</p>
+</blockquote>
+<hr />
+<p>In dit hoofdstuk bespreken we de ethische en morele aspecten van
+wetenschappelijk onderzoek. Wetenschap is mensenwerk, en het vereist een
+goed ontwikkeld beoordelingsvermogen van de onderzoekers. De
+<em>Nederlandse Gedragscode Wetenschappelijke Integriteit</em> <span class="citation">(<a href="#ref-VSNU18" role="doc-biblioref">VSNU 2018</a>)</span>
+(<a href="http://www.vsnu.nl/wetenschappelijke_integriteit" class="uri">http://www.vsnu.nl/wetenschappelijke_integriteit</a>) beschrijft hoe
+wetenschappelijke onderzoekers (en studenten) zich dienen te gedragen.
+Volgens deze gedragscode dient wetenschappelijk onderzoek en onderwijs
+gebaseerd te zijn op de volgende principes:</p>
+<ul>
+<li><p>eerlijkheid,</p></li>
+<li><p>zorgvuldigheid,</p></li>
+<li><p>transparantie,</p></li>
+<li><p>onafhankelijkheid, en</p></li>
+<li><p>verantwoordelijkheid</p></li>
+</ul>
+<p>In de volgende paragrafen zullen we nagaan hoe we volgens deze principes
+dienen te handelen bij de verschillende fasen van wetenschappelijk
+onderzoek. Hoe moeten we op eerlijke, zorgvuldige, transparante,
+onafhankelijke en verantwoordelijke wijze een onderzoek opzetten, de
+gegevens verzamelen en verwerken, en verslag doen van het onderzoek? We
+moeten daarover nadenken nog voor het onderzoek begint, en daarom
+bespreken we deze onderwerpen aan het begin van dit tekstboek, hoewel we
+ook vooruit zullen wijzen naar termen en begrippen die worden uitgewerkt
+in volgende hoofdstukken.</p>
+</div>
+<div id="sec:ontwerp" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Ontwerp</h2>
+<p>Weliswaar levert wetenschappelijk onderzoek ons onmetelijk grote baten
+op, maar daar staan ook aanzienlijke kosten tegenover. De directe kosten
+zijn o.a. de inrichting en onderhoud van laboratoria, apparatuur en
+technische ondersteuning, maar ook de loonkosten van de onderzoekers,
+vergoedingen voor informanten en proefpersonen, reiskosten voor toegang
+tot bibliotheken, archieven, informanten en proefpersonen, e.d. Deze
+directe kosten worden doorgaans gefinancierd uit publieke middelen van
+universiteiten en andere wetenschappelijke instellingen. Daarnaast zijn
+er indirecte kosten, die voor een deel ten laste komen van de
+informanten en proefpersonen: tijd en moeite die niet aan iets anders
+besteed kan worden, verlies van privacy, en mogelijke andere risico’s
+die we nog niet kennen. Een vaak vergeten kostenpost is het verlies van
+onbevangenheid: een proefpersoon die heeft meegedaan aan een experiment
+leert daarvan, en reageert daarna misschien anders in een volgend
+experiment (zie
+§<a href="ch:validiteit.html#sec:internevaliditeit">5.4</a>, onder Geschiedenis). De resultaten
+uit zo’n volgend experiment zijn daardoor minder goed generaliseerbaar
+naar andere personen die een andere geschiedenis hebben, en <em>niet</em>
+eerder aan een onderzoek hebben meegedaan.</p>
+<p>Gezien de grote kosten moet onderzoek zodanig zijn doordacht en
+ontworpen, dat de verwachte baten redelijkerwijs opwegen tegen de
+verwachte kosten <span class="citation">(<a href="#ref-Rose08" role="doc-biblioref">Rosenthal and Rosnow 2008, Ch.3</a>)</span>. Als de kans op valide conclusies uit
+een onderzoek erg klein is, dan is het beter om dat onderzoek <em>niet</em> uit
+te voeren, en zo de directe en indirecte kosten te besparen.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 3.2</em>:
+Stel dat we willen onderzoeken of tweetalige kinderen van 4 jaar oud een
+cognitief voordeel hebben boven eentalige leeftijdsgenoten. Op grond van
+eerder onderzoek verwachten we een verschil van tenminste 2 punten (op
+een 10-punts-schaal) tussen beide groepen (met “pooled standard
+deviation” <span class="math inline">\(s_p=4\)</span>, dus <span class="math inline">\(d=0.5\)</span>, zie
+§<a href="ch:toetsing.html#sec:ttoets-formules">13.6.2</a> en §<a href="ch:toetsing.html#sec:ttoets-effectgrootte">13.8</a>).</p>
+</blockquote>
+<blockquote>
+<p>We vergelijken twee groepen van
+elk <span class="math inline">\(n=4\)</span> kinderen. Zelfs als er inderdaad een verschil is van 2 punten
+tussen de twee groepen (dus als de onderzoekshypothese waar is), dan nog
+is er in dit onderzoek slechts 51% kans om een significant verschil te
+vinden: de power is slechts .51
+(Hoofdstuk <a href="ch:power.html#ch:power">14</a>),
+omdat de twee groepen zo weinig proefpersonen
+bevatten. De vierjarige kinderen en hun ouders kunnen beter andere
+dingen doen (school, thuis, werk) dan meedoen aan dit onderzoek.</p>
+</blockquote>
+<blockquote>
+<p>Als er echter <span class="math inline">\(n=30\)</span> kinderen in elk van de twee groepen zouden meedoen,
+en als er inderdaad een verschil is van 2 punten tussen de twee groepen
+(dus als de onderzoekshypothese waar is) dan zou de power .90 zijn. Met
+grotere groepen hebben we dus een veel betere kans om onze
+onderzoekshypothese te bevestigen. Dit uitgebreide ontwerp van het
+onderzoek zal meer kosten (voor de onderzoekers en de kinderen en hun
+ouders), maar levert vermoedelijk ook veel meer op: een valide conclusie
+met grote maatschappelijke impact.</p>
+</blockquote>
+<hr />
+<p>Het ontwerp van een onderzoek (zie
+Hoofdstuk <a href="ch:ontwerp.html#ch:ontwerp">6</a>) moet zo efficiënt mogelijk zijn, en de
+onderzoeker moet daarover al in een vroeg stadium nadenken. De
+efficiëntie hangt ten eerste af van keuzes over hoe de onafhankelijke
+variabelen worden gevarieerd. Is er een aparte groep proefpersonen voor
+iedere conditie van de onafhankelijke variabele (condities zijn “between
+subjects,” zoals in voorbeeld 3.2 hierboven? Bij een between-subjects
+ontwerp met twee groepen zijn er ca <span class="math inline">\(n=(5.6/d)^2\)</span> nodig in elke groep <span class="citation">(<a href="#ref-Gelm07" role="doc-biblioref">Gelman and Hill 2007</a>)</span>
+(zie §<a href="ch:toetsing.html#sec:ttoets-effectgrootte">13.8</a>). Of doen alle proefpersonen mee
+aan alle condities (condities zijn “within subjects”)? Bij een
+within-subjects ontwerp met twee condities zijn er dan slechts
+<span class="math inline">\(n=(2.8/d)^2\)</span> proefpersonen nodig in elke conditie, en het onderzoek
+heeft dan dus minder directe en indirecte kosten voor veel minder
+proefpersonen. In het algemeen is het daarom beter om indien mogelijk,
+onafhankelijke variabelen te variëren binnen proefpersonen, en niet
+tussen proefpersonen. Toch is dat niet altijd mogelijk, ten eerste omdat
+individuele kenmerken nu eenmaal alleen verschillen tussen proefpersonen
+(denk aan: mannelijk/vrouwelijk geslacht, wel/niet meertalige jeugd,
+wel/niet afasie, enz.). Ten tweede moeten we terdege rekening houden met
+effecten van ‘transfer’ tussen condities, die de validiteit bedreigen
+(denk aan: ervaring, leren, vermoeidheid, rijping). We keren hierop
+terug in §<a href="ch:validiteit.html#sec:validiteit">5.3</a>.</p>
+<p>Meertaligheid en geslacht zijn kenmerken die alleen tussen personen
+kunnen variëren. Maar andere condities kunnen ook variëren binnen
+personen, bijvoorbeeld de dag waarop een cognitieve meting wordt
+afgenomen. Stel dat we een verschil verwachten van <span class="math inline">\(D=2\)</span> punten tussen
+cognitieve metingen afgenomen op maandag of op vrijdag (met <span class="math inline">\(s=4\)</span> en
+<span class="math inline">\(d=0.5\)</span>, zie voorbeeld 3.2. Als we de dag van de meting variëren
+tussen proefpersonen, en dus aparte groepen maken voor de
+maandag-kinderen en de vrijdag-kinderen, dan zijn er <span class="math inline">\(n=(5.6/0.5)^2=126\)</span>
+kinderen nodig in iedere groep, dus <span class="math inline">\(N=252\)</span> kinderen in totaal. Als we
+de dag van de meting echter variëren binnen proefpersonen, en iedere
+proefpersoon dus observeren zowel op maandag als op vrijdag, dan zijn er in totaal
+slechts <span class="math inline">\(N=(2.8/0.5)^2=32\)</span> kinderen nodig. Met het
+within-subjects ontwerp hoeven we dus veel minder kinderen lastig te
+vallen met onze cognitieve meting. Wel moeten we terdege rekening houden
+met leereffecten tussen de eerste en de tweede meting, en daarvoor
+gepaste maatregelen treffen. We kunnen bijvoorbeeld niet meer dezelfde
+vragenlijsten afnemen in beide condities.</p>
+<p>De efficiëntie van een onderzoek hangt ook af van de afhankelijke
+variabele, en met name van het meetniveau
+(Hoofdstuk <a href="ch:Meetniveau.html#ch:Meetniveau">4</a>), de nauwkeurigheid, en de betrouwbaarheid
+van de observaties
+(Hoofdstuk <a href="ch:betrouwbaarheid.html#ch:betrouwbaarheid">12</a>). Hoe lager het meetniveau, des te lager
+ook de efficiëntie van het onderzoek. En hoe lager de nauwkeurigheid,
+des te lager ook de efficiëntie van het onderzoek, en des te meer
+proefpersonen en observaties zijn er nodig om valide conclusies te
+kunnen trekken.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 3.3</em>:
+Stel dat we een verschil willen onderzoeken tussen twee condities binnen
+proefpersonen, en stel dat het verschil in werkelijkheid 2 punten
+bedraagt (met <span class="math inline">\(s_D=4\)</span> en <span class="math inline">\(d=0.5\)</span>, zie
+voorbeeld 3.2). We kijken nu echter niet naar de richting en
+de grootte van het verschil, maar alleen naar de <em>richting</em> van het
+verschil tussen de twee observaties per proefpersoon: heeft die
+proefpersoon een positief of een negatief verschil tussen de eerste en
+de tweede conditie? Deze binomiale afhankelijke variabele bevat minder
+informatie dan de oorspronkelijke puntenscore (nl. alleen de richting,
+en niet de grootte van het verschil), en het onderzoek is daardoor dus
+minder efficiënt. We hebben daarom in dit specifieke voorbeeld niet 34
+maar tenminste 59 proefpersonen nodig.</p>
+</blockquote>
+<hr />
+<p>Onderzoekers zijn dus verantwoordelijk om de kosten en baten van hun
+onderzoek zorgvuldig en eerlijk af te wegen en te beoordelen, en zij
+dienen te beschikken over voldoende methodologische bagage om een goed
+onderzoeksontwerp (design) te kiezen gezien het tijdsbestek, de mogelijk
+beschikbare proefpersonen, de meetinstrumenten, enz.</p>
+</div>
+<div id="proefpersonen-en-informanten" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Proefpersonen en informanten</h2>
+<p>Wetenschappelijk onderzoek is mensenwerk: onderzoekers zijn ook mensen.
+Op het gebied van de geesteswetenschappen bestuderen die onderzoekers
+weer het gedrag en de geestelijke producten van (andere) mensen.
+Daarvoor gelden wetten, regels, richtlijnen en gedragscodes waaraan
+onderzoekers (en studenten!) zich dienen te houden, vanuit de eerder
+genoemde principes van zorgvuldigheid en verantwoordelijkheid. Het
+onderzoek zelf, en de verzamelde gegevens, mogen geen schade of groot
+verlies van privacy opleveren voor de deelnemers.</p>
+<p>Voor geesteswetenschappelijk onderzoek zijn twee wetten relevant:</p>
+<ul>
+<li><p>Algemene Verordening Gegevensbescherming (AVG),<br />
+zie
+<a href="https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/avg-europese-privacywetgeving" class="uri">https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/avg-europese-privacywetgeving</a></p></li>
+<li><p>Wet Medisch-wetenschappelijk Onderzoek met mensen (WMO),<br />
+zie <a href="http://www.wetten.nl" class="uri">http://www.wetten.nl</a></p></li>
+</ul>
+<p>Het is verplicht om proefpersonen (of hun wettelijke vertegenwoordigers)
+te vragen om expliciete “informed consent.” Dat houdt in dat de
+proefpersonen eerlijk geïnformeerd worden over het onderzoek, over de
+baten en kosten daarvan, en over hun beloning, en dat zij daarna (d.i.
+“informed”) expliciet toestemmen in hun deelname (“consent”).
+Voorbeelden van informed consent (informatiebrieven en
+toestemmingsverklaringen) zijn te vinden op de website van de Facultaire
+Ethische Toetsingscommissie (FETC, hieronder nader besproken), via
+<a href="https://fetc-gw.wp.hum.uu.nl/" class="uri">https://fetc-gw.wp.hum.uu.nl/</a>.</p>
+<p>Alle gegevens waaruit een individuele persoon te herleiden is, worden
+beschouwd als “persoonsgegevens,” en deze persoonsgegevens mogen alleen
+worden verzameld en verwerkt conform de AVG. Het is raadzaam om de
+onderzoeksgegevens zo snel mogelijk los te koppelen van de
+persoonsgegevens, d.w.z. dat je de gegevens anonimiseert. De koppeling
+tussen persoonsgegevens en en onderzoeksgegevens (bijv. een lijst met
+namen van proefpersonen en hun bijbehorende anonieme persoonlijke code)
+is zelf weer vertrouwelijke informatie die je zorgvuldig moet bewaren en
+opslaan. Bewaar de persoonsgegevens niet langer dan nodig. De
+onderzoeksgegevens mag je alleen gebruiken voor het (wetenschappelijke)
+doel waarmee ze zijn verzameld. Zorg ook dat de proefpersonen niet
+herkenbaar zijn (gebruik anonieme codes) in verslagen en publicaties
+over het onderzoek.</p>
+<p>Foto’s en opnames van personen (audio, video, fysiologische gegevens,
+EEG) vallen onder het zgn. portretrecht. Foto’s en andere
+identificerende opnames worden dus als portretten beschouwd. Bij
+publicatie kan de afgebeelde/weergegeven persoon zich beroepen op het
+portretrecht, en een schadevergoeding eisen voor het letsel dat hem of
+haar door die publicatie wordt aangedaan. Als je een herkenbare opname
+zou willen publiceren, dan moet je dus vooraf expliciete toestemming
+daarvoor vragen van de opgenomen persoon of zijn wettelijke
+vertegenwoordiger (zie het bovengenoemde voorbeeld van “informed
+consent”). Dat geldt ook als je een fragment van zo’n opname laat zien
+of horen tijdens een conferentie of op een website.</p>
+<p>In de wet WMO is vastgelegd dat onderzoek met mensen eerst moet worden
+goedgekeurd door een speciale commissie; voor de Faculteit
+Geesteswetenschappen van de Universiteit Utrecht is dat de
+Medisch-Ethische Toetsingscommissie die valt onder het Universitair
+Medisch Centrum Utrecht (METC). Die commissie weegt af of de mogelijke
+baten van het onderzoek redelijkerwijs opwegen tegen de kosten en
+mogelijke schade voor de proefpersonen.</p>
+<p>Het meeste onderzoek op het gebied van talen en communicatie bij de
+Universiteit Utrecht is vrijgesteld van de tijdrovende toetsing door de
+METC, maar moet wel verplicht worden voorgelegd aan de <strong>Facultaire
+Ethische Toetsingscommissie</strong> (FETC), en wel aan de kamer Linguïstiek
+daarvan. Dat geldt echter niet voor onderzoek door studenten! Op de website
+van de FETC is meer informatie te vinden:
+<a href="https://fetc-gw.wp.hum.uu.nl/" class="uri">https://fetc-gw.wp.hum.uu.nl/</a>. Overleg bij twijfel altijd met je begeleider of docent.
+Ethische toetsing is ook verplicht voor
+studenten en onderzoekers uit andere domeinen (literatuur, geschiedenis,
+media &amp; cultuur) die van plan zijn onderzoek te verrichten met mensen.</p>
+</div>
+<div id="gegevens" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Gegevens</h2>
+<p>De verzamelde data of gegevens vormen de onderbouwing voor de conclusies
+uit wetenschappelijk onderzoek. Die gegevens zijn daarmee van essentieel
+belang: zonder gegevens geen valide conclusies. Zoals we hierboven zagen
+(§<a href="ch:integriteit.html#sec:ontwerp">3.2</a>)
+zijn die gegevens bovendien zeer kostbaar (in tijd, geld, privacy, enz).
+We moeten er dus uiterst zorgvuldig mee omgaan. We moeten anderen kunnen
+overtuigen van de validiteit van onze conclusies op basis van die
+gegevens, en we moeten de onderliggende gegevens desgevraagd kunnen
+delen met andere onderzoekers.</p>
+<p>Die zorgvuldigheid vereist dus in ieder geval dat we zo snel mogelijk
+voldoende reservekopieën maken, en die bewaren op verschillende veilige
+plaatsen. Bedenk eens wat er zou gebeuren als een brand of overstroming
+je werkplek of woning zou vernietigen, of als tijdens je scriptie-project je laptop wordt gestolen (waar gebeurd!). Heb je dan goede en
+recente kopieën van de gegevens elders opgeslagen? Voor kopieën en
+‘backups’ kun je goed gebruik maken van een afdoende beveiligde “cloud
+service”<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
+<p>De zorgvuldigheid vereist ook dat we goed bijhouden wat de gegevens
+voorstellen, en hoe ze zijn verzameld. Gegevens zonder bijbehorende
+beschrijving zijn nagenoeg waardeloos voor wetenschappelijk onderzoek.
+Charles Darwin noteerde nauwkeurig welke vogel op welk van de
+Galapagos-eilanden welke vorm van snavel had, en deze observaties
+vormden later (deel van) de onderbouwing van zijn evolutie-theorie. Houd
+dus een logboek bij (op papier of digitaal) waarin je alle stappen van
+je onderzoek beschrijft, en eventueel motiveert. Noteer ook merk en type
+en instellingen van de gebruikte apparatuur, en noteer versie-nummer en
+instellingen van de gebruikte software. Houd bij welke bewerkingen je op
+de gegevens hebt toegepast, en waarom, en in welk bestand welke gegevens
+zijn opgeslagen.</p>
+<p>Als je werkt met geditigaliseerde data (bv in Excel of SPSS of R), houd
+dan ook zorgvuldig bij welke variabelen in welke kolom is opgeslagen, in
+welke eenheden, en met welke codes.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 3.4</em>: Het
+bestand <a href="http://tinyurl.com/nj4pjaq" class="uri">http://tinyurl.com/nj4pjaq</a> bevat gegevens van 80 sprekers van
+het Nederlands, ten dele ontleend aan het Corpus Gesproken Nederlands
+(CGN). De eerste regel bevat de namen van de variabelen. Iedere volgende
+regel correspondeert met één spreker. De gegevens op iedere regel zijn
+gescheiden door spaties. De eerste kolom bevat de anonieme
+identificatie-code van de spreker volgens het CGN. In de vijfde kolom
+staat de regio van herkomst van de spreker gecodeerd, als één
+letterteken, met de codes <code>W</code> Randstad, <code>M</code> Midden-Nederland, <code>N</code>
+Noord-Nederland, <code>S</code> Zuid-Nederland) <span class="citation">(<a href="#ref-Quene08" role="doc-biblioref">Quené 2008</a>)</span>. Door de zorgvuldige
+annotatie zijn deze gegevens nog goed bruikbaar, ook al zijn ze ruim 20
+jaar geleden verzameld door collega-onderzoekers.</p>
+</blockquote>
+<hr />
+<p>Gegevens blijven het intellectuele eigendom van degene die ze heeft
+verzameld. Gebruik van andermans data zonder bronvermelding kan
+beschouwd worden als diefstal, of als plagiaat.</p>
+<p>Fraude met gegevens (gegevens fabriceren of verzinnen, in plaats van
+observeren) is uiteraard strijdig met meerdere principes uit de
+bovengenoemde gedragscode <span class="citation">(<a href="#ref-VSNU18" role="doc-biblioref">VSNU 2018</a>)</span>. Fraude schaadt het wederzijds
+vertrouwen waarop wetenschap is gebaseerd. Het misleidt andere
+onderzoekers die voortbouwen op de fictieve resultaten, en
+onderzoeksgeld voor die frauduleuze onderzoekslijn wordt weggezogen uit
+ander, niet frauduleus onderzoek — kortom, een wetenschappelijke
+doodzonde. Als je wilt overleggen over vragen of dilemma’s hierover,
+neem dan contact op met prof.dr. Christoph Baumgartner, vertrouwenspersoon
+wetenschappelijke integriteit van de Faculteit Geesteswetenschappen
+(<code>c.baumgartner@uu.nl</code>).</p>
+</div>
+<div id="teksten" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Teksten</h2>
+<p>Wetenschappelijk onderzoek wordt pas echt nuttig, als de resultaten
+ervan verspreid worden. Onderzoek dat niet wordt gerapporteerd, zou net
+zo goed <em>niet</em> kunnen zijn uitgevoerd, en de kosten van dat onderzoek
+zijn dan feitelijk tevergeefs geweest. Een belangrijk deel van het
+wetenschappelijk werk bestaat daarom uit verslaglegging ervan.
+Publicaties (en octrooien) vormen een zeer belangrijk deel van de
+“output” van wetenschappelijk onderzoek. Onderzoekers worden gemeten
+naar het aantal publicaties, en naar de “impact” daarvan (het aantal
+malen dat die publicaties weer geciteerd worden door anderen die erop
+voortbouwen). Mede gezien de grote belangen dienen we dus zorgvuldig om
+te gaan met teksten van anderen en van onszelf.</p>
+<p>De onderzoekers die betrokken zijn bij een onderzoek, moeten met elkaar
+overleggen wie de auteurs van het verslag of van de publicatie zullen
+zijn, en in welke volgorde. Mede-auteurs van een wetenschappelijk
+verslag moeten voldoen aan drie voorwaarden <span class="citation">(<a href="#ref-ORI12" role="doc-biblioref">Office of Research Integrity 2012, Ch.10</a>)</span>. Ten eerste
+moeten zij een substantiële wetenschappelijke bijdrage hebben geleverd
+aan één of meer fasen in het onderzoek: het oorspronkelijke idee
+bedenken, het onderzoek opzetten en ontwerpen, de gegevens verzamelen,
+en de gegevens analyseren en interpreteren. Ten tweede moeten ze hebben
+meegewerkt aan het verslag, als schrijver en/of als commentator. Ten
+derde moeten ze instemmen met de definitieve tekst van het verslag
+(meestal impliciet, soms expliciet), en tevens instemmen met hun
+mede-auteurschap daarvan. De auteurs doen er goed aan om af te spreken
+in welke volgorde hun namen vermeld worden. Meestal correspondeert die
+volgorde met het afnemend belang en de afnemende omvang van de
+respectievelijke bijdragen van de auteurs. Als de eindverantwoordelijke
+hoofd-onderzoeker tevens mede-auteur is, dan wordt deze vaak als laatste
+genoemd.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 3.5</em>:
+Student-assistent A heeft geholpen bij het verzamelen van de gegevens,
+maar deze assistent heeft geen andere bijdragen geleverd, en weet niet
+goed waar het onderzoek eigenlijk over gaat. A hoeft geen mede-auteur te
+worden van het verslag, maar de auteurs dienen de bijdrage van A wel te
+beschrijven en te erkennen in hun verslag.</p>
+</blockquote>
+<blockquote>
+<p>Student B heeft één van de delen van een onderzoeksproject uitgevoerd
+onder begeleiding van onderzoeker C. Deze begeleider C heeft het hele
+project bedacht, maar B heeft literatuur verzameld, een deelonderzoek
+opgezet en uitgevoerd, data verzameld, geanalyseerd en geïnterpreteerd,
+en daarvan verslag gedaan in een werkstuk. Student B en begeleider C
+zijn daarom beiden mede-auteurs van een publicatie over B’s deel van het
+onderzoeksproject. Zij spreken af in welke volgorde de auteurs genoemd
+worden. Omdat student B het belangrijkste was voor dit werk, en C de
+eindverantwoordelijke was, spreken zij af dat B de eerste auteur wordt
+en C de tweede en laatste.</p>
+</blockquote>
+<hr />
+<p>Onderzoekers bouwen voort op het werk van hun voorgangers (zie voorbeeld 3.1).
+Dat kan ook gelden voor hun
+redeneringen, en zelfs hun teksten, maar daarbij moeten we dan altijd
+correct verwijzen naar de juiste bron, d.w.z. naar het werk van die
+voorgangers. Anders is immers niet meer te onderscheiden wie
+verantwoordelijk is voor welke gedachte of tekstfragment. Plagiaat is
+“het overnemen van stukken, gedachten, redeneringen van anderen en deze
+laten doorgaan voor eigen werk” (<em>Van Dale</em>, 12e druk). Ook deze vorm
+van fraude is een wetenschappelijke doodzonde, waar krachtige sancties
+op kunnen volgen. De Faculteit Geesteswetenschappen van de UU zegt
+daarover het volgende:</p>
+<blockquote>
+<p>“Van plagiaat is sprake bij het in een scriptie of ander werkstuk
+gegevens of tekstgedeelten van anderen overnemen zonder
+bronvermelding. Onder plagiaat valt onder meer:</p>
+<ul>
+<li><p>het knippen en plakken van tekst van digitale bronnen zoals
+encyclopedieën en digitale tijdschriften zonder aanhalingstekens
+en verwijzing;</p></li>
+<li><p>het knippen en plakken van teksten van het internet zonder
+aanhalingstekens en verwijzing;</p></li>
+<li><p>het overnemen van gedrukt materiaal zoals boeken, tijdschriften en
+encyclopedieën zonder aanhalingstekens en verwijzing;</p></li>
+<li><p>het opnemen van een vertaling van bovengenoemde teksten zonder
+aanhalingstekens en verwijzing;</p></li>
+<li><p>het parafraseren van bovengenoemde teksten zonder (deugdelijke)
+verwijzing: parafrasen moeten als zodanig gemarkeerd zijn (door de
+tekst uitdrukkelijk te verbinden met de oorspronkelijke auteur in
+tekst of noot), zodat niet de indruk wordt gewekt dat het gaat om
+eigen gedachtegoed van de student;</p></li>
+<li><p>het overnemen van beeld-, geluids- of testmateriaal van anderen
+zonder verwijzing en zodoende laten doorgaan voor eigen werk;</p></li>
+<li><p>het zonder bronvermelding opnieuw inleveren van eerder door de
+student gemaakt eigen werk en dit laten doorgaan voor in het kader
+van de cursus vervaardigd oorspronkelijk werk, tenzij dit in de
+cursus of door de docent uitdrukkelijk is toegestaan;</p></li>
+<li><p>het overnemen van werk van andere studenten en dit laten doorgaan
+voor eigen werk. Indien dit gebeurt met toestemming van de andere
+student is de laatste medeplichtig aan plagiaat;</p></li>
+<li><p>ook wanneer in een gezamenlijk werkstuk door een van de auteurs
+plagiaat wordt gepleegd, zijn de andere auteurs medeplichtig aan
+plagiaat, indien zij hadden kunnen of moeten weten dat de ander
+plagiaat pleegde;</p></li>
+<li><p>het indienen van werkstukken die verworven zijn van een
+commerciële instelling (zoals een internetsite met uittreksels of
+papers) of die tegen betaling door iemand anders zijn geschreven.”</p></li>
+</ul>
+<p><a href="http://students.uu.nl/praktische-zaken/regelingen-en-procedures/fraude-en-plagiaat" class="uri">http://students.uu.nl/praktische-zaken/regelingen-en-procedures/fraude-en-plagiaat</a></p>
+</blockquote>
+<p>Bij plagiaat van eigen werk worden de teksten of gedachten niet
+overgenomen van anderen maar van één van de auteurs. Over dit
+zelf-plagiaat wordt verschillend gedacht; het is echter raadzaam om in
+voorkomende gevallen wel de bron te vermelden, vanuit de principes van
+zorgvuldigheid, betrouwbaarheid, controleerbaarheid, en
+verantwoordelijkheid.</p>
+<p>Een verwijzing of citatie of referentie is een verkorte bronvermelding
+in de tekst; in dit boek ben je er al vele tegengekomen. Aan het
+einde van de tekst volgt dan de volledige
+lijst van bronnen, meestal aangeduid als bronvermeldingen, geraadpleegde
+bronnen, referenties, literatuur, of bibliografie (“boekbeschrijving”).
+Een foutieve bronvermelding kan worden beschouwd als plagiaat <span class="citation">(<a href="#ref-UBVU15" role="doc-biblioref">Universiteitsbibliotheek, Vrije Universiteit Amsterdam 2015</a>)</span>
+omdat de lezer niet verwezen wordt naar de juiste bron. Onderzoekers
+dienen hun bronnen daarom op correcte wijze te vermelden. Daarvoor
+bestaan verschillende conventies, afhankelijk van het vakgebied. Meestal
+zal een docent aangeven volgens welke stijl of conventie je je bronnen
+moet vermelden. Voor de bronvermeldingen in dit boek hebben we ernaar gestreefd om aan te sluiten bij de stijl van de <span class="citation"><a href="#ref-APA10" role="doc-biblioref">American Psychological Association</a> (<a href="#ref-APA10" role="doc-biblioref">2010</a>)</span>, die
+gebruikelijk is in de sociale wetenschappen en een deel van de
+geesteswetenschappen.
+(Om technische redenen wijken de bronvermeldingen in dit boek soms toch af van de APA-stijl.)</p>
+<p>De regels voor bronvermelding zijn soms ingewikkeld. Bovendien moeten de
+auteurs zorgen dat de citaties in de tekst overeenkomen met de lijst van
+referenties. Deze taken kunnen beter worden bijgehouden door een
+zgn.”reference manager”, een programma dat referenties of
+bronvermeldingen verzamelt en op de juiste wijze invoegt in de tekst.
+Een overzicht van zulke programma’s is te vinden via
+<a href="https://en.wikipedia.org/wiki/Comparison_of_reference_management_software" class="uri">https://en.wikipedia.org/wiki/Comparison_of_reference_management_software</a>.
+Voor dit tekstboek is gebruik gemaakt van Zotero (<a href="https://www.zotero.org" class="uri">https://www.zotero.org</a>),
+gecombineerd met BibTeX (<a href="https://www.bibtex.org" class="uri">https://www.bibtex.org</a>).</p>
+
+</div>
+</div>
+<h3>Referenties</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-APA10" class="csl-entry">
+American Psychological Association. 2010. <em><span>P</span>ublication <span>M</span>anual of the <span>A</span>merican <span>P</span>sychological <span>A</span>ssociation</em>. 6th ed. Washington, D.C.: American Psychological Association.
+</div>
+<div id="ref-Gelm07" class="csl-entry">
+Gelman, Andrew, and Jennifer Hill. 2007. <em>Data Analysis Using Regression and Multilevel/Hierarchical Models</em>. Cambridge: Cambridge University Press.
+</div>
+<div id="ref-ORI12" class="csl-entry">
+Office of Research Integrity. 2012. <span>“Responsible Conduct of Research Training.”</span> <a href="http://ori.hhs.gov/education/products/wsu/rcr_training.html">http://ori.hhs.gov/education/products/wsu/rcr_training.html</a>.
+</div>
+<div id="ref-Quene08" class="csl-entry">
+Quené, Hugo. 2008. <span>“Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.”</span> <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.
+</div>
+<div id="ref-Rose08" class="csl-entry">
+Rosenthal, Robert, and Ralph L. Rosnow. 2008. <em>Essentials of Behavioral Research: Methods and Data Analysis</em>. 3e ed. Boston: McGraw Hill.
+</div>
+<div id="ref-UBVU15" class="csl-entry">
+Universiteitsbibliotheek, Vrije Universiteit Amsterdam. 2015. <span>“Webcursus Informatievaardigheden - Algemeen - Niveau b.”</span> <a href="http://webcursus.ubvu.vu.nl/cursus/default.asp?lettergr=klein&amp;cursus_id=131">http://webcursus.ubvu.vu.nl/cursus/default.asp?lettergr=klein&amp;cursus_id=131</a>.
+</div>
+<div id="ref-VSNU18" class="csl-entry">
+VSNU. 2018. <span>“Nederlandse Gedragscode Wetenschappelijke Integriteit.”</span> VSNU. <a href="https://www.vsnu.nl/wetenschappelijke_integriteit.html">https://www.vsnu.nl/wetenschappelijke_integriteit.html</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p>Een kopie van de brief is te lezen via <a href="http://digitallibrary.hsp.org/index.php/Detail/Object/Show/object_id/9285" class="uri">http://digitallibrary.hsp.org/index.php/Detail/Object/Show/object_id/9285</a>; voor achtergrond-informatie zie <a href="http://www.bbc.co.uk/worldservice/learningenglish/movingwords/shortlist/newton.shtml" class="uri">http://www.bbc.co.uk/worldservice/learningenglish/movingwords/shortlist/newton.shtml</a>.<a href="ch:integriteit.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Medewerkers en studenten van de de meeste Nederlandse onderwijsinstellingen kunnen SurfDrive gebruiken (<a href="https://www.surfdrive.nl" class="uri">https://www.surfdrive.nl</a>) om gegevens veilig en makkelijk te bewaren op een beveiligde netwerk-schijf.<a href="ch:integriteit.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch:onderzoek.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch:Meetniveau.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/h03integriteit.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["KMS-NL.pdf", "KMS-NL.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

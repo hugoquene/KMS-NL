@@ -26,11 +26,10 @@ Variantieanalyse is, net als de *t*-toets, een statistische
 generalisatietechniek, dat wil zeggen: een instrument dat gebruikt kan
 worden bij de formulering van uitspraken over de eigenschappen van
 populaties, op basis van gegevens ontleend aan steekproeven uit die
-populaties. In het geval van de *t*-toets en van ANOVA gaan die uitspraken over
-het al dan niet gelijk zijn van de gemiddelden van (twee of meer)
+populaties. In het geval van de *t*-toets en van ANOVA gaan die uitspraken over het al dan niet gelijk zijn van de gemiddelden van (twee of meer)
 populaties. In deze zin kan variantieanalyse dan ook opgevat worden als
-een uitgebreide versie van de *t*-toets: met ANOVA kunnen we gegevens analyseren
-van meer dan twee steekproeven. Bovendien is het mogelijk om de effecten
+een uitgebreide versie van de *t*-toets: met ANOVA kunnen we gegevens analyseren van meer dan twee steekproeven. 
+Bovendien is het mogelijk om de effecten
 van meerdere onafhankelijke variabelen simultaan in de analyse te
 betrekken. Dat komt van pas als we gegevens willen analyseren uit een
 factorieel ontwerp (§\@ref(sec:ontwerp-factorieel)).
@@ -42,7 +41,8 @@ onderzoeken we het spreektempo ofwel de spreeksnelheid van vier groepen
 sprekers, nl. afkomstig uit het Midden, Noorden, Zuiden en Westen van
 Nederland. De spreeksnelheid is uitgedrukt als de gemiddelde duur van
 een lettergreep, gemiddeld over een interview van ca 15 minuten met elke
-spreker [@Quene08] [@R-hqmisc]. Een kortere gemiddelde syllabeduur correspondeert
+spreker [@Quene08] [@R-hqmisc]. Een kortere gemiddelde syllabeduur
+correspondeert
 dus met een snellere spreker (vgl. de schaatssport: een kortere
 rondetijd correspondeert met een snellere schaatser). Er waren 20
 sprekers per groep, maar 1 spreker (uit het Zuiden) met een extreem hoge
@@ -54,8 +54,8 @@ De geobserveerde spreeksnelheden per spreker uit bovenstaand voorbeeld 15.1
 zijn samengevat in Tabel \@ref(tab:syldur) en
 Figuur \@ref(fig:syldur-boxplot). Hierbij is de regio van herkomst een
 onafhankelijke categoriale variabele of 'factor'. De waarden van deze
-factor worden ook aangeduid als 'nivo\'s' (Eng. 'levels'), of in veel
-onderzoeken als 'groepen' of 'condities'. Ieder nivo of iedere groep of
+factor worden ook aangeduid als 'niveaus\'s' (Eng. 'levels'), of in veel
+onderzoeken als 'groepen' of 'condities'. Ieder niveau of iedere groep of
 conditie vormt een 'cel' van het ontwerp, en de observaties uit die cel
 worden ook 'replicaties' genoemd (bedenk waarom die zo genoemd worden).
 De spreeksnelheid vormt de afhankelijke variabele. De nulhypothese luidt
@@ -89,17 +89,17 @@ plotrix::axis.break(axis=2)
 ```
 
 Om nu te onderzoeken of de vier populaties verschillen in hun gemiddelde
-spreeksnelheid, zouden we in eerste instantie en kunnen uitvoeren voor
-alle paren van nivo's. (Met 4 nivo's zou dat 6 toetsen vereisen, zie
+spreeksnelheid, zouden we in eerste instantie $t$-toetsen kunnen uitvoeren voor
+alle paren van niveaus. (Met 4 niveaus zou dat 6 toetsen vereisen, zie
 vergelijking \@ref(eq:choose) met $n=4$ en $x=2$). Er kleven echter
 verschillende bezwaren aan deze aanpak. Eén daarvan bespreken we hier.
-Bij iedere gebruiken we een overschrijdingskans van $\alpha=.05$. We
+Bij iedere $t$-toets gebruiken we een overschrijdingskans van $\alpha=.05$. We
 hebben dus een kans van .95 op een juiste beslissing zonder Type-I-fout.
 De kans dat we bij alle 6 toetsen een juiste beslissing nemen is
-$.95^6 = .731$ (volgens de productregel,
+$.95^6 = .73$ (volgens de productregel,
 vergelijking \@ref(eq:kans-productregel)). De gezamenlijke kans op één of meer
 Type-I-fout(en) in de 6 toetsen is dus niet meer $.05$, maar is nu
-opgelopen tot $1-.731 = .265$, ruim een kwart!
+opgelopen tot $1-.73 = .27$, ruim een kwart!
 
 Variantieanalyse nu biedt de mogelijkheid om op grond van één enkele
 toetsing (dus niet 6 toetsen) de houdbaarheid te onderzoeken van de
@@ -122,7 +122,7 @@ vier populaties niet alleen in spreeksnelheid systematisch van elkaar
 verschillen, maar ook in andere relevante factoren, die niet in het
 onderzoek opgenomen zijn, zoals gezondheid, welvaart, of onderwijs. Die
 andere factoren zouden we alleen kunnen uitsluiten als we proefpersonen
-aselect zouden toewijzen aan de gekozen nivo's van de onafhankelijke
+aselect zouden toewijzen aan de gekozen niveaus van de onafhankelijke
 variabele. Dat is echter niet mogelijk als het gaat om de regio van
 herkomst van de spreker: we kunnen een spreker meestal wel (aselect)
 toewijzen aan een behandelvorm of conditie, maar niet aan een regio van
@@ -145,7 +145,7 @@ Table: (#tab:syldur2way) Gemiddelde spreeksnelheden, met standaarddeviatie en aa
   ---------- -------- ------------ ------- ----
   vrouw      Midden      0.271      0.021   10
   vrouw      Noord       0.285      0.025   10
-  vrouw      Zuid        0.269      0.028   9
+  vrouw      Zuid        0.269      0.028    9
   vrouw      West        0.238      0.028   10
   man        Midden      0.235      0.022   10
   man        Noord       0.253      0.025   10
@@ -156,7 +156,7 @@ De resultaten in Tabel \@ref(tab:syldur2way) suggereren dat (i) sprekers uit he
 sneller spreken dan de anderen, en dat (ii) mannen sneller spreken dan
 vrouwen (!). En (iii) het verschil tussen mannen en vrouwen lijkt
 kleiner voor sprekers uit het Westen dan voor sprekers uit andere
-regionen.
+regionen. Uiteraard zouden we deze effecten moeten toetsen om de bovenstaande uitspraken te onderbouwen (zie daarvoor §\@ref(sec:tweeweg-anova) hieronder).
 
 ### aannames
 
@@ -306,7 +306,7 @@ $$\textrm{H0}: F = \frac{\textrm{variantie tussen groepen}}{\textrm{variantie bi
 De $F$-ratio is dus een toetsingsgrootheid, waarvan de kansverdeling
 bekend is indien H0 waar is. In het voorbeeld van
 Figuur \@ref(fig:kleurtjes-obs) vinden we $F=3.22$, met 3 groepen en 45
-observaties, $p=.0004$. We vinden hier dus een relatief grote
+observaties, $p<.001$. We vinden hier dus een relatief grote
 systematische variantie *tussen* groepen, ten opzichte van de relatief
 kleine toevallige variantie *binnen* groepen: de eerstgenoemde variantie
 (teller van verhouding $F$) is meer dan $3\times$ zo groot als de
@@ -425,14 +425,14 @@ Table: (#tab:kleurtjes-anova) Samenvatting van variantieanalyse van de observati
 
   variantiebron     df   SS      MS      $F$     $p$
   --------------- ---- ------- ------- ------- --------
-  groep              2  14.50   7.248   9.356   0.0004
+  groep              2  14.50   7.248    9.36   <.001
   (within)          42  32.54   0.775          
 
 ---
 
 > *Voorbeeld 15.2*: 
 De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep 
-[$F(2,42) = 9.35, p = .0004, \omega^2 = 0.28$].
+[$F(2,42) = 9.35, p<.001, \omega^2 = 0.28$].
 
 ---
 
@@ -529,7 +529,7 @@ voorbeeld:
 > *Voorbeeld 15.3*:
 De gemiddelde score van de rode
 groep is significant lager dan van de beide andere groepen gecombineerd
-[$F(1,42)=18.47, p=.0001, \omega^2=0.28$]. De gemiddelde score is
+[$F(1,42)=18.47, p<.001, \omega^2=0.28$]. De gemiddelde score is
 nagenoeg gelijk voor de grijze en blauwe groep
 [$F(1,42)<1, \textrm{n.s.}, \omega^2=0.00$]. 
 Dit impliceert dat de
@@ -542,10 +542,10 @@ Table: (#tab:kleurtjes-anova-contrast) Samenvatting van variantieanalyse van de 
 
   variantiebron           df   SS       MS      $F$      $p$
   --------------------- ---- ------- -------- -------- --------
-  groep                    2  14.50   7.248    9.356    0.0004
-    groep, contrast 1      1  14.31   14.308   18.470   0.0001
-    groep, contrast 2      1  0.19    0.188    0.243    0.6248
-  (within)                42  32.54   0.775            
+  groep                    2  14.50    7.248    9.36    <.001
+    groep, contrast 1      1  14.31   14.308   18.47    <.001
+    groep, contrast 2      1   0.19    0.188    0.24     .625
+  (within)                42  32.54    0.775            
 
 De variantie-analyse met gerichte vergelijkingen is dus vooral bruikbaar
 als je, voordat de observaties zijn gedaan, al gerichte hypotheses hebt
@@ -611,8 +611,8 @@ en/of in een $p$-waarde van het verschil tussen twee condities.
 
 > *Voorbeeld 15.4*:
 De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep 
-[$F(2,42) = 9.35, p = .0004, \omega^2 = 0.28$].
-Post-hoc vergelijkingen met Tukey's HSD-toets laten zien dat de grijze en blauwe groep niet van elkaar verschillen ($p=.875$), maar dat er wel significante verschillen zijn tussen de rode en de blauwe groep ($p<.001$) en tussen de rode en de grijze groep ($p=.003$).
+[$F(2,42) = 9.35, p <.001, \omega^2 = 0.28$].
+Post-hoc vergelijkingen met Tukey's HSD-toets laten zien dat de grijze en blauwe groep niet van elkaar verschillen ($p=.88$), maar dat er wel significante verschillen zijn tussen de rode en de blauwe groep ($p<.001$) en tussen de rode en de grijze groep ($p=.003$).
 
 ---
 
@@ -851,7 +851,7 @@ summary.aov( m02, split=list(kleur=list(1,2)) )
 
 Als we gerichte vergelijkingen hebben (planned contrasts) dan is de eerder geconstrueerde functie `omegasq` niet bruikbaar (en evenmin de eerder gegeven formule). We moeten de $\omega^2$ nu met de hand uitrekenen met gebruik van de uitvoer van de samenvatting van model `m02`: 
 ```{r}
-(14.308-1*0.775)/(0.775+14.308+0.19+32.54) # 0.2830402
+(14.308-1*0.775)/(0.775+14.308+0.19+32.54) # 0.28
 (0.188-1*0.775)/(0.775+14.308+0.19+32.54) # afgerond 0.00
 ```
 
@@ -871,7 +871,7 @@ Wederom zien we dat rood verschilt van grijs, dat rood verschilt van
 blauw, en dat de scores van de grijze en blauwe groepen niet
 verschillen.
 
-## Tweeweg-variantieanalyse
+## Tweeweg-variantieanalyse {#sec:tweeweg-anova}
 
 In §\@ref(sec:anova-voorbeelden) hebben we al een voorbeeld gegeven
 van een onderzoek met twee factoren die in één variantieanalyse
@@ -884,30 +884,46 @@ factor niet hetzelfde zijn voor de condities van de andere factor, of
 anders gezegd, dat de gemiddelde score van een cel afwijkt van de
 voorspelde waarde op grond van de twee hoofdeffecten.
 
+
 ### Een intuïtieve uitleg {#een-intuïtieve-uitleg}
 
 In veel studies zijn we geïnteresseerd in de *gecombineerde* effecten
-van twee of meer factoren. In
-Tabel \@ref(tab:syldur2way) zagen we al gemiddelde spreeksnelheden,
-uitgesplitst naar regio van herkomst èn naar geslacht van de spreker.
-Als de verschillen tussen de regio's anders zijn voor mannen dan voor
-vrouwen, of andersom gezegd als de verschillen tussen mannen en vrouwen
-anders zijn voor de verschillende regio's, dan spreken we van interactie
-of wisselwerking. Door een tweede factor toe te voegen in het onderzoek,
-krijgen we dus ook te maken met een derde effect, nl. de interactie
-tussen de eerste en tweede factor[^fn15-2].
+van twee of meer factoren, zoals in het onderstaande voorbeeld dat we gebruiken voor onze uitleg. 
 
-Als er een significante interactie aanwezig is, dan kunnen we niet meer
+---
+
+> *Voorbeeld 15.5*:
+> Scholieren en studenten moeten veel studieteksten lezen én begrijpen (zoals deze!). Vermoedelijk is een studietekst beter te begrijpen, als die voorzien is van markeringen van de tekststructuur: tussenkopjes, signaalwoorden (bijv. *echter*, *omdat*), en dergelijke. @DBE12 onderzochten of studieteksten mét dergelijke structuurmarkeringen beter te begrijpen zijn dan alternatieve versies van dezelfde teksten, maar dan zonder structuurmarkeringen. De eerste factor is dus de aanwezigheid danwel afwezigheid van structuurmarkeringen in de te bestuderen teksten. 
+
+> Ook verwachten de onderzoekers een effect van de leesvaardigheid van de proefpersonen. Zwakke lezers zullen een tekst minder goed begrijpen dan sterke lezers. De tweede factor is dus het "lezerstype", hier verdeeld in de drie categorieën 'zwak', 'gemiddeld', of 'sterk'. 
+
+> Bovendien verwachten de onderzoekers dat zwakke lezers de structuurmarkeringen meer nodig hebben, en dus meer baat erbij hebben, dan sterke lezers; "sterke lezers zijn in staat studieteksten met begrip te lezen, ongeacht de aanwezigheid van structuurmarkeringen" [@DBE12, p.33]. 
+De onderzoekers verwachten dus een **interactie** of wisselwerking tussen de factoren: de verschillen tussen de tekstversies zijn anders voor de verschillende lezerstypen, of anders gezegd, de verschillen tussen de lezerstypen zijn anders voor de verschillende tekstversies. 
+
+> De resultaten in Figuur 15.3 tonen de drie onderzochte effecten in de begripsscore, voor een van de onderzochte teksten. Ten eerste zijn de begripsscores beter (hoger) voor de versie met structuurmarkeringen (licht) dan voor de versie zonder markeringen (donker). Ten tweede worden de verschillen tussen de lezerstypen bevestigd: zwakke lezers behalen over het algemeen lagere begripsscores dan gemiddelde lezers, en sterke lezers behalen over het algemeen hogere begripsscores. 
+
+> Maar het meest opvallende effect is de interactie: het effect van tekstmarkeringen is veel groter bij zwakke lezers dan bij sterke lezers, conform de voorspelling. Of anders gezegd, de verschillen tussen zwakke, gemiddelde en sterke lezers zijn groot in de tekstversie zonder structuurmarkeringen, maar klein of nihil in de tekstversie met structuurmarkeringen.
+
+```{r DBE12interaction, echo=FALSE, fig.cap="Gemiddelde begripsscores (met 95%-betrouwbaarheidsintervallen), voor twee tekstversies en drie groepen lezers (naar Van Dooren, Van den Bergh en Evers-Vermeul, 2012).", fig.align="center"}
+knitr::include_graphics("figures/DBE12interaction.png")
+```
+
+---
+
+Als er een significante interactie aanwezig is, zoals in het bovenstaande voorbeeld, dan kunnen we niet meer
 algemene uitspraken doen over de betrokken hoofdeffecten. Immers, de
 werking van een hoofdeffect hangt dan tevens af van de wisselwerking met
-(een) ander(e) hoofdeffect(en), zoals te zien in
+(een) ander(e) hoofdeffect(en) [^fn15-2]. In het bovenstaande voorbeeld: het verschil tussen de tekstversies (factor A) is groot voor zwakke lezers, maar nihil voor sterke lezers. Het verschil tussen de lezerstypen (factor B) is groot bij een tekst zonder markeringen, maar veel kleiner bij een tekst met structuurmarkeringen. 
+
+Een ander interactie-patroon zagen we al eerder, in
 Figuur \@ref(fig:drakebenelheni2003fig2) (§\@ref(sec:ontwerp-factorieel)). 
 De scores zijn *gemiddeld*
 niet hoger voor de ene groep luisteraars dan voor de andere groep, en de
 scores zijn ook niet *gemiddeld* hoger in de ene conditie dan in de
-andere. De hoofdeffecten zijn dus niet significant, maar hun interactie
-is daarentegen wel significant. Het effect van de ene factor is precies
-tegengesteld in de verschillende niveau's van de andere factor.
+andere. De twee hoofdeffecten zijn dus niet significant, maar hun interactie
+is daarentegen wel significant. In dat onderzoek is het effect van de 
+ene factor precies tegengesteld in de twee verschillende niveaus 
+van de andere factor.
 
 ### Een formele uitleg {#een-formele-uitleg}
 
@@ -922,10 +938,16 @@ $e_{ijk}$ voor de $i$'de replicatie binnen de $jk$'de cel. In formule:
 $$x_{ijk} = \mu + \alpha_{j} + \beta_{k} + (\alpha\beta)_{jk} + e_{ijk}$$
 
 Bij de éénweg-variantieanalyse wordt de totale 'sums of squares'
-opgesplitst in twee componenten, nl. tussen en binnen condities (zie
+opgesplitst in twee componenten, nl. één tussen en één binnen condities (zie
 vergelijking \@ref(eq:SStotal)). 
 Bij de tweeweg-variantieanalyse zijn er nu
-echter *vier* componenten: 
+echter *vier* componenten, nl. drie tussen condities en één binnen condities (*w*ithin):
+
+\begin{equation}
+  (\#eq:SStotal2way-short)
+    { SS_t } = SS_A + SS_B + SS_{AB} + SS_{within} 
+\end{equation}
+
 \begin{align}
   (\#eq:SStotal2way)
     { \sum (x_{ijk} - \overline{x})^2 } = &  { \sum_j n_j (\bar{x}_j - \bar{x})^2 } + \\ 
@@ -936,91 +958,81 @@ echter *vier* componenten:
 
 Ook de vrijheidsgraden van deze kwadratensommen tellen weer bij elkaar
 op: 
-\begin{align}
+
+\begin{equation}
+  (\#eq:dftotal2-short)
+    { \textrm{df}_t } = \textrm{df}_A + \textrm{df}_B + \textrm{df}_{AB} + \textrm{df}_{within}
+\end{equation}
+
+\begin{equation}
   (\#eq:dftotal2)
-    { (N-1) } &= (A-1) &+ (B-1) &+ (A-1)(B-1) &+ (N-AB) \\
-    \textrm{df}_t &= \textrm{df}_A &+ \textrm{df}_B &+ \textrm{df}_{AB} &+ \textrm{df}_w
-\end{align}
+    { (N-1) } = (A-1) + (B-1) + (A-1)(B-1) + (N-AB)
+\end{equation}
 
 Net als bij de eenweg-variantieanalyse berekenen we weer de 'mean
 squares' door de kwadratensommen te delen door hun vrijheidsgraden.
 
 We toetsen nu *drie* nulhypotheses, nl voor de twee hoofdeffecten en
-voor hun interacties. Voor elke toets bepalen we de betreffende
+voor hun interactie. Voor elke toets bepalen we de betreffende
 $F$-ratio. De teller wordt gevormd door de geobserveerde variantie,
-zoals hierboven geformuleerd; de noemer wordt gevormd door $s^2_w$, de
+zoals hierboven geformuleerd; de noemer wordt gevormd door $s^2_{within}$, de
 toevallige variantie tussen de replicaties *binnen* de cellen. Alle
 noodzakelijke berekeningen voor variantieanalyse, inclusief bepalen van
 vrijheidsgraden en overschrijdingskansen, worden tegenwoordig door de
 computer uitgevoerd.
 
 De resultaten worden weer samengevat in een ANOVA-tabel, die nu iets is
-uitgebreid in Tabel \@ref(tab:syldur2way-anova). We toetsen en rapporteren nu drie
-hypothesen. Als de interactie significant is, dan dien je die interactie
-eerst te rapporteren, en daarna pas de hoofdeffecten. De aanwezige
-interactie is dan immers van invloed op hoe we de hoofdeffecten moeten
-interpreteren. Als de interactie niet significant is, zoals in ons
-huidige voorbeeld met de spreeksnelheden uit
-Tabel \@ref(tab:syldur2way), dan is het gebruikelijk om eerst de
-hoofdeffecten te rapporteren, en daarna het niet-significante
-interactie-effect.
+uitgebreid in Tabel \@ref(tab:DBE12anova). We toetsen en rapporteren nu drie hypothesen.
 
-> De geobserveerde spreeksnelheden verschillen significant tussen de vier
-regio's van herkomst van de sprekers
-$[F(3,71)=6.09, p=.0010, \omega^2=.14]$, en mannen spreken significant
-sneller dan vrouwen $[F(1,71)=15.03, p=.0002, \omega^2=.13]$. 
-De twee factoren vertoonden geen interactie
-$[F(3,71)=1.41, \textrm{n.s.}, \omega^2=.01]$. 
-Een post-hoc-vergelijking tussen de regio's liet zien dat de sprekers uit
-het Westen significant sneller spreken dan die uit het Noorden (Tukey's
-HSD-toets, $p=.0006$) en dan die uit het Zuiden ($p=.0164$); andere
-paarsgewijze verschillen tussen regio's waren niet significant.
+Table: (#tab:DBE12anova) Samenvatting van tweewegs-variantieanalyse van de begripsscores van twee tekstversies en drie lezerstypen.
 
-Table: (#tab:syldur2way-anova) Samenvatting van tweewegs-variantieanalyse van de spreeksnelheden in Tabel \@ref(tab:syldur2way).
+  variantiebron      df    SS         MS       $F$      $p$
+  ----------------- ---- --------- ---------- -------- --------
+  (A) tekstversie     1    91.2663  91.2663    63.75    <.001
+  (B) lezerstype      2    96.0800  48.0400    33.56    <.001
+  (C) interactie      2    30.7416  15.3708    10.74    <.001
+  within             88   125.9830   1.4316  
+  
+Daarbij rapporteren we doorgaans eerst de hoofdeffecten, en daarna de interactie. 
+Voor de interpretatie is het van belang of de *interactie* wel of niet significant is. 
+Als de interactie wel significant is, dan rapporteren we eerst de hoofdeffecten zonder die te interpreteren, daarna rapporteren en interpreteren we de interactie, en tenslotte interpreteren we de eventuele significante hoofdeffecten die niet bij de interactie geïnterpreteerd zijn.
+Als de interactie niet significant is, dan kan het makkelijker zijn om eerst de hoofdeffecten te rapporteren en te interpreteren, en daarna rapporteren we de interactie (die dan niet geïnterpreteerd wordt). 
 
-  variantiebron                       df    SS         MS       $F$      $p$
-  --------------------------------- ---- --------- ---------- -------- --------
-  (i) regio                           3   0.0124    0.0041     6.09     <.001
-  (ii) geslacht                       1   0.0102    0.0102    15.03     <.001
-  (iii) regio $\times$ geslacht       3   0.0029    0.0010     1.41      .248
-  within                             71   0.0484    0.0007           
+
+### Post-hoc vergelijkingen {#sec:anova-twoway-posthoc}
+
+Ook bij tweeweg-variantieanalyse kunnen we weer post-hoc vergelijkingen uitvoeren (vgl. §@\ref(sec:anova-oneway-posthoc)) om te onderzoeken welke cellen of combinaties van condities van elkaar verschillen. We gebruiken daarvoor wederom de Tukey HSD toets. 
+
+De Tukey HSD toets resulteert in
+een 95% betrouwbaarheidsinterval van het verschil tussen twee condities,
+en/of in een $p$-waarde van het verschil tussen twee condities.
+
+
+> De begripsscores lieten een significant hoofdeffect zien van de structuurmarkeringen $[F(1,88)=63.75, p<.001, \omega^2=0.26]$, alsmede een significant hoofdeffect van het lezerstype $[F(2,88)=33.56, p<.001, \omega^2=0.27]$. 
+Ook was er een significante interactie zien tussen de tekstversie en het lezerstype $[F(2,88)=10.74, p<.001, \omega^2=0.08]$, zie Figuur \@ref(fig:DBE12interaction); deze interactie werd nader onderzocht met de Tukey HSD-toets (tussen 6 cellen). 
+Zwakke lezers presteren slechter dan gemiddelde lezers, bij de tekstversie zonder markeringen (p<.001), maar niet bij de versie met markeringen (p=.999). Sterke lezers presteren beter dan gemiddelde lezers, zowel zonder markeringen (p<.001) als met markeringen (p=.013). Tekstmarkeringen hebben wel effect bij zwakke lezers (p<.001) en bij gemiddelde lezers (p<.001) maar niet bij sterke lezers (p=.888); sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst, maar zwakke en gemiddelde lezers wel. 
 
 
 ### SPSS
 
-#### voorbereiding
+De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand `data/DBE2012.csv`.
 
-Eén spreker heeft een zeer lange gemiddelde syllabeduur; deze observatie
-zullen we verder negeren.
-```
-Data > Select cases...
-```
-Geef aan dat we alleen observaties gebruiken die aan een conditie
-voldoen, en geef aan dat die conditie luidt  `syldur < 0.4`.
-
-#### ANOVA en post-hoc toets
+#### ANOVA
 
 ```
 Analyze > General Linear Model > Univariate...
 ```
-Sleep de afhankelijke variabele (`syldur`) naar het vakje Dependent
-variable. Sleep de twee onafhankelijke variabelen (`sex`, `region`) naar het
-vakje Fixed factor(s).\
-Voor de post-hoc toetsen, kies de knop `Post Hoc...`. Selecteer factor
-`region` en kies `Tukey`. Bevestig met `Continue` en daarna nogmaals met
-`OK`.
+Sleep de afhankelijke variabele (`MCBiScore`) naar het vakje Dependent
+variable. Sleep de twee onafhankelijke variabelen (`Versie`, `Groep`) naar het
+vakje Fixed factor(s).
 
 ### JASP
 
 #### voorbereiding
 
-Eén spreker heeft een zeer lange gemiddelde syllabeduur; deze observatie
-zullen we verder negeren. We zetten hiervoor een filter aan waarbij de observatie wordt uitgesloten.\
-Ga naar het tabblad met data, en klik op het trechtersymbool (filter) in de cel linksboven. Er verschijnt dan een werkblad waar je je selectie kunt specificeren.\
-Klik 1x op de variabele `syldur` (links), die verspringt dan naar het werkblad. Klik daarna 1x op het symbool `<` (boven) en plaats de cursor achter het `<` teken op het werkblad, en typ $0.4$. Op het werkblad staat nu het selectiecriterium: `syldur < 0.4`.\
-Klik op de tekst `Apply pass-through filter` onder het werkblad om dit filter toe te passen. In het tabblad met data zie je nu direct dat de regel van de spreker met zeer lange syllabeduur (groter dan $0.4$) grijs is gemaakt. Die regel (observatie) wordt niet verder gebruikt. 
+De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand `data/DBE2012.csv`.
 
-Onderzoek of de resterende observaties normaal verdeeld zijn binnen elke groep of cel, met behulp van de technieken uit Deel II van dit tekstboek (met name
+Onderzoek of de observaties normaal verdeeld zijn binnen elke groep of cel, met behulp van de technieken uit Deel II van dit tekstboek (met name
 §\@ref(sec:isvarnormaalverdeeld)). Let op: Dit kan in JASP ook tegelijk met de variantieanalyse zelf, zie hieronder. 
 
 #### ANOVA
@@ -1028,14 +1040,14 @@ Klik in de bovenbalk op:
 ```
 ANOVA > ANOVA (onder 'Classical)
 ```
-Selecteer de variabele *syldur* en plaats deze in het veld "Dependent Variable", en plaats variabelen *region* en *sex* in het veld "Fixed Factors".\
-Zorg dat onder "Display" `Estimates of effect size` is aangevinkt, en kies hier tussen $\omega^2$ en (partial) $\eta^2$. In dit boek houden we $\omega^2$ aan. Je kunt ook `Descriptive statistics` aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.\
+Selecteer de variabele *MCBiScore* en plaats deze in het veld "Dependent Variable", en plaats variabelen *Versie* (tekstversie) en *Groep* (lezerstype) in het veld "Fixed Factors".\
+Zorg dat onder "Display" `Estimates of effect size` is aangevinkt, en kies hier tussen $\omega^2$ en/of (partial) $\eta^2$. In dit boek houden we $\omega^2$ aan. Je kunt ook `Descriptive statistics` aanvinken om beschrijvende statistiek van de scores per groep te krijgen. Dit geeft inzicht in wat je aan het testen bent.\
 Open de balk "Model" en selecteer onderin bij "Sum of squares" `Type III`.\
 Open de balk "Assumption Checks" en vink `Homogeneity tests` aan. "Homogeneity corrections" mag op `None` blijven staan. Je kunt hier ook onderzoeken of de verdeling binnen iedere groep of cel normaal is, dat is equivalent aan een normale verdeling van de *residuen* van de variantieanalyse. Dat inspecteer je door hier ook `Q-Q plot of residuals` aan te vinken; in de resulterende Q-Q-plot zouden de residuen ongeveer op een rechte lijn moeten liggen (zie §\@ref(sec:isvarnormaalverdeeld)).
 
-Open ook de balk "Descriptive Plots" en selecteer variabele *region* in het veld "Horizontal Axis" en variabele *sex* in het veld "Separate Lines". 
+Open ook de balk "Descriptive Plots" en selecteer variabele *Groep* in het veld "Horizontal Axis" en variabele *Versie* in het veld "Separate Lines". 
 
-In de uitvoer wordt de variantieanalyse samengevat in een tabel gelijkend op Tabel \@ref(tab:syldur2way-anova), waarbij ook de effectgrootte vermeld wordt in de vorm van $\omega^2$ en/of (partial) $\eta^2$. Onder *Descriptive plots* zie je een visuele weergave van wat er wordt getoetst; dit helpt om het eventuele interactie-effect beter te begrijpen. 
+In de uitvoer wordt de variantieanalyse samengevat in een tabel gelijkend op Tabel \@ref(tab:DBE12anova), waarbij ook de effectgrootte vermeld wordt in de vorm van $\omega^2$ en/of (partial) $\eta^2$. Onder *Descriptive plots* zie je een visuele weergave van wat er wordt getoetst; dit helpt om het eventuele interactie-effect beter te begrijpen. 
 
 In de uitvoer vind je onder *Assumption Checks* ook de uitslag van Levene's toets op gelijke
 varianties (homogeniteit van variantie), die geen aanleiding geeft om H0
@@ -1044,47 +1056,57 @@ te verwerpen. We mogen dus een variantieanalyse uitvoeren.
 #### post-hoc vergelijking
 
 Voor een variantieanalyse met post-hoc vergelijkingen moeten we de
-gewenste vergelijkingen aanvragen. De werkwijze is in het begin
-hetzelfde als hierboven, herhaal dus de instructies onder **ANOVA**. 
+gewenste post-hoc vergelijkingen aanvragen. De werkwijze is in het begin
+hetzelfde als hierboven.
 
-Open vervolgens de balk "Post Hoc Tests" en verplaats variabele *region* naar het veld rechts. Zorg dat onder "Type" `Standard` is aangevinkt en daaronder ook `Effect size`. Vink onder "Correction" `Tukey` aan, en onder "Display" ook `Confidence intervals`.
+Open vervolgens de balk "Post Hoc Tests" en verplaats de interactie *Versie* x *Groep* naar het veld rechts. Zorg dat onder "Type" `Standard` is aangevinkt en daaronder ook `Effect size`. Vink onder "Correction" `Tukey` aan, en onder "Display" ook `Confidence intervals`.
 
 De uitvoer geeft nu onder *Post Hoc Tests* de resultaten. 
-Voor iedere paarsgewijze vergelijking zien we het verschil, de
-standaardfout, en de ondergrens en bovengrens van het 95% betrouwbaarheidsinterval van dat verschil.
+Voor iedere paarsgewijze vergelijking tussen de 2x3 cellen zien we het verschil, de standaardfout, en de ondergrens en bovengrens van het 95% betrouwbaarheidsinterval van dat verschil.
 Als dat interval *niet* nul omvat, dan is het verschil tussen de twee
 groepen of condities dus waarschijnlijk niet gelijk aan nul. De
 gecorrigeerde overschrijdingskans volgens Tukey's HSD toets is bovendien
-gegeven in de laatste kolom. We zien dat alleen Noord en West, en Zuid en West van elkaar verschillen. 
+gegeven in de laatste kolom. 
+
+Voor de versie zonder markeringen zien we dat de cel `zonder:zwak` lager scoort dan de cel `zonder:gemiddeld` (p<.001), en dat de cel `zonder:sterk` hoger scoort dan de cel `zonder:gemiddeld` (p<.001). 
+Voor de versie met markeringen zien we dat de cel `met:zwak` ongeveer gelijk scoort met de cel `met:gemiddeld` (p=.999), en dat de cel `met:sterk` hoger scoort dan de cel `met:gemiddeld` (p=.013). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies. 
+Ook zien we dat `zonder:zwak` lager scoort dan `met:zwak` (p<.001), dat `zonder:gemiddeld` lager scoort dan `met:gemiddeld` (p<.001), terwijl er geen verschil is tussen `zonder:sterk` en `met:sterk` (p=.888). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst. 
+
 
 ### R 
 
 #### voorbereiding
 
+De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand `data/DBE2012.csv`.
+
 ```{r}
-require(hqmisc) # voor hqmisc::talkers data set
-data(talkers)
-ok <- talkers$syldur<0.4 # TRUE voor 79 van 80 talkers
+DBE2012 <- read.csv(file="data/DBE2012.csv")
+# Versie: 1=met, 2=zonder structuurmarkeringen
+# Groep: 1=zwak, 2=gemiddeld, 3=sterk
+# zorg dat Versie en Groep categorische variabelen of factoren zijn:
+DBE2012$Versie <- factor(DBE2012$Versie, labels=c("met","zonder") )
+DBE2012$Groep <- factor(DBE2012$Groep, labels=c("zwak","gemiddeld","sterk") )
+# DV: MCBiScore: aantal begripsvragen (uit 10) goed beantwoord, over BIO tekst
 # tabel van gemiddelden, zie Table 15.2 in hoofdtekst
-with(talkers, tapply( syldur[ok], list(region[ok],sex[ok]), mean ))
+with( DBE2012, tapply( MCBiScore, list(Versie,Groep), mean ))
 ```
 
 #### ANOVA
 
 ```{r}
-summary( aov(syldur~region*sex, data=talkers, subset=ok) -> m03 )
+summary( aov(MCBiScore~Versie*Groep, data=DBE2012) -> DBE2012.m1 )
 ```
 
-De uitkomsten wijken enigszins af van die in Tabel \@ref(tab:syldur2way-anova) omdat R de Sums of Squares op een iets andere wijze berekent[^fn15-3].
+De uitkomsten wijken enigszins af van die in Tabel \@ref(tab:DBE12anova) omdat R de Sums of Squares op een andere wijze berekent[^fn15-3].
 
 #### effectgrootte {#effectgrootte}
 
 We gebruiken hiervoor de eerder geprogrammeerde functie `omegasq` (§\@ref(R:omega-kwadraat)):
 
 ```{r}
-omegasq(m03, "region")      # [1] 0.1380875
-omegasq(m03, "sex")         # [1] 0.1291232
-omegasq(m03, "region:sex")  # [1] 0.01112131
+omegasq(DBE2012.m1, "Versie")        # [1] 0.33
+omegasq(DBE2012.m1, "Groep")         # [1] 0.22
+omegasq(DBE2012.m1, "Versie:Groep")  # [1] 0.08
 ```
 
 De uitkomsten wijken enigszins af van die in de tekst hierboven omdat R de Sums of Squares op een iets andere wijze berekent. 
@@ -1092,10 +1114,17 @@ De uitkomsten wijken enigszins af van die in de tekst hierboven omdat R de Sums 
 #### post-hoc toetsen
 
 ```{r}
-TukeyHSD(x=m03, which="region")
+TukeyHSD(x=DBE2012.m1, which="Versie:Groep")
 ```
 
 Ook hier wijken de uitkomsten enigszins af van die in de tekst hierboven omdat R de Sums of Squares op een iets andere wijze berekent. 
+
+Voor iedere paarsgewijze vergelijking tussen de 2x3 cellen zien we het verschil, de ondergrens en bovengrens van het 95%-betrouwbaarheidsinterval van dat verschil, en de 
+gecorrigeerde overschrijdingskans volgens Tukey's HSD toets. 
+
+Voor de versie zonder markeringen zien we dat de cel `zonder:zwak` lager scoort dan de cel `zonder:gemiddeld` (p<.001), en dat de cel `zonder:sterk` hoger scoort dan de cel `zonder:gemiddeld` (p<.001). 
+Voor de versie met markeringen zien we dat de cel `met:zwak` ongeveer gelijk scoort met de cel `met:gemiddeld` (p=.999), en dat de cel `met:sterk` hoger scoort dan de cel `met:gemiddeld` (p=.013). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies. 
+Ook zien we dat `zonder:zwak` lager scoort dan `met:zwak` (p<.001), dat `zonder:gemiddeld` lager scoort dan `met:gemiddeld` (p<.001), terwijl er geen verschil is tussen `zonder:sterk` en `met:sterk` (p=.888). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst. 
 
 
 [^fn15-1]: Als (1) rood wel verschilt van grijs en blauw, en als (2) grijs en blauw bovendien onderling niet verschillen, dan impliceert dat dat rood verschilt van grijs (een nieuwe bevinding) en dat rood verschilt van blauw (dat wisten we al).

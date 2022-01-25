@@ -95,6 +95,8 @@ Beide auteurs zijn verbonden aan de Faculteit Geesteswetenschappen van de Univer
 # automatically create a bib database for R packages
 require(lattice)
 require(nnet)
+require(MASS) # in Ch10, MASS::mvrnorm
+require(hqmisc) 
 knitr::write_bib( c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')

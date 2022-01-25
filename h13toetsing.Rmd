@@ -907,15 +907,14 @@ observaties. Maar het is daarnaast ook van groot belang om te weten hoe
 groot het geobserveerde effect eigenlijk is: de *effectgrootte* (Eng.
 'effect size', 'ES') [@Cohen88; @Thom02; @Naka07].
 
-In formules \@ref(eq:t-onesample) en \@ref(eq:t-pairedsamples) komt tot uiting 
-dat $t$ groter wordt,
+In formules \@ref(eq:t-onesample) en \@ref(eq:t-pairedsamples) komt tot uiting dat de toetsingsgrootheid $t$ groter wordt,
 naarmate het effect groter wordt, d.w.z. bij een groter verschil
 $(\overline{x}-\mu)$ of $(\overline{x_1}-\overline{x_2})$ of
 $(\overline{D}-\mu_D)$\], *en/of* naarmate de steekproef groter wordt.
 Kort gezegd [@Rose08 p.338, formule 11.10]: 
 \begin{equation}
   (\#eq:Rose08)
-    \textrm{significance test} = 
+    \textrm{significance of test} = 
     \textrm{size of effect} \times \textrm{size of study}
 \end{equation}
 

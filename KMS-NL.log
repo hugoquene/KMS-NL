@@ -1,29 +1,91 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.10.22)  23 MAR 2021 22:09
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2021.3.28)  25 JAN 2022 12:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **KMS-NL.tex
 (./KMS-NL.tex
-LaTeX2e <2020-10-01> patch level 1
-L3 programming layer <2020-10-05> xparse <2020-03-03> (/Users/Hugo/Library/Tiny
-TeX/texmf-dist/tex/latex/base/book.cls
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18> (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/l
+atex/base/book.cls
 Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
 File: bk10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count171
-\c@chapter=\count172
-\c@section=\count173
-\c@subsection=\count174
-\c@subsubsection=\count175
-\c@paragraph=\count176
-\c@subparagraph=\count177
-\c@figure=\count178
-\c@table=\count179
+\c@part=\count175
+\c@chapter=\count176
+\c@section=\count177
+\c@subsection=\count178
+\c@subsubsection=\count179
+\c@paragraph=\count180
+\c@subparagraph=\count181
+\c@figure=\count182
+\c@table=\count183
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
-) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
+) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/09/23 v2.17i AMS math features
+\@mathmargin=\skip49
+For additional information on amsmath, use the `?' option.
+(/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+(/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen139
+)) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen140
+) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count184
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count185
+\leftroot@=\count186
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count187
+\DOTSCASE@=\count188
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count189
+\c@MaxMatrixCols=\count190
+\dotsspace@=\muskip16
+\c@parentequation=\count191
+\dspbrk@lvl=\count192
+\tag@help=\toks16
+\row@=\count193
+\column@=\count194
+\maxfields@=\count195
+\andhelp@=\toks17
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
+\@envbody=\toks18
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -57,86 +119,23 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
-(/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks15
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2020/09/23 v2.17i AMS math features
-\@mathmargin=\skip49
-For additional information on amsmath, use the `?' option.
-(/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
-(/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks16
-\ex@=\dimen139
-)) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen140
-) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2016/03/08 v2.02 operator names
-)
-\inf@bad=\count180
-LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count181
-\leftroot@=\count182
-LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count183
-\DOTSCASE@=\count184
-LaTeX Info: Redefining \ldots on input line 496.
-LaTeX Info: Redefining \dots on input line 499.
-LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box47
-\strutbox@=\box48
-\big@size=\dimen141
-LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count185
-\c@MaxMatrixCols=\count186
-\dotsspace@=\muskip16
-\c@parentequation=\count187
-\dspbrk@lvl=\count188
-\tag@help=\toks17
-\row@=\count189
-\column@=\count190
-\maxfields@=\count191
-\andhelp@=\toks18
-\eqnshift@=\dimen142
-\alignsep@=\dimen143
-\tagshift@=\dimen144
-\tagwidth@=\dimen145
-\totwidth@=\dimen146
-\lineht@=\dimen147
-\@envbody=\toks19
-\multlinegap=\skip50
-\multlinetaggap=\skip51
-\mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
-) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-(/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
-)) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2020-10-05 L3 programming layer (loader) 
+Package: expl3 2021-02-18 L3 programming layer (loader) 
 
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2020-09-24 L3 backend support: XeTeX
-\g__graphics_track_int=\count192
+File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
+(|extractbb --version)
+\c__kernel_sys_dvipdfmx_version_int=\count196
+\l__color_backend_stack_int=\count197
+\g__graphics_track_int=\count198
 \l__pdf_internal_box=\box49
-\g__pdf_backend_object_int=\count193
-\g__pdf_backend_annotation_int=\count194
+\g__pdf_backend_object_int=\count199
+\g__pdf_backend_annotation_int=\count266
+\g__pdf_backend_link_int=\count267
 ))
 Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
 
@@ -145,29 +144,29 @@ ex.sty
 Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLa
 TeX
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2020-10-05 L3 Experimental document command parser
-
+(/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse-2020
+-10-01.sty
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse-gene
-ric.tex))
+ric.tex)))
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.
 sty
-Package: l3keys2e 2020-10-05 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2021-03-12 LaTeX2e option processing using LaTeX3 keys
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count195
-\l__fontspec_language_int=\count196
-\l__fontspec_strnum_int=\count197
-\l__fontspec_tmp_int=\count198
-\l__fontspec_tmpa_int=\count199
-\l__fontspec_tmpb_int=\count266
-\l__fontspec_tmpc_int=\count267
-\l__fontspec_em_int=\count268
-\l__fontspec_emdef_int=\count269
-\l__fontspec_strong_int=\count270
-\l__fontspec_strongdef_int=\count271
+\l__fontspec_script_int=\count268
+\l__fontspec_language_int=\count269
+\l__fontspec_strnum_int=\count270
+\l__fontspec_tmp_int=\count271
+\l__fontspec_tmpa_int=\count272
+\l__fontspec_tmpb_int=\count273
+\l__fontspec_tmpc_int=\count274
+\l__fontspec_em_int=\count275
+\l__fontspec_emdef_int=\count276
+\l__fontspec_strong_int=\count277
+\l__fontspec_strongdef_int=\count278
 \l__fontspec_tmpa_dim=\dimen148
 \l__fontspec_tmpb_dim=\dimen149
 \l__fontspec_tmpc_dim=\dimen150
@@ -180,9 +179,9 @@ Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 ))
-\g__um_fam_int=\count272
-\g__um_fonts_used_int=\count273
-\l__um_primecount_int=\count274
+\g__um_fam_int=\count279
+\g__um_fonts_used_int=\count280
+\l__um_primecount_int=\count281
 \g__um_primekern_muskip=\muskip17
 
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-tab
@@ -209,7 +208,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
+Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
@@ -223,7 +222,7 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks21
+\KV@toks@=\toks20
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
@@ -242,33 +241,38 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen151
-\Hy@linkcounter=\count275
-\Hy@pagecounter=\count276
+\Hy@linkcounter=\count282
+\Hy@pagecounter=\count283
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
+)
+(/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-langpatches
+.def
+File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
+nguages
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count277
-Package hyperref Info: Option `unicode' set `true' on input line 4338.
+\Hy@SavedSpaceFactor=\count284
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 )
-Package hyperref Info: Hyper figures OFF on input line 4464.
-Package hyperref Info: Link nesting OFF on input line 4469.
-Package hyperref Info: Hyper index ON on input line 4472.
-Package hyperref Info: Plain pages OFF on input line 4479.
-Package hyperref Info: Backreferencing OFF on input line 4484.
+Package hyperref Info: Option `unicode' set `true' on input line 4073.
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4717.
-\c@Hy@tempcnt=\count278
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count285
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5076.
+LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen152
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -276,39 +280,39 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count279
+\Fld@menulength=\count286
 \Field@Width=\dimen153
 \Fld@charsize=\dimen154
-Package hyperref Info: Hyper figures OFF on input line 6347.
-Package hyperref Info: Link nesting OFF on input line 6352.
-Package hyperref Info: Hyper index ON on input line 6355.
-Package hyperref Info: backreferencing OFF on input line 6362.
-Package hyperref Info: Link coloring OFF on input line 6367.
-Package hyperref Info: Link coloring with OCG OFF on input line 6372.
-Package hyperref Info: PDF/A mode OFF on input line 6377.
-LaTeX Info: Redefining \ref on input line 6417.
-LaTeX Info: Redefining \pageref on input line 6421.
+Package hyperref Info: Hyper figures OFF on input line 6075.
+Package hyperref Info: Link nesting OFF on input line 6080.
+Package hyperref Info: Hyper index ON on input line 6083.
+Package hyperref Info: backreferencing OFF on input line 6090.
+Package hyperref Info: Link coloring OFF on input line 6095.
+Package hyperref Info: Link coloring with OCG OFF on input line 6100.
+Package hyperref Info: PDF/A mode OFF on input line 6105.
+LaTeX Info: Redefining \ref on input line 6145.
+LaTeX Info: Redefining \pageref on input line 6149.
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count280
-\c@Item=\count281
-\c@Hfootnote=\count282
+\Hy@abspage=\count287
+\c@Item=\count288
+\c@Hfootnote=\count289
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
-File: hxetex.def 2020-05-15 v7.00e Hyperref driver for XeTeX
+File: hxetex.def 2021-02-27 v7.00k Hyperref driver for XeTeX
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \pdfm@box=\box50
-\c@Hy@AnnotLevel=\count283
-\HyField@AnnotCount=\count284
-\Fld@listcount=\count285
-\c@bookmark@seq@number=\count286
+\c@Hy@AnnotLevel=\count290
+\HyField@AnnotCount=\count291
+\Fld@listcount=\count292
+\c@bookmark@seq@number=\count293
 
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck
 .sty
@@ -327,12 +331,12 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip52
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count287
+Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count294
 \FV@InFile=\read2
 \FV@TabBox=\box51
-\c@FancyVerbLine=\count288
-\FV@StepNumber=\count289
+\c@FancyVerbLine=\count295
+\FV@StepNumber=\count296
 \FV@OutFile=\write3
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
@@ -347,17 +351,17 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTright=\skip55
 \LTpre=\skip56
 \LTpost=\skip57
-\LTchunksize=\count290
+\LTchunksize=\count297
 \LTcapwidth=\dimen159
 \LT@head=\box52
 \LT@firsthead=\box53
 \LT@foot=\box54
 \LT@lastfoot=\box55
-\LT@cols=\count291
-\LT@rows=\count292
-\c@LT@tables=\count293
-\c@LT@chunks=\count294
-\LT@p@ftn=\toks22
+\LT@cols=\count298
+\LT@rows=\count299
+\c@LT@tables=\count300
+\c@LT@chunks=\count301
+\LT@p@ftn=\toks21
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen160
@@ -370,20 +374,41 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen167
 \cmidrulekern=\dimen168
 \defaultaddspace=\dimen169
-\@cmidla=\count295
-\@cmidlb=\count296
+\@cmidla=\count302
+\@cmidlb=\count303
 \@aboverulesep=\dimen170
 \@belowrulesep=\dimen171
-\@thisruleclass=\count297
-\@lastruleclass=\count298
+\@thisruleclass=\count304
+\@lastruleclass=\count305
 \@thisrulewidth=\dimen172
+) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
+\col@sep=\dimen173
+\ar@mcellbox=\box56
+\extrarowheight=\dimen174
+\NC@list=\toks22
+\extratabsurround=\skip58
+\backup@length=\skip59
+\ar@cellbox=\box57
+) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count306
+\calc@Bcount=\count307
+\calc@Adimen=\dimen175
+\calc@Bdimen=\dimen176
+\calc@Askip=\skip60
+\calc@Bskip=\skip61
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count308
+\calc@Cskip=\skip62
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count299
+\etb@tempcnta=\count309
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box56
-\fn@width=\dimen173
+\fn@notes=\box58
+\fn@width=\dimen177
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
@@ -395,8 +420,8 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 105.
 )
-\Gin@req@height=\dimen174
-\Gin@req@width=\dimen175
+\Gin@req@height=\dimen178
+\Gin@req@width=\dimen179
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks23
@@ -404,16 +429,16 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headfont=\toks25
 \thm@notefont=\toks26
 \thm@headpunct=\toks27
-\thm@preskip=\skip58
-\thm@postskip=\skip59
-\thm@headsep=\skip60
+\thm@preskip=\skip63
+\thm@postskip=\skip64
+\thm@headsep=\skip65
 \dth@everypar=\toks28
 ) (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip61
-\bibsep=\skip62
+\bibhang=\skip66
+\bibsep=\skip67
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count300
+\c@NAT@ctr=\count310
 ) (./KMS-NL.aux
 
 LaTeX Warning: Label `eq:t-onesampleCI' multiply defined.
@@ -421,40 +446,40 @@ LaTeX Warning: Label `eq:t-onesampleCI' multiply defined.
 )
 \openout1 = `KMS-NL.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 124.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 128.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 124.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 128.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 124.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 128.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 124.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 128.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 124.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 128.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 124.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 128.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 124.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 128.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -483,7 +508,7 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 124.
+(Font)              scaled to size 10.0pt on input line 128.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -522,18 +547,18 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 124.
+(Font)              scaled to size 10.0pt on input line 128.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 124.
+(Font)              `operators' in the math version `normal' on input line 128.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 124.
+ line 128.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 124.
+(Font)              `operators' in the math version `bold' on input line 128.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 124.
+t line 128.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -620,15 +645,15 @@ t=math;language=dflt;"
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 124.
+(Font)              `symbols' in the math version `normal' on input line 128.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 124.
+t line 128.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 124.
+(Font)              `symbols' in the math version `bold' on input line 128.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 124.
+t line 128.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -698,19 +723,19 @@ pt=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 1
-24.
+28.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 124.
+t line 128.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 124
+(Font)              `largesymbols' in the math version `bold' on input line 128
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 124.
-Package hyperref Info: Link coloring OFF on input line 124.
+t line 128.
+Package hyperref Info: Link coloring OFF on input line 128.
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
@@ -718,44 +743,44 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ng.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count301
+\c@section@level=\count311
 )
-LaTeX Info: Redefining \ref on input line 124.
-LaTeX Info: Redefining \pageref on input line 124.
-LaTeX Info: Redefining \nameref on input line 124.
+LaTeX Info: Redefining \ref on input line 128.
+LaTeX Info: Redefining \pageref on input line 128.
+LaTeX Info: Redefining \nameref on input line 128.
 (./KMS-NL.out) (./KMS-NL.out)
 \@outlinefile=\write4
 \openout4 = `KMS-NL.out'.
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 126.
+(Font)              scaled to size 12.0pt on input line 130.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 126.
+(Font)              scaled to size 8.0pt on input line 130.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 126.
+(Font)              scaled to size 6.0pt on input line 130.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-26.
+30.
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 126.
+(Font)              scaled to size 12.0011pt on input line 130.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 126.
+(Font)              scaled to size 8.00073pt on input line 130.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 126.
+(Font)              scaled to size 6.00055pt on input line 130.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 126.
+(Font)              scaled to size 11.99872pt on input line 130.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 126.
+(Font)              scaled to size 7.99915pt on input line 130.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 126.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 126
+(Font)              scaled to size 5.99936pt on input line 130.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 130
 .
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 126
+LaTeX Font Info:    Trying to load font information for U+msb on input line 130
 .
 (/Users/Hugo/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -792,7 +817,7 @@ erdere
 \openout5 = `KMS-NL.toc'.
 
 [8]
-Underfull \hbox (badness 1052) in paragraph at lines 147--159
+Underfull \hbox (badness 1052) in paragraph at lines 151--163
 \TU/lmr/m/n/10 Quené, Kirsten Schutter, Marijn Struiksma, en Joanna Wall, voor 
 hun
  []
@@ -800,7 +825,7 @@ hun
 [9
 
 ] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
@@ -811,7 +836,7 @@ Chapter 1.
 [15
 
 ] [16] [17] [18] [19]
-Underfull \hbox (badness 1622) in paragraph at lines 463--474
+Underfull \hbox (badness 1622) in paragraph at lines 467--478
 \TU/lmr/m/n/10 gegevens (klankvormen, toonhoogteverloop) beschreven zijn. Vaak 
 zijn
  []
@@ -821,66 +846,66 @@ Chapter 2.
 [25
 
 ] [26] [27] [28] [29] [30]
-Underfull \hbox (badness 1163) in paragraph at lines 1000--1007
+Underfull \hbox (badness 1163) in paragraph at lines 1004--1011
 \TU/lmr/m/n/10 geopperd waarvan de onderzoeker vermoedt dat die algemeen geldig
  is.
  []
 
 [31] [32] [33] [34]
-Overfull \hbox (33.83005pt too wide) in alignment at lines 1196--1201
+Overfull \hbox (33.83005pt too wide) in alignment at lines 1200--1205
  [] [] [] 
  []
 
 
-Overfull \hbox (33.83005pt too wide) in alignment at lines 1201--1205
+Overfull \hbox (33.83005pt too wide) in alignment at lines 1205--1209
  [] [] [] 
  []
 
 
-Overfull \hbox (33.83005pt too wide) in alignment at lines 1205--1216
+Overfull \hbox (33.83005pt too wide) in alignment at lines 1209--1220
  [] [] [] 
  []
 
 [35] [36] [37] [38] [39] [40]
 Chapter 3.
 
-Underfull \hbox (badness 3281) in paragraph at lines 1421--1428
+Underfull \hbox (badness 3281) in paragraph at lines 1425--1432
 \TU/lmr/m/n/10 Wetenschappelijk onderzoek heeft de mensheid onmetelijk grote ba
 ten
  []
 
 
-Underfull \hbox (badness 3375) in paragraph at lines 1435--1435
+Underfull \hbox (badness 3375) in paragraph at lines 1439--1439
 [][][]\TU/lmr/m/n/8 Een kopie van de brief is te lezen via []$[][][][] [] [] []
  [][][][][][][][][][][][][][] [] [][][] [] [][][] [] [][][][][] [] [][][] []
  []
 
 
-Underfull \hbox (badness 3826) in paragraph at lines 1446--1454
+Underfull \hbox (badness 3826) in paragraph at lines 1450--1458
 []\TU/lmr/m/n/10 In dit hoofdstuk bespreken we de ethische en morele aspecten v
 an
  []
 
 
-Underfull \hbox (badness 1057) in paragraph at lines 1446--1454
+Underfull \hbox (badness 1057) in paragraph at lines 1450--1458
 \TU/lmr/m/n/10 wetenschappelijk onderzoek. Wetenschap is mensenwerk, en het ver
 eist
  []
 
 
-Underfull \hbox (badness 3000) in paragraph at lines 1446--1454
+Underfull \hbox (badness 3000) in paragraph at lines 1450--1458
 \TU/lmr/m/n/10 een goed ontwikkeld beoordelingsvermogen van de onderzoekers. De
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1446--1454
+Underfull \hbox (badness 10000) in paragraph at lines 1450--1458
 \TU/lmr/m/it/10 Nederlandse Gedragscode Wetenschappelijke Integriteit \TU/lmr/m
 /n/10 ([]VSNU[], []2018[])
  []
 
 
-Underfull \hbox (badness 7273) in paragraph at lines 1446--1454
+Underfull \hbox (badness 7273) in paragraph at lines 1450--1458
 \TU/lmr/m/n/10 ([]$[][][][] [] [] [] [][][] [] [][][][] [] [][] [] [][][][][][]
 [][][][][][][][][][][] [] [][][][][][][][][][][]$[]) beschrijft hoe weten-
  []
@@ -888,59 +913,59 @@ Underfull \hbox (badness 7273) in paragraph at lines 1446--1454
 [41
 
 ] [42] [43] [44] [45]
-Underfull \hbox (badness 2173) in paragraph at lines 1669--1680
+Underfull \hbox (badness 2173) in paragraph at lines 1673--1684
 []\TU/lmr/m/n/10 Foto’s en opnames van personen (audio, video, fysiologische ge
 gevens,
  []
 
 
-Underfull \hbox (badness 1184) in paragraph at lines 1669--1680
+Underfull \hbox (badness 1184) in paragraph at lines 1673--1684
 \TU/lmr/m/n/10 opnames worden dus als portretten beschouwd. Bij publicatie kan 
 de
  []
 
 [46]
-Underfull \hbox (badness 1297) in paragraph at lines 1721--1733
+Underfull \hbox (badness 1297) in paragraph at lines 1725--1737
 []\TU/lmr/m/n/10 De zorgvuldigheid vereist ook dat we goed bijhouden wat de geg
 evens
  []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 1741--1753
+Underfull \hbox (badness 1776) in paragraph at lines 1745--1757
 []\TU/lmr/m/it/10 Voorbeeld 3.4\TU/lmr/m/n/10 : Het bestand []$[][][][] [] [] [
 ] [][][][][][][] [] [][][] [] [][][][][][][]$[] bevat
  []
 
 [47] [48]
-Underfull \hbox (badness 2393) in paragraph at lines 1858--1861
+Underfull \hbox (badness 2393) in paragraph at lines 1862--1865
 []\TU/lmr/m/n/10 het overnemen van gedrukt materiaal zoals boeken, ti-
  []
 
 
-Underfull \hbox (badness 2119) in paragraph at lines 1858--1861
+Underfull \hbox (badness 2119) in paragraph at lines 1862--1865
 \TU/lmr/m/n/10 jdschriften en encyclopedieën zonder aanhalingstekens en
  []
 
 [49]
-Underfull \hbox (badness 1527) in paragraph at lines 1882--1887
+Underfull \hbox (badness 1527) in paragraph at lines 1886--1891
 \TU/lmr/m/n/10 auteurs plagiaat wordt gepleegd, zijn de andere auteurs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1892--1893
+Underfull \hbox (badness 10000) in paragraph at lines 1896--1897
 [][]$[][][][] [] [] [] [][][][][][][][] [] [][] [] [][] [] [][][][][][][][][][]
  [][] [][][][][] [] [][][][][][][][][][] [][] [][] [][] [][][][][][][][][][] []
 
  []
 
 
-Underfull \hbox (badness 2837) in paragraph at lines 1917--1926
+Underfull \hbox (badness 2837) in paragraph at lines 1921--1930
 \TU/lmr/m/n/10 van zulke programma’s is te vinden via []$[][][][][] [] [] [] []
 [] [] [][][][][][][][][] [] [][][] [] [][][][] []
  []
 
 
-Underfull \hbox (badness 1496) in paragraph at lines 1917--1926
+Underfull \hbox (badness 1496) in paragraph at lines 1921--1930
 [][][][][][][][][][] [] [][] [] [][][][][][][][][] [] [][][][][][][][][][] [] [
 ][][][][][][][]$[]\TU/lmr/m/n/10 . Voor dit tekstboek is
  []
@@ -957,18 +982,18 @@ Chapter 5.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [66] [67]
-Underfull \hbox (badness 2680) in paragraph at lines 2655--2662
+Underfull \hbox (badness 2680) in paragraph at lines 2659--2666
 []\TU/lmr/m/it/10 Voorbeeld 5.7\TU/lmr/m/n/10 : Zoals hierboven aangegeven kan 
 het begrip
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2667--2671
+Underfull \hbox (badness 10000) in paragraph at lines 2671--2675
 
  []
 
 [68] [69]
-Underfull \hbox (badness 1442) in paragraph at lines 2800--2815
+Underfull \hbox (badness 1442) in paragraph at lines 2804--2819
 \TU/lmr/m/n/10 conditie werd het gestructureerde leesonderwijs verzorgd door
  []
 
@@ -977,59 +1002,67 @@ Chapter 6.
 [79
 
 ] [80]
-Underfull \hbox (badness 1092) in paragraph at lines 3303--3321
+Underfull \hbox (badness 1092) in paragraph at lines 3307--3325
 \TU/lmr/m/n/10 toegepast, maar er zijn desalniettemin diverse factoren die de v
 aliditeit
  []
 
 [81]
-Overfull \hbox (7.82867pt too wide) in paragraph at lines 3357--3357
+Overfull \hbox (7.82867pt too wide) in paragraph at lines 3361--3361
 []\TU/lmr/bx/n/14.4 Het één-groep-voormeting-nameting-ontwerp 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3394--3394
+Underfull \hbox (badness 10000) in paragraph at lines 3398--3398
 []\TU/lmr/bx/n/14.4 Het voormeting-nameting-controlegroep-
  []
 
 [82] [83] [84]
-Underfull \hbox (badness 1365) in paragraph at lines 3522--3527
+Underfull \hbox (badness 1365) in paragraph at lines 3526--3531
 \TU/lmr/m/n/10 Het Solomon-vier-groepen-ontwerp wordt veel minder vaak gebruikt
  dan
  []
 
 [85] [86] [87]
-Underfull \hbox (badness 1226) in paragraph at lines 3666--3682
+Underfull \hbox (badness 1226) in paragraph at lines 3670--3686
 \TU/lmr/m/n/10 hogere nivo’s (synthetisch of voorspellend luisteren): hij tikt
  []
 
 File: figures/DrakeBenElHeni2003Fig2.pdf Graphic file (type pdf)
 <use figures/DrakeBenElHeni2003Fig2.pdf>
+
+Overfull \hbox (432.93692pt too wide) in paragraph at lines 3690--3691
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 48.54521pt on input line 3695.
+
 [88] [89] [90]
-Underfull \hbox (badness 6032) in paragraph at lines 3767--3767
+Underfull \hbox (badness 6032) in paragraph at lines 3771--3771
 []\TU/lmr/bx/n/14.4 Afhankelijke- en onafhankelijke-groepen-
  []
 
 [91] [92]
-Underfull \hbox (badness 2790) in paragraph at lines 3906--3916
+Underfull \hbox (badness 2790) in paragraph at lines 3910--3920
 \TU/lmr/m/n/10 iets mis is in de onderzoeksvragen, operationalisatie, onderzoek
 sopzet,
  []
 
 
-Underfull \hbox (badness 3449) in paragraph at lines 3906--3916
+Underfull \hbox (badness 3449) in paragraph at lines 3910--3920
 \TU/lmr/m/n/10 steekproeftrekking, en/of dataverwerking. Die problemen veroorza
 ken
  []
 
 
-Underfull \hbox (badness 1655) in paragraph at lines 3906--3916
+Underfull \hbox (badness 1655) in paragraph at lines 3910--3920
 \TU/lmr/m/n/10 ook in kennis die minder betrouwbaar, valide en robuust is dan m
 o-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3906--3916
+Underfull \hbox (badness 10000) in paragraph at lines 3910--3920
 []$[][][][][] [] [] [] [][][] [] [][][][][][][][] [] [][][] [] [][][][][][] [] 
 [][][][][][][] [] [][][][][][][] [][] [][][][][][][][][][][][][][][][][][][]$[]
 \TU/lmr/m/n/10 )
@@ -1039,22 +1072,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 3906--3916
 
 ]
 Chapter 7.
-[97] [98] [99] [100] [101] [102] [103]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 4275.
-[104] [105] [106] [107
+[97] [98] [99] [100] [101] [102] [103] [104] [105] [106] [107
 
 ] [108]
 Chapter 8.
 [109
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 4428--4428
+Underfull \hbox (badness 10000) in paragraph at lines 4432--4432
 \TU/lmr/m/n/10 in het *Corpus Gesproken Nederlands* (C=consonant=medeklinker,
  []
 
 [110] [111]
-Underfull \hbox (badness 10000) in paragraph at lines 4548--4552
+Underfull \hbox (badness 10000) in paragraph at lines 4552--4556
 
  []
 
@@ -1063,13 +1093,13 @@ File: KMS-NL_files/figure-latex/klankfreq-barplot-1.pdf Graphic file (type pdf)
 
 <use KMS-NL_files/figure-latex/klankfreq-barplot-1.pdf>
 
-Underfull \hbox (badness 6691) in paragraph at lines 4634--4634
+Underfull \hbox (badness 6691) in paragraph at lines 4638--4638
 []\TU/lmr/m/n/10 Figure 8.1: [][]Staafdiagram van de frequentieverdeling van fo
 nologis-
  []
 
 
-Underfull \hbox (badness 6428) in paragraph at lines 4634--4634
+Underfull \hbox (badness 6428) in paragraph at lines 4638--4638
 \TU/lmr/m/n/10 che klasse van spraakklanken in het Corpus Gesproken Nederlands
  []
 
@@ -1081,7 +1111,7 @@ File: KMS-NL_files/figure-latex/troonrede2012-hist-1.pdf Graphic file (type pdf
 )
 <use KMS-NL_files/figure-latex/troonrede2012-hist-1.pdf>
 [116]
-Underfull \hbox (badness 10000) in paragraph at lines 4695--4700
+Underfull \hbox (badness 10000) in paragraph at lines 4699--4704
 
  []
 
@@ -1093,14 +1123,14 @@ Chapter 9.
 File: KMS-NL_files/figure-latex/wachttijden-hist-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/wachttijden-hist-1.pdf>
 [121] [122]
-Underfull \hbox (badness 10000) in paragraph at lines 4916--4916
+Underfull \hbox (badness 10000) in paragraph at lines 4920--4920
 [][][][]$[][][][] [] [] [] [][][] [] [][][] [] [][] [] [][] [][] [][] [] [][][]
 [] [] [][][][][][] [] [][][][][][][] [][] [][][][][][][][][][][] [] [][][][][][
 ][] [] [][][][][] []
  []
 
 [123]
-Underfull \hbox (badness 1303) in paragraph at lines 4961--4971
+Underfull \hbox (badness 1303) in paragraph at lines 4965--4975
 \TU/lmr/m/n/10 den/uur), vormt het harmonische gemiddelde hier een betere
  []
 
@@ -1115,32 +1145,32 @@ Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 [132] [133] [134] [135]
-Underfull \hbox (badness 10000) in paragraph at lines 5556--5557
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5562--5568
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5569--5570
+Underfull \hbox (badness 10000) in paragraph at lines 5564--5565
 
  []
 
 [136]
-Underfull \hbox (badness 10000) in paragraph at lines 5575--5581
+Underfull \hbox (badness 10000) in paragraph at lines 5570--5576
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5582--5583
+Underfull \hbox (badness 10000) in paragraph at lines 5577--5578
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5588--5592
+Underfull \hbox (badness 10000) in paragraph at lines 5583--5589
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5590--5591
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5596--5600
 
  []
 
@@ -1150,85 +1180,88 @@ Missing character: There is no σ in font [lmmono10-regular]:!
 File: KMS-NL_files/figure-latex/cito-summary-boxplot-1.pdf Graphic file (type p
 df)
 <use KMS-NL_files/figure-latex/cito-summary-boxplot-1.pdf>
-[139]
-Overfull \hbox (33.0pt too wide) in paragraph at lines 5745--5745
+
+Underfull \vbox (badness 5681) has occurred while \output is active []
+
+[139] [140]
+Overfull \hbox (33.0pt too wide) in paragraph at lines 5753--5753
 []\TU/lmtt/m/n/10 ## [1] -1.1575990  0.6776189  2.3716662 -0.3105753  0.1129365
  -0.7340872[] 
  []
 
-[140]
-Chapter 10.
-[141
+[141] [142
 
-] [142] [143]
+]
+Chapter 10.
+[143] [144] [145]
 File: KMS-NL_files/figure-latex/binomkansverdeling3-1.pdf Graphic file (type pd
 f)
 <use KMS-NL_files/figure-latex/binomkansverdeling3-1.pdf>
 
-Underfull \hbox (badness 1337) in paragraph at lines 5972--5976
+Underfull \hbox (badness 1337) in paragraph at lines 5980--5984
 []\TU/lmr/m/n/10 De kansverdeling van een binomiale variabele noemen we de bino
 miale
  []
 
-[144] [145]
+[146] [147]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 5982.
+(amsmath)                 on input line 5990.
 
-[146] [147]
+[148] [149]
 File: KMS-NL_files/figure-latex/binomkansverdeling50n500-1.pdf Graphic file (ty
 pe pdf)
 <use KMS-NL_files/figure-latex/binomkansverdeling50n500-1.pdf>
 File: KMS-NL_files/figure-latex/normaalkansverdeling-1.pdf Graphic file (type p
 df)
 <use KMS-NL_files/figure-latex/normaalkansverdeling-1.pdf>
-[148] [149] [150] [151] [152]
+[150] [151] [152] [153] [154]
 File: KMS-NL_files/figure-latex/normkansverdeling.dnorm-1.pdf Graphic file (typ
 e pdf)
 <use KMS-NL_files/figure-latex/normkansverdeling.dnorm-1.pdf>
 
-Overfull \hbox (11.1839pt too wide) in paragraph at lines 6347--6347
+Overfull \hbox (11.1839pt too wide) in paragraph at lines 6355--6355
 []\TU/lmr/bx/n/14.4 Heeft mijn variabele een normale kansverdel-
  []
 
 
-LaTeX Warning: Reference `fig:itunestimeshist' on page 153 undefined on input l
-ine 6352.
+LaTeX Warning: Reference `fig:itunestimeshist' on page 155 undefined on input l
+ine 6360.
 
-[153]
+[155]
 File: KMS-NL_files/figure-latex/itunestimeshist-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/itunestimeshist-1.pdf>
 File: KMS-NL_files/figure-latex/itunestimesqqplot-1.pdf Graphic file (type pdf)
 
 <use KMS-NL_files/figure-latex/itunestimesqqplot-1.pdf>
 
-LaTeX Warning: Reference `fig:itunestimeshist' on page 154 undefined on input l
-ine 6386.
+LaTeX Warning: Reference `fig:itunestimeshist' on page 156 undefined on input l
+ine 6394.
 
-[154]
+[156]
 Underfull \vbox (badness 1681) has occurred while \output is active []
 
-[155]
-Underfull \hbox (badness 4084) in paragraph at lines 6454--6454
+[157]
+Underfull \hbox (badness 4084) in paragraph at lines 6462--6462
 []\TU/lmr/bx/n/14.4 Wat als mijn variabele niet normaal
  []
 
-[156]
+[158]
 File: KMS-NL_files/figure-latex/itunesmeanshist-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/itunesmeanshist-1.pdf>
-[157] [158]
+[159] [160]
 File: KMS-NL_files/figure-latex/tkansverdeling-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/tkansverdeling-1.pdf>
 
 Underfull \vbox (badness 1748) has occurred while \output is active []
 
-[159]
+[161]
 File: KMS-NL_files/figure-latex/tempo95CIs-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/tempo95CIs-1.pdf>
-[160] [161] [162]
+[162] [163] [164]
 Chapter 11.
-[163
+[165
 
 ]
 File: KMS-NL_files/figure-latex/cito-scatter-1.pdf Graphic file (type pdf)
@@ -1236,252 +1269,259 @@ File: KMS-NL_files/figure-latex/cito-scatter-1.pdf Graphic file (type pdf)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[164]
+[166]
 File: KMS-NL_files/figure-latex/cor-scatter-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/cor-scatter-1.pdf>
-[165]
-Underfull \hbox (badness 2310) in paragraph at lines 6817--6817
+[167]
+Underfull \hbox (badness 2310) in paragraph at lines 6825--6825
 []\TU/lmr/m/n/10 Table 11.1: []Correlaties tussen de drie onderdelen van de
  []
 
-[166] [167]
-Overfull \hbox (7.90701pt too wide) in paragraph at lines 6880--6884
+[168] [169]
+Overfull \hbox (7.90701pt too wide) in paragraph at lines 6888--6892
 []\TU/lmr/m/n/10 Kies \TU/lmtt/m/n/10 Pearsons \TU/lmr/m/n/10 correlatiecoëffic
 iënt, vink aan: \TU/lmtt/m/n/10 Flag significant correlations\TU/lmr/m/n/10 .
  []
 
-[168]
+[170]
 File: KMS-NL_files/figure-latex/cito-linearmodel-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/cito-linearmodel-1.pdf>
-[169] [170] [171] [172] [173] [174] [175] [176]
-Overfull \hbox (90.75pt too wide) in paragraph at lines 7331--7331
+[171] [172] [173] [174] [175] [176] [177] [178]
+Overfull \hbox (90.75pt too wide) in paragraph at lines 7339--7339
 []\TU/lmtt/m/n/10 ## Warning in cor.test.default(Lezen, Rekenen, method = "spea
 rman"): Cannot compute[] 
  []
 
-[177] [178] [179] [180] [181]
+[179] [180] [181] [182] [183]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 7553.
 File: figures/correlation.png Graphic file (type bmp)
 <figures/correlation.png>
-[182] [183] [184
+
+Overfull \hbox (69.61523pt too wide) in paragraph at lines 7580--7580
+[][] 
+ []
+
+[184] [185] [186
 
 ]
 Chapter 12.
-[185]
-Underfull \hbox (badness 1688) in paragraph at lines 7647--7652
+[187]
+Underfull \hbox (badness 1688) in paragraph at lines 7642--7647
 \TU/lmr/m/n/10 verschillende vragen \TU/lmr/m/it/10 hetzelfde \TU/lmr/m/n/10 co
 nstruct meten, hier het con-
  []
 
-[186]
-Underfull \hbox (badness 1189) in paragraph at lines 7721--7733
+[188]
+Underfull \hbox (badness 1189) in paragraph at lines 7716--7728
 []\TU/lmr/m/it/10 Voorbeeld 12.3: \TU/lmr/m/n/10 ([]Lata-Caneda et al.[], []200
 9[]) ontwikkelden een
  []
 
 
-Underfull \hbox (badness 2158) in paragraph at lines 7721--7733
+Underfull \hbox (badness 2158) in paragraph at lines 7716--7728
 \TU/lmr/m/n/10 Spaanstalige vragenlijst van 39 vragen, bedoeld voor afasie-
  []
 
 
-Underfull \hbox (badness 2671) in paragraph at lines 7721--7733
+Underfull \hbox (badness 2671) in paragraph at lines 7716--7728
 \TU/lmr/m/n/10 tweemaal afgenomen bij een steekproef van 23 Spaanstalige
  []
 
-[187]
+[189]
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
-[188]
+[190]
 Missing character: There is no   in font [lmroman8-regular]:mapping=tex-text;!
-[189] [190]
-Underfull \hbox (badness 2088) in paragraph at lines 7941--7955
+[191] [192]
+Underfull \hbox (badness 2088) in paragraph at lines 7936--7950
 []\TU/lmr/m/n/10 Hierboven hebben we gesproken over metingen met behulp van mee
 t-
  []
 
-[191] [192] [193] [194] [195]
-Underfull \hbox (badness 10000) in paragraph at lines 8170--8173
+[193] [194] [195] [196] [197]
+Underfull \hbox (badness 10000) in paragraph at lines 8165--8168
 
  []
 
 
-Overfull \hbox (6.50201pt too wide) in paragraph at lines 8178--8190
+Overfull \hbox (6.50201pt too wide) in paragraph at lines 8173--8185
 \TU/lmr/m/n/10 Vul als Scale label in een aanduiding van het construct, bijv. \
 TU/lmtt/m/n/10 Spreekvaardigheid\TU/lmr/m/n/10 . 
  []
 
 
-Underfull \hbox (badness 1895) in paragraph at lines 8178--8190
+Underfull \hbox (badness 1895) in paragraph at lines 8173--8185
 \TU/lmr/m/n/10 Kies \TU/lmtt/m/n/10 Statistics…\TU/lmr/m/n/10 , vink aan: Descr
 iptives for \TU/lmtt/m/n/10 Item, Scale, Scale if
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8204--8205
+Underfull \hbox (badness 10000) in paragraph at lines 8199--8200
 
  []
 
 
-Underfull \hbox (badness 1540) in paragraph at lines 8210--8213
+Underfull \hbox (badness 1540) in paragraph at lines 8205--8208
 \TU/lmr/m/n/10 Statistics” \TU/lmtt/m/n/10 Cronbach[]s a (if item dropped) \TU/
 lmr/m/n/10 en \TU/lmtt/m/n/10 Item-rest correlation
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8210--8213
+Underfull \hbox (badness 10000) in paragraph at lines 8205--8208
 
  []
 
-[196]
-Underfull \hbox (badness 10000) in paragraph at lines 8227--8229
+[198]
+Underfull \hbox (badness 10000) in paragraph at lines 8222--8224
 
  []
 
-[197]
-Overfull \hbox (48.75pt too wide) in paragraph at lines 8241--8241
+[199]
+Overfull \hbox (48.75pt too wide) in paragraph at lines 8236--8236
 []\TU/lmtt/m/n/10 ## Number of categories should be increased  in order to coun
 t frequencies.[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 8265--8265
+Overfull \hbox (17.25pt too wide) in paragraph at lines 8260--8260
 []\TU/lmtt/m/n/10 ##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean  sd 
 median_r[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 8265--8265
+Overfull \hbox (12.0pt too wide) in paragraph at lines 8260--8260
 []\TU/lmtt/m/n/10 ##       0.68      0.68    0.74      0.41 2.1 0.17   72 4.6  
    0.41[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 8265--8265
+Overfull \hbox (17.25pt too wide) in paragraph at lines 8260--8260
 []\TU/lmtt/m/n/10 ##    raw_alpha std.alpha G6(smc) average_r  S/N alpha se var
 .r med.r[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 8265--8265
+Overfull \hbox (17.25pt too wide) in paragraph at lines 8260--8260
 []\TU/lmtt/m/n/10 ## B1      0.15      0.16   0.088     0.088 0.19    0.497    
 NA 0.088[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 8265--8265
+Overfull \hbox (17.25pt too wide) in paragraph at lines 8260--8260
 []\TU/lmtt/m/n/10 ## B2      0.58      0.58   0.410     0.410 1.39    0.264    
 NA 0.410[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 8265--8265
+Overfull \hbox (17.25pt too wide) in paragraph at lines 8260--8260
 []\TU/lmtt/m/n/10 ## B3      0.84      0.85   0.745     0.745 5.84    0.095    
 NA 0.745[] 
  []
 
-[198] [199
+[200] [201
 
-] [200]
+] [202]
 Chapter 13.
-[201
+[203
 
 ]
 File: KMS-NL_files/figure-latex/gramm2013onesample-1.pdf Graphic file (type pdf
 )
 <use KMS-NL_files/figure-latex/gramm2013onesample-1.pdf>
-[202]
+[204]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 8429.
+(Font)              scaled to size 14.4pt on input line 8424.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.4013pt on input line 8429.
+(Font)              scaled to size 14.4013pt on input line 8424.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 8429.
-[203] [204] [205]
-Overfull \hbox (72.65001pt too wide) in paragraph at lines 8558--8559
+(Font)              scaled to size 14.39845pt on input line 8424.
+[205] [206] [207]
+Overfull \hbox (72.65001pt too wide) in paragraph at lines 8553--8554
 \TU/lmr/m/n/10 De hierboven besproken gegevens zijn te vinden in het bestand \T
 U/lmtt/m/n/10 data/grammaticatoets2013.csv\TU/lmr/m/n/10 . 
  []
 
 
-Overfull \hbox (72.65001pt too wide) in paragraph at lines 8592--8593
+Overfull \hbox (72.65001pt too wide) in paragraph at lines 8587--8588
 \TU/lmr/m/n/10 De hierboven besproken gegevens zijn te vinden in het bestand \T
 U/lmtt/m/n/10 data/grammaticatoets2013.csv\TU/lmr/m/n/10 . 
  []
 
-[206] [207]
+[208] [209]
 Underfull \vbox (badness 2245) has occurred while \output is active []
 
-[208]
-Underfull \hbox (badness 1152) in paragraph at lines 8702--8705
+[210]
+Underfull \hbox (badness 1152) in paragraph at lines 8697--8700
 []\TU/lmr/m/n/10 De gemiddelde score van de studenten Taalwetenschap (licht-
  []
 
-[209]
+[211]
 File: KMS-NL_files/figure-latex/gramm2013CIs-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/gramm2013CIs-1.pdf>
-[210] [211]
-Overfull \hbox (14.32307pt too wide) in paragraph at lines 8832--8832
+[212] [213]
+Overfull \hbox (14.32307pt too wide) in paragraph at lines 8827--8827
 []$[]$\TU/lmr/bx/n/14.4 -toets voor twee onafhankelijke steekproeven 
  []
 
-[212]
+[214]
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
-[213] [214] [215] [216]
-Underfull \hbox (badness 10000) in paragraph at lines 9063--9064
+[215] [216] [217] [218]
+Underfull \hbox (badness 10000) in paragraph at lines 9058--9059
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9065--9068
+Underfull \hbox (badness 10000) in paragraph at lines 9060--9063
 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 9097--9097
+Overfull \hbox (17.25pt too wide) in paragraph at lines 9092--9092
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means is not eq
 ual to 0[] 
  []
 
-[217]
+[219]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[218] [219] [220]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 9273--9273
+[220] [221] [222]
+Overfull \hbox (17.25pt too wide) in paragraph at lines 9268--9268
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means is not eq
 ual to 0[] 
  []
 
-[221]
+[223]
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
-[222]
+[224]
 Missing character: There is no   in font [lmroman10-regular]:mapping=tex-text;!
 File: KMS-NL_files/figure-latex/kleinstesignifverschil-1.pdf Graphic file (type
  pdf)
 <use KMS-NL_files/figure-latex/kleinstesignifverschil-1.pdf>
 
-Underfull \hbox (badness 1454) in paragraph at lines 9405--9415
+Underfull \hbox (badness 1454) in paragraph at lines 9399--9409
 []\TU/lmr/m/it/10 Voorbeeld 13.3: \TU/lmr/m/n/10 Kijk nog eens naar formule [] 
 en naar
  []
 
-[223] [224] [225]
-Underfull \hbox (badness 10000) in paragraph at lines 9522--9524
+[225] [226] [227]
+Underfull \hbox (badness 10000) in paragraph at lines 9516--9518
 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 9537--9537
+Overfull \hbox (90.75pt too wide) in paragraph at lines 9531--9531
 []\TU/lmtt/m/n/10 ## Warning in mean.default(score.TW): argument is not numeric
  or logical: returning[] 
  []
 
-[226] [227] [228]
+[228] [229] [230]
 Chapter 14.
-[229
+[231
 
 ]
 File: KMS-NL_files/figure-latex/powercontours-alpha01-1.pdf Graphic file (type 
@@ -1493,256 +1533,304 @@ pdf)
 
 Underfull \vbox (badness 1655) has occurred while \output is active []
 
-[230] [231]
+[232] [233]
 Underfull \vbox (badness 2521) has occurred while \output is active []
 
-[232]
-Underfull \hbox (badness 10000) in paragraph at lines 9831--9831
+[234]
+Underfull \hbox (badness 10000) in paragraph at lines 9825--9825
 []\TU/lmr/bx/n/14.4 Verband tussen significantieniveau en
  []
 
-[233]
+[235]
 File: KMS-NL_files/figure-latex/underpoweredeffectsizes-1.pdf Graphic file (typ
 e pdf)
 <use KMS-NL_files/figure-latex/underpoweredeffectsizes-1.pdf>
 
-LaTeX Warning: Reference `fig:underpoweredeffectsizes' on page 234 undefined on
- input line 9870.
+LaTeX Warning: Reference `fig:underpoweredeffectsizes' on page 236 undefined on
+ input line 9864.
 
 
-LaTeX Warning: Reference `fig:underpoweredeffectsizes' on page 234 undefined on
- input line 9871.
+LaTeX Warning: Reference `fig:underpoweredeffectsizes' on page 236 undefined on
+ input line 9865.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9867--9886
+Underfull \hbox (badness 10000) in paragraph at lines 9861--9880
 [][]
  []
 
-[234]
+[236]
 
-LaTeX Warning: Reference `fig:underpoweredeffectsizes' on page 235 undefined on
- input line 9916.
+LaTeX Warning: Reference `fig:underpoweredeffectsizes' on page 237 undefined on
+ input line 9910.
 
-[235] [236]
+[237] [238]
 Chapter 15.
-[237
+[239
 
 ]
 File: KMS-NL_files/figure-latex/syldur-boxplot-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/syldur-boxplot-1.pdf>
-[238] [239] [240]
+[240] [241] [242]
 File: KMS-NL_files/figure-latex/kleurtjes-obs-1.pdf Graphic file (type pdf)
 <use KMS-NL_files/figure-latex/kleurtjes-obs-1.pdf>
-[241] [242] [243] [244] [245] [246] [247] [248] [249]
-Underfull \hbox (badness 10000) in paragraph at lines 10591--10594
+[243] [244] [245] [246] [247] [248]
+Overfull \vbox (11.2943pt too high) has occurred while \output is active []
+
+[249] [250]
+Underfull \hbox (badness 10000) in paragraph at lines 10585--10588
 
  []
 
-
-Underfull \hbox (badness 1122) in paragraph at lines 10616--10620
+[251]
+Underfull \hbox (badness 1122) in paragraph at lines 10610--10614
 []\TU/lmr/m/n/10 Daarna wordt de variantieanalyse samengevat in een tabel gelij
 kend op
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10624--10640
+Underfull \hbox (badness 10000) in paragraph at lines 10618--10634
 
  []
 
-[250] [251] [252] [253] [254] [255] [256] [257]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[252] [253] [254] [255] [256] [257] [258]
+File: figures/DBE12interaction.png Graphic file (type bmp)
+<figures/DBE12interaction.png>
 
-[258] [259] [260] [261]
-Overfull \hbox (69.75pt too wide) in paragraph at lines 11223--11223
-[]\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
-ctors ignored: sex[] 
+Overfull \hbox (182.95203pt too wide) in paragraph at lines 10959--10960
+ []\TU/lmr/m/n/10 {[] 
+ []
+
+[259] [260] [261]
+
+LaTeX Warning: Reference `(' on page 262 undefined on input line 11068.
+
+[262] [263] [264] [265]
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ##                                      diff         lwr     
+   upr     p adj[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 11228--11228
-[]\TU/lmtt/m/n/10 ## Warning in replications(paste("~", xx), data = mf): non-fa
-ctors ignored: region,[] 
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## zonder:zwak-met:zwak           -4.1333333 -5.60315087 -2.6
+635158 0.0000000[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 11244--11244
-[]\TU/lmtt/m/n/10 ## Fit: aov(formula = syldur ~ region * sex, data = talkers, 
-subset = ok)[] 
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## met:gemiddeld-met:zwak         -0.1461538 -1.27642935  0.9
+841217 0.9989799[] 
  []
 
-[262]
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## zonder:gemiddeld-met:zwak      -2.1571429 -3.27255218 -1.0
+417335 0.0000031[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## met:sterk-met:zwak              1.4222222 -0.04759532  2.8
+920398 0.0637117[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## zonder:sterk-met:zwak           0.7714286 -0.82423518  2.3
+670923 0.7218038[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## met:gemiddeld-zonder:zwak       3.9871795  2.63899048  5.3
+353685 0.0000000[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## zonder:gemiddeld-zonder:zwak    1.9761905  0.64044018  3.3
+119408 0.0005900[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## met:sterk-zonder:zwak           5.5555556  3.91224959  7.1
+988615 0.0000000[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## zonder:sterk-zonder:zwak        4.9047619  3.14799393  6.6
+615299 0.0000000[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## zonder:gemiddeld-met:gemiddeld -2.0109890 -2.96040355 -1.0
+615745 0.0000003[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## met:sterk-met:gemiddeld         1.5683761  0.22018706  2.9
+165651 0.0130213[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## zonder:sterk-met:gemiddeld      0.9175824 -0.56680056  2.4
+019654 0.4704754[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## met:sterk-zonder:gemiddeld      3.5793651  2.24361478  4.9
+151154 0.0000000[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## zonder:sterk-zonder:gemiddeld   2.9285714  1.45547670  4.4
+016662 0.0000016[] 
+ []
+
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 11267--11267
+[]\TU/lmtt/m/n/10 ## zonder:sterk-met:sterk         -0.6507937 -2.40756162  1.1
+059743 0.8883523[] 
+ []
+
+[266] [267] [268
+
+]
 Chapter 16.
-
-Underfull \hbox (badness 1072) in paragraph at lines 11254--11268
-\TU/lmr/m/n/10 We zagen al eerder dat we niet altijd gebruik kunnen maken van e
-en
- []
-
-[263
-
-] [264]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[269] [270]
+Overfull \vbox (22.71886pt too high) has occurred while \output is active []
 
 
 Overfull \hbox (105.13423pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 16.4.  $[][]$-TOETS VOOR VERBAND TUSSEN TWEE VARIABELEN IN ENKE
-LE STEEKPROEF \TU/lmr/m/n/10 265
+LE STEEKPROEF \TU/lmr/m/n/10 271
  []
 
-[265] [266] [267] [268]
-Underfull \hbox (badness 1178) in paragraph at lines 11579--11584
-[]\TU/lmr/m/n/10 Selecteer de variabelen \TU/lmtt/m/n/10 klasse \TU/lmr/m/n/10 
-(in “Rows” paneel) en \TU/lmtt/m/n/10 overlevende \TU/lmr/m/n/10 (in
- []
-
-[269]
-Underfull \hbox (badness 10000) in paragraph at lines 11616--11617
-
- []
-
-[270]
-Underfull \hbox (badness 10000) in paragraph at lines 11629--11631
-
- []
-
-[271]
-Overfull \hbox (33.0pt too wide) in paragraph at lines 11702--11702
+[271] [272] [273] [274] [275] [276] [277]
+Overfull \hbox (33.0pt too wide) in paragraph at lines 11732--11732
 []\TU/lmtt/m/n/10 ## [1]  1.2649111 -0.3162278  0.3162278  0.0000000  1.5811388
  -2.8460499[] 
  []
 
-[272] [273]
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11769--11774
+[278] [279]
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11799--11804
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11774--11778
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11804--11808
  [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.03012pt too wide) in alignment at lines 11778--11783
+Overfull \hbox (39.03012pt too wide) in alignment at lines 11808--11813
  [] [] [] [] [] [] [] 
  []
 
-
-Underfull \hbox (badness 6608) in paragraph at lines 11793--11799
-\TU/lmr/m/n/10 83 sterfgevallen-door-longkanker tegenover 21178 niet-sterfgeval
-len-door-
- []
-
-[274]
+[280]
 Chapter 17.
-[275
 
-] [276]
-Underfull \hbox (badness 10000) in paragraph at lines 11939--11939
-[]\TU/lmr/bx/n/14.4 Onafhankelijke observaties, meerdere
- []
+Underfull \vbox (badness 1383) has occurred while \output is active []
 
-
-Underfull \hbox (badness 1342) in paragraph at lines 11944--11953
-\TU/lmr/m/n/10 De mediaantoets (Eng. ‘median test’) is te beschouwen als een no
-n-
- []
-
-
-Underfull \hbox (badness 3758) in paragraph at lines 11944--11953
-\TU/lmr/m/n/10 parametrische, nominale tegenhanger van de \TU/lmr/m/it/10 t\TU/
-lmr/m/n/10 -toets voor ongepaarde,
- []
-
-
-Overfull \hbox (15.25783pt too wide) has occurred while \output is active
-\TU/lmr/m/sl/10 17.3.  ONAFHANKELIJKE OBSERVATIES, MEERDERE STEEKPROEVEN \TU/lm
-r/m/n/10 277
- []
-
-[277] [278]
-Overfull \hbox (15.25783pt too wide) has occurred while \output is active
-\TU/lmr/m/sl/10 17.3.  ONAFHANKELIJKE OBSERVATIES, MEERDERE STEEKPROEVEN \TU/lm
-r/m/n/10 279
- []
-
-[279] [280]
-Appendix A.
 [281
 
 ] [282]
+Overfull \hbox (15.25783pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 17.3.  ONAFHANKELIJKE OBSERVATIES, MEERDERE STEEKPROEVEN \TU/lm
+r/m/n/10 283
+ []
+
+[283] [284]
+Overfull \hbox (15.25783pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 17.3.  ONAFHANKELIJKE OBSERVATIES, MEERDERE STEEKPROEVEN \TU/lm
+r/m/n/10 285
+ []
+
+[285] [286]
+Appendix A.
+[287
+
+] [288]
 Appendix B.
 File: KMS-NL_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf Graphic file 
 (type pdf)
 <use KMS-NL_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf>
-[283
+[289
 
-] [284]
+] [290]
 Appendix C.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 12177.
+(Font)              scaled to size 24.88pt on input line 12207.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 20.74pt on input line 12177.
+(Font)              scaled to size 20.74pt on input line 12207.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 17.28pt on input line 12177.
+(Font)              scaled to size 17.28pt on input line 12207.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 24.88228pt on input line 12177.
+(Font)              scaled to size 24.88228pt on input line 12207.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 20.7419pt on input line 12177.
+(Font)              scaled to size 20.7419pt on input line 12207.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 17.28157pt on input line 12177.
+(Font)              scaled to size 17.28157pt on input line 12207.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 24.87733pt on input line 12177.
+(Font)              scaled to size 24.87733pt on input line 12207.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 20.73778pt on input line 12177.
+(Font)              scaled to size 20.73778pt on input line 12207.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 17.27815pt on input line 12177.
+(Font)              scaled to size 17.27815pt on input line 12207.
 File: KMS-NL_files/figure-latex/kritieketwaarden-hulpfiguur-1.pdf Graphic file 
 (type pdf)
 <use KMS-NL_files/figure-latex/kritieketwaarden-hulpfiguur-1.pdf>
 
-Overfull \hbox (19.32014pt too wide) in paragraph at lines 12188--12233
-[][] 
+Overfull \hbox (19.32014pt too wide) in paragraph at lines 12218--12263
+ [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[285
+[291
 
-] [286]
+] [292]
 Appendix D.
 File: KMS-NL_files/figure-latex/kritiekechi2waarden-hulpfiguur-1.pdf Graphic fi
 le (type pdf)
 <use KMS-NL_files/figure-latex/kritiekechi2waarden-hulpfiguur-1.pdf>
 
-Overfull \hbox (17.80014pt too wide) in paragraph at lines 12244--12287
-[][] 
+Overfull \hbox (17.80014pt too wide) in paragraph at lines 12274--12317
+ [][] 
  []
 
 (./KMS-NL.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[287
+[293
 
-] [288] [289
+] [294] [295
 
-] [290] [291] [292] [293]) [294] (./KMS-NL.aux)
-Package rerunfilecheck Info: File `KMS-NL.out' has not changed.
-(rerunfilecheck)             Checksum: 150E8C32D4BED77B3EB92013B2823AD6;22930.
+] [296] [297] [298] [299]) [300] (./KMS-NL.aux)
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
+Package rerunfilecheck Info: File `KMS-NL.out' has not changed.
+(rerunfilecheck)             Checksum: 150E8C32D4BED77B3EB92013B2823AD6;22930.
  ) 
 Here is how much of TeX's memory you used:
- 18007 strings out of 479441
- 318965 string characters out of 5880450
- 812960 words of memory out of 5000000
- 37044 multiletter control sequences out of 15000+600000
- 545455 words of font info for 115 fonts, out of 8000000 for 9000
+ 17707 strings out of 478943
+ 316663 string characters out of 5866788
+ 834146 words of memory out of 5000000
+ 37230 multiletter control sequences out of 15000+600000
+ 413797 words of font info for 113 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 84i,10n,118p,1133b,571s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 98i,10n,122p,1133b,582s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on KMS-NL.pdf (294 pages).
+Output written on KMS-NL.pdf (300 pages).
