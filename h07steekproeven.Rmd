@@ -1,4 +1,4 @@
-# Steekproeven {#ch:steekproeftrekking}
+# Steekproeven {#ch-steekproeftrekking}
 
 Voor de generalisatie van de uitkomsten van een onderzoek naar de
 doelgroep of de steekproef, is de kwaliteit van de steekproef bepalend.
@@ -178,7 +178,7 @@ kan bijvoorbeeld gerealiseerd worden door alle elementen van een
 *random* nummer te voorzien en dan, afhankelijk van de gewenste
 steekproefgrootte, steeds het $n$-de element te selecteren. Voor de
 selectie van getallen staan de onderzoeker tabellen met toevalsgetallen
-ter beschikking (zie Appendix \@ref(app:randomgetallen)). 
+ter beschikking (zie Appendix \@ref(app-randomgetallen)). 
 Ook rekenmachines, computers,
 spreadsheet-programma's e.d. kunnen random getallen genereren (zie secties hieronder). 
 Het verdient aanbeveling om zulke random getallen te gebruiken, want een
@@ -197,7 +197,7 @@ en Wetenschappen een lijst met alle 9000 basisscholen op; deze lijst
 vormt de steekproefruimte. Vervolgens voorzien we alle basisscholen van
 een volgnummer $(1, 2, 3, \ldots, 9000)$. Tenslotte selecteren we alle
 basisscholen waarvan de laatste twee cijfers *toevallig* 36 of 43 of 59
-of 70 zijn (zie Appendix \@ref(app:randomgetallen), eerste kolom, laatste twee cijfers).
+of 70 zijn (zie Appendix \@ref(app-randomgetallen), eerste kolom, laatste twee cijfers).
 Met deze procedure selecteren we volgens het toeval 4 van de 100
 mogelijke laatste-twee-cijfer-combinaties, ofwel 4% van de scholen.
 
@@ -242,7 +242,7 @@ Kies als ondergrens `0` en als bovengrens `9999`, of andere grenzen naar behoeft
 Bevestig met `OK`.\
 Dit resulteert in een (nieuwe, of overschreven bestaande) kolom met random getallen. 
 
-Als je random getallen wilt genereren volgens een normale kansverdeling (zie Hoofdstuk \@ref(ch:kansverdelingen)), gebruik dan de functie `RV.NORMAL(mean,stdev)`. 
+Als je random getallen wilt genereren volgens een normale kansverdeling (zie Hoofdstuk \@ref(ch-kansverdelingen)), gebruik dan de functie `RV.NORMAL(mean,stdev)`. 
 
 We kunnen een eigen beginwaarde meegeven aan de "random number generator", om  zo reproduceerbare analyses te kunnen maken:
 ```
@@ -263,21 +263,21 @@ De functie `runif(n, min, max)` kan worden gebruikt om aselect (**r**andom) waar
 ```
 round( runif(5, 0, 9999) )
 ```
-Als je random getallen wilt genereren volgens een normale kansverdeling (zie Hoofdstuk \@ref(ch:kansverdelingen)), gebruik dan de functie `rnorm(n,mean,sd)`.\ 
+Als je random getallen wilt genereren volgens een normale kansverdeling (zie Hoofdstuk \@ref(ch-kansverdelingen)), gebruik dan de functie `rnorm(n,mean,sd)`.\ 
 De `set.seed` functie uit R, om een eigen beginwaarde te geven aan de "random number generator" en zo reproduceerbare analyses te kunnen maken, doet het hier niet in JASP. Met dezelfde code zullen er dus telkens andere random getallen worden gegenereerd. 
 
 Als het **aanwijshandje** is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een werkblad. Links daarvan staan de variabelen, erboven wiskundige symbolen, en rechts van het werkblad staan een aantal functies. Hieruit kan handmatig de functie worden geselecteerd om random getallen te genereren. Als er iets fout gaat kun je iets van het werkblad verwijderen door het naar de prullenbak rechtsonderin te slepen. Als de specificatie op het werkblad klaar is, klik dan onder het werkblad op `Compute column` om de lege variabele te vullen met de gegenereerde getallen.\
 Om aselect getallen uit een vlakke (**unif**orme) kansverdeling te genereren, d.w.z. dat elk getal tussen de ondergrens en bovengrens een gelijke kans heeft om getrokken te worden, scroll je rechts van het werkblad bij de functies naar beneden en klik op `unifDist()`. De functie verschijnt dan in het werkblad en hier kunnen "min" en "max" worden vervangen door de gewenste ondergrens en bovengrens (bijvoorbeeld `0` en `9999`). De gegenereerde getallen kunnen ook worden afgerond tot gehele getallen, door rechts van het werkblad de functie `round(y)` aan te klikken, en de `unifDist()` functie met ingevulde "min" en "max" op de plek van "y" in te vullen, en als "n" het aantal getallen achter de komma, dus in dit geval `0`, in te vullen. Op het werkblad staat dan `round(unifDist(0,9999),0)` als instructie.\
-Als je random getallen wilt genereren volgens een normale kansverdeling (zie Hoofdstuk \@ref(ch:kansverdelingen)), kies rechts van het werkblad dan de functie `normalDist` en vul de gewenste "mean" en "sd" in.\ 
+Als je random getallen wilt genereren volgens een normale kansverdeling (zie Hoofdstuk \@ref(ch-kansverdelingen)), kies rechts van het werkblad dan de functie `normalDist` en vul de gewenste "mean" en "sd" in.\ 
 Het is niet mogelijk een eigen beginwaarde te geven om zo reproduceerbare analyses te kunnen maken. Met dezelfde gespecificeerde functies, en ook elke keer als er opnieuw op `Compute column` wordt geklikt, zullen er dus andere random getallen worden gegenereerd. 
 
 Je kunt deze random getallen gebruiken om op aselecte wijze eenheden (bijv. proefpersonen) te kiezen voor een steekproef, maar uiteraard ook om op aselecte wijze de geselecteerde eenheden toe te wijzen aan condities, enzovoort. 
 
 ### R
 
-In R kunnen we random getallen genereren met de functie `runif`. Deze functie kiest aselect (**r**andom) waarden uit een vlakke (**unif**orme) kansverdeling, d.w.z. dat elk getal tussen de ondergrens en bovengrens een gelijke kans heeft om getrokken te worden. De standaard grenzen zijn $(0,1)$. De waarden kunnen we afronden tot gehele getallen, zoals gedaan is voor Appendix \@ref(app:randomgetallen). 
+In R kunnen we random getallen genereren met de functie `runif`. Deze functie kiest aselect (**r**andom) waarden uit een vlakke (**unif**orme) kansverdeling, d.w.z. dat elk getal tussen de ondergrens en bovengrens een gelijke kans heeft om getrokken te worden. De standaard grenzen zijn $(0,1)$. De waarden kunnen we afronden tot gehele getallen, zoals gedaan is voor Appendix \@ref(app-randomgetallen). 
 
-Als je random getallen wilt genereren volgens een normale kansverdeling (zie Hoofdstuk \@ref(ch:kansverdelingen)), gebruik dan de functie `rnorm(n,mean,sd)`. 
+Als je random getallen wilt genereren volgens een normale kansverdeling (zie Hoofdstuk \@ref(ch-kansverdelingen)), gebruik dan de functie `rnorm(n,mean,sd)`. 
 
 Met de opdracht `set.seed` geven we een eigen beginwaarde mee aan de "random number generator", om zo reproduceerbare analyses (en demonstraties) te kunnen maken. 
 ```{r runif}

@@ -1,6 +1,6 @@
 # (APPENDIX) Bijlagen {-}
 
-# Willekeurige getallen {#app:randomgetallen}
+# Willekeurige getallen {#app-randomgetallen}
 
 ```{r A1, echo=FALSE}
 set.seed(20140314) # datum van eerste versie

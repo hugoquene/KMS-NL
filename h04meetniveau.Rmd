@@ -1,8 +1,8 @@
-# Meetniveau {#ch:Meetniveau}
+# Meetniveau {#ch-meetniveau}
 
 ## Inleiding
 
-In Hoofdstuk \@ref(ch:onderzoek) maakten we al kennis met variabelen:
+In Hoofdstuk \@ref(ch-onderzoek) maakten we al kennis met variabelen:
 eigenschappen die verschillende waarden kunnen aannemen. De waarde van
 een variabele is dus een aanduiding van een eigenschap, of kwaliteit, of
 hoedanigheid, van een object of persoon. Als het gaat om een

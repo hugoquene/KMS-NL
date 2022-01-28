@@ -1,4 +1,4 @@
-# Validiteit {#ch:validiteit}
+# Validiteit {#ch-validiteit}
 
 ## Inleiding
 
@@ -321,7 +321,7 @@ experimenteel effect [@RMP18].
 In het algemeen kan regressie naar het gemiddelde optreden als er een
 classificatie gemaakt wordt op basis van een voormeting, waarvan de
 scores samenhang vertonen met de scores van de nameting (zie
-Hoofdstuk \@ref(ch:samenhang)). Als er geen enkele correlatie is tussen
+Hoofdstuk \@ref(ch-samenhang)). Als er geen enkele correlatie is tussen
 voormeting en nameting, dan speelt regressie naar het gemiddelde zelfs
 de hoofdrol: een verschil tussen voormeting en nameting is dan alleen
 het gevolg van regressie naar het gemiddelde. Als er perfecte correlatie
@@ -397,7 +397,7 @@ aselect, volgens toeval, 'at random', toe aan de condities. Deze methode
 staat bekend als *randomisatie* [@SCC02, p.294 ff]. We kunnen bijvoorbeeld
 randomiseren door leerlingen een willekeurig (random) nummer te geven
 (zie
-Appendix \@ref(app:randomgetallen)) en daarna de 'even leerlingen' aan de
+Appendix \@ref(app-randomgetallen)) en daarna de 'even leerlingen' aan de
 ene conditie en de 'oneven leerlingen' aan de andere conditie toe te
 wijzen. Bij aselecte toewijzing van proefpersonen aan condities berusten
 alle verschillen tussen de proefpersonen in de verschillende condities
@@ -833,7 +833,7 @@ De verklaring kan immers liggen in een effect van alleen de
 onafhankelijke variabele, maar kan ook liggen in een effect van *de
 combinatie van voormeting en onafhankelijke variabele*. Bovendien kan de
 afwezigheid van een effect soms worden verklaard door het feit dat een
-voormeting is verricht (zie het Solomon vier-groepen-ontwerp, in Hoofdstuk \@ref(ch:ontwerp), voor een onderzoeksontwerp dat
+voormeting is verricht (zie het Solomon vier-groepen-ontwerp, in Hoofdstuk \@ref(ch-ontwerp), voor een onderzoeksontwerp dat
 hiermee rekening houdt).
 
 ---
@@ -988,6 +988,6 @@ vervolgens slim gecombineerd om de interne validiteit zo goed mogelijk
 te beschermen. Uiteraard vereist de generalisatie naar ander
 taalmateriaal wel, dat de stimuli willekeurig zijn geselecteerd uit de
 (soms oneindig grote) populatie van al het mogelijke taalmateriaal (zie
-Hoofdstuk \@ref(ch:steekproeftrekking)).
+Hoofdstuk \@ref(ch-steekproeftrekking)).
 
 [^fn05-1]: De experimentator is degene die een experiment afneemt bij een proefpersoon. De experimentator kan een andere persoon zijn dan de onderzoekers die de onderzoekshypothesen hebben opgesteld en/of proefpersonen hebben gerecruteerd.

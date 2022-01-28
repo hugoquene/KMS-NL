@@ -1,9 +1,9 @@
-# Ontwerp {#ch:ontwerp}
+# Ontwerp {#ch-ontwerp}
 
 ## Inleiding {#sec:ontwerp-inleiding}
 
 Veel van de problemen met validiteit, die we bespraken in
-Hoofdstuk \@ref(ch:validiteit), kunnen voorkomen worden door goede gegevens
+Hoofdstuk \@ref(ch-validiteit), kunnen voorkomen worden door goede gegevens
 op een goede manier te verzamelen. Het *ontwerp* (Eng. "design") van een
 onderzoek geeft aan volgens welk schema of plan de gegevens verzameld
 zullen worden. Als we een goed en sterk ontwerp gebruiken, dan kunnen we
@@ -77,7 +77,7 @@ in het onderzoeksontwerp kiezen op welke wijze de behandelingen en
 observaties worden gecombineerd. We komen daarop terug in
 §\@ref(sec:afhankelijkegroepen).
 
-## Het one-shot single-case-ontwerp
+## Het one-shot single-case-ontwerp {#sec:oneshotsinglecase}
 
 Dit is een zwak ontwerp, waarbij er slechts éénmaal observaties worden
 gedaan, na een behandeling. Dit onderzoeksontwerp heeft het volgende
@@ -147,7 +147,7 @@ zijn in de observatiefase van de empirische cyclus, wanneer het gaat om
 het opdoen van ideeën en het formuleren van (globale) hypothesen, die
 later goed getoetst kunnen worden.
 
-## Het één-groep-voormeting-nameting-ontwerp
+## Het één-groep-voormeting-nameting-ontwerp {#sec:eengroepvoorna}
 
 Bij het één-groep-voormeting-nameting-ontwerp worden gegevens verzameld
 van één groep. Op het eerste tijdstip (meestal aangeduid als `T1`, maar
@@ -289,7 +289,7 @@ experimentele als de controle-conditie een (verschillende) rol spelen,
 omdat in beide condities op twee tijdstippen gemeten wordt. Bovendien
 kan een eventueel verschil tussen `(O2-O1`) en `(O4-O3)` ook te
 wijten zijn aan de (extra) *aandacht* die aan de experimentele conditie
-besteed is: het zgn. Hawthorne-effect (zie Voorbeeld 5.10 in Hoofdstuk \@ref(ch:validiteit)). Dit effect speelt vooral een rol als de
+besteed is: het zgn. Hawthorne-effect (zie Voorbeeld 5.10 in Hoofdstuk \@ref(ch-validiteit)). Dit effect speelt vooral een rol als de
 proefpersonen in de ene conditie (groep) meer aandacht krijgen dan in de
 andere, zoals in het onderstaande voorbeeld.
 
@@ -374,7 +374,7 @@ de proefpersonen.
 
 ---
 
-## Het nameting-controlegroep-ontwerp
+## Het nameting-controlegroep-ontwerp {#sec:nameting-controlegroep}
 
 In heel veel onderzoekingen wordt een voormeting uitgevoerd, omdat de
 onderzoekers willen onderbouwen dat de twee (of meer) onderzoeksgroepen
@@ -536,7 +536,7 @@ factoren te bestuderen in verschillende afzonderlijke onderzoeken
 
 We zullen later terugkomen op de analyse en interpretatie van gegevens
 uit factoriële onderzoeksontwerpen
-(Hoofdstuk \@ref(ch:variantieanalyse)). Voorlopig concentreren we ons op
+(Hoofdstuk \@ref(ch-variantieanalyse)). Voorlopig concentreren we ons op
 ontwerpen met slechts één onafhankelijke variabele.
 
 
@@ -571,7 +571,7 @@ onderzoek was overigens om te onderzoeken in hoeverre individuele
 verschillen in vloeiendheid in de vreemde taal te herleiden zijn naar
 individuele verschillen in vloeiendheid in de moedertaal. De samenhang
 tussen de twee metingen bleek hoog (correlatie $r=0.73$, meer hierover
-in Hoofdstuk \@ref(ch:samenhang). Sprekers die veel pauzeren in de vreemde
+in Hoofdstuk \@ref(ch-samenhang). Sprekers die veel pauzeren in de vreemde
 taal, doen dat vaak ook in hun moedertaal. De onderzoekers bepleiten dat
 met deze correlatie rekening gehouden moet worden bij het aanleren en
 toetsen van spreekvaardigheid in een vreemde taal.

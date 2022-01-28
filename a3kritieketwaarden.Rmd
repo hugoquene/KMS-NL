@@ -1,4 +1,4 @@
-# Kritieke waarden van $t$-verdeling {#app:kritieketwaarden}
+# Kritieke waarden van $t$-verdeling {#ap-kritieketwaarden}
 
 ```{r kritieketwaarden-hulpfiguur, echo=FALSE, fig.height=2}
 # adapted from `kritieketwaarden_hulpfiguur.R`

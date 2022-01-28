@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Appendix D Kritieke waarden van \(\chi^2\)-verdeling | Kwantitatieve Methoden en Statistiek</title>
   <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Appendix D Kritieke waarden van \(\chi^2\)-verdeling | Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
@@ -29,10 +29,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="app-kritieketwaarden.html"/>
+<link rel="prev" href="ap-kritieketwaarden.html"/>
 <link rel="next" href="referenties.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -48,13 +49,15 @@
 
 
 
-
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -113,6 +116,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -177,14 +203,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="ch-integriteit.html"><a href="ch-integriteit.html#gegevens"><i class="fa fa-check"></i><b>3.4</b> Gegevens</a></li>
 <li class="chapter" data-level="3.5" data-path="ch-integriteit.html"><a href="ch-integriteit.html#teksten"><i class="fa fa-check"></i><b>3.5</b> Teksten</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="ch-Meetniveau.html"><a href="ch-Meetniveau.html"><i class="fa fa-check"></i><b>4</b> Meetniveau</a>
+<li class="chapter" data-level="4" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html"><i class="fa fa-check"></i><b>4</b> Meetniveau</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="ch-Meetniveau.html"><a href="ch-Meetniveau.html#inleiding-1"><i class="fa fa-check"></i><b>4.1</b> Inleiding</a></li>
-<li class="chapter" data-level="4.2" data-path="ch-Meetniveau.html"><a href="ch-Meetniveau.html#sec:nominaal"><i class="fa fa-check"></i><b>4.2</b> Nominaal</a></li>
-<li class="chapter" data-level="4.3" data-path="ch-Meetniveau.html"><a href="ch-Meetniveau.html#sec:ordinaal"><i class="fa fa-check"></i><b>4.3</b> Ordinaal</a></li>
-<li class="chapter" data-level="4.4" data-path="ch-Meetniveau.html"><a href="ch-Meetniveau.html#sec:interval"><i class="fa fa-check"></i><b>4.4</b> Interval</a></li>
-<li class="chapter" data-level="4.5" data-path="ch-Meetniveau.html"><a href="ch-Meetniveau.html#sec:ratio"><i class="fa fa-check"></i><b>4.5</b> Ratio</a></li>
-<li class="chapter" data-level="4.6" data-path="ch-Meetniveau.html"><a href="ch-Meetniveau.html#sec:ordeningvanmeetniveaus"><i class="fa fa-check"></i><b>4.6</b> Ordening van meetniveaus</a></li>
+<li class="chapter" data-level="4.1" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#inleiding-1"><i class="fa fa-check"></i><b>4.1</b> Inleiding</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:nominaal"><i class="fa fa-check"></i><b>4.2</b> Nominaal</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:ordinaal"><i class="fa fa-check"></i><b>4.3</b> Ordinaal</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:interval"><i class="fa fa-check"></i><b>4.4</b> Interval</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:ratio"><i class="fa fa-check"></i><b>4.5</b> Ratio</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:ordeningvanmeetniveaus"><i class="fa fa-check"></i><b>4.6</b> Ordening van meetniveaus</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="ch-validiteit.html"><a href="ch-validiteit.html"><i class="fa fa-check"></i><b>5</b> Validiteit</a>
 <ul>
@@ -199,11 +225,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.1" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:ontwerp-inleiding"><i class="fa fa-check"></i><b>6.1</b> Inleiding</a></li>
 <li class="chapter" data-level="6.2" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:tussenbinnenproefpersonen"><i class="fa fa-check"></i><b>6.2</b> Tussen of binnen ?</a></li>
-<li class="chapter" data-level="6.3" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#het-one-shot-single-case-ontwerp"><i class="fa fa-check"></i><b>6.3</b> Het one-shot single-case-ontwerp</a></li>
-<li class="chapter" data-level="6.4" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#het-één-groep-voormeting-nameting-ontwerp"><i class="fa fa-check"></i><b>6.4</b> Het één-groep-voormeting-nameting-ontwerp</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:oneshotsinglecase"><i class="fa fa-check"></i><b>6.3</b> Het one-shot single-case-ontwerp</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:eengroepvoorna"><i class="fa fa-check"></i><b>6.4</b> Het één-groep-voormeting-nameting-ontwerp</a></li>
 <li class="chapter" data-level="6.5" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:voormeting-nameting-controlegroep-ontwerp"><i class="fa fa-check"></i><b>6.5</b> Het voormeting-nameting-controlegroep-ontwerp</a></li>
 <li class="chapter" data-level="6.6" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:solomon-vier-groepen-ontwerp"><i class="fa fa-check"></i><b>6.6</b> Het Solomon-vier-groepen-ontwerp</a></li>
-<li class="chapter" data-level="6.7" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#het-nameting-controlegroep-ontwerp"><i class="fa fa-check"></i><b>6.7</b> Het nameting-controlegroep-ontwerp</a></li>
+<li class="chapter" data-level="6.7" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:nameting-controlegroep"><i class="fa fa-check"></i><b>6.7</b> Het nameting-controlegroep-ontwerp</a></li>
 <li class="chapter" data-level="6.8" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:ontwerp-factorieel"><i class="fa fa-check"></i><b>6.8</b> Factoriële ontwerpen</a></li>
 <li class="chapter" data-level="6.9" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:afhankelijkegroepen"><i class="fa fa-check"></i><b>6.9</b> Afhankelijke- en onafhankelijke-groepen-ontwerp</a></li>
 <li class="chapter" data-level="6.10" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#onderzoek-ontwerpen"><i class="fa fa-check"></i><b>6.10</b> Onderzoek ontwerpen</a></li>
@@ -222,266 +248,267 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:steekproefgrootte"><i class="fa fa-check"></i><b>7.4</b> Steekproefgrootte</a></li>
 </ul></li>
 <li class="part"><span><b>Deel II: Beschrijvende statistiek</b></span></li>
-<li class="chapter" data-level="8" data-path="ch-frequenties.html"><a href="ch-frequenties.html"><i class="fa fa-check"></i><b>8</b> Frequenties</a>
+<li class="chapter" data-level="8" data-path="ch:frequenties.html"><a href="ch:frequenties.html"><i class="fa fa-check"></i><b>8</b> Frequenties</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="ch-frequenties.html"><a href="ch-frequenties.html#inleiding-3"><i class="fa fa-check"></i><b>8.1</b> Inleiding</a></li>
-<li class="chapter" data-level="8.2" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:frequenties"><i class="fa fa-check"></i><b>8.2</b> Frequenties</a>
+<li class="chapter" data-level="8.1" data-path="ch:frequenties.html"><a href="ch:frequenties.html#inleiding-3"><i class="fa fa-check"></i><b>8.1</b> Inleiding</a></li>
+<li class="chapter" data-level="8.2" data-path="ch:frequenties.html"><a href="ch:frequenties.html#sec:frequenties"><i class="fa fa-check"></i><b>8.2</b> Frequenties</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:intervallen"><i class="fa fa-check"></i><b>8.2.1</b> Intervallen</a></li>
-<li class="chapter" data-level="8.2.2" data-path="ch-frequenties.html"><a href="ch-frequenties.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
-<li class="chapter" data-level="8.2.3" data-path="ch-frequenties.html"><a href="ch-frequenties.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
-<li class="chapter" data-level="8.2.4" data-path="ch-frequenties.html"><a href="ch-frequenties.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
+<li class="chapter" data-level="8.2.1" data-path="ch:frequenties.html"><a href="ch:frequenties.html#sec:intervallen"><i class="fa fa-check"></i><b>8.2.1</b> Intervallen</a></li>
+<li class="chapter" data-level="8.2.2" data-path="ch:frequenties.html"><a href="ch:frequenties.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="8.2.3" data-path="ch:frequenties.html"><a href="ch:frequenties.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
+<li class="chapter" data-level="8.2.4" data-path="ch:frequenties.html"><a href="ch:frequenties.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:staafdiagrammen"><i class="fa fa-check"></i><b>8.3</b> Staafdiagrammen</a></li>
-<li class="chapter" data-level="8.4" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:histogrammen"><i class="fa fa-check"></i><b>8.4</b> Histogrammen</a>
+<li class="chapter" data-level="8.3" data-path="ch:frequenties.html"><a href="ch:frequenties.html#sec:staafdiagrammen"><i class="fa fa-check"></i><b>8.3</b> Staafdiagrammen</a></li>
+<li class="chapter" data-level="8.4" data-path="ch:frequenties.html"><a href="ch:frequenties.html#sec:histogrammen"><i class="fa fa-check"></i><b>8.4</b> Histogrammen</a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="ch-frequenties.html"><a href="ch-frequenties.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
-<li class="chapter" data-level="8.4.2" data-path="ch-frequenties.html"><a href="ch-frequenties.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
-<li class="chapter" data-level="8.4.3" data-path="ch-frequenties.html"><a href="ch-frequenties.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html"><i class="fa fa-check"></i><b>9</b> Centrum en spreiding</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#inleiding-4"><i class="fa fa-check"></i><b>9.1</b> Inleiding</a></li>
-<li class="chapter" data-level="9.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#symbolen"><i class="fa fa-check"></i><b>9.2</b> Symbolen</a></li>
-<li class="chapter" data-level="9.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#centrummaten"><i class="fa fa-check"></i><b>9.3</b> Centrummaten</a>
-<ul>
-<li class="chapter" data-level="9.3.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:gemiddelde"><i class="fa fa-check"></i><b>9.3.1</b> gemiddelde</a></li>
-<li class="chapter" data-level="9.3.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:mediaan"><i class="fa fa-check"></i><b>9.3.2</b> mediaan</a></li>
-<li class="chapter" data-level="9.3.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#modus"><i class="fa fa-check"></i><b>9.3.3</b> modus</a></li>
-<li class="chapter" data-level="9.3.4" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:harmonischgemiddelde"><i class="fa fa-check"></i><b>9.3.4</b> harmonisch gemiddelde</a></li>
-<li class="chapter" data-level="9.3.5" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#gewinsoriseerde-gemiddelde"><i class="fa fa-check"></i><b>9.3.5</b> gewinsoriseerde gemiddelde</a></li>
-<li class="chapter" data-level="9.3.6" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#getrimde-gemiddelde"><i class="fa fa-check"></i><b>9.3.6</b> getrimde gemiddelde</a></li>
-<li class="chapter" data-level="9.3.7" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#vergelijking-van-centrummaten"><i class="fa fa-check"></i><b>9.3.7</b> vergelijking van centrummaten</a></li>
-</ul></li>
-<li class="chapter" data-level="9.4" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:kwartielen-en-boxplots"><i class="fa fa-check"></i><b>9.4</b> Kwartielen en boxplots</a>
-<ul>
-<li class="chapter" data-level="9.4.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#kwartielen"><i class="fa fa-check"></i><b>9.4.1</b> Kwartielen</a></li>
-<li class="chapter" data-level="9.4.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:uitbijters"><i class="fa fa-check"></i><b>9.4.2</b> Uitbijters</a></li>
-<li class="chapter" data-level="9.4.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:boxplot"><i class="fa fa-check"></i><b>9.4.3</b> Boxplots</a></li>
-</ul></li>
-<li class="chapter" data-level="9.5" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:spreidingsmaten"><i class="fa fa-check"></i><b>9.5</b> Spreidingsmaten</a>
-<ul>
-<li class="chapter" data-level="9.5.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:variantie"><i class="fa fa-check"></i><b>9.5.1</b> variantie</a></li>
-<li class="chapter" data-level="9.5.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:standaarddeviatie"><i class="fa fa-check"></i><b>9.5.2</b> standaarddeviatie</a></li>
-<li class="chapter" data-level="9.5.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#mad"><i class="fa fa-check"></i><b>9.5.3</b> MAD</a></li>
-</ul></li>
-<li class="chapter" data-level="9.6" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:significantecijfers"><i class="fa fa-check"></i><b>9.6</b> Over significante cijfers</a>
-<ul>
-<li class="chapter" data-level="9.6.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:significantecijfers-gemiddelde"><i class="fa fa-check"></i><b>9.6.1</b> Gemiddelde en standaarddeviatie</a></li>
-<li class="chapter" data-level="9.6.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#percentages"><i class="fa fa-check"></i><b>9.6.2</b> Percentages</a></li>
-</ul></li>
-<li class="chapter" data-level="9.7" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:robuustefficient"><i class="fa fa-check"></i><b>9.7</b> Keuzemoment</a></li>
-<li class="chapter" data-level="9.8" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:standaardscores"><i class="fa fa-check"></i><b>9.8</b> Standaardscores</a></li>
-<li class="chapter" data-level="9.9" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
-<li class="chapter" data-level="9.10" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#jasp-3"><i class="fa fa-check"></i><b>9.10</b> JASP</a></li>
-<li class="chapter" data-level="9.11" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#r-3"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html"><i class="fa fa-check"></i><b>10</b> Kansverdelingen</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:kansen"><i class="fa fa-check"></i><b>10.1</b> Kansen</a></li>
-<li class="chapter" data-level="10.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:binomiaalverdeling"><i class="fa fa-check"></i><b>10.2</b> Binomiale kansverdeling</a>
-<ul>
-<li class="chapter" data-level="10.2.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#formules"><i class="fa fa-check"></i><b>10.2.1</b> formules</a></li>
-<li class="chapter" data-level="10.2.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#jasp-4"><i class="fa fa-check"></i><b>10.2.2</b> JASP</a></li>
-<li class="chapter" data-level="10.2.3" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#r-4"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
-</ul></li>
-<li class="chapter" data-level="10.3" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:normaalverdeling"><i class="fa fa-check"></i><b>10.3</b> Normale kansverdeling</a>
-<ul>
-<li class="chapter" data-level="10.3.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#formules-1"><i class="fa fa-check"></i><b>10.3.1</b> formules</a></li>
-<li class="chapter" data-level="10.3.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#jasp-5"><i class="fa fa-check"></i><b>10.3.2</b> JASP</a></li>
-<li class="chapter" data-level="10.3.3" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#r-5"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
-</ul></li>
-<li class="chapter" data-level="10.4" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld"><i class="fa fa-check"></i><b>10.4</b> Heeft mijn variabele een normale kansverdeling?</a>
-<ul>
-<li class="chapter" data-level="10.4.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
-<li class="chapter" data-level="10.4.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#jasp-6"><i class="fa fa-check"></i><b>10.4.2</b> JASP</a></li>
-<li class="chapter" data-level="10.4.3" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#r-6"><i class="fa fa-check"></i><b>10.4.3</b> R</a></li>
-</ul></li>
-<li class="chapter" data-level="10.5" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:watalsnietnormaal"><i class="fa fa-check"></i><b>10.5</b> Wat als mijn variabele niet normaal verdeeld is?</a></li>
-<li class="chapter" data-level="10.6" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:CentraalLimietTheorema"><i class="fa fa-check"></i><b>10.6</b> Kansverdeling van gemiddelde</a></li>
-<li class="chapter" data-level="10.7" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:betrouwbaarheidsinterval-gemiddelde"><i class="fa fa-check"></i><b>10.7</b> Betrouwbaarheidsinterval van het gemiddelde</a>
-<ul>
-<li class="chapter" data-level="10.7.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#formules-2"><i class="fa fa-check"></i><b>10.7.1</b> formules</a></li>
+<li class="chapter" data-level="8.4.1" data-path="ch:frequenties.html"><a href="ch:frequenties.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="8.4.2" data-path="ch:frequenties.html"><a href="ch:frequenties.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
+<li class="chapter" data-level="8.4.3" data-path="ch:frequenties.html"><a href="ch:frequenties.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="ch-samenhang.html"><a href="ch-samenhang.html"><i class="fa fa-check"></i><b>11</b> Samenhang</a>
+<li class="chapter" data-level="9" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html"><i class="fa fa-check"></i><b>9</b> Centrum en spreiding</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#inleiding-5"><i class="fa fa-check"></i><b>11.1</b> Inleiding</a></li>
-<li class="chapter" data-level="11.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:Pearson"><i class="fa fa-check"></i><b>11.2</b> Pearson product-moment-correlatie</a>
+<li class="chapter" data-level="9.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#inleiding-4"><i class="fa fa-check"></i><b>9.1</b> Inleiding</a></li>
+<li class="chapter" data-level="9.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#symbolen"><i class="fa fa-check"></i><b>9.2</b> Symbolen</a></li>
+<li class="chapter" data-level="9.3" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#centrummaten"><i class="fa fa-check"></i><b>9.3</b> Centrummaten</a>
 <ul>
-<li class="chapter" data-level="11.2.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#formules-3"><i class="fa fa-check"></i><b>11.2.1</b> Formules</a></li>
-<li class="chapter" data-level="11.2.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
-<li class="chapter" data-level="11.2.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#jasp-7"><i class="fa fa-check"></i><b>11.2.3</b> JASP</a></li>
-<li class="chapter" data-level="11.2.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-7"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
+<li class="chapter" data-level="9.3.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:gemiddelde"><i class="fa fa-check"></i><b>9.3.1</b> gemiddelde</a></li>
+<li class="chapter" data-level="9.3.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:mediaan"><i class="fa fa-check"></i><b>9.3.2</b> mediaan</a></li>
+<li class="chapter" data-level="9.3.3" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#modus"><i class="fa fa-check"></i><b>9.3.3</b> modus</a></li>
+<li class="chapter" data-level="9.3.4" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:harmonischgemiddelde"><i class="fa fa-check"></i><b>9.3.4</b> harmonisch gemiddelde</a></li>
+<li class="chapter" data-level="9.3.5" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#gewinsoriseerde-gemiddelde"><i class="fa fa-check"></i><b>9.3.5</b> gewinsoriseerde gemiddelde</a></li>
+<li class="chapter" data-level="9.3.6" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#getrimde-gemiddelde"><i class="fa fa-check"></i><b>9.3.6</b> getrimde gemiddelde</a></li>
+<li class="chapter" data-level="9.3.7" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#vergelijking-van-centrummaten"><i class="fa fa-check"></i><b>9.3.7</b> vergelijking van centrummaten</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:regressie"><i class="fa fa-check"></i><b>11.3</b> Regressie</a>
+<li class="chapter" data-level="9.4" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:kwartielen-en-boxplots"><i class="fa fa-check"></i><b>9.4</b> Kwartielen en boxplots</a>
 <ul>
-<li class="chapter" data-level="11.3.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:regressie-formules"><i class="fa fa-check"></i><b>11.3.1</b> Formules</a></li>
-<li class="chapter" data-level="11.3.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
-<li class="chapter" data-level="11.3.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#jasp-8"><i class="fa fa-check"></i><b>11.3.3</b> JASP</a></li>
-<li class="chapter" data-level="11.3.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-8"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
+<li class="chapter" data-level="9.4.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#kwartielen"><i class="fa fa-check"></i><b>9.4.1</b> Kwartielen</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:uitbijters"><i class="fa fa-check"></i><b>9.4.2</b> Uitbijters</a></li>
+<li class="chapter" data-level="9.4.3" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:boxplot"><i class="fa fa-check"></i><b>9.4.3</b> Boxplots</a></li>
 </ul></li>
-<li class="chapter" data-level="11.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#invloedrijke-observaties"><i class="fa fa-check"></i><b>11.4</b> Invloedrijke observaties</a></li>
-<li class="chapter" data-level="11.5" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearmans rangorde-correlatie</a>
+<li class="chapter" data-level="9.5" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:spreidingsmaten"><i class="fa fa-check"></i><b>9.5</b> Spreidingsmaten</a>
 <ul>
-<li class="chapter" data-level="11.5.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#formules-4"><i class="fa fa-check"></i><b>11.5.1</b> Formules</a></li>
-<li class="chapter" data-level="11.5.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
-<li class="chapter" data-level="11.5.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#jasp-9"><i class="fa fa-check"></i><b>11.5.3</b> JASP</a></li>
-<li class="chapter" data-level="11.5.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-9"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
+<li class="chapter" data-level="9.5.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:variantie"><i class="fa fa-check"></i><b>9.5.1</b> variantie</a></li>
+<li class="chapter" data-level="9.5.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:standaarddeviatie"><i class="fa fa-check"></i><b>9.5.2</b> standaarddeviatie</a></li>
+<li class="chapter" data-level="9.5.3" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#mad"><i class="fa fa-check"></i><b>9.5.3</b> MAD</a></li>
 </ul></li>
-<li class="chapter" data-level="11.6" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
+<li class="chapter" data-level="9.6" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:significantecijfers"><i class="fa fa-check"></i><b>9.6</b> Over significante cijfers</a>
 <ul>
-<li class="chapter" data-level="11.6.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#formules-5"><i class="fa fa-check"></i><b>11.6.1</b> Formules</a></li>
-<li class="chapter" data-level="11.6.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
-<li class="chapter" data-level="11.6.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#jasp-10"><i class="fa fa-check"></i><b>11.6.3</b> JASP</a></li>
-<li class="chapter" data-level="11.6.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-10"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
+<li class="chapter" data-level="9.6.1" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:significantecijfers-gemiddelde"><i class="fa fa-check"></i><b>9.6.1</b> Gemiddelde en standaarddeviatie</a></li>
+<li class="chapter" data-level="9.6.2" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#percentages"><i class="fa fa-check"></i><b>9.6.2</b> Percentages</a></li>
 </ul></li>
-<li class="chapter" data-level="11.7" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Tenslotte</a></li>
+<li class="chapter" data-level="9.7" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:robuustefficient"><i class="fa fa-check"></i><b>9.7</b> Keuzemoment</a></li>
+<li class="chapter" data-level="9.8" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#sec:standaardscores"><i class="fa fa-check"></i><b>9.8</b> Standaardscores</a></li>
+<li class="chapter" data-level="9.9" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
+<li class="chapter" data-level="9.10" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#jasp-3"><i class="fa fa-check"></i><b>9.10</b> JASP</a></li>
+<li class="chapter" data-level="9.11" data-path="ch:centrumenspreiding.html"><a href="ch:centrumenspreiding.html#r-3"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html"><i class="fa fa-check"></i><b>12</b> Betrouwbaarheid</a>
+<li class="chapter" data-level="10" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html"><i class="fa fa-check"></i><b>10</b> Kansverdelingen</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#inleiding-6"><i class="fa fa-check"></i><b>12.1</b> Inleiding</a></li>
-<li class="chapter" data-level="12.2" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#wat-is-betrouwbaarheid"><i class="fa fa-check"></i><b>12.2</b> Wat is betrouwbaarheid?</a></li>
-<li class="chapter" data-level="12.3" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#testtheorie"><i class="fa fa-check"></i><b>12.3</b> Testtheorie</a></li>
-<li class="chapter" data-level="12.4" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#interpretaties"><i class="fa fa-check"></i><b>12.4</b> Interpretaties</a></li>
-<li class="chapter" data-level="12.5" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#methoden-om-betrouwbaarheid-te-schatten"><i class="fa fa-check"></i><b>12.5</b> Methoden om betrouwbaarheid te schatten</a></li>
-<li class="chapter" data-level="12.6" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#betrouwbaarheid-tussen-beoordelaars"><i class="fa fa-check"></i><b>12.6</b> Betrouwbaarheid tussen beoordelaars</a></li>
-<li class="chapter" data-level="12.7" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#betrouwbaarheid-en-constructvaliditeit"><i class="fa fa-check"></i><b>12.7</b> Betrouwbaarheid en constructvaliditeit</a></li>
-<li class="chapter" data-level="12.8" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
-<li class="chapter" data-level="12.9" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#jasp-11"><i class="fa fa-check"></i><b>12.9</b> JASP</a></li>
-<li class="chapter" data-level="12.10" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#r-11"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
+<li class="chapter" data-level="10.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:kansen"><i class="fa fa-check"></i><b>10.1</b> Kansen</a></li>
+<li class="chapter" data-level="10.2" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:binomiaalverdeling"><i class="fa fa-check"></i><b>10.2</b> Binomiale kansverdeling</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#formules"><i class="fa fa-check"></i><b>10.2.1</b> formules</a></li>
+<li class="chapter" data-level="10.2.2" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#jasp-4"><i class="fa fa-check"></i><b>10.2.2</b> JASP</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#r-4"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:normaalverdeling"><i class="fa fa-check"></i><b>10.3</b> Normale kansverdeling</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#formules-1"><i class="fa fa-check"></i><b>10.3.1</b> formules</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#jasp-5"><i class="fa fa-check"></i><b>10.3.2</b> JASP</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#r-5"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:isvarnormaalverdeeld"><i class="fa fa-check"></i><b>10.4</b> Heeft mijn variabele een normale kansverdeling?</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#jasp-6"><i class="fa fa-check"></i><b>10.4.2</b> JASP</a></li>
+<li class="chapter" data-level="10.4.3" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#r-6"><i class="fa fa-check"></i><b>10.4.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:watalsnietnormaal"><i class="fa fa-check"></i><b>10.5</b> Wat als mijn variabele niet normaal verdeeld is?</a></li>
+<li class="chapter" data-level="10.6" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:CentraalLimietTheorema"><i class="fa fa-check"></i><b>10.6</b> Kansverdeling van gemiddelde</a></li>
+<li class="chapter" data-level="10.7" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#sec:betrouwbaarheidsinterval-gemiddelde"><i class="fa fa-check"></i><b>10.7</b> Betrouwbaarheidsinterval van het gemiddelde</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="ch:kansverdelingen.html"><a href="ch:kansverdelingen.html#formules-2"><i class="fa fa-check"></i><b>10.7.1</b> formules</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ch:samenhang.html"><a href="ch:samenhang.html"><i class="fa fa-check"></i><b>11</b> Samenhang</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#inleiding-5"><i class="fa fa-check"></i><b>11.1</b> Inleiding</a></li>
+<li class="chapter" data-level="11.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:Pearson"><i class="fa fa-check"></i><b>11.2</b> Pearson product-moment-correlatie</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#formules-3"><i class="fa fa-check"></i><b>11.2.1</b> Formules</a></li>
+<li class="chapter" data-level="11.2.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.2.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#jasp-7"><i class="fa fa-check"></i><b>11.2.3</b> JASP</a></li>
+<li class="chapter" data-level="11.2.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#r-7"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:regressie"><i class="fa fa-check"></i><b>11.3</b> Regressie</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:regressie-formules"><i class="fa fa-check"></i><b>11.3.1</b> Formules</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.3.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#jasp-8"><i class="fa fa-check"></i><b>11.3.3</b> JASP</a></li>
+<li class="chapter" data-level="11.3.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#r-8"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#invloedrijke-observaties"><i class="fa fa-check"></i><b>11.4</b> Invloedrijke observaties</a></li>
+<li class="chapter" data-level="11.5" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearmans rangorde-correlatie</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#formules-4"><i class="fa fa-check"></i><b>11.5.1</b> Formules</a></li>
+<li class="chapter" data-level="11.5.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.5.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#jasp-9"><i class="fa fa-check"></i><b>11.5.3</b> JASP</a></li>
+<li class="chapter" data-level="11.5.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#r-9"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
+<ul>
+<li class="chapter" data-level="11.6.1" data-path="ch:samenhang.html"><a href="ch:samenhang.html#formules-5"><i class="fa fa-check"></i><b>11.6.1</b> Formules</a></li>
+<li class="chapter" data-level="11.6.2" data-path="ch:samenhang.html"><a href="ch:samenhang.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.6.3" data-path="ch:samenhang.html"><a href="ch:samenhang.html#jasp-10"><i class="fa fa-check"></i><b>11.6.3</b> JASP</a></li>
+<li class="chapter" data-level="11.6.4" data-path="ch:samenhang.html"><a href="ch:samenhang.html#r-10"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="ch:samenhang.html"><a href="ch:samenhang.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Tenslotte</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html"><i class="fa fa-check"></i><b>12</b> Betrouwbaarheid</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#inleiding-6"><i class="fa fa-check"></i><b>12.1</b> Inleiding</a></li>
+<li class="chapter" data-level="12.2" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#wat-is-betrouwbaarheid"><i class="fa fa-check"></i><b>12.2</b> Wat is betrouwbaarheid?</a></li>
+<li class="chapter" data-level="12.3" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#testtheorie"><i class="fa fa-check"></i><b>12.3</b> Testtheorie</a></li>
+<li class="chapter" data-level="12.4" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#interpretaties"><i class="fa fa-check"></i><b>12.4</b> Interpretaties</a></li>
+<li class="chapter" data-level="12.5" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#methoden-om-betrouwbaarheid-te-schatten"><i class="fa fa-check"></i><b>12.5</b> Methoden om betrouwbaarheid te schatten</a></li>
+<li class="chapter" data-level="12.6" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#betrouwbaarheid-tussen-beoordelaars"><i class="fa fa-check"></i><b>12.6</b> Betrouwbaarheid tussen beoordelaars</a></li>
+<li class="chapter" data-level="12.7" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#betrouwbaarheid-en-constructvaliditeit"><i class="fa fa-check"></i><b>12.7</b> Betrouwbaarheid en constructvaliditeit</a></li>
+<li class="chapter" data-level="12.8" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
+<li class="chapter" data-level="12.9" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#jasp-11"><i class="fa fa-check"></i><b>12.9</b> JASP</a></li>
+<li class="chapter" data-level="12.10" data-path="ch:betrouwbaarheid.html"><a href="ch:betrouwbaarheid.html#r-11"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
 </ul></li>
 <li class="part"><span><b>Deel III: Toetsende statistiek</b></span></li>
-<li class="chapter" data-level="13" data-path="ch-toetsing.html"><a href="ch-toetsing.html"><i class="fa fa-check"></i><b>13</b> Toetsing</a>
+<li class="chapter" data-level="13" data-path="ch:toetsing.html"><a href="ch:toetsing.html"><i class="fa fa-check"></i><b>13</b> Toetsing</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:toetsing-inleiding"><i class="fa fa-check"></i><b>13.1</b> Inleiding</a></li>
-<li class="chapter" data-level="13.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-onesample"><i class="fa fa-check"></i><b>13.2</b> <span class="math inline">\(t\)</span>-toets voor enkele steekproef</a>
+<li class="chapter" data-level="13.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:toetsing-inleiding"><i class="fa fa-check"></i><b>13.1</b> Inleiding</a></li>
+<li class="chapter" data-level="13.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-onesample"><i class="fa fa-check"></i><b>13.2</b> <span class="math inline">\(t\)</span>-toets voor enkele steekproef</a>
 <ul>
-<li class="chapter" data-level="13.2.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-vrijheidsgraden"><i class="fa fa-check"></i><b>13.2.1</b> vrijheidsgraden</a></li>
-<li class="chapter" data-level="13.2.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-1"><i class="fa fa-check"></i><b>13.2.2</b> formules</a></li>
-<li class="chapter" data-level="13.2.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-aannames"><i class="fa fa-check"></i><b>13.2.3</b> aannames</a></li>
-<li class="chapter" data-level="13.2.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
-<li class="chapter" data-level="13.2.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:jaspttoetsenkel"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
-<li class="chapter" data-level="13.2.6" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-12"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
+<li class="chapter" data-level="13.2.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-vrijheidsgraden"><i class="fa fa-check"></i><b>13.2.1</b> vrijheidsgraden</a></li>
+<li class="chapter" data-level="13.2.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-1"><i class="fa fa-check"></i><b>13.2.2</b> formules</a></li>
+<li class="chapter" data-level="13.2.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-aannames"><i class="fa fa-check"></i><b>13.2.3</b> aannames</a></li>
+<li class="chapter" data-level="13.2.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
+<li class="chapter" data-level="13.2.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:jaspttoetsenkel"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
+<li class="chapter" data-level="13.2.6" data-path="ch:toetsing.html"><a href="ch:toetsing.html#r-12"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
 </ul></li>
-<li class="chapter" data-level="13.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:pgroterdannul"><i class="fa fa-check"></i><b>13.3</b> Overschrijdingskans <span class="math inline">\(p\)</span> is altijd groter dan nul</a></li>
-<li class="chapter" data-level="13.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-eenzijdigtweezijdig"><i class="fa fa-check"></i><b>13.4</b> Eenzijdige en tweezijdige toetsen</a></li>
-<li class="chapter" data-level="13.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:t-betrouwbaarheidsinterval-gemiddelde"><i class="fa fa-check"></i><b>13.5</b> Betrouwbaarheidsinterval van het gemiddelde</a>
+<li class="chapter" data-level="13.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:pgroterdannul"><i class="fa fa-check"></i><b>13.3</b> Overschrijdingskans <span class="math inline">\(p\)</span> is altijd groter dan nul</a></li>
+<li class="chapter" data-level="13.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-eenzijdigtweezijdig"><i class="fa fa-check"></i><b>13.4</b> Eenzijdige en tweezijdige toetsen</a></li>
+<li class="chapter" data-level="13.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:t-betrouwbaarheidsinterval-gemiddelde"><i class="fa fa-check"></i><b>13.5</b> Betrouwbaarheidsinterval van het gemiddelde</a>
 <ul>
-<li class="chapter" data-level="13.5.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-2"><i class="fa fa-check"></i><b>13.5.1</b> formules</a></li>
-<li class="chapter" data-level="13.5.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
-<li class="chapter" data-level="13.5.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#jasp-12"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
-<li class="chapter" data-level="13.5.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-13"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
+<li class="chapter" data-level="13.5.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-2"><i class="fa fa-check"></i><b>13.5.1</b> formules</a></li>
+<li class="chapter" data-level="13.5.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="13.5.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#jasp-12"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
+<li class="chapter" data-level="13.5.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#r-13"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
 </ul></li>
-<li class="chapter" data-level="13.6" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-onafh"><i class="fa fa-check"></i><b>13.6</b> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven</a>
+<li class="chapter" data-level="13.6" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-onafh"><i class="fa fa-check"></i><b>13.6</b> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven</a>
 <ul>
-<li class="chapter" data-level="13.6.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-ongepaard-aannames"><i class="fa fa-check"></i><b>13.6.1</b> aannames</a></li>
-<li class="chapter" data-level="13.6.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-formules"><i class="fa fa-check"></i><b>13.6.2</b> formules</a></li>
-<li class="chapter" data-level="13.6.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:SPSS-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.3</b> SPSS</a></li>
-<li class="chapter" data-level="13.6.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:jaspttoetsongepaard"><i class="fa fa-check"></i><b>13.6.4</b> JASP</a></li>
-<li class="chapter" data-level="13.6.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.5</b> R</a></li>
+<li class="chapter" data-level="13.6.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-ongepaard-aannames"><i class="fa fa-check"></i><b>13.6.1</b> aannames</a></li>
+<li class="chapter" data-level="13.6.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-formules"><i class="fa fa-check"></i><b>13.6.2</b> formules</a></li>
+<li class="chapter" data-level="13.6.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:SPSS-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.3</b> SPSS</a></li>
+<li class="chapter" data-level="13.6.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:jaspttoetsongepaard"><i class="fa fa-check"></i><b>13.6.4</b> JASP</a></li>
+<li class="chapter" data-level="13.6.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.5</b> R</a></li>
 </ul></li>
-<li class="chapter" data-level="13.7" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-gepaard"><i class="fa fa-check"></i><b>13.7</b> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen</a>
+<li class="chapter" data-level="13.7" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-gepaard"><i class="fa fa-check"></i><b>13.7</b> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen</a>
 <ul>
-<li class="chapter" data-level="13.7.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#aannames-1"><i class="fa fa-check"></i><b>13.7.1</b> aannames</a></li>
-<li class="chapter" data-level="13.7.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-4"><i class="fa fa-check"></i><b>13.7.2</b> formules</a></li>
-<li class="chapter" data-level="13.7.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:SPSS-ttoets-gepaard"><i class="fa fa-check"></i><b>13.7.3</b> SPSS</a></li>
-<li class="chapter" data-level="13.7.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:jaspttoetsgepaard"><i class="fa fa-check"></i><b>13.7.4</b> JASP</a></li>
-<li class="chapter" data-level="13.7.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-gepaard"><i class="fa fa-check"></i><b>13.7.5</b> R</a></li>
+<li class="chapter" data-level="13.7.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#aannames-1"><i class="fa fa-check"></i><b>13.7.1</b> aannames</a></li>
+<li class="chapter" data-level="13.7.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-4"><i class="fa fa-check"></i><b>13.7.2</b> formules</a></li>
+<li class="chapter" data-level="13.7.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:SPSS-ttoets-gepaard"><i class="fa fa-check"></i><b>13.7.3</b> SPSS</a></li>
+<li class="chapter" data-level="13.7.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:jaspttoetsgepaard"><i class="fa fa-check"></i><b>13.7.4</b> JASP</a></li>
+<li class="chapter" data-level="13.7.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:R-ttoets-gepaard"><i class="fa fa-check"></i><b>13.7.5</b> R</a></li>
 </ul></li>
-<li class="chapter" data-level="13.8" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-effectgrootte"><i class="fa fa-check"></i><b>13.8</b> Effectgrootte</a>
+<li class="chapter" data-level="13.8" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-effectgrootte"><i class="fa fa-check"></i><b>13.8</b> Effectgrootte</a>
 <ul>
-<li class="chapter" data-level="13.8.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-5"><i class="fa fa-check"></i><b>13.8.1</b> formules</a></li>
-<li class="chapter" data-level="13.8.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-13-2"><i class="fa fa-check"></i><b>13.8.2</b> SPSS</a></li>
-<li class="chapter" data-level="13.8.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#jasp-13"><i class="fa fa-check"></i><b>13.8.3</b> JASP</a></li>
-<li class="chapter" data-level="13.8.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-14"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
-<li class="chapter" data-level="13.8.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:betrouwbaarheidsinterval-effectgrootte"><i class="fa fa-check"></i><b>13.8.5</b> Betrouwbaarheidsinterval van de effectgrootte</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="ch-power.html"><a href="ch-power.html"><i class="fa fa-check"></i><b>14</b> Power</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="ch-power.html"><a href="ch-power.html#sec:power-inleiding"><i class="fa fa-check"></i><b>14.1</b> Inleiding</a></li>
-<li class="chapter" data-level="14.2" data-path="ch-power.html"><a href="ch-power.html#sec:effectgrootte-power"><i class="fa fa-check"></i><b>14.2</b> Verband tussen effectgrootte en power</a></li>
-<li class="chapter" data-level="14.3" data-path="ch-power.html"><a href="ch-power.html#sec:steekproefgrootte-power"><i class="fa fa-check"></i><b>14.3</b> Verband tussen steekproefgrootte en power</a></li>
-<li class="chapter" data-level="14.4" data-path="ch-power.html"><a href="ch-power.html#sec:significantieniveau-power"><i class="fa fa-check"></i><b>14.4</b> Verband tussen significantieniveau en power</a></li>
-<li class="chapter" data-level="14.5" data-path="ch-power.html"><a href="ch-power.html#nadelen-van-onvoldoende-power"><i class="fa fa-check"></i><b>14.5</b> Nadelen van onvoldoende power</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html"><i class="fa fa-check"></i><b>15</b> Variantieanalyse</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:inleiding"><i class="fa fa-check"></i><b>15.1</b> Inleiding</a></li>
-<li class="chapter" data-level="15.2" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-voorbeelden"><i class="fa fa-check"></i><b>15.2</b> Enkele voorbeelden</a>
-<ul>
-<li class="chapter" data-level="15.2.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#aannames"><i class="fa fa-check"></i><b>15.2.1</b> aannames</a></li>
-</ul></li>
-<li class="chapter" data-level="15.3" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#eén-weg-variantieanalyse"><i class="fa fa-check"></i><b>15.3</b> Eén-weg-variantieanalyse</a>
-<ul>
-<li class="chapter" data-level="15.3.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-uitleg"><i class="fa fa-check"></i><b>15.3.1</b> Een intuïtieve uitleg</a></li>
-<li class="chapter" data-level="15.3.2" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-formeel"><i class="fa fa-check"></i><b>15.3.2</b> Een formele uitleg</a></li>
-<li class="chapter" data-level="15.3.3" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-effectgrootte"><i class="fa fa-check"></i><b>15.3.3</b> Effectgrootte</a></li>
-<li class="chapter" data-level="15.3.4" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-gericht"><i class="fa fa-check"></i><b>15.3.4</b> Gerichte vergelijkingen</a></li>
-<li class="chapter" data-level="15.3.5" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc vergelijkingen</a></li>
-<li class="chapter" data-level="15.3.6" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
-<li class="chapter" data-level="15.3.7" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#jasp-14"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
-<li class="chapter" data-level="15.3.8" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
-</ul></li>
-<li class="chapter" data-level="15.4" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#tweeweg-variantieanalyse"><i class="fa fa-check"></i><b>15.4</b> Tweeweg-variantieanalyse</a>
-<ul>
-<li class="chapter" data-level="15.4.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#een-intuïtieve-uitleg"><i class="fa fa-check"></i><b>15.4.1</b> Een intuïtieve uitleg</a></li>
-<li class="chapter" data-level="15.4.2" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#een-formele-uitleg"><i class="fa fa-check"></i><b>15.4.2</b> Een formele uitleg</a></li>
-<li class="chapter" data-level="15.4.3" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#spss-13"><i class="fa fa-check"></i><b>15.4.3</b> SPSS</a></li>
-<li class="chapter" data-level="15.4.4" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#jasp-15"><i class="fa fa-check"></i><b>15.4.4</b> JASP</a></li>
-<li class="chapter" data-level="15.4.5" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#r-16"><i class="fa fa-check"></i><b>15.4.5</b> R</a></li>
+<li class="chapter" data-level="13.8.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-5"><i class="fa fa-check"></i><b>13.8.1</b> formules</a></li>
+<li class="chapter" data-level="13.8.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#spss-13-2"><i class="fa fa-check"></i><b>13.8.2</b> SPSS</a></li>
+<li class="chapter" data-level="13.8.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#jasp-13"><i class="fa fa-check"></i><b>13.8.3</b> JASP</a></li>
+<li class="chapter" data-level="13.8.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#r-14"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
+<li class="chapter" data-level="13.8.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:betrouwbaarheidsinterval-effectgrootte"><i class="fa fa-check"></i><b>13.8.5</b> Betrouwbaarheidsinterval van de effectgrootte</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html"><i class="fa fa-check"></i><b>16</b> Chi-kwadraat-toetsen</a>
+<li class="chapter" data-level="14" data-path="ch:power.html"><a href="ch:power.html"><i class="fa fa-check"></i><b>14</b> Power</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#sec:h16inleiding"><i class="fa fa-check"></i><b>16.1</b> Inleiding</a></li>
-<li class="chapter" data-level="16.2" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#sec:chi2gof"><i class="fa fa-check"></i><b>16.2</b> <span class="math inline">\(\chi^2\)</span>-toets voor “goodness of fit” in enkele steekproef</a></li>
-<li class="chapter" data-level="16.3" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#chi2-toets-voor-homogeniteit-van-een-variabele-in-meerdere-steekproeven"><i class="fa fa-check"></i><b>16.3</b> <span class="math inline">\(\chi^2\)</span>-toets voor homogeniteit van een variabele in meerdere steekproeven</a></li>
-<li class="chapter" data-level="16.4" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#chi2-toets-voor-verband-tussen-twee-variabelen-in-enkele-steekproef"><i class="fa fa-check"></i><b>16.4</b> <span class="math inline">\(\chi^2\)</span>-toets voor verband tussen twee variabelen in enkele steekproef</a></li>
-<li class="chapter" data-level="16.5" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#sec:chi2toets-aannames"><i class="fa fa-check"></i><b>16.5</b> aannames</a></li>
-<li class="chapter" data-level="16.6" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#formules-6"><i class="fa fa-check"></i><b>16.6</b> formules</a></li>
-<li class="chapter" data-level="16.7" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#spss-14"><i class="fa fa-check"></i><b>16.7</b> SPSS</a>
-<ul>
-<li class="chapter" data-level="16.7.1" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#goodness-of-fit-voorbereiding"><i class="fa fa-check"></i><b>16.7.1</b> goodness of fit: voorbereiding</a></li>
-<li class="chapter" data-level="16.7.2" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#goodness-of-fit-toetsing"><i class="fa fa-check"></i><b>16.7.2</b> goodness of fit: toetsing</a></li>
-<li class="chapter" data-level="16.7.3" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#kruistabellen-voorbereiding"><i class="fa fa-check"></i><b>16.7.3</b> kruistabellen: voorbereiding</a></li>
-<li class="chapter" data-level="16.7.4" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#kruistabellen-toetsing"><i class="fa fa-check"></i><b>16.7.4</b> kruistabellen: toetsing</a></li>
+<li class="chapter" data-level="14.1" data-path="ch:power.html"><a href="ch:power.html#sec:power-inleiding"><i class="fa fa-check"></i><b>14.1</b> Inleiding</a></li>
+<li class="chapter" data-level="14.2" data-path="ch:power.html"><a href="ch:power.html#sec:effectgrootte-power"><i class="fa fa-check"></i><b>14.2</b> Verband tussen effectgrootte en power</a></li>
+<li class="chapter" data-level="14.3" data-path="ch:power.html"><a href="ch:power.html#sec:steekproefgrootte-power"><i class="fa fa-check"></i><b>14.3</b> Verband tussen steekproefgrootte en power</a></li>
+<li class="chapter" data-level="14.4" data-path="ch:power.html"><a href="ch:power.html#sec:significantieniveau-power"><i class="fa fa-check"></i><b>14.4</b> Verband tussen significantieniveau en power</a></li>
+<li class="chapter" data-level="14.5" data-path="ch:power.html"><a href="ch:power.html#nadelen-van-onvoldoende-power"><i class="fa fa-check"></i><b>14.5</b> Nadelen van onvoldoende power</a></li>
 </ul></li>
-<li class="chapter" data-level="16.8" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#jasp-16"><i class="fa fa-check"></i><b>16.8</b> JASP</a>
+<li class="chapter" data-level="15" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html"><i class="fa fa-check"></i><b>15</b> Variantieanalyse</a>
 <ul>
-<li class="chapter" data-level="16.8.1" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#goodness-of-fit-voorbereiding-1"><i class="fa fa-check"></i><b>16.8.1</b> goodness of fit: voorbereiding</a></li>
-<li class="chapter" data-level="16.8.2" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#goodness-of-fit-toetsing-1"><i class="fa fa-check"></i><b>16.8.2</b> goodness of fit: toetsing</a></li>
-<li class="chapter" data-level="16.8.3" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#kruistabellen-voorbereiding-1"><i class="fa fa-check"></i><b>16.8.3</b> kruistabellen: voorbereiding</a></li>
-<li class="chapter" data-level="16.8.4" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#kruistabellen-toetsing-1"><i class="fa fa-check"></i><b>16.8.4</b> kruistabellen: toetsing</a></li>
+<li class="chapter" data-level="15.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:inleiding"><i class="fa fa-check"></i><b>15.1</b> Inleiding</a></li>
+<li class="chapter" data-level="15.2" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-voorbeelden"><i class="fa fa-check"></i><b>15.2</b> Enkele voorbeelden</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#aannames"><i class="fa fa-check"></i><b>15.2.1</b> aannames</a></li>
 </ul></li>
-<li class="chapter" data-level="16.9" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#r-17"><i class="fa fa-check"></i><b>16.9</b> R</a>
+<li class="chapter" data-level="15.3" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#eén-weg-variantieanalyse"><i class="fa fa-check"></i><b>15.3</b> Eén-weg-variantieanalyse</a>
 <ul>
-<li class="chapter" data-level="16.9.1" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#goodness-of-fit-toetsing-2"><i class="fa fa-check"></i><b>16.9.1</b> goodness of fit: toetsing</a></li>
-<li class="chapter" data-level="16.9.2" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#kruistabellen-voorbereiding-en-toetsing"><i class="fa fa-check"></i><b>16.9.2</b> kruistabellen: voorbereiding en toetsing</a></li>
+<li class="chapter" data-level="15.3.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-uitleg"><i class="fa fa-check"></i><b>15.3.1</b> Een intuïtieve uitleg</a></li>
+<li class="chapter" data-level="15.3.2" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-formeel"><i class="fa fa-check"></i><b>15.3.2</b> Een formele uitleg</a></li>
+<li class="chapter" data-level="15.3.3" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-effectgrootte"><i class="fa fa-check"></i><b>15.3.3</b> Effectgrootte</a></li>
+<li class="chapter" data-level="15.3.4" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-gericht"><i class="fa fa-check"></i><b>15.3.4</b> Gerichte vergelijkingen</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc vergelijkingen</a></li>
+<li class="chapter" data-level="15.3.6" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
+<li class="chapter" data-level="15.3.7" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#jasp-14"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
+<li class="chapter" data-level="15.3.8" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
 </ul></li>
-<li class="chapter" data-level="16.10" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#effectgrootte-odds-ratio"><i class="fa fa-check"></i><b>16.10</b> Effectgrootte: odds ratio</a></li>
+<li class="chapter" data-level="15.4" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:tweeweg-anova"><i class="fa fa-check"></i><b>15.4</b> Tweeweg-variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#een-intuïtieve-uitleg"><i class="fa fa-check"></i><b>15.4.1</b> Een intuïtieve uitleg</a></li>
+<li class="chapter" data-level="15.4.2" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#een-formele-uitleg"><i class="fa fa-check"></i><b>15.4.2</b> Een formele uitleg</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-twoway-posthoc"><i class="fa fa-check"></i><b>15.4.3</b> Post-hoc vergelijkingen</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#spss-13"><i class="fa fa-check"></i><b>15.4.4</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#jasp-15"><i class="fa fa-check"></i><b>15.4.5</b> JASP</a></li>
+<li class="chapter" data-level="15.4.6" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#r-16"><i class="fa fa-check"></i><b>15.4.6</b> R</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html"><i class="fa fa-check"></i><b>17</b> Andere nonparametrische toetsen</a>
-<ul>
-<li class="chapter" data-level="17.1" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#sec:h17inleiding"><i class="fa fa-check"></i><b>17.1</b> Inleiding</a></li>
-<li class="chapter" data-level="17.2" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#gepaarde-observaties-enkele-steekproef"><i class="fa fa-check"></i><b>17.2</b> Gepaarde observaties, enkele steekproef</a>
-<ul>
-<li class="chapter" data-level="17.2.1" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#sec:tekentoets"><i class="fa fa-check"></i><b>17.2.1</b> Tekentoets</a></li>
-<li class="chapter" data-level="17.2.2" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#sec:Wilcoxon-signed-rank"><i class="fa fa-check"></i><b>17.2.2</b> Wilcoxon signed-ranks test</a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#onafhankelijke-observaties-meerdere-steekproeven"><i class="fa fa-check"></i><b>17.3</b> Onafhankelijke observaties, meerdere steekproeven</a>
+<li class="chapter" data-level="16" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html"><i class="fa fa-check"></i><b>16</b> Chi-kwadraat-toetsen</a>
 <ul>
-<li class="chapter" data-level="17.3.1" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#mediaantoets"><i class="fa fa-check"></i><b>17.3.1</b> Mediaantoets</a></li>
-<li class="chapter" data-level="17.3.2" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#sec:wilcoxon-rank-sum"><i class="fa fa-check"></i><b>17.3.2</b> Wilcoxon rank sum test, ofwel Mann-Whitney U test</a></li>
-<li class="chapter" data-level="17.3.3" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>17.3.3</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="16.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#sec:h16inleiding"><i class="fa fa-check"></i><b>16.1</b> Inleiding</a></li>
+<li class="chapter" data-level="16.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#sec:chi2gof"><i class="fa fa-check"></i><b>16.2</b> <span class="math inline">\(\chi^2\)</span>-toets voor “goodness of fit” in enkele steekproef</a></li>
+<li class="chapter" data-level="16.3" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#chi2-toets-voor-homogeniteit-van-een-variabele-in-meerdere-steekproeven"><i class="fa fa-check"></i><b>16.3</b> <span class="math inline">\(\chi^2\)</span>-toets voor homogeniteit van een variabele in meerdere steekproeven</a></li>
+<li class="chapter" data-level="16.4" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#chi2-toets-voor-verband-tussen-twee-variabelen-in-enkele-steekproef"><i class="fa fa-check"></i><b>16.4</b> <span class="math inline">\(\chi^2\)</span>-toets voor verband tussen twee variabelen in enkele steekproef</a></li>
+<li class="chapter" data-level="16.5" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#sec:chi2toets-aannames"><i class="fa fa-check"></i><b>16.5</b> aannames</a></li>
+<li class="chapter" data-level="16.6" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#formules-6"><i class="fa fa-check"></i><b>16.6</b> formules</a></li>
+<li class="chapter" data-level="16.7" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#spss-14"><i class="fa fa-check"></i><b>16.7</b> SPSS</a>
+<ul>
+<li class="chapter" data-level="16.7.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-voorbereiding"><i class="fa fa-check"></i><b>16.7.1</b> goodness of fit: voorbereiding</a></li>
+<li class="chapter" data-level="16.7.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-toetsing"><i class="fa fa-check"></i><b>16.7.2</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.7.3" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-voorbereiding"><i class="fa fa-check"></i><b>16.7.3</b> kruistabellen: voorbereiding</a></li>
+<li class="chapter" data-level="16.7.4" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-toetsing"><i class="fa fa-check"></i><b>16.7.4</b> kruistabellen: toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.8" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#jasp-16"><i class="fa fa-check"></i><b>16.8</b> JASP</a>
+<ul>
+<li class="chapter" data-level="16.8.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-voorbereiding-1"><i class="fa fa-check"></i><b>16.8.1</b> goodness of fit: voorbereiding</a></li>
+<li class="chapter" data-level="16.8.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-toetsing-1"><i class="fa fa-check"></i><b>16.8.2</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.8.3" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-voorbereiding-1"><i class="fa fa-check"></i><b>16.8.3</b> kruistabellen: voorbereiding</a></li>
+<li class="chapter" data-level="16.8.4" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-toetsing-1"><i class="fa fa-check"></i><b>16.8.4</b> kruistabellen: toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.9" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#r-17"><i class="fa fa-check"></i><b>16.9</b> R</a>
+<ul>
+<li class="chapter" data-level="16.9.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-toetsing-2"><i class="fa fa-check"></i><b>16.9.1</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.9.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-voorbereiding-en-toetsing"><i class="fa fa-check"></i><b>16.9.2</b> kruistabellen: voorbereiding en toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.10" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#effectgrootte-odds-ratio"><i class="fa fa-check"></i><b>16.10</b> Effectgrootte: odds ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html"><i class="fa fa-check"></i><b>17</b> Andere nonparametrische toetsen</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:h17inleiding"><i class="fa fa-check"></i><b>17.1</b> Inleiding</a></li>
+<li class="chapter" data-level="17.2" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#gepaarde-observaties-enkele-steekproef"><i class="fa fa-check"></i><b>17.2</b> Gepaarde observaties, enkele steekproef</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:tekentoets"><i class="fa fa-check"></i><b>17.2.1</b> Tekentoets</a></li>
+<li class="chapter" data-level="17.2.2" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:Wilcoxon-signed-rank"><i class="fa fa-check"></i><b>17.2.2</b> Wilcoxon signed-ranks test</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#onafhankelijke-observaties-meerdere-steekproeven"><i class="fa fa-check"></i><b>17.3</b> Onafhankelijke observaties, meerdere steekproeven</a>
+<ul>
+<li class="chapter" data-level="17.3.1" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#mediaantoets"><i class="fa fa-check"></i><b>17.3.1</b> Mediaantoets</a></li>
+<li class="chapter" data-level="17.3.2" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:wilcoxon-rank-sum"><i class="fa fa-check"></i><b>17.3.2</b> Wilcoxon rank sum test, ofwel Mann-Whitney U test</a></li>
+<li class="chapter" data-level="17.3.3" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>17.3.3</b> Kruskall-Wallis H test</a></li>
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Bijlagen</b></span></li>
 <li class="chapter" data-level="A" data-path="app-randomgetallen.html"><a href="app-randomgetallen.html"><i class="fa fa-check"></i><b>A</b> Willekeurige getallen</a></li>
 <li class="chapter" data-level="B" data-path="app-kritiekeZwaarden.html"><a href="app-kritiekeZwaarden.html"><i class="fa fa-check"></i><b>B</b> Standaard-normale kansverdeling</a></li>
-<li class="chapter" data-level="C" data-path="app-kritieketwaarden.html"><a href="app-kritieketwaarden.html"><i class="fa fa-check"></i><b>C</b> Kritieke waarden van <span class="math inline">\(t\)</span>-verdeling</a></li>
+<li class="chapter" data-level="C" data-path="ap-kritieketwaarden.html"><a href="ap-kritieketwaarden.html"><i class="fa fa-check"></i><b>C</b> Kritieke waarden van <span class="math inline">\(t\)</span>-verdeling</a></li>
 <li class="chapter" data-level="D" data-path="app-kritiekechi2waarden.html"><a href="app-kritiekechi2waarden.html"><i class="fa fa-check"></i><b>D</b> Kritieke waarden van <span class="math inline">\(\chi^2\)</span>-verdeling</a></li>
 <li class="chapter" data-level="" data-path="referenties.html"><a href="referenties.html"><i class="fa fa-check"></i>Referenties</a></li>
 <li class="divider"></li>
@@ -504,13 +531,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="app:kritiekechi2waarden" class="section level1" number="21">
+<div id="app-kritiekechi2waarden" class="section level1" number="21">
 <h1><span class="header-section-number">Appendix D</span> Kritieke waarden van <span class="math inline">\(\chi^2\)</span>-verdeling</h1>
 <p><img src="KMS-NL_files/figure-html/kritiekechi2waarden-hulpfiguur-1.png" width="672" /></p>
 <p>De hieronder gegeven kritieke grenswaarde <span class="math inline">\((\chi^2)^*\)</span> heeft een overschrijdingskans <span class="math inline">\(p\)</span>
 onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline">\(P(\chi^2 \geq (\chi^2)^*|H_0)=p\)</span>.</p>
 <p>De tabel hieronder geeft de kritieke grenswaarden <span class="math inline">\((\chi^2)^*\)</span> voor veel gebruikte overschrijdingskansen <span class="math inline">\(p\)</span>, voor de vrijheidsgraden aangegeven in de eerste kolom.</p>
-<table>
+<table style="width:100%;">
+<colgroup>
+<col width="6%" />
+<col width="4%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center"></th>
@@ -907,12 +946,11 @@ onder <span class="math inline">\(H_0\)</span>, d.w.z. <span class="math inline"
           </div>
         </div>
       </div>
-<a href="app-kritieketwaarden.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ap-kritieketwaarden.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="referenties.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -931,6 +969,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -951,6 +990,10 @@ gitbook.start({
 "text": null
 },
 "download": ["KMS-NL.pdf", "KMS-NL.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
