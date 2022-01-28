@@ -75,11 +75,11 @@ https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 Gebruik een van de volgende manieren om te verwijzen naar dit tekstboek (in APA-formaat):
 
-Quené, H. \& Van den Bergh, H. (2021). *Kwantitatieve Methoden en Statistiek*. 
-Geraadpleegd op 28 januari 2021 via https://hugoquene.github.io/KMS-NL/ .
+Quené, H. \& Van den Bergh, H. (2022). *Kwantitatieve Methoden en Statistiek*. 
+Geraadpleegd op 28 januari 2022 via https://hugoquene.github.io/KMS-NL/ .
 
-Quené, H. \& Van den Bergh, H. (2021). *Kwantitatieve Methoden en Statistiek* [in Dutch]. 
-Retrieved 28 January 2020 from https://hugoquene.github.io/KMS-NL/ .
+Quené, H. \& Van den Bergh, H. (2022). *Kwantitatieve Methoden en Statistiek* [in Dutch]. 
+Retrieved 28 January 2022 from https://hugoquene.github.io/KMS-NL/ .
 
 ## Technische details {-}
 

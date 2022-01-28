@@ -1,4 +1,4 @@
-# Integriteit {#ch:integriteit}
+# Integriteit {#ch-integriteit}
 
 ## Inleiding {#sec:integriteit-inleiding}
 
@@ -97,7 +97,7 @@ elk $n=4$ kinderen. Zelfs als er inderdaad een verschil is van 2 punten
 tussen de twee groepen (dus als de onderzoekshypothese waar is), dan nog
 is er in dit onderzoek slechts 51% kans om een significant verschil te
 vinden: de power is slechts .51
-(Hoofdstuk \@ref(ch:power)), 
+(Hoofdstuk \@ref(ch-power)), 
 omdat de twee groepen zo weinig proefpersonen
 bevatten. De vierjarige kinderen en hun ouders kunnen beter andere
 dingen doen (school, thuis, werk) dan meedoen aan dit onderzoek.
@@ -114,7 +114,7 @@ met grote maatschappelijke impact.
 ---
 
 Het ontwerp van een onderzoek (zie
-Hoofdstuk \@ref(ch:ontwerp)) moet zo efficiënt mogelijk zijn, en de
+Hoofdstuk \@ref(ch-ontwerp)) moet zo efficiënt mogelijk zijn, en de
 onderzoeker moet daarover al in een vroeg stadium nadenken. De
 efficiëntie hangt ten eerste af van keuzes over hoe de onafhankelijke
 variabelen worden gevarieerd. Is er een aparte groep proefpersonen voor
@@ -156,9 +156,9 @@ vragenlijsten afnemen in beide condities.
 
 De efficiëntie van een onderzoek hangt ook af van de afhankelijke
 variabele, en met name van het meetniveau 
-(Hoofdstuk \@ref(ch:Meetniveau)), de nauwkeurigheid, en de betrouwbaarheid
+(Hoofdstuk \@ref(ch-Meetniveau)), de nauwkeurigheid, en de betrouwbaarheid
 van de observaties 
-(Hoofdstuk \@ref(ch:betrouwbaarheid)). Hoe lager het meetniveau, des te lager
+(Hoofdstuk \@ref(ch-betrouwbaarheid)). Hoe lager het meetniveau, des te lager
 ook de efficiëntie van het onderzoek. En hoe lager de nauwkeurigheid,
 des te lager ook de efficiëntie van het onderzoek, en des te meer
 proefpersonen en observaties zijn er nodig om valide conclusies te

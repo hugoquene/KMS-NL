@@ -1,4 +1,4 @@
-# Hypothese-toetsend onderzoek {#ch:onderzoek}
+# Hypothese-toetsend onderzoek {#ch-onderzoek}
 
 ## Inleiding
 
@@ -12,11 +12,11 @@ te stellen, en dus om de hypothese te toetsen, is het experiment. Een
 goed opgezet en goed uitgevoerd experiment is de 'gouden standaard' in
 veel wetenschappelijke disciplines, omdat het goede waarborgen biedt
 voor de validiteit van de conclusies (zie
-Hoofdstuk \@ref(ch:validiteit).
+Hoofdstuk \@ref(ch-validiteit).
 Anders gezegd: de uitkomsten van een goed
 experiment vormen de sterkst mogelijke evidentie voor een verband tussen
 de onderzochte variabelen. Zoals besproken in
-Hoofdstuk \@ref(ch:inleiding) zijn er ook vele andere vormen van onderzoek,
+Hoofdstuk \@ref(ch-inleiding) zijn er ook vele andere vormen van onderzoek,
 en kunnen hypotheses ook op andere wijze en volgens andere paradigmata
 onderzocht worden, maar we beperken ons hier tot experimenteel
 onderzoek.
@@ -139,7 +139,7 @@ nadrukkelijk *niet* te interpreteren als 'oorzaak' resp. 'gevolg'. Het
 doel van het onderzoek is immers om overtuigend aan te tonen dàt er een
 (causaal) verband bestaat tussen de onafhankelijke en de afhankelijke
 variabele. In
-Hoofdstuk \@ref(ch:validiteit) zullen we echter zien hoe complex dat is.
+Hoofdstuk \@ref(ch-validiteit) zullen we echter zien hoe complex dat is.
 
 De onderzoeker varieert de onafhankelijke variabele en observeert of dit
 resulteert in verschillen in de afhankelijke variabele. Als de waarden
@@ -204,7 +204,7 @@ gelijk effect' is analoog aan de overtuiging 'alle zwanen zijn wit' uit
 het voorbeeld in de vorige alinea. Hoe moeten we nu toetsen of de
 overtuiging of hypothese H0 waar is? Laten we daarvoor een
 representatieve steekproef van leerlingen trekken (zie
-Hoofdstuk \@ref(ch:steekproeftrekking)), en laten we de leerlingen volgens
+Hoofdstuk \@ref(ch-steekproeftrekking)), en laten we de leerlingen volgens
 het toeval toewijzen aan de nieuwe of oude lesmethode (waarden van
 onafhankelijke variabele); we observeren vervolgens alle prestaties
 (afhankelijke variabele) van alle deelnemende leerlingen, volgens
@@ -215,7 +215,7 @@ methode desalniettemin veel beter blijken te presteren dan de leerlingen
 van de oude methode, dan vormt dat waargenomen verschil de figuurlijke
 zwarte zwaan: het gevonden verschil (dat in tegenspraak is met H0) maakt
 het onwaarschijnlijk dat H0 waar is (*mits* het onderzoek valide was;
-meer daarover in Hoofdstuk \@ref(ch:validiteit)). Omdat H0 en H1 elkaar
+meer daarover in Hoofdstuk \@ref(ch-validiteit)). Omdat H0 en H1 elkaar
 uitsluiten, is het dan dus ook erg waarschijnlijk dat H1 wèl waar is. En
 omdat we onze onderbouwing baseerden op H0 en niet op H1, kunnen
 sceptici ons niet van partijdigheid beschuldigen: we probeerden immers
@@ -339,7 +339,7 @@ hebben, d.w.z. het type of de klasse van observaties moet goed
 omschreven zijn. Gaat het over alle vrouwen en mannen? Of alleen
 sprekers van het Nederlands? En hoe zit het met meertalige sprekers? En
 met kinderen die hun taal nog aan het leren zijn? Die duidelijk
-omschreven inhoud is nodig om de hypothese te kunnen toetsen (zie subsectie Toetsing hieronder, en zie Hoofdstuk \@ref(ch:toetsing)).
+omschreven inhoud is nodig om de hypothese te kunnen toetsen (zie subsectie Toetsing hieronder, en zie Hoofdstuk \@ref(ch-toetsing)).
 
 Tenslotte moet een hypothese ook logisch coherent zijn, d.w.z. de
 hypothese moet aansluiten bij andere theorieën of hypothesen. Als een
@@ -432,7 +432,7 @@ Volgens bovenstaande terminologie toetsen we echter niet de hypothesen, maar lei
 
 In deze fase verzamelen we empirische observaties en vergelijken we die
 met de uitgewerkte voorspellingen "onder H0", d.w.z. de voorspellingen
-als H0 waar zou zijn. In Hoofdstuk \@ref(ch:toetsing) zullen we nader ingaan op deze toetsing. Hier introduceren we alleen het algemene principe om nulhypotheses te toetsen. (Naast het hier beschreven conventionele "frequentistische" principe kunnen we ook hypotheses toetsen of vergelijken op een nieuwere "Bayesiaanse" wijze; deze wijze van toetsing valt echter buiten het bestek van dit boek).
+als H0 waar zou zijn. In Hoofdstuk \@ref(ch-toetsing) zullen we nader ingaan op deze toetsing. Hier introduceren we alleen het algemene principe om nulhypotheses te toetsen. (Naast het hier beschreven conventionele "frequentistische" principe kunnen we ook hypotheses toetsen of vergelijken op een nieuwere "Bayesiaanse" wijze; deze wijze van toetsing valt echter buiten het bestek van dit boek).
 
 Als de observaties buitengewoon onwaarschijnlijk zijn onder H0, dan zijn
 er twee logische mogelijkheden. (i) De observaties deugen niet, we
@@ -540,7 +540,7 @@ een goed bericht weggooien, of een *spam*-bericht doorsturen? De kans op
 een Type-I-fout (significantieniveau) heeft een onderzoeker in eigen
 hand. De kans op een Type-II-fout is afhankelijk van drie factoren, en
 is lastig te bepalen. We zullen dat nader bespreken in
-Hoofdstuk \@ref(ch:power).
+Hoofdstuk \@ref(ch-power).
 
 ### evaluatie
 
@@ -657,7 +657,7 @@ mogelijkheden om het onderzoek uit te voeren?
 In de volgende stap moet worden gespecificeerd hoe de gegevens worden
 verzameld. Dit is een essentiële stap die van invloed is op de rest van
 het onderzoek; we wijden er daarom een apart hoofdstuk aan
-(Hoofdstuk \@ref(ch:steekproeftrekking)). 
+(Hoofdstuk \@ref(ch-steekproeftrekking)). 
 Waaruit bestaat de populatie: uit
 taalgebruikers? leerlingen? tweetalige babies? versprekingen van
 medeklinkers? zinnen? En hoe moet je een representatieve steekproef of
@@ -679,7 +679,7 @@ om na te gaan of de gegevens die met deze instrumenten verkregen worden,
 voldoen aan de kwaliteitseisen die de onderzoeker zich gesteld heeft, of
 die in het algemeen aan de instrumenten in wetenschappelijk onderzoek
 gesteld mogen worden (in termen van betrouwbaarheid en validiteit, zie
-Hoofdstukken \@ref(ch:validiteit) en \@ref(ch:betrouwbaarheid)).
+Hoofdstukken \@ref(ch-validiteit) en \@ref(ch-betrouwbaarheid)).
 
 Pas nadat ook de instrumenten in gereedheid gebracht zijn begint het
 eigenlijke empirische onderzoek: de gekozen gegevens van de gekozen

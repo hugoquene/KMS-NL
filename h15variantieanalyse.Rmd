@@ -904,8 +904,8 @@ De onderzoekers verwachten dus een **interactie** of wisselwerking tussen de fac
 
 > Maar het meest opvallende effect is de interactie: het effect van tekstmarkeringen is veel groter bij zwakke lezers dan bij sterke lezers, conform de voorspelling. Of anders gezegd, de verschillen tussen zwakke, gemiddelde en sterke lezers zijn groot in de tekstversie zonder structuurmarkeringen, maar klein of nihil in de tekstversie met structuurmarkeringen.
 
-```{r DBE12interaction, echo=FALSE, fig.cap="Gemiddelde begripsscores (met 95%-betrouwbaarheidsintervallen), voor twee tekstversies en drie groepen lezers (naar Van Dooren, Van den Bergh en Evers-Vermeul, 2012).", fig.align="center"}
-knitr::include_graphics("figures/DBE12interaction.png")
+```{r DBE12interaction, echo=FALSE, fig.cap="Gemiddelde begripsscores (met 95%-betrouwbaarheidsintervallen), voor twee tekstversies en drie groepen lezers (naar Van Dooren, Van den Bergh en Evers-Vermeul, 2012).", fig.width=6}
+knitr::include_graphics("figures/DBE2012interaction_v2.png")
 ```
 
 ---

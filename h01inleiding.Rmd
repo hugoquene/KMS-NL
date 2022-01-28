@@ -1,6 +1,6 @@
 # (PART\*) Deel I: Methodologie {-}
 
-# Inleiding {#ch:inleiding}
+# Inleiding {#ch-inleiding}
 
 In dit tekstboek worden de grondbeginselen, methoden en technieken van
 empirisch wetenschappelijk onderzoek besproken, zowel in algemene zin

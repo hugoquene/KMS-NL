@@ -464,7 +464,7 @@ de Franse en 6 uit de Tunesische muzikale culturen (de muziekstukken
 waren verschillend qua maatsoorten, tempi, en mate van bekendheid). De
 resultaten zijn grafisch samengevat in Figuur 6.1. 
 
-```{r drakebenelheni2003fig2, echo=FALSE, fig.cap="Gemiddelde tijdsafstand tussen tikken (IOI, in ms) voor twee groepen luisteraars en twee muzieksoorten (ontleend aan Drake and Ben El Heni, 2003, Fig.2).", fig.align="center"}
+```{r drakebenelheni2003fig2, echo=FALSE, fig.cap="Gemiddelde tijdsafstand tussen tikken (IOI, in ms) voor twee groepen luisteraars en twee muzieksoorten (ontleend aan Drake and Ben El Heni, 2003, Fig.2).", fig.align="center", fig.width=6}
 knitr::include_graphics("figures/DrakeBenElHeni2003Fig2.png")
 ```
 
