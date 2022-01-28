@@ -401,5 +401,5 @@ kruskall-wallis-h-test
 formule
 app-randomgetallen
 app-kritiekeZwaarden
-ap-kritieketwaarden
+app-kritieketwaarden
 app-kritiekechi2waarden

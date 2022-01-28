@@ -156,7 +156,7 @@ vragenlijsten afnemen in beide condities.
 
 De efficiëntie van een onderzoek hangt ook af van de afhankelijke
 variabele, en met name van het meetniveau 
-(Hoofdstuk \@ref(ch-Meetniveau)), de nauwkeurigheid, en de betrouwbaarheid
+(Hoofdstuk \@ref(ch-meetniveau)), de nauwkeurigheid, en de betrouwbaarheid
 van de observaties 
 (Hoofdstuk \@ref(ch-betrouwbaarheid)). Hoe lager het meetniveau, des te lager
 ook de efficiëntie van het onderzoek. En hoe lager de nauwkeurigheid,
