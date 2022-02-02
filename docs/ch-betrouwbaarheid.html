@@ -1162,10 +1162,10 @@ Klik de balk <code>Single-Test Reliability</code> open en vink <code>Cronbach's 
 <p>Voor een betrouwbaarheidsanalyse van de <span class="math inline">\(k=3\)</span> oordelen over
 spreekvaardigheid in Tabel <a href="ch-betrouwbaarheid.html#tab:betrouwbaarheid">12.1</a>:<br />
 </p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="ch-betrouwbaarheid.html#cb92-1" aria-hidden="true" tabindex="-1"></a>beoordelaars <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
-<span id="cb92-2"><a href="ch-betrouwbaarheid.html#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">require</span>(psych)) { <span class="co"># voor psych::alpha</span></span>
-<span id="cb92-3"><a href="ch-betrouwbaarheid.html#cb92-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">alpha</span>( beoordelaars[,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>] ) <span class="co"># kolommen 2 t/m 4</span></span>
-<span id="cb92-4"><a href="ch-betrouwbaarheid.html#cb92-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="ch-betrouwbaarheid.html#cb93-1" aria-hidden="true" tabindex="-1"></a>beoordelaars <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb93-2"><a href="ch-betrouwbaarheid.html#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">require</span>(psych)) { <span class="co"># voor psych::alpha</span></span>
+<span id="cb93-3"><a href="ch-betrouwbaarheid.html#cb93-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">alpha</span>( beoordelaars[,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>] ) <span class="co"># kolommen 2 t/m 4</span></span>
+<span id="cb93-4"><a href="ch-betrouwbaarheid.html#cb93-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## Number of categories should be increased  in order to count frequencies.</code></pre>
 <pre><code>## 
 ## Reliability analysis   
@@ -1196,7 +1196,7 @@ zelfs toe (van 0.68 naar 0.84). Over alle drie de beoordelaars is
 <p>Correlaties tussen de <span class="math inline">\(k\)</span> beoordelaars of items worden niet expliciet
 meegeleverd (al zijn ze wel af te leiden uit bovenstaande uitvoer), dus
 vragen we die nog op:</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="ch-betrouwbaarheid.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>( beoordelaars[ ,<span class="fu">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># expliciete kolomnamen</span></span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="ch-betrouwbaarheid.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>( beoordelaars[ ,<span class="fu">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># expliciete kolomnamen</span></span></code></pre></div>
 <pre><code>##           B1         B2         B3
 ## B1 1.0000000 0.74494845 0.40979738
 ## B2 0.7449484 1.00000000 0.08845909

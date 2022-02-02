@@ -1008,10 +1008,10 @@ In de “Binomial” invoer is de balk <code>Show Distribution</code> als het go
 </div>
 <div id="r-4" class="section level3" number="10.2.3">
 <h3><span class="header-section-number">10.2.3</span> R</h3>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="ch-kansverdelingen.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>( <span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">prob=</span>.<span class="dv">38</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="ch-kansverdelingen.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>( <span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">prob=</span>.<span class="dv">38</span> )</span></code></pre></div>
 <pre><code>## [1] 0.238328 0.438216 0.268584 0.054872</code></pre>
 <p>De uitvoer is weergegeven in Tabel <a href="ch-kansverdelingen.html#tab:binomkansverdeling3">10.2</a> hierboven.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="ch-kansverdelingen.html#cb53-1" aria-hidden="true" tabindex="-1"></a>matrixcalc<span class="sc">::</span><span class="fu">pascal.matrix</span>( <span class="dv">10</span> ) <span class="co"># links onder diagonaal is Driehoek van Pascal</span></span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="ch-kansverdelingen.html#cb54-1" aria-hidden="true" tabindex="-1"></a>matrixcalc<span class="sc">::</span><span class="fu">pascal.matrix</span>( <span class="dv">10</span> ) <span class="co"># links onder diagonaal is Driehoek van Pascal</span></span></code></pre></div>
 <pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ##  [1,]    1    0    0    0    0    0    0    0    0     0
 ##  [2,]    1    1    0    0    0    0    0    0    0     0
@@ -1211,11 +1211,11 @@ Voor andere normale kansverdelingen kunnen de waarden voor <span class="math inl
 <h3><span class="header-section-number">10.3.3</span> R</h3>
 <p>De normale kansverdeling van Figuur <a href="ch-kansverdelingen.html#fig:normaalkansverdeling">10.3</a> kan in R worden afgebeeld
 met het onderstaande commando. Hierin wordt een <code>curve</code> getekend, met <code>x</code> in het aangegeven domein, en waarbij <code>y</code> het resultaat is van de functie die de normale kansverdeling berekent volgens formule <a href="ch-kansverdelingen.html#eq:prob-normal">(10.8)</a>:</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="ch-kansverdelingen.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>( <span class="fu">dnorm</span>( x, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span> ), <span class="co"># functie die y-waarden geeft, normal density</span></span>
-<span id="cb56-2"><a href="ch-kansverdelingen.html#cb56-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">from=</span><span class="sc">-</span><span class="dv">5</span>, <span class="at">to=</span><span class="sc">+</span><span class="dv">5</span>, <span class="co"># domein van x</span></span>
-<span id="cb56-3"><a href="ch-kansverdelingen.html#cb56-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd=</span><span class="dv">4</span>, <span class="co"># line width is 4x normaal</span></span>
-<span id="cb56-4"><a href="ch-kansverdelingen.html#cb56-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">&quot;x&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;P(x)&quot;</span> <span class="co"># labels langs x-as en y-as</span></span>
-<span id="cb56-5"><a href="ch-kansverdelingen.html#cb56-5" aria-hidden="true" tabindex="-1"></a>       )</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="ch-kansverdelingen.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>( <span class="fu">dnorm</span>( x, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span> ), <span class="co"># functie die y-waarden geeft, normal density</span></span>
+<span id="cb57-2"><a href="ch-kansverdelingen.html#cb57-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">from=</span><span class="sc">-</span><span class="dv">5</span>, <span class="at">to=</span><span class="sc">+</span><span class="dv">5</span>, <span class="co"># domein van x</span></span>
+<span id="cb57-3"><a href="ch-kansverdelingen.html#cb57-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd=</span><span class="dv">4</span>, <span class="co"># line width is 4x normaal</span></span>
+<span id="cb57-4"><a href="ch-kansverdelingen.html#cb57-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">&quot;x&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;P(x)&quot;</span> <span class="co"># labels langs x-as en y-as</span></span>
+<span id="cb57-5"><a href="ch-kansverdelingen.html#cb57-5" aria-hidden="true" tabindex="-1"></a>       )</span></code></pre></div>
 <p><img src="KMS-NL_files/figure-html/normkansverdeling.dnorm-1.png" width="672" /></p>
 <p>Als je een extra argument <code>curve( ..., add=TRUE )</code> opgeeft, dan wordt de curve toegevoegd aan de meest recente plot (zie bijv. Figuur <a href="ch-kansverdelingen.html#fig:itunesmeanshist">10.6</a> hieronder).</p>
 </div>
@@ -1290,11 +1290,11 @@ De uitvoer geeft de uitkomst van de Shapiro-Wilk-toets in de tabel <em>Descripti
 </div>
 <div id="r-6" class="section level3" number="10.4.3">
 <h3><span class="header-section-number">10.4.3</span> R</h3>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="ch-kansverdelingen.html#cb58-1" aria-hidden="true" tabindex="-1"></a>itunes <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/itunestimes20120511.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span> )</span>
-<span id="cb58-2"><a href="ch-kansverdelingen.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Size in bytes, Time in ms</span></span>
-<span id="cb58-3"><a href="ch-kansverdelingen.html#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(itunes<span class="sc">$</span>Time<span class="sc">/</span><span class="dv">60000</span>, <span class="at">datax=</span>T, <span class="at">plot.it=</span><span class="cn">FALSE</span>) <span class="co"># normally we&#39;d use plot.it=TRUE  </span></span>
-<span id="cb58-4"><a href="ch-kansverdelingen.html#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="co"># qqline(itunes$Time/60000, datax=T, col=&quot;purple&quot;, lwd=T) # see QQ-plot above</span></span></code></pre></div>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="ch-kansverdelingen.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(itunes<span class="sc">$</span>Time<span class="sc">/</span><span class="dv">60000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="ch-kansverdelingen.html#cb59-1" aria-hidden="true" tabindex="-1"></a>itunes <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/itunestimes20120511.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span> )</span>
+<span id="cb59-2"><a href="ch-kansverdelingen.html#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Size in bytes, Time in ms</span></span>
+<span id="cb59-3"><a href="ch-kansverdelingen.html#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(itunes<span class="sc">$</span>Time<span class="sc">/</span><span class="dv">60000</span>, <span class="at">datax=</span>T, <span class="at">plot.it=</span><span class="cn">FALSE</span>) <span class="co"># normally we&#39;d use plot.it=TRUE  </span></span>
+<span id="cb59-4"><a href="ch-kansverdelingen.html#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="co"># qqline(itunes$Time/60000, datax=T, col=&quot;purple&quot;, lwd=T) # see QQ-plot above</span></span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="ch-kansverdelingen.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(itunes<span class="sc">$</span>Time<span class="sc">/</span><span class="dv">60000</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 

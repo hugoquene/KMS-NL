@@ -27,7 +27,7 @@ hechten aan de conclusies, omdat die conclusies goed onderbouwd zijn.
 Het onderzoek kan door anderen herhaald worden, met (hopelijk) dezelfde
 resultaten. Deze eis van repliceerbaarheid maakt ook dat
 wetenschappelijk onderzoek zeer nauwgezet wordt ontworpen en uitgevoerd
-(zie Hoofdstukken \@ref(ch:integriteit) en \@ref(ch:ontwerp)). De sterkste vorm van controle is die van een
+(zie Hoofdstukken \@ref(ch-integriteit) en \@ref(ch-ontwerp)). De sterkste vorm van controle is die van een
 wetenschappelijk experiment; we besteden daarom in dit tekstboek veel
 aandacht aan experimenteel onderzoek (§\@ref(sec:experimenteel-onderzoek)). Mogelijke alternatieve
 verklaringen voor het onderzochte verschijnsel worden één voor één
@@ -193,10 +193,10 @@ immers niet al te veel afwijken van oude examens.
 
 Een construct moet dus op de juiste wijze geoperationaliseerd zijn, om
 observaties te verkrijgen die niet alleen valide zijn (een goede
-benadering van het abstracte construct, zie Hoofdstuk \@ref(ch:validiteit)) 
+benadering van het abstracte construct, zie Hoofdstuk \@ref(ch-validiteit)) 
 maar die ook betrouwbaar zijn (ongeveer
 gelijke observaties bij herhaalde meting, zie
-Hoofdstuk \@ref(ch:betrouwbaarheid)). 
+Hoofdstuk \@ref(ch-betrouwbaarheid)). 
 In ieder onderzoek zijn de validiteit
 en de betrouwbaarheid van een meting cruciaal; we besteden dan ook twee hoofdstukken aan deze begrippen.
 Maar in instrumentatieonderzoek zijn
@@ -295,7 +295,7 @@ schrijven aan het gemanipuleerde kenmerk (de lesmethode), maar ook aan
 een niet-gemanipuleerd maar wel relevant kenmerk, hier het geslacht van
 de leerlingen. Zo'n mogelijk verstorend kenmerk wordt een *storende
 variabele* (Eng. 'confound') genoemd. In
-Hoofdstuk \@ref(ch:ontwerp) bespreken we hoe we deze storende variabelen
+Hoofdstuk \@ref(ch-ontwerp) bespreken we hoe we deze storende variabelen
 kunnen neutraliseren, door random toewijzing van proefpersonen (of
 schoolklassen) aan de experimentele condities, in combinatie met andere maatregelen.
 

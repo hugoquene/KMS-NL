@@ -906,29 +906,29 @@ Open de <code>Cells</code> balk en zorg dat <code>Expected counts</code> zijn aa
 <h2><span class="header-section-number">16.9</span> R</h2>
 <div id="goodness-of-fit-toetsing-2" class="section level3" number="16.9.1">
 <h3><span class="header-section-number">16.9.1</span> goodness of fit: toetsing</h3>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="ch-chi-kwadraat-toetsen.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>( <span class="fu">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="ot">-&gt;</span> dobbel.chi2.htest <span class="co"># dobbelsteen §16.2</span></span>
-<span id="cb169-2"><a href="ch-chi-kwadraat-toetsen.html#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dobbel.chi2.htest)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="ch-chi-kwadraat-toetsen.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>( <span class="fu">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="ot">-&gt;</span> dobbel.chi2.htest <span class="co"># dobbelsteen §16.2</span></span>
+<span id="cb170-2"><a href="ch-chi-kwadraat-toetsen.html#cb170-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dobbel.chi2.htest)</span></code></pre></div>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
 ## 
 ## data:  c(14, 9, 11, 10, 15, 1)
 ## X-squared = 12.4, df = 5, p-value = 0.0297</code></pre>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="ch-chi-kwadraat-toetsen.html#cb171-1" aria-hidden="true" tabindex="-1"></a>dobbel.chi2.htest<span class="sc">$</span>residuals <span class="co"># STD.resid. in ...chisq.htest$residuals</span></span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="ch-chi-kwadraat-toetsen.html#cb172-1" aria-hidden="true" tabindex="-1"></a>dobbel.chi2.htest<span class="sc">$</span>residuals <span class="co"># STD.resid. in ...chisq.htest$residuals</span></span></code></pre></div>
 <pre><code>## [1]  1.2649111 -0.3162278  0.3162278  0.0000000  1.5811388 -2.8460499</code></pre>
 </div>
 <div id="kruistabellen-voorbereiding-en-toetsing" class="section level3" number="16.9.2">
 <h3><span class="header-section-number">16.9.2</span> kruistabellen: voorbereiding en toetsing</h3>
 <p>In R is de dataset <code>Titanic</code> gegeven als een multidimensionele matrix. We tellen de observaties op en maken een kruistabel van de eerste dimensie (klasse) en de vierde dimensie (uitkomst).</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="ch-chi-kwadraat-toetsen.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>( Titanic, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) <span class="ot">-&gt;</span> Titanic.klasseuitkomst</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="ch-chi-kwadraat-toetsen.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>( Titanic, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) <span class="ot">-&gt;</span> Titanic.klasseuitkomst</span></code></pre></div>
 <p>Vervolgens gebruiken we deze kruistabel weer als invoer voor een <code>chisq.test</code>. Die <code>chisq.test</code> slaan we op zijn beurt weer op, om de residuals te inspecteren.</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="ch-chi-kwadraat-toetsen.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>( Titanic.klasseuitkomst ) <span class="ot">-&gt;</span> Titanic.chisq.htest</span>
-<span id="cb174-2"><a href="ch-chi-kwadraat-toetsen.html#cb174-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Titanic.chisq.htest)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="ch-chi-kwadraat-toetsen.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>( Titanic.klasseuitkomst ) <span class="ot">-&gt;</span> Titanic.chisq.htest</span>
+<span id="cb175-2"><a href="ch-chi-kwadraat-toetsen.html#cb175-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Titanic.chisq.htest)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  Titanic.klasseuitkomst
 ## X-squared = 190.4, df = 3, p-value &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="ch-chi-kwadraat-toetsen.html#cb176-1" aria-hidden="true" tabindex="-1"></a>Titanic.chisq.htest<span class="sc">$</span>residuals</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="ch-chi-kwadraat-toetsen.html#cb177-1" aria-hidden="true" tabindex="-1"></a>Titanic.chisq.htest<span class="sc">$</span>residuals</span></code></pre></div>
 <pre><code>##       Survived
 ## Class         No       Yes
 ##   1st  -6.607873  9.565772
