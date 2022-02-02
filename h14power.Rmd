@@ -1,4 +1,4 @@
-# Power {#ch:power}
+# Power {#ch-power}
 
 ## Inleiding {#sec:power-inleiding}
 
@@ -7,7 +7,7 @@ geobserveerde verschillen of effecten (of op nog grotere verschillen of
 effecten dan geobserveerd) indien H0 waar zou zijn, en dus indien het
 geobserveerde verschil louter aan het toeval toegeschreven moet worden
 (zie §\@ref(sec:empirischecyclus) en
-Hoofdstuk \@ref(ch:toetsing)). Als die kans $P$ zeer klein is, dan hebben we
+Hoofdstuk \@ref(ch-toetsing)). Als die kans $P$ zeer klein is, dan hebben we
 dus resultaten gevonden die zeer onwaarschijnlijk zijn als H0 waar zou
 zijn. We concluderen dan dat H0 vermoedelijk *niet waar* is en we
 verwerpen daarom H0. Het gevonden verschil of effect noemen we dan
@@ -169,7 +169,7 @@ naar boven). De toename is steiler (power neemt sneller toe) bij grotere
 effecten (rechterkant) dan bij kleinere effecten (linkerkant). Anders gezegd: bij
 kleine effecten is de steekproef eigenlijk bijna altijd te klein om deze
 kleine effecten met voldoende power te kunnen opsporen. We zagen dat al
-eerder in voorbeeld 13.3 (Hoofdstuk \@ref(ch:toetsing)).
+eerder in voorbeeld 13.3 (Hoofdstuk \@ref(ch-toetsing)).
 
 De twee figuren \@ref(fig:powercontours-alpha01) en
 \@ref(fig:powercontours-alpha05) zijn gebaseerd op de vergelijking tussen twee groepen die even groot zijn, elk met precies de helft van de observaties ($n_1=n_2=N/2$). Dat is ook het meest efficiënt. 
@@ -214,7 +214,7 @@ zodanig erkend, een patiënt wordt niet of onjuist gediagnostiseerd, een
 nuttige innovatie wordt ten onrechte terzijde geschoven. Deze fout
 belemmert de groei van onze kennis en ons inzicht, en belemmert de
 wetenschappelijke vooruitgang (zie ook
-voorbeeld 3.2 in Hoofdstuk \@ref(ch:integriteit)).
+voorbeeld 3.2 in Hoofdstuk \@ref(ch-integriteit)).
 
 ```{r underpoweredeffectsizes, echo=FALSE, fig.cap="Gevonden effectgroottes (langs horizontale as) in gesimuleerde experimenten (tweezijdige t-toets voor onafhankelijke waarnemingen, alpha=.05), uitgesplitst naar steekproefgrootte (links $n=20$, rechts $n=80$) en naar toetsingsresultaat (donkere symbolen: wel significant; lichte symbolen: niet significant). De ware effectgrootte tussen groepen is altijd $d=0.5$, aangegeven met grijze stippellijn. De gemiddelde gevonden effectgrootte van de significante uitkomsten is aangegeven met zwarte stippellijn. Voor iedere steekproefgrootte zijn 100 simulaties uitgevoerd (langs verticale as)."}
 # adapted from plot.underpoweredeffectsizes.20170225.R
@@ -283,7 +283,7 @@ instrumentatie? Al dat vervolg-onderzoek is echter *overbodig*: het
 gemengde beeld van deze onderzoeken is goed te verklaren door de geringe
 power van elk onderzoek. Het nodeloze en overbodige vervolg-onderzoek
 kost veel tijd en geld (en indirecte kosten, zie
-Hoofdstuk \@ref(ch:integriteit)), en het gaat ten koste van ander, nuttiger
+Hoofdstuk \@ref(ch-integriteit)), en het gaat ten koste van ander, nuttiger
 onderzoek [@Schm96, p.118]. Anders gezegd: één goed ontworpen studie met
 ruim voldoende power kan vele nodeloze vervolg-studies voorkomen.
 

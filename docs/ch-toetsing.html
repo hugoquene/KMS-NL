@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hoofdstuk 13 Toetsing | Kwantitatieve Methoden en Statistiek</title>
+  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hoofdstuk 13 Toetsing | Kwantitatieve Methoden en Statistiek" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta name="github-repo" content="rstudio/KMS-NL" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hoofdstuk 13 Toetsing | Kwantitatieve Methoden en Statistiek" />
+  
+  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch-betrouwbaarheid.html"/>
+<link rel="next" href="ch-power.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Kwantitatieve Methoden en Statistiek</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Voorwoord</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#in-english-please"><i class="fa fa-check"></i>In English please?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#notatie"><i class="fa fa-check"></i>Notatie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licentie"><i class="fa fa-check"></i>Licentie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citatie"><i class="fa fa-check"></i>Citatie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technische-details"><i class="fa fa-check"></i>Technische details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#over-de-auteurs"><i class="fa fa-check"></i>Over de auteurs</a></li>
+</ul></li>
+<li class="part"><span><b>Deel I: Methodologie</b></span></li>
+<li class="chapter" data-level="1" data-path="ch-inleiding.html"><a href="ch-inleiding.html"><i class="fa fa-check"></i><b>1</b> Inleiding</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:wetenschappelijk-onderzoek"><i class="fa fa-check"></i><b>1.1</b> Wetenschappelijk onderzoek</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:theorie"><i class="fa fa-check"></i><b>1.1.1</b> Theorie</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:paradigmata"><i class="fa fa-check"></i><b>1.2</b> Paradigmata</a></li>
+<li class="chapter" data-level="1.3" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:instrumentatie-onderzoek"><i class="fa fa-check"></i><b>1.3</b> Instrumentatie-onderzoek</a></li>
+<li class="chapter" data-level="1.4" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:beschrijvend-onderzoek"><i class="fa fa-check"></i><b>1.4</b> Beschrijvend onderzoek</a></li>
+<li class="chapter" data-level="1.5" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:experimenteel-onderzoek"><i class="fa fa-check"></i><b>1.5</b> Experimenteel onderzoek</a></li>
+<li class="chapter" data-level="1.6" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:vooruitblik"><i class="fa fa-check"></i><b>1.6</b> Vooruitblik</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html"><i class="fa fa-check"></i><b>2</b> Hypothese-toetsend onderzoek</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#inleiding"><i class="fa fa-check"></i><b>2.1</b> Inleiding</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:variabelen"><i class="fa fa-check"></i><b>2.2</b> Variabelen</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:onafhankelijkeafhankelijkevariabelen"><i class="fa fa-check"></i><b>2.3</b> Onafhankelijke en afhankelijke variabelen</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:falsificatie"><i class="fa fa-check"></i><b>2.4</b> Falsificatie en nul-hypothese</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:empirischecyclus"><i class="fa fa-check"></i><b>2.5</b> De empirische cyclus</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#observatie"><i class="fa fa-check"></i><b>2.5.1</b> observatie</a></li>
+<li class="chapter" data-level="2.5.2" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#inductie"><i class="fa fa-check"></i><b>2.5.2</b> inductie</a></li>
+<li class="chapter" data-level="2.5.3" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#deductie"><i class="fa fa-check"></i><b>2.5.3</b> deductie</a></li>
+<li class="chapter" data-level="2.5.4" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#toetsing"><i class="fa fa-check"></i><b>2.5.4</b> toetsing</a></li>
+<li class="chapter" data-level="2.5.5" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#evaluatie"><i class="fa fa-check"></i><b>2.5.5</b> evaluatie</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:keuzemomenten"><i class="fa fa-check"></i><b>2.6</b> Keuzemomenten</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch-integriteit.html"><a href="ch-integriteit.html"><i class="fa fa-check"></i><b>3</b> Integriteit</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ch-integriteit.html"><a href="ch-integriteit.html#sec:integriteit-inleiding"><i class="fa fa-check"></i><b>3.1</b> Inleiding</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-integriteit.html"><a href="ch-integriteit.html#sec:ontwerp"><i class="fa fa-check"></i><b>3.2</b> Ontwerp</a></li>
+<li class="chapter" data-level="3.3" data-path="ch-integriteit.html"><a href="ch-integriteit.html#proefpersonen-en-informanten"><i class="fa fa-check"></i><b>3.3</b> Proefpersonen en informanten</a></li>
+<li class="chapter" data-level="3.4" data-path="ch-integriteit.html"><a href="ch-integriteit.html#gegevens"><i class="fa fa-check"></i><b>3.4</b> Gegevens</a></li>
+<li class="chapter" data-level="3.5" data-path="ch-integriteit.html"><a href="ch-integriteit.html#teksten"><i class="fa fa-check"></i><b>3.5</b> Teksten</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html"><i class="fa fa-check"></i><b>4</b> Meetniveau</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#inleiding-1"><i class="fa fa-check"></i><b>4.1</b> Inleiding</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:nominaal"><i class="fa fa-check"></i><b>4.2</b> Nominaal</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:ordinaal"><i class="fa fa-check"></i><b>4.3</b> Ordinaal</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:interval"><i class="fa fa-check"></i><b>4.4</b> Interval</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:ratio"><i class="fa fa-check"></i><b>4.5</b> Ratio</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:ordeningvanmeetniveaus"><i class="fa fa-check"></i><b>4.6</b> Ordening van meetniveaus</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch-validiteit.html"><a href="ch-validiteit.html"><i class="fa fa-check"></i><b>5</b> Validiteit</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ch-validiteit.html"><a href="ch-validiteit.html#inleiding-2"><i class="fa fa-check"></i><b>5.1</b> Inleiding</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:causaliteit"><i class="fa fa-check"></i><b>5.2</b> Causaliteit</a></li>
+<li class="chapter" data-level="5.3" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:validiteit"><i class="fa fa-check"></i><b>5.3</b> Validiteit</a></li>
+<li class="chapter" data-level="5.4" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:internevaliditeit"><i class="fa fa-check"></i><b>5.4</b> Interne validiteit</a></li>
+<li class="chapter" data-level="5.5" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:constructvaliditeit"><i class="fa fa-check"></i><b>5.5</b> Constructvaliditeit</a></li>
+<li class="chapter" data-level="5.6" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:externevaliditeit"><i class="fa fa-check"></i><b>5.6</b> Externe validiteit</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html"><i class="fa fa-check"></i><b>6</b> Ontwerp</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:ontwerp-inleiding"><i class="fa fa-check"></i><b>6.1</b> Inleiding</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:tussenbinnenproefpersonen"><i class="fa fa-check"></i><b>6.2</b> Tussen of binnen ?</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:oneshotsinglecase"><i class="fa fa-check"></i><b>6.3</b> Het one-shot single-case-ontwerp</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:eengroepvoorna"><i class="fa fa-check"></i><b>6.4</b> Het één-groep-voormeting-nameting-ontwerp</a></li>
+<li class="chapter" data-level="6.5" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:voormeting-nameting-controlegroep-ontwerp"><i class="fa fa-check"></i><b>6.5</b> Het voormeting-nameting-controlegroep-ontwerp</a></li>
+<li class="chapter" data-level="6.6" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:solomon-vier-groepen-ontwerp"><i class="fa fa-check"></i><b>6.6</b> Het Solomon-vier-groepen-ontwerp</a></li>
+<li class="chapter" data-level="6.7" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:nameting-controlegroep"><i class="fa fa-check"></i><b>6.7</b> Het nameting-controlegroep-ontwerp</a></li>
+<li class="chapter" data-level="6.8" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:ontwerp-factorieel"><i class="fa fa-check"></i><b>6.8</b> Factoriële ontwerpen</a></li>
+<li class="chapter" data-level="6.9" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:afhankelijkegroepen"><i class="fa fa-check"></i><b>6.9</b> Afhankelijke- en onafhankelijke-groepen-ontwerp</a></li>
+<li class="chapter" data-level="6.10" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#onderzoek-ontwerpen"><i class="fa fa-check"></i><b>6.10</b> Onderzoek ontwerpen</a></li>
+<li class="chapter" data-level="6.11" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#tenslotte"><i class="fa fa-check"></i><b>6.11</b> Tenslotte</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html"><i class="fa fa-check"></i><b>7</b> Steekproeven</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:gelegenheidssteekproef"><i class="fa fa-check"></i><b>7.1</b> Gelegenheidssteekproeven</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:systematischesteekproef"><i class="fa fa-check"></i><b>7.2</b> Systematische steekproeven</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:aselectesteekproef"><i class="fa fa-check"></i><b>7.3</b> Aselecte steekproeven</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#spss"><i class="fa fa-check"></i><b>7.3.1</b> SPSS</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#jasp"><i class="fa fa-check"></i><b>7.3.2</b> JASP</a></li>
+<li class="chapter" data-level="7.3.3" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#r"><i class="fa fa-check"></i><b>7.3.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:steekproefgrootte"><i class="fa fa-check"></i><b>7.4</b> Steekproefgrootte</a></li>
+</ul></li>
+<li class="part"><span><b>Deel II: Beschrijvende statistiek</b></span></li>
+<li class="chapter" data-level="8" data-path="ch-frequenties.html"><a href="ch-frequenties.html"><i class="fa fa-check"></i><b>8</b> Frequenties</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ch-frequenties.html"><a href="ch-frequenties.html#inleiding-3"><i class="fa fa-check"></i><b>8.1</b> Inleiding</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:frequenties"><i class="fa fa-check"></i><b>8.2</b> Frequenties</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:intervallen"><i class="fa fa-check"></i><b>8.2.1</b> Intervallen</a></li>
+<li class="chapter" data-level="8.2.2" data-path="ch-frequenties.html"><a href="ch-frequenties.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="8.2.3" data-path="ch-frequenties.html"><a href="ch-frequenties.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
+<li class="chapter" data-level="8.2.4" data-path="ch-frequenties.html"><a href="ch-frequenties.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:staafdiagrammen"><i class="fa fa-check"></i><b>8.3</b> Staafdiagrammen</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:histogrammen"><i class="fa fa-check"></i><b>8.4</b> Histogrammen</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="ch-frequenties.html"><a href="ch-frequenties.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="8.4.2" data-path="ch-frequenties.html"><a href="ch-frequenties.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
+<li class="chapter" data-level="8.4.3" data-path="ch-frequenties.html"><a href="ch-frequenties.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html"><i class="fa fa-check"></i><b>9</b> Centrum en spreiding</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#inleiding-4"><i class="fa fa-check"></i><b>9.1</b> Inleiding</a></li>
+<li class="chapter" data-level="9.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#symbolen"><i class="fa fa-check"></i><b>9.2</b> Symbolen</a></li>
+<li class="chapter" data-level="9.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#centrummaten"><i class="fa fa-check"></i><b>9.3</b> Centrummaten</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:gemiddelde"><i class="fa fa-check"></i><b>9.3.1</b> gemiddelde</a></li>
+<li class="chapter" data-level="9.3.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:mediaan"><i class="fa fa-check"></i><b>9.3.2</b> mediaan</a></li>
+<li class="chapter" data-level="9.3.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#modus"><i class="fa fa-check"></i><b>9.3.3</b> modus</a></li>
+<li class="chapter" data-level="9.3.4" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:harmonischgemiddelde"><i class="fa fa-check"></i><b>9.3.4</b> harmonisch gemiddelde</a></li>
+<li class="chapter" data-level="9.3.5" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#gewinsoriseerde-gemiddelde"><i class="fa fa-check"></i><b>9.3.5</b> gewinsoriseerde gemiddelde</a></li>
+<li class="chapter" data-level="9.3.6" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#getrimde-gemiddelde"><i class="fa fa-check"></i><b>9.3.6</b> getrimde gemiddelde</a></li>
+<li class="chapter" data-level="9.3.7" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#vergelijking-van-centrummaten"><i class="fa fa-check"></i><b>9.3.7</b> vergelijking van centrummaten</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:kwartielen-en-boxplots"><i class="fa fa-check"></i><b>9.4</b> Kwartielen en boxplots</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#kwartielen"><i class="fa fa-check"></i><b>9.4.1</b> Kwartielen</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:uitbijters"><i class="fa fa-check"></i><b>9.4.2</b> Uitbijters</a></li>
+<li class="chapter" data-level="9.4.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:boxplot"><i class="fa fa-check"></i><b>9.4.3</b> Boxplots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:spreidingsmaten"><i class="fa fa-check"></i><b>9.5</b> Spreidingsmaten</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:variantie"><i class="fa fa-check"></i><b>9.5.1</b> variantie</a></li>
+<li class="chapter" data-level="9.5.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:standaarddeviatie"><i class="fa fa-check"></i><b>9.5.2</b> standaarddeviatie</a></li>
+<li class="chapter" data-level="9.5.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#mad"><i class="fa fa-check"></i><b>9.5.3</b> MAD</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:significantecijfers"><i class="fa fa-check"></i><b>9.6</b> Over significante cijfers</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:significantecijfers-gemiddelde"><i class="fa fa-check"></i><b>9.6.1</b> Gemiddelde en standaarddeviatie</a></li>
+<li class="chapter" data-level="9.6.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#percentages"><i class="fa fa-check"></i><b>9.6.2</b> Percentages</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:robuustefficient"><i class="fa fa-check"></i><b>9.7</b> Keuzemoment</a></li>
+<li class="chapter" data-level="9.8" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:standaardscores"><i class="fa fa-check"></i><b>9.8</b> Standaardscores</a></li>
+<li class="chapter" data-level="9.9" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
+<li class="chapter" data-level="9.10" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#jasp-3"><i class="fa fa-check"></i><b>9.10</b> JASP</a></li>
+<li class="chapter" data-level="9.11" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#r-3"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html"><i class="fa fa-check"></i><b>10</b> Kansverdelingen</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:kansen"><i class="fa fa-check"></i><b>10.1</b> Kansen</a></li>
+<li class="chapter" data-level="10.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:binomiaalverdeling"><i class="fa fa-check"></i><b>10.2</b> Binomiale kansverdeling</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#formules"><i class="fa fa-check"></i><b>10.2.1</b> formules</a></li>
+<li class="chapter" data-level="10.2.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#jasp-4"><i class="fa fa-check"></i><b>10.2.2</b> JASP</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#r-4"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:normaalverdeling"><i class="fa fa-check"></i><b>10.3</b> Normale kansverdeling</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#formules-1"><i class="fa fa-check"></i><b>10.3.1</b> formules</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#jasp-5"><i class="fa fa-check"></i><b>10.3.2</b> JASP</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#r-5"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld"><i class="fa fa-check"></i><b>10.4</b> Heeft mijn variabele een normale kansverdeling?</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#jasp-6"><i class="fa fa-check"></i><b>10.4.2</b> JASP</a></li>
+<li class="chapter" data-level="10.4.3" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#r-6"><i class="fa fa-check"></i><b>10.4.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:watalsnietnormaal"><i class="fa fa-check"></i><b>10.5</b> Wat als mijn variabele niet normaal verdeeld is?</a></li>
+<li class="chapter" data-level="10.6" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:CentraalLimietTheorema"><i class="fa fa-check"></i><b>10.6</b> Kansverdeling van gemiddelde</a></li>
+<li class="chapter" data-level="10.7" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:betrouwbaarheidsinterval-gemiddelde"><i class="fa fa-check"></i><b>10.7</b> Betrouwbaarheidsinterval van het gemiddelde</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#formules-2"><i class="fa fa-check"></i><b>10.7.1</b> formules</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ch-samenhang.html"><a href="ch-samenhang.html"><i class="fa fa-check"></i><b>11</b> Samenhang</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#inleiding-5"><i class="fa fa-check"></i><b>11.1</b> Inleiding</a></li>
+<li class="chapter" data-level="11.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:Pearson"><i class="fa fa-check"></i><b>11.2</b> Pearson product-moment-correlatie</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#formules-3"><i class="fa fa-check"></i><b>11.2.1</b> Formules</a></li>
+<li class="chapter" data-level="11.2.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.2.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#jasp-7"><i class="fa fa-check"></i><b>11.2.3</b> JASP</a></li>
+<li class="chapter" data-level="11.2.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-7"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:regressie"><i class="fa fa-check"></i><b>11.3</b> Regressie</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:regressie-formules"><i class="fa fa-check"></i><b>11.3.1</b> Formules</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.3.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#jasp-8"><i class="fa fa-check"></i><b>11.3.3</b> JASP</a></li>
+<li class="chapter" data-level="11.3.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-8"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#invloedrijke-observaties"><i class="fa fa-check"></i><b>11.4</b> Invloedrijke observaties</a></li>
+<li class="chapter" data-level="11.5" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearmans rangorde-correlatie</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#formules-4"><i class="fa fa-check"></i><b>11.5.1</b> Formules</a></li>
+<li class="chapter" data-level="11.5.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.5.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#jasp-9"><i class="fa fa-check"></i><b>11.5.3</b> JASP</a></li>
+<li class="chapter" data-level="11.5.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-9"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
+<ul>
+<li class="chapter" data-level="11.6.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#formules-5"><i class="fa fa-check"></i><b>11.6.1</b> Formules</a></li>
+<li class="chapter" data-level="11.6.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.6.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#jasp-10"><i class="fa fa-check"></i><b>11.6.3</b> JASP</a></li>
+<li class="chapter" data-level="11.6.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-10"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Tenslotte</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html"><i class="fa fa-check"></i><b>12</b> Betrouwbaarheid</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#inleiding-6"><i class="fa fa-check"></i><b>12.1</b> Inleiding</a></li>
+<li class="chapter" data-level="12.2" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#wat-is-betrouwbaarheid"><i class="fa fa-check"></i><b>12.2</b> Wat is betrouwbaarheid?</a></li>
+<li class="chapter" data-level="12.3" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#testtheorie"><i class="fa fa-check"></i><b>12.3</b> Testtheorie</a></li>
+<li class="chapter" data-level="12.4" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#interpretaties"><i class="fa fa-check"></i><b>12.4</b> Interpretaties</a></li>
+<li class="chapter" data-level="12.5" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#methoden-om-betrouwbaarheid-te-schatten"><i class="fa fa-check"></i><b>12.5</b> Methoden om betrouwbaarheid te schatten</a></li>
+<li class="chapter" data-level="12.6" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#betrouwbaarheid-tussen-beoordelaars"><i class="fa fa-check"></i><b>12.6</b> Betrouwbaarheid tussen beoordelaars</a></li>
+<li class="chapter" data-level="12.7" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#betrouwbaarheid-en-constructvaliditeit"><i class="fa fa-check"></i><b>12.7</b> Betrouwbaarheid en constructvaliditeit</a></li>
+<li class="chapter" data-level="12.8" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
+<li class="chapter" data-level="12.9" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#jasp-11"><i class="fa fa-check"></i><b>12.9</b> JASP</a></li>
+<li class="chapter" data-level="12.10" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#r-11"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
+</ul></li>
+<li class="part"><span><b>Deel III: Toetsende statistiek</b></span></li>
+<li class="chapter" data-level="13" data-path="ch-toetsing.html"><a href="ch-toetsing.html"><i class="fa fa-check"></i><b>13</b> Toetsing</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:toetsing-inleiding"><i class="fa fa-check"></i><b>13.1</b> Inleiding</a></li>
+<li class="chapter" data-level="13.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-onesample"><i class="fa fa-check"></i><b>13.2</b> <span class="math inline">\(t\)</span>-toets voor enkele steekproef</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-vrijheidsgraden"><i class="fa fa-check"></i><b>13.2.1</b> vrijheidsgraden</a></li>
+<li class="chapter" data-level="13.2.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-1"><i class="fa fa-check"></i><b>13.2.2</b> formules</a></li>
+<li class="chapter" data-level="13.2.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-aannames"><i class="fa fa-check"></i><b>13.2.3</b> aannames</a></li>
+<li class="chapter" data-level="13.2.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
+<li class="chapter" data-level="13.2.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:jaspttoetsenkel"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
+<li class="chapter" data-level="13.2.6" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-12"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:pgroterdannul"><i class="fa fa-check"></i><b>13.3</b> Overschrijdingskans <span class="math inline">\(p\)</span> is altijd groter dan nul</a></li>
+<li class="chapter" data-level="13.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-eenzijdigtweezijdig"><i class="fa fa-check"></i><b>13.4</b> Eenzijdige en tweezijdige toetsen</a></li>
+<li class="chapter" data-level="13.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:t-betrouwbaarheidsinterval-gemiddelde"><i class="fa fa-check"></i><b>13.5</b> Betrouwbaarheidsinterval van het gemiddelde</a>
+<ul>
+<li class="chapter" data-level="13.5.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-2"><i class="fa fa-check"></i><b>13.5.1</b> formules</a></li>
+<li class="chapter" data-level="13.5.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="13.5.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#jasp-12"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
+<li class="chapter" data-level="13.5.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-13"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-onafh"><i class="fa fa-check"></i><b>13.6</b> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven</a>
+<ul>
+<li class="chapter" data-level="13.6.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-ongepaard-aannames"><i class="fa fa-check"></i><b>13.6.1</b> aannames</a></li>
+<li class="chapter" data-level="13.6.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-formules"><i class="fa fa-check"></i><b>13.6.2</b> formules</a></li>
+<li class="chapter" data-level="13.6.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:SPSS-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.3</b> SPSS</a></li>
+<li class="chapter" data-level="13.6.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:jaspttoetsongepaard"><i class="fa fa-check"></i><b>13.6.4</b> JASP</a></li>
+<li class="chapter" data-level="13.6.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.5</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.7" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-gepaard"><i class="fa fa-check"></i><b>13.7</b> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen</a>
+<ul>
+<li class="chapter" data-level="13.7.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#aannames-1"><i class="fa fa-check"></i><b>13.7.1</b> aannames</a></li>
+<li class="chapter" data-level="13.7.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-4"><i class="fa fa-check"></i><b>13.7.2</b> formules</a></li>
+<li class="chapter" data-level="13.7.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:SPSS-ttoets-gepaard"><i class="fa fa-check"></i><b>13.7.3</b> SPSS</a></li>
+<li class="chapter" data-level="13.7.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:jaspttoetsgepaard"><i class="fa fa-check"></i><b>13.7.4</b> JASP</a></li>
+<li class="chapter" data-level="13.7.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:R-ttoets-gepaard"><i class="fa fa-check"></i><b>13.7.5</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:ttoets-effectgrootte"><i class="fa fa-check"></i><b>13.8</b> Effectgrootte</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:formules13-5"><i class="fa fa-check"></i><b>13.8.1</b> formules</a></li>
+<li class="chapter" data-level="13.8.2" data-path="ch-toetsing.html"><a href="ch-toetsing.html#spss-13-2"><i class="fa fa-check"></i><b>13.8.2</b> SPSS</a></li>
+<li class="chapter" data-level="13.8.3" data-path="ch-toetsing.html"><a href="ch-toetsing.html#jasp-13"><i class="fa fa-check"></i><b>13.8.3</b> JASP</a></li>
+<li class="chapter" data-level="13.8.4" data-path="ch-toetsing.html"><a href="ch-toetsing.html#r-14"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
+<li class="chapter" data-level="13.8.5" data-path="ch-toetsing.html"><a href="ch-toetsing.html#sec:betrouwbaarheidsinterval-effectgrootte"><i class="fa fa-check"></i><b>13.8.5</b> Betrouwbaarheidsinterval van de effectgrootte</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="ch-power.html"><a href="ch-power.html"><i class="fa fa-check"></i><b>14</b> Power</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="ch-power.html"><a href="ch-power.html#sec:power-inleiding"><i class="fa fa-check"></i><b>14.1</b> Inleiding</a></li>
+<li class="chapter" data-level="14.2" data-path="ch-power.html"><a href="ch-power.html#sec:effectgrootte-power"><i class="fa fa-check"></i><b>14.2</b> Verband tussen effectgrootte en power</a></li>
+<li class="chapter" data-level="14.3" data-path="ch-power.html"><a href="ch-power.html#sec:steekproefgrootte-power"><i class="fa fa-check"></i><b>14.3</b> Verband tussen steekproefgrootte en power</a></li>
+<li class="chapter" data-level="14.4" data-path="ch-power.html"><a href="ch-power.html#sec:significantieniveau-power"><i class="fa fa-check"></i><b>14.4</b> Verband tussen significantieniveau en power</a></li>
+<li class="chapter" data-level="14.5" data-path="ch-power.html"><a href="ch-power.html#nadelen-van-onvoldoende-power"><i class="fa fa-check"></i><b>14.5</b> Nadelen van onvoldoende power</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html"><i class="fa fa-check"></i><b>15</b> Variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:inleiding"><i class="fa fa-check"></i><b>15.1</b> Inleiding</a></li>
+<li class="chapter" data-level="15.2" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-voorbeelden"><i class="fa fa-check"></i><b>15.2</b> Enkele voorbeelden</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#aannames"><i class="fa fa-check"></i><b>15.2.1</b> aannames</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#eén-weg-variantieanalyse"><i class="fa fa-check"></i><b>15.3</b> Eén-weg-variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.3.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-uitleg"><i class="fa fa-check"></i><b>15.3.1</b> Een intuïtieve uitleg</a></li>
+<li class="chapter" data-level="15.3.2" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-formeel"><i class="fa fa-check"></i><b>15.3.2</b> Een formele uitleg</a></li>
+<li class="chapter" data-level="15.3.3" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-effectgrootte"><i class="fa fa-check"></i><b>15.3.3</b> Effectgrootte</a></li>
+<li class="chapter" data-level="15.3.4" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-gericht"><i class="fa fa-check"></i><b>15.3.4</b> Gerichte vergelijkingen</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc vergelijkingen</a></li>
+<li class="chapter" data-level="15.3.6" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
+<li class="chapter" data-level="15.3.7" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#jasp-14"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
+<li class="chapter" data-level="15.3.8" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="15.4" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:tweeweg-anova"><i class="fa fa-check"></i><b>15.4</b> Tweeweg-variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#een-intuïtieve-uitleg"><i class="fa fa-check"></i><b>15.4.1</b> Een intuïtieve uitleg</a></li>
+<li class="chapter" data-level="15.4.2" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#een-formele-uitleg"><i class="fa fa-check"></i><b>15.4.2</b> Een formele uitleg</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#sec:anova-twoway-posthoc"><i class="fa fa-check"></i><b>15.4.3</b> Post-hoc vergelijkingen</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#spss-13"><i class="fa fa-check"></i><b>15.4.4</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#jasp-15"><i class="fa fa-check"></i><b>15.4.5</b> JASP</a></li>
+<li class="chapter" data-level="15.4.6" data-path="ch-variantieanalyse.html"><a href="ch-variantieanalyse.html#r-16"><i class="fa fa-check"></i><b>15.4.6</b> R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html"><i class="fa fa-check"></i><b>16</b> Chi-kwadraat-toetsen</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#sec:h16inleiding"><i class="fa fa-check"></i><b>16.1</b> Inleiding</a></li>
+<li class="chapter" data-level="16.2" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#sec:chi2gof"><i class="fa fa-check"></i><b>16.2</b> <span class="math inline">\(\chi^2\)</span>-toets voor “goodness of fit” in enkele steekproef</a></li>
+<li class="chapter" data-level="16.3" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#chi2-toets-voor-homogeniteit-van-een-variabele-in-meerdere-steekproeven"><i class="fa fa-check"></i><b>16.3</b> <span class="math inline">\(\chi^2\)</span>-toets voor homogeniteit van een variabele in meerdere steekproeven</a></li>
+<li class="chapter" data-level="16.4" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#chi2-toets-voor-verband-tussen-twee-variabelen-in-enkele-steekproef"><i class="fa fa-check"></i><b>16.4</b> <span class="math inline">\(\chi^2\)</span>-toets voor verband tussen twee variabelen in enkele steekproef</a></li>
+<li class="chapter" data-level="16.5" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#sec:chi2toets-aannames"><i class="fa fa-check"></i><b>16.5</b> aannames</a></li>
+<li class="chapter" data-level="16.6" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#formules-6"><i class="fa fa-check"></i><b>16.6</b> formules</a></li>
+<li class="chapter" data-level="16.7" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#spss-14"><i class="fa fa-check"></i><b>16.7</b> SPSS</a>
+<ul>
+<li class="chapter" data-level="16.7.1" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#goodness-of-fit-voorbereiding"><i class="fa fa-check"></i><b>16.7.1</b> goodness of fit: voorbereiding</a></li>
+<li class="chapter" data-level="16.7.2" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#goodness-of-fit-toetsing"><i class="fa fa-check"></i><b>16.7.2</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.7.3" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#kruistabellen-voorbereiding"><i class="fa fa-check"></i><b>16.7.3</b> kruistabellen: voorbereiding</a></li>
+<li class="chapter" data-level="16.7.4" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#kruistabellen-toetsing"><i class="fa fa-check"></i><b>16.7.4</b> kruistabellen: toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.8" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#jasp-16"><i class="fa fa-check"></i><b>16.8</b> JASP</a>
+<ul>
+<li class="chapter" data-level="16.8.1" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#goodness-of-fit-voorbereiding-1"><i class="fa fa-check"></i><b>16.8.1</b> goodness of fit: voorbereiding</a></li>
+<li class="chapter" data-level="16.8.2" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#goodness-of-fit-toetsing-1"><i class="fa fa-check"></i><b>16.8.2</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.8.3" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#kruistabellen-voorbereiding-1"><i class="fa fa-check"></i><b>16.8.3</b> kruistabellen: voorbereiding</a></li>
+<li class="chapter" data-level="16.8.4" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#kruistabellen-toetsing-1"><i class="fa fa-check"></i><b>16.8.4</b> kruistabellen: toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.9" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#r-17"><i class="fa fa-check"></i><b>16.9</b> R</a>
+<ul>
+<li class="chapter" data-level="16.9.1" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#goodness-of-fit-toetsing-2"><i class="fa fa-check"></i><b>16.9.1</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.9.2" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#kruistabellen-voorbereiding-en-toetsing"><i class="fa fa-check"></i><b>16.9.2</b> kruistabellen: voorbereiding en toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.10" data-path="ch-chi-kwadraat-toetsen.html"><a href="ch-chi-kwadraat-toetsen.html#effectgrootte-odds-ratio"><i class="fa fa-check"></i><b>16.10</b> Effectgrootte: odds ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html"><i class="fa fa-check"></i><b>17</b> Andere nonparametrische toetsen</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#sec:h17inleiding"><i class="fa fa-check"></i><b>17.1</b> Inleiding</a></li>
+<li class="chapter" data-level="17.2" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#gepaarde-observaties-enkele-steekproef"><i class="fa fa-check"></i><b>17.2</b> Gepaarde observaties, enkele steekproef</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#sec:tekentoets"><i class="fa fa-check"></i><b>17.2.1</b> Tekentoets</a></li>
+<li class="chapter" data-level="17.2.2" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#sec:Wilcoxon-signed-rank"><i class="fa fa-check"></i><b>17.2.2</b> Wilcoxon signed-ranks test</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#onafhankelijke-observaties-meerdere-steekproeven"><i class="fa fa-check"></i><b>17.3</b> Onafhankelijke observaties, meerdere steekproeven</a>
+<ul>
+<li class="chapter" data-level="17.3.1" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#mediaantoets"><i class="fa fa-check"></i><b>17.3.1</b> Mediaantoets</a></li>
+<li class="chapter" data-level="17.3.2" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#sec:wilcoxon-rank-sum"><i class="fa fa-check"></i><b>17.3.2</b> Wilcoxon rank sum test, ofwel Mann-Whitney U test</a></li>
+<li class="chapter" data-level="17.3.3" data-path="ch-andere-nonpar-toetsen.html"><a href="ch-andere-nonpar-toetsen.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>17.3.3</b> Kruskall-Wallis H test</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Bijlagen</b></span></li>
+<li class="chapter" data-level="A" data-path="app-randomgetallen.html"><a href="app-randomgetallen.html"><i class="fa fa-check"></i><b>A</b> Willekeurige getallen</a></li>
+<li class="chapter" data-level="B" data-path="app-kritiekeZwaarden.html"><a href="app-kritiekeZwaarden.html"><i class="fa fa-check"></i><b>B</b> Standaard-normale kansverdeling</a></li>
+<li class="chapter" data-level="C" data-path="app-kritieketwaarden.html"><a href="app-kritieketwaarden.html"><i class="fa fa-check"></i><b>C</b> Kritieke waarden van <span class="math inline">\(t\)</span>-verdeling</a></li>
+<li class="chapter" data-level="D" data-path="app-kritiekechi2waarden.html"><a href="app-kritiekechi2waarden.html"><i class="fa fa-check"></i><b>D</b> Kritieke waarden van <span class="math inline">\(\chi^2\)</span>-verdeling</a></li>
+<li class="chapter" data-level="" data-path="referenties.html"><a href="referenties.html"><i class="fa fa-check"></i>Referenties</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Gemaakt met bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kwantitatieve Methoden en Statistiek</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch-toetsing" class="section level1" number="13">
+<h1><span class="header-section-number">Hoofdstuk 13</span> Toetsing</h1>
+<div id="sec:toetsing-inleiding" class="section level2" number="13.1">
+<h2><span class="header-section-number">13.1</span> Inleiding</h2>
+<p>Vanaf dit hoofdstuk houden we ons bezig met het toetsen van
+onderzoekshypothesen, en in het bijzonder met toetsen van <em>nul</em>-hypotheses (null hypothesis significance testing, NHST), zoals uitgelegd in Hoofdstuk <a href="ch-onderzoek.html#ch-onderzoek">2</a>.</p>
+<p>Voor dergelijke toetsingen is in de loop der jaren
+een groot aantal technieken ontwikkeld. De toetsen die we behandelen
+zijn de meest gebruikte en kunnen we indelen in parametrische en
+non-parametrische toetsen. Parametrische toetsen veronderstellen dat de
+afhankelijke variabele (tenminste) gemeten is op intervalniveau (zie
+hoofdstuk <a href="ch-meetniveau.html#ch-meetniveau">4</a>), en dat de gemeten uitkomsten of scores
+normaal verdeeld zijn (zie
+§<a href="ch-kansverdelingen.html#sec:normaalverdeling">10.3</a> en
+§<a href="ch-kansverdelingen.html#sec:watalsnietnormaal">10.5</a>). Bij non-parametrische toetsen
+worden, afhankelijk van de techniek, minder aannamen gemaakt over het
+meetniveau, danwel over de verdeling van de geobserveerde scores; het
+zijn zogenaamde verdelingsvrije toetsen. Het gevolg is dat de toetsing
+iets minder ‘gevoelig’ is, onder verder gelijke omstandigheden, d.w.z.
+dat de nulhypothese onder verder gelijke omstandigheden minder vaak
+verworpen kan worden. Deze toetsen hebben derhalve minder power (zie
+Hoofdstuk <a href="ch-power.html#ch-power">14</a>). Onderzoekers geven daarom meestal de voorkeur
+aan parametrische toetsen.</p>
+<p>Het algemene principe van toetsing hebben we al kort besproken in
+§<a href="ch-onderzoek.html#sec:falsificatie">2.4</a> en
+§<a href="ch-onderzoek.html#sec:empirischecyclus">2.5</a>.
+We leggen het hier nogmaals uit aan
+de hand van een voorbeeld. We onderzoeken de bewering H1: ‘studenten
+Taalwetenschap beheersen de traditionele zinsgrammatica <em>beter</em> dan de
+gemiddelde talen-student’. Als meet-instrument gebruiken we de zgn.
+“grammaticatoets”<a href="referenties.html#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a> die verplicht is voor de meeste studenten in het
+talen-domein van de Universiteit Utrecht. Op grond van eerdere
+studiejaren verwachten we een gemiddelde score van 73 op deze toets; dit
+is het gemiddeld aantal goede antwoorden uit 100 vragen. We
+operationaliseren dus eerst H1: <span class="math inline">\(\mu &gt; 73\)</span>, en daaruit leiden we de
+bijbehorende nulhypothese af die daadwerkelijk getoetst wordt:
+<span class="math inline">\(\mu = 73\)</span>.
+(In §<a href="ch-toetsing.html#sec:ttoets-eenzijdigtweezijdig">13.4</a> hieronder gaan we nader in
+op het al dan niet noemen van de <em>richting</em> van het verschil in H1).</p>
+<p>Voor de
+eerstejaars studenten Taalwetenschap (<span class="math inline">\(n=34\)</span>) van een bepaald studiejaar
+vinden we een gemiddelde score van 84.4. Dat is inderdaad ver boven de
+referentie-waarde van 73, maar dat zou ook toeval kunnen zijn. Misschien
+is H0 waar, en zitten er geheel toevallig veel grammaticale bollebozen
+in onze steekproef (uit de populatie van mogelijke eerstejaars studenten
+Taalwetenschap). We kunnen de kans <span class="math inline">\(P\)</span> op die situatie uitrekenen,
+d.w.z. de kans <span class="math inline">\(P\)</span> om een gemiddelde score van <span class="math inline">\(\overline{x}=84.4\)</span> te
+vinden gegeven een willekeurige steekproef van <span class="math inline">\(n=34\)</span> personen en
+gegeven dat H0 in werkelijkheid waar is (d.w.z. <span class="math inline">\(\mu=73\)</span>): dan blijkt
+<span class="math inline">\(P=.000000001913\)</span>. Deze kans <span class="math inline">\(P\)</span> representeert de kans om bij toeval
+deze gegevens te vinden terwijl H0 waar is:
+<span class="math inline">\(P(\overline{x}=84.4|\textrm{H0},n=34)\)</span>. In dit geval is die kans <span class="math inline">\(P\)</span>
+zeer klein.</p>
+<p>Voor de argumentatie is het essentieel dat de gegevens valide zijn en
+betrouwbaar zijn — juist daarom zijn we uitgebreid ingegaan op
+validiteit
+(Hoofdstuk <a href="ch-validiteit.html#ch-validiteit">5</a>) en betrouwbaarheid
+(Hoofdstuk <a href="ch-betrouwbaarheid.html#ch-betrouwbaarheid">12</a>). Als we alles goed gedaan hebben, dan
+mogen we immers vertrouwen hebben in onze verkregen gegevens. De lage
+waarschijnlijkheid van de gegevens volgens H0 kunnen we dan
+redelijkerwijs <em>niet</em> toeschrijven aan fouten in de operationalisatie,
+of aan meetfouten, of aan andere afwijkingen in de gegevens. De logische
+conclusie is dan, dat de onwaarschijnlijke uitkomst erop wijst dat de
+premisse (H0) waarschijnlijk <em>niet</em> waar is: we verwerpen H0; H0 is dus
+gefalsifieerd. Onze kennis is daarmee toegenomen, omdat we nu op
+gerechtvaardigde gronden mogen aannemen dat H0 onwaar is (en dus dat H1
+waar is).</p>
+<p>Indien we H0 verwerpen, op basis van bovenstaande redenering, die weer
+gebaseerd is op waarschijnlijkheid, dan moeten we wel rekening houden
+met de kleine kans <span class="math inline">\(P\)</span> dat het verwerpen van H0 een onterechte
+beslissing is (Type-I-fout; zie
+§<a href="ch-onderzoek.html#sec:empirischecyclus">2.5</a>). Er is immers de kans <span class="math inline">\(P\)</span> dat we deze
+data vinden terwijl H0 toch waar is (in dit voorbeeld: terwijl de
+taalwetenschappers eigenlijk gemiddeld niet anders scoren dan <span class="math inline">\(\mu=73\)</span>).</p>
+<div class="figure"><span style="display:block;" id="fig:gramm2013onesample"></span>
+<img src="KMS-NL_files/figure-html/gramm2013onesample-1.png" alt="Kansverdeling van de gemiddelde score uit een steekproef (n=34) bij populatiegemiddelde 73 en populatie-s.d. 14. Het gekleurde gebied bestrijkt 5% van de totale oppervlakte onder de curve; uitkomsten langs de X-as van dit gebied hebben dus een kans van ten hoogste 5% om op te treden als H0 waar is." width="672" />
+<p class="caption">
+Figuur 13.1: Kansverdeling van de gemiddelde score uit een steekproef (n=34) bij populatiegemiddelde 73 en populatie-s.d. 14. Het gekleurde gebied bestrijkt 5% van de totale oppervlakte onder de curve; uitkomsten langs de X-as van dit gebied hebben dus een kans van ten hoogste 5% om op te treden als H0 waar is.
+</p>
+</div>
+<p>Figuur <a href="ch-toetsing.html#fig:gramm2013onesample">13.1</a> toont de kansverdeling van het
+gemiddelde van de steekproef (<span class="math inline">\(n=34\)</span>) als H0 waar is. We zien dat de
+waarde 73 de hoogste kans heeft, maar ook 72 of 74 zijn waarschijnlijke
+gemiddelde scores volgens H0. Een gemiddelde van 84.4 is echter zeer
+onwaarschijnlijk, de kans <span class="math inline">\(P\)</span> op deze gemiddelde score (hoogte van de
+curve) is bijna nul volgens H0.</p>
+<p>De grenswaarde voor <span class="math inline">\(P\)</span> waarbij we H0 verwerpen, wordt het
+significantieniveau genoemd, vaak aangeduid met symbool <span class="math inline">\(\alpha\)</span> (zie
+§<a href="ch-onderzoek.html#sec:empirischecyclus">2.5</a>). Onderzoekers gebruiken vaak
+<span class="math inline">\(\alpha=.05\)</span>, maar soms worden andere grenswaarden gebruikt. In
+Figuur <a href="ch-toetsing.html#fig:gramm2013onesample">13.1</a> zie je dat de kans op een gemiddelde
+score van 77.7 of meer een kans heeft van <span class="math inline">\(P=.05\)</span> of kleiner, volgens
+H0. Dit is te zien aan de oppervlakte onder de curve. Het gekleurde deel
+heeft precies een oppervlakte van 0.05 van de totale oppervlakte onder
+de curve.</p>
+<p>De beslissing om H0 wel of niet te verwerpen is gebaseerd op de
+waarschijnlijkheid <span class="math inline">\(P\)</span> van de uitkomsten, gegeven H0. De beslissing zou
+dus ook onjuist kunnen zijn. De bevinding dat <span class="math inline">\(P &lt; \alpha\)</span> vormt dus
+geen <em>onomstotelijk</em> bewijs dat H0 onwaar is (en verworpen <em>moet</em>
+worden); het is ook mogelijk dat H0 toch waar is maar dat het gevonden
+effect een toevalstreffer was (Type-I-fout). Omgekeerd vormt de
+bevinding dat <span class="math inline">\(P &gt; \alpha\)</span> geen sluitend bewijs dat H0 waar is. Er
+kunnen allerlei andere, plausibele redenen zijn waarom een wel bestaand
+effect (H0 is onwaar) toch niet goed geobserveerd wordt. Als ik geen
+vogels hoor zingen, dan betekent dat niet noodzakelijkerwijs dat er echt
+geen vogels zingen. Meer algemeen: “absence of evidence is not evidence
+of absence” <span class="citation">(<a href="#ref-Sagan96" role="doc-biblioref">Sagan 1996, 121</a>; <a href="#ref-Alde04" role="doc-biblioref">Alderson 2004</a>)</span>. Het is daarom goed om ook altijd de grootte van het
+gevonden effect of verschil te rapporteren (dit wordt nader uitgelegd in
+§<a href="ch-toetsing.html#sec:ttoets-effectgrootte">13.8</a> hieronder).</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 13.1:</em>
+Stel H0: ‘vogels zingen niet’. Schrijf
+tenminste vier redenen op waarom ik geen vogels hoor zingen, zelfs als
+er wel vogels zingen (H0 is onwaar). Als ik H0 niet verwerp, wat voor
+type fout maak ik dan?</p>
+</blockquote>
+<hr />
+</div>
+<div id="sec:ttoets-onesample" class="section level2" number="13.2">
+<h2><span class="header-section-number">13.2</span> <span class="math inline">\(t\)</span>-toets voor enkele steekproef</h2>
+<p>De Student <span class="math inline">\(t\)</span>-toets wordt toegepast om een verschil te kunnen onderzoeken tussen
+de gemiddelde score van een steekproef, en een a priori veronderstelde
+waarde van dat gemiddelde. We gebruiken deze toets als de
+standaarddeviatie <span class="math inline">\(\sigma\)</span> in de populatie niet bekend is, en dus
+geschat moet worden uit de steekproef. De gedachtegang is als volgt.</p>
+<p>Op grond van het gemiddelde en de standaarddeviatie in de steekproef, en
+van het (volgens H0) veronderstelde gemiddelde, bepalen we de toetsingsgrootheid <span class="math inline">\(t\)</span>.
+Als H0 waar is, dan is de waarde <span class="math inline">\(t=0\)</span> het meest waarschijnlijk.
+Naarmate het verschil tussen het geobserveerde steekproefgemiddelde en
+het veronderstelde steekproefgemiddelde groter wordt, neemt <span class="math inline">\(t\)</span> ook toe.
+Als de toetsingsgrootheid <span class="math inline">\(t\)</span> groter is dan een bepaalde grenswaarde
+<span class="math inline">\(t*\)</span>, dus als <span class="math inline">\(t&gt;t*\)</span>, dan is de kans op deze toetsingsgrootheid, als H0
+waar is, erg klein: <span class="math inline">\(P(t|\textrm{H0}) &lt; \alpha\)</span>. De kans om dit
+resultaat te vinden als H0 waar is, is dan zo gering dat we besluiten H0
+te verwerpen (zie
+§<a href="ch-onderzoek.html#sec:empirischecyclus">2.5</a>). We spreken dan van een <em>significant</em>
+verschil: de afwijking tussen het geobserveerde en het verwachte
+gemiddelde is vermoedelijk niet toevallig.</p>
+<p>In het eerdere voorbeeld van de grammaticatoets bij studenten
+Taalwetenschap (§<a href="ch-toetsing.html#sec:toetsing-inleiding">13.1</a>) hebben we al kennis gemaakt met
+deze vorm van de <span class="math inline">\(t\)</span>-toets.
+Als <span class="math inline">\(\overline{x}=84.4, s=8.4, n=34\)</span>, dan is
+toetsingsgrootheid <span class="math inline">\(t=7.9\)</span> volgens formule <a href="ch-toetsing.html#eq:t-onesample">(13.1)</a> hieronder.</p>
+<p>De kansverdeling van toetsingsgrootheid <span class="math inline">\(t\)</span> onder H0 is bekend; je vindt
+de grenswaarde <span class="math inline">\(t^*\)</span> in
+Bijlage <a href="#app:kritieketwaarden"><strong>??</strong></a>. Anders gezegd, als de gevonden
+toetsingsgrootheid <span class="math inline">\(t\)</span> groter is dan de grenswaarde <span class="math inline">\(t^*\)</span> die in de
+tabel staat vermeld, dan is <span class="math inline">\(P(t|\textrm{H0})&lt;\alpha\)</span>. Om de tabel in
+Bijlage <a href="#app:kritieketwaarden"><strong>??</strong></a> te kunnen gebruiken moeten we nog een
+nieuw begrip introduceren, namelijk het aantal vrijheidsgraden. Dat
+begrip wordt uitgelegd in
+§<a href="ch-toetsing.html#sec:ttoets-vrijheidsgraden">13.2.1</a> hieronder.</p>
+<p>Met het aantal vrijheidsgraden kun je in
+Bijlage <a href="#app:kritieketwaarden"><strong>??</strong></a> opzoeken welke grenswaarde <span class="math inline">\(t^*\)</span> nodig
+is om een bepaalde overschrijdingskans <span class="math inline">\(p\)</span> te verkrijgen. Laten we
+opzoeken wat de overschrijdingskans is voor de gevonden
+toetsingsgrootheid <span class="math inline">\(t=7.9\)</span>. Eerst zoeken we in de linker kolom het
+aantal vrijheidsgraden (‘d.f.’) op. Als het aantal vrijheidsgraden niet
+in de tabel voorkomt, dan dienen we voorzichtigheidshalve naar beneden
+af te ronden, hier naar 30 d.f. Dit aantal bepaalt de regel die voor ons
+van toepassing is. In de derde kolom staat <span class="math inline">\(t^*=1.697\)</span>. Onze gevonden
+toetsingsgrootheid <span class="math inline">\(t=7.9\)</span> is groter dan deze <span class="math inline">\(t^*=1.697\)</span>, dus de
+overschrijdingskans is kleiner dan de <span class="math inline">\(p=.05\)</span> die hoort bij de derde
+kolom. Als we verder naar rechts gaan op dezelfde regel, zien we dat de
+vermelde <span class="math inline">\(t^*\)</span> nog toeneemt. Onze gevonden toetsingsgrootheid <span class="math inline">\(t\)</span> is
+zelfs nog groter dan <span class="math inline">\(t^*=3.385\)</span> in de laatste kolom. De
+overschrijdingskans is dus zelfs nog kleiner dan <span class="math inline">\(p=.001\)</span> uit de titel
+van die laatste kolom. (Doorgaans berekent het statistische
+analyse-programma ook de overschrijdingskans.) We rapporteren het
+resultaat als volgt:</p>
+<blockquote>
+<p>De gemiddelde score van de studenten Taalwetenschap (lichting 2013) is
+84.4 (<span class="math inline">\(s=8.4\)</span>); dit is significant beter dan het veronderstelde
+populatie-gemiddelde van 73 (<span class="math inline">\(t(33)=7.9, p&lt;.001\)</span>).</p>
+</blockquote>
+<div id="sec:ttoets-vrijheidsgraden" class="section level3" number="13.2.1">
+<h3><span class="header-section-number">13.2.1</span> vrijheidsgraden</h3>
+<p>Om het concept van vrijheidsgraden uit te leggen, beginnen we met een
+analogie. Stel dat er drie mogelijke routes zijn om van A naar B te
+reizen: een kustpad, een bergpad, of een autoweg. Een wandelaar die van
+A naar B wil reizen, heeft weliswaar drie opties, maar er zijn slechts
+twee vrijheidsgraden voor de wandelaar: hij of zij hoeft slechts 2
+keuzes te maken om te kiezen uit de drie opties. Eerst valt de autoweg
+af (eerste kies-moment), en dan het bergpad (tweede kies-moment), en de
+gekozen route langs het kustpad blijft als enige over. Er zijn dus twee
+keuzes ‘vrij’, om uiteindelijk één van de drie mogelijke routes te
+kiezen. Als we de twee keuzes weten, dan kunnen we daaruit afleiden
+welke route gekozen moet zijn.</p>
+<p>Nu kijken we naar een student die gemiddeld een <span class="math inline">\(\overline{x}=7.0\)</span> heeft
+behaald over de <span class="math inline">\(N=4\)</span> cursussen van het eerste basispakket van zijn of
+haar opleiding. Het gemiddelde van <span class="math inline">\(7.0\)</span> kan op vele manieren tot stand
+zijn gekomen, bv. <span class="math inline">\((8,7,7,6)\)</span> of <span class="math inline">\((5,6,8,9)\)</span>. Maar als we van drie
+cursussen het resultaat weten, èn we weten dat het gemiddelde een 7.0
+bedraagt, dan weten we ook wat de waarde van de vierde observatie moet
+zijn. Die laatste observatie is dus niet meer ‘vrij’ maar wordt nu
+vastgelegd door de eerste drie observaties, in combinatie met het
+gemiddelde over de <span class="math inline">\(N=4\)</span> observaties. We zeggen dan dat je <span class="math inline">\(N-1\)</span>
+<em>vrijheidsgraden</em> hebt om dit kenmerk van de steekproef te bepalen,
+zoals hier het steekproefgemiddelde, of zoals de toetsingsgrootheid <span class="math inline">\(t\)</span>.
+De vrijheidsgraden worden in het Engels ‘degrees of freedom’ genoemd,
+vaak afgekort tot ‘d.f.’ (symbool <span class="math inline">\(\nu\)</span>, griekse letter “nu”) .</p>
+<p>In de praktijk is het aantal vrijheidsgraden niet moeilijk te bepalen.
+We geven namelijk bij elke toets aan hoe je de vrijheidsgraden bepaalt
+— en het aantal d.f. wordt doorgaans ook berekend door de statistische
+analyse-programma’s die we gebruiken.</p>
+<p>Bij de <span class="math inline">\(t\)</span>-toets voor een enkele steekproef is het aantal vrijheidsgraden het
+aantal observaties <span class="math inline">\(N-1\)</span>. In het hierboven besproken voorbeeld hebben we
+dus <span class="math inline">\(N-1 = 34-1 = 33\)</span> vrijheidsgraden.</p>
+</div>
+<div id="sec:formules13-1" class="section level3" number="13.2.2">
+<h3><span class="header-section-number">13.2.2</span> formules</h3>
+<p><span class="math display" id="eq:t-onesample">\[\begin{equation}
+  t = \frac{ \overline{y}-\mu} { s } \times \sqrt{N}
+  \tag{13.1}
+\end{equation}\]</span></p>
+</div>
+<div id="sec:ttoets-aannames" class="section level3" number="13.2.3">
+<h3><span class="header-section-number">13.2.3</span> aannames</h3>
+<p>De <span class="math inline">\(t\)</span>-toets voor een enkele steekproef vereist drie aannames (assumpties) waaraan
+voldaan moet zijn, om de toets te mogen gebruiken.</p>
+<ul>
+<li><p>De gegevens moeten gemeten zijn op intervalniveau (zie
+hoofdstuk <a href="ch-meetniveau.html#ch-meetniveau">4</a>).</p></li>
+<li><p>Alle observaties moeten onafhankelijk van elkaar zijn.</p></li>
+<li><p>De scores moeten normaal verdeeld zijn (zie
+§<a href="ch-kansverdelingen.html#sec:normaalverdeling">10.3</a>).</p></li>
+</ul>
+</div>
+<div id="spss-10" class="section level3" number="13.2.4">
+<h3><span class="header-section-number">13.2.4</span> SPSS</h3>
+<p>De hierboven besproken gegevens zijn te vinden in het bestand <code>data/grammaticatoets2013.csv</code>.</p>
+<p>Om onze eerdere hypothese te toetsen, moeten we in SPSS eerst de
+observaties selecteren van de studenten Taalwetenschap.</p>
+<pre><code>Data &gt; Select cases...</code></pre>
+<p>Kies <code>If condition is satisfied</code> en druk op knop <code>If...</code> om de condities
+voor selectie (inclusie) aan te geven.<br />
+Selecteer variabele <code>opleiding</code> (sleep naar rechter paneel), kies knop
+<code>=</code>, en type daarna <em><code>TW</code></em>, zodat de hele conditie luidt
+<code>opleiding = TW</code>.</p>
+<p>Daarna kunnen we onze eerdere hypothese toetsen als volgt:</p>
+<pre><code>Analyze &gt; Compare Means &gt; One-Sample T Test...</code></pre>
+<p>Selecteer variabele <code>score</code> (sleep naar Test variable(s) paneel).<br />
+Geef op tegen welke waarde van <span class="math inline">\(\mu\)</span> getoetst moet worden: geef op als
+Test Value <code>73</code>. Bevestig met <code>OK</code>.</p>
+<p>De uitvoer bevat zowel beschrijvende statistiek als de resultaten van
+een <em>tweezijdige</em> <span class="math inline">\(t\)</span>-toets.</p>
+<p>Neem bij het overnemen van die uitvoer goede notitie van de waarschuwing in
+§<a href="ch-toetsing.html#sec:pgroterdannul">13.3</a> hieronder: SPSS rapporteert alsof <code>p=.000</code> maar dat is onjuist.</p>
+</div>
+<div id="sec:jaspttoetsenkel" class="section level3" number="13.2.5">
+<h3><span class="header-section-number">13.2.5</span> JASP</h3>
+<p>De hierboven besproken gegevens zijn te vinden in het bestand <code>data/grammaticatoets2013.csv</code>.</p>
+<p>Om de eerder besproken hypothese te toetsen, moeten we eerst alleen de observaties van studenten Taalwetenschap selecteren (‘filteren’). Ga daarvoor naar het tabblad met data, en klik op het trechtersymbool (filter) in de cel linksboven. Er verschijnt dan een werkblad waar je je selectie kunt specificeren.<br />
+Klik 1x op de variabele <code>opleiding</code> (links), die verspringt dan naar het werkblad. Klik daarna 1x op het symbool <code>=</code> (boven) en plaats de cursor achter het <code>=</code> teken op het werkblad, en typ de twee letters <code>TW</code> (in hoofdletters en zonder aanhalingstekens; exact hetzelfde zoals in de variabele <em>opleiding</em>). Op het werkblad staat nu het selectiecriterium: <code>opleiding = TW</code>.<br />
+Klik op de tekst <code>Apply pass-through filter</code> onder het werkblad om dit filter toe te passen. In het tabblad met data zie je nu direct dat de regels van studenten anders dan <code>TW</code> grijs gemaakt zijn. Die regels (observaties) worden niet verder gebruikt.</p>
+<p>Klik daarna voor het toetsen van de hypothese in de bovenbalk op:</p>
+<pre><code>T-Tests &gt; Classical: One Sample T-Test</code></pre>
+<p>Selecteer de variabele <em>score</em> en plaats deze in het veld “Variables”. Zorg dat <code>Student</code> aangevinkt is onder “Tests” en geef bij <code>Test value:</code> op tegen welke waarde van <span class="math inline">\(\mu\)</span> getoetst moet worden; 73. Onder “Alt.Hypothesis” moet <code>&gt; Test value</code> worden geselecteerd voor een eenzijdige <span class="math inline">\(t\)</span>-toets (want H1: <span class="math inline">\(\mu &gt; 73\)</span>). Voor meer inzicht kunnen onder “Additional Statistics” ook <code>Descriptives</code> en <code>Descriptive plots</code> worden aangevinkt. Vink hier ook <code>Effect size</code> aan (zie §<a href="ch-toetsing.html#sec:ttoets-effectgrootte">13.8</a> hieronder). Vink als laatste onder het kopje “Assumption checks” ook de optie <code>Normality</code> aan (zie §<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p>
+<p>De uitvoer geeft de resultaten van de eenzijdige <span class="math inline">\(t\)</span>-toets, inclusief effectgrootte. De tabel <em>Assumption Checks</em> geeft de resultaten van de Shapiro-Wilk-toets (die toetst of de afhankelijke variabele normaal verdeeld is). Als dit is aangevinkt wordt ook een tabel met beschrijvende statistiek en een “Descriptive plot” gegeven. Hiermee kun je goed zien waar de waarde <span class="math inline">\(\mu\)</span> ligt waartegen wordt getoetst ten opzichte van de scores van de studenten Taalwetenschap.</p>
+<p>Let op! Voor de toets hebben we een filter aangezet om alleen de studenten Taalwetenschap mee te nemen, en dit filter blijft aan staan als je niks doet. Als je later weer alle observaties wilt gebruiken, maak het filteren dan ongedaan door weer in het data tabblad naar het filter werkblad te gaan en 2x op de prullenbak te klikken. Als het goed gaat staat er “Filter cleared” en worden alle observaties weer zwart in het data tabblad.</p>
+</div>
+<div id="r-12" class="section level3" number="13.2.6">
+<h3><span class="header-section-number">13.2.6</span> R</h3>
+<p>Onze hierboven besproken hypothese kan worden getoetst met de volgende opdrachten:</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="ch-toetsing.html#cb100-1" aria-hidden="true" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb100-2"><a href="ch-toetsing.html#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( gramm2013,</span>
+<span id="cb100-3"><a href="ch-toetsing.html#cb100-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">t.test</span>( score[opleiding<span class="sc">==</span><span class="st">&quot;TW&quot;</span>], <span class="at">mu=</span><span class="dv">73</span>, <span class="at">alt=</span><span class="st">&quot;greater&quot;</span> ) )</span></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  score[opleiding == &quot;TW&quot;]
+## t = 7.9288, df = 33, p-value = 1.913e-09
+## alternative hypothesis: true mean is greater than 73
+## 95 percent confidence interval:
+##  81.97599      Inf
+## sample estimates:
+## mean of x 
+##  84.41176</code></pre>
+<p>De notatie <code>1.913e-09</code> moet gelezen worden als het getal
+<span class="math inline">\((1.913 \times 10^{-9})\)</span>.</p>
+</div>
+</div>
+<div id="sec:pgroterdannul" class="section level2" number="13.3">
+<h2><span class="header-section-number">13.3</span> Overschrijdingskans <span class="math inline">\(p\)</span> is altijd groter dan nul</h2>
+<p>De overschrijdingskans <span class="math inline">\(p\)</span> kan heel klein zijn, maar is altijd groter
+dan nul! In het bovenstaande voorbeeld van de grammaticatoets
+vonden we <span class="math inline">\(P=.000000001913\)</span>, een heel kleine kans, maar wel groter dan
+nul. Dat is ook te zien aan de staarten van de bijbehorende
+kansverdeling, die asymptotisch naderen naar nul (zie
+Fig.<a href="ch-toetsing.html#fig:gramm2013onesample">13.1</a>) maar nooit helemaal gelijk aan nul
+worden. Er is immers altijd een miniem kleine kans dat je een extreme
+waarde (of een nog extremere waarde) van je toetsingsgrootheid zult
+vinden in een steekproef — we onderzoeken de steekproef immers juist
+omdat de uitkomst van de toetsingsgrootheid niet a priori vaststaat.</p>
+<p>In SPSS worden de overschrijdingskansen echter afgerond, en kunnen dan
+in de uitvoer verschijnen als <code>‘Sig. .000’</code> oftewel <span class="math inline">\(p=.000\)</span>. Dit is
+onjuist. De overschrijdingskans of significantie is immers niet gelijk
+aan nul, maar is <em>afgerond tot</em> nul, en dat is niet hetzelfde.
+Rapporteer de overschrijdingskans of significantie altijd met de juiste
+nauwkeurigheid, in dit voorbeeld als <span class="math inline">\(p&lt;.001\)</span> of zelfs <span class="math inline">\(p&lt;.0005\)</span>
+(rekening houdend met de afronding door SPSS naar drie decimale
+cijfers).</p>
+</div>
+<div id="sec:ttoets-eenzijdigtweezijdig" class="section level2" number="13.4">
+<h2><span class="header-section-number">13.4</span> Eenzijdige en tweezijdige toetsen</h2>
+<p>De procedure die we hierboven hebben besproken geldt voor het éénzijdig
+toetsen. Dat wil zeggen dat de alternatieve hypothese niet alleen stelt
+dat de gemiddelden zullen verschillen, maar ook in welke richting dat
+zal zijn: H1: <span class="math inline">\(\mu &gt;73\)</span>, de studenten Taalwetenschap scoren <em>beter</em> dan
+het populatiegemiddelde. Als we een verschil zouden vinden in de
+tegengestelde richting, zeg <span class="math inline">\(\overline{x}=68\)</span>, dan beginnen we niet eens
+aan statistische toetsing: de H0 blijft zonder meer in stand. Pas als we
+een verschil vinden in de veronderstelde richting is het zinvol om te
+inspecteren of dit verschil significant is. Wanneer je nu kijkt naar de
+afbeelding bij
+Bijlage <a href="#app:kritieketwaarden"><strong>??</strong></a>, dan klopt dit ook. De <span class="math inline">\(p\)</span>-waarde
+correspondeert met de oppervlakte van het gekleurde gebied.</p>
+<p>Indien de alternatieve hypothese H1 de richting van het verschil <em>niet</em>
+specificeert, dan treedt er een complicatie op. Zowel verschillen in de
+ene richting als in de andere richting zijn dan immers relevant. We
+spreken dan van tweezijdig toetsen. Om de tweezijdige
+overschrijdingskans te berekenen moeten we de <span class="math inline">\(p\)</span>-waarde uit
+Bijlage <a href="#app:kritieketwaarden"><strong>??</strong></a> vermenigvuldigen met <span class="math inline">\(2\)</span> (omdat we nu
+kijken naar twee gekleurde gebieden, aan beide zijden van de
+kansverdeling).</p>
+<p>Laten we in het voorbeeld van de grammaticatoets nu tweezijdig toetsen.
+We operationaliseren de alternatieve hypothese dan als H1: <span class="math inline">\(\mu \ne 73\)</span>.
+Wederom is <span class="math inline">\(\overline{x}=73, t=7.9\)</span> met 33 d.f. (afgerond naar 30 d.f.).
+Bij de eenzijdige overschrijdingskans <span class="math inline">\(p=.025\)</span> (vierde kolom) vinden we
+de kritieke grenswaarde <span class="math inline">\(t^*=2.042\)</span>. De tweezijdige overschrijdingskans
+voor deze grenswaarde is <span class="math inline">\(2 \times .025 = .05\)</span>. Onze gevonden
+toetsingsgrootheid <span class="math inline">\(t=7.9\)</span> is groter dan deze <span class="math inline">\(t^*=2.042\)</span>, dus de
+tweezijdige overschrijdingskans is kleiner dan <span class="math inline">\(p=2\times.025=.05\)</span>. Onze
+gevonden toetsingsgrootheid <span class="math inline">\(t\)</span> is zelfs groter dan <span class="math inline">\(t^*=3.385\)</span> in de
+laatste kolom, dus de tweezijdige overschrijdingskans is zelfs kleiner
+dan <span class="math inline">\(2\times.001\)</span>. We kunnen onze tweezijdige toetsing als volgt
+rapporteren:</p>
+<blockquote>
+<p>De gemiddelde score van de studenten Taalwetenschap (lichting 2013) is
+84.4 (<span class="math inline">\(s=8.4\)</span>); dit verschilt significant van het veronderstelde
+populatie-gemiddelde van 73 (<span class="math inline">\(t(33)=7.9, p&lt;.002\)</span>).</p>
+</blockquote>
+<p>In de meeste onderzoeken wordt tweezijdig getoetst; als de richting van
+de toets niet wordt vermeld dan mag je daarom aannemen dat er tweezijdig
+is getoetst.</p>
+</div>
+<div id="sec:t-betrouwbaarheidsinterval-gemiddelde" class="section level2" number="13.5">
+<h2><span class="header-section-number">13.5</span> Betrouwbaarheidsinterval van het gemiddelde</h2>
+<p>Deze paragraaf gaat dieper in op een onderwerp dat eerder al aan bod kwam in §<a href="ch-kansverdelingen.html#sec:betrouwbaarheidsinterval-gemiddelde">10.7</a>, en illustreert het betrouwbaarheidsinterval van het gemiddelde met de scores van de grammaticatoets.</p>
+<p>Het gemiddelde van de steekproef, <span class="math inline">\(\overline{x}\)</span>, kunnen we beschouwen
+als een goede schatting van het onbekende gemiddelde in de populatie,
+<span class="math inline">\(\mu\)</span>. Daarbij kunnen we de gevonden waarde van <span class="math inline">\(t^*\)</span> ook gebruiken om
+aan te geven hoe betrouwbaar die schatting is: het
+betrouwbaarheidsinterval. Daarmee drukken we uit hoe (on)zeker we weten
+dat het gemiddelde van de steekproef, <span class="math inline">\(\overline{x}\)</span>, overeenkomt met
+het gemiddelde van de populatie <span class="citation">(<a href="#ref-Cumm12" role="doc-biblioref">Cumming 2012</a>)</span>. We kennen zulke foutenmarges
+ook uit verkiezingsuitslagen, waar ze aangeven hoe zeker de uitslag van
+de steekproef (van respondenten) overeenkomt met de werkelijke
+verkiezingsuitslag voor de gehele populatie (van kiezers). Een
+foutenmarge van 2% betekent dat het voor 95% zeker is dat <span class="math inline">\(x\)</span>, het
+percentage stemmen op een bepaalde partij, zal liggen tussen <span class="math inline">\((x-2)\)</span>% en
+<span class="math inline">\((x+2)\)</span>%.</p>
+<p>In ons voorbeeld met 30 d.f. vinden we <span class="math inline">\(t^*=2.042\)</span> voor 95%
+betrouwbaarheid. Via formule
+<a href="ch-kansverdelingen.html#eq:t-onesampleCI">(10.12)</a> komen we tot het 95%
+betrouwbaarheidsinterval <span class="math inline">\((81.5, 87.3)\)</span>. We weten met 95% zekerheid dat
+de onbekende gemiddelde score op de grammaticatoets, van de populatie
+van alle mogelijke studenten taalwetenschap groter is dan 81.5 en
+kleiner dan 87.3. We weten dan dus ook, met 95% zekerheid, dat het
+<em>onbekende</em> populatiegemiddelde <span class="math inline">\(\mu\)</span> afwijkt van de veronderstelde
+waarde 73 <span class="citation">(<a href="#ref-Cumm12" role="doc-biblioref">Cumming 2012</a>)</span>. We rapporteren dat als volgt:</p>
+<blockquote>
+<p>De gemiddelde score van de studenten Taalwetenschap (lichting 2013) is
+84.4, met 95% betrouwbaarheidsinterval (81.5, 87.3), 33 d.f.</p>
+</blockquote>
+<p>In Figuur <a href="ch-toetsing.html#fig:gramm2013CIs">13.2</a> zie je de resultaten van een
+computersimulatie om dit te illustreren. Deze figuur is op dezelfde wijze gemaakt als Figuur <a href="ch-kansverdelingen.html#fig:tempo95CIs">10.8</a> in Hoofdstuk <a href="ch-kansverdelingen.html#ch-kansverdelingen">10</a> en illustreert hetzelfde punt.
+We hebben <span class="math inline">\(100\times\)</span>
+steekproeven getrokken van scores van studenten Taalwetenschap, met
+<span class="math inline">\(\mu=84.4\)</span> en <span class="math inline">\(\sigma=8.4\)</span> (zie
+§<a href="ch-centrumenspreiding.html#sec:standaarddeviatie">9.5.2</a>) en <span class="math inline">\(N=34\)</span>. Voor elke steekproef
+hebben we het 95% betrouwbaarheidsinterval getekend. Voor 95 van de 100
+steekproeven valt het populatiegemiddelde <span class="math inline">\(\mu=84.4\)</span> inderdaad binnen
+het interval, maar voor 5 van de 100 steekproeven ten onrechte niet
+(deze zijn gemarkeerd langs de rechterkant).</p>
+<div class="figure"><span style="display:block;" id="fig:gramm2013CIs"></span>
+<img src="KMS-NL_files/figure-html/gramm2013CIs-1.png" alt="95%-Betrouwbaarheidsintervallen en steekproefgemiddelden, over 100 gesimuleerde steekproeven (n=34) uit een populatie met populatiegemiddelde 84.4, populatie-s.d. 8.4." width="672" />
+<p class="caption">
+Figuur 13.2: 95%-Betrouwbaarheidsintervallen en steekproefgemiddelden, over 100 gesimuleerde steekproeven (n=34) uit een populatie met populatiegemiddelde 84.4, populatie-s.d. 8.4.
+</p>
+</div>
+<div id="sec:formules13-2" class="section level3" number="13.5.1">
+<h3><span class="header-section-number">13.5.1</span> formules</h3>
+<p>Het tweezijdige betrouwbaarheidsinterval voor <span class="math inline">\(B\)</span>% betrouwbaarheid voor
+een populatie-gemiddelde <span class="math inline">\(\overline{y}\)</span> is
+<span class="math display" id="eq:t-onesampleCI">\[\begin{equation}
+    \overline{y} \pm t^*_{N-1} \times \frac{s}{\sqrt{N}}
+  \tag{10.12}
+\end{equation}\]</span></p>
+</div>
+<div id="spss-11" class="section level3" number="13.5.2">
+<h3><span class="header-section-number">13.5.2</span> SPSS</h3>
+<pre><code>Analyze &gt; Descriptive Statistics &gt; Explore...</code></pre>
+<p>Selecteer afhankelijke variabele (sleep naar Dependent List paneel).<br />
+Kies knop <code>Statistics</code> en vink aan <code>Descriptives</code> met Confidence Interval
+95%.<br />
+Bevestig met <code>Continue</code> en met <code>OK</code>.<br />
+De uitvoer bevat meerdere beschrijvende statistische maten, waaronder nu
+ook het 95% betrouwbaarheidsinterval van het gemiddelde.</p>
+</div>
+<div id="jasp-12" class="section level3" number="13.5.3">
+<h3><span class="header-section-number">13.5.3</span> JASP</h3>
+<p>In JASP kun je het betrouwsbaarheidsinterval van het gemiddelde aanvragen bij een <span class="math inline">\(t\)</span>-toets. We voeren dus wederom een <span class="math inline">\(t\)</span>-toets uit en vinden het betrouwbaarheidsinterval van het gemiddelde in de uitvoer.</p>
+<p>Zorg dat het filter aanstaat zodat alleen de observaties van studenten Taalwetenschap geselecteerd zijn (zie §<a href="ch-toetsing.html#sec:jaspttoetsenkel">13.2.5</a>).</p>
+<p>Klik daarna in de bovenbalk op:</p>
+<pre><code>T-Tests &gt; Classical: One Sample T-Test</code></pre>
+<p>Selecteer de variabele <em>score</em> en plaats deze in het veld “Variables”. Zorg dat <code>Student</code> aangevinkt is onder “Tests” en laat <code>Test value:</code> op 0 staan. Vink onder “Additional Statistics” <code>Location parameter</code> aan en ook <code>Confidence interval</code>. Hier kun je zelf het betrouwbaarheidsniveau opgeven; dit staat standaard op 95%.</p>
+<p>De uitvoer geeft nu als ‘Mean Difference’ het gemiddelde aan (want er wordt vergeleken met 0; dat is de ‘Test value’). In dezelfde tabel zie je het ‘95% CI for Mean Difference’, wat in dit geval dus het betrouwbaarheidsinterval van het gemiddelde is.</p>
+</div>
+<div id="r-13" class="section level3" number="13.5.4">
+<h3><span class="header-section-number">13.5.4</span> R</h3>
+<p>R vermeldt het betrouwbaarheidsinterval van het gemiddelde (met een zelf
+op te geven betrouwbaarheidsniveau) bij een <span class="math inline">\(t\)</span>-toets. We voeren dus wederom een <span class="math inline">\(t\)</span>-toets
+uit en vinden het betrouwbaarheidsinterval van het gemiddelde in de
+uitvoer.</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="ch-toetsing.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( gramm2013, <span class="fu">t.test</span>( score[opleiding<span class="sc">==</span><span class="st">&quot;TW&quot;</span>] ) )</span></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  score[opleiding == &quot;TW&quot;]
+## t = 58.649, df = 33, p-value &lt; 2.2e-16
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  81.48354 87.33999
+## sample estimates:
+## mean of x 
+##  84.41176</code></pre>
+</div>
+</div>
+<div id="sec:ttoets-onafh" class="section level2" number="13.6">
+<h2><span class="header-section-number">13.6</span> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven</h2>
+<p>De Student <span class="math inline">\(t\)</span>-toets wordt toegepast om een verschil te kunnen onderzoeken tussen
+de gemiddelde scores van twee onafhankelijke steekproeven, bv van
+vergelijkbare jongens en meisjes. Op grond van de gemiddelden en de
+standaarddeviaties van de twee steekproeven bepalen we de
+toetsingsgrootheid <span class="math inline">\(t\)</span>. Als H0 waar is, dan is de waarde <span class="math inline">\(t=0\)</span> het meest
+waarschijnlijk. Naarmate het verschil tussen de twee gemiddelden groter
+wordt, neemt <span class="math inline">\(t\)</span> ook toe. Wederom verwerpen we H0 indien <span class="math inline">\(t&gt;t^*\)</span> voor
+het gekozen significantieniveau <span class="math inline">\(\alpha\)</span>.</p>
+<p>Als eerste voorbeeld nemen we een onderzoek naar de omvang van de
+productieve woordenschat bij Zweedse meisjes en jongens van 18 maanden
+oud <span class="citation">(<a href="#ref-Ande11" role="doc-biblioref">Andersson et al. 2011</a>)</span>. We onderzoeken de veronderstelling dat de woordenschat
+van meisjes verschilt van die van jongens, d.w.z. H1: <span class="math inline">\(\mu_m \ne \mu_j\)</span>.
+We kunnen niet a priori aannemen dat een eventueel verschil slechts één
+richting op kan gaan; we toetsen daarom tweezijdig, zoals al blijkt uit
+H1. De bijbehorende nul-hypothese die we toetsen is H0: <span class="math inline">\(\mu_m = \mu_j\)</span>.
+In dit onderzoek werd de woordenschat geschat op grond van vragenlijsten
+aan de ouders van de kinderen in de steekproeven. Deelnemers waren
+(ouders van) <span class="math inline">\(n_1=123\)</span> meisjes en <span class="math inline">\(n_2=129\)</span> jongens, allen 18 maanden
+oud. Uit de resultaten blijkt dat de meisjes een gemiddelde woordenschat
+hebben van <span class="math inline">\(\overline{x_1}=95\)</span> woorden (<span class="math inline">\(s_1=82\)</span>), en voor de jongens is
+dat <span class="math inline">\(\overline{x_2}=85\)</span> woorden (<span class="math inline">\(s_2=98\)</span>). Met deze gegevens bepalen we
+de toetsingsgrootheid <span class="math inline">\(t\)</span> volgens formule
+<a href="ch-toetsing.html#eq:t-homoskedastic">(13.3)</a>, resulterend in <span class="math inline">\(t=0.88\)</span> met 122 d.f. De
+bijbehorende kritieke grenswaarde <span class="math inline">\(t^*\)</span> zoeken we wederom op in
+Bijlage <a href="#app:kritieketwaarden"><strong>??</strong></a>. In de regel voor 100 d.f. (na
+afronding naar beneden) vinden we <span class="math inline">\(t^*=1.984\)</span> in de vierde kolom. Voor
+tweezijdige toetsing moeten we de overschrijdingskans behorend bij deze
+kolom verdubbelen (zie
+§<a href="ch-toetsing.html#sec:ttoets-eenzijdigtweezijdig">13.4</a>), resulterend in <span class="math inline">\(p=.05\)</span>. De
+gevonden toetsingsgrootheid <span class="math inline">\(t &lt; t^*\)</span>, dus <span class="math inline">\(p&gt;.05\)</span>. We besluiten om H0
+<em>niet</em> te verwerpen, en rapporteren dat als volgt:</p>
+<blockquote>
+<p>De gemiddelde productieve woordenschat van Zweedse kinderen van 18
+maanden oud verschilt nauwelijks tussen meisjes en jongens
+(<span class="math inline">\(t(122)=0.88, p&gt;.4\)</span>). Meisjes produceren gemiddeld 95 verschillende
+woorden (<span class="math inline">\(s=82\)</span>), en jongens gemiddeld 85 verschillende woorden
+(<span class="math inline">\(s=98\)</span>).</p>
+</blockquote>
+<p>Als tweede voorbeeld nemen we een onderzoek naar het spreektempo van
+twee groepen sprekers, nl. afkomstig uit het Westen (eerste groep) en
+uit het Noorden (tweede groep) van Nederland. De spreeksnelheid wordt
+hier uitgedrukt als de gemiddelde duur van een gesproken lettergreep,
+gemiddeld over een interview van ca 15 minuten (zie voorbeeld <a href="ch-variantieanalyse.html#ch-variantieanalyse">15</a>.1).
+We onderzoeken H0: <span class="math inline">\(\mu_W = \mu_N\)</span> met
+tweezijdige toetsing. Uit de resultaten blijkt dat de westerlingen
+(<span class="math inline">\(n=20\)</span>) een gemiddelde lettergreepduur hebben van
+<span class="math inline">\(\overline{x_W}=0.235\)</span> s (<span class="math inline">\(s=0.028\)</span>), en voor de noorderlingen (ook
+<span class="math inline">\(n=20\)</span>) is dat <span class="math inline">\(\overline{x_N}=0.269\)</span> s (<span class="math inline">\(s=0.029\)</span>). Met deze gegevens
+bepalen we wederom de toetsingsgrootheid <span class="math inline">\(t\)</span> volgens formule
+<a href="ch-toetsing.html#eq:t-homoskedastic">(13.3)</a>, resulterend in <span class="math inline">\(t=-3.76\)</span> met 38 d.f. De
+bijbehorende kritieke grenswaarde <span class="math inline">\(t^*\)</span> zoeken we wederom op in
+Bijlage <a href="#app:kritieketwaarden"><strong>??</strong></a>. De juiste d.f. zijn niet in de tabel
+vermeld, dus ronden we naar beneden af (d.i. in conservatieve richting)
+naar 30 d.f. In die regel vinden we <span class="math inline">\(t^*=2.042\)</span> in de vierde kolom. Voor
+tweezijdige toetsing moeten we de overschrijdingskans behorend bij deze
+kolom verdubbelen (zie
+§<a href="ch-toetsing.html#sec:ttoets-eenzijdigtweezijdig">13.4</a>), resulterend in <span class="math inline">\(p=.05\)</span>. De
+gevonden toetsingsgrootheid <span class="math inline">\(t &lt; t^*\)</span>, dus <span class="math inline">\(p&lt;.05\)</span>. We besluiten daarom
+om H0 <em>wel</em> te verwerpen, en rapporteren dat als volgt:</p>
+<blockquote>
+<p>De gemiddelde duur van een lettergreep gesproken door een spreker uit
+het westen van Nederland is <span class="math inline">\(0.235\)</span> seconde (<span class="math inline">\(s=0.028\)</span>). Dit is
+significant korter dan bij sprekers uit het Noorden van Nederland
+(<span class="math inline">\(\overline{x}=0.269\)</span> s, <span class="math inline">\(s=0.029\)</span>) (<span class="math inline">\(t(38)=-3.76, p&lt;.05\)</span>). In de
+onderzochte opnames uit 1999 praten de sprekers uit het Westen dus
+sneller dan die uit het Noorden van Nederland.</p>
+</blockquote>
+<div id="sec:ttoets-ongepaard-aannames" class="section level3" number="13.6.1">
+<h3><span class="header-section-number">13.6.1</span> aannames</h3>
+<p>De Student <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven vereist vier aannames
+(of assumpties) waaraan voldaan moet zijn, om de toets te mogen
+gebruiken.</p>
+<ul>
+<li><p>De gegevens moeten gemeten zijn op intervalniveau (zie
+§<a href="ch-meetniveau.html#sec:interval">4.4</a>).</p></li>
+<li><p>Alle observaties moeten onafhankelijk van elkaar zijn.</p></li>
+<li><p>De scores moeten normaal verdeeld zijnin beide groepen (zie
+§<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p></li>
+<li><p>De variantie van de scores moet gelijk zijn in beide
+steekproeven. Schending van deze aanname is ernstiger naarmate de twee
+steekproeven meer in grootte verschillen. Het is daarom verstandig om te
+werken met even grote, en liefst niet te kleine steekproeven. Als de
+steekproeven even groot zijn dan is het schenden van deze aanname van
+gelijke varianties niet zo ernstig.
+Zie ook §<a href="ch-toetsing.html#sec:ttoets-formules">13.6.2</a> direct hieronder.</p></li>
+</ul>
+</div>
+<div id="sec:ttoets-formules" class="section level3" number="13.6.2">
+<h3><span class="header-section-number">13.6.2</span> formules</h3>
+<div id="toetsingsgrootheid" class="section level4" number="13.6.2.1">
+<h4><span class="header-section-number">13.6.2.1</span> toetsingsgrootheid</h4>
+<p>Voor de berekening van de toetsingsgrootheid <span class="math inline">\(t\)</span> zijn verschillende
+formules in gebruik.</p>
+<p>Indien de steekproeven ongeveer <strong>gelijke variantie</strong> hebben, dan gebruiken
+we eerst de “pooled standard deviation” <span class="math inline">\(s_p\)</span> als tussenstap. De beide
+standaarddeviaties van de twee steekproeven worden daarin gewogen naar
+hun steekproefomvang.
+<span class="math display" id="eq:sd-pooled">\[\begin{equation}
+    s_p = \sqrt{ \frac{(n_1-1) s^2_1 + (n_2-1) s^2_2} {n_1+n_2-2} }
+    \tag{13.2}
+\end{equation}\]</span>
+Vervolgens
+<span class="math display" id="eq:t-homoskedastic">\[\begin{equation}
+  \tag{13.3}
+  t = \frac{ \overline{x_1}-\overline{x_2} } { s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}} }
+\end{equation}\]</span></p>
+<p>Indien de steekproeven <strong>niet gelijke varianties</strong> hebben, en de vierde
+aanname hierboven dus is geschonden, dan wordt Welch’s benadering
+gebruikt:
+<span class="math display" id="eq:sd-WS">\[\begin{equation}
+  \tag{13.4}
+  s_{\textrm{WS}} = \sqrt{\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2} }
+\end{equation}\]</span>
+Vervolgens
+<span class="math display" id="eq:t-WS">\[\begin{equation}
+  \tag{13.5}
+  t = \frac{ \overline{x_1}-\overline{x_2} } { s_{\textrm{WS}} }
+\end{equation}\]</span></p>
+</div>
+<div id="vrijheidsgraden" class="section level4" number="13.6.2.2">
+<h4><span class="header-section-number">13.6.2.2</span> vrijheidsgraden</h4>
+<p>Meestal wordt de <span class="math inline">\(t-toets\)</span> uitgevoerd door een computerprogramma. Daarbij wordt
+dan meestal de volgende benadering gebruikt van de vrijheidsgraden
+(<span class="math inline">\(\nu\)</span>, zie §<a href="ch-toetsing.html#sec:ttoets-vrijheidsgraden">13.2.1</a>).
+Eerst worden <span class="math inline">\(g_1=s^2_1/n_1\)</span>
+en <span class="math inline">\(g_2=s^2_2/n_2\)</span> berekend. Het aantal vrijheidsgraden van <span class="math inline">\(t\)</span> is dan
+<span class="math display" id="eq:df-WS">\[\begin{equation}
+  \tag{13.6}
+  \nu_\textrm{WS} =
+        \frac {(g_1+g_2)^2} {g^2_1/(n_1-1) + g^2_2/(n_2-1)}
+\end{equation}\]</span></p>
+<p>Het aantal vrijheidsgraden volgens deze benadering heeft als liberale
+bovengrens <span class="math inline">\((n_1+n_2-2)\)</span>, en als conservatieve ondergrens de kleinste
+van <span class="math inline">\((n_1-1)\)</span> of <span class="math inline">\((n_2-1)\)</span>. Je kunt dus ook altijd deze conservatieve
+ondergrens gebruiken. Indien de twee groepen ongeveer dezelfde variantie
+hebben (d.i. <span class="math inline">\(s_1 \approx s_2\)</span>), dan kan je ook de liberale bovengrens
+gebruiken.</p>
+<p>Voor het tweede voorbeeld hierboven geeft de benadering van formule
+<a href="ch-toetsing.html#eq:df-WS">(13.6)</a> de
+schatting van <span class="math inline">\(37.99 \approx 38\)</span> d.f. De conservatieve ondergrens is
+<span class="math inline">\(n_1-1 = n_2-1 = 19\)</span>. De liberale bovengrens is <span class="math inline">\(n_1+n_2 -2 = 38\)</span>. (In
+de tabel met kritische waarden <span class="math inline">\(t*\)</span>, in
+Bijlage <a href="#app:kritieketwaarden"><strong>??</strong></a>, is het meestal raadzaam om de regel
+te gebruiken met de eerstvolgende kleinere waarde voor het aantal
+vrijheidsgraden.)</p>
+</div>
+</div>
+<div id="sec:SPSS-ttoets-ongepaard" class="section level3" number="13.6.3">
+<h3><span class="header-section-number">13.6.3</span> SPSS</h3>
+<p>Het tweede bovenstaande voorbeeld wordt hier uitgewerkt.</p>
+<pre><code>Analyze &gt; Compare Means &gt; Independent-Samples T Test</code></pre>
+<p>Sleep de afhankelijke variabele <code>syldur</code> naar paneel Test Variable(s).
+Sleep de onafhankelijke variabele <code>region</code> naar paneel Grouping
+Variable. Definieer de twee groepen: waarde W voor regio groep 1 en
+waarde N voor regrio groep 2. Bevestig met <code>Continue</code> en <code>OK</code>.</p>
+<p>Zoals je hierboven kon zien, is de berekening van de <span class="math inline">\(t\)</span>-toets afhankelijk van het
+antwoord op de vraag of de standaarddeviaties van de twee groepen
+ongeveer gelijk zijn. SPSS lost dat zeer onhandig op: je krijgt alle
+relevante uitvoer te zien, en moet daar zelf een keuze uit maken.</p>
+<div id="test-for-equality-of-variances" class="section level4" number="13.6.3.1">
+<h4><span class="header-section-number">13.6.3.1</span> Test for equality of variances</h4>
+<p>Met Levene’s test wordt onderzocht H0: <span class="math inline">\(s^2_1 = s^2_2\)</span>, d.w.z. of de
+varianties (en daarmee de standaarddeviaties) van de twee groepen gelijk
+zijn. Als je een kleine waarde vindt voor de toetsingsgrootheid <span class="math inline">\(F\)</span>, en
+een <span class="math inline">\(p&gt;.05\)</span>, dan hoef je deze H0 niet te verwerpen. Je mag dan aannemen
+dat de varianties gelijk zijn. Als je een grote waarde vindt voor <span class="math inline">\(F\)</span>,
+met <span class="math inline">\(p&lt;.05\)</span>, dan dien je deze H0 wel te verwerpen, en je mag niet
+aannemen dat de varianties van de twee groepen gelijk zijn.
+Gebruik en rapporteer de juiste t-toets uit de uitvoer.</p>
+</div>
+<div id="test-for-equality-of-means" class="section level4" number="13.6.3.2">
+<h4><span class="header-section-number">13.6.3.2</span> Test for equality of means</h4>
+<p>Afhankelijk van deze uitkomst van Levene’s test moet je de eerste of de
+tweede regel gebruiken van de uitvoer van de Independent-Samples Test
+(een toets die onderzoekt of de gemiddelden van de twee groepen gelijk
+zijn). In dit voorbeeld zijn de varianties ongeveer gelijk, zoals de
+Levene’s test ook aangeeft. We gebruiken dus de eerste regel van de
+uitvoer, en rapporteren <span class="math inline">\(t(38)=-3.765, p=.001\)</span>.</p>
+</div>
+</div>
+<div id="sec:jaspttoetsongepaard" class="section level3" number="13.6.4">
+<h3><span class="header-section-number">13.6.4</span> JASP</h3>
+<p>Het tweede bovenstaande voorbeeld wordt hier uitgewerkt: het spreektempo van sprekers uit het Westen en Noorden van Nederland wordt vergeleken.</p>
+<div id="voorbereiding" class="section level4" number="13.6.4.1">
+<h4><span class="header-section-number">13.6.4.1</span> voorbereiding</h4>
+<p>Hiervoor moeten we eerst zorgen dat alleen de regio’s Noord en West zijn geselecteerd. Dit doe je door in het data tabblad op de variabele-naam <em>region</em> te klikken. Er opent een veld met daarin de verschillende waardes (‘Values’; in dit geval regio’s) van de nominale variabele. Je kunt hier bepaalde waardes (regio’s) van de nominale variabele tijdelijk filteren. In de kolom “Filter” staan standaard alleen maar vinkjes, wat betekent dat alle observaties worden meegenomen. Klik op de vinkjes bij de waardes (regio’s) die je tijdelijk niet mee wilt nemen, <em>S</em> (Zuid) en <em>M</em> (Midden), zodat het kruizen worden. In het data tabblad zie je de bijbehorende observaties dan grijs worden. Zorg dus dat er alleen nog maar bij <em>N</em> (Noord) en <em>W</em> (West) een vinkje staat om alleen de observaties van sprekers uit het Westen en Noorden van Nederland te selecteren.<br />
+(Vergeet niet later de kruizen weer terug te veranderen in vinkjes als je wel weer alle observaties wilt meenemen!).</p>
+</div>
+<div id="t-toets" class="section level4" number="13.6.4.2">
+<h4><span class="header-section-number">13.6.4.2</span> <em>t</em>-toets</h4>
+<p>Klik na het filteren van de goede regio’s in de bovenbalk op:</p>
+<pre><code>T-Tests &gt; Classical: Independent Samples T-Test</code></pre>
+<p>Selecteer de variabele <em>syldur</em> en plaats deze in het veld “Variables”. Plaats de variabele <em>region</em> in het veld “Grouping Variable”. Als een variabele meer dan twee groepen bevat geeft JASP aan dat er een probleem is (je kunt immers maar twee groepen vergelijken); daarom filteren we hierboven zo dat we alleen Noord en West meenemen in de variabele <em>region</em>.<br />
+Zorg dat <code>Student</code> aangevinkt is onder “Tests” en onder “Alt.Hypothesis” moet de eerste optie (de groepen zijn niet hetzelfde) worden aangevinkt voor een tweezijdige <span class="math inline">\(t\)</span>-toets. Voor meer inzicht kunnen onder “Additional Statistics” ook <code>Descriptives</code> en <code>Descriptive plots</code> worden aangevinkt. Vink hier ook <code>Effect size</code> (Cohen’s d) aan (zie §<a href="ch-toetsing.html#sec:ttoets-effectgrootte">13.8</a> hieronder).<br />
+Vink onder het kopje “Assumption checks” ook de optie <code>Normality</code> aan (§<a href="ch-toetsing.html#sec:ttoets-ongepaard-aannames">13.6.1</a>, derde assumptie, zie ook §<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>) en eveneens <code>Equality of variances</code> (§<a href="ch-toetsing.html#sec:ttoets-ongepaard-aannames">13.6.1</a>, vierde assumptie).</p>
+<p>De uitvoer geeft de resultaten van de tweezijdige <span class="math inline">\(t\)</span>-toets, inclusief effectgrootte.<br />
+</p>
+<p>Onder <em>Assumption Checks</em> vind je de resultaten van de Shapiro-Wilk-toets, die toetst of de afhankelijke variabele normaal verdeeld is in beide groepen. Ook zie je de tabel ‘Test of Equality of Variances (Levene’s)’. Met Levene’s test wordt onderzocht H0: <span class="math inline">\(s^2_1 = s^2_2\)</span>, d.w.z. of de varianties (en daarmee de standaarddeviaties) van de twee groepen gelijk of ongelijk zijn (zie §<a href="ch-toetsing.html#sec:ttoets-formules">13.6.2</a> hierboven).
+Als je een kleine waarde vindt voor de toetsingsgrootheid <span class="math inline">\(F\)</span>, en een <span class="math inline">\(p&gt;.05\)</span>, dan hoef je deze H0 niet te verwerpen. Je mag dan aannemen dat de varianties wel gelijk zijn. Gebruik en rapporteer dan de <em>Student</em> versie van de <span class="math inline">\(t\)</span>-toets (die is hierboven gekozen onder “Tests”).
+Als je een grote waarde vindt voor <span class="math inline">\(F\)</span>, met <span class="math inline">\(p&lt;.05\)</span>, dan dien je deze H0 wel te verwerpen, en je mag dan niet aannemen dat de varianties van de twee groepen gelijk zijn. Kies dan onder het kopje “Tests” de optie <code>Welch</code>, en gebruik en rapporteer dan de <em>Welch</em> versie van de <em>t</em>-toets.<br />
+</p>
+<p>In dit voorbeeld geven de toetsen voor normaliteit en voor gelijke varianties geen significante resultaten. Dat betekent dat aan de derde en vierde bovengenoemde assumptie is voldaan; we gebruiken en rapporteren dan de Student <span class="math inline">\(t\)</span>-toets: <span class="math inline">\(t(38)=3.76, p&lt;.001, d=1.2\)</span>.</p>
+<p>Als dit is aangevinkt wordt als laatste in de uitvoer een tabel met beschrijvende statistiek en een “Descriptive plot” gegeven. Hiermee kun je goed zien hoe de scores van de twee groepen van elkaar verschillen.</p>
+</div>
+</div>
+<div id="sec:R-ttoets-ongepaard" class="section level3" number="13.6.5">
+<h3><span class="header-section-number">13.6.5</span> R</h3>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="ch-toetsing.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(hqmisc)</span>
+<span id="cb108-2"><a href="ch-toetsing.html#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(talkers)</span>
+<span id="cb108-3"><a href="ch-toetsing.html#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(talkers, <span class="fu">t.test</span>( syldur[region<span class="sc">==</span><span class="st">&quot;W&quot;</span>], syldur[region<span class="sc">==</span><span class="st">&quot;N&quot;</span>], </span>
+<span id="cb108-4"><a href="ch-toetsing.html#cb108-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">paired=</span>F, <span class="at">var.equal=</span>T ) )</span></code></pre></div>
+<pre><code>## 
+##  Two Sample t-test
+## 
+## data:  syldur[region == &quot;W&quot;] and syldur[region == &quot;N&quot;]
+## t = -3.7649, df = 38, p-value = 0.0005634
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.0519895 -0.0156305
+## sample estimates:
+## mean of x mean of y 
+##   0.23490   0.26871</code></pre>
+</div>
+</div>
+<div id="sec:ttoets-gepaard" class="section level2" number="13.7">
+<h2><span class="header-section-number">13.7</span> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen</h2>
+<p>De Student <span class="math inline">\(t\)</span>-toets wordt ook toegepast om een verschil te onderzoeken tussen de
+gemiddelden van twee afhankelijke of gepaarde waarnemingen. Daarvan is
+sprake als we slechts één steekproef trekken (zie hoofdstuk
+<a href="ch-steekproeftrekking.html#ch-steekproeftrekking">7</a>), en van de leden van deze steekproef
+vervolgens twee observaties verzamelen, nl. één observatie onder elk van
+beide condities. De twee observaties zijn dan gepaard, d.w.z. aan elkaar
+gerelateerd, en deze observaties zijn dus niet onafhankelijk (want
+afkomstig van hetzelfde lid van de steekproef). Eén van de assumpties
+van de <span class="math inline">\(t\)</span>-toets is daarmee geschonden.</p>
+<p>Als voorbeeld nemen we een denkbeeldig onderzoek naar het gebruik van
+<em>U</em> of <em>je</em> als aanspreekvorm op een website. De onderzoeker maakt twee
+versies van een webpagina, de ene met <em>U</em> en de andere met <em>je</em>. Elke
+respondent moet beide versies beoordelen op een schaal van 1 tot 10. (Om
+redenen van validiteit wordt de volgorde van de twee versies gevarieerd
+tussen respondenten; de volgorde waarin de pagina’s beoordeeld zijn, kan
+dus geen invloed hebben op de totaalscore per conditie.) In
+Tabel <a href="ch-toetsing.html#tab:data-uje-paired">13.1</a> zijn de oordelen van <span class="math inline">\(N=10\)</span>
+respondenten samengevat.</p>
+<table>
+<caption><span id="tab:data-uje-paired">Tabel 13.1: </span> Fictieve oordelen over een webpagina met <em>U</em> of <em>je</em> als
+aanspreekvorm, door <span class="math inline">\(N=10\)</span> respondenten.</caption>
+<thead>
+<tr class="header">
+<th align="center">id</th>
+<th align="right">conditie <em>U</em></th>
+<th align="right">conditie <em>je</em></th>
+<th align="center"><span class="math inline">\(D\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="right">8</td>
+<td align="right">9</td>
+<td align="center">-1</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="right">5</td>
+<td align="right">6</td>
+<td align="center">-1</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="right">6</td>
+<td align="right">9</td>
+<td align="center">-3</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="right">6</td>
+<td align="right">8</td>
+<td align="center">-2</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="right">5</td>
+<td align="right">8</td>
+<td align="center">-3</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="right">4</td>
+<td align="right">6</td>
+<td align="center">-2</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="right">4</td>
+<td align="right">8</td>
+<td align="center">-4</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="right">7</td>
+<td align="right">10</td>
+<td align="center">-3</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="right">7</td>
+<td align="right">9</td>
+<td align="center">-2</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="right">6</td>
+<td align="right">7</td>
+<td align="center">-1</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="center"><span class="math inline">\(\overline{D}\)</span>=-2.2</td>
+</tr>
+</tbody>
+</table>
+<p>Het paar van observaties voor het <span class="math inline">\(i\)</span>-de lid van de steekproef heeft een
+verschil-score die we kunnen schrijven als:
+<span class="math inline">\(D_i = x_{1i} - x_{2i}\)</span> waarbij <span class="math inline">\(x_{1i}\)</span> de score is van de afhankelijke
+variabele is voor het <span class="math inline">\(i\)</span>-de lid van de steekproef in conditie 1, en
+<span class="math inline">\(x_{2i}\)</span> de score voor het <span class="math inline">\(i\)</span>-de lid voor conditie 2. Deze
+verschilscore is ook vermeld in
+Tabel <a href="ch-toetsing.html#tab:data-uje-paired">13.1</a>.</p>
+<p>Deze verschilscore <span class="math inline">\(D\)</span> wordt vervolgens eigenlijk geanalyseerd met de
+eerder besproken <span class="math inline">\(t\)</span>-toets voor één enkele steekproef (zie
+§<a href="ch-toetsing.html#sec:ttoets-onesample">13.2</a>), waarbij H0: <span class="math inline">\(\mu_D=0\)</span>, d.w.z. volgens H0 is er geen verschil
+tussen condities. We berekenen het gemiddelde van de verschilscore,
+<span class="math inline">\(\overline{D}\)</span>, en de standaarddeviatie van de verschilscore, <span class="math inline">\(s_{D}\)</span>,
+op de gebruikelijke wijze (zie
+§<a href="ch-centrumenspreiding.html#sec:standaarddeviatie">9.5.2</a>). We gebruiken dit gemiddelde en deze
+standaarddeviatie om de toetsingsgrootheid <span class="math inline">\(t\)</span> te berekenen, via formule
+<a href="ch-toetsing.html#eq:t-pairedsamples">(13.7)</a>, met <span class="math inline">\((N-1)\)</span> vrijheidsgraden. Tenslotte
+gebruiken we weer
+Bijlage <a href="#app:kritieketwaarden"><strong>??</strong></a> om de grenswaarde <span class="math inline">\(t^*\)</span> te bepalen, en
+daarmee de overschrijdingskans <span class="math inline">\(p\)</span> voor de gevonden waarde van de
+steekproefgrootheid <span class="math inline">\(t\)</span> onder H0.</p>
+<p>Voor het bovengenoemde voorbeeld met <em>U</em> of <em>je</em> als aanspreekvorm
+vinden we aldus <span class="math inline">\(\overline{D}=-2.2\)</span> en <span class="math inline">\(s_D=1.0\)</span>. Als we dit invullen in
+formule <a href="ch-toetsing.html#eq:t-pairedsamples">(13.7)</a> vinden we <span class="math inline">\(t=-6.74\)</span> met <span class="math inline">\(N-1=9\)</span> d.f. De
+bijbehorende kritieke grenswaarde <span class="math inline">\(t^*\)</span> zoeken we wederom op in
+Bijlage <a href="#app:kritieketwaarden"><strong>??</strong></a>. Daarbij negeren we het teken van <span class="math inline">\(t\)</span>,
+omdat de kansverdeling van <span class="math inline">\(t\)</span> immers symmetrisch is. In de regel voor 9
+d.f. vinden we <span class="math inline">\(t^*=4.297\)</span> in de laatste kolom. Voor tweezijdige
+toetsing moeten we de overschrijdingskans behorend bij deze kolom
+verdubbelen (zie
+§<a href="ch-toetsing.html#sec:ttoets-eenzijdigtweezijdig">13.4</a>), resulterend in <span class="math inline">\(p=.002\)</span>.
+De gevonden toetsingsgrootheid <span class="math inline">\(t &gt; t^*\)</span>, dus <span class="math inline">\(p&lt;.002\)</span>. We besluiten om
+H0 <em>wel</em> te verwerpen, en rapporteren dat als volgt:</p>
+<blockquote>
+<p>Het oordeel van <span class="math inline">\(N=10\)</span> respondenten over de pagina met <em>U</em> als
+aanspreekvorm is gemiddeld 2.2 punten lager dan hun oordeel over de
+vergelijkbare pagina met <em>je</em> als aanspreekvorm; dit is een
+significant verschil (<span class="math inline">\(t(9)=-6.74, p&lt;.002\)</span>).</p>
+</blockquote>
+<div id="aannames-1" class="section level3" number="13.7.1">
+<h3><span class="header-section-number">13.7.1</span> aannames</h3>
+<p>De <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen binnen een enkele steekproef vereist drie
+aannames (assumpties) waaraan voldaan moet zijn, om deze toets te mogen
+gebruiken.</p>
+<ul>
+<li><p>De gegevens moeten gemeten zijn op intervalniveau (zie
+§<a href="ch-meetniveau.html#sec:interval">4.4</a>).</p></li>
+<li><p>Alle <em>paren</em> van observaties moeten onafhankelijk van elkaar
+zijn.</p></li>
+<li><p>De <em>verschilscores</em> <span class="math inline">\(D\)</span> moeten normaal verdeeld zijn (zie
+§<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>); als het aantal paren van
+waarnemingen in de steekproef echter groter is dan ca 30 dan is de <span class="math inline">\(t\)</span>-toets
+doorgaans goed bruikbaar.</p></li>
+</ul>
+</div>
+<div id="sec:formules13-4" class="section level3" number="13.7.2">
+<h3><span class="header-section-number">13.7.2</span> formules</h3>
+<p><span class="math display" id="eq:t-pairedsamples">\[\begin{equation}
+  \tag{13.7}
+  t = \frac{ \overline{D}-\mu_D} { s_D } \times \sqrt{N}
+\end{equation}\]</span></p>
+</div>
+<div id="sec:SPSS-ttoets-gepaard" class="section level3" number="13.7.3">
+<h3><span class="header-section-number">13.7.3</span> SPSS</h3>
+<p>De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand <code>data/ujedata.csv</code>.</p>
+<pre><code>Analyze &gt; Compare Means &gt; Paired-Samples T Test</code></pre>
+<p>Sleep eerste afhankelijke variabele <code>cond.u</code> naar paneel Paired
+Variables onder Variable1, en sleep tweede variabele <code>cond.je</code> naar
+zelfde paneel onder Variable2. Bevestig met <code>OK</code>.</p>
+</div>
+<div id="sec:jaspttoetsgepaard" class="section level3" number="13.7.4">
+<h3><span class="header-section-number">13.7.4</span> JASP</h3>
+<p>Het bovenstaande voorbeeld wordt hier uitgewerkt. De gegevens zijn te vinden in bestand <code>data/ujedata.csv</code>.</p>
+<p>Klik in de bovenbalk op:</p>
+<pre><code>T-Tests &gt; Classical: Paired Samples T-Test</code></pre>
+<p>Selecteer de variabelen <em>cond.u</em> en <em>cond.je</em> in het veld “Variable pairs”. Ze komen naast elkaar te staan, want deze twee condities ga je met elkaar vergelijken.<br />
+Zorg dat <code>Student</code> aangevinkt is onder “Tests” en onder “Alt.Hypothesis” moet de eerste optie (de metingen zijn niet hetzelfde) worden aangevinkt voor een tweezijdige <span class="math inline">\(t\)</span>-toets. Voor meer inzicht kunnen onder “Additional Statistics” ook <code>Descriptives</code> en <code>Descriptive plots</code> worden aangevinkt. Vink hier ook <code>Effect size</code> (Cohen’s d) aan (zie §<a href="ch-toetsing.html#sec:ttoets-effectgrootte">13.8</a> hieronder). Vink als laatste onder het kopje “Assumption checks” ook de optie <code>Normality</code> aan (zie §<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p>
+<p>De uitvoer geeft de resultaten van de tweezijdige <span class="math inline">\(t\)</span>-toets, inclusief effectgrootte. Je ziet onder ‘Measure 1’ en ‘Measure 2’ in de tabel dat de verschilscore (<span class="math inline">\(cond.u - cond.je\)</span>) wordt geanalyseerd.<br />
+Onder <em>Assumption Checks</em> vind je de resultaten van de Shapiro-Wilk-toets, die toetst of de verschilscores (<span class="math inline">\(cond.u - cond.je\)</span>) normaal verdeeld zijn.<br />
+Als dit is aangevinkt wordt als laatste in de uitvoer een tabel met beschrijvende statistiek en een “Descriptive plot” gegeven. Hiermee kun je goed zien hoe de twee condities van elkaar verschillen in scores.</p>
+</div>
+<div id="sec:R-ttoets-gepaard" class="section level3" number="13.7.5">
+<h3><span class="header-section-number">13.7.5</span> R</h3>
+<p>De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand <code>data/ujedata.csv</code>.</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="ch-toetsing.html#cb112-1" aria-hidden="true" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
+<span id="cb112-2"><a href="ch-toetsing.html#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(ujedata, <span class="fu">t.test</span>( cond.u, cond.je, <span class="at">paired=</span><span class="cn">TRUE</span> ) )</span></code></pre></div>
+<pre><code>## 
+##  Paired t-test
+## 
+## data:  cond.u and cond.je
+## t = -6.7361, df = 9, p-value = 8.498e-05
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -2.938817 -1.461183
+## sample estimates:
+## mean of the differences 
+##                    -2.2</code></pre>
+</div>
+</div>
+<div id="sec:ttoets-effectgrootte" class="section level2" number="13.8">
+<h2><span class="header-section-number">13.8</span> Effectgrootte</h2>
+<p>Tot nu toe zijn we vooral ingegaan op toetsing als een binaire
+beslissing om H0 wel of niet te verwerpen, in het licht van de
+observaties. Maar het is daarnaast ook van groot belang om te weten hoe
+groot het geobserveerde effect eigenlijk is: de <em>effectgrootte</em> (Eng.
+‘effect size’, ‘ES’) <span class="citation">(<a href="#ref-Cohen88" role="doc-biblioref">Cohen 1988</a>; <a href="#ref-Thom02" role="doc-biblioref">B. Thompson 2002</a>; <a href="#ref-Naka07" role="doc-biblioref">Nakagawa and Cuthill 2007</a>)</span>.</p>
+<p>In formules <a href="ch-toetsing.html#eq:t-onesample">(13.1)</a> en <a href="ch-toetsing.html#eq:t-pairedsamples">(13.7)</a> komt tot uiting dat de toetsingsgrootheid <span class="math inline">\(t\)</span> groter wordt,
+naarmate het effect groter wordt, d.w.z. bij een groter verschil
+<span class="math inline">\((\overline{x}-\mu)\)</span> of <span class="math inline">\((\overline{x_1}-\overline{x_2})\)</span> of
+<span class="math inline">\((\overline{D}-\mu_D)\)</span>], <em>en/of</em> naarmate de steekproef groter wordt.
+Kort gezegd <span class="citation">(<a href="#ref-Rose08" role="doc-biblioref">Rosenthal and Rosnow 2008, 338</a>, formule 11.10)</span>:
+<span class="math display" id="eq:Rose08">\[\begin{equation}
+  \tag{13.8}
+    \textrm{significance of test} =
+    \textrm{size of effect} \times \textrm{size of study}
+\end{equation}\]</span></p>
+<p>Dat houdt
+in dat een klein, en mogelijk triviaal effect, ook statistisch
+significant kan zijn als de steekproef maar groot genoeg is. Omgekeerd
+kan een heel groot effect goed vastgesteld worden op basis van een zeer
+kleine steekproef.</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 13.2:</em>
+In een onderzoek naar de levensduur van overleden 50+-ers uit Oostenrijk
+en Denemarken <span class="citation">(<a href="#ref-Dobl99" role="doc-biblioref">Doblhammer 1999</a>)</span> bleek dat de levensduur verschilt met de
+geboorteweek, vermoedelijk omdat babies uit “zomerzwangerschappen”
+gemiddeld iets gezonder zijn (of waren) dan die uit
+“winterzwangerschappen”. In dit onderzoek waren de verschillen in
+levensduur zeer gering (<span class="math inline">\(\pm 0.30\)</span> jaar in Oostenrijk, <span class="math inline">\(\pm 0.15\)</span> jaar
+in Denemarken), maar het aantal observaties (overledenen) was zeer groot.</p>
+</blockquote>
+<blockquote>
+<p>Daarentegen is het verschil in lichaamslengte tussen dwergen (korter dan
+1.5 m) en reuzen (langer dan 2.0 m) zo groot dat het verschil empirisch goed kan worden
+vastgesteld op basis van slechts <span class="math inline">\(n=2\)</span> in elke groep.</p>
+</blockquote>
+<hr />
+<p>In ons onderzoek zijn we vooral geïnteresseerd in belangrijke
+verschillen, d.w.z. doorgaans grote verschillen. We moeten beseffen dat
+onderzoek ook kosten met zich meebrengt in termen van geld, tijd,
+inspanning, privacy, en verlies van onbevangenheid voor ander onderzoek
+(zie hoofdstuk
+<a href="ch-integriteit.html#ch-integriteit">3</a>). We willen dus niet nodeloos onderzoek doen
+naar triviale effecten. Een onderzoeker dient daarom vooraf te bepalen
+wat het kleinste effect is dat hij/zij wil kunnen opsporen, bv. 1 punt
+verschil in de score van de grammaticatoets. Verschillen kleiner dan 1
+punt worden dan beschouwd als triviaal, en verschillen groter dan 1 punt
+als potentieel interessant.</p>
+<p>Ook is het van belang om de gevonden effectgrootte te vermelden bij de
+resultaten van een onderzoek, om lezers en latere onderzoekers van
+dienst te zijn. In sommige wetenschappelijke tijdschriften is het zelfs
+verplicht om effectgrootte te rapporteren. Dat kan overigens ook in de
+vorm van een betrouwbaarheidsinterval van het gemiddelde
+(zie <a href="ch-toetsing.html#sec:t-betrouwbaarheidsinterval-gemiddelde">13.5</a>), omdat we deze
+betrouwbaarheidsintervallen en effectgroottes in elkaar kunnen
+omrekenen.</p>
+<p>De ruwe effectgrootte is eenvoudigweg het verschil <span class="math inline">\(D\)</span> in gemiddelden
+tussen twee groepen, of tussen twee condities, uitgedrukt in eenheden
+van de ruwe score. In §<a href="ch-toetsing.html#sec:ttoets-onafh">13.6</a> vonden we zo een verschil in woordenschat
+van <span class="math inline">\(D=95-85=10\)</span> tussen jongens en meisjes.</p>
+<p>Meestal gebruiken we echter de gestandaardiseerde effectgrootte (zie
+formules hieronder), waarbij we rekening houden met de spreiding in de
+observaties, bijv in de vorm van “pooled standard deviation” <span class="math inline">\(s_p\)</span> <a href="referenties.html#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>.
+We vinden zo een gestandaardiseerde effectgrootte van
+<span class="math display" id="eq:d-standardized">\[\begin{equation}
+  \tag{13.9}
+    d = \frac{ \overline{x_1}-\overline{x_2} } {s_p} = \frac{10}{90.5} = 0.11
+\end{equation}\]</span>
+In het eerste voorbeeld hierboven is de gestandaardiseerde effectgrootte
+van het verschil in woordenschat tussen meisjes en jongens dus 0.11. In
+dit geval is het verschil tussen de groepen gering ten opzichte van de
+spreiding binnen de groepen — de kans dat een willekeurig gekozen
+meisje een grotere woordenschat heeft dan een willekeurig gekozen
+jongen, is slechts 0.53 <span class="citation">(<a href="#ref-McGraw92" role="doc-biblioref">McGraw and Wong 1992</a>)</span>, en dat is nauwelijks beter dan de
+kans van 0.50 die we verwachten volgens H0. Dat dit zeer kleine effect
+niet significant is (zie §<a href="ch-toetsing.html#sec:ttoets-onafh">13.6</a>) wekt dan ook geen verbazing.
+We zouden de
+effectgrootte en significantie als volgt kunnen rapporteren:</p>
+<blockquote>
+<p>De gemiddelde productieve woordenschat van Zweedse kinderen van 18
+maanden oud verschilt nauwelijks tussen meisjes en jongens. Meisjes
+produceren gemiddeld 95 verschillende woorden (<span class="math inline">\(s=82\)</span>), en jongens
+gemiddeld 85 verschillende woorden (<span class="math inline">\(s=98\)</span>). Het verschil is zeer
+klein (<span class="math inline">\(d=0.11)\)</span> en niet significant (<span class="math inline">\(t(122)=0.88, p&gt;.4\)</span>).</p>
+</blockquote>
+<p>In het tweede voorbeeld hierboven is de gestandaardiseerde effectgrootte
+van het verschil in duren van lettergrepen ongeveer
+<span class="math inline">\((0.235-0.269)/0.029 \approx 1.15\)</span>. Dit relatief grote effect kunnen we
+als volgt rapporteren:</p>
+<blockquote>
+<p>De gemiddelde duur van een lettergreep gesproken door een spreker uit
+het westen van Nederland is <span class="math inline">\(0.235\)</span> seconde (<span class="math inline">\(s=0.028\)</span>). Dit is
+aanzienlijk korter dan bij sprekers uit het Noorden van Nederland
+(<span class="math inline">\(\overline{x}=0.269\)</span> s, <span class="math inline">\(s=0.029\)</span>). Het verschil is ca. 10%; dit
+verschil is zeer groot (<span class="math inline">\(d=-1.15\)</span>) en significant
+(<span class="math inline">\(t(38)=-3.76, p&lt;.05\)</span>). In de onderzochte opnames uit 1999 praten de
+sprekers uit het Westen dus aanzienlijk sneller dan die uit het
+Noorden van Nederland.</p>
+</blockquote>
+<p>Als <span class="math inline">\(d\)</span> ligt rond 0.2 spreken we van een klein effect. Een effectgrootte
+<span class="math inline">\(d\)</span> rond 0.5 noemen we een middelmatig (medium) effect, en een <span class="math inline">\(d\)</span> rond
+0.8 of groter noemen we een groot effect <span class="citation">(<a href="#ref-Cohen88" role="doc-biblioref">Cohen 1988</a>; <a href="#ref-Rose08" role="doc-biblioref">Rosenthal and Rosnow 2008</a>)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:kleinstesignifverschil"></span>
+<img src="KMS-NL_files/figure-html/kleinstesignifverschil-1.png" alt="Relatie tussen de steekproefgrootte en het kleinste effect (d) dat significant is volgens een *t*-toets voor ongepaarde, onafhankelijke waarnemingen, met foutkansen alpha=.05 en beta=.10." width="672" />
+<p class="caption">
+Figuur 13.3: Relatie tussen de steekproefgrootte en het kleinste effect (d) dat significant is volgens een <em>t</em>-toets voor ongepaarde, onafhankelijke waarnemingen, met foutkansen alpha=.05 en beta=.10.
+</p>
+</div>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 13.3:</em>
+Kijk nog eens naar formule
+<a href="ch-toetsing.html#eq:Rose08">(13.8)</a>
+en naar Figuur <a href="ch-toetsing.html#fig:kleinstesignifverschil">13.3</a> die de relatie tussen
+steekproefgrootte en effectgrootte illustreert. Met een
+steekproefgrootte van <span class="math inline">\(n_1=122\)</span> kunnen we alleen een effect van <span class="math inline">\(d=0.42\)</span>
+of groter opsporen, met voldoende kleine kansen op fouten van Typen I en
+II (<span class="math inline">\(\alpha=.05, \beta=.10\)</span>). Om het zeer kleine effect van <span class="math inline">\(d=0.11\)</span> op
+te sporen, met dezelfde kleine foutkansen <span class="math inline">\(\alpha\)</span> en <span class="math inline">\(\beta\)</span>, zouden er
+steekproeven van tenminste 1738 meisjes en 1738 jongens nodig zijn.</p>
+</blockquote>
+<hr />
+<p>We kunnen de effectgrootte ook uitdrukken als de waarschijnlijkheid dat
+een verschil in de voorspelde richting optreedt, voor een willekeurig
+gekozen element uit de populatie
+(formules <a href="ch-toetsing.html#eq:d-onesample">(13.10)</a> en <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>),
+of (indien van toepassing) voor twee
+willekeurig en onafhankelijk gekozen elementen uit de twee populaties
+(formule <a href="ch-toetsing.html#eq:d-homoskedastic">(13.11)</a>) <span class="citation">(<a href="#ref-McGraw92" role="doc-biblioref">McGraw and Wong 1992</a>)</span>. Laten we nog eens
+terugkeren naar de grammaticatoets van de studenten Taalwetenschap
+(§<a href="ch-toetsing.html#sec:ttoets-onesample">13.2</a>). Het effect dat we vonden is niet
+alleen significant maar ook groot. In termen van waarschijnlijkheid
+uitgedrukt: de kans dat een willekeurige student Taalwetenschap een
+score behaalt groter dan <span class="math inline">\(\mu_0=73\)</span> is 0.91. (En een willekeurig gekozen
+student Taalwetenschap heeft dus nog 9% kans om lager te scoren dan het
+veronderstelde populatie-gemiddelde van 73.)</p>
+<p>Voor de fictieve oordelen over de webpagina’s met <em>U</em> of <em>je</em> (zie
+Tabel <a href="ch-toetsing.html#tab:data-uje-paired">13.1</a>) vinden we een gestandaardiseerde
+effectgrootte van
+<span class="math display">\[d = \frac{ \overline{D}-\mu_D} {s_D} = \frac{ -2.20-0 } {1.03} = -2.13\]</span>
+Dat dit extreem grote effect inderdaad significant is, wekt dan ook geen
+verbazing. We kunnen dat als volgt rapporteren:</p>
+<blockquote>
+<p>De oordelen van <span class="math inline">\(N=10\)</span> respondenten over de pagina’s met <em>U</em> of <em>je</em>
+als aanspreekvorm verschillen significant, met gemiddeld <span class="math inline">\(-2.2\)</span> punten
+verschil. Dit verschil heeft een 95% betrouwbaarheidsinterval van
+<span class="math inline">\(-2.9\)</span> tot <span class="math inline">\(-1.5\)</span> en een geschatte gestandaardiseerde effectgrootte
+<span class="math inline">\(d=-2.13\)</span>; de kans dat een willekeurig gekozen respondent de
+<em>je</em>-versie hoger beoordeelt dan de <em>U</em>-versie is <span class="math inline">\(p=.98\)</span>.</p>
+</blockquote>
+<div id="sec:formules13-5" class="section level3" number="13.8.1">
+<h3><span class="header-section-number">13.8.1</span> formules</h3>
+<p>Voor een enkele steekproef:
+<span class="math display" id="eq:d-onesample">\[\begin{equation}
+   \tag{13.10}
+  d = \frac{\overline{x}-\mu}{s}
+\end{equation}\]</span>
+waarbij <span class="math inline">\(s\)</span> de standaarddeviatie <span class="math inline">\(s\)</span>
+van de score <span class="math inline">\(x\)</span> voorstelt.</p>
+<p>Voor twee onafhankelijke steekproeven (zie
+formule <a href="ch-toetsing.html#eq:sd-pooled">(13.2)</a>):
+<span class="math display" id="eq:d-homoskedastic">\[\begin{equation}
+  \tag{13.11}
+  d = \frac{ \overline{x_1}-\overline{x_2} } { s_p }
+\end{equation}\]</span></p>
+<p>Voor gepaarde waarnemingen:
+<span class="math display" id="eq:d-paired">\[\begin{equation}
+  \tag{13.12}
+  d = \frac{ \overline{x_1}-\overline{x_2} } { s_D }
+\end{equation}\]</span>
+waarbij <span class="math inline">\(s_D\)</span> de
+standaarddeviatie is van het verschil <span class="math inline">\(D\)</span> volgens
+formule <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>.</p>
+</div>
+<div id="spss-13-2" class="section level3" number="13.8.2">
+<h3><span class="header-section-number">13.8.2</span> SPSS</h3>
+<p>In SPSS kunnen we de effectgrootte meestal het makkelijkste met de hand
+uitrekenen.</p>
+<p>Voor een enkele steekproef
+(formule <a href="ch-toetsing.html#eq:d-onesample">(13.10)</a>) kunnen we de effectgrootte eenvoudig
+uitrekenen uit het gemiddelde en de standaarddeviatie, rekening houdend
+met de waarde <span class="math inline">\(\mu\)</span> waartegen we toetsen.</p>
+<pre><code>Analyze &gt; Descriptive Statistics &gt; Descriptives...</code></pre>
+<p>Kies de knop <code>Options</code> en zorg dat <code>Mean</code> en <code>Std.deviation</code> zijn
+aangevinkt. In de uitvoer staan vervolgens de benodigde gegevens:<br />
+<span class="math inline">\(d = (84.41 - 73) / 8.392 = 1.36\)</span>, een zeer groot effect.</p>
+<p>Voor ongepaarde, onafhankelijke waarnemingen kunnen we eveneens de
+effectgrootte het beste met de hand uitrekenen op basis van de
+gemiddelden, standaarddeviaties, en omvang van de twee steekproeven,
+gebruik makend van
+formules <a href="ch-toetsing.html#eq:sd-pooled">(13.2)</a> en
+<a href="ch-toetsing.html#eq:d-homoskedastic">(13.11)</a> hierboven.</p>
+<p>Voor een enkele steekproef met twee gepaarde observaties
+(formule <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>) kunnen we de effectgrootte weer eenvoudiger
+uitrekenen uit het gemiddelde en de standaarddeviatie van het verschil.
+De gegevens staan in de uitvoer van de paarsgewijze <span class="math inline">\(t\)</span>-toets
+(§<a href="ch-toetsing.html#sec:SPSS-ttoets-gepaard">13.7.3</a>), respectievelijk als <code>Mean</code> en
+<code>Std.Deviation</code>:<br />
+<span class="math inline">\(d = -2.200 / 1.033 = 2.130\)</span>, een super groot effect.</p>
+</div>
+<div id="jasp-13" class="section level3" number="13.8.3">
+<h3><span class="header-section-number">13.8.3</span> JASP</h3>
+<p>In JASP kan de effectgrootte worden opgevraagd bij het doen van een <span class="math inline">\(t\)</span>-toets, door simpelweg <code>Effect size</code> aan te vinken onder “Additional Statistics”. Zie hiervoor de JASP instructies voor een <span class="math inline">\(t\)</span>-toets voor een enkele steekproef (§<a href="ch-toetsing.html#sec:jaspttoetsenkel">13.2.5</a>), een <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke groepen (§<a href="ch-toetsing.html#sec:jaspttoetsongepaard">13.6.4</a>) en een <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen (§<a href="ch-toetsing.html#sec:jaspttoetsgepaard">13.7.4</a>).<br />
+De uitvoer van de <span class="math inline">\(t\)</span>-toets zal (Cohen’s) d aangeven: de effectgrootte. Onder <code>Effect size</code> kan ook <code>Confidence interval</code> worden aangevinkt (dit staat standaard op 95%, maar kan ook worden veranderd) voor het betrouwbaarheidsinterval van de effectgrootte (zie §<a href="ch-toetsing.html#sec:betrouwbaarheidsinterval-effectgrootte">13.8.5</a> hieronder).</p>
+</div>
+<div id="r-14" class="section level3" number="13.8.4">
+<h3><span class="header-section-number">13.8.4</span> R</h3>
+<p>In R is het wat makkelijker om de effectgrootte te laten uitrekenen.</p>
+<p>Voor een enkele steekproef
+(formule <a href="ch-toetsing.html#eq:d-onesample">(13.10)</a>):<br />
+</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="ch-toetsing.html#cb115-1" aria-hidden="true" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span>F)</span>
+<span id="cb115-2"><a href="ch-toetsing.html#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;opleiding&quot;</span>)</span>
+<span id="cb115-3"><a href="ch-toetsing.html#cb115-3" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(gramm2013, score[opleiding<span class="sc">==</span><span class="st">&quot;TW&quot;</span>]) <span class="ot">-&gt;</span> score.TW <span class="co"># hulpvariabele</span></span>
+<span id="cb115-4"><a href="ch-toetsing.html#cb115-4" aria-hidden="true" tabindex="-1"></a>( <span class="fu">mean</span>(score.TW)<span class="sc">-</span><span class="dv">73</span> ) <span class="sc">/</span> <span class="fu">sd</span>(score.TW) </span></code></pre></div>
+<pre><code>## Warning in mean.default(score.TW): argument is not numeric or logical: returning
+## NA</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p>De kans op een score groter dan het populatiegemiddelde (de toetswaarde) <code>73</code> voor een willekeurige student Taalwetenschap (waarvan we aannemen dat <span class="math inline">\(\mu=84.4\)</span> en <span class="math inline">\(s=8.4\)</span>):</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="ch-toetsing.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>( <span class="dv">73</span>, <span class="at">mean=</span><span class="fl">84.4</span>, <span class="at">sd=</span><span class="fl">8.4</span> ) </span></code></pre></div>
+<pre><code>## [1] 0.9126321</code></pre>
+<p>Voor ongepaarde, onafhankelijke waarnemingen kunnen we het kleinste
+significante effect uitrekenen (zie ook
+Fig. <a href="ch-toetsing.html#fig:kleinstesignifverschil">13.3</a>); daarvoor gebruiken we de functie <code>power.t.test</code>. (Deze functie is ook gebruikt om Fig.<a href="ch-toetsing.html#fig:kleinstesignifverschil">13.3</a> te construeren.)
+Je moet bij die functie de gewenste <code>power</code> als
+argument opgeven (power = <span class="math inline">\(1-\beta\)</span>; zie
+§<a href="ch-power.html#sec:power-inleiding">14.1</a>).</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="ch-toetsing.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">power.t.test</span>( <span class="at">n=</span><span class="dv">122</span>, <span class="at">sig=</span>.<span class="dv">05</span>, <span class="at">power=</span>.<span class="dv">90</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span> )</span></code></pre></div>
+<pre><code>## 
+##      Two-sample t test power calculation 
+## 
+##               n = 122
+##           delta = 0.4166921
+##              sd = 1
+##       sig.level = 0.05
+##           power = 0.9
+##     alternative = two.sided
+## 
+## NOTE: n is number in *each* group</code></pre>
+<p>In de uitvoer staat bij <code>delta</code> het kleinste significante effect aangegeven; zie ook Voorbeeld 13.3 hierboven.</p>
+<p>Voor een enkele steekproef met twee gepaarde observaties
+(formule <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>):</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="ch-toetsing.html#cb122-1" aria-hidden="true" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
+<span id="cb122-2"><a href="ch-toetsing.html#cb122-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( ujedata, <span class="fu">mean</span>(cond.u<span class="sc">-</span>cond.je) <span class="sc">/</span> <span class="fu">sd</span>(cond.u<span class="sc">-</span>cond.je) )</span></code></pre></div>
+<pre><code>## [1] -2.130141</code></pre>
+</div>
+<div id="sec:betrouwbaarheidsinterval-effectgrootte" class="section level3" number="13.8.5">
+<h3><span class="header-section-number">13.8.5</span> Betrouwbaarheidsinterval van de effectgrootte</h3>
+<p>We hebben al eerder gezien
+(§<a href="ch-kansverdelingen.html#sec:betrouwbaarheidsinterval-gemiddelde">10.7</a> en §<a href="ch-toetsing.html#sec:t-betrouwbaarheidsinterval-gemiddelde">13.5</a>)
+dat we een kenmerk
+of parameter van de populatie kunnen schatten op basis van een kenmerk
+van een steekproef. Zo hebben we het onbekende populatiegemiddelde <span class="math inline">\(\mu\)</span>
+geschat op basis van het geobserveerde steekproefgemiddelde
+<span class="math inline">\(\overline{x}\)</span>. Bij die schatting hoort wel een bepaalde mate van
+onzekerheid of betrouwbaarheid: misschien verschilt de onbekende
+parameter in de populatie enigszins van het steekproefkenmerk, dat we
+als schatter gebruiken, ten gevolge van toevallige variaties in de
+steekproef. De (on)zekerheid of (on)betrouwbaarheid wordt uitgedrukt als
+een betrouwbaarheidsinterval van het geschatte kenmerk. We weten dan met
+een bepaalde betrouwbaarheid (meestal 95%) dat de onbekende parameter
+binnen dat interval zal liggen
+(§<a href="ch-kansverdelingen.html#sec:betrouwbaarheidsinterval-gemiddelde">10.7</a> en §<a href="ch-toetsing.html#sec:t-betrouwbaarheidsinterval-gemiddelde">13.5</a>).</p>
+<p>Deze redenatie nu geldt niet alleen voor de gemiddelde score, of voor de
+mediaan of voor de variantie, maar evenzo voor de effectgrootte. Ook de
+effectgrootte is immers een onbekende parameter uit de populatie, die we
+proberen te schatten op grond van een beperkte steekproef. Voor de
+fictieve oordelen over de webpagina’s met <em>U</em> of <em>je</em> (zie
+Tabel <a href="ch-toetsing.html#tab:data-uje-paired">13.1</a>) vonden we een gestandaardiseerde
+effectgrootte van <span class="math inline">\(d=-2.13\)</span>. Dit is een schatting van de onbekende
+effectgrootte (d.i. van de sterkte van de voorkeur voor de <em>je</em>-variant)
+in de populatie van beoordelaars, op basis van een steekproef van <span class="math inline">\(n=10\)</span>
+beoordelaars. We kunnen ook hier de betrouwbaarheid van deze schatting
+aangeven, in de vorm van een <em>betrouwbaarheidsinterval</em> rondom de
+geobserveerde effectgrootte <span class="math inline">\(d=-2.13\)</span>.</p>
+<p>Het betrouwbaarheidsinterval van de effectgrootte is wel wat lastig vast
+te stellen <span class="citation">(<a href="#ref-Naka07" role="doc-biblioref">Nakagawa and Cuthill 2007</a>; <a href="#ref-Chen15" role="doc-biblioref">Chen and Peng 2015</a>)</span>. We illustreren het hier op simpele wijze
+voor het simpelste geval, nl. dat van de <span class="math inline">\(t\)</span>-toets voor een enkele steekproef,
+c.q. voor twee gepaarde observaties. We hebben hiervoor twee elementen
+nodig: ten eerste de effectgrootte uitgedrukt als correlatie <span class="citation">(<a href="#ref-Rose08" role="doc-biblioref">Rosenthal and Rosnow 2008, 359</a>, formule 12.1)</span>, <span class="math display">\[r = \sqrt{ \frac{t^2}{t^2+\textrm{df}} }\]</span> en
+ten tweede de standaardfout van de effectgrootte <span class="math inline">\(d\)</span> <span class="citation">(<a href="#ref-Naka07" role="doc-biblioref">Nakagawa and Cuthill 2007, 600</a>,
+formule 18)</span>:
+<span class="math display" id="eq:d-paired-se">\[\begin{equation}
+  \tag{13.13}
+    \textrm{se}_d = \sqrt{ \frac{2(1-r)}{n} + \frac{d^2}{2(n-1)} }
+\end{equation}\]</span>
+In
+ons eerdere voorbeeld van de <span class="math inline">\(n=10\)</span> gepaarde oordelen over een webpagina
+met <em>U</em> of <em>je</em> als aanspreekvorm vonden we <span class="math inline">\(d=-2.13\)</span>. We vinden ook dat
+<span class="math inline">\(r=.9135\)</span>. Met deze gegevens vinden we <span class="math inline">\(\textrm{se}_d = 0.519\)</span> via
+formule <a href="ch-toetsing.html#eq:d-paired-se">(13.13)</a>.</p>
+<p>Hiermee bepalen we vervolgens het betrouwbaarheidsinterval voor de
+effectgrootte:
+<span class="math display" id="eq:d-paired-CI">\[\begin{equation}
+   \tag{13.14}
+    d \pm t^*_{n-1} \times \textrm{se}_d
+\end{equation}\]</span>
+(zie de overeenkomstige
+formule <a href="ch-kansverdelingen.html#eq:t-onesampleCI">(10.12)</a>).
+Na invullen van <span class="math inline">\(t^*_9=2.262\)</span> (zie
+Bijlage <a href="#app:kritieketwaarden"><strong>??</strong></a>) en <span class="math inline">\(\textrm{se}_d = 0.519\)</span> vinden we
+uiteindelijk een 95%-betrouwbaarheidsinterval van <span class="math inline">\((-3.30,-0.96)\)</span>. We
+weten dus met 95% betrouwbaarheid dat de onbekende effectgrootte in de
+populatie ergens binnen dit interval ligt, en dus ook dat die kleiner is
+dan nul. Op grond van die laatste overweging kunnen we H0 verwerpen.
+Maar: we weten nu niet alleen <em>dat</em> de voorkeur afwijkt van nul, maar
+ook <em>in welke mate</em> de (gestandaardiseerde) voorkeur afwijkt van nul,
+d.w.z. hoe sterk de voorkeur voor de <em>je</em>-versie is. Deze nieuwe kennis
+over de mate of grootte van het effect is vaak nuttiger en interessanter
+dan de binaire beslissing of er wel of niet een effect is (H0 wel of
+niet verwerpen) <span class="citation">(<a href="#ref-Cumm12" role="doc-biblioref">Cumming 2012</a>)</span>.</p>
+
+</div>
+</div>
+</div>
+<h3>Referenties</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Alde04" class="csl-entry">
+Alderson, Phil. 2004. <span>“Absence of Evidence Is Not Evidence of Absence: We Need to Report Uncertain Results and Do It Clearly.”</span> <em>British Medical Journal</em> 328 (7438): 476–77. <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC351831/">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC351831/</a>.
+</div>
+<div id="ref-Ande11" class="csl-entry">
+Andersson, Ida, Jenny Gaudin, Anna Graca, Katarina Holm, Linda Öhlin, Ulrika Marklund, and Anna Ericsson. 2011. <span>“Productive Vocabulary Size Development in Children Aged 18-24 Months: Gender Differences.”</span> <em>KTH Speech, Music and Hearing: Quarterly Progress and Status Report</em> 51 (1). <a href="http://www.speech.kth.se/prod/publications/files/3605.pdf">http://www.speech.kth.se/prod/publications/files/3605.pdf</a>.
+</div>
+<div id="ref-Chen15" class="csl-entry">
+Chen, Li-Ting, and Chao-Ying Joanne Peng. 2015. <span>“The Sensitivity of Three Methods to Nonnormality and Unequal Variances in Interval Estimation of Effect Sizes.”</span> <em>Behavior Research Methods</em> 47 (1): 107–26.
+</div>
+<div id="ref-Cohen88" class="csl-entry">
+Cohen, Jacob. 1988. <em>Statistical Power Analysis for the Behavioral Sciences</em>. 2e ed. Hillsdale, N.J.: Lawrence Erlbaum.
+</div>
+<div id="ref-Cumm12" class="csl-entry">
+Cumming, Geoff. 2012. <em>Understanding the New Statistics</em>. New York: Routledge.
+</div>
+<div id="ref-Dobl99" class="csl-entry">
+Doblhammer, Gabriele. 1999. <span>“Longevity and Month of Birth: Evidence from <span>A</span>ustria and <span>D</span>enmark.”</span> <em>Demographic Research</em> 1 (3). <a href="http://www.demographic-research.org/Volumes/Vol1/3">http://www.demographic-research.org/Volumes/Vol1/3</a>.
+</div>
+<div id="ref-McGraw92" class="csl-entry">
+McGraw, Kenneth O., and S. P. Wong. 1992. <span>“A Common Language Effect Size Statistic.”</span> <em>Psychological Bulletin</em> 111 (2): 361–65.
+</div>
+<div id="ref-Naka07" class="csl-entry">
+Nakagawa, Shinichi, and Innes C. Cuthill. 2007. <span>“Effect Size, Confidence Interval and Statistical Significance: A Practical Guide for Biologists.”</span> <em>Biological Reviews</em> 82 (4): 591–605. <a href="http://dx.doi.org/10.1111/j.1469-185X.2007.00027.x">http://dx.doi.org/10.1111/j.1469-185X.2007.00027.x</a>.
+</div>
+<div id="ref-Rose08" class="csl-entry">
+Rosenthal, Robert, and Ralph L. Rosnow. 2008. <em>Essentials of Behavioral Research: Methods and Data Analysis</em>. 3e ed. Boston: McGraw Hill.
+</div>
+<div id="ref-Sagan96" class="csl-entry">
+Sagan, Carl. 1996. <em>The Demon-Haunted World: Science as a Candle in the Dark</em>. Random House.
+</div>
+<div id="ref-Thom02" class="csl-entry">
+Thompson, Bruce. 2002. <span>“<span>‘<span>S</span>tatistical,’</span> <span>‘Practical,’</span> and <span>‘Clinical’</span>: <span>H</span>ow Many Kinds of Significance Do Counselors Need to Consider?”</span> <em>Journal of Counseling and Development</em> 80 (1): 64–71.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-betrouwbaarheid.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-power.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/h13toetsing.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["KMS-NL.pdf", "KMS-NL.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

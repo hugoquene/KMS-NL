@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Hoofdstuk 12 Betrouwbaarheid | Kwantitatieve Methoden en Statistiek</title>
+  <title>Hoofdstuk 14 Power | Kwantitatieve Methoden en Statistiek</title>
   <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Hoofdstuk 12 Betrouwbaarheid | Kwantitatieve Methoden en Statistiek" />
+  <meta property="og:title" content="Hoofdstuk 14 Power | Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/KMS-NL" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Hoofdstuk 12 Betrouwbaarheid | Kwantitatieve Methoden en Statistiek" />
+  <meta name="twitter:title" content="Hoofdstuk 14 Power | Kwantitatieve Methoden en Statistiek" />
   
   <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ch-samenhang.html"/>
-<link rel="next" href="ch-toetsing.html"/>
+<link rel="prev" href="ch-toetsing.html"/>
+<link rel="next" href="ch-variantieanalyse.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -531,696 +531,270 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch-betrouwbaarheid" class="section level1" number="12">
-<h1><span class="header-section-number">Hoofdstuk 12</span> Betrouwbaarheid</h1>
-<div id="inleiding-6" class="section level2" number="12.1">
-<h2><span class="header-section-number">12.1</span> Inleiding</h2>
-<p>In Hoofdstuk <a href="ch-validiteit.html#ch-validiteit">5</a> hebben we het onder andere gehad over
-construct-validiteit, de afstand tussen het bedoelde (theoretische)
-concept of construct enerzijds, en de onafhankelijke of afhankelijke
-variabele anderzijds. In dit hoofdstuk gaan we in op een ander zeer
-belangrijk aspect van de afhankelijke variabele, nl. de
-<em>betrouwbaarheid</em>. Deze betrouwbaarheid kan worden geschat op basis van
-de samenhang of correlatie tussen observaties van hetzelfde construct.
-We zullen ook ingaan op de relaties tussen betrouwbaarheid en
-constructvaliditeit.</p>
-<p>Vaak worden validiteit en betrouwbaarheid in één adem genoemd, en in opeenvolgende hoofdstukken besproken. Daar is wat voor te zeggen, want beide begrippen gaan over hoe je je variabelen definieert en operationaliseert. Toch hebben we hier gekozen voor een andere volgorde. Betrouwbaarheid komt pas aan bod nadat we samenhang besproken hebben (Hoofdstuk <a href="ch-samenhang.html#ch-samenhang">11</a>), omdat betrouwbaarheid gebaseerd is op de samenhang of correlatie tussen observaties.</p>
-</div>
-<div id="wat-is-betrouwbaarheid" class="section level2" number="12.2">
-<h2><span class="header-section-number">12.2</span> Wat is betrouwbaarheid?</h2>
-<p>Een betrouwbaar persoon is stabiel en voorspelbaar: wat hij of zij
-vandaag doet is consistent met wat hij of zij vorige week deed, je kunt
-op deze persoon vertrouwen — in tegenstelling tot een onbetrouwbaar
-persoon, die instabiel is en zich onvoorspelbaar gedraagt. Volgens <em>Van
-Dale</em> is <em>betrouwbaarheid</em> “…de mate waarin iets of iem. te betrouwen
-of geloofwaardig is”. Betrouwbare metingen kunnen de basis vormen voor
-een “justified true belief” (zie
-§<a href="ch-onderzoek.html#sec:falsificatie">2.4</a>); onbetrouwbare metingen daarentegen zijn
-per definitie niet waard om geloof aan te hechten.</p>
-<p>Metingen vertonen altijd enige mate van fluctuatie of variatie of
-inconsistentie. Die variabiliteit kan ten dele worden toegeschreven aan
-de variatie in het gedrag dat gemeten wordt. Immers, zelfs als we
-hetzelfde construct meten bij dezelfde persoon, dan nog zien we variatie
-ten gevolge van de momentane mentale of fysieke toestand van de
-proefpersoon, die nu eenmaal fluctueert. Bovendien is er variatie in het
-gebruikte meet-instrument (thermometer, vragenlijst, sensor), en zijn er
-wellicht inconsistenties in de wijze waarop wordt gemeten of beoordeeld.
-Met de kwantificering van zulke consistenties en inconsistenties
-betreden we het terrein van de betrouwbaarheidsanalyse.</p>
-<p>Het begrip ‘betrouwbaarheid’ heeft in wetenschappelijk onderzoek
-eigenlijk twee betekenissen, die we afzonderlijk behandelen. Ten eerste
-wordt met betrouwbaarheid de <em>precisie</em> of <em>nauwkeurigheid</em> van een
-meting bedoeld. Dit aspect heeft betrekking op de vraag in hoeverre de
-meting beïnvloed wordt door toevallige factoren (waardoor de meting niet
-uitsluitend het onderzochte construct weergeeft). Als we <em>niet</em>
-nauwkeurig meten, dan weten we ook niet wat de verkregen meetwaarden
-eigenlijk weergeven — misschien het onderzochte construct, maar
-misschien ook niet. Als we wel nauwkeurig meten, dan verwachten we, als
-we dezelfde meting nogmaals zouden uitvoeren, dat we dan dezelfde
-uitkomst zouden meten. Naarmate een meting minder precies is, zal er
-meer variatie of inconsistentie zijn tussen de eerste meting en de
-herhaalde meting, en zijn de metingen dus minder betrouwbaar.</p>
-<hr />
-<blockquote>
-<p><em>Voorbeeld 12.1:</em> Als we de leesvaardigheid van
-leerlingen in het eindexamen willen meten, dan leggen we hen een
-tekstbegriptoets met een bijbehorend aantal vragen voor. De mate waarin
-de verschillende vragen <em>hetzelfde</em> construct meten, hier het construct ‘leesvaardigheid’,
-wordt de betrouwbaarheid, precisie of homogeniteit genoemd.</p>
-</blockquote>
-<hr />
-<p>In het vervolg zullen we, om verwarring te voorkomen, deze vorm van
-betrouwbaarheid dan ook aanduiden met de term <em>homogeniteit</em> (vs.
-heterogeniteit). Bij een heterogene (niet-homogene) toets kan de
-totaal-score moeilijk geïnterpreteerd worden. Bij een perfect homogene
-test hebben mensen met dezelfde totaalscore ook dezelfde vragen correct
-beantwoord. Maar als we menselijk (taal)gedrag meten, komen zulke
-perfect homogene toetsen eigenlijk nooit voor: respondenten die wel
-dezelfde totaalscore behalen, hebben toch niet allen dezelfde vragen
-correct beantwoord (bv. in de leesvaardigheidstoets van het eindexamen,
-voorbeeld 12.1). Dit houdt in dat de
-vragen niet exact hetzelfde gemeten hebben. Dat is ook zo: de ene vraag
-betrof een parafrase van een alinea, terwijl een andere vraag betrekking
-had op een verwijswoord-antecedent-relatie. De vragen of items waren dus
-niet perfect homogeen!</p>
-<p>Ten tweede wordt met betrouwbaarheid de <em>stabiliteit</em> van een meting
-bedoeld. Om je gewicht te meten ga je op een weegschaal staan. Die
-meting is stabiel: vijf minuten later zal dezelfde weegschaal met
-dezelfde persoon onder dezelfde omstandigheden ook (bijna) dezelfde meetwaarde
-opleveren. De stabiliteit wordt veelal uitgedrukt in een zogenaamde
-correlatiecoëfficiënt (een maat voor samenhang, zie Hoofdstuk
-<a href="ch-samenhang.html#ch-samenhang">11</a>). Deze correlatiecoëfficiënt kan alle waarden
-aannemen tussen <span class="math inline">\(+1\)</span> en <span class="math inline">\(-1\)</span>. Hoe meer de eerste en tweede meting gelijk
-zijn, des te hoger de samenhang, en des te hoger de correlatie tussen
-eerste en tweede meting. Omgekeerd, hoe lager de samenhang tussen eerste
-en tweede meting, des te lager ook de correlatie.</p>
-<p>Stabiele metingen komen echter zelden voor in onderzoek naar
-(taal)gedrag. Als een toets tweemaal afgenomen wordt, dan is er vaak een
-aanzienlijk verschil in scores op het eerste meetmoment en scores op het
-tweede meetmoment.</p>
-<hr />
-<blockquote>
-<p><em>Voorbeeld 12.2:</em>
-Bij het eindexamen Nederlands moeten leerlingen een opstel schrijven,
-dat wordt beoordeeld door twee beoordelaars. De beoordelaars zijn
-stabiel, als zij na enige tijd dezelfde oordelen toekennen aan dezelfde
-opstellen. Dus: als beoordelaar A eerst een 8 geeft aan een opstel, en
-bij een tweede beoordeling enige tijd later ook een 8 geeft voor
-hetzelfde opstel, dan is deze beoordelaar (zeer) stabiel. Als dezelfde
-beoordelaar A bij de tweede beoordeling echter een 4 geeft aan ditzelfde
-opstel, dan is de beoordelaar niet stabiel in zijn oordelen.</p>
-</blockquote>
-<blockquote>
-<p>Nu is het beoordelen van opstellen een lastige taak: de criteria zijn
-niet scherp beschreven en er is relatief veel ruimte voor
-interpretatie-verschillen. De stabiliteit van de oordelen is dan ook
-laag; in het verleden is zelfs een stabiliteitscoëfficiënt van <span class="math inline">\(0.40\)</span>
-gerapporteerd.</p>
-</blockquote>
-<hr />
-<p>Om de stabiliteit van een toets te berekenen, moet dezelfde toets
-tweemaal worden afgenomen; de mate van samenhang tussen de eerste en
-tweede meting wordt de <em>toets-hertoets-betrouwbaarheid</em> genoemd. Zo’n
-herhaalde afname van een toets gebeurt in de praktijk zelden, vanwege de
-relatief hoge kosten en relatief geringe opbrengst.</p>
-<hr />
-<blockquote>
-<p><em>Voorbeeld 12.3:</em>
-<span class="citation">(<a href="#ref-Lata09" role="doc-biblioref">Lata-Caneda et al. 2009</a>)</span> ontwikkelden
-een Spaanstalige vragenlijst van 39 vragen, bedoeld voor
-afasie-patiënten om de kwaliteit van hun leven te bepalen. De kwaliteit
-van leven wordt omschreven als “the patient perception about, either the
-effects of a given disease, or the application of a certain treatment on
-different aspects of life, especially regarding its consequences on the
-physical, emotional and social welfare” <span class="citation">(<a href="#ref-Lata09" role="doc-biblioref">Lata-Caneda et al. 2009, 379</a>)</span>. De nieuwe
-vragenlijst werd tweemaal afgenomen bij een steekproef van 23
-Spaanstalige patiënten met afasie t.g.v. hersenbloeding. De
-gerapporteerde test-hertest-stabiliteit voor deze vragenlijst was
-<span class="math inline">\(0.95\)</span>.</p>
-</blockquote>
-<hr />
-<p>Zowel de homogeniteit als stabiliteit wordt uitgedrukt als een
-coëfficient met een waarde tussen <span class="math inline">\(0\)</span> en <span class="math inline">\(1\)</span> (negatieve coëfficienten
-komen in de praktijk niet voor). Hoe moeten we de gerapporteerde
-coëfficienten nu interpreteren? In het algemeen geldt natuurlijk: hoe
-hoger de coëfficient, hoe hoger (beter) de betrouwbaarheid. Maar hoe
-groot moet de betrouwbaarheid minimaal zijn voordat we een toets
-“betrouwbaar” mogen noemen? Daar zijn geen eenduidige regels voor. Als
-er afwegingen over personen gemaakt moeten worden, dan moet de toets een
-betrouwbaarheid van minimaal <span class="math inline">\(0.90\)</span> hebben, volgens het Nederlands
-Instituut van Psychologen (NIP). Dat geldt bijvoorbeeld voor toetsen die
-worden gebruikt om te bepalen of een kind wel of niet in aanmerking komt
-voor een zgn. dyslexie-verklaring. Voor onderzoeksdoeleinden hoeft niet
-zo’n strenge eis aan de betrouwbaarheid van een toets te worden gesteld.
-Vaak wordt als ondergrens voor de betrouwbaarheidscoëfficient de waarde
-<span class="math inline">\(0.70\)</span> gehanteerd.</p>
-</div>
-<div id="testtheorie" class="section level2" number="12.3">
-<h2><span class="header-section-number">12.3</span> Testtheorie</h2>
-<p>De klassieke testtheorie heeft betrekking op de meting van variabele <span class="math inline">\(x\)</span>
-bij het <span class="math inline">\(i\)</span>-de element van een steekproef van willekeurige leden uit een
-populatie. De testtheorie poneert dat elke meting <span class="math inline">\(x_i\)</span> samengesteld is
-uit twee componenten, nl een ware score <span class="math inline">\(t_i\)</span> (‘true score’) en een
-foutscore of afwijking <span class="math inline">\(e_i\)</span> (‘error score’):
-<span class="math display" id="eq:obs-true-error">\[\begin{equation}
-  x_i = t_i + e_i
-  \tag{12.1}
-\end{equation}\]</span>
-Stel dat je “in het echt” <span class="math inline">\(t=72.0\)</span> kg weegt, en stel
-dat je gemeten gewicht <span class="math inline">\(x=71.6\)</span> kg is, dan bedraagt de foutscore
-<span class="math inline">\(e=-0.4\)</span> kg.</p>
-<p>Een eerste belangrijke aanname in de klassieke testtheorie is dat de
-afwijkingen <span class="math inline">\(e_i\)</span> elkaar neutraliseren of opheffen (d.w.z. gemiddeld nul
-zijn, en dus niet systematisch afwijken van de ware score <span class="math inline">\(t\)</span>), en dat
-grotere afwijkingen naar boven of beneden minder vaker voorkomen dan
-kleinere afwijkingen. Dat houdt in dat wordt aangenomen dat de
-afwijkingen normaal verdeeld zijn (zie
-§<a href="ch-kansverdelingen.html#sec:normaalverdeling">10.3</a>), met <span class="math inline">\(\mu_e=0\)</span> als gemiddelde:
-<span class="math display" id="eq:normal-error">\[\begin{equation}
-  \tag{12.2}
-  e_i \sim \mathcal{N}(0,s^2_e)
-\end{equation}\]</span></p>
-<p>Een tweede belangrijke aanname in de klassieke testtheorie is dat er
-geen verband is tussen de ware scores <span class="math inline">\(t_i\)</span> en de foutscores <span class="math inline">\(e_i\)</span>.
-Omdat de component <span class="math inline">\(e_i\)</span> geheel door het toeval wordt bepaald, dus
-zonder enig verband met <span class="math inline">\(x_i\)</span>, is de correlatie tussen de ware score en
-de foutscore nul:
-<span class="math display" id="eq:r-true-error">\[\begin{equation}
-  \tag{12.3}
-  r_{(t,e)} = 0
-\end{equation}\]</span></p>
-<p>De totale variantie van <span class="math inline">\(x\)</span> is daarom<a href="referenties.html#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a> gelijk aan som van de
-variantie van de ware scores en de variantie van de foutscores:
-<span class="math display" id="eq:var-true-error">\[\begin{equation}
-  \tag{12.4}
-  s^2_x = s^2_t + s^2_e
-\end{equation}\]</span></p>
-<p>Als de geobserveerde variantie <span class="math inline">\(s^2_x\)</span> verhoudingsgewijs veel
-fout-variantie bevat (d.i. variantie van afwijkingen), dan zijn de
-geobserveerde scores goeddeels bepaald door toevallige afwijkingen. Dat
-is natuurlijk geen wenselijke zaak. We zeggen dan dat de geobserveerde
-scores niet betrouwbaar zijn; er zit veel “ruis” in de geobserveerde
-scores. Als de fout-variantie daarentegen relatief gering is, dan geven
-de geobserveerde scores goed weer wat de ware scores zijn, en dan zijn
-de geobserveerde verschillen wel goed betrouwbaar, d.w.z. ze worden
-weinig bepaald door toevallige afwijkingen.</p>
-<p>We kunnen de betrouwbaarheid (symbool <span class="math inline">\(\rho\)</span>) dan ook definiëren als de
-verhouding tussen ware-score-variantie en totale variantie:
-<span class="math display" id="eq:rho-betrouwbaarheid">\[\begin{equation}
-  \tag{12.5}
-  \rho_{xx} = \frac{s^2_t}{s^2_x}
-\end{equation}\]</span></p>
-<p>We kunnen deze formule <a href="ch-betrouwbaarheid.html#eq:rho-betrouwbaarheid">(12.5)</a> echter in de praktijk niet gebruiken
-om de betrouwbaarheid vast te stellen, omdat we <span class="math inline">\(s^2_t\)</span> niet kennen. We
-moeten dus eerst schatten wat de ware-score-variantie is — of wat de
-fout-variantie is, die is immers het complement van de
-ware-score-variantie (zie
-formule <a href="ch-betrouwbaarheid.html#eq:var-true-error">(12.4)</a>)<a href="referenties.html#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>.</p>
-<p>De tweede aanname (in formule <a href="ch-betrouwbaarheid.html#eq:r-true-error">(12.3)</a>) dat er geen verband is tussen de ware
-score en de fout-score, is in de praktijk niet altijd gerechtvaardigd.
-Dat wordt misschien inzichtelijk als we kijken naar de uitslagen van een
-toets, op een schaal van 1.0 tot 10.0. De studenten met scores van 9 of
-10 hebben ook een hoge ware score (zij beheersen de stof zeer goed) en
-dus doorgaans een geringe fout-score. De studenten met scores van 1 of 2
-hebben ook een lage ware score (zij beheersen de stof zeer slecht) en
-dus ook doorgaans een geringe fout-score. Voor de studenten met scores
-van 5 of 6 ligt de situatie anders: misschien beheersen ze de stof
-redelijk goed maar hebben ze net een fout antwoord gegeven, of ze
-beheersen de stof niet goed maar ze hebben toevallig een goed antwoord
-gegeven. Voor deze studenten met een geobserveerde score in het midden
-van de schaal zijn de fout-scores relatief groter dan voor de studenten
-met een score bij de uiteinden van de schaal. In andere domeinen, bv bij
-reactietijden, zien we andere verbanden, bv dat de foutscore min of meer
-evenredig toeneemt met de score zelf; er is dan een positief verband
-tussen de ware score en de foutscore (<span class="math inline">\(\rho_{(t,e)}&gt;0\)</span>). Desalniettemin
-zijn de voordelen van de klassieke testtheorie zo groot dat we deze
-theorie handhaven als uitgangspunt.</p>
-<p>Uit de formules <a href="ch-betrouwbaarheid.html#eq:var-true-error">(12.4)</a> en <a href="ch-betrouwbaarheid.html#eq:rho-betrouwbaarheid">(12.5)</a>
-hierboven volgt ook dat de standaard
-meetfout (‘standard error of measurement’, ) gerelateerd is aan de
-standaarddeviatie en aan de betrouwbaarheid:
-<span class="math display" id="eq:standaard-meetfout">\[\begin{equation}
-   \tag{12.6}
-    s_e = s_x \sqrt{1-r_{xx}}
-\end{equation}\]</span><br />
-Deze standaard meetfout is op te vatten
-als de standaarddeviatie van de foutscores <span class="math inline">\(e_i\)</span>, nog steeds aannemende
-dat de foutscores normaal verdeeld zijn (formule <a href="ch-betrouwbaarheid.html#eq:normal-error">(12.2)</a>).</p>
-<hr />
-<blockquote>
-<p><em>Voorbeeld 12.4:</em>
-Externe inspecteurs betwijfelen of docenten de eindwerkstukken van hun
-studenten wel goed beoordelen. Als een student een 6 heeft gekregen, zou
-dat werkstuk dan misschien eigenlijk als onvoldoende beoordeeld moeten
-worden?</p>
-</blockquote>
-<blockquote>
-<p>Laten we aannemen dat de gegeven oordelen een standaarddeviatie
-<span class="math inline">\(s_x=0.75\)</span> vertonen, en laten we eveneens aannemen dat een analyse van
-de betrouwbaarheid heeft laten zien dat <span class="math inline">\(r_{xx}=0.9\)</span>. De standaard
-meetfout bedraagt dan <span class="math inline">\(s_e = 0.24\)</span> punt (naar boven afgerond). De kans
-dat de ware score <span class="math inline">\(t_i\)</span> kleiner of gelijk is aan 5.4 (onvoldoende), bij
-een geobserveerde score van <span class="math inline">\(x_i=6.0\)</span> en <span class="math inline">\(s_e=0.24\)</span>, is slechts <span class="math inline">\(p=0.006\)</span>
-(voor uitleg, zie §<a href="ch-toetsing.html#sec:t-betrouwbaarheidsinterval-gemiddelde">13.5</a> hierna).
-De voldoende beoordeling van het eindwerkstuk is met grote
-waarschijnlijkheid juist.</p>
-</blockquote>
-<hr />
-</div>
-<div id="interpretaties" class="section level2" number="12.4">
-<h2><span class="header-section-number">12.4</span> Interpretaties</h2>
-<p>Voordat we ingaan op verschillende berekeningswijzen van de
-betrouwbaarheid is het zinvol om stil te staan bij verschillende
-interpretaties van betrouwbaarheidsschattingen.</p>
-<p>Ten eerste kan de betrouwbaarheid geïnterpreteerd worden als de
-proportie ware-score-variantie (zie formule <a href="ch-betrouwbaarheid.html#eq:rho-betrouwbaarheid">(12.5)</a>),
-oftewel als de proportie van
-variantie die “systematisch” is. Dit is vanzelfsprekend nog lang niet
-hetzelfde als de proportie variantie ten gevolge van het
-begrip-zoals-bedoeld, de “valide” variantie (zie
-Hoofdstuk <a href="ch-validiteit.html#ch-validiteit">5</a>). De variantie ten gevolge van het
-begrip-zoals-bedoeld maakt deel uit van de proportie
-ware-score-variantie. Echter, tal van andere factoren kunnen op
-systematische wijze van invloed zijn op de scores van de respondenten,
-zoals verschillen in toets-ervaring. Indien twee studenten <span class="math inline">\(i\)</span> en <span class="math inline">\(j\)</span>
-een concept (zeg: taalvaardigheid) in dezelfde mate bezitten, dan nog
-kan de ene student beter scoren omdat hij of zij vaker
-taalvaardigheidstoetsen heeft afgelegd dan de andere student. Er is dan
-geen verschil in het begrip zoals bedoeld (taalvaardigheid <span class="math inline">\(T_i = T_j\)</span>),
-maar wel in een andere factor (ervaring), en daardoor ontstaat een
-verschil tussen de studenten in hun ‘ware’ scores (<span class="math inline">\(t_i \neq t_j\)</span>) die
-we meten met een valide en betrouwbare taalvaardigheidsmeting. Bij die
-meting treden afwijkingen en meetfouten op (<span class="math inline">\(e_i\)</span> en <span class="math inline">\(e_j\)</span>), waardoor de
-geobserveerde verschillen tussen de studenten (<span class="math inline">\(x_i-x_j\)</span>) groter of
-kleiner kunnen zijn dan hun verschillen in ‘ware’ score (<span class="math inline">\(t_i-t_j\)</span>).
-Vandaar dat een betrouwbaarheidsschatting altijd de bovengrens vormt van
-de validiteit.</p>
-<p>Een tweede interpretatie van de betrouwbaarheid (formule <a href="ch-betrouwbaarheid.html#eq:rho-betrouwbaarheid">(12.5)</a>)
-is die van de theoretisch te verwachten correlatie (zie
-§<a href="ch-samenhang.html#sec:Pearson">11.2</a>) tussen de metingen, bij vele herhalingen van
-die metingen. Gemakshalve nemen we aan dat geheugen- en
-vermoeidheidseffecten geen enkel effect hebben bij de tweede en latere
-metingen. Als we dezelfde personen met hetzelfde instrument driemaal
-zouden meten, zonder effecten van geheugen of vermoeidheid, dan zouden
-de scores van de eerste en tweede meting, en van de eerste en derde
-meting, en van de tweede en derde meting, steeds dezelfde correlatie
-<span class="math inline">\(\rho\)</span> vertonen. Die correlatie geeft dus aan in hoeverre de herhaalde
-metingen consistent zijn, d.w.z. dezelfde onbekende ware score
-representeren.</p>
-<p>In deze interpretatie drukt de betrouwbaarheid dus de verwachte
-samenhang uit tussen scores bij herhaalde afname van dezelfde toets. De
-betrouwbaarheidscoëfficiënt <span class="math inline">\(\rho\)</span> interpreteren we dan als de
-correlatie tussen twee metingen met hetzelfde instrument.</p>
-<p>Ten derde kan de betrouwbaarheid geïnterpreteerd worden als het verlies
-van efficiëntie in het schatten van de gemiddelde score <span class="math inline">\(\overline{X}\)</span>
-<span class="citation">(<a href="#ref-Ferg89" role="doc-biblioref">Ferguson and Takane 1989, 474</a>)</span>. Stel dat we de gemiddelde score van een groep van
-<span class="math inline">\(n=50\)</span> proefpersonen willen vaststellen, en we gebruiken daarbij een
-meetinstrument met betrouwbaarheid <span class="math inline">\(\rho_{xx}=0.8\)</span>. Er is dan
-onzekerheid in de schatting, deels afkomstig van variatie in de ware
-scores <span class="math inline">\(t_i\)</span> van de proefpersonen, maar ook deels afkomstig van de
-toevallige afwijkingen <span class="math inline">\(e_i\)</span> bij de metingen. Als het meetinstrument
-perfect betrouwbaar zou zijn (<span class="math inline">\(\rho=1\)</span>) dan zouden we slechts
-<span class="math inline">\(\rho_{xx}\times n = 0.8\times50=40\)</span> proefpersonen nodig hebben gehad
-voor dezelfde nauwkeurigheid van de schatting van <span class="math inline">\(\overline{X}\)</span>
-<span class="citation">(<a href="#ref-Ferg89" role="doc-biblioref">Ferguson and Takane 1989, 474</a>)</span>. We hebben dus als het ware 10 proefpersonen verspeeld
-om te compenseren voor de onbetrouwbaarheid van het meetinstrument.</p>
-<p>Hierboven hebben we gesproken over metingen met behulp van
-meet-instrumenten, en hieronder zullen we spreken over beoordelingen
-gedaan door beoordelaars. De benadering van de notie ‘betrouwbaarheid’
-is in deze situaties steeds gelijk. Betrouwbaarheid speelt een rol in
-alle situaties waarin elementen uit een steekproef worden gemeten of
-beoordeeld door meerdere beoordelaars of instrumenten. Ook tentamina en
-vragenlijsten kunnen zulke meetinstrumenten zijn: een tentamen of een
-vragenlijst is goed te beschouwen als een samengesteld instrument
-waarmee we een abstracte eigenschap of construct van de deelnemers
-proberen te meten. Iedere vraag is dan te beschouwen als een
-“meetinstrument” of “beoordelaar” van de eigenschap of gesteldheid van
-de respondent. Alle bovenvermelde inzichten en interpretaties aangaande
-testtheorie, meetfout en betrouwbaarheid zijn daarbij evengoed van
-toepassing.</p>
-</div>
-<div id="methoden-om-betrouwbaarheid-te-schatten" class="section level2" number="12.5">
-<h2><span class="header-section-number">12.5</span> Methoden om betrouwbaarheid te schatten</h2>
-<p>De betrouwbaarheid van een meting kan op verschillende manieren worden
-bepaald. De belangrijkste zijn de volgende:</p>
-<ul>
-<li><p>De <em>toets-hertoets-methode</em><br />
-We voeren alle metingen tweemaal uit, en berekenen daarna de
-correlatie tussen de eerste en de tweede meting. Naarmate de
-metingen minder meetfouten en afwijkingen bevatten, is de correlatie
-hoger en dus ook de betrouwbaarheid hoger. Deze methode is
-tijdrovend, maar kan ook worden toegepast op een kleine portie van
-de metingen. In spraak-onderzoek wordt deze methode wel gebruikt om
-de betrouwbaarheid van fonetische transcripties vast te stellen: een
-deel van de spraak-opnamen wordt door een tweede beoordelaar
-getranscribeerd, en vervolgens worden de beide transcripties
-vergeleken.</p></li>
-<li><p>De <em>parallelle-toetsvorm-methode</em><br />
-We hebben een grote verzameling meet-instrumenten die goed
-vergelijkbaar zijn en hetzelfde construct meten. We voeren alle
-metingen herhaaldelijk uit, de eerste keer door de metingen van
-enkele willekeurig getrokken meet-instrumenten te combineren (zeg A
-en B en C) en tweede keer met gebruik van andere willekeurige
-instrumenten (zeg D en E en F). Omdat de meetinstrumenten ‘parallel’
-zijn en hetzelfde construct worden geacht te meten, is de correlatie
-tussen de eerste en de tweede meting een indicatie voor de
-betrouwbaarheid van de meting.</p></li>
-<li><p>De <em>split-half-methode</em><br />
-Deze methode lijkt op de parallelle-toetsvorm-methode. De <span class="math inline">\(k\)</span> vragen
-of instrumenten worden in twee helften verdeeld, waarna de score
-bepaald wordt binnen elke helft. Uit de correlatie <span class="math inline">\(r_{hh}\)</span> tussen
-de scores op de twee halve toetsen kan de betrouwbaarheid van de
-gehele toets afgeleid worden, <span class="math inline">\(r_{xx} = \frac{2r_{hh}}{1+r_{hh}}\)</span>.</p></li>
-</ul>
-</div>
-<div id="betrouwbaarheid-tussen-beoordelaars" class="section level2" number="12.6">
-<h2><span class="header-section-number">12.6</span> Betrouwbaarheid tussen beoordelaars</h2>
-<p>Laten we als voorbeeld eens kijken naar metingen van de
-spreekvaardigheid van studenten in een vreemde taal. Dit construct
-‘spreekvaardigheid’ wordt in dit voorbeeld gemeten door middel van twee
-beoordelaars, die onafhankelijk van elkaar elk een cijfer tussen 1 en
-100 geven aan de student (hoger is beter). Bij de beoordeling treden
-echter ook meetfouten op, waardoor de oordelen niet alleen de
-onderliggende ware score weergeven, maar ook een afwijking daarvan, met
-alle hierboven genoemde aannames. Laten we eerst alleen kijken naar de
-oordelen door de eerste en tweede beoordelaar (zie
-Tabel <a href="ch-betrouwbaarheid.html#tab:betrouwbaarheid">12.1</a>). Het eindoordeel over een student is
-vooralsnog het gemiddelde van de oordelen van de eerste en tweede
-beoordelaar.</p>
-<table>
-<caption><span id="tab:betrouwbaarheid">Tabel 12.1: </span> Oordelen over spreekvaardigheid van <span class="math inline">\(n = 10\)</span> studenten (rijen) door
-<span class="math inline">\(k = 3\)</span> beoordelaars (kolommen).</caption>
-<thead>
-<tr class="header">
-<th align="center">student</th>
-<th align="center">B1</th>
-<th align="center">B2</th>
-<th align="center">B3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">1</td>
-<td align="center">67</td>
-<td align="center">64</td>
-<td align="center">70</td>
-</tr>
-<tr class="even">
-<td align="center">2</td>
-<td align="center">72</td>
-<td align="center">75</td>
-<td align="center">74</td>
-</tr>
-<tr class="odd">
-<td align="center">3</td>
-<td align="center">83</td>
-<td align="center">89</td>
-<td align="center">73</td>
-</tr>
-<tr class="even">
-<td align="center">4</td>
-<td align="center">68</td>
-<td align="center">72</td>
-<td align="center">61</td>
-</tr>
-<tr class="odd">
-<td align="center">5</td>
-<td align="center">75</td>
-<td align="center">72</td>
-<td align="center">77</td>
-</tr>
-<tr class="even">
-<td align="center">6</td>
-<td align="center">73</td>
-<td align="center">73</td>
-<td align="center">78</td>
-</tr>
-<tr class="odd">
-<td align="center">7</td>
-<td align="center">73</td>
-<td align="center">76</td>
-<td align="center">72</td>
-</tr>
-<tr class="even">
-<td align="center">8</td>
-<td align="center">65</td>
-<td align="center">73</td>
-<td align="center">72</td>
-</tr>
-<tr class="odd">
-<td align="center">9</td>
-<td align="center">64</td>
-<td align="center">68</td>
-<td align="center">71</td>
-</tr>
-<tr class="even">
-<td align="center">10</td>
-<td align="center">70</td>
-<td align="center">82</td>
-<td align="center">69</td>
-</tr>
-<tr class="odd">
-<td align="center"><span class="math inline">\(\overline{x_i}\)</span></td>
-<td align="center">71.0</td>
-<td align="center">74.4</td>
-<td align="center">71.7</td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(s_i\)</span></td>
-<td align="center">5.6</td>
-<td align="center">7.0</td>
-<td align="center">4.7</td>
-</tr>
-</tbody>
-</table>
-<p>De oordelen van alleen de eerste en de tweede beoordelaar vertonen een
-onderlinge correlatie van <span class="math inline">\(r_{1,2}=.75\)</span>. Dit houdt in (volgens
-formule <a href="ch-betrouwbaarheid.html#eq:rho-betrouwbaarheid">(12.5)</a>) dat 75% van de totale variantie in
-de oordelen van deze twee beoordelaars toe te schrijven is aan
-verschillen tussen de beoordeelde studenten, en dus 25% aan meetfouten
-(we hebben immers aangenomen dat er geen systematische verschillen zijn
-tussen beoordelaars). Het aandeel van de meetfouten lijkt nogal hoog. We
-mogen echter wel hoop putten uit één van onze eerdere aannames, nl dat
-de meetfouten van de beoordelaars niet gecorreleerd zijn. De
-<em>combinatie</em> van de twee beoordelaars — de gemiddelde score per
-student over de twee beoordelaars — geeft dus beter betrouwbare
-metingen dan elk van de beoordelaars afzonderlijk kunnen doen. Immers,
-de meetfouten van de twee beoordelaars hebben de neiging om elkaar op te
-heffen (zie formule <a href="ch-betrouwbaarheid.html#eq:normal-error">(12.2)</a>).
-Lees de laatste twee zinnen nog eens aandachtig door.</p>
-<p>De betrouwbaarheid wordt vaak uitgedrukt als <em>Cronbach’s Alpha</em>
-<span class="citation">(<a href="#ref-Cort93" role="doc-biblioref">Cortina 1993</a>)</span>. Dat getal is een maat voor de consistentie of homogeniteit
-van de metingen, en het geeft dus ook de mate aan waarin de twee
-beoordelaars hetzelfde construct hebben beoordeeld. De eenvoudigste
-definitie is gebaseerd op <span class="math inline">\(\overline{r}\)</span>, de gemiddelde correlatie
-tussen metingen van <span class="math inline">\(k\)</span> verschillende beoordelaars<a href="referenties.html#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>.
-<span class="math display" id="eq:cronbach-corr">\[\begin{equation}
-  \tag{12.7}
-  \alpha = \frac{k \overline{r}} {1+(k-1)\overline{r}}
-\end{equation}\]</span>
-Invullen van <span class="math inline">\(k=2\)</span> beoordelaars en <span class="math inline">\(\overline{r}=0.75\)</span> geeft <span class="math inline">\(\alpha=0.86\)</span> (SPSS en R
-gebruiken hiervoor een wat complexere formule, en rapporteren
-<span class="math inline">\(\alpha=0.84\)</span>). Deze maat voor betrouwbaarheid wordt niet alleen
-aangeduid als Cronbach’s Alpha, maar ook als de Spearman-Brown-formule
-of als Kuder-Richardson-formule 20 (KR20)<a href="referenties.html#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.</p>
-<p>De gevonden waarde van Cronbach’s Alpha is wat lastig te evalueren,
-omdat die mede afhankelijk is van het aantal instrumenten of
-beoordelaars of vragen in de toets <span class="citation">(<a href="#ref-Cort93" role="doc-biblioref">Cortina 1993</a>; <a href="#ref-Glin01" role="doc-biblioref">Gliner, Morgan, and Harmon 2001</a>)</span>. Voor
-wetenschappelijk onderzoek wordt vaak een ondergrens van 0.75 of 0.80
-gehanteerd. Indien de uitslag van de toets of meting van groot belang is
-voor de betrokkene, zoals bij medische of psychische diagnostiek van
-patiënten, of bij werving en selectie van personeel, dan wordt een nog
-hogere betrouwbaarheid van <span class="math inline">\(\alpha=.9\)</span> aanbevolen <span class="citation">(<a href="#ref-Glin01" role="doc-biblioref">Gliner, Morgan, and Harmon 2001</a>)</span>.</p>
-<p>Als we de betrouwbaarheid willen verhogen naar <span class="math inline">\(\alpha=0.9\)</span> of hoger,
-dan kunnen we dat op twee manieren bereiken. De eerste manier is door
-het aantal beoordelaars uit te breiden. Als we meer beoordelaars
-combineren in de totale score, dan heffen de meetfouten van die
-beoordelaars elkaar ook beter op, en dan wordt de totale score dus
-betrouwbaarder. Met behulp van
-formule <a href="ch-betrouwbaarheid.html#eq:cronbach-corr">(12.7)</a> kunnen we onderzoeken hoeveel beoordelaars
-nodig zouden zijn, om de betrouwbaarheid te verbeteren naar
-<span class="math inline">\(\alpha=0.90\)</span> of beter. We vullen <span class="math inline">\(\alpha=0.90\)</span> in en wederom
-<span class="math inline">\(\overline{r}=0.75\)</span>, en vinden dan een uitkomst van minimaal <span class="math inline">\(k=3\)</span>
-beoordelaars. De <em>toename</em> in de betrouwbaarheid vlakt af naarmate er al
-meer beoordelaars meedoen: als <span class="math inline">\(k=2\)</span> dan <span class="math inline">\(\alpha=.84\)</span>, als <span class="math inline">\(k=3\)</span> dan
-<span class="math inline">\(\alpha=.84+.06=.90\)</span>, als <span class="math inline">\(k=6\)</span> dan <span class="math inline">\(\alpha=.90+.05=.95\)</span>, als <span class="math inline">\(k=9\)</span> dan
-<span class="math inline">\(\alpha=.95+.01=.96\)</span>, enz. Immers, als er al 6 beoordelaars zijn, die
-elkaars meetfouten al goed opheffen, dan voegen 3 extra beoordelaars
-weinig meer toe aan de betrouwbaarheid.</p>
-<p>De tweede manier om de betrouwbaarheid te verhogen is om de meetfout te
-verkleinen. Dat kunnen we proberen, bijvoorbeeld, door de beoordelaars
-zo goed mogelijk te instrueren over hoe ze de spreekvaardigheid van de
-studenten dienen te beoordelen. Een beoordelingsprotocol en/of
-instructie kan de afwijkingen tussen en binnen beoordelaars doen
-verkleinen. Kleinere afwijkingen betekenen kleinere meetfouten, en dat
-betekent weer hogere correlaties tussen de beoordelaars. Bij een
-<span class="math inline">\(\overline{r}=0.8\)</span> bereiken we al bijna de gewenste betrouwbaarheid, met
-slechts <span class="math inline">\(k=2\)</span> beoordelaars.</p>
-<p>Een derde manier om de betrouwbaarheid te verhogen vereist een nadere
-analyse van de afzonderlijke beoordelaars. Om dit uit te leggen,
-betrekken we nu ook de derde beoordelaar in onze beschouwingen (zie
-Tabel <a href="ch-betrouwbaarheid.html#tab:betrouwbaarheid">12.1</a>). De oordelen van deze derde
-beoordelaar vertonen echter lage correlaties met die van de eerste en
-tweede beoordelaar: <span class="math inline">\(r_{1,3}=0.41\)</span> en <span class="math inline">\(r_{2,3}=0.09\)</span>. Dat leidt ertoe
-dat de gemiddelde correlatie tussen beoordelaars nu lager is,
-<span class="math inline">\(\overline{r}=0.42\)</span>. Door deze derde beoordelaar op te nemen, is de
-betrouwbaarheid niet gestegen maar daarentegen juist gedaald naar
-<span class="math inline">\(\alpha = \frac{3\times0.42}{1+2\times0.42} = 0.68\)</span>. We doen er dus
-misschien beter aan om de metingen van de derde beoordelaar te negeren.
-Ook als we de betrouwbaarheid van een tentamen of toets of vragenlijst
-onderzoeken, kan blijken dat de betrouwbaarheid van de gehele toets
-<em>toeneemt</em> als we sommige “slechte” vragen verwijderen. Blijkbaar hebben
-die “slechte” vragen een construct gemeten dat verschilt van wat de
-resterende vragen gemeten hebben.</p>
-</div>
-<div id="betrouwbaarheid-en-constructvaliditeit" class="section level2" number="12.7">
-<h2><span class="header-section-number">12.7</span> Betrouwbaarheid en constructvaliditeit</h2>
-<p>Als een meting betrouwbaar is, dan is er “iets” betrouwbaar gemeten.
-Maar let op: dat toont nog niet aan <em>wat</em> er gemeten is! Er is wel een
-relatie tussen de betrouwbaarheid (hoe is gemeten) en de
-construct-validiteit (wat is gemeten, zie
-Hoofdstuk <a href="ch-validiteit.html#ch-validiteit">5</a>), maar die twee begrippen zijn niet identiek.
-Een voldoende betrouwbaarheid is een noodzakelijke, maar geen voldoende
-voorwaarde voor validiteit. Anders gezegd: een toets die niet
-betrouwbaar is kan ook niet valide zijn (want deze toets meet ook ruis),
-maar een toets die wel betrouwbaar is hoeft nog niet valide te zijn.
-Misschien meet de gebruikte toets wel heel betrouwbaar een ander
-construct dan wat de bedoeling was.</p>
-<p>Een instrument is construct-valide als het gemeten concept overeenkomt
-met het bedoelde concept of construct. In
-voorbeeld 12.3: de vragenlijst is valide als score uit de
-vragenlijst overeenkomt met de kwaliteit van leven (wat dat dan ook moge
-zijn) van de afasie-patiënten. Pas nadat aangetoond is dat een
-instrument betrouwbaar is, heeft het zin om over de constructvaliditeit
-van een meting te spreken. De betrouwbaarheid is een noodzakelijke maar
-niet voldoende voorwaarde voor constructvaliditeit. Een onbetrouwbaar
-instrument kan dus niet valide zijn, maar een betrouwbaar instrument
-hoeft niet noodzakelijk valide te zijn.</p>
-<p>Om de schrijfvaardigheid te meten, laten we de leerlingen een opstel
-schrijven. We tellen het aantal letters <em>e</em> in elk opstel. Dat is een
-zeer betrouwbare meting: verschillende beoordelaars komen tot hetzelfde
-aantal <em>e</em>’s (beoordelaars zijn homogeen) en dezelfde beoordelaar levert
-bij hetzelfde opstel ook steeds dezelfde uitkomst (beoordelaars zijn
-stabiel). Het grote bezwaar hier is dat het aantal <em>e</em>’s in een opstel
-niet of niet noodzakelijk overeenkomt met het concept
-schrijfvaardigheid. Een leerling die meer <em>e</em>’s in zijn opstel verwerkt
-is niet noodzakelijk een betere schrijver.</p>
-<p>Onderzoekers weten weliswaar dat betrouwbaarheid een noodzakelijke maar
-niet voldoende voorwaarde is voor de validiteit. Maar toch springen ze
-niet altijd even zorgvuldig om met die begrippen. In vele onderzoeken
-wordt er stilzwijgend van uit gegaan dat als de betrouwbaarheid
-voldoende is, de validiteit dan ook gewaarborgd is. Ook in voorbeeld 12.3
-wordt het onderscheid niet duidelijk gemaakt,
-en bespreken de onderzoekers de construct-validiteit van hun nieuwe
-vragenlijst niet expliciet.</p>
-</div>
-<div id="spss-9" class="section level2" number="12.8">
-<h2><span class="header-section-number">12.8</span> SPSS</h2>
-<p>Voor een betrouwbaarheidsanalyse van de <span class="math inline">\(k=3\)</span> oordelen over
-spreekvaardigheid in
-Tabel <a href="ch-betrouwbaarheid.html#tab:betrouwbaarheid">12.1</a>:<br />
+<div id="ch-power" class="section level1" number="14">
+<h1><span class="header-section-number">Hoofdstuk 14</span> Power</h1>
+<div id="sec:power-inleiding" class="section level2" number="14.1">
+<h2><span class="header-section-number">14.1</span> Inleiding</h2>
+<p>Bij statistische toetsing van H0 bepalen we de kans <span class="math inline">\(P\)</span> op de
+geobserveerde verschillen of effecten (of op nog grotere verschillen of
+effecten dan geobserveerd) indien H0 waar zou zijn, en dus indien het
+geobserveerde verschil louter aan het toeval toegeschreven moet worden
+(zie §<a href="ch-onderzoek.html#sec:empirischecyclus">2.5</a> en
+Hoofdstuk <a href="ch-toetsing.html#ch-toetsing">13</a>). Als die kans <span class="math inline">\(P\)</span> zeer klein is, dan hebben we
+dus resultaten gevonden die zeer onwaarschijnlijk zijn als H0 waar zou
+zijn. We concluderen dan dat H0 vermoedelijk <em>niet waar</em> is en we
+verwerpen daarom H0. Het gevonden verschil of effect noemen we dan
+“significant” (Latijn: ‘betekenis makend’). Er is echter wel een kans,
+<span class="math inline">\(P\)</span>, dat het gevonden verschil toch een toevalstreffer was, en dat we
+door H0 te verwerpen een fout van Type-I maken (d.w.z. H0 ten onrechte
+verwerpen, zie
+§<a href="ch-toetsing.html#sec:toetsing-inleiding">13.1</a>). Omdat we een bepaald
+significantieniveau <span class="math inline">\(\alpha\)</span> hanteren waarmee we <span class="math inline">\(P\)</span> vergelijken, is
+deze <span class="math inline">\(\alpha\)</span> dus ook de kans dat we een Type-I-fout maken.</p>
+<p>Minstens even belangrijk, echter, is de omgekeerde fout om H0 ten
+onrechte <em>niet</em> te verwerpen, een Type-II-fout. Voorbeelden van deze
+fouten zijn: een verdachte niet veroordelen ook al is hij schuldig, een
+‘spam’ mail-bericht doorlaten naar mijn mailbox, een patiënt onderzoeken
+en diens ziekte toch niet opmerken, concluderen dat vogels zwijgen
+hoewel ze toch zingen
+(voorbeeld 13.1), of ten onrechte concluderen dat twee
+groepen niet verschillen hoewel er wel een belangrijk verschil bestaat
+tussen de twee groepen. De kans op een Type-II-fout wordt aangeduid met
+het symbool <span class="math inline">\(\beta\)</span>.</p>
+<p>Als H0 in werkelijkheid niet waar is (er is een verschil, het bericht is
+‘spam’, de vogels zingen, enz), dan dient H0 dus verworpen te worden, en
+dient <span class="math inline">\(\beta\)</span> dus zo klein mogelijk te zijn. De kans om H0 dan <em>terecht</em>
+te verwerpen is dan <span class="math inline">\((1-\beta)\)</span> (zie complementregel <a href="ch-kansverdelingen.html#eq:complementregel">(10.3)</a>);
+deze kans <span class="math inline">\((1-\beta)\)</span> wordt de <em>power</em>
+genoemd. Power is op te vatten als <strong>de kans voor de onderzoeker om gelijk
+te <em>krijgen</em></strong> (H0 wordt verworpen) <strong>als zij ook gelijk <em>heeft</em></strong> (H0 is onwaar).</p>
+<p>De kansen op fouten van Type-I en Type-II moeten goed tegen elkaar
+afgewogen worden. In veel onderzoek worden als overschrijdingskansen
+gehanteerd <span class="math inline">\(\alpha=.05\)</span> (significantieniveau) en <span class="math inline">\(\beta=.20\)</span>
+(power=<span class="math inline">\(.80\)</span>). Hiermee wordt een impliciete afweging gemaakt dat een
+Type-I-fout <span class="math inline">\(4\times\)</span> zo ernstig is als een Type-II-fout. Voor sommige
+onderzoeken zou dat gerechtvaardigd kunnen zijn, maar het is ook goed
+denkbaar dat onder bepaalde omstandigheden een Type-II-fout eigenlijk
+nog ernstiger is dan een Type-I-fout. Als we beide typen fouten min of
+meer even ernstig vinden, dan zouden we dus moeten streven naar een
+kleinere <span class="math inline">\(\beta\)</span> en grotere power <span class="citation">(<a href="#ref-Rose08" role="doc-biblioref">Rosenthal and Rosnow 2008</a>)</span>.</p>
+<p>De power van een onderzoek hangt af van drie factoren: (i) de
+effectgrootte <span class="math inline">\(d\)</span>, die zelf weer afhankelijk is van het gemeten verschil
+<span class="math inline">\(D\)</span> en van de variatie <span class="math inline">\(s\)</span> in de observaties
+(formule <a href="ch-toetsing.html#eq:d-standardized">(13.9)</a>), (ii) de steekproefgrootte <span class="math inline">\(N\)</span>, en (iii)
+het significantieniveau <span class="math inline">\(\alpha\)</span>. In de volgende paragrafen zullen we
+deze factoren afzonderlijk bespreken, waarbij we de andere twee factoren
+zoveel mogelijk constant houden. Bij deze bespreking gebruiken we
+afbeeldingen van de berekende power
+(Figuren <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> en
+<a href="ch-power.html#fig:powercontours-alpha05">14.2</a>). De afgebeelde power-contouren
+zijn specifiek voor een <em>t</em>-toets voor onafhankelijke steekproeven
+(§<a href="ch-toetsing.html#sec:ttoets-onafh">13.6</a>) met tweezijdige toetsing. De hieronder
+besproken verbanden treden echter ook op bij andere statistische
+toetsen.</p>
+<div class="figure"><span style="display:block;" id="fig:powercontours-alpha01"></span>
+<img src="KMS-NL_files/figure-html/powercontours-alpha01-1.png" alt="Power uitgedrukt in contouren (zie schaalverdeling), afhankelijk van de gestandaardiseerde effectgrootte (d) en de steekproefgrootte (n), volgens een tweezijdige t-toets voor ongepaarde, onafhankelijke waarnemingen, met significantieniveau alpha=.01." width="672" />
+<p class="caption">
+Figuur 14.1: Power uitgedrukt in contouren (zie schaalverdeling), afhankelijk van de gestandaardiseerde effectgrootte (d) en de steekproefgrootte (n), volgens een tweezijdige t-toets voor ongepaarde, onafhankelijke waarnemingen, met significantieniveau alpha=.01.
 </p>
-<pre><code>Analyze &gt; Scale &gt; Reliability Analysis...</code></pre>
-<p>Selecteer de variabelen die geacht worden hetzelfde construct te meten;
-hier zijn dat de drie beoordelaars. We beschouwen deze <span class="math inline">\(k=3\)</span>
-beoordelaars als “items” die de eigenschap “spreekvaardigheid” meten van
-10 studenten. Sleep deze variabelen naar het Variable(s) paneel.<br />
-Vul als Scale label in een aanduiding van het construct, bijv.
-<code>Spreekvaardigheid</code>.<br />
-Kies als Method: <code>Alpha</code> voor Cronbach’s Alpha (zie formule
-<a href="ch-betrouwbaarheid.html#eq:cronbach-corr">(12.7)</a>)<br />
-Kies <code>Statistics…</code>, vink aan: Descriptives for
-<code>Item, Scale, Scale if item deleted</code>, Inter-Item <code>Correlations</code>,
-Summaries <code>Means, Variances</code>, en bevestig met <code>Continue</code> en daarna
-nogmaals met <code>OK</code>.</p>
-<p>De uitvoer bevat Cronbach’s Alpha, de gevraagde
-inter-item-correlaties (vooral hoog tussen beoordelaars 1 en 2), en (in
-tabel Item-Total Statistics) de betrouwbaarheid indien we een bepaalde
-beoordelaar zouden verwijderen. Deze laatste uitvoer leert ons dat
-beoordelaars 1 en 2 van groter belang zijn dan beoordelaar 3. Als we
-beoordelaar 1 of 2 zouden verwijderen dan stort de betrouwbaarheid in,
-maar als we beoordelaar 3 zouden verwijderen dan neemt de
-betrouwbaarheid zelfs toe (van 0.68 naar 0.84). Vermoedelijk heeft deze
-beoordelaar een ander construct beoordeeld dan de anderen.</p>
 </div>
-<div id="jasp-11" class="section level2" number="12.9">
-<h2><span class="header-section-number">12.9</span> JASP</h2>
-<p>Klik voor een betrouwbaarheidsanalyse van de <span class="math inline">\(k=3\)</span> oordelen over spreekvaardigheid in Tabel <a href="ch-betrouwbaarheid.html#tab:betrouwbaarheid">12.1</a> in de bovenbalk op:<br />
+<div class="figure"><span style="display:block;" id="fig:powercontours-alpha05"></span>
+<img src="KMS-NL_files/figure-html/powercontours-alpha05-1.png" alt="Power uitgedrukt in contouren (zie schaalverdeling), afhankelijk van de gestandaardiseerde effectgrootte (d) en de steekproefgrootte (n), volgens een tweezijdige t-toets voor ongepaarde, onafhankelijke waarnemingen, met significantieniveau alpha=.05." width="672" />
+<p class="caption">
+Figuur 14.2: Power uitgedrukt in contouren (zie schaalverdeling), afhankelijk van de gestandaardiseerde effectgrootte (d) en de steekproefgrootte (n), volgens een tweezijdige t-toets voor ongepaarde, onafhankelijke waarnemingen, met significantieniveau alpha=.05.
 </p>
-<pre><code>Reliability &gt; Single-Test Reliability Analysis (onder &#39;Classical)</code></pre>
-<p>Als <code>Reliability</code> nog niet in de bovenbalk staat kun je dit toevoegen door rechtsbovenin op de blauwe <strong>+</strong>-button te klikken en <code>Reliability</code> aan te vinken.<br />
-Selecteer de variabelen die geacht worden hetzelfde construct te meten, hier zijn dat de drie beoordelaars, en plaats ze in het veld “Variables”. We beschouwen deze <span class="math inline">\(k=3\)</span> beoordelaars als “items” die de eigenschap “spreekvaardigheid” meten van 10 studenten.<br />
-Klik de balk <code>Single-Test Reliability</code> open en vink <code>Cronbach's a</code> aan onder “Scale Statistics” voor Cronbach’s Alpha (zie formule <a href="ch-betrouwbaarheid.html#eq:cronbach-corr">(12.7)</a>). Vink ook <code>Average interitem correlation</code>, <code>Mean</code> en <code>Standard deviation</code> aan om deze waardes voor de schaal (die het construct ‘spreekvaardigheid’ meet met behulp van de scores van de drie beoordelaars) te krijgen. Vink onder “Individual Item Statistics” <code>Cronbach's a (if item dropped)</code> en <code>Item-rest correlation</code> aan, en ook <code>Mean</code> en <code>Standard deviation</code> om deze waardes ook voor de items (beoordelaars) afzonderlijk te krijgen.<br />
-</p>
-<p>De uitvoer bevat Cronbach’s Alpha in de tabel <em>Frequentist Scale Reliability Statistics</em>. In de tabel <em>Frequentist Individual Item Reliability Statistics</em> in de kolom “If item dropped” vind je de betrouwbaarheid indien we een bepaalde beoordelaar zouden verwijderen. Dit laat zien dat beoordelaars 1 en 2 van groter belang zijn dan beoordelaar 3. Als we beoordelaar 1 of 2 zouden verwijderen dan stort de betrouwbaarheid in, maar als we beoordelaar 3 zouden verwijderen dan neemt de betrouwbaarheid zelfs toe (van 0.68 naar 0.84). Vermoedelijk heeft deze beoordelaar een ander construct beoordeeld dan de anderen.</p>
-<p>De uitvoer geeft alleen de gemiddelde inter-item-correlaties (in de tabel <em>Frequentist Scale Reliability Statistics</em>), en niet ook die van de beoordelaars onderling. Om deze te krijgen moet je zelf de correlaties opvragen. Hiervoor klik je in de bovenbalk op:</p>
-<pre><code>Regression &gt; Correlation (onder &#39;Classical&#39;)</code></pre>
-<p>Selecteer de variabelen waarvan je de correlatie wilt berekenen (de drie beoordelaars) in het veld “Variables”. Zorg dat onder “Sample Correlation Coefficient” <code>Pearson's r</code> aangevinkt is, en onder “Additional Options” <code>Report significance</code>, <code>Flag significant correlations</code> en <code>Sample size</code>. Je kunt ook <code>Display pairwise</code> aanvinken voor een simpelere tabel als uitvoer. De uitvoer laat zien dat de inter-rater-correlatie tussen beoordelaars 1 en 2 tamelijk hoog is (en significant), en dat de inter-rater-correlaties waarbij beoordelaar 3 meedoet tamelijk laag zijn (en niet significant).</p>
 </div>
-<div id="r-11" class="section level2" number="12.10">
-<h2><span class="header-section-number">12.10</span> R</h2>
-<p>Voor een betrouwbaarheidsanalyse van de <span class="math inline">\(k=3\)</span> oordelen over
-spreekvaardigheid in Tabel <a href="ch-betrouwbaarheid.html#tab:betrouwbaarheid">12.1</a>:<br />
-</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="ch-betrouwbaarheid.html#cb92-1" aria-hidden="true" tabindex="-1"></a>beoordelaars <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file=</span><span class="st">&quot;data/beoordelaars.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
-<span id="cb92-2"><a href="ch-betrouwbaarheid.html#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">require</span>(psych)) { <span class="co"># voor psych::alpha</span></span>
-<span id="cb92-3"><a href="ch-betrouwbaarheid.html#cb92-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">alpha</span>( beoordelaars[,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>] ) <span class="co"># kolommen 2 t/m 4</span></span>
-<span id="cb92-4"><a href="ch-betrouwbaarheid.html#cb92-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<pre><code>## Number of categories should be increased  in order to count frequencies.</code></pre>
-<pre><code>## 
-## Reliability analysis   
-## Call: alpha(x = beoordelaars[, 2:4])
-## 
-##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean  sd median_r
-##       0.68      0.68    0.74      0.41 2.1 0.17   72 4.6     0.41
-## 
-##  lower alpha upper     95% confidence boundaries
-## 0.35 0.68 1.01 
-## 
-##  Reliability if an item is dropped:
-##    raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r med.r
-## B1      0.15      0.16   0.088     0.088 0.19    0.497    NA 0.088
-## B2      0.58      0.58   0.410     0.410 1.39    0.264    NA 0.410
-## B3      0.84      0.85   0.745     0.745 5.84    0.095    NA 0.745
-## 
-##  Item statistics 
-##     n raw.r std.r r.cor r.drop mean  sd
-## B1 10  0.93  0.92  0.91   0.81   71 5.6
-## B2 10  0.84  0.78  0.72   0.53   74 7.0
-## B3 10  0.56  0.64  0.38   0.25   72 4.7</code></pre>
-<p>Deze uitvoer bevat Cronbach’s Alpha (<code>raw_alpha 0.68</code>), en de
-betrouwbaarheid indien we een bepaalde beoordelaar zouden verwijderen.
-Als we beoordelaar 3 zouden verwijderen dan neemt de betrouwbaarheid
-zelfs toe (van 0.68 naar 0.84). Over alle drie de beoordelaars is
-<code>average_r=0.41</code>.</p>
-<p>Correlaties tussen de <span class="math inline">\(k\)</span> beoordelaars of items worden niet expliciet
-meegeleverd (al zijn ze wel af te leiden uit bovenstaande uitvoer), dus
-vragen we die nog op:</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="ch-betrouwbaarheid.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>( beoordelaars[ ,<span class="fu">c</span>(<span class="st">&quot;B1&quot;</span>,<span class="st">&quot;B2&quot;</span>,<span class="st">&quot;B3&quot;</span>) ] ) <span class="co"># expliciete kolomnamen</span></span></code></pre></div>
-<pre><code>##           B1         B2         B3
-## B1 1.0000000 0.74494845 0.40979738
-## B2 0.7449484 1.00000000 0.08845909
-## B3 0.4097974 0.08845909 1.00000000</code></pre>
+</div>
+<div id="sec:effectgrootte-power" class="section level2" number="14.2">
+<h2><span class="header-section-number">14.2</span> Verband tussen effectgrootte en power</h2>
+<p>De twee figuren <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> en
+<a href="ch-power.html#fig:powercontours-alpha05">14.2</a> laten zien dat in het algemeen de
+power toeneemt, naarmate het te toetsen effect groter is (meer naar
+rechts in elke figuur). Dat is ook niet verwonderlijk: een groter effect
+heeft een grotere kans om opgespoord te worden in een statistische toets
+dan een kleiner effect, onder dezelfde omstandigheden. Een middelmatig
+groot effect van <span class="math inline">\(d=.5\)</span> heeft, bij <span class="math inline">\(n=30\)</span> observaties in elke groep,
+slechts een kans van <span class="math inline">\(.48\)</span> om opgespoord te worden (als <span class="math inline">\(\alpha=.05\)</span>, Figuur <a href="ch-power.html#fig:powercontours-alpha05">14.2</a>). Op basis van een
+onderzoek met <span class="math inline">\(n=30\)</span> observaties per groep is het dus eigenlijk een
+grote gok of een onderzoeker zo’n effect (met <span class="math inline">\(d=.5\)</span>) wel zal opsporen,
+en H0 zal verwerpen. Anders gezegd, de kans op een Type-I-fout is
+weliswaar veilig laag (<span class="math inline">\(\alpha=.05\)</span>) maar de kans op een Type-II-fout is
+meer dan <span class="math inline">\(10\times\)</span> zo groot, en daarmee gevaarlijk hoog (<span class="math inline">\(\beta=.52\)</span>) <span class="citation">(<a href="#ref-Rose08" role="doc-biblioref">Rosenthal and Rosnow 2008, Ch.12</a>)</span>.</p>
+<p>Een groter effect heeft een grotere kans om opgespoord te worden. Een
+groter effect van <span class="math inline">\(d=.8\)</span>, bijvoorbeeld, resulteert in een power van
+<span class="math inline">\(.86\)</span> bij dezelfde toetsing. De kans op een Type-II-fout <span class="math inline">\(\beta=.14\)</span> is
+weliswaar ook hier groter dan de kans op een Type-I-fout, maar de
+verhouding <span class="math inline">\(\beta/\alpha\)</span> is aanzienlijk minder scheef.</p>
+<p>Als onderzoeker hebben we alleen indirect invloed op de effectgrootte.
+We hebben uiteraard geen invloed op het ware ruwe verschil <span class="math inline">\(D\)</span> in de
+populatie. Voor de power is echter niet dat ruwe verschil <span class="math inline">\(D\)</span> van
+belang, maar het gestandaardiseerde verschil <span class="math inline">\(d=D/s\)</span>
+(§<a href="ch-toetsing.html#sec:ttoets-effectgrootte">13.8</a>). Dus als we zorgen dat de
+standaarddeviatie <span class="math inline">\(s\)</span> op enige wijze kleiner wordt, dan wordt daarmee
+<span class="math inline">\(d\)</span> groter, en dan wordt daarmee weer de power groter
+(figuren <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> en <a href="ch-power.html#fig:powercontours-alpha05">14.2</a>),
+en dan hebben we dus meer kans
+om een bestaand effect daadwerkelijk op te sporen! Vanwege dat doel
+streven onderzoekers er altijd naar om storende invloeden van allerlei
+andere factoren zoveel mogelijk te neutraliseren. Die storende invloeden
+zorgen immers voor extra variabiliteit in de observaties, en daarmee
+voor een lagere power bij de statistische toetsing.</p>
+<p>In een goed opgezet onderzoek willen we vooraf al bepalen wat de power
+zal zijn, en hoe groot de steekproef dient te zijn (zie hierna).
+Daarvoor hebben we een schatting nodig van de kleinste effectgrootte <span class="math inline">\(d\)</span>
+die we nog willen opsporen
+(§<a href="ch-toetsing.html#sec:ttoets-effectgrootte">13.8</a>) <span class="citation">(<a href="#ref-Quene10" role="doc-biblioref">Quené 2010</a>)</span>. Om de effectgrootte te
+schatten, is ten eerste een schatting nodig van het ruwe verschil <span class="math inline">\(D\)</span>
+tussen de groepen of condities. Ten tweede is er een schatting nodig van
+de variabiliteit <span class="math inline">\(s\)</span> in de observaties. Die schattingen zijn meestal af
+te leiden uit eerdere publicaties, waarin doorgaans ook de
+standaarddeviatie <span class="math inline">\(s\)</span> wordt gerapporteerd. Als er geen eerdere
+onderzoeksrapporten beschikbaar zijn, dan kan <span class="math inline">\(s\)</span> grofweg geschat worden
+uit enkele informele ‘pilot’-observaties. Neem daarvan het verschil
+tussen de hoogste en de laagste (bereik of ‘range’), deel dit bereik
+door 4, en gebruik de uitkomst daarvan als grove schatting voor <span class="math inline">\(s\)</span>
+<span class="citation">(<a href="#ref-PD08" role="doc-biblioref">Peck and Devore 2008</a>)</span>.</p>
+</div>
+<div id="sec:steekproefgrootte-power" class="section level2" number="14.3">
+<h2><span class="header-section-number">14.3</span> Verband tussen steekproefgrootte en power</h2>
+<p>Het verband tussen de steekproefgrootte <span class="math inline">\(N\)</span> en de power van een
+onderzoek wordt geïllustreerd in
+Figuur <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> voor een streng
+significantieniveau <span class="math inline">\(\alpha=.01\)</span>, en in
+Figuur <a href="ch-power.html#fig:powercontours-alpha05">14.2</a> voor het meest gebruikte
+significantieniveau <span class="math inline">\(\alpha=.05\)</span>. De figuren laten zien dat in het
+algemeen de power toeneemt, naarmate de steekproef groter wordt (meer
+naar boven). De toename is steiler (power neemt sneller toe) bij grotere
+effecten (rechterkant) dan bij kleinere effecten (linkerkant). Anders gezegd: bij
+kleine effecten is de steekproef eigenlijk bijna altijd te klein om deze
+kleine effecten met voldoende power te kunnen opsporen. We zagen dat al
+eerder in voorbeeld 13.3 (Hoofdstuk <a href="ch-toetsing.html#ch-toetsing">13</a>).</p>
+<p>De twee figuren <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> en
+<a href="ch-power.html#fig:powercontours-alpha05">14.2</a> zijn gebaseerd op de vergelijking tussen twee groepen die even groot zijn, elk met precies de helft van de observaties (<span class="math inline">\(n_1=n_2=N/2\)</span>). Dat is ook het meest efficiënt.
+De power is gebaseerd op het <em>harmonisch gemiddelde</em> van <span class="math inline">\(n_1\)</span> en <span class="math inline">\(n_2\)</span> (zie §<a href="ch-centrumenspreiding.html#sec:harmonischgemiddelde">9.3.4</a>), en dat harmonisch gemiddelde is altijd kleiner dan het rekenkundig gemiddelde van die twee getallen. Het is dus raadzaam om ervoor te zorgen dat de groepen of steekproeven die je vergelijkt ongeveer even groot zijn.</p>
 <hr />
+<blockquote>
+<p><em>Voorbeeld 14.1</em>: In een studie worden twee groepen proefpersonen vergeleken, met <span class="math inline">\(n_1=10\)</span> en <span class="math inline">\(n_2=50\)</span> (<span class="math inline">\(N=n_1+n_2=10+50=60\)</span>). Het harmonisch gemiddelde van <span class="math inline">\(n_1=10\)</span> en <span class="math inline">\(n_2=50\)</span> is <span class="math inline">\(H=17\)</span>. Deze studie heeft dus dezelfde power als een kleinere studie met twee groepen van elk 17 proefpersonen, dus 34 proefpersonen in totaal. Voor deze studie zijn er dus 26 proefpersonen méér onderzocht (en belast) dan noodzakelijk (zie ook §<a href="ch-integriteit.html#sec:ontwerp">3.2</a>) <span class="citation">(<a href="#ref-ACA11" role="doc-biblioref">Aron, Coups, and Aron 2011, 295</a>)</span>.</p>
+</blockquote>
+<hr />
+</div>
+<div id="sec:significantieniveau-power" class="section level2" number="14.4">
+<h2><span class="header-section-number">14.4</span> Verband tussen significantieniveau en power</h2>
+<p>Het verband tussen het significantieniveau <span class="math inline">\(\alpha\)</span> en de power wordt
+geïllustreerd door het verschil tussen de twee figuren
+<a href="ch-power.html#fig:powercontours-alpha01">14.1</a> en
+<a href="ch-power.html#fig:powercontours-alpha05">14.2</a>. Voor iedere combinatie van
+effectgrootte en steekproefgrootte is de power lager in
+Figuur <a href="ch-power.html#fig:powercontours-alpha01">14.1</a> voor <span class="math inline">\(\alpha=.01\)</span> dan in
+Figuur <a href="ch-power.html#fig:powercontours-alpha05">14.2</a> voor <span class="math inline">\(\alpha=.05\)</span>. Als we het
+significantieniveau <span class="math inline">\(\alpha\)</span> hoger kiezen, dan neemt de kans toe om H0
+te verwerpen, en dus ook de power om H0 terecht te verwerpen als H0
+onwaar is (zie
+Tabel <a href="ch-onderzoek.html#tab:H0H1uitkomsten">2.2</a>). Maar helaas neemt met een hoger
+significantieniveau <span class="math inline">\(\alpha\)</span> ook de kans toe om H0 ten onrechte te
+verwerpen als H0 waar is (d.w.z. om een Type-I-fout te maken). De
+onderzoeker moet een afweging maken tussen fouten van Type-I (met
+kans <span class="math inline">\(\alpha\)</span>) of van Type-II (met kans <span class="math inline">\(\beta\)</span>); zoals eerder gezegd
+moet deze afweging afhangen van de ernst van (de consequenties van) deze
+twee typen van fouten.</p>
+</div>
+<div id="nadelen-van-onvoldoende-power" class="section level2" number="14.5">
+<h2><span class="header-section-number">14.5</span> Nadelen van onvoldoende power</h2>
+<p>Helaas zijn er zeer veel voorbeelden te vinden van ‘underpowered’
+onderzoek in het domein van taal en communicatie. Dit onderzoek heeft
+een te kleine kans om H0 te verwerpen als het onderzochte effect wel
+bestaat (H0 is niet waar). Waarom is dat kwalijk <span class="citation">(<a href="#ref-Quene10" role="doc-biblioref">Quené 2010</a>)</span>?</p>
+<p>Ten eerste kan de Type-II-fout die hier optreedt ernstige consequenties
+hebben: een behandelmethode die eigenlijk beter is, wordt niet als
+zodanig erkend, een patiënt wordt niet of onjuist gediagnostiseerd, een
+nuttige innovatie wordt ten onrechte terzijde geschoven. Deze fout
+belemmert de groei van onze kennis en ons inzicht, en belemmert de
+wetenschappelijke vooruitgang (zie ook
+voorbeeld 3.2 in Hoofdstuk <a href="ch-integriteit.html#ch-integriteit">3</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:underpoweredeffectsizes"></span>
+<img src="KMS-NL_files/figure-html/underpoweredeffectsizes-1.png" alt="Gevonden effectgroottes (langs horizontale as) in gesimuleerde experimenten (tweezijdige t-toets voor onafhankelijke waarnemingen, alpha=.05), uitgesplitst naar steekproefgrootte (links $n=20$, rechts $n=80$) en naar toetsingsresultaat (donkere symbolen: wel significant; lichte symbolen: niet significant). De ware effectgrootte tussen groepen is altijd $d=0.5$, aangegeven met grijze stippellijn. De gemiddelde gevonden effectgrootte van de significante uitkomsten is aangegeven met zwarte stippellijn. Voor iedere steekproefgrootte zijn 100 simulaties uitgevoerd (langs verticale as)." width="672" />
+<p class="caption">
+Figuur 14.3: Gevonden effectgroottes (langs horizontale as) in gesimuleerde experimenten (tweezijdige t-toets voor onafhankelijke waarnemingen, alpha=.05), uitgesplitst naar steekproefgrootte (links <span class="math inline">\(n=20\)</span>, rechts <span class="math inline">\(n=80\)</span>) en naar toetsingsresultaat (donkere symbolen: wel significant; lichte symbolen: niet significant). De ware effectgrootte tussen groepen is altijd <span class="math inline">\(d=0.5\)</span>, aangegeven met grijze stippellijn. De gemiddelde gevonden effectgrootte van de significante uitkomsten is aangegeven met zwarte stippellijn. Voor iedere steekproefgrootte zijn 100 simulaties uitgevoerd (langs verticale as).
+</p>
+</div>
+<p>De uitkomsten van gesimuleerde experimenten met verschillende
+steekproefgrootte, en dus met verschillende power, zijn samengevat in
+Figuur <a href="ch-power.html#fig:underpoweredeffectsizes">14.3</a>. We leggen het tweede nadeel uit aan de hand van deze wat complexe figuur. In het linker paneel van
+Figuur <a href="ch-power.html#fig:underpoweredeffectsizes">14.3</a> zien we dat de verschillende
+(simulaties van) ‘underpowered’ onderzoeken een gemengd beeld laten
+zien. Sommige van deze onderzoeken laten wèl een significant effect zien
+(donkere symbolen), en veel andere onderzoeken niet (lichte symbolen).
+Dat gemengde beeld leidt dan doorgaans tot vervolgonderzoek, waarin men
+probeert om uit te zoeken <em>waarom</em> het effect wel optrad in sommige
+onderzoeken, en niet in andere. Zou het verschil in resultaten toe te
+schrijven zijn aan verschillen in stimuli? proefpersonen? taken?
+instrumentatie? Al dat vervolg-onderzoek is echter <em>overbodig</em>: het
+gemengde beeld van deze onderzoeken is goed te verklaren door de geringe
+power van elk onderzoek. Het nodeloze en overbodige vervolg-onderzoek
+kost veel tijd en geld (en indirecte kosten, zie
+Hoofdstuk <a href="ch-integriteit.html#ch-integriteit">3</a>), en het gaat ten koste van ander, nuttiger
+onderzoek <span class="citation">(<a href="#ref-Schm96" role="doc-biblioref">Schmidt 1996, 118</a>)</span>. Anders gezegd: één goed ontworpen studie met
+ruim voldoende power kan vele nodeloze vervolg-studies voorkomen.</p>
+<p>Het derde nadeel is gebaseerd op de ervaring dat onderzoek waarin wèl
+een significant effect gevonden wordt (donkere symbolen), een grotere
+kans heeft om gerapporteerd te worden; dit verschijnsel wordt
+‘publication bias’ of het ‘file drawer problem’ genoemd. Immers, een
+positief resultaat wordt vaak wel gepubliceerd en een negatief resultaat
+verdwijnt vaak in een bureaulade. Bij geringe power leidt dat tot een
+derde nadeel, nl. een overschatting of ‘bias’ van de gerapporteerde
+effectgrootte. In een underpowered studie, immers, moet een gevonden
+effect tamelijk groot zijn om gevonden te worden. In het meest linkse
+paneel zien we dat er slechts <span class="math inline">\(31\times\)</span> een significant effect gevonden
+wordt. De gemiddelde effectgrootte van deze 31 significante uitkomsten
+is <span class="math inline">\(\overline{d_{\textrm{signif}}}=0.90\)</span> (zwarte stippellijn), d.w.z.
+een vertekening of ‘bias’ van <span class="math inline">\(0.40\)</span> ten opzichte van de eigenlijke
+<span class="math inline">\(d=0.50\)</span> (grijze stippellijn)<a href="referenties.html#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>. In het meest rechtse paneel zien we dat
+er <span class="math inline">\(91\times\)</span> een significant effect gevonden wordt (dus de power is
+hier voldoende). De gemiddelde effectgrootte van deze 91 significante
+uitkomsten wijkt nauwelijks af van de eigenlijke <span class="math inline">\(d\)</span>. Bovendien is de
+standaarddeviatie van de gerapporteerde effectgrootten kleiner, en dat
+is weer van belang voor later onderzoek, meta-studies, en systematische
+reviews.</p>
+<p>Ten vierde brengt het gemengde beeld van de verschillende onderzoeken,
+met soms wel en soms niet significante uitkomsten, en met grote variatie
+in de gerapporteerde effectgrootte, het gevaar met zich mee dat deze
+uitkomsten minder serieus genomen worden door ‘afnemers’ van
+wetenschappelijke kennis (behandelaars, zorgverzekeraars, ontwikkelaars,
+beleidsmakers, e.d.). Deze afnemers krijgen zo de indruk dat de
+wetenschappelijke evidentie voor dit onderzochte effect niet sterk is,
+en/of dat de onderzoekers het oneens zijn over of dat effect bestaat en
+zo ja hoe groot het dan is <span class="citation">(<a href="#ref-Kolf93" role="doc-biblioref">Van Kolfschooten 1993</a>)</span> (Figuur <a href="ch-power.html#fig:underpoweredeffectsizes">14.3</a>).
+Ook dat belemmert de
+wetenschappelijke vooruitgang, en het belemmert het gebruik van
+wetenschappelijke inzichten in maatschappelijke toepassingen.</p>
+<p>Om al deze bezwaren te vermijden moeten onderzoekers al in een vroeg
+stadium rekening houden met de gewenste power van een onderzoek. Het
+opzetten en uitvoeren van een onderzoek met onvoldoende power is immers
+in strijd met de eerder besproken ethische en morele principes van
+zorgvuldigheid en verantwoordelijkheid
+(§<a href="ch-integriteit.html#sec:integriteit-inleiding">3.1</a>).</p>
 
 </div>
 </div>
-
-
-
 <h3>Referenties</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-Cort93" class="csl-entry">
-Cortina, Jose M. 1993. <span>“What Is Coefficient Alpha? <span>A</span>n Examination of Theory and Applications.”</span> <em>Journal of Applied Psychology</em> 78 (1): 98–104.
+<div id="ref-ACA11" class="csl-entry">
+Aron, Arthur, Eliot J. Coups, and Elaine N. Aron. 2011. <em>Statistics for the Behavioral and Social Sciences: A Brief Course</em>. 5th ed. Boston: Pearson.
 </div>
-<div id="ref-Ferg89" class="csl-entry">
-Ferguson, George A., and Yoshio Takane. 1989. <em>Statistical Analysis in Psychology and Education</em>. 6e ed. New York: McGraw-Hill.
+<div id="ref-PD08" class="csl-entry">
+Peck, Roxy, and Jay Devore. 2008. <em>Statistics: The Exploration and Analysis of Data</em>. 6e ed. Belmont, CA: Thomsom/Cole.
 </div>
-<div id="ref-Glin01" class="csl-entry">
-Gliner, Jeffrey A., George A. Morgan, and Robert J. Harmon. 2001. <span>“Measurement Reliability.”</span> <em>Journal of the American Academy of Child and Adolescent Psychiatry</em> 40 (4): 486–88.
+<div id="ref-Quene10" class="csl-entry">
+———. 2010. <span>“How to Design and Analyze Language Acquisition Studies.”</span> In <em>Experimental Methods in Language Acquisition Research</em>, edited by Elma Blom and Sharon Unsworth, 269–87. Amsterdam: Benjamins.
 </div>
-<div id="ref-Lata09" class="csl-entry">
-Lata-Caneda, M. C., M. Piñeiro-Temprano, I. García-Fraga, I. García-Armesto, J. R. Barrueco-Egido, and R. Meijide-Failde. 2009. <span>“Spanish Adaptation of the Stroke and Aphasia Quality of Life Scale-39 (<span>SAQOL-39</span>).”</span> <em>European Journal of Physical and Rehabilitation Medicine</em> 45 (3): 379–84. <a href="https://www.ncbi.nlm.nih.gov/pubmed/19156021]">https://www.ncbi.nlm.nih.gov/pubmed/19156021]</a>.
+<div id="ref-Rose08" class="csl-entry">
+Rosenthal, Robert, and Ralph L. Rosnow. 2008. <em>Essentials of Behavioral Research: Methods and Data Analysis</em>. 3e ed. Boston: McGraw Hill.
+</div>
+<div id="ref-Schm96" class="csl-entry">
+Schmidt, Frank L. 1996. <span>“Statistical Significance Testing and Cumulative Knowledge in Psychology: Implications for Training of Researchers.”</span> <em>Psychological Methods</em> 1 (2): 115–29.
+</div>
+<div id="ref-Kolf93" class="csl-entry">
+Van Kolfschooten, Frank. 1993. <em>Valse Vooruitgang: Bedrog in de <span>N</span>ederlandse Wetenschap</em>. Amsterdam: L.J. Veen.
 </div>
 </div>
             </section>
@@ -1228,8 +802,8 @@ Lata-Caneda, M. C., M. Piñeiro-Temprano, I. García-Fraga, I. García-Armesto, 
           </div>
         </div>
       </div>
-<a href="ch-samenhang.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ch-toetsing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch-toetsing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-variantieanalyse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -1260,7 +834,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/h12betrouwbaarheid.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/h14power.Rmd",
 "text": "Edit"
 },
 "history": {

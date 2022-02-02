@@ -1,18 +1,18 @@
 # (PART\*) Deel III: Toetsende statistiek {-}
 
-# Toetsing {#ch:toetsing}
+# Toetsing {#ch-toetsing}
 
 ## Inleiding {#sec:toetsing-inleiding}
 
 Vanaf dit hoofdstuk houden we ons bezig met het toetsen van
-onderzoekshypothesen, en in het bijzonder met toetsen van *nul*-hypotheses (null hypothesis significance testing, NHST), zoals uitgelegd in Hoofdstuk \@ref(ch:onderzoek). 
+onderzoekshypothesen, en in het bijzonder met toetsen van *nul*-hypotheses (null hypothesis significance testing, NHST), zoals uitgelegd in Hoofdstuk \@ref(ch-onderzoek). 
 
 Voor dergelijke toetsingen is in de loop der jaren
 een groot aantal technieken ontwikkeld. De toetsen die we behandelen
 zijn de meest gebruikte en kunnen we indelen in parametrische en
 non-parametrische toetsen. Parametrische toetsen veronderstellen dat de
 afhankelijke variabele (tenminste) gemeten is op intervalniveau (zie
-hoofdstuk \@ref(ch:Meetniveau)), en dat de gemeten uitkomsten of scores
+hoofdstuk \@ref(ch-meetniveau)), en dat de gemeten uitkomsten of scores
 normaal verdeeld zijn (zie
 §\@ref(sec:normaalverdeling) en
 §\@ref(sec:watalsnietnormaal)). Bij non-parametrische toetsen
@@ -22,7 +22,7 @@ zijn zogenaamde verdelingsvrije toetsen. Het gevolg is dat de toetsing
 iets minder 'gevoelig' is, onder verder gelijke omstandigheden, d.w.z.
 dat de nulhypothese onder verder gelijke omstandigheden minder vaak
 verworpen kan worden. Deze toetsen hebben derhalve minder power (zie
-Hoofdstuk \@ref(ch:power)). Onderzoekers geven daarom meestal de voorkeur
+Hoofdstuk \@ref(ch-power)). Onderzoekers geven daarom meestal de voorkeur
 aan parametrische toetsen.
 
 Het algemene principe van toetsing hebben we al kort besproken in
@@ -60,8 +60,8 @@ zeer klein.
 Voor de argumentatie is het essentieel dat de gegevens valide zijn en
 betrouwbaar zijn --- juist daarom zijn we uitgebreid ingegaan op
 validiteit
-(Hoofdstuk \@ref(ch:validiteit)) en betrouwbaarheid
-(Hoofdstuk \@ref(ch:betrouwbaarheid)). Als we alles goed gedaan hebben, dan
+(Hoofdstuk \@ref(ch-validiteit)) en betrouwbaarheid
+(Hoofdstuk \@ref(ch-betrouwbaarheid)). Als we alles goed gedaan hebben, dan
 mogen we immers vertrouwen hebben in onze verkregen gegevens. De lage
 waarschijnlijkheid van de gegevens volgens H0 kunnen we dan
 redelijkerwijs *niet* toeschrijven aan fouten in de operationalisatie,
@@ -263,7 +263,7 @@ De $t$-toets voor een enkele steekproef vereist drie aannames (assumpties) waara
 voldaan moet zijn, om de toets te mogen gebruiken.
 
 * De gegevens moeten gemeten zijn op intervalniveau (zie
-hoofdstuk \@ref(ch:Meetniveau)).
+hoofdstuk \@ref(ch-meetniveau)).
 
 * Alle observaties moeten onafhankelijk van elkaar zijn.
 
@@ -430,7 +430,7 @@ waarde 73 [@Cumm12]. We rapporteren dat als volgt:
 > 84.4, met 95% betrouwbaarheidsinterval (81.5, 87.3), 33 d.f.
 
 In Figuur \@ref(fig:gramm2013CIs) zie je de resultaten van een
-computersimulatie om dit te illustreren. Deze figuur is op dezelfde wijze gemaakt als Figuur \@ref(fig:tempo95CIs) in Hoofdstuk \@ref(ch:kansverdelingen) en illustreert hetzelfde punt. 
+computersimulatie om dit te illustreren. Deze figuur is op dezelfde wijze gemaakt als Figuur \@ref(fig:tempo95CIs) in Hoofdstuk \@ref(ch-kansverdelingen) en illustreert hetzelfde punt. 
 We hebben $100\times$
 steekproeven getrokken van scores van studenten Taalwetenschap, met
 $\mu=84.4$ en $\sigma=8.4$ (zie
@@ -576,7 +576,7 @@ Als tweede voorbeeld nemen we een onderzoek naar het spreektempo van
 twee groepen sprekers, nl. afkomstig uit het Westen (eerste groep) en
 uit het Noorden (tweede groep) van Nederland. De spreeksnelheid wordt
 hier uitgedrukt als de gemiddelde duur van een gesproken lettergreep,
-gemiddeld over een interview van ca 15 minuten (zie voorbeeld \@ref(ch:variantieanalyse).1). 
+gemiddeld over een interview van ca 15 minuten (zie voorbeeld \@ref(ch-variantieanalyse).1). 
 We onderzoeken H0: $\mu_W = \mu_N$ met
 tweezijdige toetsing. Uit de resultaten blijkt dat de westerlingen
 ($n=20$) een gemiddelde lettergreepduur hebben van
@@ -767,7 +767,7 @@ with(talkers, t.test( syldur[region=="W"], syldur[region=="N"],
 De Student $t$-toets wordt ook toegepast om een verschil te onderzoeken tussen de
 gemiddelden van twee afhankelijke of gepaarde waarnemingen. Daarvan is
 sprake als we slechts één steekproef trekken (zie hoofdstuk
-\@ref(ch:steekproeftrekking)), en van de leden van deze steekproef
+\@ref(ch-steekproeftrekking)), en van de leden van deze steekproef
 vervolgens twee observaties verzamelen, nl. één observatie onder elk van
 beide condities. De twee observaties zijn dan gepaard, d.w.z. aan elkaar
 gerelateerd, en deze observaties zijn dus niet onafhankelijk (want
@@ -946,7 +946,7 @@ verschillen, d.w.z. doorgaans grote verschillen. We moeten beseffen dat
 onderzoek ook kosten met zich meebrengt in termen van geld, tijd,
 inspanning, privacy, en verlies van onbevangenheid voor ander onderzoek
 (zie hoofdstuk
-\@ref(ch:integriteit)). We willen dus niet nodeloos onderzoek doen
+\@ref(ch-integriteit)). We willen dus niet nodeloos onderzoek doen
 naar triviale effecten. Een onderzoeker dient daarom vooraf te bepalen
 wat het kleinste effect is dat hij/zij wil kunnen opsporen, bv. 1 punt
 verschil in de score van de grammaticatoets. Verschillen kleiner dan 1

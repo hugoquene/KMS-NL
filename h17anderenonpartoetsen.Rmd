@@ -1,11 +1,11 @@
-#  Andere nonparametrische toetsen {#ch:andere-nonpar-toetsen}
+# Andere nonparametrische toetsen {#ch-andere-nonpar-toetsen}
 
 ## Inleiding {#sec:h17inleiding}
 
 In dit hoofdstuk bespreken we verschillende andere non-parametrische
 toetsen. Deze toetsen zijn bruikbaar indien de gegevens niet op
 interval-niveau gemeten zijn (zie hoofdstuk
-\@ref(ch:Meetniveau)), of als de kansverdeling van de gegevens
+\@ref(ch-meetniveau)), of als de kansverdeling van de gegevens
 afwijkt van de normaalverdeling (zie
 §\@ref(sec:watalsnietnormaal)). De non-parametrische toetsen doen
 geen aannames over de parameters van de kansverdeling van de gegevens.

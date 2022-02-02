@@ -278,7 +278,7 @@ betrouwbaarheid-en-constructvaliditeit
 spss-9
 jasp-11
 r-11
-ch:toetsing
+ch-toetsing
 sec:toetsing-inleiding
 sec:ttoets-onesample
 sec:ttoets-vrijheidsgraden
@@ -318,13 +318,13 @@ spss-13-2
 jasp-13
 r-14
 sec:betrouwbaarheidsinterval-effectgrootte
-ch:power
+ch-power
 sec:power-inleiding
 sec:effectgrootte-power
 sec:steekproefgrootte-power
 sec:significantieniveau-power
 nadelen-van-onvoldoende-power
-ch:variantieanalyse
+ch-variantieanalyse
 sec:inleiding
 sec:anova-voorbeelden
 aannames
@@ -366,7 +366,7 @@ voorbereiding-5
 anova-5
 effectgrootte
 post-hoc-toetsen
-ch:chi-kwadraat-toetsen
+ch-chi-kwadraat-toetsen
 sec:h16inleiding
 sec:chi2gof
 chi2-toets-voor-homogeniteit-van-een-variabele-in-meerdere-steekproeven
@@ -387,7 +387,7 @@ r-17
 goodness-of-fit-toetsing-2
 kruistabellen-voorbereiding-en-toetsing
 effectgrootte-odds-ratio
-ch:andere-nonpar-toetsen
+ch-andere-nonpar-toetsen
 sec:h17inleiding
 gepaarde-observaties-enkele-steekproef
 sec:tekentoets

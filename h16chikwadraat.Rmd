@@ -1,4 +1,4 @@
-# Chi-kwadraat-toetsen {#ch:chi-kwadraat-toetsen}
+# Chi-kwadraat-toetsen {#ch-chi-kwadraat-toetsen}
 
 ## Inleiding {#sec:h16inleiding}
 
@@ -6,7 +6,7 @@ We zagen al eerder dat we niet altijd gebruik kunnen maken van een
 parametrische toets zoals de $t$-toets of variantie-analyse, omdat de verzamelde
 gegevens niet voldoen aan de aannames. Als de verzamelde gegevens niet
 op interval-niveau gemeten zijn (zie hoofdstuk
-\@ref(ch:Meetniveau)), of als de kansverdeling van de gegevens
+\@ref(ch-meetniveau)), of als de kansverdeling van de gegevens
 verre van normaal is (zie
 §\@ref(sec:watalsnietnormaal)), dan verdient een non-parametrische
 toets de voorkeur boven zo'n parametrische toets. Als de verzamelde
@@ -15,7 +15,7 @@ is een non-parametrische toets minder gevoelig (conservatiever) dan een
 parametrische toets, d.w.z. dat de non-parametrische toets een groter
 effect vereist en/of een grotere steekproef vereist, en in het algemeen
 minder power heeft dan een parametrische toets bij het opsporen van een
-effect (zie hoofdstuk \@ref(ch:power)).
+effect (zie hoofdstuk \@ref(ch-power)).
 
 In dit hoofdstuk bespreken we de meest gebruikte non-parametrische
 toets: de $\chi^2$-toets.
@@ -149,7 +149,7 @@ De $\chi^2$-toets vereist drie aannames (assumpties) waaraan voldaan moet zijn, 
 toets te mogen gebruiken.
 
 * De gegevens moeten gemeten zijn op nominaal niveau, of moeten
-zijn versimpeld tot nominaal niveau (zie hoofdstuk \@ref(ch:Meetniveau)).
+zijn versimpeld tot nominaal niveau (zie hoofdstuk \@ref(ch-meetniveau)).
 
 * Alle observaties moeten onafhankelijk van elkaar zijn, en
 gebaseerd op (een) aselecte steekproef(/ven) uit de populatie(s) (zie
