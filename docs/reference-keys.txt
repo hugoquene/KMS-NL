@@ -178,7 +178,7 @@ spss
 jasp
 r
 sec:steekproefgrootte
-ch:frequenties
+ch-frequenties
 inleiding-3
 sec:frequenties
 sec:intervallen
@@ -190,7 +190,7 @@ sec:histogrammen
 spss-2
 jasp-2
 r-2
-ch:centrumenspreiding
+ch-centrumenspreiding
 inleiding-4
 symbolen
 centrummaten
@@ -219,7 +219,7 @@ sec:standaardscores
 spss-3
 jasp-3
 r-3
-ch:kansverdelingen
+ch-kansverdelingen
 sec:kansen
 sec:binomiaalverdeling
 formules
@@ -237,7 +237,7 @@ sec:watalsnietnormaal
 sec:CentraalLimietTheorema
 sec:betrouwbaarheidsinterval-gemiddelde
 formules-2
-ch:samenhang
+ch-samenhang
 inleiding-5
 sec:Pearson
 formules-3
@@ -267,7 +267,7 @@ r-10
 nieuwe-variabele-construeren-2
 correlatie-analyse-2
 sec:correlationcausation
-ch:betrouwbaarheid
+ch-betrouwbaarheid
 inleiding-6
 wat-is-betrouwbaarheid
 testtheorie

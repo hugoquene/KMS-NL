@@ -1,4 +1,4 @@
-# Samenhang {#ch:samenhang}
+# Samenhang {#ch-samenhang}
 
 ## Inleiding
 
@@ -11,7 +11,7 @@ toevallig) verband bestaat tussen de onafhankelijke en afhankelijke
 variabele. Daarnaast kan de onderzoeker geïnteresseerd zijn in de
 onderlinge samenhang tussen meerdere afhankelijke variabelen,
 bijvoorbeeld de samenhang tussen de oordelen van meerdere beoordelaars
-(zie ook Hoofdstuk \@ref(ch:betrouwbaarheid)).
+(zie ook Hoofdstuk \@ref(ch-betrouwbaarheid)).
 
 In quasi-experimenteel onderzoek is het onderscheid tussen
 onafhankelijke en afhankelijke variabelen doorgaans minder duidelijk. Er
@@ -148,7 +148,7 @@ om deze correlatie van $r=0.79$ of sterker te vinden in een steekproef
 van $n=10$ leerlingen, indien de samenhang in de populatie eigenlijk
 nihil is (d.i. indien $\rho=0$). Deze kans $p$ noemen we de
 *significantie* van de correlatiecoëfficiënt; we komen in
-Hoofdstuk \@ref(ch:toetsing) uitgebreider terug op dit begrip
+Hoofdstuk \@ref(ch-toetsing) uitgebreider terug op dit begrip
 'significantie'. Daarop vooruitlopend: als deze kans $p$ kleiner is dan
 $.05$, dan nemen we aan dat de gevonden correlatie $r$ *niet toevallig*,
 d.i. *significant* is. Vaak zien we een kleine kans $p$ bij een sterke
@@ -609,7 +609,7 @@ with(cito, cor.test( Lezen,Rekenen, method="spearman" ) )
 ## Phi {#sec:Phi}
 De beide variabelen waarvan we de samenhang willen onderzoeken, zijn
 zelfs niet altijd uitgedrukt op het ordinale meetniveau
-(Hoofdstuk \@ref(ch:Meetniveau)). Zelfs als beide variabelen alleen op
+(Hoofdstuk \@ref(ch-meetniveau)). Zelfs als beide variabelen alleen op
 nominaal niveau gemeten zijn, dan kan er nog een correlatie berekend
 worden, nl. de phi-correlatiecoëfficiënt (symbool $r_\Phi$, met griekse
 letter "Phi"). Deze correlatiecoëfficiënt is ook bruikbaar als één van
@@ -777,7 +777,7 @@ betekent dat er ook een causaal verband is tussen de variabelen, m.a.w.
 een samenhang betekent niet dat de ene variabele (bijv. behandeling) de
 oorzaak is en de andere variabele (bijv. genezing) het gevolg daarvan.
 De gangbare zegswijze daarvoor is "correlation does not imply
-causation," zie ook Voorbeeld 6.1 (Hoofdstuk \@ref(ch:ontwerp)) 
+causation," zie ook Voorbeeld 6.1 (Hoofdstuk \@ref(ch-ontwerp)) 
 en bijgaande Figuur \@ref(fig:xkcd552) (met toestemming ontleend aan https://xkcd.com/552).
 
 ```{r xkcd552, echo=FALSE, fig.cap="Correlation does not imply causation."}

@@ -1,8 +1,8 @@
-# Betrouwbaarheid {#ch:betrouwbaarheid}
+# Betrouwbaarheid {#ch-betrouwbaarheid}
 
 ## Inleiding
 
-In Hoofdstuk \@ref(ch:validiteit)  hebben we het onder andere gehad over
+In Hoofdstuk \@ref(ch-validiteit)  hebben we het onder andere gehad over
 construct-validiteit, de afstand tussen het bedoelde (theoretische)
 concept of construct enerzijds, en de onafhankelijke of afhankelijke
 variabele anderzijds. In dit hoofdstuk gaan we in op een ander zeer
@@ -12,7 +12,7 @@ de samenhang of correlatie tussen observaties van hetzelfde construct.
 We zullen ook ingaan op de relaties tussen betrouwbaarheid en
 constructvaliditeit.
 
-Vaak worden validiteit en betrouwbaarheid in één adem genoemd, en in opeenvolgende hoofdstukken besproken. Daar is wat voor te zeggen, want beide begrippen gaan over hoe je je variabelen definieert en operationaliseert. Toch hebben we hier gekozen voor een andere volgorde. Betrouwbaarheid komt pas aan bod nadat we samenhang besproken hebben (Hoofdstuk \@ref(ch:samenhang)), omdat betrouwbaarheid gebaseerd is op de samenhang of correlatie tussen observaties. 
+Vaak worden validiteit en betrouwbaarheid in één adem genoemd, en in opeenvolgende hoofdstukken besproken. Daar is wat voor te zeggen, want beide begrippen gaan over hoe je je variabelen definieert en operationaliseert. Toch hebben we hier gekozen voor een andere volgorde. Betrouwbaarheid komt pas aan bod nadat we samenhang besproken hebben (Hoofdstuk \@ref(ch-samenhang)), omdat betrouwbaarheid gebaseerd is op de samenhang of correlatie tussen observaties. 
 
 ## Wat is betrouwbaarheid?
 
@@ -83,7 +83,7 @@ meting is stabiel: vijf minuten later zal dezelfde weegschaal met
 dezelfde persoon onder dezelfde omstandigheden ook (bijna) dezelfde meetwaarde
 opleveren. De stabiliteit wordt veelal uitgedrukt in een zogenaamde
 correlatiecoëfficiënt (een maat voor samenhang, zie Hoofdstuk
-\@ref(ch:samenhang)). Deze correlatiecoëfficiënt kan alle waarden
+\@ref(ch-samenhang)). Deze correlatiecoëfficiënt kan alle waarden
 aannemen tussen $+1$ en $-1$. Hoe meer de eerste en tweede meting gelijk
 zijn, des te hoger de samenhang, en des te hoger de correlatie tussen
 eerste en tweede meting. Omgekeerd, hoe lager de samenhang tussen eerste
@@ -285,7 +285,7 @@ oftewel als de proportie van
 variantie die "systematisch" is. Dit is vanzelfsprekend nog lang niet
 hetzelfde als de proportie variantie ten gevolge van het
 begrip-zoals-bedoeld, de "valide" variantie (zie
-Hoofdstuk \@ref(ch:validiteit)). De variantie ten gevolge van het
+Hoofdstuk \@ref(ch-validiteit)). De variantie ten gevolge van het
 begrip-zoals-bedoeld maakt deel uit van de proportie
 ware-score-variantie. Echter, tal van andere factoren kunnen op
 systematische wijze van invloed zijn op de scores van de respondenten,
@@ -510,7 +510,7 @@ Als een meting betrouwbaar is, dan is er "iets" betrouwbaar gemeten.
 Maar let op: dat toont nog niet aan *wat* er gemeten is! Er is wel een
 relatie tussen de betrouwbaarheid (hoe is gemeten) en de
 construct-validiteit (wat is gemeten, zie
-Hoofdstuk \@ref(ch:validiteit)), maar die twee begrippen zijn niet identiek.
+Hoofdstuk \@ref(ch-validiteit)), maar die twee begrippen zijn niet identiek.
 Een voldoende betrouwbaarheid is een noodzakelijke, maar geen voldoende
 voorwaarde voor validiteit. Anders gezegd: een toets die niet
 betrouwbaar is kan ook niet valide zijn (want deze toets meet ook ruis),

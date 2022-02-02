@@ -1,4 +1,4 @@
-# Kansverdelingen {#ch:kansverdelingen}
+# Kansverdelingen {#ch-kansverdelingen}
 
 ## Kansen {#sec:kansen}
 
@@ -7,7 +7,7 @@ gemiddelde kans op neerslag in Nederland is 7%. Mijn bestelling heeft
 10% kans om een dag later dan beloofd afgeleverd te worden. Kansen en
 waarschijnlijkheden spelen een belangrijke rol in ons dagelijks leven,
 en ook in het wetenschappelijk onderzoek. Immers, veel hypothesen zijn
-probabilistisch van aard (zie Hoofdstuk \@ref(ch:onderzoek)): 
+probabilistisch van aard (zie Hoofdstuk \@ref(ch-onderzoek)): 
 de hypothesen doen uitspraken over
 een verschil in *kansen* van uitkomsten. Om conclusies te kunnen trekken
 ten aanzien van die probabilistische hypothesen hebben we enige kennis
@@ -654,7 +654,7 @@ normaal verdeeld zijn.
 
 In Deel III zullen we diverse statistische
 toetsen bespreken. De toetsen die we bespreken in hoofdstukken
-\@ref(ch:toetsing) en \@ref(ch:power) en \@ref(ch:variantieanalyse)
+\@ref(ch-toetsing) en \@ref(ch-power) en \@ref(ch-variantieanalyse)
 vereisen echter dat de afhankelijke
 variabele een normale kansverdeling heeft. Als een variabele *niet* een
 (ongeveer) normale kansverdeling heeft, dan kan die variabele dus niet
@@ -678,11 +678,11 @@ uitgevoerde transformatie!
 Ten tweede is het soms mogelijk om een andere statistische toets te
 gebruiken, die niet vereist dat de afhankelijke variabele normaal
 verdeeld is. Dat worden non-parametrische toetsen genoemd. We gaan er
-nader op in in de hoofdstukken \@ref(ch:chi-kwadraat-toetsen) en
-\@ref(ch:andere-nonpar-toetsen). 
+nader op in in de hoofdstukken \@ref(ch-chi-kwadraat-toetsen) en
+\@ref(ch-andere-nonpar-toetsen). 
 Die toetsen hebben wel als nadeel
 dat ze minder statistische power hebben (voor een bespreking van power,
-zie hoofdstuk \@ref(ch:power)): ze zijn minder gevoelig, en vereisen dus grotere
+zie hoofdstuk \@ref(ch-power)): ze zijn minder gevoelig, en vereisen dus grotere
 steekproeven om een effect vast te stellen.
 
 ## Kansverdeling van gemiddelde {#sec:CentraalLimietTheorema}

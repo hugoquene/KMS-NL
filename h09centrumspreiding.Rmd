@@ -1,4 +1,4 @@
-# Centrum en spreiding {#ch:centrumenspreiding}
+# Centrum en spreiding {#ch-centrumenspreiding}
 
 ## Inleiding
 
@@ -743,7 +743,7 @@ weliswaar op dezelfde schaal gemeten zijn (bijvoorbeeld een schaal van
 $1 \dots 100$), maar die toch verschillende gemiddelden en/of
 verschillende standaarddeviaties hebben, zoals de scores in
 Tabel \@ref(tab:cito). 
-In Hoofdstuk \@ref(ch:kansverdelingen) zullen we verder werken met z-scores.
+In Hoofdstuk \@ref(ch-kansverdelingen) zullen we verder werken met z-scores.
 
 De standaardscore of z-score heeft twee handige eigenschappen die je
 moet onthouden. Ten eerste is het gemiddelde altijd gelijk aan nul:

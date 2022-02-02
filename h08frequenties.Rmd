@@ -1,6 +1,6 @@
 # (PART\*) Deel II: Beschrijvende statistiek {-}
 
-# Frequenties {#ch:frequenties}
+# Frequenties {#ch-frequenties}
 
 ## Inleiding
 

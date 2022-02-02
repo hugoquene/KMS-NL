@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hoofdstuk 11 Samenhang | Kwantitatieve Methoden en Statistiek</title>
+  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hoofdstuk 11 Samenhang | Kwantitatieve Methoden en Statistiek" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta name="github-repo" content="rstudio/KMS-NL" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hoofdstuk 11 Samenhang | Kwantitatieve Methoden en Statistiek" />
+  
+  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch-kansverdelingen.html"/>
+<link rel="next" href="ch-betrouwbaarheid.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Kwantitatieve Methoden en Statistiek</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Voorwoord</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#in-english-please"><i class="fa fa-check"></i>In English please?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#notatie"><i class="fa fa-check"></i>Notatie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#licentie"><i class="fa fa-check"></i>Licentie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#citatie"><i class="fa fa-check"></i>Citatie</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#technische-details"><i class="fa fa-check"></i>Technische details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#over-de-auteurs"><i class="fa fa-check"></i>Over de auteurs</a></li>
+</ul></li>
+<li class="part"><span><b>Deel I: Methodologie</b></span></li>
+<li class="chapter" data-level="1" data-path="ch-inleiding.html"><a href="ch-inleiding.html"><i class="fa fa-check"></i><b>1</b> Inleiding</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:wetenschappelijk-onderzoek"><i class="fa fa-check"></i><b>1.1</b> Wetenschappelijk onderzoek</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:theorie"><i class="fa fa-check"></i><b>1.1.1</b> Theorie</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:paradigmata"><i class="fa fa-check"></i><b>1.2</b> Paradigmata</a></li>
+<li class="chapter" data-level="1.3" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:instrumentatie-onderzoek"><i class="fa fa-check"></i><b>1.3</b> Instrumentatie-onderzoek</a></li>
+<li class="chapter" data-level="1.4" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:beschrijvend-onderzoek"><i class="fa fa-check"></i><b>1.4</b> Beschrijvend onderzoek</a></li>
+<li class="chapter" data-level="1.5" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:experimenteel-onderzoek"><i class="fa fa-check"></i><b>1.5</b> Experimenteel onderzoek</a></li>
+<li class="chapter" data-level="1.6" data-path="ch-inleiding.html"><a href="ch-inleiding.html#sec:vooruitblik"><i class="fa fa-check"></i><b>1.6</b> Vooruitblik</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html"><i class="fa fa-check"></i><b>2</b> Hypothese-toetsend onderzoek</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#inleiding"><i class="fa fa-check"></i><b>2.1</b> Inleiding</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:variabelen"><i class="fa fa-check"></i><b>2.2</b> Variabelen</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:onafhankelijkeafhankelijkevariabelen"><i class="fa fa-check"></i><b>2.3</b> Onafhankelijke en afhankelijke variabelen</a></li>
+<li class="chapter" data-level="2.4" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:falsificatie"><i class="fa fa-check"></i><b>2.4</b> Falsificatie en nul-hypothese</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:empirischecyclus"><i class="fa fa-check"></i><b>2.5</b> De empirische cyclus</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#observatie"><i class="fa fa-check"></i><b>2.5.1</b> observatie</a></li>
+<li class="chapter" data-level="2.5.2" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#inductie"><i class="fa fa-check"></i><b>2.5.2</b> inductie</a></li>
+<li class="chapter" data-level="2.5.3" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#deductie"><i class="fa fa-check"></i><b>2.5.3</b> deductie</a></li>
+<li class="chapter" data-level="2.5.4" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#toetsing"><i class="fa fa-check"></i><b>2.5.4</b> toetsing</a></li>
+<li class="chapter" data-level="2.5.5" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#evaluatie"><i class="fa fa-check"></i><b>2.5.5</b> evaluatie</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="ch-onderzoek.html"><a href="ch-onderzoek.html#sec:keuzemomenten"><i class="fa fa-check"></i><b>2.6</b> Keuzemomenten</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch-integriteit.html"><a href="ch-integriteit.html"><i class="fa fa-check"></i><b>3</b> Integriteit</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ch-integriteit.html"><a href="ch-integriteit.html#sec:integriteit-inleiding"><i class="fa fa-check"></i><b>3.1</b> Inleiding</a></li>
+<li class="chapter" data-level="3.2" data-path="ch-integriteit.html"><a href="ch-integriteit.html#sec:ontwerp"><i class="fa fa-check"></i><b>3.2</b> Ontwerp</a></li>
+<li class="chapter" data-level="3.3" data-path="ch-integriteit.html"><a href="ch-integriteit.html#proefpersonen-en-informanten"><i class="fa fa-check"></i><b>3.3</b> Proefpersonen en informanten</a></li>
+<li class="chapter" data-level="3.4" data-path="ch-integriteit.html"><a href="ch-integriteit.html#gegevens"><i class="fa fa-check"></i><b>3.4</b> Gegevens</a></li>
+<li class="chapter" data-level="3.5" data-path="ch-integriteit.html"><a href="ch-integriteit.html#teksten"><i class="fa fa-check"></i><b>3.5</b> Teksten</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html"><i class="fa fa-check"></i><b>4</b> Meetniveau</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#inleiding-1"><i class="fa fa-check"></i><b>4.1</b> Inleiding</a></li>
+<li class="chapter" data-level="4.2" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:nominaal"><i class="fa fa-check"></i><b>4.2</b> Nominaal</a></li>
+<li class="chapter" data-level="4.3" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:ordinaal"><i class="fa fa-check"></i><b>4.3</b> Ordinaal</a></li>
+<li class="chapter" data-level="4.4" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:interval"><i class="fa fa-check"></i><b>4.4</b> Interval</a></li>
+<li class="chapter" data-level="4.5" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:ratio"><i class="fa fa-check"></i><b>4.5</b> Ratio</a></li>
+<li class="chapter" data-level="4.6" data-path="ch-meetniveau.html"><a href="ch-meetniveau.html#sec:ordeningvanmeetniveaus"><i class="fa fa-check"></i><b>4.6</b> Ordening van meetniveaus</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch-validiteit.html"><a href="ch-validiteit.html"><i class="fa fa-check"></i><b>5</b> Validiteit</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ch-validiteit.html"><a href="ch-validiteit.html#inleiding-2"><i class="fa fa-check"></i><b>5.1</b> Inleiding</a></li>
+<li class="chapter" data-level="5.2" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:causaliteit"><i class="fa fa-check"></i><b>5.2</b> Causaliteit</a></li>
+<li class="chapter" data-level="5.3" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:validiteit"><i class="fa fa-check"></i><b>5.3</b> Validiteit</a></li>
+<li class="chapter" data-level="5.4" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:internevaliditeit"><i class="fa fa-check"></i><b>5.4</b> Interne validiteit</a></li>
+<li class="chapter" data-level="5.5" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:constructvaliditeit"><i class="fa fa-check"></i><b>5.5</b> Constructvaliditeit</a></li>
+<li class="chapter" data-level="5.6" data-path="ch-validiteit.html"><a href="ch-validiteit.html#sec:externevaliditeit"><i class="fa fa-check"></i><b>5.6</b> Externe validiteit</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html"><i class="fa fa-check"></i><b>6</b> Ontwerp</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:ontwerp-inleiding"><i class="fa fa-check"></i><b>6.1</b> Inleiding</a></li>
+<li class="chapter" data-level="6.2" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:tussenbinnenproefpersonen"><i class="fa fa-check"></i><b>6.2</b> Tussen of binnen ?</a></li>
+<li class="chapter" data-level="6.3" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:oneshotsinglecase"><i class="fa fa-check"></i><b>6.3</b> Het one-shot single-case-ontwerp</a></li>
+<li class="chapter" data-level="6.4" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:eengroepvoorna"><i class="fa fa-check"></i><b>6.4</b> Het één-groep-voormeting-nameting-ontwerp</a></li>
+<li class="chapter" data-level="6.5" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:voormeting-nameting-controlegroep-ontwerp"><i class="fa fa-check"></i><b>6.5</b> Het voormeting-nameting-controlegroep-ontwerp</a></li>
+<li class="chapter" data-level="6.6" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:solomon-vier-groepen-ontwerp"><i class="fa fa-check"></i><b>6.6</b> Het Solomon-vier-groepen-ontwerp</a></li>
+<li class="chapter" data-level="6.7" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:nameting-controlegroep"><i class="fa fa-check"></i><b>6.7</b> Het nameting-controlegroep-ontwerp</a></li>
+<li class="chapter" data-level="6.8" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:ontwerp-factorieel"><i class="fa fa-check"></i><b>6.8</b> Factoriële ontwerpen</a></li>
+<li class="chapter" data-level="6.9" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#sec:afhankelijkegroepen"><i class="fa fa-check"></i><b>6.9</b> Afhankelijke- en onafhankelijke-groepen-ontwerp</a></li>
+<li class="chapter" data-level="6.10" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#onderzoek-ontwerpen"><i class="fa fa-check"></i><b>6.10</b> Onderzoek ontwerpen</a></li>
+<li class="chapter" data-level="6.11" data-path="ch-ontwerp.html"><a href="ch-ontwerp.html#tenslotte"><i class="fa fa-check"></i><b>6.11</b> Tenslotte</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html"><i class="fa fa-check"></i><b>7</b> Steekproeven</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:gelegenheidssteekproef"><i class="fa fa-check"></i><b>7.1</b> Gelegenheidssteekproeven</a></li>
+<li class="chapter" data-level="7.2" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:systematischesteekproef"><i class="fa fa-check"></i><b>7.2</b> Systematische steekproeven</a></li>
+<li class="chapter" data-level="7.3" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:aselectesteekproef"><i class="fa fa-check"></i><b>7.3</b> Aselecte steekproeven</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#spss"><i class="fa fa-check"></i><b>7.3.1</b> SPSS</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#jasp"><i class="fa fa-check"></i><b>7.3.2</b> JASP</a></li>
+<li class="chapter" data-level="7.3.3" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#r"><i class="fa fa-check"></i><b>7.3.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ch-steekproeftrekking.html"><a href="ch-steekproeftrekking.html#sec:steekproefgrootte"><i class="fa fa-check"></i><b>7.4</b> Steekproefgrootte</a></li>
+</ul></li>
+<li class="part"><span><b>Deel II: Beschrijvende statistiek</b></span></li>
+<li class="chapter" data-level="8" data-path="ch-frequenties.html"><a href="ch-frequenties.html"><i class="fa fa-check"></i><b>8</b> Frequenties</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="ch-frequenties.html"><a href="ch-frequenties.html#inleiding-3"><i class="fa fa-check"></i><b>8.1</b> Inleiding</a></li>
+<li class="chapter" data-level="8.2" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:frequenties"><i class="fa fa-check"></i><b>8.2</b> Frequenties</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:intervallen"><i class="fa fa-check"></i><b>8.2.1</b> Intervallen</a></li>
+<li class="chapter" data-level="8.2.2" data-path="ch-frequenties.html"><a href="ch-frequenties.html#spss-1"><i class="fa fa-check"></i><b>8.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="8.2.3" data-path="ch-frequenties.html"><a href="ch-frequenties.html#jasp-1"><i class="fa fa-check"></i><b>8.2.3</b> JASP</a></li>
+<li class="chapter" data-level="8.2.4" data-path="ch-frequenties.html"><a href="ch-frequenties.html#r-1"><i class="fa fa-check"></i><b>8.2.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:staafdiagrammen"><i class="fa fa-check"></i><b>8.3</b> Staafdiagrammen</a></li>
+<li class="chapter" data-level="8.4" data-path="ch-frequenties.html"><a href="ch-frequenties.html#sec:histogrammen"><i class="fa fa-check"></i><b>8.4</b> Histogrammen</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="ch-frequenties.html"><a href="ch-frequenties.html#spss-2"><i class="fa fa-check"></i><b>8.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="8.4.2" data-path="ch-frequenties.html"><a href="ch-frequenties.html#jasp-2"><i class="fa fa-check"></i><b>8.4.2</b> JASP</a></li>
+<li class="chapter" data-level="8.4.3" data-path="ch-frequenties.html"><a href="ch-frequenties.html#r-2"><i class="fa fa-check"></i><b>8.4.3</b> R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html"><i class="fa fa-check"></i><b>9</b> Centrum en spreiding</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#inleiding-4"><i class="fa fa-check"></i><b>9.1</b> Inleiding</a></li>
+<li class="chapter" data-level="9.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#symbolen"><i class="fa fa-check"></i><b>9.2</b> Symbolen</a></li>
+<li class="chapter" data-level="9.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#centrummaten"><i class="fa fa-check"></i><b>9.3</b> Centrummaten</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:gemiddelde"><i class="fa fa-check"></i><b>9.3.1</b> gemiddelde</a></li>
+<li class="chapter" data-level="9.3.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:mediaan"><i class="fa fa-check"></i><b>9.3.2</b> mediaan</a></li>
+<li class="chapter" data-level="9.3.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#modus"><i class="fa fa-check"></i><b>9.3.3</b> modus</a></li>
+<li class="chapter" data-level="9.3.4" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:harmonischgemiddelde"><i class="fa fa-check"></i><b>9.3.4</b> harmonisch gemiddelde</a></li>
+<li class="chapter" data-level="9.3.5" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#gewinsoriseerde-gemiddelde"><i class="fa fa-check"></i><b>9.3.5</b> gewinsoriseerde gemiddelde</a></li>
+<li class="chapter" data-level="9.3.6" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#getrimde-gemiddelde"><i class="fa fa-check"></i><b>9.3.6</b> getrimde gemiddelde</a></li>
+<li class="chapter" data-level="9.3.7" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#vergelijking-van-centrummaten"><i class="fa fa-check"></i><b>9.3.7</b> vergelijking van centrummaten</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:kwartielen-en-boxplots"><i class="fa fa-check"></i><b>9.4</b> Kwartielen en boxplots</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#kwartielen"><i class="fa fa-check"></i><b>9.4.1</b> Kwartielen</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:uitbijters"><i class="fa fa-check"></i><b>9.4.2</b> Uitbijters</a></li>
+<li class="chapter" data-level="9.4.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:boxplot"><i class="fa fa-check"></i><b>9.4.3</b> Boxplots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:spreidingsmaten"><i class="fa fa-check"></i><b>9.5</b> Spreidingsmaten</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:variantie"><i class="fa fa-check"></i><b>9.5.1</b> variantie</a></li>
+<li class="chapter" data-level="9.5.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:standaarddeviatie"><i class="fa fa-check"></i><b>9.5.2</b> standaarddeviatie</a></li>
+<li class="chapter" data-level="9.5.3" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#mad"><i class="fa fa-check"></i><b>9.5.3</b> MAD</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:significantecijfers"><i class="fa fa-check"></i><b>9.6</b> Over significante cijfers</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:significantecijfers-gemiddelde"><i class="fa fa-check"></i><b>9.6.1</b> Gemiddelde en standaarddeviatie</a></li>
+<li class="chapter" data-level="9.6.2" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#percentages"><i class="fa fa-check"></i><b>9.6.2</b> Percentages</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:robuustefficient"><i class="fa fa-check"></i><b>9.7</b> Keuzemoment</a></li>
+<li class="chapter" data-level="9.8" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#sec:standaardscores"><i class="fa fa-check"></i><b>9.8</b> Standaardscores</a></li>
+<li class="chapter" data-level="9.9" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#spss-3"><i class="fa fa-check"></i><b>9.9</b> SPSS</a></li>
+<li class="chapter" data-level="9.10" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#jasp-3"><i class="fa fa-check"></i><b>9.10</b> JASP</a></li>
+<li class="chapter" data-level="9.11" data-path="ch-centrumenspreiding.html"><a href="ch-centrumenspreiding.html#r-3"><i class="fa fa-check"></i><b>9.11</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html"><i class="fa fa-check"></i><b>10</b> Kansverdelingen</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:kansen"><i class="fa fa-check"></i><b>10.1</b> Kansen</a></li>
+<li class="chapter" data-level="10.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:binomiaalverdeling"><i class="fa fa-check"></i><b>10.2</b> Binomiale kansverdeling</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#formules"><i class="fa fa-check"></i><b>10.2.1</b> formules</a></li>
+<li class="chapter" data-level="10.2.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#jasp-4"><i class="fa fa-check"></i><b>10.2.2</b> JASP</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#r-4"><i class="fa fa-check"></i><b>10.2.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:normaalverdeling"><i class="fa fa-check"></i><b>10.3</b> Normale kansverdeling</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#formules-1"><i class="fa fa-check"></i><b>10.3.1</b> formules</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#jasp-5"><i class="fa fa-check"></i><b>10.3.2</b> JASP</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#r-5"><i class="fa fa-check"></i><b>10.3.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld"><i class="fa fa-check"></i><b>10.4</b> Heeft mijn variabele een normale kansverdeling?</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#spss-4"><i class="fa fa-check"></i><b>10.4.1</b> SPSS</a></li>
+<li class="chapter" data-level="10.4.2" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#jasp-6"><i class="fa fa-check"></i><b>10.4.2</b> JASP</a></li>
+<li class="chapter" data-level="10.4.3" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#r-6"><i class="fa fa-check"></i><b>10.4.3</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:watalsnietnormaal"><i class="fa fa-check"></i><b>10.5</b> Wat als mijn variabele niet normaal verdeeld is?</a></li>
+<li class="chapter" data-level="10.6" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:CentraalLimietTheorema"><i class="fa fa-check"></i><b>10.6</b> Kansverdeling van gemiddelde</a></li>
+<li class="chapter" data-level="10.7" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#sec:betrouwbaarheidsinterval-gemiddelde"><i class="fa fa-check"></i><b>10.7</b> Betrouwbaarheidsinterval van het gemiddelde</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="ch-kansverdelingen.html"><a href="ch-kansverdelingen.html#formules-2"><i class="fa fa-check"></i><b>10.7.1</b> formules</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ch-samenhang.html"><a href="ch-samenhang.html"><i class="fa fa-check"></i><b>11</b> Samenhang</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#inleiding-5"><i class="fa fa-check"></i><b>11.1</b> Inleiding</a></li>
+<li class="chapter" data-level="11.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:Pearson"><i class="fa fa-check"></i><b>11.2</b> Pearson product-moment-correlatie</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#formules-3"><i class="fa fa-check"></i><b>11.2.1</b> Formules</a></li>
+<li class="chapter" data-level="11.2.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-5"><i class="fa fa-check"></i><b>11.2.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.2.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#jasp-7"><i class="fa fa-check"></i><b>11.2.3</b> JASP</a></li>
+<li class="chapter" data-level="11.2.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-7"><i class="fa fa-check"></i><b>11.2.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:regressie"><i class="fa fa-check"></i><b>11.3</b> Regressie</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:regressie-formules"><i class="fa fa-check"></i><b>11.3.1</b> Formules</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-6"><i class="fa fa-check"></i><b>11.3.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.3.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#jasp-8"><i class="fa fa-check"></i><b>11.3.3</b> JASP</a></li>
+<li class="chapter" data-level="11.3.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-8"><i class="fa fa-check"></i><b>11.3.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#invloedrijke-observaties"><i class="fa fa-check"></i><b>11.4</b> Invloedrijke observaties</a></li>
+<li class="chapter" data-level="11.5" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:Spearman"><i class="fa fa-check"></i><b>11.5</b> Spearmans rangorde-correlatie</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#formules-4"><i class="fa fa-check"></i><b>11.5.1</b> Formules</a></li>
+<li class="chapter" data-level="11.5.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-7"><i class="fa fa-check"></i><b>11.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.5.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#jasp-9"><i class="fa fa-check"></i><b>11.5.3</b> JASP</a></li>
+<li class="chapter" data-level="11.5.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-9"><i class="fa fa-check"></i><b>11.5.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:Phi"><i class="fa fa-check"></i><b>11.6</b> Phi</a>
+<ul>
+<li class="chapter" data-level="11.6.1" data-path="ch-samenhang.html"><a href="ch-samenhang.html#formules-5"><i class="fa fa-check"></i><b>11.6.1</b> Formules</a></li>
+<li class="chapter" data-level="11.6.2" data-path="ch-samenhang.html"><a href="ch-samenhang.html#spss-8"><i class="fa fa-check"></i><b>11.6.2</b> SPSS</a></li>
+<li class="chapter" data-level="11.6.3" data-path="ch-samenhang.html"><a href="ch-samenhang.html#jasp-10"><i class="fa fa-check"></i><b>11.6.3</b> JASP</a></li>
+<li class="chapter" data-level="11.6.4" data-path="ch-samenhang.html"><a href="ch-samenhang.html#r-10"><i class="fa fa-check"></i><b>11.6.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="ch-samenhang.html"><a href="ch-samenhang.html#sec:correlationcausation"><i class="fa fa-check"></i><b>11.7</b> Tenslotte</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html"><i class="fa fa-check"></i><b>12</b> Betrouwbaarheid</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#inleiding-6"><i class="fa fa-check"></i><b>12.1</b> Inleiding</a></li>
+<li class="chapter" data-level="12.2" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#wat-is-betrouwbaarheid"><i class="fa fa-check"></i><b>12.2</b> Wat is betrouwbaarheid?</a></li>
+<li class="chapter" data-level="12.3" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#testtheorie"><i class="fa fa-check"></i><b>12.3</b> Testtheorie</a></li>
+<li class="chapter" data-level="12.4" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#interpretaties"><i class="fa fa-check"></i><b>12.4</b> Interpretaties</a></li>
+<li class="chapter" data-level="12.5" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#methoden-om-betrouwbaarheid-te-schatten"><i class="fa fa-check"></i><b>12.5</b> Methoden om betrouwbaarheid te schatten</a></li>
+<li class="chapter" data-level="12.6" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#betrouwbaarheid-tussen-beoordelaars"><i class="fa fa-check"></i><b>12.6</b> Betrouwbaarheid tussen beoordelaars</a></li>
+<li class="chapter" data-level="12.7" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#betrouwbaarheid-en-constructvaliditeit"><i class="fa fa-check"></i><b>12.7</b> Betrouwbaarheid en constructvaliditeit</a></li>
+<li class="chapter" data-level="12.8" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#spss-9"><i class="fa fa-check"></i><b>12.8</b> SPSS</a></li>
+<li class="chapter" data-level="12.9" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#jasp-11"><i class="fa fa-check"></i><b>12.9</b> JASP</a></li>
+<li class="chapter" data-level="12.10" data-path="ch-betrouwbaarheid.html"><a href="ch-betrouwbaarheid.html#r-11"><i class="fa fa-check"></i><b>12.10</b> R</a></li>
+</ul></li>
+<li class="part"><span><b>Deel III: Toetsende statistiek</b></span></li>
+<li class="chapter" data-level="13" data-path="ch:toetsing.html"><a href="ch:toetsing.html"><i class="fa fa-check"></i><b>13</b> Toetsing</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:toetsing-inleiding"><i class="fa fa-check"></i><b>13.1</b> Inleiding</a></li>
+<li class="chapter" data-level="13.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-onesample"><i class="fa fa-check"></i><b>13.2</b> <span class="math inline">\(t\)</span>-toets voor enkele steekproef</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-vrijheidsgraden"><i class="fa fa-check"></i><b>13.2.1</b> vrijheidsgraden</a></li>
+<li class="chapter" data-level="13.2.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-1"><i class="fa fa-check"></i><b>13.2.2</b> formules</a></li>
+<li class="chapter" data-level="13.2.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-aannames"><i class="fa fa-check"></i><b>13.2.3</b> aannames</a></li>
+<li class="chapter" data-level="13.2.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#spss-10"><i class="fa fa-check"></i><b>13.2.4</b> SPSS</a></li>
+<li class="chapter" data-level="13.2.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:jaspttoetsenkel"><i class="fa fa-check"></i><b>13.2.5</b> JASP</a></li>
+<li class="chapter" data-level="13.2.6" data-path="ch:toetsing.html"><a href="ch:toetsing.html#r-12"><i class="fa fa-check"></i><b>13.2.6</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:pgroterdannul"><i class="fa fa-check"></i><b>13.3</b> Overschrijdingskans <span class="math inline">\(p\)</span> is altijd groter dan nul</a></li>
+<li class="chapter" data-level="13.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-eenzijdigtweezijdig"><i class="fa fa-check"></i><b>13.4</b> Eenzijdige en tweezijdige toetsen</a></li>
+<li class="chapter" data-level="13.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:t-betrouwbaarheidsinterval-gemiddelde"><i class="fa fa-check"></i><b>13.5</b> Betrouwbaarheidsinterval van het gemiddelde</a>
+<ul>
+<li class="chapter" data-level="13.5.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-2"><i class="fa fa-check"></i><b>13.5.1</b> formules</a></li>
+<li class="chapter" data-level="13.5.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#spss-11"><i class="fa fa-check"></i><b>13.5.2</b> SPSS</a></li>
+<li class="chapter" data-level="13.5.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#jasp-12"><i class="fa fa-check"></i><b>13.5.3</b> JASP</a></li>
+<li class="chapter" data-level="13.5.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#r-13"><i class="fa fa-check"></i><b>13.5.4</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-onafh"><i class="fa fa-check"></i><b>13.6</b> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven</a>
+<ul>
+<li class="chapter" data-level="13.6.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-ongepaard-aannames"><i class="fa fa-check"></i><b>13.6.1</b> aannames</a></li>
+<li class="chapter" data-level="13.6.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-formules"><i class="fa fa-check"></i><b>13.6.2</b> formules</a></li>
+<li class="chapter" data-level="13.6.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:SPSS-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.3</b> SPSS</a></li>
+<li class="chapter" data-level="13.6.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:jaspttoetsongepaard"><i class="fa fa-check"></i><b>13.6.4</b> JASP</a></li>
+<li class="chapter" data-level="13.6.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:R-ttoets-ongepaard"><i class="fa fa-check"></i><b>13.6.5</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.7" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-gepaard"><i class="fa fa-check"></i><b>13.7</b> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen</a>
+<ul>
+<li class="chapter" data-level="13.7.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#aannames-1"><i class="fa fa-check"></i><b>13.7.1</b> aannames</a></li>
+<li class="chapter" data-level="13.7.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-4"><i class="fa fa-check"></i><b>13.7.2</b> formules</a></li>
+<li class="chapter" data-level="13.7.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:SPSS-ttoets-gepaard"><i class="fa fa-check"></i><b>13.7.3</b> SPSS</a></li>
+<li class="chapter" data-level="13.7.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:jaspttoetsgepaard"><i class="fa fa-check"></i><b>13.7.4</b> JASP</a></li>
+<li class="chapter" data-level="13.7.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:R-ttoets-gepaard"><i class="fa fa-check"></i><b>13.7.5</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="13.8" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:ttoets-effectgrootte"><i class="fa fa-check"></i><b>13.8</b> Effectgrootte</a>
+<ul>
+<li class="chapter" data-level="13.8.1" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:formules13-5"><i class="fa fa-check"></i><b>13.8.1</b> formules</a></li>
+<li class="chapter" data-level="13.8.2" data-path="ch:toetsing.html"><a href="ch:toetsing.html#spss-13-2"><i class="fa fa-check"></i><b>13.8.2</b> SPSS</a></li>
+<li class="chapter" data-level="13.8.3" data-path="ch:toetsing.html"><a href="ch:toetsing.html#jasp-13"><i class="fa fa-check"></i><b>13.8.3</b> JASP</a></li>
+<li class="chapter" data-level="13.8.4" data-path="ch:toetsing.html"><a href="ch:toetsing.html#r-14"><i class="fa fa-check"></i><b>13.8.4</b> R</a></li>
+<li class="chapter" data-level="13.8.5" data-path="ch:toetsing.html"><a href="ch:toetsing.html#sec:betrouwbaarheidsinterval-effectgrootte"><i class="fa fa-check"></i><b>13.8.5</b> Betrouwbaarheidsinterval van de effectgrootte</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="ch:power.html"><a href="ch:power.html"><i class="fa fa-check"></i><b>14</b> Power</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="ch:power.html"><a href="ch:power.html#sec:power-inleiding"><i class="fa fa-check"></i><b>14.1</b> Inleiding</a></li>
+<li class="chapter" data-level="14.2" data-path="ch:power.html"><a href="ch:power.html#sec:effectgrootte-power"><i class="fa fa-check"></i><b>14.2</b> Verband tussen effectgrootte en power</a></li>
+<li class="chapter" data-level="14.3" data-path="ch:power.html"><a href="ch:power.html#sec:steekproefgrootte-power"><i class="fa fa-check"></i><b>14.3</b> Verband tussen steekproefgrootte en power</a></li>
+<li class="chapter" data-level="14.4" data-path="ch:power.html"><a href="ch:power.html#sec:significantieniveau-power"><i class="fa fa-check"></i><b>14.4</b> Verband tussen significantieniveau en power</a></li>
+<li class="chapter" data-level="14.5" data-path="ch:power.html"><a href="ch:power.html#nadelen-van-onvoldoende-power"><i class="fa fa-check"></i><b>14.5</b> Nadelen van onvoldoende power</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html"><i class="fa fa-check"></i><b>15</b> Variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:inleiding"><i class="fa fa-check"></i><b>15.1</b> Inleiding</a></li>
+<li class="chapter" data-level="15.2" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-voorbeelden"><i class="fa fa-check"></i><b>15.2</b> Enkele voorbeelden</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#aannames"><i class="fa fa-check"></i><b>15.2.1</b> aannames</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#eén-weg-variantieanalyse"><i class="fa fa-check"></i><b>15.3</b> Eén-weg-variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.3.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-uitleg"><i class="fa fa-check"></i><b>15.3.1</b> Een intuïtieve uitleg</a></li>
+<li class="chapter" data-level="15.3.2" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-formeel"><i class="fa fa-check"></i><b>15.3.2</b> Een formele uitleg</a></li>
+<li class="chapter" data-level="15.3.3" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-effectgrootte"><i class="fa fa-check"></i><b>15.3.3</b> Effectgrootte</a></li>
+<li class="chapter" data-level="15.3.4" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-gericht"><i class="fa fa-check"></i><b>15.3.4</b> Gerichte vergelijkingen</a></li>
+<li class="chapter" data-level="15.3.5" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-oneway-posthoc"><i class="fa fa-check"></i><b>15.3.5</b> Post-hoc vergelijkingen</a></li>
+<li class="chapter" data-level="15.3.6" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#spss-12"><i class="fa fa-check"></i><b>15.3.6</b> SPSS</a></li>
+<li class="chapter" data-level="15.3.7" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#jasp-14"><i class="fa fa-check"></i><b>15.3.7</b> JASP</a></li>
+<li class="chapter" data-level="15.3.8" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#r-15"><i class="fa fa-check"></i><b>15.3.8</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="15.4" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:tweeweg-anova"><i class="fa fa-check"></i><b>15.4</b> Tweeweg-variantieanalyse</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#een-intuïtieve-uitleg"><i class="fa fa-check"></i><b>15.4.1</b> Een intuïtieve uitleg</a></li>
+<li class="chapter" data-level="15.4.2" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#een-formele-uitleg"><i class="fa fa-check"></i><b>15.4.2</b> Een formele uitleg</a></li>
+<li class="chapter" data-level="15.4.3" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#sec:anova-twoway-posthoc"><i class="fa fa-check"></i><b>15.4.3</b> Post-hoc vergelijkingen</a></li>
+<li class="chapter" data-level="15.4.4" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#spss-13"><i class="fa fa-check"></i><b>15.4.4</b> SPSS</a></li>
+<li class="chapter" data-level="15.4.5" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#jasp-15"><i class="fa fa-check"></i><b>15.4.5</b> JASP</a></li>
+<li class="chapter" data-level="15.4.6" data-path="ch:variantieanalyse.html"><a href="ch:variantieanalyse.html#r-16"><i class="fa fa-check"></i><b>15.4.6</b> R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html"><i class="fa fa-check"></i><b>16</b> Chi-kwadraat-toetsen</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#sec:h16inleiding"><i class="fa fa-check"></i><b>16.1</b> Inleiding</a></li>
+<li class="chapter" data-level="16.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#sec:chi2gof"><i class="fa fa-check"></i><b>16.2</b> <span class="math inline">\(\chi^2\)</span>-toets voor “goodness of fit” in enkele steekproef</a></li>
+<li class="chapter" data-level="16.3" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#chi2-toets-voor-homogeniteit-van-een-variabele-in-meerdere-steekproeven"><i class="fa fa-check"></i><b>16.3</b> <span class="math inline">\(\chi^2\)</span>-toets voor homogeniteit van een variabele in meerdere steekproeven</a></li>
+<li class="chapter" data-level="16.4" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#chi2-toets-voor-verband-tussen-twee-variabelen-in-enkele-steekproef"><i class="fa fa-check"></i><b>16.4</b> <span class="math inline">\(\chi^2\)</span>-toets voor verband tussen twee variabelen in enkele steekproef</a></li>
+<li class="chapter" data-level="16.5" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#sec:chi2toets-aannames"><i class="fa fa-check"></i><b>16.5</b> aannames</a></li>
+<li class="chapter" data-level="16.6" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#formules-6"><i class="fa fa-check"></i><b>16.6</b> formules</a></li>
+<li class="chapter" data-level="16.7" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#spss-14"><i class="fa fa-check"></i><b>16.7</b> SPSS</a>
+<ul>
+<li class="chapter" data-level="16.7.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-voorbereiding"><i class="fa fa-check"></i><b>16.7.1</b> goodness of fit: voorbereiding</a></li>
+<li class="chapter" data-level="16.7.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-toetsing"><i class="fa fa-check"></i><b>16.7.2</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.7.3" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-voorbereiding"><i class="fa fa-check"></i><b>16.7.3</b> kruistabellen: voorbereiding</a></li>
+<li class="chapter" data-level="16.7.4" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-toetsing"><i class="fa fa-check"></i><b>16.7.4</b> kruistabellen: toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.8" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#jasp-16"><i class="fa fa-check"></i><b>16.8</b> JASP</a>
+<ul>
+<li class="chapter" data-level="16.8.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-voorbereiding-1"><i class="fa fa-check"></i><b>16.8.1</b> goodness of fit: voorbereiding</a></li>
+<li class="chapter" data-level="16.8.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-toetsing-1"><i class="fa fa-check"></i><b>16.8.2</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.8.3" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-voorbereiding-1"><i class="fa fa-check"></i><b>16.8.3</b> kruistabellen: voorbereiding</a></li>
+<li class="chapter" data-level="16.8.4" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-toetsing-1"><i class="fa fa-check"></i><b>16.8.4</b> kruistabellen: toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.9" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#r-17"><i class="fa fa-check"></i><b>16.9</b> R</a>
+<ul>
+<li class="chapter" data-level="16.9.1" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#goodness-of-fit-toetsing-2"><i class="fa fa-check"></i><b>16.9.1</b> goodness of fit: toetsing</a></li>
+<li class="chapter" data-level="16.9.2" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#kruistabellen-voorbereiding-en-toetsing"><i class="fa fa-check"></i><b>16.9.2</b> kruistabellen: voorbereiding en toetsing</a></li>
+</ul></li>
+<li class="chapter" data-level="16.10" data-path="ch:chi-kwadraat-toetsen.html"><a href="ch:chi-kwadraat-toetsen.html#effectgrootte-odds-ratio"><i class="fa fa-check"></i><b>16.10</b> Effectgrootte: odds ratio</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html"><i class="fa fa-check"></i><b>17</b> Andere nonparametrische toetsen</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:h17inleiding"><i class="fa fa-check"></i><b>17.1</b> Inleiding</a></li>
+<li class="chapter" data-level="17.2" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#gepaarde-observaties-enkele-steekproef"><i class="fa fa-check"></i><b>17.2</b> Gepaarde observaties, enkele steekproef</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:tekentoets"><i class="fa fa-check"></i><b>17.2.1</b> Tekentoets</a></li>
+<li class="chapter" data-level="17.2.2" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:Wilcoxon-signed-rank"><i class="fa fa-check"></i><b>17.2.2</b> Wilcoxon signed-ranks test</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#onafhankelijke-observaties-meerdere-steekproeven"><i class="fa fa-check"></i><b>17.3</b> Onafhankelijke observaties, meerdere steekproeven</a>
+<ul>
+<li class="chapter" data-level="17.3.1" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#mediaantoets"><i class="fa fa-check"></i><b>17.3.1</b> Mediaantoets</a></li>
+<li class="chapter" data-level="17.3.2" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#sec:wilcoxon-rank-sum"><i class="fa fa-check"></i><b>17.3.2</b> Wilcoxon rank sum test, ofwel Mann-Whitney U test</a></li>
+<li class="chapter" data-level="17.3.3" data-path="ch:andere-nonpar-toetsen.html"><a href="ch:andere-nonpar-toetsen.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>17.3.3</b> Kruskall-Wallis H test</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Bijlagen</b></span></li>
+<li class="chapter" data-level="A" data-path="app-randomgetallen.html"><a href="app-randomgetallen.html"><i class="fa fa-check"></i><b>A</b> Willekeurige getallen</a></li>
+<li class="chapter" data-level="B" data-path="app-kritiekeZwaarden.html"><a href="app-kritiekeZwaarden.html"><i class="fa fa-check"></i><b>B</b> Standaard-normale kansverdeling</a></li>
+<li class="chapter" data-level="C" data-path="app-kritieketwaarden.html"><a href="app-kritieketwaarden.html"><i class="fa fa-check"></i><b>C</b> Kritieke waarden van <span class="math inline">\(t\)</span>-verdeling</a></li>
+<li class="chapter" data-level="D" data-path="app-kritiekechi2waarden.html"><a href="app-kritiekechi2waarden.html"><i class="fa fa-check"></i><b>D</b> Kritieke waarden van <span class="math inline">\(\chi^2\)</span>-verdeling</a></li>
+<li class="chapter" data-level="" data-path="referenties.html"><a href="referenties.html"><i class="fa fa-check"></i>Referenties</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Gemaakt met bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Kwantitatieve Methoden en Statistiek</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch-samenhang" class="section level1" number="11">
+<h1><span class="header-section-number">Hoofdstuk 11</span> Samenhang</h1>
+<div id="inleiding-5" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> Inleiding</h2>
+<p>Het meeste empirische onderzoek is gericht op het vaststellen van
+samenhang tussen variabelen. In experimenteel onderzoek gaat het dan
+primair om de samenhang tussen onafhankelijke en afhankelijke
+variabelen. In het volgende deel gaan we nader in op diverse manieren om
+vast te stellen of er een “significant” (beduidend, betekenisvol, niet
+toevallig) verband bestaat tussen de onafhankelijke en afhankelijke
+variabele. Daarnaast kan de onderzoeker geïnteresseerd zijn in de
+onderlinge samenhang tussen meerdere afhankelijke variabelen,
+bijvoorbeeld de samenhang tussen de oordelen van meerdere beoordelaars
+(zie ook Hoofdstuk <a href="ch-betrouwbaarheid.html#ch-betrouwbaarheid">12</a>).</p>
+<p>In quasi-experimenteel onderzoek is het onderscheid tussen
+onafhankelijke en afhankelijke variabelen doorgaans minder duidelijk. Er
+worden meerdere variabelen geobserveerd, en de onderzoeker is vooral
+geïnteresseerd in de onderlinge samenhang tussen die geobserveerde
+variabelen. Wat is bijvoorbeeld de samenhang tussen de scores voor
+lezen, rekenen, en wereldoriëntatie in het CITO-onderzoek (zie
+Tabel <a href="ch-centrumenspreiding.html#tab:cito">9.1</a>)? In dit hoofdstuk gaan we nader in op de manieren
+om die samenhang of correlatie uit te drukken in een getal: een
+correlatie-coëfficient. Afhankelijk van de meetniveau’s van de
+variabelen zijn er verschillende correlatie-coëfficiënten, die we verder
+in dit hoofdstuk zullen behandelen.</p>
+<p>Het is raadzaam om altijd eerst een grafische weergave te maken van de
+samenhang tussen de variabelen, in de vorm van een zgn.
+<em>spreidingsdiagram</em> (ook vaak aangeduid als scattergram of scatterplot),
+zoals in Figuur <a href="ch-samenhang.html#fig:cito-scatter">11.1</a>. Ieder punt in dit spreidingsdiagram
+correspondeert met een leerling (of algemener, met een eenheid van de
+steekproef). De positie van ieder punt (leerling) wordt bepaald door de
+geobserveerde waarden van twee variabelen (hier is <span class="math inline">\(X\)</span> score bij
+leestoets, <span class="math inline">\(Y\)</span> is score bij rekentoets). Zo’n spreidingsdiagram helpt om
+een eventueel verband te interpreteren, en om te inspecteren of de
+observaties wel voldoen aan de randvoorwaarden om een correlatie te
+berekenen uit die observaties. Kijk in ieder geval naar (a) de
+aanwezigheid van een eventueel verband, (b) de vorm van dat verband
+(lineair, exponentieel, …), (c) eventuele uitbijters (extreme
+observaties, zie §<a href="ch-centrumenspreiding.html#sec:uitbijters">9.4.2</a>), en (d) de verdeling van de twee
+variabelen, zie §<a href="ch-centrumenspreiding.html#sec:robuustefficient">9.7</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cito-scatter"></span>
+<img src="KMS-NL_files/figure-html/cito-scatter-1.png" alt="Spreidingsdiagram van de scores van een leestoets en een rekentoets; zie tekst." width="480" />
+<p class="caption">
+Figuur 11.1: Spreidingsdiagram van de scores van een leestoets en een rekentoets; zie tekst.
+</p>
+</div>
+<p>Dit spreidingsdiagram laat zien (a) dat er een verband bestaat tussen de
+scores bij lezen en bij rekenen. Het verband is (b) bij benadering lineair, d.w.z. te
+beschrijven als een rechte lijn; we komen daar op terug in
+§<a href="ch-samenhang.html#sec:regressie">11.3</a>.
+Het verband helpt ons ook om de spreiding in de twee variabelen te
+verklaren. Immers, de spreiding in de rekenscores is voor een deel te
+begrijpen of te verklaren uit de spreiding in de leestoets: leerlingen
+die een relatief goede score behalen bij lezen, doen dat ook bij
+rekenen. De observaties van de twee variabelen verschaffen dus niet
+alleen informatie over die twee variabelen zelf, maar bovendien over de
+samenhang tussen die variabelen. In dit spreidingsdiagram zien we
+overigens ook (c) dat de hoogste leesscore een uitbijter vormt (zie ook
+Fig.<a href="ch-centrumenspreiding.html#fig:cito-boxplot">9.3</a>); zulke uitbijters kunnen onevenredig
+grote invloed hebben op het gevonden verband.</p>
+</div>
+<div id="sec:Pearson" class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> Pearson product-moment-correlatie</h2>
+<p>De Pearson product-moment-correlatiecoëfficiënt wordt aangeduid met
+symbool <span class="math inline">\(r\)</span> (in het geval van twee variabelen). Deze coëfficiënt is te
+gebruiken als beide variabelen geobserveerd zijn op het
+interval-meetniveau
+(§<a href="ch-meetniveau.html#sec:interval">4.4</a>), en als beide variabelen bij benadering
+normaal-verdeeld zijn
+(§<a href="ch-kansverdelingen.html#sec:normaalverdeling">10.3</a>). De berekening doen we tegenwoordig
+per computer.</p>
+<p>Voor de observaties in het spreidingsdiagram in
+Fig.<a href="ch-samenhang.html#fig:cito-scatter">11.1</a> vinden we een correlatie van <span class="math inline">\(r=+.79\)</span>. De
+correlatie-coëfficiënt is een getal dat per definitie ligt tussen <span class="math inline">\(-1\)</span>
+en <span class="math inline">\(+1\)</span>. Een positieve correlatiecoëfficient wijst op een positief
+verband: een grotere waarde van <span class="math inline">\(X\)</span> correspondeert met een grotere
+waarde van <span class="math inline">\(Y\)</span>. Een negatieve coëfficiënt wijst op een negatief verband:
+een grotere waarde van <span class="math inline">\(X\)</span> correspondeert met een kleinere waarde van
+<span class="math inline">\(Y\)</span>. Een waarde van <span class="math inline">\(r\)</span> dicht bij nul wijst op een zwak of afwezig
+verband: de spreiding in <span class="math inline">\(X\)</span> heeft niets te maken met de spreiding in
+<span class="math inline">\(Y\)</span>; er is geen of alleen zwakke correlatie. Een correlatie van
+<span class="math inline">\(.4&lt;r&lt;.6\)</span> (of <span class="math inline">\(-.6 &lt; r &lt; -.4\)</span>) noemen we middelmatig. Een correlatie van
+<span class="math inline">\(r&gt;.6\)</span> (of <span class="math inline">\(r&lt; -.6\)</span>) wijst op een sterke samenhang. Als <span class="math inline">\(r=1\)</span> (of
+<span class="math inline">\(r=-1\)</span>) dan liggen alle observaties precies op een rechte lijn.
+Figuur <a href="ch-samenhang.html#fig:cor-scatter">11.2</a> toont meerdere spreidingsdiagrammen met de
+bijbehorende correlatiecoëfficiënten.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cor-scatter"></span>
+<img src="KMS-NL_files/figure-html/cor-scatter-1.png" alt="Meerdere spreidingsdiagrammen van observaties met bijbehorende correlatiecoëfficiënten." width="672" />
+<p class="caption">
+Figuur 11.2: Meerdere spreidingsdiagrammen van observaties met bijbehorende correlatiecoëfficiënten.
+</p>
+</div>
+<p>De correlatie die we zien tussen de scores van de twee variabelen (zoals
+<span class="math inline">\(r=.79\)</span> tussen scores bij leestoets en rekentoets,
+Fig.<a href="ch-samenhang.html#fig:cito-scatter">11.1</a>) zou ook het gevolg kunnen zijn van
+toevallige variaties in de observaties. Het is immers mogelijk dat de
+leerlingen met een goede score op de leestoets, zuiver door toeval, ook
+een goede score op de rekentoets hebben behaald — ook als er in de
+populatie eigenlijk <em>niet</em> samenhang is tussen de twee variabelen. De
+onbekende correlatie in de populatie duiden we aan met de griekse letter
+<span class="math inline">\(\rho\)</span> (“rho”); het is dus ook mogelijk dat <span class="math inline">\(\rho=0\)</span>. Ook als <span class="math inline">\(\rho=0\)</span>
+is het mogelijk om <span class="math inline">\(n=10\)</span> leerlingen in de steekproef te hebben die hoge
+scores op het ene onderdeel <em>toevallig</em> combineren met hoge scores op
+het andere onderdeel (en om toevallig niet leerlingen in de steekproef
+te hebben die hoge scores op het ene onderdeel combineren met lage
+scores op het andere onderdeel). We kunnen schatten wat de kans <span class="math inline">\(p\)</span> is
+om deze correlatie van <span class="math inline">\(r=0.79\)</span> of sterker te vinden in een steekproef
+van <span class="math inline">\(n=10\)</span> leerlingen, indien de samenhang in de populatie eigenlijk
+nihil is (d.i. indien <span class="math inline">\(\rho=0\)</span>). Deze kans <span class="math inline">\(p\)</span> noemen we de
+<em>significantie</em> van de correlatiecoëfficiënt; we komen in
+Hoofdstuk <a href="#ch-toetsing"><strong>??</strong></a> uitgebreider terug op dit begrip
+‘significantie’. Daarop vooruitlopend: als deze kans <span class="math inline">\(p\)</span> kleiner is dan
+<span class="math inline">\(.05\)</span>, dan nemen we aan dat de gevonden correlatie <span class="math inline">\(r\)</span> <em>niet toevallig</em>,
+d.i. <em>significant</em> is. Vaak zien we een kleine kans <span class="math inline">\(p\)</span> bij een sterke
+correlatie <span class="math inline">\(r\)</span>. De correlatiecoëfficiënt <span class="math inline">\(r\)</span> geeft de richting en
+sterkte van het verband aan, en de significantie <span class="math inline">\(p\)</span> geeft de kans aan
+om dit verband bij toeval te vinden als <span class="math inline">\(\rho=0\)</span> in de populatie. We
+rapporteren deze bevindingen als volgt<a href="referenties.html#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>:</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 11.1:</em>
+De scores van de <span class="math inline">\(n=10\)</span> leerlingen op de deeltoetsen van de CITO-toets
+in Tabel <a href="ch-centrumenspreiding.html#tab:cito">9.1</a> laten een sterke correlatie zien tussen de scores
+bij de onderdelen Lezen en Rekenen: Pearson <span class="math inline">\(r=0.79, p=.007\)</span>. Leerlingen
+met een relatief hoge score bij het ene onderdeel behalen in het
+algemeen ook een relatief hoge score bij het andere onderdeel.</p>
+</blockquote>
+<hr />
+<p>In veel onderzoeken zijn we geïnteresseerd in de correlaties tussen meer
+dan twee variabelen. Die correlaties tussen variabelen worden dan vaak
+gerapporteerd in een zgn. correlatiematrix zoals
+Tabel <a href="ch-samenhang.html#tab:cito-correlaties">11.1</a>, dat is een tabel waar de correlaties
+vermeld worden van alle paren van correlaties (Eng. ‘pairwise
+correlation matrix’).</p>
+<table>
+<caption><span id="tab:cito-correlaties">Tabel 11.1: </span> Correlaties tussen de drie onderdelen van de CITO-toets, zoals
+samengevat in Tabel <a href="ch-centrumenspreiding.html#tab:cito">9.1</a>, met bijbehorende significantie-niveau
+tussen haakjes.</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center">Lezen</th>
+<th align="center">Rekenen</th>
+<th align="center">Wereldoriëntatie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lezen</td>
+<td align="center">1.00</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td>Rekenen</td>
+<td align="center">0.79 (.007)</td>
+<td align="center">1.00</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td>Wereldoriëntatie</td>
+<td align="center">-0.51 (.131)</td>
+<td align="center">-0.01 (.970)</td>
+<td align="center">1.00</td>
+</tr>
+</tbody>
+</table>
+<p>In deze matrix is alleen de onderste (linker) helft van de volledige
+matrix weergegeven. Dat is ook voldoende, want de cellen zijn gespiegeld
+rond de diagonaal: de correlatie tussen Lezen (kolom 1) en Rekenen (rij
+2) is immers hetzelfde als de correlatie tussen Rekenen (rij 2) en Lezen
+(rij 1). De correlatiematrix bevat in de cellen op de diagonaal altijd
+de waarde <span class="math inline">\(1.00\)</span>, omdat een variabele altijd perfect met zichzelf
+correleert. We rapporteren deze bevindingen als volgt:</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 11.2:</em> De
+paarsgewijze correlaties tussen scores van de <span class="math inline">\(n=10\)</span> leerlingen op de
+drie deeltoetsen van de CITO-toets zijn samengevat in
+Tabel <a href="ch-samenhang.html#tab:cito-correlaties">11.1</a>. We zien een sterke correlatie tussen
+de scores bij de onderdelen Lezen en Rekenen: leerlingen met een
+relatief hoge score bij het onderdeel Lezen behalen in het algemeen ook
+een relatief hoge score bij het onderdeel Rekenen. De overige
+correlaties waren niet significant.</p>
+</blockquote>
+<hr />
+<div id="formules-3" class="section level3" number="11.2.1">
+<h3><span class="header-section-number">11.2.1</span> Formules</h3>
+<p>De eenvoudigste formule voor de Pearson
+product-moment-correlatiecoëfficiënt <span class="math inline">\(r\)</span> maakt gebruik van de
+standaard-normaal-scores die we al eerder gebruikt hebben
+(§<a href="ch-centrumenspreiding.html#sec:standaardscores">9.8</a>):
+<span class="math display" id="eq:pearson">\[\begin{equation}
+    r_{XY} = \frac{\sum z_X z_Y}{n-1}
+  \tag{11.1}
+\end{equation}\]</span></p>
+<p>Net als bij het berekenen van de variantie
+(formule <a href="ch-centrumenspreiding.html#eq:variantie">(9.3)</a>) delen we weer door <span class="math inline">\((n-1)\)</span> om een schatting
+te maken van de samenhang in de populatie.</p>
+</div>
+<div id="spss-5" class="section level3" number="11.2.2">
+<h3><span class="header-section-number">11.2.2</span> SPSS</h3>
+<p>Voor Pearson’s product-moment-correlatiecoëfficiënt:</p>
+<pre><code>Analyze &gt; Correlate &gt; Bivariate...</code></pre>
+<p>Kies <code>Pearsons</code> correlatiecoëfficiënt, vink aan:
+<code>Flag significant correlations</code>. Bevestig met <code>OK</code>. De resulterende
+uitvoer (tabel) voldoet niet aan de stijl-eisen; je moet de gegevens dus
+overnemen in of omzetten naar een eigen tabel die daar wel aan voldoet.</p>
+</div>
+<div id="jasp-7" class="section level3" number="11.2.3">
+<h3><span class="header-section-number">11.2.3</span> JASP</h3>
+<p>Voor Pearson’s product-moment-correlatiecoëfficiënt klik je in de bovenbalk op:</p>
+<pre><code>Regression &gt; Classical: Correlation</code></pre>
+<p>Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld “Variables”. Zorg dat onder “Sample Correlation Coefficient” <code>Pearson's r</code> aangevinkt is, en onder “Additional Options” <code>Report significance</code>, <code>Flag significant correlations</code> en <code>Sample size</code>. Je kunt ook <code>Display pairwise</code> aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren.</p>
+</div>
+<div id="r-7" class="section level3" number="11.2.4">
+<h3><span class="header-section-number">11.2.4</span> R</h3>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="ch-samenhang.html#cb63-1" aria-hidden="true" tabindex="-1"></a>cito <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file=</span><span class="st">&quot;data/cito.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb63-2"><a href="ch-samenhang.html#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>( cito[,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>] ) <span class="co"># correlatie-matrix van kolommen 2,3,4</span></span></code></pre></div>
+<pre><code>##                       Lezen    Rekenen Wereldoriëntatie
+## Lezen             1.0000000 0.74921033      -0.50881738
+## Rekenen           0.7492103 1.00000000       0.06351024
+## Wereldoriëntatie -0.5088174 0.06351024       1.00000000</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="ch-samenhang.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( cito, <span class="fu">cor.test</span>( Lezen, Rekenen ) )</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  Lezen and Rekenen
+## t = 3.1994, df = 8, p-value = 0.01262
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.2263659 0.9368863
+## sample estimates:
+##       cor 
+## 0.7492103</code></pre>
+</div>
+</div>
+<div id="sec:regressie" class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> Regressie</h2>
+<p>Het meest eenvoudige verband dat we kunnen onderscheiden en beschrijven
+is een lineair verband, d.w.z. een rechte lijn in het spreidingsdiagram
+(zie Fig.<a href="ch-samenhang.html#fig:cor-scatter">11.2</a>). Deze rechte lijn geeft aan welke waarde
+van <span class="math inline">\(Y_i\)</span> voorspeld wordt, op basis van de waarde van <span class="math inline">\(X_i\)</span>. Deze
+voorspelde waarde van <span class="math inline">\(Y_i\)</span> wordt genoteerd als <span class="math inline">\(\widehat{Y_i}\)</span>
+(“Y-hat”). De beste voorspelling <span class="math inline">\(\widehat{Y_i}\)</span> is gebaseerd op de
+waarde van <span class="math inline">\(X_i\)</span> èn op het lineaire verband tussen <span class="math inline">\(X\)</span> en <span class="math inline">\(Y\)</span>:
+<span class="math display" id="eq:linearmodel2">\[\begin{equation}
+    \widehat{Y_i} = a + b {X_i}
+  \tag{11.2}
+\end{equation}\]</span><br />
+De rechte lijn wordt beschreven met
+twee parameters, nl. het begingetal <span class="math inline">\(a\)</span> (Eng. ‘intercept’) en de
+hellingscoëfficiënt <span class="math inline">\(b\)</span> (Eng. ‘slope’)<a href="referenties.html#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>. De rechte lijn die het
+lineaire verband beschrijft wordt ook aangeduid als de “regressielijn”;
+we proberen immers om de geobserveerde waarden van <span class="math inline">\(Y\)</span> te herleiden tot
+deze lineaire functie van de waarden van <span class="math inline">\(X\)</span>.</p>
+<p>Het verschil tussen de geobserveerde waarde <span class="math inline">\(Y\)</span> en de voorspelde waarde
+<span class="math inline">\(\widehat{Y}\)</span> <span class="math inline">\((Y-\widehat{Y})\)</span> wordt het <em>residu</em> genoemd (symbool
+<span class="math inline">\(e\)</span>). Anders gezegd, de geobserveerde waarde wordt beschouwd als de
+optelsom van twee componenten, nl. de voorspelde waarde en het residu:
+<!-- https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations -->
+<span class="math display" id="eq:linearmodel3">\[\begin{align}
+    Y   &amp;= \widehat{Y} + e \\
+        &amp;= a + b X + e
+  \tag{11.3}
+\end{align}\]</span></p>
+<p>Bovenstaande gedachtengang wordt geïllusteerd in het spreidingsdiagram
+in Figuur <a href="ch-samenhang.html#fig:cito-linearmodel">11.3</a>. De stippellijn geeft het lineaire
+verband aan tussen de twee toetsen:
+<span class="math display" id="eq:cito-linearmodel">\[\begin{equation}
+    \widehat{\textrm{Rekenen}} = 12.97 + 0.52 \times \textrm{Lezen}
+  \tag{11.4}
+\end{equation}\]</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cito-linearmodel"></span>
+<img src="KMS-NL_files/figure-html/cito-linearmodel-1.png" alt="Spreidingsdiagram van de scores van een leestoets en een rekentoets. In het diagram is tevens aangegeven de regressielijn (stippellijn), de voorspelde waarde (groen) en residu (rood) van de rekentoets voor leerling 2, de gemiddelden (plus-symbool), en markeringen voor leerling 2 en 3; zie tekst." width="480" />
+<p class="caption">
+Figuur 11.3: Spreidingsdiagram van de scores van een leestoets en een rekentoets. In het diagram is tevens aangegeven de regressielijn (stippellijn), de voorspelde waarde (groen) en residu (rood) van de rekentoets voor leerling 2, de gemiddelden (plus-symbool), en markeringen voor leerling 2 en 3; zie tekst.
+</p>
+</div>
+<p>Deze stippellijn geeft dus aan wat de voorspelde waarde <span class="math inline">\(\widehat{Y}\)</span> is
+voor iedere waarde van <span class="math inline">\(X\)</span>. Voor de tweede leerling met <span class="math inline">\(X_2 = 32\)</span>
+voorspellen we zo <span class="math inline">\(\widehat{Y_2} = 12.97 + (0.52) (32) = 29.61\)</span>
+(voorspelde waarde, groene lijnstuk). Voor alle observaties die niet
+precies op deze regressielijn liggen (stippellijn),
+is er een afwijking tussen de voorspelde
+score <span class="math inline">\(\widehat{Y}\)</span> en de geobserveerde score <span class="math inline">\(Y\)</span> (residu, rode
+lijnstuk). Voor de tweede leerling is deze afwijking
+<span class="math inline">\(e_2 = (Y_2 - \widehat{Y_2}) = (36-29.61) = 6.49\)</span> (residu, rode
+lijnstuk).</p>
+<p>Zoals gezegd worden de geobserveerde waarden van <span class="math inline">\(Y\)</span> beschouwd als de
+optelsom van twee componenten, de voorspelde waarde <span class="math inline">\(\widehat{Y}\)</span>
+(groen) en het residu <span class="math inline">\(e\)</span> (rood). Op dezelfde wijze kan ook de totale
+<em>variantie</em> van <span class="math inline">\(Y\)</span> beschouwd worden als de optelsom van de twee
+<em>varianties</em> van deze componenten:
+<span class="math display" id="eq:variance-pred-res">\[\begin{equation}
+    s^2_{Y} = s^2_{\widehat{Y}} + s^2_e
+  \tag{11.5}
+\end{equation}\]</span>
+Van de totale variantie
+<span class="math inline">\(s^2_Y\)</span> van Y is dus het ene deel (<span class="math inline">\(s^2_{\widehat{Y}}\)</span>) te herleiden tot
+c.q. te verklaren uit de variantie van <span class="math inline">\(X\)</span>, via het lineaire verband
+beschreven met parameters <span class="math inline">\(a\)</span> en <span class="math inline">\(b\)</span> (zie
+formule <a href="ch-samenhang.html#eq:linearmodel2">(11.2)</a>), en het andere deel (<span class="math inline">\(s^2_e\)</span>) is niet te
+herleiden of te verklaren. Dat tweede deel, de niet-voorspelde variantie
+van de residuen, wordt ook wel de ‘residuele variantie’ of ‘ruis’
+genoemd.</p>
+<p>Als we <span class="math inline">\(Y\)</span> goed kunnen voorspellen uit <span class="math inline">\(X\)</span>, d.w.z. als de Pearson
+product-moment-correlatiecoëfficiënt <span class="math inline">\(r\)</span> hoog is
+(Fig. <a href="ch-samenhang.html#fig:cor-scatter">11.2</a>, links), dan zijn de residuen <span class="math inline">\(e\)</span> dus
+relatief klein, de observaties liggen dicht rond de regressielijn in het
+spreidingsdiagram, en dan is dus ook de residuele variantie <span class="math inline">\(s^2_e\)</span>
+relatief gering. Omgekeerd, als we <span class="math inline">\(Y\)</span> <em>niet</em> goed kunnen voorspellen
+uit <span class="math inline">\(X\)</span>, d.w.z. als de correlatiecoëfficiënt <span class="math inline">\(r\)</span> relatief laag is
+(Fig. <a href="ch-samenhang.html#fig:cor-scatter">11.2</a>, rechts), dan zijn de residuen <span class="math inline">\(e\)</span> dus
+relatief groot, de observaties liggen wijd verspreid rond de
+regressielijn in het spreidingsdiagram, en dan is dus ook de residuele
+variantie <span class="math inline">\(s^2_e\)</span> relatief groot. Het kwadraat van de Pearson
+product-moment-correlatiecoëfficiënt <span class="math inline">\(r\)</span> geeft aan wat de relatieve
+omvang is van de twee variantie-componenten, ten opzichte van de totale
+variantie:
+<span class="math display" id="eq:r2">\[\begin{align}
+    r^2 &amp; = \frac{s^2_{\widehat{Y}}}{s^2_Y} \\
+        &amp; = 1 - \frac{s^2_e}{s^2_Y}
+  \tag{11.6}
+\end{align}\]</span>
+Deze grootheid <span class="math inline">\(r^2\)</span> wordt ook wel aangeduid als de
+“proportie verklaarde variantie” of als de “determinatie-coëfficiënt”.</p>
+<p>De waarden van de lineaire parameters <span class="math inline">\(a\)</span> en <span class="math inline">\(b\)</span> in
+formule <a href="ch-samenhang.html#eq:linearmodel2">(11.2)</a> worden zo gekozen dat de verzamelde
+residuen zo klein mogelijk zijn, d.w.z. dat de residuele variantie
+<span class="math inline">\(s^2_e\)</span> zo klein mogelijk is (“least squares fit”), en dus <span class="math inline">\(r^2\)</span> zo
+groot mogelijk (zie
+§<a href="ch-samenhang.html#sec:regressie-formules">11.3.1</a>). Op die manier vinden we een rechte
+lijn die het beste past bij de observaties van <span class="math inline">\(X\)</span> en <span class="math inline">\(Y\)</span>.</p>
+<p>Een lineaire regressie kan worden gerapporteerd als volgt:</p>
+<hr />
+<blockquote>
+<p><em>Voorbeeld 11.3:</em>
+Uit een lineaire-regressie-analyse blijkt dat de score bij Rekenen
+samenhangt met die bij Lezen: <span class="math inline">\(b=0.51, r=.79, p_r=.007\)</span>, over <span class="math inline">\(n=10\)</span>
+leerlingen. Dit lineaire regressiemodel verklaart <span class="math inline">\(r^2=.51\)</span> van de
+totale variantie in de rekenscores (de residuele standaarddeviatie is
+<span class="math inline">\(s_e= \sqrt{82.803/(n-1-1)} = 3.217\)</span>).</p>
+</blockquote>
+<hr />
+<div id="sec:regressie-formules" class="section level3" number="11.3.1">
+<h3><span class="header-section-number">11.3.1</span> Formules</h3>
+<p>Bij lineaire regressie van <span class="math inline">\(y\)</span> op <span class="math inline">\(x\)</span> proberen we de coëfficiënten <span class="math inline">\(a\)</span>
+en <span class="math inline">\(b\)</span> zodanig te schatten dat (het kwadraat van) de afwijking tussen de
+voorspelde waarde <span class="math inline">\(\hat{y}\)</span> en de geobserveerde waarde <span class="math inline">\(y\)</span> zo klein
+mogelijk is, m.a.w. dat het kwadraat van de residuen <span class="math inline">\((y-\hat{y})\)</span> zo
+klein mogelijk is. Dit wordt de “least squares” methode genoemd (zie
+<a href="http://www.itl.nist.gov/div898/handbook/pmd/section4/pmd431.htm" class="uri">http://www.itl.nist.gov/div898/handbook/pmd/section4/pmd431.htm</a>).</p>
+<p>De beste schatting voor <span class="math inline">\(b\)</span> is
+<span class="math display">\[b = \frac{ \sum_{i=1}^n (x_i-\overline{x})(y_i-\overline{y}) } { \sum_{i=1}^n (x_i-\overline{x})^2 }\]</span></p>
+<p>De beste schatting voor <span class="math inline">\(a\)</span> is <span class="math display">\[a = \overline{y} - b \overline{x}\]</span></p>
+</div>
+<div id="spss-6" class="section level3" number="11.3.2">
+<h3><span class="header-section-number">11.3.2</span> SPSS</h3>
+<p>Voor lineaire regressie:</p>
+<pre class="console"><code>Analyze &gt; Regression &gt; Linear...</code></pre>
+<p>Kies <code>Dependent variable: Rekenen</code> en kies
+<code>Independent variable: Lezen</code>. Onder de knop <code>Statistics</code>, vink aan
+<code>Model fit</code>, vink aan <code>R squared change</code>, kies <code>Estimates</code>, en daarna
+<code>Continue</code>.<br />
+Onder de knop <code>Plot</code>, vink aan <code>Histogram</code> en vink ook aan
+<code>Normal probability plot</code>; deze keuzes zijn vereist om een numerieke(!)
+samenvatting te krijgen over de residuals.<br />
+Onder de knop <code>Options</code>, kies <code>Include constant</code> om ook de constante
+coëfficiënt <span class="math inline">\(a\)</span> te laten berekenen. Bevestig alle keuzes met <code>OK</code>.</p>
+<p>De resulterende uitvoer omvat meerdere tabellen en figuren; deze kan je
+niet rechtstreeks overnemen in je verslag. De tabel getiteld <em>Model
+Summary</em> bevat de correlatie-coëfficiënt, hier aangeduid met hoofdletter
+<span class="math inline">\(R=.749\)</span>.<br />
+De tabel getiteld <em>Coefficients</em> bevat de regressie-coëfficienten. De
+regel met aanduiding <code>(Constant)</code> vermeldt coëfficient <span class="math inline">\(a=13.25\)</span>; de
+regel getiteld <code>Lezen</code> vermeldt coëfficient <span class="math inline">\(b=0.51\)</span>.<br />
+De tabel getiteld <em>Residual Statistics</em> geeft informatie over zowel de
+voorspelde waarden als de residuen. Controleer of het gemiddelde van de
+residuen inderdaad nul is. In deze tabel zien we ook (regel 2, kolom 4)
+dat de standaarddeviatie van de residuen <span class="math inline">\(3.212\)</span> is.</p>
+</div>
+<div id="jasp-8" class="section level3" number="11.3.3">
+<h3><span class="header-section-number">11.3.3</span> JASP</h3>
+<p>Voor lineaire regressie klik je in de bovenbalk op:</p>
+<pre><code>Regression &gt; Classical: Linear Regression</code></pre>
+<p>Selecteer de variabele <em>Rekenen</em> in het veld “Dependent Variable”, en de variabele <em>Lezen</em> in het veld “Covariates”. Klik vervolgens de balk <code>Model</code> open en controleer of <em>Lezen</em> onder “Model Terms” staat. Ook moet <code>Include intercept</code> aangevinkt zijn, om de constante coëfficiënt <span class="math inline">\(a\)</span> te laten berekenen. Open ook de balk <code>Statistics</code> en zorg dat <code>Estimates</code>, <code>Model fit</code> en <code>R squared change</code> aangevinkt zijn. Vink onder “Residuals” ook <code>Statistics</code> aan om een numerieke samenvatting te krijgen over de residuals. Onder de balk <code>Plots</code> mogen ook <code>Residuals vs. histogram</code> en <code>Q-Q plot standardized residuals</code> worden aangevinkt voor een weergave van de residuals.</p>
+<p>De resulterende uitvoer omvat meerdere tabellen en figuren; deze kan je
+niet rechtstreeks overnemen in je verslag. De tabel getiteld <em>Model
+Summary</em> bevat de correlatie-coëfficiënt, hier aangeduid met hoofdletter
+<span class="math inline">\(R=.749\)</span>.<br />
+De tabel getiteld <em>Coefficients</em> bevat de regressie-coëfficienten. De
+regel met aanduiding <code>(Intercept)</code> vermeldt coëfficient <span class="math inline">\(a=13.25\)</span>; de
+regel getiteld <code>Lezen</code> vermeldt coëfficient <span class="math inline">\(b=0.51\)</span>.<br />
+De tabel getiteld <em>Residual Statistics</em> geeft informatie over zowel de
+voorspelde waarden als de residuen. Controleer of het gemiddelde van de
+residuen inderdaad (zo goed als gelijk aan) nul is. In deze tabel zien we ook (regel 2, kolom 4)
+dat de standaarddeviatie van de residuen <span class="math inline">\(3.212\)</span> is.</p>
+</div>
+<div id="r-8" class="section level3" number="11.3.4">
+<h3><span class="header-section-number">11.3.4</span> R</h3>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="ch-samenhang.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>( Rekenen<span class="sc">~</span>Lezen, <span class="at">data=</span>cito ) )</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Rekenen ~ Lezen, data = cito)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -5.5332 -1.1167 -0.5332  1.7168  6.3384 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)  
+## (Intercept)  13.2507     4.4910   2.950   0.0184 *
+## Lezen         0.5128     0.1603   3.199   0.0126 *
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.406 on 8 degrees of freedom
+## Multiple R-squared:  0.5613, Adjusted R-squared:  0.5065 
+## F-statistic: 10.24 on 1 and 8 DF,  p-value: 0.01262</code></pre>
+<p>Het command <code>lm</code> specificeert een lineair regressiemodel, met <code>Rekenen</code>
+als afhankelijke variabele en <code>Lezen</code> als predictor. Dit model wordt
+bewaard als een object genaamd <code>m1</code>, en dat wordt meteen weer gebruikt
+als argument (invoer) om te rapporteren. In die rapportage van model
+<code>m1</code> wordt de constante coëfficient <span class="math inline">\(a\)</span> aangeduid als <code>Intercept</code>.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="ch-samenhang.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>( <span class="fu">resid</span>( m1 ) ) <span class="co"># s.d. van residuen volgens `m1`</span></span></code></pre></div>
+<pre><code>## [1] 3.211533</code></pre>
+</div>
+</div>
+<div id="invloedrijke-observaties" class="section level2" number="11.4">
+<h2><span class="header-section-number">11.4</span> Invloedrijke observaties</h2>
+<p>In de vorige paragraaf zagen we dat in een correlatie-analyse of een
+regressie-analyse gestreefd wordt naar een minimale residuele variantie.
+Eerder zagen we al ook dat uitbijters of extreme observaties, per
+definitie, relatief veel bijdragen aan de variantie. Bij elkaar leidt
+dat ertoe, dat uitbijters of extreme observatie grote invloed kunnen
+hebben op de hoogte van de correlatie, of op de gevonden regressie (het
+gevonden lineaire verband). Dat is ook te zien in
+Fig.<a href="ch-samenhang.html#fig:cito-linearmodel">11.3</a>. Leerling 3 heeft een extreem hoge
+score bij Lezen (zie ook
+Fig.<a href="ch-centrumenspreiding.html#fig:cito-boxplot">9.3</a>). Als we deze leerling 3 buiten
+beschouwing laten dan zou er niet veel veranderen aan de correlatie
+(<span class="math inline">\(r_{-3}=.79\)</span>) maar wel aan de helling van de regressielijn (<span class="math inline">\(b=0.84\)</span>,
+ruim anderhalf keer zo groot als mèt leerling 3). Deze observatie
+“trekt” dus hard aan de regressielijn, juist omdat deze observatie een
+extreme waarde heeft voor <span class="math inline">\(X\)</span> en daardoor veel invloed heeft.</p>
+<p>Ook niet-extreme observaties kunnen toch van grote invloed zijn op de
+correlatie en regressie, als ze ver verwijderd zijn van de regressielijn
+en dus een grote bijdrage leveren aan de residuele variantie. Ook dat is
+te zien in Fig.<a href="ch-samenhang.html#fig:cito-linearmodel">11.3</a>.
+Leerling 2 heeft geen extreme scores,
+maar heeft wel het grootste residu. Als we deze leerling 2 buiten
+beschouwing laten dan zou de correlatie aanzienlijk hoger zijn
+(<span class="math inline">\(r_{-2}=.86\)</span>) maar de helling van de regressielijn zou slechts weinig
+veranderen (<span class="math inline">\(b=0.45\)</span>).</p>
+<p>Bij een correlatie-analyse of regressie-analyse moet je daarom altijd
+een spreidingsdiagram maken en bestuderen, om te kijken in hoeverre de
+resultaten beïnvloed zijn door een of enkele observaties. Let daarbij
+speciaal op observaties die ver verwijderd zijn van het gemiddelde, voor
+elk van beide variabelen, en op observaties die ver verwijderd zijn van
+de regressielijn.</p>
+</div>
+<div id="sec:Spearman" class="section level2" number="11.5">
+<h2><span class="header-section-number">11.5</span> Spearmans rangorde-correlatie</h2>
+<p>De beide variabelen waarvan we de correlatie willen onderzoeken, zijn
+niet altijd uitgedrukt op het interval-meetniveau
+(§<a href="ch-meetniveau.html#sec:interval">4.4</a>), of de onderzoekers willen of kunnen niet aannemen dat
+de beide variabelen bij benadering normaal-verdeeld zijn
+(§<a href="ch-kansverdelingen.html#sec:normaalverdeling">10.3</a>).
+In dat geval is de
+product-moment-correlatie minder geschikt om de samenhang te
+kwantificeren. Indien de gegevens wel op ordinaal meetniveau zijn
+uitgedrukt, dan kunnen we wel andere correlatiecoëfficiënten gebruiken
+om de samenhang uit te drukken: Spearmans rangorde-correlatiecoëfficiënt
+(<span class="math inline">\(r_s\)</span>) en Kendalls <span class="math inline">\(\tau\)</span> (de griekse letter “tau”). Deze beide
+coëfficiënten zijn gebaseerd op de rangordening van de observaties; deze
+correlaties kunnen we dus altijd uitrekenen als we de observaties kunnen
+ordenen. Ook deze berekening doen we tegenwoordig per computer. In dit
+hoofdstuk bespreken we alleen de Spearmans
+rangorde-correlatiecoëfficiënt.</p>
+<p>De Spearman rangorde-correlatiecoëfficiënt is gelijk aan de Pearson
+product-moment-correlatiecoëfficiënt toegepast op de <em>rangnummers</em> van de
+observaties. We zetten iedere observatie van een variabele om naar het
+volgorde-nummer, van de kleinste geobserveerde waarde (volgnummer 1)
+naar de grootste geobserveerde waarde (volgnummer <span class="math inline">\(n\)</span>). Als twee of meer
+observaties dezelfde waarde hebben, dan krijgen ze ook hetzelfde
+(gemiddelde) rangnummer. In
+Tabel <a href="ch-samenhang.html#tab:cito-rangnummers">11.2</a> zie je de rangnummers van de scores
+voor Lezen en Rekenen, hier geordend volgens de rangnummers voor Lezen.</p>
+<table>
+<caption><span id="tab:cito-rangnummers">Tabel 11.2: </span> Rangnummers van de scores van 10 leerlingen op onderdelen van een toets, zoals samengevat in Tabel <a href="ch-centrumenspreiding.html#tab:cito">9.1</a>, met verschil <span class="math inline">\(v_i\)</span> tussen de twee rangnummers per leerling.</caption>
+<thead>
+<tr class="header">
+<th align="left">Leerling</th>
+<th align="center">1</th>
+<th align="center">9</th>
+<th align="center">6</th>
+<th align="center">4</th>
+<th align="center">10</th>
+<th align="center">8</th>
+<th align="center">5</th>
+<th align="center">7</th>
+<th align="center">2</th>
+<th align="center">3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Lezen</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4.5</td>
+<td align="center">4.5</td>
+<td align="center">6</td>
+<td align="center">7</td>
+<td align="center">8</td>
+<td align="center">9</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td align="left">Rekenen</td>
+<td align="center">2</td>
+<td align="center">4</td>
+<td align="center">1</td>
+<td align="center">4</td>
+<td align="center">6.5</td>
+<td align="center">4</td>
+<td align="center">8</td>
+<td align="center">6.5</td>
+<td align="center">10</td>
+<td align="center">9</td>
+</tr>
+<tr class="odd">
+<td align="left">verschil <span class="math inline">\(v_i\)</span></td>
+<td align="center">-1</td>
+<td align="center">-2</td>
+<td align="center">1</td>
+<td align="center">0.5</td>
+<td align="center">-2</td>
+<td align="center">2</td>
+<td align="center">-1</td>
+<td align="center">1.5</td>
+<td align="center">-1</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>De ordening in Tabel <a href="ch-samenhang.html#tab:cito-rangnummers">11.2</a> maakt in één oogopslag duidelijk dat
+de drie leerlingen met de laagste score voor Lezen (nrs. 1, 9, 6) ook
+bijna de laagste scores voor Rekenen behaalden. Dat wijst op een
+positief verband. De twee beste lezers (nrs. 2 en 3) zijn ook de twee
+beste rekenaars. Ook dat wijst op een positief verband. Er is echter
+geen sprake van een perfect positief verband (dus hier <span class="math inline">\(r_s&lt;1\)</span>), want
+dan zouden de beide rangordeningen perfect overeen komen.</p>
+<p>Bedenk zelf hoe Tabel <a href="ch-samenhang.html#tab:cito-rangnummers">11.2</a> er uit zou zien, als er een perfect
+negatief verband zou zijn (<span class="math inline">\(r_s=-1\)</span>) tussen de scores bij Lezen en
+Rekenen, en hoe de tabel er uit zou zien als er geen enkel verband zou
+zijn (<span class="math inline">\(r_s=0\)</span>) tussen deze scores.</p>
+<div id="formules-4" class="section level3" number="11.5.1">
+<h3><span class="header-section-number">11.5.1</span> Formules</h3>
+<p>De samenhang tussen de rangnummers van twee variabelen wordt uitgedrukt
+in de Spearman rangorde-correlatiecoëfficiënt:
+<span class="math display" id="eq:spearman">\[\begin{equation}
+    r_s = 1 - \frac{6 \sum v_i^2}{n(n^2-1)}
+  \tag{11.7}
+\end{equation}\]</span>
+waarin <span class="math inline">\(v_i\)</span> staat voor
+het verschil in rangnummers op beide variabelen voor respondent <span class="math inline">\(i\)</span>. De
+breuk in deze formule wordt groter, en <span class="math inline">\(r_s\)</span> wordt dus kleiner, naarmate
+de verschillen tussen de rangnummers groter zijn.
+Deze formule is echter alleen bruikbaar als er geen “ties” (gedeelde rangnummers) zijn in de variabelen; voor de gegevens in Tabel <a href="ch-samenhang.html#tab:cito-rangnummers">11.2</a> met “ties” in beide variabelen moeten we een andere formule gebruiken.</p>
+<p>Zoals blijkt is de Spearmans rangorde-correlatie <span class="math inline">\(r_s\)</span> niet gelijk aan
+de Pearson product-momentcorrelatie <span class="math inline">\(r\)</span> bij deze geobserveerde scores.
+Indien voldaan wordt aan de voorwaarden voor de Pearson coëfficient, dan
+geeft deze Pearson product-moment-correlatiecoëfficiënt een betere
+schatting van de samenhang dan de Spearman
+rangorde-correlatiecoëfficiënt. Maar als er <em>niet</em> aan die voorwaarden
+voldaan wordt, dan is de Spearman coëfficiënt weer te prefereren. De
+Spearman coëfficiënt is onder andere minder gevoelig voor invloedrijke
+extreme observaties — dergelijke uitschieters leggen immers minder
+gewicht in de schaal, nadat we de ruwe scores vervangen hebben door de
+rangnummers.</p>
+</div>
+<div id="spss-7" class="section level3" number="11.5.2">
+<h3><span class="header-section-number">11.5.2</span> SPSS</h3>
+<p>Voor Spearmans rangorde-correlatiecoëfficiënt:</p>
+<pre><code>Analyze &gt; Correlate &gt; Bivariate...</code></pre>
+<p>Kies <code>Spearman</code> rangorde-correlatiecoëfficiënt, vink aan:
+<code>Flag significant correlations</code>. Bevestig met <code>OK</code>. De resulterende
+uitvoer (tabel) voldoet niet aan de stijl-eisen; je moet de gegevens dus
+overnemen in of omzetten naar een eigen tabel die daar wel aan voldoet,
+en rapporteren volgens de gebruikelijke conventies voor
+correlatie-analyse.</p>
+</div>
+<div id="jasp-9" class="section level3" number="11.5.3">
+<h3><span class="header-section-number">11.5.3</span> JASP</h3>
+<p>Voor Spearmans rangorde-correlatiecoëfficiënt klik je in de bovenbalk op:</p>
+<pre><code>Regression &gt; Classical: Correlation</code></pre>
+<p>Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld “Variables”. Zorg dat onder “Sample Correlation Coefficient” <code>Spearman's rho</code> aangevinkt is, en onder “Additional Options” <code>Report significance</code>, <code>Flag significant correlations</code> en <code>Sample size</code>. Je kunt ook <code>Display pairwise</code> aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren.</p>
+</div>
+<div id="r-9" class="section level3" number="11.5.4">
+<h3><span class="header-section-number">11.5.4</span> R</h3>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="ch-samenhang.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(cito, <span class="fu">cor.test</span>( Lezen,Rekenen, <span class="at">method=</span><span class="st">&quot;spearman&quot;</span> ) )</span></code></pre></div>
+<pre><code>## Warning in cor.test.default(Lezen, Rekenen, method = &quot;spearman&quot;): Cannot compute
+## exact p-value with ties</code></pre>
+<pre><code>## 
+##  Spearman&#39;s rank correlation rho
+## 
+## data:  Lezen and Rekenen
+## S = 25.229, p-value = 0.00198
+## alternative hypothesis: true rho is not equal to 0
+## sample estimates:
+##       rho 
+## 0.8470988</code></pre>
+</div>
+</div>
+<div id="sec:Phi" class="section level2" number="11.6">
+<h2><span class="header-section-number">11.6</span> Phi</h2>
+<p>De beide variabelen waarvan we de samenhang willen onderzoeken, zijn
+zelfs niet altijd uitgedrukt op het ordinale meetniveau
+(Hoofdstuk <a href="ch-meetniveau.html#ch-meetniveau">4</a>). Zelfs als beide variabelen alleen op
+nominaal niveau gemeten zijn, dan kan er nog een correlatie berekend
+worden, nl. de phi-correlatiecoëfficiënt (symbool <span class="math inline">\(r_\Phi\)</span>, met griekse
+letter “Phi”). Deze correlatiecoëfficiënt is ook bruikbaar als één van
+de twee variabelen op nominaal niveau gemeten is, en de andere op
+ordinaal niveau.</p>
+<p>Laten we bij ons voorbeeld met de CITO-toets aannemen dat de eerste vijf
+leerlingen uit een grote stad komen, en de laatste vijf van het
+platteland. De herkomst van de leerling vormt een nominale variabele,
+met 2 categorieën, hier willekeurig aangeduid als <code>1</code> resp. <code>0</code> (zie
+§<a href="ch-meetniveau.html#sec:nominaal">4.2</a>; een nominale variabele met precies 2
+categorieën wordt ook een binomiale of dichotome variabele genoemd). We
+vragen ons nu af of er enige samenhang is tussen de herkomst van een
+leerling en de score bij het onderdeel Rekenen van de CITO-toets. De
+tweede variabele is van interval-niveau. We zetten deze om naar een
+nominaal meetniveau. Dat kan op vele manieren, en het is aan de
+onderzoeker om daarbij een verstandige keuze te maken. Wij kiezen hier
+voor de vaak gebruikte ‘mean split’: de ene categorie (laag, code <code>0</code>)
+bestaat uit scores kleiner dan of gelijk aan het gemiddelde
+(§<a href="ch-centrumenspreiding.html#sec:gemiddelde">9.3.1</a>), en de andere categorie uit scores groter
+dan het gemiddelde (hoog, code <code>1</code>). De aantallen leerlingen in elk van
+de <span class="math inline">\(2\times 2\)</span> categorieën vatten we samen in een kruistabel
+(Tabel <a href="ch-samenhang.html#tab:cito-kruis">11.3</a>).</p>
+<table>
+<caption><span id="tab:cito-kruis">Tabel 11.3: </span> Kruistabel van <span class="math inline">\(n=10\)</span> leerlingen, onderverdeeld naar herkomst
+(stad=1, platteland=0) en naar categorie van score bij het onderdeel Rekenen van een
+CITO-toets (‘mean split’, laag=0, hoog=1), met letter-aanduiding voor de aantallen
+observaties; zie tekst.</caption>
+<thead>
+<tr class="header">
+<th align="left">herkomst</th>
+<th align="center">laag (0)</th>
+<th align="center">hoog (1)</th>
+<th align="center">totaal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">platteland (0)</td>
+<td align="center">5 (A)</td>
+<td align="center">0 (B)</td>
+<td align="center">5 (A+B)</td>
+</tr>
+<tr class="even">
+<td align="left">stad (1)</td>
+<td align="center">2 (C)</td>
+<td align="center">3 (D)</td>
+<td align="center">5 (C+D)</td>
+</tr>
+<tr class="odd">
+<td align="left">totaal</td>
+<td align="center">7 (A+C)</td>
+<td align="center">3 (B+D)</td>
+<td align="center">10 (A+B+C+D)</td>
+</tr>
+</tbody>
+</table>
+<p>De nominale correlatiecoëfficiënt <span class="math inline">\(r_\Phi\)</span> is gelijk aan de Pearson
+product-moment-correlatiecoëfficiënt als we die zouden toepassen op de binomiale codes
+(<code>0</code> en <code>1</code>) van de observaties. Alle 5 de leerlingen van het platteland
+hebben een score bij Rekenen gelijk aan of lager dan gemiddeld
+(<span class="math inline">\(\overline{y}=\)</span> 27.2); van de leerlingen uit de stad hebben er 2 een score
+(gelijk aan of) lager dan gemiddeld. Er is dus samenhang tussen de
+binomiale codes van de rijen (herkomst) en die van de kolommen
+(score-categorieën) in Tabel <a href="ch-samenhang.html#tab:cito-kruis">11.3</a>.
+Die samenhang wordt gekwantificeerd in de
+correlatiecoëfficiënt <span class="math inline">\(r_\Phi=0.65\)</span> voor deze gegevens.</p>
+<div id="formules-5" class="section level3" number="11.6.1">
+<h3><span class="header-section-number">11.6.1</span> Formules</h3>
+<p>De nominale correlatiecoëfficiënt <span class="math inline">\(r_\Phi\)</span> wordt berekend als volgt,
+waarbij de letters verwijzen naar de aantallen in de cellen van een
+kruistabel (zie Tabel <a href="ch-samenhang.html#tab:cito-kruis">11.3</a>):
+<span class="math display" id="eq:phi">\[\begin{equation}
+    r_\Phi = \frac{(AD-BC)}{\sqrt{(A+B)(C+D)(A+C)(B+D)}}
+  \tag{11.8}
+\end{equation}\]</span></p>
+<p>Voor het hierboven besproken voorbeeld vinden we dan
+<span class="math display">\[
+    r_\Phi = \frac{(15-0)}{\sqrt{(5)(5)(7)(3)}} = \frac{15}{22.91} = 0.65
+\]</span></p>
+</div>
+<div id="spss-8" class="section level3" number="11.6.2">
+<h3><span class="header-section-number">11.6.2</span> SPSS</h3>
+<p>De dataset <code>cito</code> bevat al een variabele <code>StadPlat</code> die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve leggen we toch uit hoe je zo’n variabele zelf kunt construeren.</p>
+<div id="nieuwe-variabele-construeren" class="section level4" number="11.6.2.1">
+<h4><span class="header-section-number">11.6.2.1</span> nieuwe variabele construeren</h4>
+<pre><code>Transform &gt; Recode into different variables...</code></pre>
+<p>Kies <code>Leerling</code> als oude variabele en vul als nieuwe naam <code>StadPlat2</code>
+in voor de nieuwe variabele. Geef aan dat de oude waarden in <code>Range</code> van
+1 t/m 5 (oud) omgezet moeten worden naar de nieuwe waarde 1, en evenzo
+dat leerlingen 6 t/m 10 de nieuwe waarde 0 moeten krijgen voor de nieuwe
+variabele <code>StadPlat</code>.</p>
+<p>Voor <code>Rekenen</code> is het wat ingewikkelder. Je moet eerst je eerdere
+omzettingsregels verwijderen (die betrekking hadden op <code>StadPlat</code>). Maak
+dan op dezelfde wijze weer een nieuwe variabele, genaamd <code>Rekenen2</code>.
+Alle waarden vanaf de laagste waarde tot het gemiddelde (<span class="math inline">\(27.2\)</span>) worden
+omgezet naar nieuwe waarde 0 voor die nieuwe variabele. Alle waarden
+vanaf het gemiddelde (<span class="math inline">\(27.2\)</span>) tot de hoogste waarde worden omgezet naar
+nieuwe waarde 1.</p>
+</div>
+<div id="correlatie-analyse" class="section level4" number="11.6.2.2">
+<h4><span class="header-section-number">11.6.2.2</span> correlatie-analyse</h4>
+<p>Na dit voorbereidend werk kunnen we eindelijk <span class="math inline">\(r_\Phi\)</span> gaan berekenen.</p>
+<pre><code>Analyze &gt; Descriptives &gt; Crosstabs...</code></pre>
+<p>Selecteer de variabelen <code>StadPlat2</code> (in “Rows” paneel) en <code>Reken2</code>
+(in “Columns” paneel) voor
+kruistabel <a href="ch-samenhang.html#tab:cito-kruis">11.3</a>.<br />
+Kies <code>Statistics…</code> en vink optie <code>Phi and Cramer’s V</code>aan!<br />
+Bevestig eerst met <code>Continue</code> en daarna nogmaals met <code>OK</code>.</p>
+</div>
+</div>
+<div id="jasp-10" class="section level3" number="11.6.3">
+<h3><span class="header-section-number">11.6.3</span> JASP</h3>
+<p>De dataset <code>cito</code> bevat al een variabele <code>StadPlat</code> die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve leggen we toch uit hoe je zo’n variabele zelf kunt construeren.</p>
+<div id="nieuwe-variabele-construeren-1" class="section level4" number="11.6.3.1">
+<h4><span class="header-section-number">11.6.3.1</span> nieuwe variabele construeren</h4>
+<p>Maak eerst een nieuwe variabele aan door op de <strong>+</strong>-button te klikken rechts van de naam van de laatste kolom in de dataset. Er verschijnt een paneel “Create Computed Column”, waar je een naam voor de nieuwe variabele kunt invullen, bijvoorbeeld <code>StadPlat2</code>. Ook kun je kiezen uit <code>R</code> en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of handmatig. Hieronder wordt voor allebei de opties uitgelegd hoe we hiermee de herkomst variabele maken. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen. Voor de herkomst variabele zet je dit op <code>Nominal</code>. Klik vervolgens op <code>Create Column</code> om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.</p>
+<p>Als <code>R</code> is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met “#Enter your R code here :)”. Hier kan R code worden gegeven die met behulp van R functies de nieuwe variabele definieert. Vul de R code in en klik onderaan op <code>Compute column</code> om de lege variabele te vullen met de gekozen waardes.<br />
+Voor de herkomst variabele kunnen we de volgende code gebruiken:</p>
+<pre><code>ifelse(Leerling &lt;= 5, 1, 0) </code></pre>
+<p>Dit betekent: als de score op de oude variabele (Leerling) kleiner dan of gelijk is aan (&lt;=) 5, dan wordt de score een 1, en anders een 0. Dus: if Leerling &lt;= 5, then 1, else 0. Let op dat dit alleen werkt in JASP als de gebruikte variabele (Leerling) op “Scale” meetniveau staat (want alleen dan kun je wiskundige operatoren zoals &lt;= gebruiken). Als het meetniveau van de variabele niet op “Scale” staat pas je dit aan door in het data tabblad op het meetniveau-icoontje voor de variabele-naam te klikken, en “Scale” te selecteren.</p>
+<p>Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met links daarvan de variabelen, boven wiskundige symbolen, en rechts een aantal functies. Hier kan handmatig de functie worden geselecteerd die de nieuwe variabele definieert. Klik onderaan op <code>Compute column</code> om de lege variabele vervolgens te vullen met de gekozen waardes.<br />
+Voor de herkomst variabele scrol je rechts van het veld bij de functies naar beneden en klik op <code>ifElse(y)</code>. De functie verschijnt in het veld en hier kunnen “test”, “then” en “else” worden vervangen door de gewenste gegevens. Klik op “test” en selecteer bovenaan <span class="math inline">\(\leq\)</span>. Sleep vervolgens de variabele ‘Leerling’ naar de puntjes aan de linkerkant van het teken, en vul rechts <span class="math inline">\(5\)</span> in. Vul voor “then” en “else” <span class="math inline">\(1\)</span> en <span class="math inline">\(0\)</span> in. Je hebt dan: <code>ifElse(Leerling $\leq$ 5,1,0)</code>, en deze formule werkt hetzelfde als de R code van hierboven. Let ook hier op dat dit alleen werkt in JASP als de gebruikte variabele (Leerling) op “Scale” meetniveau staat (want alleen dan kun je wiskundige operatoren zoals <span class="math inline">\(\leq\)</span> gebruiken).</p>
+<p>Voor <code>Rekenen</code> maak je eerst ook weer een nieuwe variabele aan door op de <strong>+</strong>-button te klikken rechts van de naam van de laatste kolom in de dataset. Geef de nieuwe variabele een naam (<code>Reken2</code>), kies <code>R</code> of het aanwijshandje, en geef de variabele het meetniveau <code>Nominal</code>. Klik vervolgens op <code>Create Column</code> om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.</p>
+<p>Als <code>R</code> is aangeklikt als optie om de nieuwe variabele te definiëren, kan de volgende code worden gebruikt:</p>
+<pre><code>ifelse(Rekenen &lt; mean(Rekenen), 0, 1)</code></pre>
+<p>Dit betekent: als de score op de oude variabele (Rekenen) kleiner is dan (&lt;) de gemiddelde score (mean(Rekenen)), dan wordt de score een 0, en anders een 1. Dus: if Rekenen &lt; mean(Rekenen), then 0, else 1. Vul de R code in en klik onderaan op <code>Compute column</code> om de lege variabele te vullen met de gekozen waardes.</p>
+<p>Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, selecteer je weer de functie <code>ifElse(y)</code>. Klik op “test” en selecteer bovenaan <span class="math inline">\(&lt;\)</span>. Sleep vervolgens de variabele ‘Rekenen’ naar de puntjes aan de linkerkant van het teken, en sleep de functie <code>mean(y)</code> (uit het scrolmenu rechts) naar de puntjes aan de rechterkant. Sleep de variabele ‘Rekenen’ nu ook naar de plek waar “values” staat. Vul voor “then” en “else” <span class="math inline">\(0\)</span> en <span class="math inline">\(1\)</span> in. Je hebt dan: <code>ifElse(Rekenen &lt; mean(Rekenen),0,1)</code>, en deze formule werkt hetzelfde als de R code van hierboven. Klik op <code>Compute column</code> om de lege variabele te vullen met de gekozen waardes.</p>
+</div>
+<div id="correlatie-analyse-1" class="section level4" number="11.6.3.2">
+<h4><span class="header-section-number">11.6.3.2</span> correlatie-analyse</h4>
+<p>Na dit voorbereidend werk kunnen we eindelijk <span class="math inline">\(r_\Phi\)</span> gaan berekenen. Klik in de bovenbalk op:</p>
+<pre><code>Frequencies &gt; Classical: Contingency Tables</code></pre>
+<p>Selecteer de variabelen <code>StadPlat2</code> (in het “Rows” paneel) en <code>Reken2</code> (in het “Columns” paneel) voor kruistabel <a href="ch-samenhang.html#tab:cito-kruis">11.3</a>. Open de <code>Statistics</code> balk en vink <code>Phi and Cramer’s V</code>aan onder “Nominal”. De waarde voor <span class="math inline">\(r_\Phi\)</span> verschijnt dan ook in de uitvoer (als “Phi-coefficient”).</p>
+</div>
+</div>
+<div id="r-10" class="section level3" number="11.6.4">
+<h3><span class="header-section-number">11.6.4</span> R</h3>
+<p>De dataset <code>cito</code> bevat al een variabele StadPlat die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve laten we toch zien hoe je zo’n variabele zelf kunt construeren.</p>
+<div id="nieuwe-variabele-construeren-2" class="section level4" number="11.6.4.1">
+<h4><span class="header-section-number">11.6.4.1</span> nieuwe variabele construeren</h4>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="ch-samenhang.html#cb83-1" aria-hidden="true" tabindex="-1"></a>StadPlat2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>( cito<span class="sc">$</span>Leerling<span class="sc">&lt;</span><span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="co"># 1=stad, 0=plat</span></span>
+<span id="cb83-2"><a href="ch-samenhang.html#cb83-2" aria-hidden="true" tabindex="-1"></a>Reken2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>( cito<span class="sc">$</span>Rekenen<span class="sc">&gt;</span><span class="fu">mean</span>(cito<span class="sc">$</span>Rekenen), <span class="dv">1</span>, <span class="dv">0</span> ) <span class="co"># 1=hoog, 0=laag</span></span></code></pre></div>
+<p>Maak een nieuwe variabele <code>Reken2</code>, met de waarde 1 indien de score
+voor Rekenen groter is dan het gemiddelde, en anders de waarde 0.</p>
+</div>
+<div id="correlatie-analyse-2" class="section level4" number="11.6.4.2">
+<h4><span class="header-section-number">11.6.4.2</span> correlatie-analyse</h4>
+<p>Ook in R maken we eerst een kruistabel (Tabel <a href="ch-samenhang.html#tab:cito-kruis">11.3</a>) en daarna berekenen we de <span class="math inline">\(r_\Phi\)</span> over die kruistabel.</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="ch-samenhang.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">table</span>(StadPlat2,Reken2) <span class="ot">-&gt;</span> citokruistabel ) <span class="co"># maak en bewaar en toon kruistabel</span></span></code></pre></div>
+<pre><code>##          Reken2
+## StadPlat2 0 1
+##         0 5 0
+##         1 2 3</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="ch-samenhang.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">require</span>(psych)) { <span class="co"># voor psych::phi</span></span>
+<span id="cb86-2"><a href="ch-samenhang.html#cb86-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">phi</span>(citokruistabel) <span class="co"># eerder gemaakte kruistabel is hier invoer!</span></span>
+<span id="cb86-3"><a href="ch-samenhang.html#cb86-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## Loading required package: psych</code></pre>
+<pre><code>## [1] 0.65</code></pre>
+</div>
+</div>
+</div>
+<div id="sec:correlationcausation" class="section level2" number="11.7">
+<h2><span class="header-section-number">11.7</span> Tenslotte</h2>
+<p>Bij het einde van dit hoofdstuk willen we nog eens benadrukken dat een
+samenhang of correlatie tussen twee variabelen niet noodzakelijkerwijs
+betekent dat er ook een causaal verband is tussen de variabelen, m.a.w.
+een samenhang betekent niet dat de ene variabele (bijv. behandeling) de
+oorzaak is en de andere variabele (bijv. genezing) het gevolg daarvan.
+De gangbare zegswijze daarvoor is “correlation does not imply
+causation,” zie ook Voorbeeld 6.1 (Hoofdstuk <a href="ch-ontwerp.html#ch-ontwerp">6</a>)
+en bijgaande Figuur <a href="ch-samenhang.html#fig:xkcd552">11.4</a> (met toestemming ontleend aan <a href="https://xkcd.com/552" class="uri">https://xkcd.com/552</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:xkcd552"></span>
+<img src="figures/correlation.png" alt="Correlation does not imply causation." width="230" />
+<p class="caption">
+Figuur 11.4: Correlation does not imply causation.
+</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-kansverdelingen.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-betrouwbaarheid.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/h11samenhang.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["KMS-NL.pdf", "KMS-NL.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
