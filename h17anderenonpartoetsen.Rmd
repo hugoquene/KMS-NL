@@ -257,7 +257,7 @@ groepen.)
 De toetsingsgrootheid $H$ heeft een kansverdeling die lijkt op die van
 $\chi^2$, met $k-1$ vrijheidsgraden. De significantie van de
 toetsingsgrootheid $H$ wordt dus bepaald via de kansverdeling van
-$\chi^2$ (zie Bijlage \@ref(app:kritiekechi2waarden)). 
+$\chi^2$ (zie Bijlage \@ref(app-kritiekechi2waarden)). 
 Die benadering via $\chi^2$ werkt echter alleen indien $k\ge3$
 en $n_j\ge5$ voor de kleinste groep [@Ferg89]; indien $k=2$ of $n_j<5$
 dan wordt de kans $P(H)$ exact berekend.

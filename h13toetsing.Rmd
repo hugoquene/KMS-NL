@@ -182,16 +182,16 @@ toetsingsgrootheid $t=7.9$ volgens formule \@ref(eq:t-onesample) hieronder.
 
 De kansverdeling van toetsingsgrootheid $t$ onder H0 is bekend; je vindt
 de grenswaarde $t^*$ in
-Bijlage \@ref(app:kritieketwaarden). Anders gezegd, als de gevonden
+Bijlage \@ref(app-kritieketwaarden). Anders gezegd, als de gevonden
 toetsingsgrootheid $t$ groter is dan de grenswaarde $t^*$ die in de
 tabel staat vermeld, dan is $P(t|\textrm{H0})<\alpha$. Om de tabel in
-Bijlage \@ref(app:kritieketwaarden) te kunnen gebruiken moeten we nog een
+Bijlage \@ref(app-kritieketwaarden) te kunnen gebruiken moeten we nog een
 nieuw begrip introduceren, namelijk het aantal vrijheidsgraden. Dat
 begrip wordt uitgelegd in
 §\@ref(sec:ttoets-vrijheidsgraden) hieronder.
 
 Met het aantal vrijheidsgraden kun je in
-Bijlage \@ref(app:kritieketwaarden) opzoeken welke grenswaarde $t^*$ nodig
+Bijlage \@ref(app-kritieketwaarden) opzoeken welke grenswaarde $t^*$ nodig
 is om een bepaalde overschrijdingskans $p$ te verkrijgen. Laten we
 opzoeken wat de overschrijdingskans is voor de gevonden
 toetsingsgrootheid $t=7.9$. Eerst zoeken we in de linker kolom het
@@ -365,7 +365,7 @@ aan statistische toetsing: de H0 blijft zonder meer in stand. Pas als we
 een verschil vinden in de veronderstelde richting is het zinvol om te
 inspecteren of dit verschil significant is. Wanneer je nu kijkt naar de
 afbeelding bij
-Bijlage \@ref(app:kritieketwaarden), dan klopt dit ook. De $p$-waarde
+Bijlage \@ref(app-kritieketwaarden), dan klopt dit ook. De $p$-waarde
 correspondeert met de oppervlakte van het gekleurde gebied.
 
 Indien de alternatieve hypothese H1 de richting van het verschil *niet*
@@ -373,7 +373,7 @@ specificeert, dan treedt er een complicatie op. Zowel verschillen in de
 ene richting als in de andere richting zijn dan immers relevant. We
 spreken dan van tweezijdig toetsen. Om de tweezijdige
 overschrijdingskans te berekenen moeten we de $p$-waarde uit
-Bijlage \@ref(app:kritieketwaarden) vermenigvuldigen met $2$ (omdat we nu
+Bijlage \@ref(app-kritieketwaarden) vermenigvuldigen met $2$ (omdat we nu
 kijken naar twee gekleurde gebieden, aan beide zijden van de
 kansverdeling).
 
@@ -558,7 +558,7 @@ dat $\overline{x_2}=85$ woorden ($s_2=98$). Met deze gegevens bepalen we
 de toetsingsgrootheid $t$ volgens formule
 \@ref(eq:t-homoskedastic), resulterend in $t=0.88$ met 122 d.f. De
 bijbehorende kritieke grenswaarde $t^*$ zoeken we wederom op in
-Bijlage \@ref(app:kritieketwaarden). In de regel voor 100 d.f. (na
+Bijlage \@ref(app-kritieketwaarden). In de regel voor 100 d.f. (na
 afronding naar beneden) vinden we $t^*=1.984$ in de vierde kolom. Voor
 tweezijdige toetsing moeten we de overschrijdingskans behorend bij deze
 kolom verdubbelen (zie
@@ -585,7 +585,7 @@ $n=20$) is dat $\overline{x_N}=0.269$ s ($s=0.029$). Met deze gegevens
 bepalen we wederom de toetsingsgrootheid $t$ volgens formule
 \@ref(eq:t-homoskedastic), resulterend in $t=-3.76$ met 38 d.f. De
 bijbehorende kritieke grenswaarde $t^*$ zoeken we wederom op in
-Bijlage \@ref(app:kritieketwaarden). De juiste d.f. zijn niet in de tabel
+Bijlage \@ref(app-kritieketwaarden). De juiste d.f. zijn niet in de tabel
 vermeld, dus ronden we naar beneden af (d.i. in conservatieve richting)
 naar 30 d.f. In die regel vinden we $t^*=2.042$ in de vierde kolom. Voor
 tweezijdige toetsing moeten we de overschrijdingskans behorend bij deze
@@ -682,7 +682,7 @@ Voor het tweede voorbeeld hierboven geeft de benadering van formule
 schatting van $37.99 \approx 38$ d.f. De conservatieve ondergrens is
 $n_1-1 = n_2-1 = 19$. De liberale bovengrens is $n_1+n_2 -2 = 38$. (In
 de tabel met kritische waarden $t*$, in
-Bijlage \@ref(app:kritieketwaarden), is het meestal raadzaam om de regel
+Bijlage \@ref(app-kritieketwaarden), is het meestal raadzaam om de regel
 te gebruiken met de eerstvolgende kleinere waarde voor het aantal
 vrijheidsgraden.)
 
@@ -820,7 +820,7 @@ op de gebruikelijke wijze (zie
 standaarddeviatie om de toetsingsgrootheid $t$ te berekenen, via formule
 \@ref(eq:t-pairedsamples), met $(N-1)$ vrijheidsgraden. Tenslotte
 gebruiken we weer
-Bijlage \@ref(app:kritieketwaarden) om de grenswaarde $t^*$ te bepalen, en
+Bijlage \@ref(app-kritieketwaarden) om de grenswaarde $t^*$ te bepalen, en
 daarmee de overschrijdingskans $p$ voor de gevonden waarde van de
 steekproefgrootheid $t$ onder H0.
 
@@ -828,7 +828,7 @@ Voor het bovengenoemde voorbeeld met *U* of *je* als aanspreekvorm
 vinden we aldus $\overline{D}=-2.2$ en $s_D=1.0$. Als we dit invullen in
 formule \@ref(eq:t-pairedsamples) vinden we $t=-6.74$ met $N-1=9$ d.f. De
 bijbehorende kritieke grenswaarde $t^*$ zoeken we wederom op in
-Bijlage \@ref(app:kritieketwaarden). Daarbij negeren we het teken van $t$,
+Bijlage \@ref(app-kritieketwaarden). Daarbij negeren we het teken van $t$,
 omdat de kansverdeling van $t$ immers symmetrisch is. In de regel voor 9
 d.f. vinden we $t^*=4.297$ in de laatste kolom. Voor tweezijdige
 toetsing moeten we de overschrijdingskans behorend bij deze kolom
@@ -1246,7 +1246,7 @@ effectgrootte:
 (zie de overeenkomstige
 formule \@ref(eq:t-onesampleCI)). 
 Na invullen van $t^*_9=2.262$ (zie
-Bijlage \@ref(app:kritieketwaarden)) en $\textrm{se}_d = 0.519$ vinden we
+Bijlage \@ref(app-kritieketwaarden)) en $\textrm{se}_d = 0.519$ vinden we
 uiteindelijk een 95%-betrouwbaarheidsinterval van $(-3.30,-0.96)$. We
 weten dus met 95% betrouwbaarheid dat de onbekende effectgrootte in de
 populatie ergens binnen dit interval ligt, en dus ook dat die kleiner is

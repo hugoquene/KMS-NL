@@ -403,7 +403,7 @@ De kansverdeling van een normaal verdeelde variabele $X$ zou je zelf
 kunnen uitrekenen met behulp van formule
 \@ref(eq:prob-normal) hieronder. Maar het is handiger om daarvoor
 een tabel te gebruiken; die staat in
-Bijlage \@ref(app:kritiekeZwaarden). 
+Bijlage \@ref(app-kritiekeZwaarden). 
 In grafische vorm uitgelegd geven die tabellen je,
 voor verschillende oppervlakten ofwel kansen $p$ aan de rechter zijde onder de curve, 
 de positieve waarde van $Z^*$ die de linkergrens vormt
@@ -417,8 +417,7 @@ ondergrens $Z^*$ is (mits de variabele inderdaad normaal verdeeld is).
 
 ---
 
-In
-Bijlage \@ref(app:kritiekeZwaarden) vind je gemakshalve niet een maar twee
+In Bijlage \@ref(app-kritiekeZwaarden) vind je gemakshalve niet een maar twee
 tabellen, elk bestaande uit meerdere kolom-aanduidingen en één rij van
 cellen. De eerste tabel geeft je, voor verschillende 'afgeronde' kansen
 $p$ (kolommen), de kritieke waarde $Z^*$ (cellen) waarvoor geldt dat de
@@ -459,8 +458,7 @@ te verwachten dat de ene helft (2.5%) ligt aan het linker uiteinde van
 de verdeling, en de andere 2.5% aan de rechterzijde. Welke grenswaarde
 $Z^*$ correspondeert met deze overschrijdingskans $p=0.025$?
 
-> In
-Bijlage \@ref(app:kritiekeZwaarden) nemen we de eerste deeltabel. In de kolom 
+> In Bijlage \@ref(app- kritiekeZwaarden) nemen we de eerste deeltabel. In de kolom 
 voor overschrijdingskans $p=0.025$, vinden we grenswaarde
 $Z^*=1.960$. Als we een observatie vinden met $Z \ge 1.960$ of met
 $Z \le -1.960$ dan beschouwen we dat als een extreme, zeldzame
@@ -486,12 +484,12 @@ je dus een IQ-score behalen van 131 punten of hoger.
 
 > *Voorbeeld 10.10:* 
 Verifieer de bovengenoemde Empirical Rule met behulp van
-Bijlage \@ref(app:kritiekeZwaarden).
+Bijlage \@ref(app-kritiekeZwaarden).
 
 ---
 
 <!-- 
-De tweede tabel in Bijlage \@ref{app:kritiekeZwaarden} geeft je ook, 
+De tweede tabel in Bijlage \@ref{app-kritiekeZwaarden} geeft je ook, 
 voor verschillende positieve waarden van die
 ondergrens $Z^*$, de precieze kans $p$ om een waarde te vinden van $Z$
 die even groot als of groter dan deze ondergrens $Z^*$ is. Die precieze
@@ -829,7 +827,7 @@ $\hat{\sigma}=0.0203$. Omdat $\sigma$ niet bekend is, gebruiken we de
 $t$-verdeling om het betrouwbaarheidsinterval te bepalen. We gebruiken
 de $t$-verdeling voor $n=30$ en vinden een kritieke waarde $t^*=2.05$
 (zie
-Bijlage \@ref(app:kritieketwaarden), voor $B=95$%). 
+Bijlage \@ref(app-kritieketwaarden), voor $B=95$%). 
 Volgens
 formule \@ref(eq:t-onesampleCI) weten we dan met 95% betrouwbaarheid dat het onbekende populatiegemiddelde $\mu$ ligt tussen
 $\bar{x}-2.05\times s_{\bar{x}}$ en $\bar{x}+2.05\times s_{\bar{x}}$,
@@ -901,7 +899,7 @@ populatie-gemiddelde is
   (\#eq:t-onesampleCI)
 \end{equation}
 waarbij $t^*$ met $n-1$ vrijheidsgraden gevonden wordt met behulp van
-Bijlage \@ref(app:kritieketwaarden), zie
+Bijlage \@ref(app-kritieketwaarden), zie
 §\@ref(sec:ttoets-vrijheidsgraden) voor meer uitleg hierover.
 
 [^fn10-1]: Twee van de fiches zijn echter zonder letter; later in deze paragraaf zullen we deze blanco fiches verwijderen uit het zakje.
