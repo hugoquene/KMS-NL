@@ -330,10 +330,10 @@ groepen weer een nameting. Schematisch kan het
 Solomon-vier-groepen-ontwerp als volgt weergegeven worden:
 
 ```
-  O1   X   O2
-  O3       O4
-       X   O5
-           O6
+  R  O1   X   O2
+  R  O3       O4
+  R       X   O5
+  R           O6
 ```
 
 Het Solomon-vier-groepen-ontwerp is dus een uitbreiding van het
@@ -391,8 +391,8 @@ met een nameting-controlegroep-ontwerp, schematisch weergegeven als
 volgt:
 
 ```
-      X   O5
-          O6
+  R    X   O5
+  R        O6
 ```
 
 Dit ontwerp is echter alleen adequaat indien de groepen voldoende groot
@@ -655,10 +655,10 @@ relevante controle-groepen toegevoegd. Schematisch ziet het
 onderzoeksontwerp er nu als volgt uit:
 
 ```
-       Exp. groep 1       Open     O1   Gesloten   O2
-       Exp. groep 2     Gesloten   O3     Open     O4
-      Controlegroep 1     Open     O5     Open     O6
-      Controlegroep 2   Gesloten   O7   Gesloten   O8
+  R       Exp. groep 1       Open     O1   Gesloten   O2
+  R       Exp. groep 2     Gesloten   O3     Open     O4
+  R      Controlegroep 1     Open     O5     Open     O6
+  R      Controlegroep 2   Gesloten   O7   Gesloten   O8
 ```
 
 Voor alle vier de groepen kan nu de samenhang tussen de prestaties op
