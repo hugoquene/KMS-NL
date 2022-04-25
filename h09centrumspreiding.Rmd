@@ -664,7 +664,7 @@ als de noemer van de verhouding of breuk groter is dan 1000.
 > Voorbeeld 9.13:
 > In 2013 startten 154 studenten met een tweejarige research master. Na 2
 jaar waren 69 daarvan afgestudeerd. Het nominaal rendement voor dit
-cohort is dan $69/154=$ 0.448052, af te ronden en te rapporteren als 44%
+cohort is dan $69/154=$ 0.448052, af te ronden en te rapporteren als 45%
 (niet als 44.81%).
 
 ---
