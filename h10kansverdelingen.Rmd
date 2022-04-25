@@ -435,7 +435,7 @@ moet zijn. Wat is de kans $p$ dat $Z>3$ is? In de tweede deeltabel
 vinden we voor grenswaarde $Z^*=3$ de overschrijdingskans
 $p=0.0013$. Voor een normaal verdeelde variabele $Z$ is er dus een
 overschrijdingskans $p=0.0013$ om een waarde van $Z$ te vinden die
-tenminste drie standaarddeviaties boven het gemiddelde ligt.
+tenminste drie standaarddeviaties boven het gemiddelde ligt (dit wordt meestal gerapporteerd als $p<.001$).
 
 Vaak willen we het omgekeerde weten: als we een bepaalde
 overschrijdingskans kiezen, welke grenswaarde $Z^*$ hoort daar dan bij?
