@@ -595,9 +595,9 @@ gevonden toetsingsgrootheid $t < t^*$, dus $p<.05$. We besluiten daarom
 om H0 *wel* te verwerpen, en rapporteren dat als volgt:
 
 > De gemiddelde duur van een lettergreep gesproken door een spreker uit
-> het westen van Nederland is $0.235$ seconde ($s=0.028$). Dit is
+> het westen van Nederland is $0.235$ seconde ($s=0.03$). Dit is
 > significant korter dan bij sprekers uit het Noorden van Nederland
-> ($\overline{x}=0.269$ s, $s=0.029$) ($t(38)=-3.76, p<.05$). In de
+> ($\overline{x}=0.269$ s, $s=0.03$) ($t(38)=-3.76, p<.05$). In de
 > onderzochte opnames uit 1999 praten de sprekers uit het Westen dus
 > sneller dan die uit het Noorden van Nederland.
 
@@ -722,7 +722,7 @@ tweede regel gebruiken van de uitvoer van de Independent-Samples Test
 (een toets die onderzoekt of de gemiddelden van de twee groepen gelijk
 zijn). In dit voorbeeld zijn de varianties ongeveer gelijk, zoals de
 Levene's test ook aangeeft. We gebruiken dus de eerste regel van de
-uitvoer, en rapporteren $t(38)=-3.765, p=.001$.
+uitvoer, en rapporteren $t(38)=-3.76, p=.001$.
 
 ### JASP {#sec:jaspttoetsongepaard}
 
@@ -998,9 +998,9 @@ $(0.235-0.269)/0.029 \approx 1.15$. Dit relatief grote effect kunnen we
 als volgt rapporteren:
 
 > De gemiddelde duur van een lettergreep gesproken door een spreker uit
-> het westen van Nederland is $0.235$ seconde ($s=0.028$). Dit is
+> het westen van Nederland is $0.235$ seconde ($s=0.03$). Dit is
 > aanzienlijk korter dan bij sprekers uit het Noorden van Nederland
-> ($\overline{x}=0.269$ s, $s=0.029$). Het verschil is ca. 10%; dit
+> ($\overline{x}=0.269$ s, $s=0.03$). Het verschil is ca. 10%; dit
 > verschil is zeer groot ($d=-1.15$) en significant
 > ($t(38)=-3.76, p<.05$). In de onderzochte opnames uit 1999 praten de
 > sprekers uit het Westen dus aanzienlijk sneller dan die uit het
@@ -1234,7 +1234,7 @@ formule 18]:
 In
 ons eerdere voorbeeld van de $n=10$ gepaarde oordelen over een webpagina
 met *U* of *je* als aanspreekvorm vonden we $d=-2.13$. We vinden ook dat
-$r=.9135$. Met deze gegevens vinden we $\textrm{se}_d = 0.519$ via
+$r=.91$. Met deze gegevens vinden we $\textrm{se}_d = 0.52$ via
 formule \@ref(eq:d-paired-se).
 
 Hiermee bepalen we vervolgens het betrouwbaarheidsinterval voor de
