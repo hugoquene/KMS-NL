@@ -434,7 +434,7 @@ symmetrisch is (zie hierboven), dus weten we dat $P(Z< -1)$ ook $.1587$
 moet zijn. Wat is de kans $p$ dat $Z>3$ is? In de tweede deeltabel 
 vinden we voor grenswaarde $Z^*=3$ de overschrijdingskans
 $p=0.0013$. Voor een normaal verdeelde variabele $Z$ is er dus een
-overschrijdingskans $p=0.0013$ om een waarde van $Z$ te vinden die
+overschrijdingskans $p=0.0013$ (meestal gerapporteerd als $p=.001$) om een waarde van $Z$ te vinden die
 tenminste drie standaarddeviaties boven het gemiddelde ligt.
 
 Vaak willen we het omgekeerde weten: als we een bepaalde
