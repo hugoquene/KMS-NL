@@ -53,7 +53,7 @@ aangeduid als een toets van de 'goodness of fit'.
 Voor dit voorbeeld vinden we als uitkomst van de toetsing $\chi^2=12.44$
 met 5 vrijheidsgraden (zie
 §\@ref(sec:ttoets-vrijheidsgraden) voor uitleg over
-vrijheidsgraden), met $p=.0297$. We laten deze kanswaarde meestal door de
+vrijheidsgraden), met $p=.03$. We laten deze kanswaarde meestal door de
 computer uitrekenen, maar we kunnen die kans ook schatten via een tabel met kritieke $\chi^2$-waarden, zie Bijlage \@ref(app-kritiekechi2waarden), en voetnoot [^fn16-1]). 
 Als H0 waar is, dan hebben we slechts 3% kans om
 deze uitslag te vinden (of een nog extremere verdeling van uitkomsten).
@@ -460,6 +460,6 @@ voor de rokers dan voor de niet-rokers. We rapporteren dat als volgt:
 > door longkanker bleken ruim $12\times$ zo groot voor rokers als voor
 > niet-rokers.
 
-[^fn16-1]: De gevonden waarde $\chi^2=12.44$ ligt iets onder de kritieke waarde voor 5 d.f. en $p=.025$, (daar staat $(\chi^2)^*=12.83$), dus de bijbehorende kans op deze waarde of een grotere waarde is iets groter dan $0.025$.
+[^fn16-1]: De gevonden waarde $\chi^2=12.44$ ligt iets onder de kritieke waarde voor 5 d.f. en $p=.03$, (daar staat $(\chi^2)^*=12.83$), dus de bijbehorende kans op deze waarde of een grotere waarde is iets groter dan $0.03$.
 
 [^fn16-2]: Als de observaties van één variabele niet onafhankelijk maar gepaard zijn (bijv. voor/na behandeling, wel/niet geslaagd, enz), dan biedt de McNemar test een bruikbaar alternatief.
