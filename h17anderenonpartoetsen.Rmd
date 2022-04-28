@@ -81,7 +81,7 @@ en de som van de negatieve rangnummers $W_-= -53.5$, en daarmee $|W_-|=53.5$. De
 deze twee sommen ($W_+$ of $|W_-|$) vormt de toetsingsgrootheid; we gebruiken hier $|W_-|$. 
 We gaan
 hier niet in op de kansverdeling van de toetsingsgrootheid, maar we
-laten de significantie door de computer bepalen: $P(|W_-|)=.0055$. De kans
+laten de significantie door de computer bepalen: $P(|W_-|)=.006$. De kans
 op deze uitkomst volgens H0 is dermate klein dat we in het licht van
 deze uitkomst wederom besluiten om H0 te verwerpen.
 
@@ -111,7 +111,7 @@ correlatie [@Rose91 Eq.2.18]:
     r = \frac {z} {\sqrt{N}}
 \end{equation}
 Voor het bovenstaande voorbeeld vinden we
-$z=-2.803$, en $r=-.89$, hetgeen wijst op een buitengewoon groot effect.
+$z=-2.80$, en $r=-.89$, hetgeen wijst op een buitengewoon groot effect.
 
 
 ## Onafhankelijke observaties, meerdere steekproeven
@@ -190,7 +190,7 @@ significantie te berekenen. In andere versies van de toets[^fn17-2] wordt
 deze ruwe som eerst gecorrigeerd voor de minimale waarde van $W_1$ (zie
 de formules hieronder): de toetsingsgrootheid wordt dan
 $U=W_1 - \textrm{min}(W_1) = 67-45=22$. Daarna wordt de significantie
-van $W_1=67$ of van $U=22$ berekend. We vinden dat $p=.0653$. Als we
+van $W_1=67$ of van $U=22$ berekend. We vinden dat $p=.07$. Als we
 tweezijdig toetsen (H0: oordelen in conditie 2 zijn niet hoger en niet
 lager dan in conditie 1) met $\alpha=.05$ dan is er geen reden om H0 te
 verwerpen[^fn17-3].
@@ -220,7 +220,7 @@ bijbehorende waarde van $z$ [@Ferg89]:
 Daarmee bepalen we wederom de effectgrootte volgens
 vergelijking \@ref(eq:es-z2r). 
 Voor het bovenstaande voorbeeld vinden we zo
-$\bar{W_1}=22.5$, $z=1.837$, en $r=.42$, hetgeen wijst op een 'medium'
+$\bar{W_1}=22.5$, $z=1.84$, en $r=.42$, hetgeen wijst op een 'medium'
 effect. Dat dit aanzienlijke effect toch niet leidt tot een significant
 verschil (bij tweezijdige toetsing) is vermoedelijk een gevolg van de
 (te) kleine omvang van de twee groepen.  
