@@ -544,7 +544,7 @@ Table: (#tab:kleurtjes-anova-contrast) Samenvatting van variantieanalyse van de 
   --------------------- ---- ------- -------- -------- --------
   groep                    2  14.50    7.248    9.36    <.001
     groep, contrast 1      1  14.31   14.308   18.47    <.001
-    groep, contrast 2      1   0.19    0.188    0.24     .625
+    groep, contrast 2      1   0.19    0.188    0.24     .62
   (within)                42  32.54    0.775            
 
 De variantie-analyse met gerichte vergelijkingen is dus vooral bruikbaar
@@ -1010,7 +1010,7 @@ en/of in een $p$-waarde van het verschil tussen twee condities.
 
 > De begripsscores lieten een significant hoofdeffect zien van de structuurmarkeringen $[F(1,88)=63.75, p<.001, \omega^2=0.26]$, alsmede een significant hoofdeffect van het lezerstype $[F(2,88)=33.56, p<.001, \omega^2=0.27]$. 
 Ook was er een significante interactie zien tussen de tekstversie en het lezerstype $[F(2,88)=10.74, p<.001, \omega^2=0.08]$, zie Figuur \@ref(fig:DBE12interaction); deze interactie werd nader onderzocht met de Tukey HSD-toets (tussen 6 cellen). 
-Zwakke lezers presteren slechter dan gemiddelde lezers, bij de tekstversie zonder markeringen (p<.001), maar niet bij de versie met markeringen ($p=.999$). Sterke lezers presteren beter dan gemiddelde lezers, zowel zonder markeringen ($p<.001$) als met markeringen (p=.013). Tekstmarkeringen hebben wel effect bij zwakke lezers ($p<.001$) en bij gemiddelde lezers ($p<.001$) maar niet bij sterke lezers ($p=.888$); sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst, maar zwakke en gemiddelde lezers wel. Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen ($p=.722$).
+Zwakke lezers presteren slechter dan gemiddelde lezers, bij de tekstversie zonder markeringen (p<.001), maar niet bij de versie met markeringen ($p=.99$). Sterke lezers presteren beter dan gemiddelde lezers, zowel zonder markeringen ($p<.001$) als met markeringen (p=.01). Tekstmarkeringen hebben wel effect bij zwakke lezers ($p<.001$) en bij gemiddelde lezers ($p<.001$) maar niet bij sterke lezers ($p=.89$); sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst, maar zwakke en gemiddelde lezers wel. Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen ($p=.72$).
 
 
 
@@ -1070,9 +1070,9 @@ gecorrigeerde overschrijdingskans volgens Tukey's HSD toets is bovendien
 gegeven in de laatste kolom. 
 
 Voor de versie zonder markeringen zien we dat de cel `zonder:zwak` lager scoort dan de cel `zonder:gemiddeld` ($p<.001$), en dat de cel `zonder:sterk` hoger scoort dan de cel `zonder:gemiddeld` ($p<.001$). 
-Voor de versie met markeringen zien we dat de cel `met:zwak` ongeveer gelijk scoort met de cel `met:gemiddeld` ($p=.999$), en dat de cel `met:sterk` hoger scoort dan de cel `met:gemiddeld` ($p=.013$). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies. 
-Ook zien we dat `zonder:zwak` lager scoort dan `met:zwak` ($p<.001$), dat `zonder:gemiddeld` lager scoort dan `met:gemiddeld` ($p<.001$), terwijl er geen verschil is tussen `zonder:sterk` en `met:sterk` ($p=.888$). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst. 
-Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen ($p=.722$).
+Voor de versie met markeringen zien we dat de cel `met:zwak` ongeveer gelijk scoort met de cel `met:gemiddeld` ($p=.99$), en dat de cel `met:sterk` hoger scoort dan de cel `met:gemiddeld` ($p=.01$). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies. 
+Ook zien we dat `zonder:zwak` lager scoort dan `met:zwak` ($p<.001$), dat `zonder:gemiddeld` lager scoort dan `met:gemiddeld` ($p<.001$), terwijl er geen verschil is tussen `zonder:sterk` en `met:sterk` ($p=.89$). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst. 
+Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen ($p=.72$).
 
 
 ### R 
@@ -1125,9 +1125,9 @@ Voor iedere paarsgewijze vergelijking tussen de 2x3 cellen zien we het verschil,
 gecorrigeerde overschrijdingskans volgens Tukey's HSD toets. 
 
 Voor de versie zonder markeringen zien we dat de cel `zonder:zwak` lager scoort dan de cel `zonder:gemiddeld` ($p<.001$), en dat de cel `zonder:sterk` hoger scoort dan de cel `zonder:gemiddeld` ($p<.001$). 
-Voor de versie met markeringen zien we dat de cel `met:zwak` ongeveer gelijk scoort met de cel `met:gemiddeld` ($p=.999$), en dat de cel `met:sterk` hoger scoort dan de cel `met:gemiddeld` ($p=.013$). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies. 
-Ook zien we dat `zonder:zwak` lager scoort dan `met:zwak` (p<.001), dat `zonder:gemiddeld` lager scoort dan `met:gemiddeld` (p<.001), terwijl er geen verschil is tussen `zonder:sterk` en `met:sterk` (p=.888). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst. 
-Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen ($p=.722$).
+Voor de versie met markeringen zien we dat de cel `met:zwak` ongeveer gelijk scoort met de cel `met:gemiddeld` ($p=.99$), en dat de cel `met:sterk` hoger scoort dan de cel `met:gemiddeld` ($p=.01$). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies. 
+Ook zien we dat `zonder:zwak` lager scoort dan `met:zwak` (p<.001), dat `zonder:gemiddeld` lager scoort dan `met:gemiddeld` (p<.001), terwijl er geen verschil is tussen `zonder:sterk` en `met:sterk` (p=.89). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst. 
+Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen ($p=.72$).
 
 
 [^fn15-1]: Als (1) rood wel verschilt van grijs en blauw, en als (2) grijs en blauw bovendien onderling niet verschillen, dan impliceert dat dat rood verschilt van grijs (een nieuwe bevinding) en dat rood verschilt van blauw (dat wisten we al).
