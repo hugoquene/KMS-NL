@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Hoofdstuk 15 Variantieanalyse | Kwantitatieve Methoden en Statistiek</title>
   <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Hoofdstuk 15 Variantieanalyse | Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
   <meta name="github-repo" content="rstudio/KMS-NL" />
@@ -31,7 +30,6 @@
   
 <link rel="prev" href="ch-power.html"/>
 <link rel="next" href="ch-chi-kwadraat-toetsen.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,8 +47,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -531,10 +530,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch-variantieanalyse" class="section level1" number="15">
-<h1><span class="header-section-number">Hoofdstuk 15</span> Variantieanalyse</h1>
-<div id="sec:inleiding" class="section level2" number="15.1">
-<h2><span class="header-section-number">15.1</span> Inleiding</h2>
+<div id="ch-variantieanalyse" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">Hoofdstuk 15</span> Variantieanalyse<a href="ch-variantieanalyse.html#ch-variantieanalyse" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sec:inleiding" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> Inleiding<a href="ch-variantieanalyse.html#sec:inleiding" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Dit hoofdstuk gaat over een veel gebruikte statistische analyse, genaamd
 <em>variantie-analyse</em> (Eng. ‘analysis of variance’, vaak afgekort als
 ANOVA). In dit hoofdstuk gebruiken we relatief veel Engelse
@@ -552,8 +551,8 @@ intuïtieve wijze door in te gaan op de gedachtegang achter de toets. In
 §<a href="ch-variantieanalyse.html#sec:anova-oneway-formeel">15.3.2</a> leiden we een formele vorm af voor
 de belangrijkste toetsingsgrootheid, de <span class="math inline">\(F\)</span>-ratio.</p>
 </div>
-<div id="sec:anova-voorbeelden" class="section level2" number="15.2">
-<h2><span class="header-section-number">15.2</span> Enkele voorbeelden</h2>
+<div id="sec:anova-voorbeelden" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> Enkele voorbeelden<a href="ch-variantieanalyse.html#sec:anova-voorbeelden" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Variantieanalyse is, net als de <em>t</em>-toets, een statistische
 generalisatietechniek, dat wil zeggen: een instrument dat gebruikt kan
 worden bij de formulering van uitspraken over de eigenschappen van
@@ -572,7 +571,7 @@ onderzoeken we het spreektempo ofwel de spreeksnelheid van vier groepen
 sprekers, nl. afkomstig uit het Midden, Noorden, Zuiden en Westen van
 Nederland. De spreeksnelheid is uitgedrukt als de gemiddelde duur van
 een lettergreep, gemiddeld over een interview van ca 15 minuten met elke
-spreker <span class="citation">(<a href="#ref-Quene08" role="doc-biblioref">Quené 2008</a>)</span> <span class="citation">(<a href="#ref-R-hqmisc" role="doc-biblioref">Quené 2014</a>)</span>. Een kortere gemiddelde syllabeduur
+spreker <span class="citation">(<a href="#ref-Quene08" role="doc-biblioref">Quené 2008</a>)</span> <span class="citation">(<a href="#ref-R-hqmisc" role="doc-biblioref">Quené 2022</a>)</span>. Een kortere gemiddelde syllabeduur
 correspondeert
 dus met een snellere spreker (vgl. de schaatssport: een kortere
 rondetijd correspondeert met een snellere schaatser). Er waren 20
@@ -760,8 +759,8 @@ sneller spreken dan de anderen, en dat (ii) mannen sneller spreken dan
 vrouwen (!). En (iii) het verschil tussen mannen en vrouwen lijkt
 kleiner voor sprekers uit het Westen dan voor sprekers uit andere
 regionen. Uiteraard zouden we deze effecten moeten toetsen om de bovenstaande uitspraken te onderbouwen (zie daarvoor §<a href="ch-variantieanalyse.html#sec:tweeweg-anova">15.4</a> hieronder).</p>
-<div id="aannames" class="section level3" number="15.2.1">
-<h3><span class="header-section-number">15.2.1</span> aannames</h3>
+<div id="aannames" class="section level3 hasAnchor" number="15.2.1">
+<h3><span class="header-section-number">15.2.1</span> aannames<a href="ch-variantieanalyse.html#aannames" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>De variantie-analyse vereist vier aannames (of assumpties) waaraan
 voldaan moet zijn, om deze toets te mogen gebruiken; deze aannames komen
 overeen met die van de <em>t</em>-toets
@@ -787,10 +786,10 @@ Variantieanalyse vereist wel dat de gegevens aan meerdere voorwaarden
 voldoen.</p>
 </div>
 </div>
-<div id="eén-weg-variantieanalyse" class="section level2" number="15.3">
-<h2><span class="header-section-number">15.3</span> Eén-weg-variantieanalyse</h2>
-<div id="sec:anova-oneway-uitleg" class="section level3" number="15.3.1">
-<h3><span class="header-section-number">15.3.1</span> Een intuïtieve uitleg</h3>
+<div id="eén-weg-variantieanalyse" class="section level2 hasAnchor" number="15.3">
+<h2><span class="header-section-number">15.3</span> Eén-weg-variantieanalyse<a href="ch-variantieanalyse.html#eén-weg-variantieanalyse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sec:anova-oneway-uitleg" class="section level3 hasAnchor" number="15.3.1">
+<h3><span class="header-section-number">15.3.1</span> Een intuïtieve uitleg<a href="ch-variantieanalyse.html#sec:anova-oneway-uitleg" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Zoals gezegd gebruiken we variantieanalyse om te onderzoeken of de
 scores van verschillende groepen, of verzameld onder verschillende
 condities, van elkaar verschillen. Maar — scores verschillen <em>altijd</em>
@@ -881,8 +880,8 @@ daarmee nog niet welke groepen van elkaar verschillen, daarvoor is nog
 verdere (post-hoc) analyse nodig
 (§<a href="ch-variantieanalyse.html#sec:anova-oneway-posthoc">15.3.5</a> hieronder).</p>
 </div>
-<div id="sec:anova-oneway-formeel" class="section level3" number="15.3.2">
-<h3><span class="header-section-number">15.3.2</span> Een formele uitleg</h3>
+<div id="sec:anova-oneway-formeel" class="section level3 hasAnchor" number="15.3.2">
+<h3><span class="header-section-number">15.3.2</span> Een formele uitleg<a href="ch-variantieanalyse.html#sec:anova-oneway-formeel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Voor onze uitleg beginnen we met de geobserveerde scores. We nemen aan
 dat de scores zijn opgebouwd volgens een bepaald statistisch model, nl.
 als de optelsom van het populatiegemiddelde (<span class="math inline">\(\mu\)</span>), een systematisch
@@ -1004,8 +1003,8 @@ De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep
 </blockquote>
 <hr />
 </div>
-<div id="sec:anova-oneway-effectgrootte" class="section level3" number="15.3.3">
-<h3><span class="header-section-number">15.3.3</span> Effectgrootte</h3>
+<div id="sec:anova-oneway-effectgrootte" class="section level3 hasAnchor" number="15.3.3">
+<h3><span class="header-section-number">15.3.3</span> Effectgrootte<a href="ch-variantieanalyse.html#sec:anova-oneway-effectgrootte" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Net als bij de <span class="math inline">\(t\)</span>-toets is het niet alleen van belang om een binaire beslissing
 te nemen over H0, maar is het minstens zo belangrijk om te weten hoe
 groot het geobserveerde effect is (zie ook
@@ -1045,8 +1044,8 @@ association of independent and dependent variables [i.e., effect size
 coefficients] are <em>indispensable</em> parts of research results” <span class="citation">(<a href="#ref-KL00" role="doc-biblioref">Kerlinger and Lee 2000, 327</a>, nadruk toegevoegd)</span>.</p>
 </blockquote>
 </div>
-<div id="sec:anova-oneway-gericht" class="section level3" number="15.3.4">
-<h3><span class="header-section-number">15.3.4</span> Gerichte vergelijkingen</h3>
+<div id="sec:anova-oneway-gericht" class="section level3 hasAnchor" number="15.3.4">
+<h3><span class="header-section-number">15.3.4</span> Gerichte vergelijkingen<a href="ch-variantieanalyse.html#sec:anova-oneway-gericht" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In voorbeeld 15.2 (zie
 Figuur <a href="ch-variantieanalyse.html#fig:kleurtjes-obs">15.2</a>) onderzochten we de verschillen tussen
 scores uit de rode, zwarte en blauwe groepen. De nulhypothese die
@@ -1069,7 +1068,7 @@ groep lager scoort dan de andere twee groepen, (H0:
 (2)
 of de grijze en blauwe groepen van elkaar verschillen (H0:
 <span class="math inline">\(\mu_\textrm{grijs} = \mu_\textrm{blauw}\)</span>)
-<a href="referenties.html#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>.</p>
+<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>.</p>
 <p>De factor ‘groep’ of ‘kleur’ heeft 2 vrijheidsgraden, en dat betekent dat we
 precies 2 van zulke gerichte vergelijkingen of ‘contrasten’ kunnen maken
 die onafhankelijk zijn van elkaar. Dergelijke onafhankelijke contrasten
@@ -1132,7 +1131,7 @@ de blauwe groep.</p>
 <td align="center">0.19</td>
 <td align="center">0.188</td>
 <td align="center">0.24</td>
-<td align="center">.625</td>
+<td align="center">.62</td>
 </tr>
 <tr class="even">
 <td align="left">(within)</td>
@@ -1149,8 +1148,8 @@ als je, voordat de observaties zijn gedaan, al gerichte hypotheses hebt
 over verschillen tussen bepaalde (combinaties van) groepen of condities.
 Die hypotheses kunnen gebaseerd zijn op theoretische overwegingen, of op
 eerdere onderzoeksresultaten.</p>
-<div id="sec:anova-oneway-contrasts" class="section level4" number="15.3.4.1">
-<h4><span class="header-section-number">15.3.4.1</span> Orthogonale contrasten</h4>
+<div id="sec:anova-oneway-contrasts" class="section level4 hasAnchor" number="15.3.4.1">
+<h4><span class="header-section-number">15.3.4.1</span> Orthogonale contrasten<a href="ch-variantieanalyse.html#sec:anova-oneway-contrasts" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Elk contrast kan worden uitgedrukt in de vorm van gewichten voor iedere
 conditie. Voor de hierboven besproken contrasten kan dat in de vorm van
 deze gewichten:</p>
@@ -1191,8 +1190,8 @@ Vervolgens tellen we al deze producten bij elkaar op:
 twee contrasten orthogonaal.</p>
 </div>
 </div>
-<div id="sec:anova-oneway-posthoc" class="section level3" number="15.3.5">
-<h3><span class="header-section-number">15.3.5</span> Post-hoc vergelijkingen</h3>
+<div id="sec:anova-oneway-posthoc" class="section level3 hasAnchor" number="15.3.5">
+<h3><span class="header-section-number">15.3.5</span> Post-hoc vergelijkingen<a href="ch-variantieanalyse.html#sec:anova-oneway-posthoc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In veel onderzoeken heeft een onderzoeker géén idee over de te
 verwachten verschillen tussen de groepen of condities. Pas na afloop van
 de variantieanalyse, <em>nadat</em> er een significant effect gevonden is,
@@ -1228,10 +1227,10 @@ Post-hoc vergelijkingen met Tukey’s HSD-toets laten zien dat de grijze en blau
 </blockquote>
 <hr />
 </div>
-<div id="spss-12" class="section level3" number="15.3.6">
-<h3><span class="header-section-number">15.3.6</span> SPSS</h3>
-<div id="voorbereiding-1" class="section level4" number="15.3.6.1">
-<h4><span class="header-section-number">15.3.6.1</span> voorbereiding</h4>
+<div id="spss-12" class="section level3 hasAnchor" number="15.3.6">
+<h3><span class="header-section-number">15.3.6</span> SPSS<a href="ch-variantieanalyse.html#spss-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="voorbereiding-1" class="section level4 hasAnchor" number="15.3.6.1">
+<h4><span class="header-section-number">15.3.6.1</span> voorbereiding<a href="ch-variantieanalyse.html#voorbereiding-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We gebruiken de gegevens in het bestand <code>data/kleurgroepen.txt</code>; deze gegevens zijn ook weergegeven in Figuur <a href="ch-variantieanalyse.html#fig:kleurtjes-obs">15.2</a>.
 Lees eerst de benodigde gegevens, en controleer deze:</p>
 <pre><code>File &gt; Import Data &gt; Text Data...</code></pre>
@@ -1251,8 +1250,8 @@ technieken uit Deel II van dit tekstboek (met name
 drie groepen, zoals vereist voor variantieanalyse. We doen dat tegelijk
 met de variantieanalyse zelf.</p>
 </div>
-<div id="anova" class="section level4" number="15.3.6.2">
-<h4><span class="header-section-number">15.3.6.2</span> ANOVA</h4>
+<div id="anova" class="section level4 hasAnchor" number="15.3.6.2">
+<h4><span class="header-section-number">15.3.6.2</span> ANOVA<a href="ch-variantieanalyse.html#anova" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In SPSS kan je een variantieanalyse op meerdere manieren uitvoeren. We
 gebruiken hier een algemeen bruikbare aanpak, waarbij we aangeven dat er
 één afhankelijke variabele in het spel is.<br />
@@ -1278,8 +1277,8 @@ Tabel <a href="ch-variantieanalyse.html#tab:kleurtjes-anova">15.3</a>, waarbij 
 wordt in de vorm van <code> Partial eta square</code>. Het is echter beter om
 <span class="math inline">\(\omega^2\)</span> te rapporteren, maar je moet die dan wel zelf uitrekenen!</p>
 </div>
-<div id="gerichte-vergelijking" class="section level4" number="15.3.6.3">
-<h4><span class="header-section-number">15.3.6.3</span> gerichte vergelijking</h4>
+<div id="gerichte-vergelijking" class="section level4 hasAnchor" number="15.3.6.3">
+<h4><span class="header-section-number">15.3.6.3</span> gerichte vergelijking<a href="ch-variantieanalyse.html#gerichte-vergelijking" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Voor een variantieanalyse met gerichte vergelijkingen moeten we de
 gewenste contrasten aangeven voor de factor <code>kleur</code>. De werkwijze is
 echter anders dan hierboven. We kunnen de gerichte contrasten in SPSS
@@ -1313,8 +1312,8 @@ betrouwbaarheidsinterval van het getoetste contrast. Het eerste contrast
 is wel significant (<code>Sig. .000</code>, rapporteer als <span class="math inline">\(p&lt;.001\)</span>, zie §<a href="ch-toetsing.html#sec:pgroterdannul">13.3</a>), en het tweede niet, zie
 Tabel <a href="ch-variantieanalyse.html#tab:kleurtjes-anova-contrast">15.4</a>.</p>
 </div>
-<div id="post-hoc-vergelijking" class="section level4" number="15.3.6.4">
-<h4><span class="header-section-number">15.3.6.4</span> post-hoc vergelijking</h4>
+<div id="post-hoc-vergelijking" class="section level4 hasAnchor" number="15.3.6.4">
+<h4><span class="header-section-number">15.3.6.4</span> post-hoc vergelijking<a href="ch-variantieanalyse.html#post-hoc-vergelijking" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Herhaal eerst de instructies hierboven.<br />
 Kies de knop <code>Post Hoc...</code>, en selecteer de factor <code>kleur</code>
 (verplaats naar venster “Post Hoc Tests for:”). Vink aan: <code>Tukey</code>, en
@@ -1330,10 +1329,10 @@ rood verschilt van grijs, en dat de scores van de grijze en blauwe
 groepen niet verschillen.</p>
 </div>
 </div>
-<div id="jasp-14" class="section level3" number="15.3.7">
-<h3><span class="header-section-number">15.3.7</span> JASP</h3>
-<div id="voorbereiding-2" class="section level4" number="15.3.7.1">
-<h4><span class="header-section-number">15.3.7.1</span> voorbereiding</h4>
+<div id="jasp-14" class="section level3 hasAnchor" number="15.3.7">
+<h3><span class="header-section-number">15.3.7</span> JASP<a href="ch-variantieanalyse.html#jasp-14" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="voorbereiding-2" class="section level4 hasAnchor" number="15.3.7.1">
+<h4><span class="header-section-number">15.3.7.1</span> voorbereiding<a href="ch-variantieanalyse.html#voorbereiding-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We gebruiken de gegevens in het bestand <code>data/kleurgroepen.txt</code>; deze gegevens zijn ook weergegeven in Figuur <a href="ch-variantieanalyse.html#fig:kleurtjes-obs">15.2</a>.
 Lees de data in en controleer deze.</p>
 <p>Onderzoek of de responsies normaal verdeeld zijn binnen elke groep, met behulp van de
@@ -1343,8 +1342,8 @@ technieken uit Deel II van dit tekstboek (met name
 drie groepen, zoals vereist voor variantieanalyse, doen we tegelijk
 met de variantieanalyse zelf, zie hieronder.</p>
 </div>
-<div id="anova-1" class="section level4" number="15.3.7.2">
-<h4><span class="header-section-number">15.3.7.2</span> ANOVA</h4>
+<div id="anova-1" class="section level4 hasAnchor" number="15.3.7.2">
+<h4><span class="header-section-number">15.3.7.2</span> ANOVA<a href="ch-variantieanalyse.html#anova-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Klik in de bovenbalk op:</p>
 <pre><code>ANOVA &gt; ANOVA (onder &#39;Classical)</code></pre>
 <p>Selecteer de variabele <em>score</em> en plaats deze in het veld “Dependent Variable”, en plaats variabele <em>kleur</em> in het veld “Fixed Factors”.<br />
@@ -1355,8 +1354,8 @@ Zorg dat onder “Display” <code>Estimates of effect size</code> is aangevinkt
 varianties (homogeniteit van variantie). Die geeft geen aanleiding om H0
 te verwerpen; we mogen dus een variantieanalyse uitvoeren.</p>
 </div>
-<div id="gerichte-vergelijking-1" class="section level4" number="15.3.7.3">
-<h4><span class="header-section-number">15.3.7.3</span> gerichte vergelijking</h4>
+<div id="gerichte-vergelijking-1" class="section level4 hasAnchor" number="15.3.7.3">
+<h4><span class="header-section-number">15.3.7.3</span> gerichte vergelijking<a href="ch-variantieanalyse.html#gerichte-vergelijking-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Voor een variantieanalyse met gerichte vergelijkingen moeten we de
 gewenste contrasten aangeven voor de factor <code>kleur</code>. De werkwijze is in het begin
 hetzelfde als hierboven, herhaal dus de instructies onder <strong>ANOVA</strong>.</p>
@@ -1365,8 +1364,8 @@ hetzelfde als hierboven, herhaal dus de instructies onder <strong>ANOVA</strong>
 In de tekst hierboven (§<a href="ch-variantieanalyse.html#sec:anova-oneway-gericht">15.3.4</a>) werden de gerichte contrasten getoetst met behulp van de toetsingsgrootheid <span class="math inline">\(F\)</span>;
 JASP gebruikt daarvoor echter de <span class="math inline">\(t\)</span>-toets (voor twee onafhankelijke steekproeven). De <span class="math inline">\(p\)</span>-waarde is hetzelfde. Rapporteer de toetsing van deze contrasten met behulp van de <span class="math inline">\(t\)</span>-toets en <span class="math inline">\(p\)</span>-waarde in de uitvoer van JASP, net zoals je bij een <span class="math inline">\(t\)</span>-toets doet.</p>
 </div>
-<div id="post-hoc-vergelijking-1" class="section level4" number="15.3.7.4">
-<h4><span class="header-section-number">15.3.7.4</span> post-hoc vergelijking</h4>
+<div id="post-hoc-vergelijking-1" class="section level4 hasAnchor" number="15.3.7.4">
+<h4><span class="header-section-number">15.3.7.4</span> post-hoc vergelijking<a href="ch-variantieanalyse.html#post-hoc-vergelijking-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Voor een variantieanalyse met post-hoc vergelijkingen moeten we de
 gewenste vergelijkingen aanvragen. De werkwijze is in het begin
 hetzelfde als hierboven, herhaal dus de instructies onder <strong>ANOVA</strong>.</p>
@@ -1382,10 +1381,10 @@ rood verschilt van grijs, en dat de scores van de grijze en blauwe
 groepen niet verschillen. In je eigen rapportage moet je vermelden dat Tukey’s HSD-toets is gebruikt, en wat de overschrijdingskansen zijn van elke post-hoc vergelijking (zie <em>Voorbeeld 15.4</em>).</p>
 </div>
 </div>
-<div id="r-15" class="section level3" number="15.3.8">
-<h3><span class="header-section-number">15.3.8</span> R</h3>
-<div id="voorbereiding-3" class="section level4" number="15.3.8.1">
-<h4><span class="header-section-number">15.3.8.1</span> voorbereiding</h4>
+<div id="r-15" class="section level3 hasAnchor" number="15.3.8">
+<h3><span class="header-section-number">15.3.8</span> R<a href="ch-variantieanalyse.html#r-15" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="voorbereiding-3" class="section level4 hasAnchor" number="15.3.8.1">
+<h4><span class="header-section-number">15.3.8.1</span> voorbereiding<a href="ch-variantieanalyse.html#voorbereiding-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Lees eerst de benodigde gegevens, en controleer deze:</p>
 <div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="ch-variantieanalyse.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zelfde data als gebruikt in Fig.15.2</span></span>
 <span id="cb129-2"><a href="ch-variantieanalyse.html#cb129-2" aria-hidden="true" tabindex="-1"></a>kleurgroepen <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="st">&quot;data/kleurgroepen.txt&quot;</span>, </span>
@@ -1404,8 +1403,8 @@ toetsen deze H0 met behulp van Bartlett’s toets.</p>
 ## data:  kleurgroepen$score and kleurgroepen$kleur
 ## Bartlett&#39;s K-squared = 3.0941, df = 2, p-value = 0.2129</code></pre>
 </div>
-<div id="anova-2" class="section level4" number="15.3.8.2">
-<h4><span class="header-section-number">15.3.8.2</span> ANOVA</h4>
+<div id="anova-2" class="section level4 hasAnchor" number="15.3.8.2">
+<h4><span class="header-section-number">15.3.8.2</span> ANOVA<a href="ch-variantieanalyse.html#anova-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="ch-variantieanalyse.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>( score<span class="sc">~</span>kleur, <span class="at">data=</span>kleurgroepen) <span class="ot">-&gt;</span> m01 ) <span class="co"># zie Tabel 15.3</span></span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## kleur        2  14.50   7.248   9.356 0.000436 ***
@@ -1413,8 +1412,8 @@ toetsen deze H0 met behulp van Bartlett’s toets.</p>
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
-<div id="R:omega-kwadraat" class="section level4" number="15.3.8.3">
-<h4><span class="header-section-number">15.3.8.3</span> effectgrootte</h4>
+<div id="R:omega-kwadraat" class="section level4 hasAnchor" number="15.3.8.3">
+<h4><span class="header-section-number">15.3.8.3</span> effectgrootte<a href="ch-variantieanalyse.html#R:omega-kwadraat" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="ch-variantieanalyse.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="co"># eigen functie om omega2 te berekenen, zie vergelijking (15.7) in de hoofdtekst, </span></span>
 <span id="cb134-2"><a href="ch-variantieanalyse.html#cb134-2" aria-hidden="true" tabindex="-1"></a><span class="co"># voor effect genaamd `term` in summary(`model`)</span></span>
 <span id="cb134-3"><a href="ch-variantieanalyse.html#cb134-3" aria-hidden="true" tabindex="-1"></a>omegasq <span class="ot">&lt;-</span> <span class="cf">function</span> ( model, term ) {   </span>
@@ -1426,8 +1425,8 @@ toetsen deze H0 met behulp van Bartlett’s toets.</p>
 <span id="cb134-9"><a href="ch-variantieanalyse.html#cb134-9" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>( m01, <span class="st">&quot;kleur&quot;</span> ) <span class="co"># roep functie aan met 2 argumenten</span></span></code></pre></div>
 <pre><code>## [1] 0.2708136</code></pre>
 </div>
-<div id="gerichte-vergelijking-2" class="section level4" number="15.3.8.4">
-<h4><span class="header-section-number">15.3.8.4</span> gerichte vergelijking</h4>
+<div id="gerichte-vergelijking-2" class="section level4 hasAnchor" number="15.3.8.4">
+<h4><span class="header-section-number">15.3.8.4</span> gerichte vergelijking<a href="ch-variantieanalyse.html#gerichte-vergelijking-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Bij het specificeren van de contrasten moeten we rekening houden met de <em>alfabetische</em> ordening van de condities: <em>blauw, grijs, rood</em>.</p>
 <div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="ch-variantieanalyse.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># maak matrix van twee orthogonale contrasten (per kolom, niet per rij) </span></span>
 <span id="cb136-2"><a href="ch-variantieanalyse.html#cb136-2" aria-hidden="true" tabindex="-1"></a>conmat <span class="ot">&lt;-</span> <span class="fu">matrix</span>( <span class="fu">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>,<span class="sc">-</span><span class="dv">1</span>, <span class="sc">+</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>), <span class="at">byrow=</span>F, <span class="at">nrow=</span><span class="dv">3</span> )</span>
@@ -1454,8 +1453,8 @@ toetsen deze H0 met behulp van Bartlett’s toets.</p>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="ch-variantieanalyse.html#cb142-1" aria-hidden="true" tabindex="-1"></a>(<span class="fl">0.188</span><span class="dv">-1</span><span class="sc">*</span><span class="fl">0.775</span>)<span class="sc">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># afgerond 0.00</span></span></code></pre></div>
 <pre><code>## [1] -0.012277</code></pre>
 </div>
-<div id="post-hoc-vergelijkingen" class="section level4" number="15.3.8.5">
-<h4><span class="header-section-number">15.3.8.5</span> post-hoc vergelijkingen</h4>
+<div id="post-hoc-vergelijkingen" class="section level4 hasAnchor" number="15.3.8.5">
+<h4><span class="header-section-number">15.3.8.5</span> post-hoc vergelijkingen<a href="ch-variantieanalyse.html#post-hoc-vergelijkingen" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="ch-variantieanalyse.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(m02)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
@@ -1479,8 +1478,8 @@ verschillen.</p>
 </div>
 </div>
 </div>
-<div id="sec:tweeweg-anova" class="section level2" number="15.4">
-<h2><span class="header-section-number">15.4</span> Tweeweg-variantieanalyse</h2>
+<div id="sec:tweeweg-anova" class="section level2 hasAnchor" number="15.4">
+<h2><span class="header-section-number">15.4</span> Tweeweg-variantieanalyse<a href="ch-variantieanalyse.html#sec:tweeweg-anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In §<a href="ch-variantieanalyse.html#sec:anova-voorbeelden">15.2</a> hebben we al een voorbeeld gegeven
 van een onderzoek met twee factoren die in één variantieanalyse
 onderzocht worden. We kunnen op deze manier onderzoeken (i) of er een
@@ -1491,8 +1490,8 @@ interactie houdt in dat de verschillen tussen condities van de ene
 factor niet hetzelfde zijn voor de condities van de andere factor, of
 anders gezegd, dat de gemiddelde score van een cel afwijkt van de
 voorspelde waarde op grond van de twee hoofdeffecten.</p>
-<div id="een-intuïtieve-uitleg" class="section level3" number="15.4.1">
-<h3><span class="header-section-number">15.4.1</span> Een intuïtieve uitleg</h3>
+<div id="een-intuïtieve-uitleg" class="section level3 hasAnchor" number="15.4.1">
+<h3><span class="header-section-number">15.4.1</span> Een intuïtieve uitleg<a href="ch-variantieanalyse.html#een-intuïtieve-uitleg" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In veel studies zijn we geïnteresseerd in de <em>gecombineerde</em> effecten
 van twee of meer factoren, zoals in het onderstaande voorbeeld dat we gebruiken voor onze uitleg.</p>
 <hr />
@@ -1514,7 +1513,7 @@ De onderzoekers verwachten dus een <strong>interactie</strong> of wisselwerking 
 <p>Maar het meest opvallende effect is de interactie: het effect van tekstmarkeringen is veel groter bij zwakke lezers dan bij sterke lezers, conform de voorspelling. Of anders gezegd, de verschillen tussen zwakke, gemiddelde en sterke lezers zijn groot in de tekstversie zonder structuurmarkeringen, maar klein of nihil in de tekstversie met structuurmarkeringen.</p>
 </blockquote>
 <div class="figure"><span style="display:block;" id="fig:DBE12interaction"></span>
-<img src="figures/DBE2012interaction_v2.png" alt="Gemiddelde begripsscores (met 95%-betrouwbaarheidsintervallen), voor twee tekstversies en drie groepen lezers (naar Van Dooren, Van den Bergh en Evers-Vermeul, 2012)." width="571" />
+<img src="figures/DBE2012interaction_v2.png" alt="Gemiddelde begripsscores (met 95%-betrouwbaarheidsintervallen), voor twee tekstversies en drie groepen lezers (naar Van Dooren, Van den Bergh en Evers-Vermeul, 2012)."  />
 <p class="caption">
 Figuur 15.3: Gemiddelde begripsscores (met 95%-betrouwbaarheidsintervallen), voor twee tekstversies en drie groepen lezers (naar Van Dooren, Van den Bergh en Evers-Vermeul, 2012).
 </p>
@@ -1523,7 +1522,7 @@ Figuur 15.3: Gemiddelde begripsscores (met 95%-betrouwbaarheidsintervallen), voo
 <p>Als er een significante interactie aanwezig is, zoals in het bovenstaande voorbeeld, dan kunnen we niet meer
 algemene uitspraken doen over de betrokken hoofdeffecten. Immers, de
 werking van een hoofdeffect hangt dan tevens af van de wisselwerking met
-(een) ander(e) hoofdeffect(en) <a href="referenties.html#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>. In het bovenstaande voorbeeld: het verschil tussen de tekstversies (factor A) is groot voor zwakke lezers, maar nihil voor sterke lezers. Het verschil tussen de lezerstypen (factor B) is groot bij een tekst zonder markeringen, maar veel kleiner bij een tekst met structuurmarkeringen.</p>
+(een) ander(e) hoofdeffect(en) <a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>. In het bovenstaande voorbeeld: het verschil tussen de tekstversies (factor A) is groot voor zwakke lezers, maar nihil voor sterke lezers. Het verschil tussen de lezerstypen (factor B) is groot bij een tekst zonder markeringen, maar veel kleiner bij een tekst met structuurmarkeringen.</p>
 <p>Een ander interactie-patroon zagen we al eerder, in
 Figuur <a href="ch-ontwerp.html#fig:drakebenelheni2003fig2">6.1</a> (§<a href="ch-ontwerp.html#sec:ontwerp-factorieel">6.8</a>).
 De scores zijn <em>gemiddeld</em>
@@ -1534,8 +1533,8 @@ is daarentegen wel significant. In dat onderzoek is het effect van de
 ene factor precies tegengesteld in de twee verschillende niveaus
 van de andere factor.</p>
 </div>
-<div id="een-formele-uitleg" class="section level3" number="15.4.2">
-<h3><span class="header-section-number">15.4.2</span> Een formele uitleg</h3>
+<div id="een-formele-uitleg" class="section level3 hasAnchor" number="15.4.2">
+<h3><span class="header-section-number">15.4.2</span> Een formele uitleg<a href="ch-variantieanalyse.html#een-formele-uitleg" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We nemen wederom aan dat de scores zijn opgebouwd volgens een
 statistisch model, nl. als de optelsom van het populatiegemiddelde
 <span class="math inline">\(\mu\)</span>, een systematisch effect <span class="math inline">\(\alpha_j\)</span> van de <span class="math inline">\(j\)</span>’de conditie van
@@ -1634,8 +1633,8 @@ Voor de interpretatie is het van belang of de <em>interactie</em> wel of niet si
 Als de interactie wel significant is, dan rapporteren we eerst de hoofdeffecten zonder die te interpreteren, daarna rapporteren en interpreteren we de interactie, en tenslotte interpreteren we de eventuele significante hoofdeffecten die niet bij de interactie geïnterpreteerd zijn.
 Als de interactie niet significant is, dan kan het makkelijker zijn om eerst de hoofdeffecten te rapporteren en te interpreteren, en daarna rapporteren we de interactie (die dan niet geïnterpreteerd wordt).</p>
 </div>
-<div id="sec:anova-twoway-posthoc" class="section level3" number="15.4.3">
-<h3><span class="header-section-number">15.4.3</span> Post-hoc vergelijkingen</h3>
+<div id="sec:anova-twoway-posthoc" class="section level3 hasAnchor" number="15.4.3">
+<h3><span class="header-section-number">15.4.3</span> Post-hoc vergelijkingen<a href="ch-variantieanalyse.html#sec:anova-twoway-posthoc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Ook bij tweeweg-variantieanalyse kunnen we weer post-hoc vergelijkingen uitvoeren (vgl. §<a href="ch-variantieanalyse.html#sec:anova-oneway-posthoc">15.3.5</a>) om te onderzoeken welke cellen of combinaties van condities van elkaar verschillen. We gebruiken daarvoor wederom de Tukey HSD toets.</p>
 <p>De Tukey HSD toets resulteert in
 een 95% betrouwbaarheidsinterval van het verschil tussen twee condities,
@@ -1643,30 +1642,30 @@ en/of in een <span class="math inline">\(p\)</span>-waarde van het verschil tuss
 <blockquote>
 <p>De begripsscores lieten een significant hoofdeffect zien van de structuurmarkeringen <span class="math inline">\([F(1,88)=63.75, p&lt;.001, \omega^2=0.26]\)</span>, alsmede een significant hoofdeffect van het lezerstype <span class="math inline">\([F(2,88)=33.56, p&lt;.001, \omega^2=0.27]\)</span>.
 Ook was er een significante interactie zien tussen de tekstversie en het lezerstype <span class="math inline">\([F(2,88)=10.74, p&lt;.001, \omega^2=0.08]\)</span>, zie Figuur <a href="ch-variantieanalyse.html#fig:DBE12interaction">15.3</a>; deze interactie werd nader onderzocht met de Tukey HSD-toets (tussen 6 cellen).
-Zwakke lezers presteren slechter dan gemiddelde lezers, bij de tekstversie zonder markeringen (p&lt;.001), maar niet bij de versie met markeringen (<span class="math inline">\(p=.999\)</span>). Sterke lezers presteren beter dan gemiddelde lezers, zowel zonder markeringen (<span class="math inline">\(p&lt;.001\)</span>) als met markeringen (p=.013). Tekstmarkeringen hebben wel effect bij zwakke lezers (<span class="math inline">\(p&lt;.001\)</span>) en bij gemiddelde lezers (<span class="math inline">\(p&lt;.001\)</span>) maar niet bij sterke lezers (<span class="math inline">\(p=.888\)</span>); sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst, maar zwakke en gemiddelde lezers wel. Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (<span class="math inline">\(p=.722\)</span>).</p>
+Zwakke lezers presteren slechter dan gemiddelde lezers, bij de tekstversie zonder markeringen (p&lt;.001), maar niet bij de versie met markeringen (<span class="math inline">\(p=.99\)</span>). Sterke lezers presteren beter dan gemiddelde lezers, zowel zonder markeringen (<span class="math inline">\(p&lt;.001\)</span>) als met markeringen (p=.01). Tekstmarkeringen hebben wel effect bij zwakke lezers (<span class="math inline">\(p&lt;.001\)</span>) en bij gemiddelde lezers (<span class="math inline">\(p&lt;.001\)</span>) maar niet bij sterke lezers (<span class="math inline">\(p=.89\)</span>); sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst, maar zwakke en gemiddelde lezers wel. Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (<span class="math inline">\(p=.72\)</span>).</p>
 </blockquote>
 </div>
-<div id="spss-13" class="section level3" number="15.4.4">
-<h3><span class="header-section-number">15.4.4</span> SPSS</h3>
+<div id="spss-13" class="section level3 hasAnchor" number="15.4.4">
+<h3><span class="header-section-number">15.4.4</span> SPSS<a href="ch-variantieanalyse.html#spss-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand <code>data/DBE2012.csv</code>.</p>
-<div id="anova-3" class="section level4" number="15.4.4.1">
-<h4><span class="header-section-number">15.4.4.1</span> ANOVA</h4>
+<div id="anova-3" class="section level4 hasAnchor" number="15.4.4.1">
+<h4><span class="header-section-number">15.4.4.1</span> ANOVA<a href="ch-variantieanalyse.html#anova-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <pre><code>Analyze &gt; General Linear Model &gt; Univariate...</code></pre>
 <p>Sleep de afhankelijke variabele (<code>MCBiScore</code>) naar het vakje Dependent
 variable. Sleep de twee onafhankelijke variabelen (<code>Versie</code>, <code>Groep</code>) naar het
 vakje Fixed factor(s).</p>
 </div>
 </div>
-<div id="jasp-15" class="section level3" number="15.4.5">
-<h3><span class="header-section-number">15.4.5</span> JASP</h3>
-<div id="voorbereiding-4" class="section level4" number="15.4.5.1">
-<h4><span class="header-section-number">15.4.5.1</span> voorbereiding</h4>
+<div id="jasp-15" class="section level3 hasAnchor" number="15.4.5">
+<h3><span class="header-section-number">15.4.5</span> JASP<a href="ch-variantieanalyse.html#jasp-15" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="voorbereiding-4" class="section level4 hasAnchor" number="15.4.5.1">
+<h4><span class="header-section-number">15.4.5.1</span> voorbereiding<a href="ch-variantieanalyse.html#voorbereiding-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand <code>data/DBE2012.csv</code>.</p>
 <p>Onderzoek of de observaties normaal verdeeld zijn binnen elke groep of cel, met behulp van de technieken uit Deel II van dit tekstboek (met name
 §<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>). Let op: Dit kan in JASP ook tegelijk met de variantieanalyse zelf, zie hieronder.</p>
 </div>
-<div id="anova-4" class="section level4" number="15.4.5.2">
-<h4><span class="header-section-number">15.4.5.2</span> ANOVA</h4>
+<div id="anova-4" class="section level4 hasAnchor" number="15.4.5.2">
+<h4><span class="header-section-number">15.4.5.2</span> ANOVA<a href="ch-variantieanalyse.html#anova-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Klik in de bovenbalk op:</p>
 <pre><code>ANOVA &gt; ANOVA (onder &#39;Classical)</code></pre>
 <p>Selecteer de variabele <em>MCBiScore</em> en plaats deze in het veld “Dependent Variable”, en plaats variabelen <em>Versie</em> (tekstversie) en <em>Groep</em> (lezerstype) in het veld “Fixed Factors”.<br />
@@ -1679,8 +1678,8 @@ Open de balk “Assumption Checks” en vink <code>Homogeneity tests</code> aan.
 varianties (homogeniteit van variantie), die geen aanleiding geeft om H0
 te verwerpen. We mogen dus een variantieanalyse uitvoeren.</p>
 </div>
-<div id="post-hoc-vergelijking-2" class="section level4" number="15.4.5.3">
-<h4><span class="header-section-number">15.4.5.3</span> post-hoc vergelijking</h4>
+<div id="post-hoc-vergelijking-2" class="section level4 hasAnchor" number="15.4.5.3">
+<h4><span class="header-section-number">15.4.5.3</span> post-hoc vergelijking<a href="ch-variantieanalyse.html#post-hoc-vergelijking-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Voor een variantieanalyse met post-hoc vergelijkingen moeten we de
 gewenste post-hoc vergelijkingen aanvragen. De werkwijze is in het begin
 hetzelfde als hierboven.</p>
@@ -1692,15 +1691,15 @@ groepen of condities dus waarschijnlijk niet gelijk aan nul. De
 gecorrigeerde overschrijdingskans volgens Tukey’s HSD toets is bovendien
 gegeven in de laatste kolom.</p>
 <p>Voor de versie zonder markeringen zien we dat de cel <code>zonder:zwak</code> lager scoort dan de cel <code>zonder:gemiddeld</code> (<span class="math inline">\(p&lt;.001\)</span>), en dat de cel <code>zonder:sterk</code> hoger scoort dan de cel <code>zonder:gemiddeld</code> (<span class="math inline">\(p&lt;.001\)</span>).
-Voor de versie met markeringen zien we dat de cel <code>met:zwak</code> ongeveer gelijk scoort met de cel <code>met:gemiddeld</code> (<span class="math inline">\(p=.999\)</span>), en dat de cel <code>met:sterk</code> hoger scoort dan de cel <code>met:gemiddeld</code> (<span class="math inline">\(p=.013\)</span>). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies.
-Ook zien we dat <code>zonder:zwak</code> lager scoort dan <code>met:zwak</code> (<span class="math inline">\(p&lt;.001\)</span>), dat <code>zonder:gemiddeld</code> lager scoort dan <code>met:gemiddeld</code> (<span class="math inline">\(p&lt;.001\)</span>), terwijl er geen verschil is tussen <code>zonder:sterk</code> en <code>met:sterk</code> (<span class="math inline">\(p=.888\)</span>). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst.
-Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (<span class="math inline">\(p=.722\)</span>).</p>
+Voor de versie met markeringen zien we dat de cel <code>met:zwak</code> ongeveer gelijk scoort met de cel <code>met:gemiddeld</code> (<span class="math inline">\(p=.99\)</span>), en dat de cel <code>met:sterk</code> hoger scoort dan de cel <code>met:gemiddeld</code> (<span class="math inline">\(p=.01\)</span>). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies.
+Ook zien we dat <code>zonder:zwak</code> lager scoort dan <code>met:zwak</code> (<span class="math inline">\(p&lt;.001\)</span>), dat <code>zonder:gemiddeld</code> lager scoort dan <code>met:gemiddeld</code> (<span class="math inline">\(p&lt;.001\)</span>), terwijl er geen verschil is tussen <code>zonder:sterk</code> en <code>met:sterk</code> (<span class="math inline">\(p=.89\)</span>). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst.
+Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (<span class="math inline">\(p=.72\)</span>).</p>
 </div>
 </div>
-<div id="r-16" class="section level3" number="15.4.6">
-<h3><span class="header-section-number">15.4.6</span> R</h3>
-<div id="voorbereiding-5" class="section level4" number="15.4.6.1">
-<h4><span class="header-section-number">15.4.6.1</span> voorbereiding</h4>
+<div id="r-16" class="section level3 hasAnchor" number="15.4.6">
+<h3><span class="header-section-number">15.4.6</span> R<a href="ch-variantieanalyse.html#r-16" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="voorbereiding-5" class="section level4 hasAnchor" number="15.4.6.1">
+<h4><span class="header-section-number">15.4.6.1</span> voorbereiding<a href="ch-variantieanalyse.html#voorbereiding-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand <code>data/DBE2012.csv</code>.</p>
 <div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="ch-variantieanalyse.html#cb148-1" aria-hidden="true" tabindex="-1"></a>DBE2012 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">&quot;data/DBE2012.csv&quot;</span>)</span>
 <span id="cb148-2"><a href="ch-variantieanalyse.html#cb148-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Versie: 1=met, 2=zonder structuurmarkeringen</span></span>
@@ -1715,8 +1714,8 @@ Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net 
 ## met    6.800000  6.653846 8.222222
 ## zonder 2.666667  4.642857 7.571429</code></pre>
 </div>
-<div id="anova-5" class="section level4" number="15.4.6.2">
-<h4><span class="header-section-number">15.4.6.2</span> ANOVA</h4>
+<div id="anova-5" class="section level4 hasAnchor" number="15.4.6.2">
+<h4><span class="header-section-number">15.4.6.2</span> ANOVA<a href="ch-variantieanalyse.html#anova-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ch-variantieanalyse.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>(MCBiScore<span class="sc">~</span>Versie<span class="sc">*</span>Groep, <span class="at">data=</span>DBE2012) <span class="ot">-&gt;</span> DBE2012.m1 )</span></code></pre></div>
 <pre><code>##              Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## Versie        1 121.18  121.18   84.64 1.59e-14 ***
@@ -1725,10 +1724,10 @@ Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net 
 ## Residuals    88 125.98    1.43                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>De uitkomsten wijken enigszins af van die in Tabel <a href="ch-variantieanalyse.html#tab:DBE12anova">15.5</a> omdat R de Sums of Squares op een andere wijze berekent<a href="referenties.html#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.</p>
+<p>De uitkomsten wijken enigszins af van die in Tabel <a href="ch-variantieanalyse.html#tab:DBE12anova">15.5</a> omdat R de Sums of Squares op een andere wijze berekent<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.</p>
 </div>
-<div id="effectgrootte" class="section level4" number="15.4.6.3">
-<h4><span class="header-section-number">15.4.6.3</span> effectgrootte</h4>
+<div id="effectgrootte" class="section level4 hasAnchor" number="15.4.6.3">
+<h4><span class="header-section-number">15.4.6.3</span> effectgrootte<a href="ch-variantieanalyse.html#effectgrootte" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We gebruiken hiervoor de eerder geprogrammeerde functie <code>omegasq</code> (§<a href="ch-variantieanalyse.html#R:omega-kwadraat">15.3.8.3</a>):</p>
 <div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch-variantieanalyse.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Versie&quot;</span>)        <span class="co"># [1] 0.33</span></span></code></pre></div>
 <pre><code>## [1] 0.3319423</code></pre>
@@ -1738,8 +1737,8 @@ Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net 
 <pre><code>## [1] 0.07727868</code></pre>
 <p>De uitkomsten wijken enigszins af van die in de tekst hierboven omdat R de Sums of Squares op een iets andere wijze berekent.</p>
 </div>
-<div id="post-hoc-toetsen" class="section level4" number="15.4.6.4">
-<h4><span class="header-section-number">15.4.6.4</span> post-hoc toetsen</h4>
+<div id="post-hoc-toetsen" class="section level4 hasAnchor" number="15.4.6.4">
+<h4><span class="header-section-number">15.4.6.4</span> post-hoc toetsen<a href="ch-variantieanalyse.html#post-hoc-toetsen" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="ch-variantieanalyse.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(<span class="at">x=</span>DBE2012.m1, <span class="at">which=</span><span class="st">&quot;Versie:Groep&quot;</span>)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
@@ -1767,15 +1766,15 @@ Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net 
 <p>Voor iedere paarsgewijze vergelijking tussen de 2x3 cellen zien we het verschil, de ondergrens en bovengrens van het 95%-betrouwbaarheidsinterval van dat verschil, en de
 gecorrigeerde overschrijdingskans volgens Tukey’s HSD toets.</p>
 <p>Voor de versie zonder markeringen zien we dat de cel <code>zonder:zwak</code> lager scoort dan de cel <code>zonder:gemiddeld</code> (<span class="math inline">\(p&lt;.001\)</span>), en dat de cel <code>zonder:sterk</code> hoger scoort dan de cel <code>zonder:gemiddeld</code> (<span class="math inline">\(p&lt;.001\)</span>).
-Voor de versie met markeringen zien we dat de cel <code>met:zwak</code> ongeveer gelijk scoort met de cel <code>met:gemiddeld</code> (<span class="math inline">\(p=.999\)</span>), en dat de cel <code>met:sterk</code> hoger scoort dan de cel <code>met:gemiddeld</code> (<span class="math inline">\(p=.013\)</span>). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies.
-Ook zien we dat <code>zonder:zwak</code> lager scoort dan <code>met:zwak</code> (p&lt;.001), dat <code>zonder:gemiddeld</code> lager scoort dan <code>met:gemiddeld</code> (p&lt;.001), terwijl er geen verschil is tussen <code>zonder:sterk</code> en <code>met:sterk</code> (p=.888). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst.
-Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (<span class="math inline">\(p=.722\)</span>).</p>
+Voor de versie met markeringen zien we dat de cel <code>met:zwak</code> ongeveer gelijk scoort met de cel <code>met:gemiddeld</code> (<span class="math inline">\(p=.99\)</span>), en dat de cel <code>met:sterk</code> hoger scoort dan de cel <code>met:gemiddeld</code> (<span class="math inline">\(p=.01\)</span>). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies.
+Ook zien we dat <code>zonder:zwak</code> lager scoort dan <code>met:zwak</code> (p&lt;.001), dat <code>zonder:gemiddeld</code> lager scoort dan <code>met:gemiddeld</code> (p&lt;.001), terwijl er geen verschil is tussen <code>zonder:sterk</code> en <code>met:sterk</code> (p=.89). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst.
+Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (<span class="math inline">\(p=.72\)</span>).</p>
 
 </div>
 </div>
 </div>
 </div>
-<h3>Referenties</h3>
+<h3>Referenties<a href="referenties.html#referenties" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-KL00" class="csl-entry">
 Kerlinger, Fred N., and Howard B. Lee. 2000. <em>Foundations of Behavioral Research</em>. 4th ed. Fort Worth: Harcourt College Publishers.
@@ -1790,11 +1789,19 @@ Olejnik, Stephen, and James Algina. 2003. <span>“Generalized Eta and Omega Squ
 Quené, Hugo. 2008. <span>“Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.”</span> <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.
 </div>
 <div id="ref-R-hqmisc" class="csl-entry">
-———. 2014. <em>Hqmisc: Miscellaneous Convenience Functions and Dataset</em>. <a href="https://CRAN.R-project.org/package=hqmisc">https://CRAN.R-project.org/package=hqmisc</a>.
+———. 2022. <em>Hqmisc: Miscellaneous Convenience Functions and Dataset</em>.
 </div>
 <div id="ref-DBE12" class="csl-entry">
 Van Dooren, Wendy, Huub Van den Bergh, and Jacqueline Evers-Vermeul. 2012. <span>“Leesbare Teksten? Over de Invloed van Structuurmarkeringen Op Het Tekstbegrip En Tekstwaardering van Zwakke En Sterke Lezers.”</span> <em>Levende Talen Tijdschrift</em> 13 (4): 31–38. <a href="https://lt-tijdschriften.nl/ojs/index.php/ltt/article/view/152">https://lt-tijdschriften.nl/ojs/index.php/ltt/article/view/152</a>.
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="32">
+<li id="fn32"><p>Als (1) rood wel verschilt van grijs en blauw, en als (2) grijs en blauw bovendien onderling niet verschillen, dan impliceert dat dat rood verschilt van grijs (een nieuwe bevinding) en dat rood verschilt van blauw (dat wisten we al).<a href="ch-variantieanalyse.html#fnref32" class="footnote-back">↩︎</a></p></li>
+<li id="fn33"><p>Als we nog meer factoren toevoegen, dan wordt de situatie al snel onoverzichtelijk. Met drie hoofdeffecten zijn er al 3 tweeweg-interacties plus 1 drieweg-interactie. Met vier hoofdeffecten zijn er al 6 tweeweg-interacties, plus 4 drieweg-interacties, plus 1 vierweg-interactie.<a href="ch-variantieanalyse.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<li id="fn34"><p>De standaard berekeningswijze van R (Type I) is na te bootsen in JASP met de keuze: Model, Sum of squares: Type I. De standaard berekeningswijze van JASP (Type III) is ook na te bootsen in R, zie <a href="https://www.r-bloggers.com/2011/03/anova-%E2%80%93-type-iiiiii-ss-explained" class="uri">https://www.r-bloggers.com/2011/03/anova-%E2%80%93-type-iiiiii-ss-explained</a>.<a href="ch-variantieanalyse.html#fnref34" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

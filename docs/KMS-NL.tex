@@ -123,7 +123,7 @@
 
 \title{Kwantitatieve Methoden en Statistiek}
 \author{true}
-\date{Versie gecompileerd op 02 Mar 2022}
+\date{Versie gecompileerd op 13 May 2022}
 
 \begin{document}
 \maketitle
@@ -158,13 +158,17 @@ Els Rose,
 Tobias Quené,
 Kirsten Schutter,
 Marijn Struiksma,
+Tara Super,
 en Joanna Wall,
 voor hun adviezen, data, en/of commentaar bij eerdere versies.
 
-Wij danken Rianne Kraakman voor het schrijven van de subsecties met JASP-instructies.
+Wij danken Rianne Kraakman voor het schrijven van de subsecties met JASP-instructies (versie 1.2.0), en Tara Super voor redactiewerk (versie 1.3.0).
+
 Onze bijzondere dank gaat tenslotte uit naar Marijn Struiksma, voor haar inspiratie bij dit project en voor het coördineren van de JASP-uitbreidingen en de Engelse vertaling.
 
-Utrecht, februari 2021
+versie 1.1.1+: februari 2021\\
+versie 1.2.0: juni 2021\\
+versie 1.3.0: mei 2022
 
 Hugo Quené, \url{https://www.hugoquene.nl}
 
@@ -198,13 +202,13 @@ This document is licensed under the \emph{GNU GPL 3} license (for details see
 \section*{Citatie}\label{citatie}}
 \addcontentsline{toc}{section}{Citatie}
 
-Gebruik een van de volgende manieren om te verwijzen naar dit tekstboek (in APA-formaat):
+Gebruik een van de volgende manieren om te verwijzen naar dit tekstboek (in APA-formaat), met de datum van raadpleging:
 
 Quené, H. \& Van den Bergh, H. (2022). \emph{Kwantitatieve Methoden en Statistiek}.
-Geraadpleegd op 28 januari 2022 via \url{https://hugoquene.github.io/KMS-NL/} .
+Geraadpleegd op 13 mei 2022 via \url{https://hugoquene.github.io/KMS-NL/} .
 
 Quené, H. \& Van den Bergh, H. (2022). \emph{Kwantitatieve Methoden en Statistiek} {[}in Dutch{]}.
-Retrieved 28 January 2022 from \url{https://hugoquene.github.io/KMS-NL/} .
+Retrieved 13 May 2022 from \url{https://hugoquene.github.io/KMS-NL/} .
 
 \hypertarget{technische-details}{%
 \section*{Technische details}\label{technische-details}}
@@ -2303,7 +2307,7 @@ en nadelen tegen elkaar afwegen.
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{quote}
-\emph{Voorbeeld 5.3}: \citep{Rijl86}
+\emph{Voorbeeld 5.3}: \citet{Rijl86}
 onderzocht het effect van `peer evaluation' op de kwaliteit van
 schrijfproducten. De opzet van zijn onderzoek was (enigszins
 vereenvoudigd) als volgt: eerst schrijven de leerlingen een opstel over
@@ -2356,7 +2360,7 @@ illustraties dienen als extra informatiebron.
 \end{quote}
 
 \begin{quote}
-\citep{Dona83} onderzocht de invloed van illustraties bij een tekst op het begrip van
+\citet{Dona83} onderzocht de invloed van illustraties bij een tekst op het begrip van
 die tekst. De onderzoeker selecteerde 120 leerlingen (uit 1868
 leerlingen) uit de derde en zesde groep van het basisonderwijs; 60 uit
 elk van beide groepen. Volgens de prestaties op een eerder afgenomen
@@ -2659,7 +2663,7 @@ bedoelde theoretische construct (voorkeur van kind).
 \emph{Voorbeeld 5.7}: Zoals hierboven aangegeven kan het begrip \emph{leesvaardigheid} op allerlei
 manieren worden geoperationaliseerd. Volgens sommigen kan
 leesvaardigheid niet goed gemeten worden met behulp van meerkeuzevragen
-(Houtman 1986, Shohamy 1984). Bij meerkeuzevragen worden de antwoorden
+\citep{Hout86, Shoh84}. Bij meerkeuzevragen worden de antwoorden
 zeer sterk beïnvloed door andere zaken zoals algemene ontwikkeling,
 gokvaardigheid, ervaring met eerdere toetsen, en door de vraagstelling
 zelf, zoals geïllustreerd in deze vraag:
@@ -3687,7 +3691,7 @@ resultaten zijn grafisch samengevat in Figuur 6.1.
 
 \begin{figure}
 
-{\centering \includegraphics[width=48.71in]{figures/DrakeBenElHeni2003Fig2} 
+{\centering \includegraphics{figures/DrakeBenElHeni2003Fig2} 
 
 }
 
@@ -5441,7 +5445,7 @@ als de noemer van de verhouding of breuk groter is dan 1000.
 Voorbeeld 9.13:
 In 2013 startten 154 studenten met een tweejarige research master. Na 2
 jaar waren 69 daarvan afgestudeerd. Het nominaal rendement voor dit
-cohort is dan \(69/154=\) 0.448052, af te ronden en te rapporteren als 44\%
+cohort is dan \(69/154=\) 0.448052, af te ronden en te rapporteren als 45\%
 (niet als 44.81\%).
 \end{quote}
 
@@ -6228,7 +6232,7 @@ symmetrisch is (zie hierboven), dus weten we dat \(P(Z< -1)\) ook \(.1587\)
 moet zijn. Wat is de kans \(p\) dat \(Z>3\) is? In de tweede deeltabel
 vinden we voor grenswaarde \(Z^*=3\) de overschrijdingskans
 \(p=0.0013\). Voor een normaal verdeelde variabele \(Z\) is er dus een
-overschrijdingskans \(p=0.0013\) om een waarde van \(Z\) te vinden die
+overschrijdingskans \(p=0.0013\) (meestal gerapporteerd als \(p=.001\)) om een waarde van \(Z\) te vinden die
 tenminste drie standaarddeviaties boven het gemiddelde ligt.
 
 Vaak willen we het omgekeerde weten: als we een bepaalde
@@ -6831,7 +6835,7 @@ tussen haakjes.}\tabularnewline
 \endhead
 Lezen & 1.00 & & \\
 Rekenen & 0.79 (.007) & 1.00 & \\
-Wereldoriëntatie & -0.51 (.131) & -0.01 (.970) & 1.00 \\
+Wereldoriëntatie & -0.51 (.13) & -0.01 (.97) & 1.00 \\
 \bottomrule
 \end{longtable}
 
@@ -7053,7 +7057,7 @@ Uit een lineaire-regressie-analyse blijkt dat de score bij Rekenen
 samenhangt met die bij Lezen: \(b=0.51, r=.79, p_r=.007\), over \(n=10\)
 leerlingen. Dit lineaire regressiemodel verklaart \(r^2=.51\) van de
 totale variantie in de rekenscores (de residuele standaarddeviatie is
-\(s_e= \sqrt{82.803/(n-1-1)} = 3.217\)).
+\(s_e= \sqrt{82.803/(n-1-1)} = 3.22\)).
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -7577,7 +7581,9 @@ causation,'' zie ook Voorbeeld 6.1 (Hoofdstuk \ref{ch-ontwerp})
 en bijgaande Figuur \ref{fig:xkcd552} (met toestemming ontleend aan \url{https://xkcd.com/552}).
 
 \begin{figure}
-\includegraphics[width=6.38in]{figures/correlation} \caption{Correlation does not imply causation.}\label{fig:xkcd552}
+\centering
+\includegraphics{figures/correlation.png}
+\caption{\label{fig:xkcd552}Correlation does not imply causation.}
 \end{figure}
 
 \hypertarget{ch-betrouwbaarheid}{%
@@ -8243,8 +8249,10 @@ spreekvaardigheid in Tabel \ref{tab:betrouwbaarheid}:\\
 ##   raw_alpha std.alpha G6(smc) average_r S/N  ase mean  sd median_r
 ##       0.68      0.68    0.74      0.41 2.1 0.17   72 4.6     0.41
 ## 
-##  lower alpha upper     95% confidence boundaries
-## 0.35 0.68 1.01 
+##     95% confidence boundaries 
+##          lower alpha upper
+## Feldt     0.07  0.68  0.91
+## Duhachek  0.35  0.68  1.01
 ## 
 ##  Reliability if an item is dropped:
 ##    raw_alpha std.alpha G6(smc) average_r  S/N alpha se var.r med.r
@@ -8891,9 +8899,9 @@ om H0 \emph{wel} te verwerpen, en rapporteren dat als volgt:
 
 \begin{quote}
 De gemiddelde duur van een lettergreep gesproken door een spreker uit
-het westen van Nederland is \(0.235\) seconde (\(s=0.028\)). Dit is
+het westen van Nederland is \(0.235\) seconde (\(s=0.03\)). Dit is
 significant korter dan bij sprekers uit het Noorden van Nederland
-(\(\overline{x}=0.269\) s, \(s=0.029\)) (\(t(38)=-3.76, p<.05\)). In de
+(\(\overline{x}=0.269\) s, \(s=0.03\)) (\(t(38)=-3.76, p<.05\)). In de
 onderzochte opnames uit 1999 praten de sprekers uit het Westen dus
 sneller dan die uit het Noorden van Nederland.
 \end{quote}
@@ -9029,7 +9037,7 @@ tweede regel gebruiken van de uitvoer van de Independent-Samples Test
 (een toets die onderzoekt of de gemiddelden van de twee groepen gelijk
 zijn). In dit voorbeeld zijn de varianties ongeveer gelijk, zoals de
 Levene's test ook aangeeft. We gebruiken dus de eerste regel van de
-uitvoer, en rapporteren \(t(38)=-3.765, p=.001\).
+uitvoer, en rapporteren \(t(38)=-3.76, p=.001\).
 
 \hypertarget{sec:jaspttoetsongepaard}{%
 \subsection{JASP}\label{sec:jaspttoetsongepaard}}
@@ -9259,12 +9267,12 @@ De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand \texttt{da
 ## 
 ## data:  cond.u and cond.je
 ## t = -6.7361, df = 9, p-value = 8.498e-05
-## alternative hypothesis: true difference in means is not equal to 0
+## alternative hypothesis: true mean difference is not equal to 0
 ## 95 percent confidence interval:
 ##  -2.938817 -1.461183
 ## sample estimates:
-## mean of the differences 
-##                    -2.2
+## mean difference 
+##            -2.2
 \end{verbatim}
 
 \hypertarget{sec:ttoets-effectgrootte}{%
@@ -9374,9 +9382,9 @@ als volgt rapporteren:
 
 \begin{quote}
 De gemiddelde duur van een lettergreep gesproken door een spreker uit
-het westen van Nederland is \(0.235\) seconde (\(s=0.028\)). Dit is
+het westen van Nederland is \(0.235\) seconde (\(s=0.03\)). Dit is
 aanzienlijk korter dan bij sprekers uit het Noorden van Nederland
-(\(\overline{x}=0.269\) s, \(s=0.029\)). Het verschil is ca. 10\%; dit
+(\(\overline{x}=0.269\) s, \(s=0.03\)). Het verschil is ca. 10\%; dit
 verschil is zeer groot (\(d=-1.15\)) en significant
 (\(t(38)=-3.76, p<.05\)). In de onderzochte opnames uit 1999 praten de
 sprekers uit het Westen dus aanzienlijk sneller dan die uit het
@@ -9635,7 +9643,7 @@ formule 18]{Naka07}:
 In
 ons eerdere voorbeeld van de \(n=10\) gepaarde oordelen over een webpagina
 met \emph{U} of \emph{je} als aanspreekvorm vonden we \(d=-2.13\). We vinden ook dat
-\(r=.9135\). Met deze gegevens vinden we \(\textrm{se}_d = 0.519\) via
+\(r=.91\). Met deze gegevens vinden we \(\textrm{se}_d = 0.52\) via
 formule~\eqref{eq:d-paired-se}.
 
 Hiermee bepalen we vervolgens het betrouwbaarheidsinterval voor de
@@ -10466,7 +10474,7 @@ variantiebron & df & SS & MS & \(F\) & \(p\) \\
 \endhead
 groep & 2 & 14.50 & 7.248 & 9.36 & \textless.001 \\
 ~~groep, contrast 1 & 1 & 14.31 & 14.308 & 18.47 & \textless.001 \\
-~~groep, contrast 2 & 1 & 0.19 & 0.188 & 0.24 & .625 \\
+~~groep, contrast 2 & 1 & 0.19 & 0.188 & 0.24 & .62 \\
 (within) & 42 & 32.54 & 0.775 & & \\
 \bottomrule
 \end{longtable}
@@ -10956,9 +10964,11 @@ De resultaten in Figuur 15.3 tonen de drie onderzochte effecten in de begripssco
 Maar het meest opvallende effect is de interactie: het effect van tekstmarkeringen is veel groter bij zwakke lezers dan bij sterke lezers, conform de voorspelling. Of anders gezegd, de verschillen tussen zwakke, gemiddelde en sterke lezers zijn groot in de tekstversie zonder structuurmarkeringen, maar klein of nihil in de tekstversie met structuurmarkeringen.
 \end{quote}
 
-\textbackslash begin\{figure\}
-\includegraphics[width=15.86in]{figures/DBE2012interaction_v2} \textbackslash caption\{Gemiddelde begripsscores (met 95\%-betrouwbaarheidsintervallen), voor twee tekstversies en drie groepen lezers (naar Van Dooren, Van den Bergh en Evers-Vermeul, 2012).\}\label{fig:DBE12interaction}
-\textbackslash end\{figure\}
+\begin{figure}
+\centering
+\includegraphics{figures/DBE2012interaction_v2.png}
+\caption{\label{fig:DBE12interaction}Gemiddelde begripsscores (met 95\%-betrouwbaarheidsintervallen), voor twee tekstversies en drie groepen lezers (naar Van Dooren, Van den Bergh en Evers-Vermeul, 2012).}
+\end{figure}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -11071,7 +11081,7 @@ en/of in een \(p\)-waarde van het verschil tussen twee condities.
 \begin{quote}
 De begripsscores lieten een significant hoofdeffect zien van de structuurmarkeringen \([F(1,88)=63.75, p<.001, \omega^2=0.26]\), alsmede een significant hoofdeffect van het lezerstype \([F(2,88)=33.56, p<.001, \omega^2=0.27]\).
 Ook was er een significante interactie zien tussen de tekstversie en het lezerstype \([F(2,88)=10.74, p<.001, \omega^2=0.08]\), zie Figuur \ref{fig:DBE12interaction}; deze interactie werd nader onderzocht met de Tukey HSD-toets (tussen 6 cellen).
-Zwakke lezers presteren slechter dan gemiddelde lezers, bij de tekstversie zonder markeringen (p\textless.001), maar niet bij de versie met markeringen (\(p=.999\)). Sterke lezers presteren beter dan gemiddelde lezers, zowel zonder markeringen (\(p<.001\)) als met markeringen (p=.013). Tekstmarkeringen hebben wel effect bij zwakke lezers (\(p<.001\)) en bij gemiddelde lezers (\(p<.001\)) maar niet bij sterke lezers (\(p=.888\)); sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst, maar zwakke en gemiddelde lezers wel. Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (\(p=.722\)).
+Zwakke lezers presteren slechter dan gemiddelde lezers, bij de tekstversie zonder markeringen (p\textless.001), maar niet bij de versie met markeringen (\(p=.99\)). Sterke lezers presteren beter dan gemiddelde lezers, zowel zonder markeringen (\(p<.001\)) als met markeringen (p=.01). Tekstmarkeringen hebben wel effect bij zwakke lezers (\(p<.001\)) en bij gemiddelde lezers (\(p<.001\)) maar niet bij sterke lezers (\(p=.89\)); sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst, maar zwakke en gemiddelde lezers wel. Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (\(p=.72\)).
 \end{quote}
 
 \hypertarget{spss-13}{%
@@ -11140,9 +11150,9 @@ gecorrigeerde overschrijdingskans volgens Tukey's HSD toets is bovendien
 gegeven in de laatste kolom.
 
 Voor de versie zonder markeringen zien we dat de cel \texttt{zonder:zwak} lager scoort dan de cel \texttt{zonder:gemiddeld} (\(p<.001\)), en dat de cel \texttt{zonder:sterk} hoger scoort dan de cel \texttt{zonder:gemiddeld} (\(p<.001\)).
-Voor de versie met markeringen zien we dat de cel \texttt{met:zwak} ongeveer gelijk scoort met de cel \texttt{met:gemiddeld} (\(p=.999\)), en dat de cel \texttt{met:sterk} hoger scoort dan de cel \texttt{met:gemiddeld} (\(p=.013\)). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies.
-Ook zien we dat \texttt{zonder:zwak} lager scoort dan \texttt{met:zwak} (\(p<.001\)), dat \texttt{zonder:gemiddeld} lager scoort dan \texttt{met:gemiddeld} (\(p<.001\)), terwijl er geen verschil is tussen \texttt{zonder:sterk} en \texttt{met:sterk} (\(p=.888\)). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst.
-Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (\(p=.722\)).
+Voor de versie met markeringen zien we dat de cel \texttt{met:zwak} ongeveer gelijk scoort met de cel \texttt{met:gemiddeld} (\(p=.99\)), en dat de cel \texttt{met:sterk} hoger scoort dan de cel \texttt{met:gemiddeld} (\(p=.01\)). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies.
+Ook zien we dat \texttt{zonder:zwak} lager scoort dan \texttt{met:zwak} (\(p<.001\)), dat \texttt{zonder:gemiddeld} lager scoort dan \texttt{met:gemiddeld} (\(p<.001\)), terwijl er geen verschil is tussen \texttt{zonder:sterk} en \texttt{met:sterk} (\(p=.89\)). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst.
+Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (\(p=.72\)).
 
 \hypertarget{r-16}{%
 \subsection{R}\label{r-16}}
@@ -11270,9 +11280,9 @@ Voor iedere paarsgewijze vergelijking tussen de 2x3 cellen zien we het verschil,
 gecorrigeerde overschrijdingskans volgens Tukey's HSD toets.
 
 Voor de versie zonder markeringen zien we dat de cel \texttt{zonder:zwak} lager scoort dan de cel \texttt{zonder:gemiddeld} (\(p<.001\)), en dat de cel \texttt{zonder:sterk} hoger scoort dan de cel \texttt{zonder:gemiddeld} (\(p<.001\)).
-Voor de versie met markeringen zien we dat de cel \texttt{met:zwak} ongeveer gelijk scoort met de cel \texttt{met:gemiddeld} (\(p=.999\)), en dat de cel \texttt{met:sterk} hoger scoort dan de cel \texttt{met:gemiddeld} (\(p=.013\)). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies.
-Ook zien we dat \texttt{zonder:zwak} lager scoort dan \texttt{met:zwak} (p\textless.001), dat \texttt{zonder:gemiddeld} lager scoort dan \texttt{met:gemiddeld} (p\textless.001), terwijl er geen verschil is tussen \texttt{zonder:sterk} en \texttt{met:sterk} (p=.888). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst.
-Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (\(p=.722\)).
+Voor de versie met markeringen zien we dat de cel \texttt{met:zwak} ongeveer gelijk scoort met de cel \texttt{met:gemiddeld} (\(p=.99\)), en dat de cel \texttt{met:sterk} hoger scoort dan de cel \texttt{met:gemiddeld} (\(p=.01\)). Sterke lezers doen het dus beter dan gemiddelde en/of zwakke lezers, bij beide tekstversies.
+Ook zien we dat \texttt{zonder:zwak} lager scoort dan \texttt{met:zwak} (p\textless.001), dat \texttt{zonder:gemiddeld} lager scoort dan \texttt{met:gemiddeld} (p\textless.001), terwijl er geen verschil is tussen \texttt{zonder:sterk} en \texttt{met:sterk} (p=.89). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst.
+Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (\(p=.72\)).
 
 \hypertarget{ch-chi-kwadraat-toetsen}{%
 \chapter{Chi-kwadraat-toetsen}\label{ch-chi-kwadraat-toetsen}}
@@ -11332,8 +11342,8 @@ aangeduid als een toets van de `goodness of fit'.
 Voor dit voorbeeld vinden we als uitkomst van de toetsing \(\chi^2=12.44\)
 met 5 vrijheidsgraden (zie
 §\ref{sec:ttoets-vrijheidsgraden} voor uitleg over
-vrijheidsgraden), met \(p=.0297\). We laten deze kanswaarde meestal door de
-computer uitrekenen, maar we kunnen die kans ook schatten via een tabel met kritieke \(\chi^2\)-waarden, zie Bijlage \ref{app-kritiekechi2waarden}, en voetnoot \footnote{De gevonden waarde \(\chi^2=12.44\) ligt iets onder de kritieke waarde voor 5 d.f. en \(p=.025\), (daar staat \((\chi^2)^*=12.83\)), dus de bijbehorende kans op deze waarde of een grotere waarde is iets groter dan \(0.025\).}).
+vrijheidsgraden), met \(p=.03\). We laten deze kanswaarde meestal door de
+computer uitrekenen, maar we kunnen die kans ook schatten via een tabel met kritieke \(\chi^2\)-waarden, zie Bijlage \ref{app-kritiekechi2waarden}, en voetnoot \footnote{De gevonden waarde \(\chi^2=12.44\) ligt iets onder de kritieke waarde voor 5 d.f. en \(p=.03\), (daar staat \((\chi^2)^*=12.83\)), dus de bijbehorende kans op deze waarde of een grotere waarde is iets groter dan \(0.03\).}).
 Als H0 waar is, dan hebben we slechts 3\% kans om
 deze uitslag te vinden (of een nog extremere verdeling van uitkomsten).
 Deze gevonden significantie \(p\) is kleiner dan \(\alpha=.05\), en dus
@@ -11487,14 +11497,22 @@ meerdere steekproeven (homogeniteit) en/of met twee variabelen
 (verband), met respectievelijk \(k\) en \(m\) categorieën, is het aantal
 vrijheidsgraden gelijk aan \((k-1)\times(m-1)\).
 
-Voor iedere cel van de frequentietabel kunnen we ook het gestandaardiseerde residu berekenen:
+Voor iedere cel van de frequentietabel (in regel \(i\) en kolom \(j\)) kunnen we ook het ruwe residu berekenen:
 \begin{equation}
-  \label{eq:chi2-residu}
-    e = \frac{(O-E)}{\sqrt{E}}
+  \label{eq:chi2-rawresidu}
+  e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}}}
 \end{equation}
-Als we al deze residuen \(e\) kwadrateren en de kwadraten optellen, dan levert dat de bovenstaande toetsingsgrootheid \(\chi2\) op (formule \eqref{eq:chikwadraat}). De gestandaardiseerde residuen \(e\) kunnen bovendien geïnterpreteerd worden alsof het \(Z\)-waarden zijn (zie Bijlage \ref{app-kritiekeZwaarden}). Als het residu \(e>2\) dan is het geobserveerde aantal significant groter dan het verwachte aantal (\(\alpha=.05\)); als het residu kleiner is dan \(-2\) dan geldt het omgekeerd. De gestandaardiseerde residuen geven daarmee inzicht in de herkomst van een significant toetsresultaat.
+Als we al deze ruwe residuen \(e\) kwadrateren en de kwadraten optellen, dan levert dat de bovenstaande toetsingsgrootheid \(\chi2\) op (formule \eqref{eq:chikwadraat}).
 
-Voor het bovenstaande voorbeeld in §\ref{sec:chi2gof} vinden we de volgende zes gestandaardiseerde residuen voor de zes mogelijke uitkomsten van de dobbelsteen: \((1.26, -0.32, 0.32, 0.00, 1.58, -2.85)\). De eerste vijf uitkomsten komen ongeveer even vaak voor als verwacht, maar de zesde mogelijke uitkomst is veel minder vaak geobserveerd dan verwacht.
+Het is echter inzichtelijker om het \emph{gestandardiseerde} residu van iedere cel te bepalen \citep[p.38]{Agre07}.
+Daarbij houden we dan rekening met de standaardfout van de residuen (via de rij-totalen \(R_i\), kolom-totalen \(C_j\), en totaal aantal observaties \(N\)):
+\begin{equation}
+  \label{eq:chi2-stdresidu}
+  e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}\times(1-\frac{R_i}{N})\times(1-\frac{C_j}{N})}}
+\end{equation}
+De gestandaardiseerde residuen \(e\) kunnen geïnterpreteerd worden alsof het \(Z\)-waarden zijn, met gebruik van de kritieke \(Z\)-waarden (zie Bijlage \ref{app-kritiekeZwaarden}). De aangepaste en gestandaardiseerde residuen laten dus zien welke cellen vooral bijdragen aan een significante uitkomst van de \(\chi^2\)toets \footnote{Als er meerdere vergelijkingen worden gedaan, dan moet de kritieke waarde van \(\alpha\) worden aangepast, om Type-I-fouten bij die meerdere vergelijkingen te voorkomen. Als er \(k\) cellen en dus \(k\) vergelijkingen zijn, dan is het veilig om \(\alpha/k\) i.p.v. \(\alpha\) te gebruiken bij elke vergelijking -- dit staat bekend als Bonferroni's aanpassing van de \(\alpha\)-waarde, of als Dunn's procedure \citep[p.202]{MD04}. Zie ook §\ref{sec:anova-oneway-posthoc}.}.
+
+Voor het bovenstaande voorbeeld in §\ref{sec:chi2gof} vinden we de volgende zes gestandaardiseerde residuen voor de zes mogelijke uitkomsten van de dobbelsteen: \((1.39, -0.35, +0.35, 0.00, 1.73, -3.12)\). De eerste vijf uitkomsten komen ongeveer even vaak voor als verwacht, maar de zesde mogelijke uitkomst is veel minder vaak geobserveerd dan verwacht (\(p\)=.003).
 
 \hypertarget{spss-14}{%
 \section{SPSS}\label{spss-14}}
@@ -11931,7 +11949,7 @@ en de som van de negatieve rangnummers \(W_-= -53.5\), en daarmee \(|W_-|=53.5\)
 deze twee sommen (\(W_+\) of \(|W_-|\)) vormt de toetsingsgrootheid; we gebruiken hier \(|W_-|\).
 We gaan
 hier niet in op de kansverdeling van de toetsingsgrootheid, maar we
-laten de significantie door de computer bepalen: \(P(|W_-|)=.0055\). De kans
+laten de significantie door de computer bepalen: \(P(|W_-|)=.006\). De kans
 op deze uitkomst volgens H0 is dermate klein dat we in het licht van
 deze uitkomst wederom besluiten om H0 te verwerpen.
 
@@ -11962,7 +11980,7 @@ correlatie \citep[ Eq.2.18]{Rose91}:
     r = \frac {z} {\sqrt{N}}
 \end{equation}
 Voor het bovenstaande voorbeeld vinden we
-\(z=-2.803\), en \(r=-.89\), hetgeen wijst op een buitengewoon groot effect.
+\(z=-2.80\), en \(r=-.89\), hetgeen wijst op een buitengewoon groot effect.
 
 \hypertarget{onafhankelijke-observaties-meerdere-steekproeven}{%
 \section{Onafhankelijke observaties, meerdere steekproeven}\label{onafhankelijke-observaties-meerdere-steekproeven}}
@@ -12050,7 +12068,7 @@ significantie te berekenen. In andere versies van de toets\footnote{Mann-Whitney
 deze ruwe som eerst gecorrigeerd voor de minimale waarde van \(W_1\) (zie
 de formules hieronder): de toetsingsgrootheid wordt dan
 \(U=W_1 - \textrm{min}(W_1) = 67-45=22\). Daarna wordt de significantie
-van \(W_1=67\) of van \(U=22\) berekend. We vinden dat \(p=.0653\). Als we
+van \(W_1=67\) of van \(U=22\) berekend. We vinden dat \(p=.07\). Als we
 tweezijdig toetsen (H0: oordelen in conditie 2 zijn niet hoger en niet
 lager dan in conditie 1) met \(\alpha=.05\) dan is er geen reden om H0 te
 verwerpen\footnote{Als we tweezijdig toetsen met \(\alpha=.10\), dan zouden we H0 wel kunnen verwerpen. Als we eenzijdig toetsen (H0: oordelen in conditie 2 zijn niet hoger dan in conditie 1), dan mogen we de berekende \(p\) halveren, omdat die berekende \(p\) uitgaat van tweezijdige toetsing. We zouden dan dus vinden \(p=.0653/2=.0326\), en omdat deze kans kleiner is dan \(\alpha=.05\) zouden we dan wel H0 kunnen verwerpen.}.
@@ -12081,7 +12099,7 @@ bijbehorende waarde van \(z\) \citep{Ferg89}:
 Daarmee bepalen we wederom de effectgrootte volgens
 vergelijking~\eqref{eq:es-z2r}.
 Voor het bovenstaande voorbeeld vinden we zo
-\(\bar{W_1}=22.5\), \(z=1.837\), en \(r=.42\), hetgeen wijst op een `medium'
+\(\bar{W_1}=22.5\), \(z=1.84\), en \(r=.42\), hetgeen wijst op een `medium'
 effect. Dat dit aanzienlijke effect toch niet leidt tot een significant
 verschil (bij tweezijdige toetsing) is vermoedelijk een gevolg van de
 (te) kleine omvang van de twee groepen.

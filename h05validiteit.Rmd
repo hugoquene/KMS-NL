@@ -518,7 +518,7 @@ bedoelde theoretische construct (voorkeur van kind).
 > *Voorbeeld 5.7*: Zoals hierboven aangegeven kan het begrip *leesvaardigheid* op allerlei
 manieren worden geoperationaliseerd. Volgens sommigen kan
 leesvaardigheid niet goed gemeten worden met behulp van meerkeuzevragen
-[@Hout86, @Shoh84]. Bij meerkeuzevragen worden de antwoorden
+[@Hout86; @Shoh84]. Bij meerkeuzevragen worden de antwoorden
 zeer sterk beïnvloed door andere zaken zoals algemene ontwikkeling,
 gokvaardigheid, ervaring met eerdere toetsen, en door de vraagstelling
 zelf, zoals geïllustreerd in deze vraag:

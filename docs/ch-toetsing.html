@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Hoofdstuk 13 Toetsing | Kwantitatieve Methoden en Statistiek</title>
   <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Hoofdstuk 13 Toetsing | Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
   <meta name="github-repo" content="rstudio/KMS-NL" />
@@ -31,7 +30,6 @@
   
 <link rel="prev" href="ch-betrouwbaarheid.html"/>
 <link rel="next" href="ch-power.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,8 +47,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -531,10 +530,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch-toetsing" class="section level1" number="13">
-<h1><span class="header-section-number">Hoofdstuk 13</span> Toetsing</h1>
-<div id="sec:toetsing-inleiding" class="section level2" number="13.1">
-<h2><span class="header-section-number">13.1</span> Inleiding</h2>
+<div id="ch-toetsing" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">Hoofdstuk 13</span> Toetsing<a href="ch-toetsing.html#ch-toetsing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sec:toetsing-inleiding" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">13.1</span> Inleiding<a href="ch-toetsing.html#sec:toetsing-inleiding" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vanaf dit hoofdstuk houden we ons bezig met het toetsen van
 onderzoekshypothesen, en in het bijzonder met toetsen van <em>nul</em>-hypotheses (null hypothesis significance testing, NHST), zoals uitgelegd in Hoofdstuk <a href="ch-onderzoek.html#ch-onderzoek">2</a>.</p>
 <p>Voor dergelijke toetsingen is in de loop der jaren
@@ -561,7 +560,7 @@ We leggen het hier nogmaals uit aan
 de hand van een voorbeeld. We onderzoeken de bewering H1: ‘studenten
 Taalwetenschap beheersen de traditionele zinsgrammatica <em>beter</em> dan de
 gemiddelde talen-student’. Als meet-instrument gebruiken we de zgn.
-“grammaticatoets”<a href="referenties.html#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a> die verplicht is voor de meeste studenten in het
+“grammaticatoets”<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a> die verplicht is voor de meeste studenten in het
 talen-domein van de Universiteit Utrecht. Op grond van eerdere
 studiejaren verwachten we een gemiddelde score van 73 op deze toets; dit
 is het gemiddeld aantal goede antwoorden uit 100 vragen. We
@@ -650,8 +649,8 @@ type fout maak ik dan?</p>
 </blockquote>
 <hr />
 </div>
-<div id="sec:ttoets-onesample" class="section level2" number="13.2">
-<h2><span class="header-section-number">13.2</span> <span class="math inline">\(t\)</span>-toets voor enkele steekproef</h2>
+<div id="sec:ttoets-onesample" class="section level2 hasAnchor" number="13.2">
+<h2><span class="header-section-number">13.2</span> <span class="math inline">\(t\)</span>-toets voor enkele steekproef<a href="ch-toetsing.html#sec:ttoets-onesample" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>De Student <span class="math inline">\(t\)</span>-toets wordt toegepast om een verschil te kunnen onderzoeken tussen
 de gemiddelde score van een steekproef, en een a priori veronderstelde
 waarde van dat gemiddelde. We gebruiken deze toets als de
@@ -707,8 +706,8 @@ resultaat als volgt:</p>
 84.4 (<span class="math inline">\(s=8.4\)</span>); dit is significant beter dan het veronderstelde
 populatie-gemiddelde van 73 (<span class="math inline">\(t(33)=7.9, p&lt;.001\)</span>).</p>
 </blockquote>
-<div id="sec:ttoets-vrijheidsgraden" class="section level3" number="13.2.1">
-<h3><span class="header-section-number">13.2.1</span> vrijheidsgraden</h3>
+<div id="sec:ttoets-vrijheidsgraden" class="section level3 hasAnchor" number="13.2.1">
+<h3><span class="header-section-number">13.2.1</span> vrijheidsgraden<a href="ch-toetsing.html#sec:ttoets-vrijheidsgraden" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Om het concept van vrijheidsgraden uit te leggen, beginnen we met een
 analogie. Stel dat er drie mogelijke routes zijn om van A naar B te
 reizen: een kustpad, een bergpad, of een autoweg. Een wandelaar die van
@@ -741,15 +740,15 @@ analyse-programma’s die we gebruiken.</p>
 aantal observaties <span class="math inline">\(N-1\)</span>. In het hierboven besproken voorbeeld hebben we
 dus <span class="math inline">\(N-1 = 34-1 = 33\)</span> vrijheidsgraden.</p>
 </div>
-<div id="sec:formules13-1" class="section level3" number="13.2.2">
-<h3><span class="header-section-number">13.2.2</span> formules</h3>
+<div id="sec:formules13-1" class="section level3 hasAnchor" number="13.2.2">
+<h3><span class="header-section-number">13.2.2</span> formules<a href="ch-toetsing.html#sec:formules13-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display" id="eq:t-onesample">\[\begin{equation}
   t = \frac{ \overline{y}-\mu} { s } \times \sqrt{N}
   \tag{13.1}
 \end{equation}\]</span></p>
 </div>
-<div id="sec:ttoets-aannames" class="section level3" number="13.2.3">
-<h3><span class="header-section-number">13.2.3</span> aannames</h3>
+<div id="sec:ttoets-aannames" class="section level3 hasAnchor" number="13.2.3">
+<h3><span class="header-section-number">13.2.3</span> aannames<a href="ch-toetsing.html#sec:ttoets-aannames" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>De <span class="math inline">\(t\)</span>-toets voor een enkele steekproef vereist drie aannames (assumpties) waaraan
 voldaan moet zijn, om de toets te mogen gebruiken.</p>
 <ul>
@@ -760,8 +759,8 @@ hoofdstuk <a href="ch-meetniveau.html#ch-meetniveau">4</a>).</p></li>
 §<a href="ch-kansverdelingen.html#sec:normaalverdeling">10.3</a>).</p></li>
 </ul>
 </div>
-<div id="spss-10" class="section level3" number="13.2.4">
-<h3><span class="header-section-number">13.2.4</span> SPSS</h3>
+<div id="spss-10" class="section level3 hasAnchor" number="13.2.4">
+<h3><span class="header-section-number">13.2.4</span> SPSS<a href="ch-toetsing.html#spss-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>De hierboven besproken gegevens zijn te vinden in het bestand <code>data/grammaticatoets2013.csv</code>.</p>
 <p>Om onze eerdere hypothese te toetsen, moeten we in SPSS eerst de
 observaties selecteren van de studenten Taalwetenschap.</p>
@@ -781,8 +780,8 @@ een <em>tweezijdige</em> <span class="math inline">\(t\)</span>-toets.</p>
 <p>Neem bij het overnemen van die uitvoer goede notitie van de waarschuwing in
 §<a href="ch-toetsing.html#sec:pgroterdannul">13.3</a> hieronder: SPSS rapporteert alsof <code>p=.000</code> maar dat is onjuist.</p>
 </div>
-<div id="sec:jaspttoetsenkel" class="section level3" number="13.2.5">
-<h3><span class="header-section-number">13.2.5</span> JASP</h3>
+<div id="sec:jaspttoetsenkel" class="section level3 hasAnchor" number="13.2.5">
+<h3><span class="header-section-number">13.2.5</span> JASP<a href="ch-toetsing.html#sec:jaspttoetsenkel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>De hierboven besproken gegevens zijn te vinden in het bestand <code>data/grammaticatoets2013.csv</code>.</p>
 <p>Om de eerder besproken hypothese te toetsen, moeten we eerst alleen de observaties van studenten Taalwetenschap selecteren (‘filteren’). Ga daarvoor naar het tabblad met data, en klik op het trechtersymbool (filter) in de cel linksboven. Er verschijnt dan een werkblad waar je je selectie kunt specificeren.<br />
 Klik 1x op de variabele <code>opleiding</code> (links), die verspringt dan naar het werkblad. Klik daarna 1x op het symbool <code>=</code> (boven) en plaats de cursor achter het <code>=</code> teken op het werkblad, en typ de twee letters <code>TW</code> (in hoofdletters en zonder aanhalingstekens; exact hetzelfde zoals in de variabele <em>opleiding</em>). Op het werkblad staat nu het selectiecriterium: <code>opleiding = TW</code>.<br />
@@ -793,8 +792,8 @@ Klik op de tekst <code>Apply pass-through filter</code> onder het werkblad om di
 <p>De uitvoer geeft de resultaten van de eenzijdige <span class="math inline">\(t\)</span>-toets, inclusief effectgrootte. De tabel <em>Assumption Checks</em> geeft de resultaten van de Shapiro-Wilk-toets (die toetst of de afhankelijke variabele normaal verdeeld is). Als dit is aangevinkt wordt ook een tabel met beschrijvende statistiek en een “Descriptive plot” gegeven. Hiermee kun je goed zien waar de waarde <span class="math inline">\(\mu\)</span> ligt waartegen wordt getoetst ten opzichte van de scores van de studenten Taalwetenschap.</p>
 <p>Let op! Voor de toets hebben we een filter aangezet om alleen de studenten Taalwetenschap mee te nemen, en dit filter blijft aan staan als je niks doet. Als je later weer alle observaties wilt gebruiken, maak het filteren dan ongedaan door weer in het data tabblad naar het filter werkblad te gaan en 2x op de prullenbak te klikken. Als het goed gaat staat er “Filter cleared” en worden alle observaties weer zwart in het data tabblad.</p>
 </div>
-<div id="r-12" class="section level3" number="13.2.6">
-<h3><span class="header-section-number">13.2.6</span> R</h3>
+<div id="r-12" class="section level3 hasAnchor" number="13.2.6">
+<h3><span class="header-section-number">13.2.6</span> R<a href="ch-toetsing.html#r-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Onze hierboven besproken hypothese kan worden getoetst met de volgende opdrachten:</p>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="ch-toetsing.html#cb101-1" aria-hidden="true" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span><span class="cn">TRUE</span>)</span>
 <span id="cb101-2"><a href="ch-toetsing.html#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( gramm2013,</span>
@@ -814,8 +813,8 @@ Klik op de tekst <code>Apply pass-through filter</code> onder het werkblad om di
 <span class="math inline">\((1.913 \times 10^{-9})\)</span>.</p>
 </div>
 </div>
-<div id="sec:pgroterdannul" class="section level2" number="13.3">
-<h2><span class="header-section-number">13.3</span> Overschrijdingskans <span class="math inline">\(p\)</span> is altijd groter dan nul</h2>
+<div id="sec:pgroterdannul" class="section level2 hasAnchor" number="13.3">
+<h2><span class="header-section-number">13.3</span> Overschrijdingskans <span class="math inline">\(p\)</span> is altijd groter dan nul<a href="ch-toetsing.html#sec:pgroterdannul" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>De overschrijdingskans <span class="math inline">\(p\)</span> kan heel klein zijn, maar is altijd groter
 dan nul! In het bovenstaande voorbeeld van de grammaticatoets
 vonden we <span class="math inline">\(P=.000000001913\)</span>, een heel kleine kans, maar wel groter dan
@@ -835,8 +834,8 @@ nauwkeurigheid, in dit voorbeeld als <span class="math inline">\(p&lt;.001\)</sp
 (rekening houdend met de afronding door SPSS naar drie decimale
 cijfers).</p>
 </div>
-<div id="sec:ttoets-eenzijdigtweezijdig" class="section level2" number="13.4">
-<h2><span class="header-section-number">13.4</span> Eenzijdige en tweezijdige toetsen</h2>
+<div id="sec:ttoets-eenzijdigtweezijdig" class="section level2 hasAnchor" number="13.4">
+<h2><span class="header-section-number">13.4</span> Eenzijdige en tweezijdige toetsen<a href="ch-toetsing.html#sec:ttoets-eenzijdigtweezijdig" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>De procedure die we hierboven hebben besproken geldt voor het éénzijdig
 toetsen. Dat wil zeggen dat de alternatieve hypothese niet alleen stelt
 dat de gemiddelden zullen verschillen, maar ook in welke richting dat
@@ -878,8 +877,8 @@ populatie-gemiddelde van 73 (<span class="math inline">\(t(33)=7.9, p&lt;.002\)<
 de toets niet wordt vermeld dan mag je daarom aannemen dat er tweezijdig
 is getoetst.</p>
 </div>
-<div id="sec:t-betrouwbaarheidsinterval-gemiddelde" class="section level2" number="13.5">
-<h2><span class="header-section-number">13.5</span> Betrouwbaarheidsinterval van het gemiddelde</h2>
+<div id="sec:t-betrouwbaarheidsinterval-gemiddelde" class="section level2 hasAnchor" number="13.5">
+<h2><span class="header-section-number">13.5</span> Betrouwbaarheidsinterval van het gemiddelde<a href="ch-toetsing.html#sec:t-betrouwbaarheidsinterval-gemiddelde" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Deze paragraaf gaat dieper in op een onderwerp dat eerder al aan bod kwam in §<a href="ch-kansverdelingen.html#sec:betrouwbaarheidsinterval-gemiddelde">10.7</a>, en illustreert het betrouwbaarheidsinterval van het gemiddelde met de scores van de grammaticatoets.</p>
 <p>Het gemiddelde van de steekproef, <span class="math inline">\(\overline{x}\)</span>, kunnen we beschouwen
 als een goede schatting van het onbekende gemiddelde in de populatie,
@@ -923,8 +922,8 @@ het interval, maar voor 5 van de 100 steekproeven ten onrechte niet
 Figuur 13.2: 95%-Betrouwbaarheidsintervallen en steekproefgemiddelden, over 100 gesimuleerde steekproeven (n=34) uit een populatie met populatiegemiddelde 84.4, populatie-s.d. 8.4.
 </p>
 </div>
-<div id="sec:formules13-2" class="section level3" number="13.5.1">
-<h3><span class="header-section-number">13.5.1</span> formules</h3>
+<div id="sec:formules13-2" class="section level3 hasAnchor" number="13.5.1">
+<h3><span class="header-section-number">13.5.1</span> formules<a href="ch-toetsing.html#sec:formules13-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Het tweezijdige betrouwbaarheidsinterval voor <span class="math inline">\(B\)</span>% betrouwbaarheid voor
 een populatie-gemiddelde <span class="math inline">\(\overline{y}\)</span> is
 <span class="math display" id="eq:t-onesampleCI">\[\begin{equation}
@@ -932,8 +931,8 @@ een populatie-gemiddelde <span class="math inline">\(\overline{y}\)</span> is
   \tag{10.12}
 \end{equation}\]</span></p>
 </div>
-<div id="spss-11" class="section level3" number="13.5.2">
-<h3><span class="header-section-number">13.5.2</span> SPSS</h3>
+<div id="spss-11" class="section level3 hasAnchor" number="13.5.2">
+<h3><span class="header-section-number">13.5.2</span> SPSS<a href="ch-toetsing.html#spss-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <pre><code>Analyze &gt; Descriptive Statistics &gt; Explore...</code></pre>
 <p>Selecteer afhankelijke variabele (sleep naar Dependent List paneel).<br />
 Kies knop <code>Statistics</code> en vink aan <code>Descriptives</code> met Confidence Interval
@@ -942,8 +941,8 @@ Bevestig met <code>Continue</code> en met <code>OK</code>.<br />
 De uitvoer bevat meerdere beschrijvende statistische maten, waaronder nu
 ook het 95% betrouwbaarheidsinterval van het gemiddelde.</p>
 </div>
-<div id="jasp-12" class="section level3" number="13.5.3">
-<h3><span class="header-section-number">13.5.3</span> JASP</h3>
+<div id="jasp-12" class="section level3 hasAnchor" number="13.5.3">
+<h3><span class="header-section-number">13.5.3</span> JASP<a href="ch-toetsing.html#jasp-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In JASP kun je het betrouwsbaarheidsinterval van het gemiddelde aanvragen bij een <span class="math inline">\(t\)</span>-toets. We voeren dus wederom een <span class="math inline">\(t\)</span>-toets uit en vinden het betrouwbaarheidsinterval van het gemiddelde in de uitvoer.</p>
 <p>Zorg dat het filter aanstaat zodat alleen de observaties van studenten Taalwetenschap geselecteerd zijn (zie §<a href="ch-toetsing.html#sec:jaspttoetsenkel">13.2.5</a>).</p>
 <p>Klik daarna in de bovenbalk op:</p>
@@ -951,8 +950,8 @@ ook het 95% betrouwbaarheidsinterval van het gemiddelde.</p>
 <p>Selecteer de variabele <em>score</em> en plaats deze in het veld “Variables”. Zorg dat <code>Student</code> aangevinkt is onder “Tests” en laat <code>Test value:</code> op 0 staan. Vink onder “Additional Statistics” <code>Location parameter</code> aan en ook <code>Confidence interval</code>. Hier kun je zelf het betrouwbaarheidsniveau opgeven; dit staat standaard op 95%.</p>
 <p>De uitvoer geeft nu als ‘Mean Difference’ het gemiddelde aan (want er wordt vergeleken met 0; dat is de ‘Test value’). In dezelfde tabel zie je het ‘95% CI for Mean Difference’, wat in dit geval dus het betrouwbaarheidsinterval van het gemiddelde is.</p>
 </div>
-<div id="r-13" class="section level3" number="13.5.4">
-<h3><span class="header-section-number">13.5.4</span> R</h3>
+<div id="r-13" class="section level3 hasAnchor" number="13.5.4">
+<h3><span class="header-section-number">13.5.4</span> R<a href="ch-toetsing.html#r-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>R vermeldt het betrouwbaarheidsinterval van het gemiddelde (met een zelf
 op te geven betrouwbaarheidsniveau) bij een <span class="math inline">\(t\)</span>-toets. We voeren dus wederom een <span class="math inline">\(t\)</span>-toets
 uit en vinden het betrouwbaarheidsinterval van het gemiddelde in de
@@ -971,8 +970,8 @@ uitvoer.</p>
 ##  84.41176</code></pre>
 </div>
 </div>
-<div id="sec:ttoets-onafh" class="section level2" number="13.6">
-<h2><span class="header-section-number">13.6</span> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven</h2>
+<div id="sec:ttoets-onafh" class="section level2 hasAnchor" number="13.6">
+<h2><span class="header-section-number">13.6</span> <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven<a href="ch-toetsing.html#sec:ttoets-onafh" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>De Student <span class="math inline">\(t\)</span>-toets wordt toegepast om een verschil te kunnen onderzoeken tussen
 de gemiddelde scores van twee onafhankelijke steekproeven, bv van
 vergelijkbare jongens en meisjes. Op grond van de gemiddelden en de
@@ -1034,14 +1033,14 @@ gevonden toetsingsgrootheid <span class="math inline">\(t &lt; t^*\)</span>, dus
 om H0 <em>wel</em> te verwerpen, en rapporteren dat als volgt:</p>
 <blockquote>
 <p>De gemiddelde duur van een lettergreep gesproken door een spreker uit
-het westen van Nederland is <span class="math inline">\(0.235\)</span> seconde (<span class="math inline">\(s=0.028\)</span>). Dit is
+het westen van Nederland is <span class="math inline">\(0.235\)</span> seconde (<span class="math inline">\(s=0.03\)</span>). Dit is
 significant korter dan bij sprekers uit het Noorden van Nederland
-(<span class="math inline">\(\overline{x}=0.269\)</span> s, <span class="math inline">\(s=0.029\)</span>) (<span class="math inline">\(t(38)=-3.76, p&lt;.05\)</span>). In de
+(<span class="math inline">\(\overline{x}=0.269\)</span> s, <span class="math inline">\(s=0.03\)</span>) (<span class="math inline">\(t(38)=-3.76, p&lt;.05\)</span>). In de
 onderzochte opnames uit 1999 praten de sprekers uit het Westen dus
 sneller dan die uit het Noorden van Nederland.</p>
 </blockquote>
-<div id="sec:ttoets-ongepaard-aannames" class="section level3" number="13.6.1">
-<h3><span class="header-section-number">13.6.1</span> aannames</h3>
+<div id="sec:ttoets-ongepaard-aannames" class="section level3 hasAnchor" number="13.6.1">
+<h3><span class="header-section-number">13.6.1</span> aannames<a href="ch-toetsing.html#sec:ttoets-ongepaard-aannames" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>De Student <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke steekproeven vereist vier aannames
 (of assumpties) waaraan voldaan moet zijn, om de toets te mogen
 gebruiken.</p>
@@ -1060,10 +1059,10 @@ gelijke varianties niet zo ernstig.
 Zie ook §<a href="ch-toetsing.html#sec:ttoets-formules">13.6.2</a> direct hieronder.</p></li>
 </ul>
 </div>
-<div id="sec:ttoets-formules" class="section level3" number="13.6.2">
-<h3><span class="header-section-number">13.6.2</span> formules</h3>
-<div id="toetsingsgrootheid" class="section level4" number="13.6.2.1">
-<h4><span class="header-section-number">13.6.2.1</span> toetsingsgrootheid</h4>
+<div id="sec:ttoets-formules" class="section level3 hasAnchor" number="13.6.2">
+<h3><span class="header-section-number">13.6.2</span> formules<a href="ch-toetsing.html#sec:ttoets-formules" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="toetsingsgrootheid" class="section level4 hasAnchor" number="13.6.2.1">
+<h4><span class="header-section-number">13.6.2.1</span> toetsingsgrootheid<a href="ch-toetsing.html#toetsingsgrootheid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Voor de berekening van de toetsingsgrootheid <span class="math inline">\(t\)</span> zijn verschillende
 formules in gebruik.</p>
 <p>Indien de steekproeven ongeveer <strong>gelijke variantie</strong> hebben, dan gebruiken
@@ -1092,8 +1091,8 @@ Vervolgens
   t = \frac{ \overline{x_1}-\overline{x_2} } { s_{\textrm{WS}} }
 \end{equation}\]</span></p>
 </div>
-<div id="vrijheidsgraden" class="section level4" number="13.6.2.2">
-<h4><span class="header-section-number">13.6.2.2</span> vrijheidsgraden</h4>
+<div id="vrijheidsgraden" class="section level4 hasAnchor" number="13.6.2.2">
+<h4><span class="header-section-number">13.6.2.2</span> vrijheidsgraden<a href="ch-toetsing.html#vrijheidsgraden" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Meestal wordt de <span class="math inline">\(t-toets\)</span> uitgevoerd door een computerprogramma. Daarbij wordt
 dan meestal de volgende benadering gebruikt van de vrijheidsgraden
 (<span class="math inline">\(\nu\)</span>, zie §<a href="ch-toetsing.html#sec:ttoets-vrijheidsgraden">13.2.1</a>).
@@ -1120,8 +1119,8 @@ te gebruiken met de eerstvolgende kleinere waarde voor het aantal
 vrijheidsgraden.)</p>
 </div>
 </div>
-<div id="sec:SPSS-ttoets-ongepaard" class="section level3" number="13.6.3">
-<h3><span class="header-section-number">13.6.3</span> SPSS</h3>
+<div id="sec:SPSS-ttoets-ongepaard" class="section level3 hasAnchor" number="13.6.3">
+<h3><span class="header-section-number">13.6.3</span> SPSS<a href="ch-toetsing.html#sec:SPSS-ttoets-ongepaard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Het tweede bovenstaande voorbeeld wordt hier uitgewerkt.</p>
 <pre><code>Analyze &gt; Compare Means &gt; Independent-Samples T Test</code></pre>
 <p>Sleep de afhankelijke variabele <code>syldur</code> naar paneel Test Variable(s).
@@ -1132,8 +1131,8 @@ waarde N voor regrio groep 2. Bevestig met <code>Continue</code> en <code>OK</co
 antwoord op de vraag of de standaarddeviaties van de twee groepen
 ongeveer gelijk zijn. SPSS lost dat zeer onhandig op: je krijgt alle
 relevante uitvoer te zien, en moet daar zelf een keuze uit maken.</p>
-<div id="test-for-equality-of-variances" class="section level4" number="13.6.3.1">
-<h4><span class="header-section-number">13.6.3.1</span> Test for equality of variances</h4>
+<div id="test-for-equality-of-variances" class="section level4 hasAnchor" number="13.6.3.1">
+<h4><span class="header-section-number">13.6.3.1</span> Test for equality of variances<a href="ch-toetsing.html#test-for-equality-of-variances" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Met Levene’s test wordt onderzocht H0: <span class="math inline">\(s^2_1 = s^2_2\)</span>, d.w.z. of de
 varianties (en daarmee de standaarddeviaties) van de twee groepen gelijk
 zijn. Als je een kleine waarde vindt voor de toetsingsgrootheid <span class="math inline">\(F\)</span>, en
@@ -1143,26 +1142,26 @@ met <span class="math inline">\(p&lt;.05\)</span>, dan dien je deze H0 wel te ve
 aannemen dat de varianties van de twee groepen gelijk zijn.
 Gebruik en rapporteer de juiste t-toets uit de uitvoer.</p>
 </div>
-<div id="test-for-equality-of-means" class="section level4" number="13.6.3.2">
-<h4><span class="header-section-number">13.6.3.2</span> Test for equality of means</h4>
+<div id="test-for-equality-of-means" class="section level4 hasAnchor" number="13.6.3.2">
+<h4><span class="header-section-number">13.6.3.2</span> Test for equality of means<a href="ch-toetsing.html#test-for-equality-of-means" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Afhankelijk van deze uitkomst van Levene’s test moet je de eerste of de
 tweede regel gebruiken van de uitvoer van de Independent-Samples Test
 (een toets die onderzoekt of de gemiddelden van de twee groepen gelijk
 zijn). In dit voorbeeld zijn de varianties ongeveer gelijk, zoals de
 Levene’s test ook aangeeft. We gebruiken dus de eerste regel van de
-uitvoer, en rapporteren <span class="math inline">\(t(38)=-3.765, p=.001\)</span>.</p>
+uitvoer, en rapporteren <span class="math inline">\(t(38)=-3.76, p=.001\)</span>.</p>
 </div>
 </div>
-<div id="sec:jaspttoetsongepaard" class="section level3" number="13.6.4">
-<h3><span class="header-section-number">13.6.4</span> JASP</h3>
+<div id="sec:jaspttoetsongepaard" class="section level3 hasAnchor" number="13.6.4">
+<h3><span class="header-section-number">13.6.4</span> JASP<a href="ch-toetsing.html#sec:jaspttoetsongepaard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Het tweede bovenstaande voorbeeld wordt hier uitgewerkt: het spreektempo van sprekers uit het Westen en Noorden van Nederland wordt vergeleken.</p>
-<div id="voorbereiding" class="section level4" number="13.6.4.1">
-<h4><span class="header-section-number">13.6.4.1</span> voorbereiding</h4>
+<div id="voorbereiding" class="section level4 hasAnchor" number="13.6.4.1">
+<h4><span class="header-section-number">13.6.4.1</span> voorbereiding<a href="ch-toetsing.html#voorbereiding" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Hiervoor moeten we eerst zorgen dat alleen de regio’s Noord en West zijn geselecteerd. Dit doe je door in het data tabblad op de variabele-naam <em>region</em> te klikken. Er opent een veld met daarin de verschillende waardes (‘Values’; in dit geval regio’s) van de nominale variabele. Je kunt hier bepaalde waardes (regio’s) van de nominale variabele tijdelijk filteren. In de kolom “Filter” staan standaard alleen maar vinkjes, wat betekent dat alle observaties worden meegenomen. Klik op de vinkjes bij de waardes (regio’s) die je tijdelijk niet mee wilt nemen, <em>S</em> (Zuid) en <em>M</em> (Midden), zodat het kruizen worden. In het data tabblad zie je de bijbehorende observaties dan grijs worden. Zorg dus dat er alleen nog maar bij <em>N</em> (Noord) en <em>W</em> (West) een vinkje staat om alleen de observaties van sprekers uit het Westen en Noorden van Nederland te selecteren.<br />
 (Vergeet niet later de kruizen weer terug te veranderen in vinkjes als je wel weer alle observaties wilt meenemen!).</p>
 </div>
-<div id="t-toets" class="section level4" number="13.6.4.2">
-<h4><span class="header-section-number">13.6.4.2</span> <em>t</em>-toets</h4>
+<div id="t-toets" class="section level4 hasAnchor" number="13.6.4.2">
+<h4><span class="header-section-number">13.6.4.2</span> <em>t</em>-toets<a href="ch-toetsing.html#t-toets" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Klik na het filteren van de goede regio’s in de bovenbalk op:</p>
 <pre><code>T-Tests &gt; Classical: Independent Samples T-Test</code></pre>
 <p>Selecteer de variabele <em>syldur</em> en plaats deze in het veld “Variables”. Plaats de variabele <em>region</em> in het veld “Grouping Variable”. Als een variabele meer dan twee groepen bevat geeft JASP aan dat er een probleem is (je kunt immers maar twee groepen vergelijken); daarom filteren we hierboven zo dat we alleen Noord en West meenemen in de variabele <em>region</em>.<br />
@@ -1178,8 +1177,8 @@ Als je een grote waarde vindt voor <span class="math inline">\(F\)</span>, met <
 <p>Als dit is aangevinkt wordt als laatste in de uitvoer een tabel met beschrijvende statistiek en een “Descriptive plot” gegeven. Hiermee kun je goed zien hoe de scores van de twee groepen van elkaar verschillen.</p>
 </div>
 </div>
-<div id="sec:R-ttoets-ongepaard" class="section level3" number="13.6.5">
-<h3><span class="header-section-number">13.6.5</span> R</h3>
+<div id="sec:R-ttoets-ongepaard" class="section level3 hasAnchor" number="13.6.5">
+<h3><span class="header-section-number">13.6.5</span> R<a href="ch-toetsing.html#sec:R-ttoets-ongepaard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="ch-toetsing.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(hqmisc)</span>
 <span id="cb109-2"><a href="ch-toetsing.html#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(talkers)</span>
 <span id="cb109-3"><a href="ch-toetsing.html#cb109-3" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(talkers, <span class="fu">t.test</span>( syldur[region<span class="sc">==</span><span class="st">&quot;W&quot;</span>], syldur[region<span class="sc">==</span><span class="st">&quot;N&quot;</span>], </span>
@@ -1197,8 +1196,8 @@ Als je een grote waarde vindt voor <span class="math inline">\(F\)</span>, met <
 ##   0.23490   0.26871</code></pre>
 </div>
 </div>
-<div id="sec:ttoets-gepaard" class="section level2" number="13.7">
-<h2><span class="header-section-number">13.7</span> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen</h2>
+<div id="sec:ttoets-gepaard" class="section level2 hasAnchor" number="13.7">
+<h2><span class="header-section-number">13.7</span> <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen<a href="ch-toetsing.html#sec:ttoets-gepaard" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>De Student <span class="math inline">\(t\)</span>-toets wordt ook toegepast om een verschil te onderzoeken tussen de
 gemiddelden van twee afhankelijke of gepaarde waarnemingen. Daarvan is
 sprake als we slechts één steekproef trekken (zie hoofdstuk
@@ -1335,8 +1334,8 @@ aanspreekvorm is gemiddeld 2.2 punten lager dan hun oordeel over de
 vergelijkbare pagina met <em>je</em> als aanspreekvorm; dit is een
 significant verschil (<span class="math inline">\(t(9)=-6.74, p&lt;.002\)</span>).</p>
 </blockquote>
-<div id="aannames-1" class="section level3" number="13.7.1">
-<h3><span class="header-section-number">13.7.1</span> aannames</h3>
+<div id="aannames-1" class="section level3 hasAnchor" number="13.7.1">
+<h3><span class="header-section-number">13.7.1</span> aannames<a href="ch-toetsing.html#aannames-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>De <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen binnen een enkele steekproef vereist drie
 aannames (assumpties) waaraan voldaan moet zijn, om deze toets te mogen
 gebruiken.</p>
@@ -1351,23 +1350,23 @@ waarnemingen in de steekproef echter groter is dan ca 30 dan is de <span class="
 doorgaans goed bruikbaar.</p></li>
 </ul>
 </div>
-<div id="sec:formules13-4" class="section level3" number="13.7.2">
-<h3><span class="header-section-number">13.7.2</span> formules</h3>
+<div id="sec:formules13-4" class="section level3 hasAnchor" number="13.7.2">
+<h3><span class="header-section-number">13.7.2</span> formules<a href="ch-toetsing.html#sec:formules13-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display" id="eq:t-pairedsamples">\[\begin{equation}
   \tag{13.7}
   t = \frac{ \overline{D}-\mu_D} { s_D } \times \sqrt{N}
 \end{equation}\]</span></p>
 </div>
-<div id="sec:SPSS-ttoets-gepaard" class="section level3" number="13.7.3">
-<h3><span class="header-section-number">13.7.3</span> SPSS</h3>
+<div id="sec:SPSS-ttoets-gepaard" class="section level3 hasAnchor" number="13.7.3">
+<h3><span class="header-section-number">13.7.3</span> SPSS<a href="ch-toetsing.html#sec:SPSS-ttoets-gepaard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand <code>data/ujedata.csv</code>.</p>
 <pre><code>Analyze &gt; Compare Means &gt; Paired-Samples T Test</code></pre>
 <p>Sleep eerste afhankelijke variabele <code>cond.u</code> naar paneel Paired
 Variables onder Variable1, en sleep tweede variabele <code>cond.je</code> naar
 zelfde paneel onder Variable2. Bevestig met <code>OK</code>.</p>
 </div>
-<div id="sec:jaspttoetsgepaard" class="section level3" number="13.7.4">
-<h3><span class="header-section-number">13.7.4</span> JASP</h3>
+<div id="sec:jaspttoetsgepaard" class="section level3 hasAnchor" number="13.7.4">
+<h3><span class="header-section-number">13.7.4</span> JASP<a href="ch-toetsing.html#sec:jaspttoetsgepaard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Het bovenstaande voorbeeld wordt hier uitgewerkt. De gegevens zijn te vinden in bestand <code>data/ujedata.csv</code>.</p>
 <p>Klik in de bovenbalk op:</p>
 <pre><code>T-Tests &gt; Classical: Paired Samples T-Test</code></pre>
@@ -1377,8 +1376,8 @@ Zorg dat <code>Student</code> aangevinkt is onder “Tests” en onder “Alt.Hy
 Onder <em>Assumption Checks</em> vind je de resultaten van de Shapiro-Wilk-toets, die toetst of de verschilscores (<span class="math inline">\(cond.u - cond.je\)</span>) normaal verdeeld zijn.<br />
 Als dit is aangevinkt wordt als laatste in de uitvoer een tabel met beschrijvende statistiek en een “Descriptive plot” gegeven. Hiermee kun je goed zien hoe de twee condities van elkaar verschillen in scores.</p>
 </div>
-<div id="sec:R-ttoets-gepaard" class="section level3" number="13.7.5">
-<h3><span class="header-section-number">13.7.5</span> R</h3>
+<div id="sec:R-ttoets-gepaard" class="section level3 hasAnchor" number="13.7.5">
+<h3><span class="header-section-number">13.7.5</span> R<a href="ch-toetsing.html#sec:R-ttoets-gepaard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand <code>data/ujedata.csv</code>.</p>
 <div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="ch-toetsing.html#cb113-1" aria-hidden="true" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
 <span id="cb113-2"><a href="ch-toetsing.html#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(ujedata, <span class="fu">t.test</span>( cond.u, cond.je, <span class="at">paired=</span><span class="cn">TRUE</span> ) )</span></code></pre></div>
@@ -1387,16 +1386,16 @@ Als dit is aangevinkt wordt als laatste in de uitvoer een tabel met beschrijvend
 ## 
 ## data:  cond.u and cond.je
 ## t = -6.7361, df = 9, p-value = 8.498e-05
-## alternative hypothesis: true difference in means is not equal to 0
+## alternative hypothesis: true mean difference is not equal to 0
 ## 95 percent confidence interval:
 ##  -2.938817 -1.461183
 ## sample estimates:
-## mean of the differences 
-##                    -2.2</code></pre>
+## mean difference 
+##            -2.2</code></pre>
 </div>
 </div>
-<div id="sec:ttoets-effectgrootte" class="section level2" number="13.8">
-<h2><span class="header-section-number">13.8</span> Effectgrootte</h2>
+<div id="sec:ttoets-effectgrootte" class="section level2 hasAnchor" number="13.8">
+<h2><span class="header-section-number">13.8</span> Effectgrootte<a href="ch-toetsing.html#sec:ttoets-effectgrootte" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Tot nu toe zijn we vooral ingegaan op toetsing als een binaire
 beslissing om H0 wel of niet te verwerpen, in het licht van de
 observaties. Maar het is daarnaast ook van groot belang om te weten hoe
@@ -1459,7 +1458,7 @@ van de ruwe score. In §<a href="ch-toetsing.html#sec:ttoets-onafh">13.6</a> von
 van <span class="math inline">\(D=95-85=10\)</span> tussen jongens en meisjes.</p>
 <p>Meestal gebruiken we echter de gestandaardiseerde effectgrootte (zie
 formules hieronder), waarbij we rekening houden met de spreiding in de
-observaties, bijv in de vorm van “pooled standard deviation” <span class="math inline">\(s_p\)</span> <a href="referenties.html#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>.
+observaties, bijv in de vorm van “pooled standard deviation” <span class="math inline">\(s_p\)</span> <a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>.
 We vinden zo een gestandaardiseerde effectgrootte van
 <span class="math display" id="eq:d-standardized">\[\begin{equation}
   \tag{13.9}
@@ -1488,9 +1487,9 @@ van het verschil in duren van lettergrepen ongeveer
 als volgt rapporteren:</p>
 <blockquote>
 <p>De gemiddelde duur van een lettergreep gesproken door een spreker uit
-het westen van Nederland is <span class="math inline">\(0.235\)</span> seconde (<span class="math inline">\(s=0.028\)</span>). Dit is
+het westen van Nederland is <span class="math inline">\(0.235\)</span> seconde (<span class="math inline">\(s=0.03\)</span>). Dit is
 aanzienlijk korter dan bij sprekers uit het Noorden van Nederland
-(<span class="math inline">\(\overline{x}=0.269\)</span> s, <span class="math inline">\(s=0.029\)</span>). Het verschil is ca. 10%; dit
+(<span class="math inline">\(\overline{x}=0.269\)</span> s, <span class="math inline">\(s=0.03\)</span>). Het verschil is ca. 10%; dit
 verschil is zeer groot (<span class="math inline">\(d=-1.15\)</span>) en significant
 (<span class="math inline">\(t(38)=-3.76, p&lt;.05\)</span>). In de onderzochte opnames uit 1999 praten de
 sprekers uit het Westen dus aanzienlijk sneller dan die uit het
@@ -1547,8 +1546,8 @@ verschil. Dit verschil heeft een 95% betrouwbaarheidsinterval van
 <span class="math inline">\(d=-2.13\)</span>; de kans dat een willekeurig gekozen respondent de
 <em>je</em>-versie hoger beoordeelt dan de <em>U</em>-versie is <span class="math inline">\(p=.98\)</span>.</p>
 </blockquote>
-<div id="sec:formules13-5" class="section level3" number="13.8.1">
-<h3><span class="header-section-number">13.8.1</span> formules</h3>
+<div id="sec:formules13-5" class="section level3 hasAnchor" number="13.8.1">
+<h3><span class="header-section-number">13.8.1</span> formules<a href="ch-toetsing.html#sec:formules13-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Voor een enkele steekproef:
 <span class="math display" id="eq:d-onesample">\[\begin{equation}
    \tag{13.10}
@@ -1571,8 +1570,8 @@ waarbij <span class="math inline">\(s_D\)</span> de
 standaarddeviatie is van het verschil <span class="math inline">\(D\)</span> volgens
 formule <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>.</p>
 </div>
-<div id="spss-13-2" class="section level3" number="13.8.2">
-<h3><span class="header-section-number">13.8.2</span> SPSS</h3>
+<div id="spss-13-2" class="section level3 hasAnchor" number="13.8.2">
+<h3><span class="header-section-number">13.8.2</span> SPSS<a href="ch-toetsing.html#spss-13-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In SPSS kunnen we de effectgrootte meestal het makkelijkste met de hand
 uitrekenen.</p>
 <p>Voor een enkele steekproef
@@ -1597,13 +1596,13 @@ De gegevens staan in de uitvoer van de paarsgewijze <span class="math inline">\(
 <code>Std.Deviation</code>:<br />
 <span class="math inline">\(d = -2.200 / 1.033 = 2.130\)</span>, een super groot effect.</p>
 </div>
-<div id="jasp-13" class="section level3" number="13.8.3">
-<h3><span class="header-section-number">13.8.3</span> JASP</h3>
+<div id="jasp-13" class="section level3 hasAnchor" number="13.8.3">
+<h3><span class="header-section-number">13.8.3</span> JASP<a href="ch-toetsing.html#jasp-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In JASP kan de effectgrootte worden opgevraagd bij het doen van een <span class="math inline">\(t\)</span>-toets, door simpelweg <code>Effect size</code> aan te vinken onder “Additional Statistics”. Zie hiervoor de JASP instructies voor een <span class="math inline">\(t\)</span>-toets voor een enkele steekproef (§<a href="ch-toetsing.html#sec:jaspttoetsenkel">13.2.5</a>), een <span class="math inline">\(t\)</span>-toets voor twee onafhankelijke groepen (§<a href="ch-toetsing.html#sec:jaspttoetsongepaard">13.6.4</a>) en een <span class="math inline">\(t\)</span>-toets voor gepaarde waarnemingen (§<a href="ch-toetsing.html#sec:jaspttoetsgepaard">13.7.4</a>).<br />
 De uitvoer van de <span class="math inline">\(t\)</span>-toets zal (Cohen’s) d aangeven: de effectgrootte. Onder <code>Effect size</code> kan ook <code>Confidence interval</code> worden aangevinkt (dit staat standaard op 95%, maar kan ook worden veranderd) voor het betrouwbaarheidsinterval van de effectgrootte (zie §<a href="ch-toetsing.html#sec:betrouwbaarheidsinterval-effectgrootte">13.8.5</a> hieronder).</p>
 </div>
-<div id="r-14" class="section level3" number="13.8.4">
-<h3><span class="header-section-number">13.8.4</span> R</h3>
+<div id="r-14" class="section level3 hasAnchor" number="13.8.4">
+<h3><span class="header-section-number">13.8.4</span> R<a href="ch-toetsing.html#r-14" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In R is het wat makkelijker om de effectgrootte te laten uitrekenen.</p>
 <p>Voor een enkele steekproef
 (formule <a href="ch-toetsing.html#eq:d-onesample">(13.10)</a>):<br />
@@ -1643,8 +1642,8 @@ argument opgeven (power = <span class="math inline">\(1-\beta\)</span>; zie
 <span id="cb123-2"><a href="ch-toetsing.html#cb123-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( ujedata, <span class="fu">mean</span>(cond.u<span class="sc">-</span>cond.je) <span class="sc">/</span> <span class="fu">sd</span>(cond.u<span class="sc">-</span>cond.je) )</span></code></pre></div>
 <pre><code>## [1] -2.130141</code></pre>
 </div>
-<div id="sec:betrouwbaarheidsinterval-effectgrootte" class="section level3" number="13.8.5">
-<h3><span class="header-section-number">13.8.5</span> Betrouwbaarheidsinterval van de effectgrootte</h3>
+<div id="sec:betrouwbaarheidsinterval-effectgrootte" class="section level3 hasAnchor" number="13.8.5">
+<h3><span class="header-section-number">13.8.5</span> Betrouwbaarheidsinterval van de effectgrootte<a href="ch-toetsing.html#sec:betrouwbaarheidsinterval-effectgrootte" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We hebben al eerder gezien
 (§<a href="ch-kansverdelingen.html#sec:betrouwbaarheidsinterval-gemiddelde">10.7</a> en §<a href="ch-toetsing.html#sec:t-betrouwbaarheidsinterval-gemiddelde">13.5</a>)
 dat we een kenmerk
@@ -1686,7 +1685,7 @@ formule 18)</span>:
 In
 ons eerdere voorbeeld van de <span class="math inline">\(n=10\)</span> gepaarde oordelen over een webpagina
 met <em>U</em> of <em>je</em> als aanspreekvorm vonden we <span class="math inline">\(d=-2.13\)</span>. We vinden ook dat
-<span class="math inline">\(r=.9135\)</span>. Met deze gegevens vinden we <span class="math inline">\(\textrm{se}_d = 0.519\)</span> via
+<span class="math inline">\(r=.91\)</span>. Met deze gegevens vinden we <span class="math inline">\(\textrm{se}_d = 0.52\)</span> via
 formule <a href="ch-toetsing.html#eq:d-paired-se">(13.13)</a>.</p>
 <p>Hiermee bepalen we vervolgens het betrouwbaarheidsinterval voor de
 effectgrootte:
@@ -1712,7 +1711,7 @@ niet verwerpen) <span class="citation">(<a href="#ref-Cumm12" role="doc-bibliore
 </div>
 </div>
 </div>
-<h3>Referenties</h3>
+<h3>Referenties<a href="referenties.html#referenties" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Alde04" class="csl-entry">
 Alderson, Phil. 2004. <span>“Absence of Evidence Is Not Evidence of Absence: We Need to Report Uncertain Results and Do It Clearly.”</span> <em>British Medical Journal</em> 328 (7438): 476–77. <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC351831/">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC351831/</a>.
@@ -1747,6 +1746,13 @@ Sagan, Carl. 1996. <em>The Demon-Haunted World: Science as a Candle in the Dark<
 <div id="ref-Thom02" class="csl-entry">
 Thompson, Bruce. 2002. <span>“<span>‘<span>S</span>tatistical,’</span> <span>‘Practical,’</span> and <span>‘Clinical’</span>: <span>H</span>ow Many Kinds of Significance Do Counselors Need to Consider?”</span> <em>Journal of Counseling and Development</em> 80 (1): 64–71.
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="29">
+<li id="fn29"><p>Wij danken Els Rose voor het beschikbaar stellen van deze gegevens.<a href="ch-toetsing.html#fnref29" class="footnote-back">↩︎</a></p></li>
+<li id="fn30"><p>In dit geval gebruiken we <span class="math inline">\(s_p = \sqrt{ \frac{122\times82^2+128\times98^2} {122+128} } = 90.5\)</span>, zie formules <a href="ch-toetsing.html#eq:sd-pooled">(13.2)</a> en <a href="ch-toetsing.html#eq:d-homoskedastic">(13.11)</a>.<a href="ch-toetsing.html#fnref30" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

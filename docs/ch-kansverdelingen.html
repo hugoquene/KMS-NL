@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Hoofdstuk 10 Kansverdelingen | Kwantitatieve Methoden en Statistiek</title>
   <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Hoofdstuk 10 Kansverdelingen | Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
   <meta name="github-repo" content="rstudio/KMS-NL" />
@@ -31,7 +30,6 @@
   
 <link rel="prev" href="ch-centrumenspreiding.html"/>
 <link rel="next" href="ch-samenhang.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,8 +47,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -531,10 +530,10 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch-kansverdelingen" class="section level1" number="10">
-<h1><span class="header-section-number">Hoofdstuk 10</span> Kansverdelingen</h1>
-<div id="sec:kansen" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> Kansen</h2>
+<div id="ch-kansverdelingen" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Hoofdstuk 10</span> Kansverdelingen<a href="ch-kansverdelingen.html#ch-kansverdelingen" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sec:kansen" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Kansen<a href="ch-kansverdelingen.html#sec:kansen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Bellen achter het stuur vergroot de kans op een ongeluk <span class="citation">(<a href="#ref-Bhar13" role="doc-biblioref">Bhargava and Pathania 2013</a>)</span>. De
 gemiddelde kans op neerslag in Nederland is 7%. Mijn bestelling heeft
 10% kans om een dag later dan beloofd afgeleverd te worden. Kansen en
@@ -548,7 +547,7 @@ nodig over waarschijnlijkheden, kansberekening, en kansverdelingen.
 Daarover gaat dit hoofdstuk.</p>
 <p>Laten we ter inleiding eens kijken naar een Nederlands <em>Scrabble</em>-spel.
 Het spel bevat een zakje met daarin 102 fiches, met op elke fiche een
-letter<a href="referenties.html#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>. Van de 102 fiches zijn er 6 met de letter A. Als ik uit een
+letter<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>. Van de 102 fiches zijn er 6 met de letter A. Als ik uit een
 vol en goed gemengd zakje één fiche neem, wat is dan de kans dat ik de
 letter A tref? Die kans-op-uitkomst-A wordt aangeduid als
 <span class="math inline">\(P(\textrm{A})\)</span>, met de <span class="math inline">\(P\)</span> van <em>Probabilitas</em> (Lat. “kans,
@@ -647,8 +646,8 @@ een klinker uit het tweede zakje is dan
 </blockquote>
 <hr />
 </div>
-<div id="sec:binomiaalverdeling" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> Binomiale kansverdeling</h2>
+<div id="sec:binomiaalverdeling" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Binomiale kansverdeling<a href="ch-kansverdelingen.html#sec:binomiaalverdeling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Voor het vervolg van dit hoofdstuk brengen we twee wijzigingen aan in
 het Scrabble-spel. Ten eerste verwijderen we de 2 blanco fiches zonder
 letter uit het zakje. Er blijven dan precies 100 fiches over, waarvan 38
@@ -675,7 +674,7 @@ letterzakje, of de hand van de trekker, heeft immers geen geheugen. Bij
 <span class="math inline">\(100\times\)</span> of <span class="math inline">\(1000\times\)</span> een klinker is getrokken. Hetzelfde geldt
 voor de opeenvolgende uitkomsten bij roulette: bij elke ronde is de kans
 op een treffer <span class="math inline">\(1/37\)</span>, ook als het balletje zojuist <span class="math inline">\(100\times\)</span> op
-eenzelfde getal terecht is gekomen<a href="referenties.html#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.</p>
+eenzelfde getal terecht is gekomen<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.</p>
 <p>Laten we met bovengenoemde wijzigingen nu <span class="math inline">\(n=3\)</span> trekkingen uitvoeren
 (met teruglegging, zie boven), en voor elke mogelijke uitkomst de kans
 op die uitkomst bepalen, zie
@@ -786,8 +785,8 @@ Figuur 10.1: Kansverdeling van een binomiale variabele x met n=3 en p=.38.
 kansverdeling, ook aangeduid als binomiale verdeling of
 binomiaalverdeling. De exacte kansen van de binomiale kansverdeling kan
 je uitrekenen met formule <a href="ch-kansverdelingen.html#eq:prob-binomial">(10.5)</a> hieronder.</p>
-<div id="formules" class="section level3" number="10.2.1">
-<h3><span class="header-section-number">10.2.1</span> formules</h3>
+<div id="formules" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> formules<a href="ch-kansverdelingen.html#formules" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>De kans op een <span class="math inline">\(x\)</span> aantal treffers in <span class="math inline">\(n\)</span> trekkingen is gegeven als
 <span class="math display" id="eq:prob-binomial">\[\begin{equation}
   P(x\,\mbox{treffers}) = {n \choose x} p^x (1-p)^{n-x}
@@ -830,7 +829,7 @@ De bovenste rij is die voor <span class="math inline">\(n=0\)</span>. De vijfde 
 zien daar achtereenvolgens de binomiaal-coëfficienten voor
 <span class="math inline">\(x= 0, 1, 2, 3, 4\)</span>. Voor <span class="math inline">\({4 \choose 2}\)</span> vinden we daar de
 binomiaalcoëfficient <span class="math inline">\(6\)</span>. Iedere coefficiënt is de som van de twee
-bovenliggende coëfficienten<a href="referenties.html#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>, en iedere coëfficient is op te vatten
+bovenliggende coëfficienten<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>, en iedere coëfficient is op te vatten
 als het aantal mogelijke wegen afdalend van de top van de driehoek naar
 die cel.</p>
 <table>
@@ -999,15 +998,15 @@ standaarddeviatie
 </blockquote>
 <hr />
 </div>
-<div id="jasp-4" class="section level3" number="10.2.2">
-<h3><span class="header-section-number">10.2.2</span> JASP</h3>
+<div id="jasp-4" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> JASP<a href="ch-kansverdelingen.html#jasp-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>De binomiale kansverdeling van Figuur <a href="ch-kansverdelingen.html#fig:binomkansverdeling3">10.1</a> kan in JASP worden verkregen door in de bovenbalk te klikken op:</p>
 <pre><code>Distributions &gt; Binomial (onder &#39;Discrete&#39;)</code></pre>
 <p>Als <code>Distributions</code> nog niet in de bovenbalk staat kun je dit toevoegen door rechtsbovenin op de blauwe <strong>+</strong>-button te klikken en <code>Distributions</code> aan te vinken. 
 In de “Binomial” invoer is de balk <code>Show Distribution</code> als het goed is open. Pas hier de waarden voor <span class="math inline">\(p\)</span> (onder “free parameter”) en <span class="math inline">\(n\)</span> (onder “Fixed parameter”) aan naar <span class="math inline">\(p=0.38\)</span> en <span class="math inline">\(n=3\)</span>. Pas onder “Options” ook de range aan naar <code>Range of x from 0 to 3</code>. Onder “Display” moet <code>Probability mass function</code> aangevinkt zijn. In de uitvoer zie je onder <em>Probability Mass Plot</em> de binomiale kansverdeling.</p>
 </div>
-<div id="r-4" class="section level3" number="10.2.3">
-<h3><span class="header-section-number">10.2.3</span> R</h3>
+<div id="r-4" class="section level3 hasAnchor" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> R<a href="ch-kansverdelingen.html#r-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="ch-kansverdelingen.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>( <span class="dv">0</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">prob=</span>.<span class="dv">38</span> )</span></code></pre></div>
 <pre><code>## [1] 0.238328 0.438216 0.268584 0.054872</code></pre>
 <p>De uitvoer is weergegeven in Tabel <a href="ch-kansverdelingen.html#tab:binomkansverdeling3">10.2</a> hierboven.</p>
@@ -1026,8 +1025,8 @@ In de “Binomial” invoer is de balk <code>Show Distribution</code> als het go
 <p>De driehoek van Pascal is te vinden links onder de diagonaal van deze matrix.</p>
 </div>
 </div>
-<div id="sec:normaalverdeling" class="section level2" number="10.3">
-<h2><span class="header-section-number">10.3</span> Normale kansverdeling</h2>
+<div id="sec:normaalverdeling" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Normale kansverdeling<a href="ch-kansverdelingen.html#sec:normaalverdeling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Naarmate de steekproefgrootte <span class="math inline">\(n\)</span> toeneemt, gaat de binomiale
 kansverdeling minder trapsgewijs verspringen, en wordt de kansverdeling
 meer vloeiend, zoals te zien in
@@ -1115,7 +1114,7 @@ symmetrisch is (zie hierboven), dus weten we dat <span class="math inline">\(P(Z
 moet zijn. Wat is de kans <span class="math inline">\(p\)</span> dat <span class="math inline">\(Z&gt;3\)</span> is? In de tweede deeltabel
 vinden we voor grenswaarde <span class="math inline">\(Z^*=3\)</span> de overschrijdingskans
 <span class="math inline">\(p=0.0013\)</span>. Voor een normaal verdeelde variabele <span class="math inline">\(Z\)</span> is er dus een
-overschrijdingskans <span class="math inline">\(p=0.0013\)</span> om een waarde van <span class="math inline">\(Z\)</span> te vinden die
+overschrijdingskans <span class="math inline">\(p=0.0013\)</span> (meestal gerapporteerd als <span class="math inline">\(p=.001\)</span>) om een waarde van <span class="math inline">\(Z\)</span> te vinden die
 tenminste drie standaarddeviaties boven het gemiddelde ligt.</p>
 <p>Vaak willen we het omgekeerde weten: als we een bepaalde
 overschrijdingskans kiezen, welke grenswaarde <span class="math inline">\(Z^*\)</span> hoort daar dan bij?
@@ -1176,8 +1175,8 @@ die even groot als of groter dan deze ondergrens $Z^*$ is. Die precieze
 kans $p$ noemen we de *overschrijdingskans* behorend bij die waarde van
 $Z$ volgens de kansverdeling.
 -->
-<div id="formules-1" class="section level3" number="10.3.1">
-<h3><span class="header-section-number">10.3.1</span> formules</h3>
+<div id="formules-1" class="section level3 hasAnchor" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> formules<a href="ch-kansverdelingen.html#formules-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Als variabele <span class="math inline">\(X\)</span> een normale kansverdeling heeft, met gemiddelde <span class="math inline">\(\mu\)</span>
 en standaarddeviatie <span class="math inline">\(\sigma\)</span>, dan wordt dat aangegeven als
 <span class="math display" id="eq:normaalverdeeld">\[\begin{equation}
@@ -1197,16 +1196,16 @@ standaarddeviatie <span class="math inline">\(\sigma\)</span> is
   \tag{10.9}
 \end{equation}\]</span></p>
 </div>
-<div id="jasp-5" class="section level3" number="10.3.2">
-<h3><span class="header-section-number">10.3.2</span> JASP</h3>
+<div id="jasp-5" class="section level3 hasAnchor" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> JASP<a href="ch-kansverdelingen.html#jasp-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>De normale kansverdeling van Figuur <a href="ch-kansverdelingen.html#fig:normaalkansverdeling">10.3</a> kan in JASP worden verkregen door in de bovenbalk te klikken op:</p>
 <pre><code>Distributions &gt; Normal (onder &#39;Continuous&#39;)</code></pre>
 <p>Als <code>Distributions</code> nog niet in de bovenbalk staat kun je dit toevoegen door rechtsbovenin op de blauwe <strong>+</strong>-button te klikken en <code>Distributions</code> aan te vinken.<br />
 In de “Normal” invoer is de balk <code>Show Distribution</code> als het goed is open. Automatisch staan de waarden voor de standaard-normale kansverdeling al ingevuld en <code>Probability density function</code> aangevinkt; je ziet deze verdeling dus meteen in de uitvoer onder <em>Density Plot</em>.<br />
 Voor andere normale kansverdelingen kunnen de waarden voor <span class="math inline">\(\mu\)</span> en <span class="math inline">\(\sigma\)</span> worden aangepast, en ook de range die wordt weergegeven (onder “Options”). Let op dat je bij “Parameters” <code>$\mu$, $\sigma$</code> selecteert als je het gemiddelde en de standaarddeviatie ingeeft (voor de standaard-normale kansverdeling maakt dit niet uit, want bij <span class="math inline">\(\sigma=1\)</span> geldt ook <span class="math inline">\(\sigma^2=1\)</span>).</p>
 </div>
-<div id="r-5" class="section level3" number="10.3.3">
-<h3><span class="header-section-number">10.3.3</span> R</h3>
+<div id="r-5" class="section level3 hasAnchor" number="10.3.3">
+<h3><span class="header-section-number">10.3.3</span> R<a href="ch-kansverdelingen.html#r-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>De normale kansverdeling van Figuur <a href="ch-kansverdelingen.html#fig:normaalkansverdeling">10.3</a> kan in R worden afgebeeld
 met het onderstaande commando. Hierin wordt een <code>curve</code> getekend, met <code>x</code> in het aangegeven domein, en waarbij <code>y</code> het resultaat is van de functie die de normale kansverdeling berekent volgens formule <a href="ch-kansverdelingen.html#eq:prob-normal">(10.8)</a>:</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="ch-kansverdelingen.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>( <span class="fu">dnorm</span>( x, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span> ), <span class="co"># functie die y-waarden geeft, normal density</span></span>
@@ -1218,8 +1217,8 @@ met het onderstaande commando. Hierin wordt een <code>curve</code> getekend, met
 <p>Als je een extra argument <code>curve( ..., add=TRUE )</code> opgeeft, dan wordt de curve toegevoegd aan de meest recente plot (zie bijv. Figuur <a href="ch-kansverdelingen.html#fig:itunesmeanshist">10.6</a> hieronder).</p>
 </div>
 </div>
-<div id="sec:isvarnormaalverdeeld" class="section level2" number="10.4">
-<h2><span class="header-section-number">10.4</span> Heeft mijn variabele een normale kansverdeling?</h2>
+<div id="sec:isvarnormaalverdeeld" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Heeft mijn variabele een normale kansverdeling?<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Het langste nummer in mijn digitale muziekbibliotheek duurt ongeveer 50
 minuten (dat is een klassiek-indiaas muziekstuk, een ‘morning raga’).
 Een histogram van de duren van alle muzieknummers zie je in
@@ -1266,8 +1265,8 @@ de Kolmogorov-Smirnov-toets (met toetsingsgrootheid <span class="math inline">\(
 normaliteit. Beide toetsen onderzoeken de
 H0:<span class="math inline">\(X\sim\mathcal{N}(\bar{X},s)\)</span> (zie
 formule <a href="ch-kansverdelingen.html#eq:normaalverdeeld">(10.7)</a>).</p>
-<div id="spss-4" class="section level3" number="10.4.1">
-<h3><span class="header-section-number">10.4.1</span> SPSS</h3>
+<div id="spss-4" class="section level3 hasAnchor" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> SPSS<a href="ch-kansverdelingen.html#spss-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <pre><code>Analyze &gt; Descriptive Statistics &gt; Explore...</code></pre>
 <p>Selecteer variabele Time (sleep naar Dependent List paneel).<br />
 Kies knop <code>Plots</code>, en vink aan <code>Normality plots with tests</code>, dat
@@ -1281,13 +1280,13 @@ waarschuwing in
 dat de duren van muzieknummers niet normaal verdeeld zijn. Na deze
 toetsresultaten volgt o.a. een QQ-plot.</p>
 </div>
-<div id="jasp-6" class="section level3" number="10.4.2">
-<h3><span class="header-section-number">10.4.2</span> JASP</h3>
+<div id="jasp-6" class="section level3 hasAnchor" number="10.4.2">
+<h3><span class="header-section-number">10.4.2</span> JASP<a href="ch-kansverdelingen.html#jasp-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Klik in de bovenbalk op <code>Descriptives</code> en selecteer variabele Time in het veld “Variables”. Klik de balk <code>Plots</code> open en vink <code>Distribution plots</code> aan onder “Basic plots” voor een histogram. Vink ook <code>Q-Q plots</code> aan voor een quantile-quantile plot. Klik vervolgens de balk <code>Statistics</code> open en vink <code>Shapiro-Wilk test</code> aan onder “Distribution”.<br />
 De uitvoer geeft de uitkomst van de Shapiro-Wilk-toets in de tabel <em>Descriptive Statistics</em>. We zien dat de kans om deze verdeling te vinden, als H0 waar is, bijna nul is. H0 wordt dus verworpen en we concluderen dat de duren van de muzieknummers niet normaal verdeeld zijn. Dit kun je ook terugzien in het histogram en de Q-Q plot.</p>
 </div>
-<div id="r-6" class="section level3" number="10.4.3">
-<h3><span class="header-section-number">10.4.3</span> R</h3>
+<div id="r-6" class="section level3 hasAnchor" number="10.4.3">
+<h3><span class="header-section-number">10.4.3</span> R<a href="ch-kansverdelingen.html#r-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="ch-kansverdelingen.html#cb59-1" aria-hidden="true" tabindex="-1"></a>itunes <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/itunestimes20120511.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span> )</span>
 <span id="cb59-2"><a href="ch-kansverdelingen.html#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Size in bytes, Time in ms</span></span>
 <span id="cb59-3"><a href="ch-kansverdelingen.html#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(itunes<span class="sc">$</span>Time<span class="sc">/</span><span class="dv">60000</span>, <span class="at">datax=</span>T, <span class="at">plot.it=</span><span class="cn">FALSE</span>) <span class="co"># normally we&#39;d use plot.it=TRUE  </span></span>
@@ -1305,8 +1304,8 @@ verwerpen daarom H0 en concluderen dat de duren van muzieknummers niet
 normaal verdeeld zijn.</p>
 </div>
 </div>
-<div id="sec:watalsnietnormaal" class="section level2" number="10.5">
-<h2><span class="header-section-number">10.5</span> Wat als mijn variabele niet normaal verdeeld is?</h2>
+<div id="sec:watalsnietnormaal" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Wat als mijn variabele niet normaal verdeeld is?<a href="ch-kansverdelingen.html#sec:watalsnietnormaal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In Deel III zullen we diverse statistische
 toetsen bespreken. De toetsen die we bespreken in hoofdstukken
 <a href="ch-toetsing.html#ch-toetsing">13</a> en <a href="ch-power.html#ch-power">14</a> en <a href="ch-variantieanalyse.html#ch-variantieanalyse">15</a>
@@ -1338,8 +1337,8 @@ dat ze minder statistische power hebben (voor een bespreking van power,
 zie hoofdstuk <a href="ch-power.html#ch-power">14</a>): ze zijn minder gevoelig, en vereisen dus grotere
 steekproeven om een effect vast te stellen.</p>
 </div>
-<div id="sec:CentraalLimietTheorema" class="section level2" number="10.6">
-<h2><span class="header-section-number">10.6</span> Kansverdeling van gemiddelde</h2>
+<div id="sec:CentraalLimietTheorema" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> Kansverdeling van gemiddelde<a href="ch-kansverdelingen.html#sec:CentraalLimietTheorema" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In deze paragraaf beschouwen we de muzieknummers in mijn digitale
 muziekbibliotheek als een <em>populatie</em>. We nemen nu een willekeurige
 steekproef van <span class="math inline">\(n=\)</span> 50 nummers, en bepalen de gemiddelde duur over deze
@@ -1397,8 +1396,8 @@ steekproef van <span class="math inline">\(n\)</span> observaties, met één ste
 en één standaarddeviatie <span class="math inline">\(s\)</span> <span class="citation">(<a href="#ref-Cumm12" role="doc-biblioref">Cumming 2012</a>)</span>. Lees ook deze alinea nog eens
 aandachtig door.</p>
 </div>
-<div id="sec:betrouwbaarheidsinterval-gemiddelde" class="section level2" number="10.7">
-<h2><span class="header-section-number">10.7</span> Betrouwbaarheidsinterval van het gemiddelde</h2>
+<div id="sec:betrouwbaarheidsinterval-gemiddelde" class="section level2 hasAnchor" number="10.7">
+<h2><span class="header-section-number">10.7</span> Betrouwbaarheidsinterval van het gemiddelde<a href="ch-kansverdelingen.html#sec:betrouwbaarheidsinterval-gemiddelde" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Zoals hierboven uitgelegd, kunnen we het gemiddelde van de steekproef,
 <span class="math inline">\(\bar{X}\)</span>, gebruiken als een goede schatting van het onbekende
 gemiddelde in de populatie, <span class="math inline">\(\mu\)</span>. Op grond van het Centraal Limiet
@@ -1455,7 +1454,7 @@ populatieparameters meestal ook niet kennen.</p>
 </blockquote>
 <blockquote>
 <p>Voor een steekproef van <span class="math inline">\(n=30\)</span> sprekers vinden we <span class="math inline">\(\bar{x}=0.215\)</span> en
-<span class="math inline">\(s=0.0203\)</span> seconden. Daaruit schatten<a href="referenties.html#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a> we <span class="math inline">\(\hat{\mu}=0.215\)</span> en
+<span class="math inline">\(s=0.0203\)</span> seconden. Daaruit schatten<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a> we <span class="math inline">\(\hat{\mu}=0.215\)</span> en
 <span class="math inline">\(\hat{\sigma}=0.0203\)</span>. Omdat <span class="math inline">\(\sigma\)</span> niet bekend is, gebruiken we de
 <span class="math inline">\(t\)</span>-verdeling om het betrouwbaarheidsinterval te bepalen. We gebruiken
 de <span class="math inline">\(t\)</span>-verdeling voor <span class="math inline">\(n=30\)</span> en vinden een kritieke waarde <span class="math inline">\(t^*=2.05\)</span>
@@ -1484,8 +1483,8 @@ langs de rechterkant).</p>
 Figuur 10.8: 95%-Betrouwbaarheidsintervallen en steekproefgemiddelden, over 100 gesimuleerde steekproeven (n=30) uit een populatie met gemiddelde 0.220 en s.d. 0.0225; zie tekst.
 </p>
 </div>
-<div id="formules-2" class="section level3" number="10.7.1">
-<h3><span class="header-section-number">10.7.1</span> formules</h3>
+<div id="formules-2" class="section level3 hasAnchor" number="10.7.1">
+<h3><span class="header-section-number">10.7.1</span> formules<a href="ch-kansverdelingen.html#formules-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Het tweezijdige <span class="math inline">\(B\)</span>% betrouwbaarheidsinterval voor het
 populatie-gemiddelde is
 <span class="math display" id="eq:t-onesampleCI">\[\begin{equation}
@@ -1499,7 +1498,7 @@ Bijlage <a href="app-kritieketwaarden.html#app-kritieketwaarden">C</a>, zie
 </div>
 </div>
 </div>
-<h3>Referenties</h3>
+<h3>Referenties<a href="referenties.html#referenties" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Bhar13" class="csl-entry">
 Bhargava, Saurabh, and Vikram Pathania. 2013. <span>“Driving Under the (Cellular) Influence.”</span> <em>American Economic Journal: Economic Policy</em> 5 (3): 92–125.
@@ -1516,6 +1515,18 @@ Schuurman, Wouter, and Hans De Kluiver. 2001. <em>Kop of Munt: Kansrekening in H
 <div id="ref-Spie19" class="csl-entry">
 Spiegelhalter, David. 2019. <em>The Art of Statistics: Learning from Data</em>. Pelican.
 </div>
+<div id="ref-Weis15" class="csl-entry">
+Weisstein, Eric W. 2015. <span>“Pascal’s Formula.”</span> Wolfram. <a href="http://mathworld.wolfram.com/PascalsFormula.html">http://mathworld.wolfram.com/PascalsFormula.html</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="19">
+<li id="fn19"><p>Twee van de fiches zijn echter zonder letter; later in deze paragraaf zullen we deze blanco fiches verwijderen uit het zakje.<a href="ch-kansverdelingen.html#fnref19" class="footnote-back">↩︎</a></p></li>
+<li id="fn20"><p>Roulettespelers kunnen gokken op 36 van de 37 mogelijke uitkomsten, dus op de lange termijn ontvangt het casino <span class="math inline">\(1/37\)</span> deel van alle inzetten.<a href="ch-kansverdelingen.html#fnref20" class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p>Dus <span class="math inline">\({n \choose x} = {n-1 \choose x} + {n-1 \choose x-1}\)</span>, <span class="citation">(<a href="#ref-Weis15" role="doc-biblioref">Weisstein 2015</a>)</span>.<a href="ch-kansverdelingen.html#fnref21" class="footnote-back">↩︎</a></p></li>
+<li id="fn22"><p>Schattingen van parameters worden aangegeven met een “dakje” erboven.<a href="ch-kansverdelingen.html#fnref22" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
