@@ -204,7 +204,7 @@ en nadelen tegen elkaar afwegen.
 
 ---
 
-> *Voorbeeld 5.3*: [@Rijl86]
+> *Voorbeeld 5.3*: @Rijl86
 onderzocht het effect van 'peer evaluation' op de kwaliteit van
 schrijfproducten. De opzet van zijn onderzoek was (enigszins
 vereenvoudigd) als volgt: eerst schrijven de leerlingen een opstel over
@@ -245,7 +245,7 @@ leiden de aandacht af van te leren kenmerken van woorden. Anderen menen
 dat in illustraties wezenlijke informatie weergegeven kan worden:
 illustraties dienen als extra informatiebron.
 
-> [@Dona83] onderzocht de invloed van illustraties bij een tekst op het begrip van
+> @Dona83 onderzocht de invloed van illustraties bij een tekst op het begrip van
 die tekst. De onderzoeker selecteerde 120 leerlingen (uit 1868
 leerlingen) uit de derde en zesde groep van het basisonderwijs; 60 uit
 elk van beide groepen. Volgens de prestaties op een eerder afgenomen
@@ -518,7 +518,7 @@ bedoelde theoretische construct (voorkeur van kind).
 > *Voorbeeld 5.7*: Zoals hierboven aangegeven kan het begrip *leesvaardigheid* op allerlei
 manieren worden geoperationaliseerd. Volgens sommigen kan
 leesvaardigheid niet goed gemeten worden met behulp van meerkeuzevragen
-(Houtman 1986, Shohamy 1984). Bij meerkeuzevragen worden de antwoorden
+[@Hout86, @Shoh84]. Bij meerkeuzevragen worden de antwoorden
 zeer sterk beïnvloed door andere zaken zoals algemene ontwikkeling,
 gokvaardigheid, ervaring met eerdere toetsen, en door de vraagstelling
 zelf, zoals geïllustreerd in deze vraag:
