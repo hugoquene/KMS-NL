@@ -39,13 +39,17 @@ Els Rose,
 Tobias Quené, 
 Kirsten Schutter, 
 Marijn Struiksma, 
+Tara Super, 
 en Joanna Wall,
 voor hun adviezen, data, en/of commentaar bij eerdere versies.
 
-Wij danken Rianne Kraakman voor het schrijven van de subsecties met JASP-instructies. 
+Wij danken Rianne Kraakman voor het schrijven van de subsecties met JASP-instructies (versie 1.2.0), en Tara Super voor redactiewerk (versie 1.3.0). 
+
 Onze bijzondere dank gaat tenslotte uit naar Marijn Struiksma, voor haar inspiratie bij dit project en voor het coördineren van de JASP-uitbreidingen en de Engelse vertaling. 
 
-Utrecht, februari 2021
+versie 1.1.1+: februari 2021\
+versie 1.2.0: juni 2021\
+versie 1.3.0: mei 2022
 
 Hugo Quené, <https://www.hugoquene.nl>
 
@@ -73,13 +77,13 @@ https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ## Citatie {-}
 
-Gebruik een van de volgende manieren om te verwijzen naar dit tekstboek (in APA-formaat):
+Gebruik een van de volgende manieren om te verwijzen naar dit tekstboek (in APA-formaat), met de datum van raadpleging:
 
 Quené, H. \& Van den Bergh, H. (2022). *Kwantitatieve Methoden en Statistiek*. 
-Geraadpleegd op 28 januari 2022 via https://hugoquene.github.io/KMS-NL/ .
+Geraadpleegd op 13 mei 2022 via https://hugoquene.github.io/KMS-NL/ .
 
 Quené, H. \& Van den Bergh, H. (2022). *Kwantitatieve Methoden en Statistiek* [in Dutch]. 
-Retrieved 28 January 2022 from https://hugoquene.github.io/KMS-NL/ .
+Retrieved 13 May 2022 from https://hugoquene.github.io/KMS-NL/ .
 
 ## Technische details {-}
 
