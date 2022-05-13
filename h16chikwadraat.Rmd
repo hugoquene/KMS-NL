@@ -189,14 +189,24 @@ meerdere steekproeven (homogeniteit) en/of met twee variabelen
 (verband), met respectievelijk $k$ en $m$ categorieën, is het aantal
 vrijheidsgraden gelijk aan $(k-1)\times(m-1)$.
 
-Voor iedere cel van de frequentietabel kunnen we ook het gestandaardiseerde residu berekenen:
+Voor iedere cel van de frequentietabel (in regel $i$ en kolom $j$) kunnen we ook het ruwe residu berekenen:
 \begin{equation}
-  (\#eq:chi2-residu)
-    e = \frac{(O-E)}{\sqrt{E}}
+  (\#eq:chi2-rawresidu)
+  e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}}}
 \end{equation}
-Als we al deze residuen $e$ kwadrateren en de kwadraten optellen, dan levert dat de bovenstaande toetsingsgrootheid $\chi2$ op (formule \@ref(eq:chikwadraat)). De gestandaardiseerde residuen $e$ kunnen bovendien geïnterpreteerd worden alsof het $Z$-waarden zijn (zie Bijlage \@ref(app-kritiekeZwaarden)). Als het residu $e>2$ dan is het geobserveerde aantal significant groter dan het verwachte aantal ($\alpha=.05$); als het residu kleiner is dan $-2$ dan geldt het omgekeerd. De gestandaardiseerde residuen geven daarmee inzicht in de herkomst van een significant toetsresultaat. 
+Als we al deze ruwe residuen $e$ kwadrateren en de kwadraten optellen, dan levert dat de bovenstaande toetsingsgrootheid $\chi2$ op (formule \@ref(eq:chikwadraat)). 
 
-Voor het bovenstaande voorbeeld in §\@ref(sec:chi2gof) vinden we de volgende zes gestandaardiseerde residuen voor de zes mogelijke uitkomsten van de dobbelsteen: $(1.26, -0.32, 0.32, 0.00, 1.58, -2.85)$. De eerste vijf uitkomsten komen ongeveer even vaak voor als verwacht, maar de zesde mogelijke uitkomst is veel minder vaak geobserveerd dan verwacht.  
+Het is echter inzichtelijker om het *gestandardiseerde* residu van iedere cel te bepalen [@Agre07, p.38]. 
+Daarbij houden we dan rekening met de standaardfout van de residuen (via de rij-totalen $R_i$, kolom-totalen $C_j$, en totaal aantal observaties $N$):
+\begin{equation}
+  (\#eq:chi2-stdresidu)
+  e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}\times(1-\frac{R_i}{N})\times(1-\frac{C_j}{N})}}
+\end{equation}
+De gestandaardiseerde residuen $e$ kunnen geïnterpreteerd worden alsof het $Z$-waarden zijn, met gebruik van de kritieke $Z$-waarden (zie Bijlage \@ref(app-kritiekeZwaarden)). De aangepaste en gestandaardiseerde residuen laten dus zien welke cellen vooral bijdragen aan een significante uitkomst van de $\chi^2$toets [^fn16-3]. 
+
+[^fn16-3]: Als er meerdere vergelijkingen worden gedaan, dan moet de kritieke waarde van $\alpha$ worden aangepast, om Type-I-fouten bij die meerdere vergelijkingen te voorkomen. Als er $k$ cellen en dus $k$ vergelijkingen zijn, dan is het veilig om $\alpha/k$ i.p.v. $\alpha$ te gebruiken bij elke vergelijking -- dit staat bekend als Bonferroni's aanpassing van de $\alpha$-waarde, of als Dunn's procedure [@MD04, p.202]. Zie ook §\@ref(sec:anova-oneway-posthoc). 
+
+Voor het bovenstaande voorbeeld in §\@ref(sec:chi2gof) vinden we de volgende zes gestandaardiseerde residuen voor de zes mogelijke uitkomsten van de dobbelsteen: $(1.39, -0.35, +0.35, 0.00, 1.73, -3.12)$. De eerste vijf uitkomsten komen ongeveer even vaak voor als verwacht, maar de zesde mogelijke uitkomst is veel minder vaak geobserveerd dan verwacht ($p$=.003).  
 
 
 ## SPSS
