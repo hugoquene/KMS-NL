@@ -1,0 +1,12 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Hugo
+    given-names: Quené
+    orcid: https://orcid.org/0000-0001-7988-1346
+  - family-names: Huub
+    given-names: van den Bergh
+title: hugoquene/KMS-NL: v1.3.1
+version: v1.3.1
+date-released: 2022-05-31
+            
