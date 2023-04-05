@@ -12,7 +12,7 @@ te stellen, en dus om de hypothese te toetsen, is het experiment. Een
 goed opgezet en goed uitgevoerd experiment is de 'gouden standaard' in
 veel wetenschappelijke disciplines, omdat het goede waarborgen biedt
 voor de validiteit van de conclusies (zie
-Hoofdstuk \@ref(ch-validiteit).
+Hoofdstuk \@ref(ch-validiteit)).
 Anders gezegd: de uitkomsten van een goed
 experiment vormen de sterkst mogelijke evidentie voor een verband tussen
 de onderzochte variabelen. Zoals besproken in
