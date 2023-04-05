@@ -188,8 +188,8 @@ Table: (#tab:cito-correlaties) Correlaties tussen de drie onderdelen van de CITO
 In deze matrix is alleen de onderste (linker) helft van de volledige
 matrix weergegeven. Dat is ook voldoende, want de cellen zijn gespiegeld
 rond de diagonaal: de correlatie tussen Lezen (kolom 1) en Rekenen (rij
-2) is immers hetzelfde als de correlatie tussen Rekenen (rij 2) en Lezen
-(rij 1). De correlatiematrix bevat in de cellen op de diagonaal altijd
+2) is immers hetzelfde als de correlatie tussen Rekenen (kolom 2) en Lezen
+(rij 1). De cellen op de diagonaal van de correlatiematrix bevatten altijd
 de waarde $1.00$, omdat een variabele altijd perfect met zichzelf
 correleert. We rapporteren deze bevindingen als volgt:
 
