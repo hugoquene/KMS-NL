@@ -462,7 +462,9 @@ for (i in 1:nsim) {
 	lb <- mean(aux)-crit*se(aux)
 	ub <- mean(aux)+crit*se(aux)
 	results <- append( results, c(mean(aux),se(aux),lb,ub) )
-	hits[i] <- is.inrange( mu, c(lb,ub) )
+  # 20231120 function hqmisc::is.inrange is broken
+	# 	hits[i] <- is.inrange( mu, c(lb,ub) )
+	hits[i] <- (mu>lb) & (mu<lb)
 	lines( x=c(lb,ub), y=rep(i,2), type="l",lwd=2,
 	       col=ifelse(hits[i],"black","red") )
 	points( x=mean(aux), y=i, pch=20, cex=.5 ) # added 20090319
@@ -1006,9 +1008,11 @@ als volgt rapporteren:
 > sprekers uit het Westen dus aanzienlijk sneller dan die uit het
 > Noorden van Nederland.
 
+Als $d$ ligt rond 0.01 spreken we van een zeer klein effect [@Sawi09]. 
 Als $d$ ligt rond 0.2 spreken we van een klein effect. Een effectgrootte
 $d$ rond 0.5 noemen we een middelmatig (medium) effect, en een $d$ rond
-0.8 of groter noemen we een groot effect [@Cohen88; @Rose08].
+0.8 of groter noemen we een groot effect [@Cohen88; @Rose08]. 
+Als $d$ ligt rond 1.2 dan spreken we van een zeer groot effect, en als $d$ ligt rond 2.0 dan noemen we dat een 'enorm' of 'reusachtig' effect ['huge', @Sawi09].
 
 ```{r kleinstesignifverschil, echo=FALSE, fig.cap="Relatie tussen de steekproefgrootte en het kleinste effect (d) dat significant is volgens een *t*-toets voor ongepaarde, onafhankelijke waarnemingen, met foutkansen alpha=.05 en beta=.10."}
 # adapted from `plotkleinstesignifverschil.R`
