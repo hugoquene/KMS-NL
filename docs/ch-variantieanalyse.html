@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Hoofdstuk 15 Variantieanalyse | Kwantitatieve Methoden en Statistiek</title>
-  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Hoofdstuk 15 Variantieanalyse | Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
   <meta name="github-repo" content="rstudio/KMS-NL" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Hoofdstuk 15 Variantieanalyse | Kwantitatieve Methoden en Statistiek" />
   
-  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
   
 
 
@@ -90,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -103,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -117,6 +117,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -571,7 +575,7 @@ onderzoeken we het spreektempo ofwel de spreeksnelheid van vier groepen
 sprekers, nl. afkomstig uit het Midden, Noorden, Zuiden en Westen van
 Nederland. De spreeksnelheid is uitgedrukt als de gemiddelde duur van
 een lettergreep, gemiddeld over een interview van ca 15 minuten met elke
-spreker <span class="citation">(<a href="#ref-Quene08" role="doc-biblioref">Quené 2008</a>)</span> <span class="citation">(<a href="#ref-R-hqmisc" role="doc-biblioref">Quené 2022</a>)</span>. Een kortere gemiddelde syllabeduur
+spreker <span class="citation">(<a href="#ref-Quene08">Quené 2008</a>)</span> <span class="citation">(<a href="#ref-R-hqmisc"><strong>R-hqmisc?</strong></a>)</span>. Een kortere gemiddelde syllabeduur
 correspondeert
 dus met een snellere spreker (vgl. de schaatssport: een kortere
 rondetijd correspondeert met een snellere schaatser). Er waren 20
@@ -1010,7 +1014,7 @@ te nemen over H0, maar is het minstens zo belangrijk om te weten hoe
 groot het geobserveerde effect is (zie ook
 §<a href="ch-toetsing.html#sec:ttoets-effectgrootte">13.8</a>). Deze effectgrootte bij
 variantieanalyse kan worden uitgedrukt in verschillende maten, waarvan
-wij er twee bespreken (deze paragraaf is gebaseerd op <span class="citation">Kerlinger and Lee (<a href="#ref-KL00" role="doc-biblioref">2000</a>)</span>; zie ook <span class="citation">Olejnik and Algina (<a href="#ref-Olej03" role="doc-biblioref">2003</a>)</span>).</p>
+wij er twee bespreken (deze paragraaf is gebaseerd op <span class="citation">Kerlinger and Lee (<a href="#ref-KL00">2000</a>)</span>; zie ook <span class="citation">Olejnik and Algina (<a href="#ref-Olej03">2003</a>)</span>).</p>
 <p>De eenvoudigste maat is de zgn. <span class="math inline">\(\eta^2\)</span> (“èta-kwadraat” of “eta
 squared”), de proportie van de totale SS die toe te schrijven is aan de
 verschillen tussen de groepen of condities: <span class="math display">\[\label{eq:etasq}
@@ -1041,7 +1045,7 @@ how strong relations are. After all, with large enough <span class="math inline"
 <span class="math inline">\(t\)</span>-ratios can almost always be statistically significant. While often
 sobering in their effect, especially when they are low, coefficients of
 association of independent and dependent variables [i.e., effect size
-coefficients] are <em>indispensable</em> parts of research results” <span class="citation">(<a href="#ref-KL00" role="doc-biblioref">Kerlinger and Lee 2000, 327</a>, nadruk toegevoegd)</span>.</p>
+coefficients] are <em>indispensable</em> parts of research results” <span class="citation">(<a href="#ref-KL00">Kerlinger and Lee 2000, 327</a>, nadruk toegevoegd)</span>.</p>
 </blockquote>
 </div>
 <div id="sec:anova-oneway-gericht" class="section level3 hasAnchor" number="15.3.4">
@@ -1197,7 +1201,7 @@ verwachten verschillen tussen de groepen of condities. Pas na afloop van
 de variantieanalyse, <em>nadat</em> er een significant effect gevonden is,
 besluit de onderzoeker om nader te inspecteren welke condities van
 elkaar verschillen. We spreken dan van <em>post-hoc</em> vergelijkingen,
-“suggested by the data” <span class="citation">(<a href="#ref-MD04" role="doc-biblioref">Maxwell and Delaney 2004, 200</a>)</span>. We moeten daarbij conservatief te
+“suggested by the data” <span class="citation">(<a href="#ref-MD04">Maxwell and Delaney 2004, 200</a>)</span>. We moeten daarbij conservatief te
 werk gaan, juist omdat we na de variantieanalyse al kunnen vermoeden dat
 sommige vergelijkingen een significant resultaat zullen opleveren,
 d.w.z., de nulhypotheses zijn al niet neutraal.</p>
@@ -1386,9 +1390,9 @@ groepen niet verschillen. In je eigen rapportage moet je vermelden dat Tukey’s
 <div id="voorbereiding-3" class="section level4 hasAnchor" number="15.3.8.1">
 <h4><span class="header-section-number">15.3.8.1</span> voorbereiding<a href="ch-variantieanalyse.html#voorbereiding-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Lees eerst de benodigde gegevens, en controleer deze:</p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="ch-variantieanalyse.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zelfde data als gebruikt in Fig.15.2</span></span>
-<span id="cb129-2"><a href="ch-variantieanalyse.html#cb129-2" aria-hidden="true" tabindex="-1"></a>kleurgroepen <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="st">&quot;data/kleurgroepen.txt&quot;</span>, </span>
-<span id="cb129-3"><a href="ch-variantieanalyse.html#cb129-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors=</span><span class="cn">TRUE</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="ch-variantieanalyse.html#cb129-1" tabindex="-1"></a><span class="co"># zelfde data als gebruikt in Fig.15.2</span></span>
+<span id="cb129-2"><a href="ch-variantieanalyse.html#cb129-2" tabindex="-1"></a>kleurgroepen <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="st">&quot;data/kleurgroepen.txt&quot;</span>, </span>
+<span id="cb129-3"><a href="ch-variantieanalyse.html#cb129-3" tabindex="-1"></a>                            <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors=</span><span class="cn">TRUE</span> )</span></code></pre></div>
 <p>Onderzoek of de responsies normaal verdeeld zijn binnen elke groep, met behulp van de
 technieken uit Deel II van dit tekstboek (met name
 §<a href="ch-kansverdelingen.html#sec:isvarnormaalverdeeld">10.4</a>).</p>
@@ -1396,7 +1400,7 @@ technieken uit Deel II van dit tekstboek (met name
 voor variantieanalyse. De H0 die we daarbij toetsen luidt:
 <span class="math inline">\(s^2_\textrm{rood} = s^2_\textrm{grijs} = s^2_\textrm{blauw}\)</span>. We
 toetsen deze H0 met behulp van Bartlett’s toets.</p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="ch-variantieanalyse.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bartlett.test</span>( <span class="at">x=</span>kleurgroepen<span class="sc">$</span>score, <span class="at">g=</span>kleurgroepen<span class="sc">$</span>kleur )</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="ch-variantieanalyse.html#cb130-1" tabindex="-1"></a><span class="fu">bartlett.test</span>( <span class="at">x=</span>kleurgroepen<span class="sc">$</span>score, <span class="at">g=</span>kleurgroepen<span class="sc">$</span>kleur )</span></code></pre></div>
 <pre><code>## 
 ##  Bartlett test of homogeneity of variances
 ## 
@@ -1405,7 +1409,7 @@ toetsen deze H0 met behulp van Bartlett’s toets.</p>
 </div>
 <div id="anova-2" class="section level4 hasAnchor" number="15.3.8.2">
 <h4><span class="header-section-number">15.3.8.2</span> ANOVA<a href="ch-variantieanalyse.html#anova-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="ch-variantieanalyse.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>( score<span class="sc">~</span>kleur, <span class="at">data=</span>kleurgroepen) <span class="ot">-&gt;</span> m01 ) <span class="co"># zie Tabel 15.3</span></span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="ch-variantieanalyse.html#cb132-1" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>( score<span class="sc">~</span>kleur, <span class="at">data=</span>kleurgroepen) <span class="ot">-&gt;</span> m01 ) <span class="co"># zie Tabel 15.3</span></span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## kleur        2  14.50   7.248   9.356 0.000436 ***
 ## Residuals   42  32.54   0.775                     
@@ -1414,32 +1418,32 @@ toetsen deze H0 met behulp van Bartlett’s toets.</p>
 </div>
 <div id="R:omega-kwadraat" class="section level4 hasAnchor" number="15.3.8.3">
 <h4><span class="header-section-number">15.3.8.3</span> effectgrootte<a href="ch-variantieanalyse.html#R:omega-kwadraat" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="ch-variantieanalyse.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="co"># eigen functie om omega2 te berekenen, zie vergelijking (15.7) in de hoofdtekst, </span></span>
-<span id="cb134-2"><a href="ch-variantieanalyse.html#cb134-2" aria-hidden="true" tabindex="-1"></a><span class="co"># voor effect genaamd `term` in summary(`model`)</span></span>
-<span id="cb134-3"><a href="ch-variantieanalyse.html#cb134-3" aria-hidden="true" tabindex="-1"></a>omegasq <span class="ot">&lt;-</span> <span class="cf">function</span> ( model, term ) {   </span>
-<span id="cb134-4"><a href="ch-variantieanalyse.html#cb134-4" aria-hidden="true" tabindex="-1"></a>     mtab <span class="ot">&lt;-</span> <span class="fu">anova</span>(model)</span>
-<span id="cb134-5"><a href="ch-variantieanalyse.html#cb134-5" aria-hidden="true" tabindex="-1"></a>     rterm <span class="ot">&lt;-</span> <span class="fu">dim</span>(mtab)[<span class="dv">1</span>] <span class="co"># resid term</span></span>
-<span id="cb134-6"><a href="ch-variantieanalyse.html#cb134-6" aria-hidden="true" tabindex="-1"></a>     <span class="fu">return</span>( (mtab[term,<span class="dv">2</span>]<span class="sc">-</span>mtab[term,<span class="dv">1</span>]<span class="sc">*</span>mtab[rterm,<span class="dv">3</span>]) <span class="sc">/</span> </span>
-<span id="cb134-7"><a href="ch-variantieanalyse.html#cb134-7" aria-hidden="true" tabindex="-1"></a>             (mtab[rterm,<span class="dv">3</span>]<span class="sc">+</span><span class="fu">sum</span>(mtab[,<span class="dv">2</span>])) )</span>
-<span id="cb134-8"><a href="ch-variantieanalyse.html#cb134-8" aria-hidden="true" tabindex="-1"></a>     }</span>
-<span id="cb134-9"><a href="ch-variantieanalyse.html#cb134-9" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>( m01, <span class="st">&quot;kleur&quot;</span> ) <span class="co"># roep functie aan met 2 argumenten</span></span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="ch-variantieanalyse.html#cb134-1" tabindex="-1"></a><span class="co"># eigen functie om omega2 te berekenen, zie vergelijking (15.7) in de hoofdtekst, </span></span>
+<span id="cb134-2"><a href="ch-variantieanalyse.html#cb134-2" tabindex="-1"></a><span class="co"># voor effect genaamd `term` in summary(`model`)</span></span>
+<span id="cb134-3"><a href="ch-variantieanalyse.html#cb134-3" tabindex="-1"></a>omegasq <span class="ot">&lt;-</span> <span class="cf">function</span> ( model, term ) {   </span>
+<span id="cb134-4"><a href="ch-variantieanalyse.html#cb134-4" tabindex="-1"></a>     mtab <span class="ot">&lt;-</span> <span class="fu">anova</span>(model)</span>
+<span id="cb134-5"><a href="ch-variantieanalyse.html#cb134-5" tabindex="-1"></a>     rterm <span class="ot">&lt;-</span> <span class="fu">dim</span>(mtab)[<span class="dv">1</span>] <span class="co"># resid term</span></span>
+<span id="cb134-6"><a href="ch-variantieanalyse.html#cb134-6" tabindex="-1"></a>     <span class="fu">return</span>( (mtab[term,<span class="dv">2</span>]<span class="sc">-</span>mtab[term,<span class="dv">1</span>]<span class="sc">*</span>mtab[rterm,<span class="dv">3</span>]) <span class="sc">/</span> </span>
+<span id="cb134-7"><a href="ch-variantieanalyse.html#cb134-7" tabindex="-1"></a>             (mtab[rterm,<span class="dv">3</span>]<span class="sc">+</span><span class="fu">sum</span>(mtab[,<span class="dv">2</span>])) )</span>
+<span id="cb134-8"><a href="ch-variantieanalyse.html#cb134-8" tabindex="-1"></a>     }</span>
+<span id="cb134-9"><a href="ch-variantieanalyse.html#cb134-9" tabindex="-1"></a><span class="fu">omegasq</span>( m01, <span class="st">&quot;kleur&quot;</span> ) <span class="co"># roep functie aan met 2 argumenten</span></span></code></pre></div>
 <pre><code>## [1] 0.2708136</code></pre>
 </div>
 <div id="gerichte-vergelijking-2" class="section level4 hasAnchor" number="15.3.8.4">
 <h4><span class="header-section-number">15.3.8.4</span> gerichte vergelijking<a href="ch-variantieanalyse.html#gerichte-vergelijking-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Bij het specificeren van de contrasten moeten we rekening houden met de <em>alfabetische</em> ordening van de condities: <em>blauw, grijs, rood</em>.</p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="ch-variantieanalyse.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># maak matrix van twee orthogonale contrasten (per kolom, niet per rij) </span></span>
-<span id="cb136-2"><a href="ch-variantieanalyse.html#cb136-2" aria-hidden="true" tabindex="-1"></a>conmat <span class="ot">&lt;-</span> <span class="fu">matrix</span>( <span class="fu">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>,<span class="sc">-</span><span class="dv">1</span>, <span class="sc">+</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>), <span class="at">byrow=</span>F, <span class="at">nrow=</span><span class="dv">3</span> )</span>
-<span id="cb136-3"><a href="ch-variantieanalyse.html#cb136-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(conmat)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;.R.GB&quot;</span>,<span class="st">&quot;.0G.B&quot;</span>) <span class="co"># (1) R vs G+B, (2) G vs B </span></span>
-<span id="cb136-4"><a href="ch-variantieanalyse.html#cb136-4" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(kleurgroepen<span class="sc">$</span>kleur) <span class="ot">&lt;-</span> conmat <span class="co"># wijs contrasten toe aan factor</span></span>
-<span id="cb136-5"><a href="ch-variantieanalyse.html#cb136-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>( score<span class="sc">~</span>kleur, <span class="at">data=</span>kleurgroepen) <span class="ot">-&gt;</span> m02 ) <span class="co"># uitvoer is nodig voor omega2</span></span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="ch-variantieanalyse.html#cb136-1" tabindex="-1"></a><span class="co"># maak matrix van twee orthogonale contrasten (per kolom, niet per rij) </span></span>
+<span id="cb136-2"><a href="ch-variantieanalyse.html#cb136-2" tabindex="-1"></a>conmat <span class="ot">&lt;-</span> <span class="fu">matrix</span>( <span class="fu">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>,<span class="sc">-</span><span class="dv">1</span>, <span class="sc">+</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>), <span class="at">byrow=</span>F, <span class="at">nrow=</span><span class="dv">3</span> )</span>
+<span id="cb136-3"><a href="ch-variantieanalyse.html#cb136-3" tabindex="-1"></a><span class="fu">dimnames</span>(conmat)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;.R.GB&quot;</span>,<span class="st">&quot;.0G.B&quot;</span>) <span class="co"># (1) R vs G+B, (2) G vs B </span></span>
+<span id="cb136-4"><a href="ch-variantieanalyse.html#cb136-4" tabindex="-1"></a><span class="fu">contrasts</span>(kleurgroepen<span class="sc">$</span>kleur) <span class="ot">&lt;-</span> conmat <span class="co"># wijs contrasten toe aan factor</span></span>
+<span id="cb136-5"><a href="ch-variantieanalyse.html#cb136-5" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>( score<span class="sc">~</span>kleur, <span class="at">data=</span>kleurgroepen) <span class="ot">-&gt;</span> m02 ) <span class="co"># uitvoer is nodig voor omega2</span></span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## kleur        2  14.50   7.248   9.356 0.000436 ***
 ## Residuals   42  32.54   0.775                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="ch-variantieanalyse.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zie https://blogs.uoregon.edu/rclub/2015/11/03/anova-contrasts-in-r/</span></span>
-<span id="cb138-2"><a href="ch-variantieanalyse.html#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary.aov</span>( m02, <span class="at">split=</span><span class="fu">list</span>(<span class="at">kleur=</span><span class="fu">list</span>(<span class="dv">1</span>,<span class="dv">2</span>)) )</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="ch-variantieanalyse.html#cb138-1" tabindex="-1"></a><span class="co"># zie https://blogs.uoregon.edu/rclub/2015/11/03/anova-contrasts-in-r/</span></span>
+<span id="cb138-2"><a href="ch-variantieanalyse.html#cb138-2" tabindex="-1"></a><span class="fu">summary.aov</span>( m02, <span class="at">split=</span><span class="fu">list</span>(<span class="at">kleur=</span><span class="fu">list</span>(<span class="dv">1</span>,<span class="dv">2</span>)) )</span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## kleur        2  14.50   7.248   9.356 0.000436 ***
 ##   kleur: C1  1  14.31  14.308  18.470 0.000100 ***
@@ -1448,14 +1452,14 @@ toetsen deze H0 met behulp van Bartlett’s toets.</p>
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>Als we gerichte vergelijkingen hebben (planned contrasts) dan is de eerder geconstrueerde functie <code>omegasq</code> niet bruikbaar (en evenmin de eerder gegeven formule). We moeten de <span class="math inline">\(\omega^2\)</span> nu met de hand uitrekenen met gebruik van de uitvoer van de samenvatting van model <code>m02</code>:</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="ch-variantieanalyse.html#cb140-1" aria-hidden="true" tabindex="-1"></a>(<span class="fl">14.308</span><span class="dv">-1</span><span class="sc">*</span><span class="fl">0.775</span>)<span class="sc">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># 0.28</span></span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="ch-variantieanalyse.html#cb140-1" tabindex="-1"></a>(<span class="fl">14.308</span><span class="dv">-1</span><span class="sc">*</span><span class="fl">0.775</span>)<span class="sc">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># 0.28</span></span></code></pre></div>
 <pre><code>## [1] 0.2830402</code></pre>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="ch-variantieanalyse.html#cb142-1" aria-hidden="true" tabindex="-1"></a>(<span class="fl">0.188</span><span class="dv">-1</span><span class="sc">*</span><span class="fl">0.775</span>)<span class="sc">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># afgerond 0.00</span></span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="ch-variantieanalyse.html#cb142-1" tabindex="-1"></a>(<span class="fl">0.188</span><span class="dv">-1</span><span class="sc">*</span><span class="fl">0.775</span>)<span class="sc">/</span>(<span class="fl">0.775+14.308+0.19+32.54</span>) <span class="co"># afgerond 0.00</span></span></code></pre></div>
 <pre><code>## [1] -0.012277</code></pre>
 </div>
 <div id="post-hoc-vergelijkingen" class="section level4 hasAnchor" number="15.3.8.5">
 <h4><span class="header-section-number">15.3.8.5</span> post-hoc vergelijkingen<a href="ch-variantieanalyse.html#post-hoc-vergelijkingen" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="ch-variantieanalyse.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(m02)</span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="ch-variantieanalyse.html#cb144-1" tabindex="-1"></a><span class="fu">TukeyHSD</span>(m02)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
 ## 
@@ -1497,13 +1501,13 @@ van twee of meer factoren, zoals in het onderstaande voorbeeld dat we gebruiken 
 <hr />
 <blockquote>
 <p><em>Voorbeeld 15.5</em>:
-Scholieren en studenten moeten veel studieteksten lezen én begrijpen (zoals deze!). Vermoedelijk is een studietekst beter te begrijpen, als die voorzien is van markeringen van de tekststructuur: tussenkopjes, signaalwoorden (bijv. <em>echter</em>, <em>omdat</em>), en dergelijke. <span class="citation">Van Dooren, Van den Bergh, and Evers-Vermeul (<a href="#ref-DBE12" role="doc-biblioref">2012</a>)</span> onderzochten of studieteksten mét dergelijke structuurmarkeringen beter te begrijpen zijn dan alternatieve versies van dezelfde teksten, maar dan zonder structuurmarkeringen. De eerste factor is dus de aanwezigheid danwel afwezigheid van structuurmarkeringen in de te bestuderen teksten.</p>
+Scholieren en studenten moeten veel studieteksten lezen én begrijpen (zoals deze!). Vermoedelijk is een studietekst beter te begrijpen, als die voorzien is van markeringen van de tekststructuur: tussenkopjes, signaalwoorden (bijv. <em>echter</em>, <em>omdat</em>), en dergelijke. <span class="citation">Van Dooren, Van den Bergh, and Evers-Vermeul (<a href="#ref-DBE12">2012</a>)</span> onderzochten of studieteksten mét dergelijke structuurmarkeringen beter te begrijpen zijn dan alternatieve versies van dezelfde teksten, maar dan zonder structuurmarkeringen. De eerste factor is dus de aanwezigheid danwel afwezigheid van structuurmarkeringen in de te bestuderen teksten.</p>
 </blockquote>
 <blockquote>
 <p>Ook verwachten de onderzoekers een effect van de leesvaardigheid van de proefpersonen. Zwakke lezers zullen een tekst minder goed begrijpen dan sterke lezers. De tweede factor is dus het “lezerstype”, hier verdeeld in de drie categorieën ‘zwak’, ‘gemiddeld’, of ‘sterk’.</p>
 </blockquote>
 <blockquote>
-<p>Bovendien verwachten de onderzoekers dat zwakke lezers de structuurmarkeringen meer nodig hebben, en dus meer baat erbij hebben, dan sterke lezers; “sterke lezers zijn in staat studieteksten met begrip te lezen, ongeacht de aanwezigheid van structuurmarkeringen” <span class="citation">(<a href="#ref-DBE12" role="doc-biblioref">Van Dooren, Van den Bergh, and Evers-Vermeul 2012, 33</a>)</span>.
+<p>Bovendien verwachten de onderzoekers dat zwakke lezers de structuurmarkeringen meer nodig hebben, en dus meer baat erbij hebben, dan sterke lezers; “sterke lezers zijn in staat studieteksten met begrip te lezen, ongeacht de aanwezigheid van structuurmarkeringen” <span class="citation">(<a href="#ref-DBE12">Van Dooren, Van den Bergh, and Evers-Vermeul 2012, 33</a>)</span>.
 De onderzoekers verwachten dus een <strong>interactie</strong> of wisselwerking tussen de factoren: de verschillen tussen de tekstversies zijn anders voor de verschillende lezerstypen, of anders gezegd, de verschillen tussen de lezerstypen zijn anders voor de verschillende tekstversies.</p>
 </blockquote>
 <blockquote>
@@ -1701,22 +1705,22 @@ Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net 
 <div id="voorbereiding-5" class="section level4 hasAnchor" number="15.4.6.1">
 <h4><span class="header-section-number">15.4.6.1</span> voorbereiding<a href="ch-variantieanalyse.html#voorbereiding-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand <code>data/DBE2012.csv</code>.</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="ch-variantieanalyse.html#cb148-1" aria-hidden="true" tabindex="-1"></a>DBE2012 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">&quot;data/DBE2012.csv&quot;</span>)</span>
-<span id="cb148-2"><a href="ch-variantieanalyse.html#cb148-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Versie: 1=met, 2=zonder structuurmarkeringen</span></span>
-<span id="cb148-3"><a href="ch-variantieanalyse.html#cb148-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Groep: 1=zwak, 2=gemiddeld, 3=sterk</span></span>
-<span id="cb148-4"><a href="ch-variantieanalyse.html#cb148-4" aria-hidden="true" tabindex="-1"></a><span class="co"># zorg dat Versie en Groep categorische variabelen of factoren zijn:</span></span>
-<span id="cb148-5"><a href="ch-variantieanalyse.html#cb148-5" aria-hidden="true" tabindex="-1"></a>DBE2012<span class="sc">$</span>Versie <span class="ot">&lt;-</span> <span class="fu">factor</span>(DBE2012<span class="sc">$</span>Versie, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;met&quot;</span>,<span class="st">&quot;zonder&quot;</span>) )</span>
-<span id="cb148-6"><a href="ch-variantieanalyse.html#cb148-6" aria-hidden="true" tabindex="-1"></a>DBE2012<span class="sc">$</span>Groep <span class="ot">&lt;-</span> <span class="fu">factor</span>(DBE2012<span class="sc">$</span>Groep, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;zwak&quot;</span>,<span class="st">&quot;gemiddeld&quot;</span>,<span class="st">&quot;sterk&quot;</span>) )</span>
-<span id="cb148-7"><a href="ch-variantieanalyse.html#cb148-7" aria-hidden="true" tabindex="-1"></a><span class="co"># DV: MCBiScore: aantal begripsvragen (uit 10) goed beantwoord, over BIO tekst</span></span>
-<span id="cb148-8"><a href="ch-variantieanalyse.html#cb148-8" aria-hidden="true" tabindex="-1"></a><span class="co"># tabel van gemiddelden, zie Table 15.2 in hoofdtekst</span></span>
-<span id="cb148-9"><a href="ch-variantieanalyse.html#cb148-9" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( DBE2012, <span class="fu">tapply</span>( MCBiScore, <span class="fu">list</span>(Versie,Groep), mean ))</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="ch-variantieanalyse.html#cb148-1" tabindex="-1"></a>DBE2012 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">&quot;data/DBE2012.csv&quot;</span>)</span>
+<span id="cb148-2"><a href="ch-variantieanalyse.html#cb148-2" tabindex="-1"></a><span class="co"># Versie: 1=met, 2=zonder structuurmarkeringen</span></span>
+<span id="cb148-3"><a href="ch-variantieanalyse.html#cb148-3" tabindex="-1"></a><span class="co"># Groep: 1=zwak, 2=gemiddeld, 3=sterk</span></span>
+<span id="cb148-4"><a href="ch-variantieanalyse.html#cb148-4" tabindex="-1"></a><span class="co"># zorg dat Versie en Groep categorische variabelen of factoren zijn:</span></span>
+<span id="cb148-5"><a href="ch-variantieanalyse.html#cb148-5" tabindex="-1"></a>DBE2012<span class="sc">$</span>Versie <span class="ot">&lt;-</span> <span class="fu">factor</span>(DBE2012<span class="sc">$</span>Versie, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;met&quot;</span>,<span class="st">&quot;zonder&quot;</span>) )</span>
+<span id="cb148-6"><a href="ch-variantieanalyse.html#cb148-6" tabindex="-1"></a>DBE2012<span class="sc">$</span>Groep <span class="ot">&lt;-</span> <span class="fu">factor</span>(DBE2012<span class="sc">$</span>Groep, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;zwak&quot;</span>,<span class="st">&quot;gemiddeld&quot;</span>,<span class="st">&quot;sterk&quot;</span>) )</span>
+<span id="cb148-7"><a href="ch-variantieanalyse.html#cb148-7" tabindex="-1"></a><span class="co"># DV: MCBiScore: aantal begripsvragen (uit 10) goed beantwoord, over BIO tekst</span></span>
+<span id="cb148-8"><a href="ch-variantieanalyse.html#cb148-8" tabindex="-1"></a><span class="co"># tabel van gemiddelden, zie Table 15.2 in hoofdtekst</span></span>
+<span id="cb148-9"><a href="ch-variantieanalyse.html#cb148-9" tabindex="-1"></a><span class="fu">with</span>( DBE2012, <span class="fu">tapply</span>( MCBiScore, <span class="fu">list</span>(Versie,Groep), mean ))</span></code></pre></div>
 <pre><code>##            zwak gemiddeld    sterk
 ## met    6.800000  6.653846 8.222222
 ## zonder 2.666667  4.642857 7.571429</code></pre>
 </div>
 <div id="anova-5" class="section level4 hasAnchor" number="15.4.6.2">
 <h4><span class="header-section-number">15.4.6.2</span> ANOVA<a href="ch-variantieanalyse.html#anova-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ch-variantieanalyse.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>(MCBiScore<span class="sc">~</span>Versie<span class="sc">*</span>Groep, <span class="at">data=</span>DBE2012) <span class="ot">-&gt;</span> DBE2012.m1 )</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ch-variantieanalyse.html#cb150-1" tabindex="-1"></a><span class="fu">summary</span>( <span class="fu">aov</span>(MCBiScore<span class="sc">~</span>Versie<span class="sc">*</span>Groep, <span class="at">data=</span>DBE2012) <span class="ot">-&gt;</span> DBE2012.m1 )</span></code></pre></div>
 <pre><code>##              Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## Versie        1 121.18  121.18   84.64 1.59e-14 ***
 ## Groep         2  81.41   40.71   28.43 2.98e-10 ***
@@ -1729,17 +1733,17 @@ Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net 
 <div id="effectgrootte" class="section level4 hasAnchor" number="15.4.6.3">
 <h4><span class="header-section-number">15.4.6.3</span> effectgrootte<a href="ch-variantieanalyse.html#effectgrootte" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We gebruiken hiervoor de eerder geprogrammeerde functie <code>omegasq</code> (§<a href="ch-variantieanalyse.html#R:omega-kwadraat">15.3.8.3</a>):</p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch-variantieanalyse.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Versie&quot;</span>)        <span class="co"># [1] 0.33</span></span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ch-variantieanalyse.html#cb152-1" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Versie&quot;</span>)        <span class="co"># [1] 0.33</span></span></code></pre></div>
 <pre><code>## [1] 0.3319423</code></pre>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="ch-variantieanalyse.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Groep&quot;</span>)         <span class="co"># [1] 0.22</span></span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="ch-variantieanalyse.html#cb154-1" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Groep&quot;</span>)         <span class="co"># [1] 0.22</span></span></code></pre></div>
 <pre><code>## [1] 0.2177437</code></pre>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="ch-variantieanalyse.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Versie:Groep&quot;</span>)  <span class="co"># [1] 0.08</span></span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="ch-variantieanalyse.html#cb156-1" tabindex="-1"></a><span class="fu">omegasq</span>(DBE2012.m1, <span class="st">&quot;Versie:Groep&quot;</span>)  <span class="co"># [1] 0.08</span></span></code></pre></div>
 <pre><code>## [1] 0.07727868</code></pre>
 <p>De uitkomsten wijken enigszins af van die in de tekst hierboven omdat R de Sums of Squares op een iets andere wijze berekent.</p>
 </div>
 <div id="post-hoc-toetsen" class="section level4 hasAnchor" number="15.4.6.4">
 <h4><span class="header-section-number">15.4.6.4</span> post-hoc toetsen<a href="ch-variantieanalyse.html#post-hoc-toetsen" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="ch-variantieanalyse.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(<span class="at">x=</span>DBE2012.m1, <span class="at">which=</span><span class="st">&quot;Versie:Groep&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="ch-variantieanalyse.html#cb158-1" tabindex="-1"></a><span class="fu">TukeyHSD</span>(<span class="at">x=</span>DBE2012.m1, <span class="at">which=</span><span class="st">&quot;Versie:Groep&quot;</span>)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
 ## 
@@ -1787,9 +1791,6 @@ Olejnik, Stephen, and James Algina. 2003. <span>“Generalized Eta and Omega Squ
 </div>
 <div id="ref-Quene08" class="csl-entry">
 Quené, Hugo. 2008. <span>“Multilevel Modeling of Between-Speaker and Within-Speaker Variation in Spontaneous Speech Tempo.”</span> <em>Journal of the Acoustical Society of America</em> 123 (2): 1104–13.
-</div>
-<div id="ref-R-hqmisc" class="csl-entry">
-———. 2022. <em>Hqmisc: Miscellaneous Convenience Functions and Dataset</em>.
 </div>
 <div id="ref-DBE12" class="csl-entry">
 Van Dooren, Wendy, Huub Van den Bergh, and Jacqueline Evers-Vermeul. 2012. <span>“Leesbare Teksten? Over de Invloed van Structuurmarkeringen Op Het Tekstbegrip En Tekstwaardering van Zwakke En Sterke Lezers.”</span> <em>Levende Talen Tijdschrift</em> 13 (4): 31–38. <a href="https://lt-tijdschriften.nl/ojs/index.php/ltt/article/view/152">https://lt-tijdschriften.nl/ojs/index.php/ltt/article/view/152</a>.
@@ -1869,7 +1870,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -5,16 +5,19 @@
 \documentclass[
 ]{book}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -33,13 +36,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Kwantitatieve Methoden en Statistiek},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -51,13 +47,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -65,7 +61,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -74,7 +70,7 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -120,10 +116,17 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Kwantitatieve Methoden en Statistiek},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{Kwantitatieve Methoden en Statistiek}
 \author{true}
-\date{Versie gecompileerd op 13 May 2022}
+\date{Versie gecompileerd op 20 Nov 2023}
 
 \begin{document}
 \maketitle
@@ -677,7 +680,7 @@ te stellen, en dus om de hypothese te toetsen, is het experiment. Een
 goed opgezet en goed uitgevoerd experiment is de `gouden standaard' in
 veel wetenschappelijke disciplines, omdat het goede waarborgen biedt
 voor de validiteit van de conclusies (zie
-Hoofdstuk \ref{ch-validiteit}.
+Hoofdstuk \ref{ch-validiteit}).
 Anders gezegd: de uitkomsten van een goed
 experiment vormen de sterkst mogelijke evidentie voor een verband tussen
 de onderzochte variabelen. Zoals besproken in
@@ -688,14 +691,16 @@ onderzoek.
 
 \begin{longtable}[]{@{}lll@{}}
 \caption{\label{tab:oorzaakgevolg} Mogelijke oorzaken en mogelijke gevolgen.}\tabularnewline
-\toprule
+\toprule\noalign{}
 onderwerp & vermeende oorzaak & vermeend gevolg \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 onderwerp & vermeende oorzaak & vermeend gevolg \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 handel & buitentemperatuur & aantal verkochte ijsjes \\
 zorg & type behandeling & mate van herstel \\
 onderwijs & lesmethode & prestatie in toets \\
@@ -704,7 +709,6 @@ onderwijs & klassegrootte & schoolprestatie algemeen \\
 zorg & temperatuur & hoogte van malaria-gebieden \\
 taal & leeftijd & spreeksnelheid \\
 zorg & ligtijd voedsel op grond & mate van bacteriële besmetting \\
-\bottomrule
 \end{longtable}
 
 In experimenteel onderzoek wordt het effect onderzocht van een door de
@@ -1203,14 +1207,16 @@ Tabel \ref{tab:H0H1uitkomsten}).
 
 \begin{longtable}[]{@{}lll@{}}
 \caption{\label{tab:H0H1uitkomsten} Mogelijke uitkomsten van beslissingsprocedure.}\tabularnewline
-\toprule
+\toprule\noalign{}
 werkelijkheid & & \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 werkelijkheid & & \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 & \textbf{H0 verworpen} & \textbf{H0 niet verworpen} \\
 H0 is waar (H1 onwaar) & Type-I-fout (\(\alpha\)) & correct \\
 H0 is onwaar (H1 waar) & correct & Type-II-fout (\(\beta\)) \\
@@ -1220,7 +1226,6 @@ verdachte is schuldig & correct & Type-II-fout \\
 & \textbf{bericht weggegooid} & \textbf{bericht doorgestuurd} \\
 bericht is OK (H0) & Type-I-fout & correct \\
 bericht is spam & correct & Type-II-fout \\
-\bottomrule
 \end{longtable}
 
 Als we het significantieniveau hoger instellen, bv. \(\alpha = .20\), dan
@@ -2381,14 +2386,16 @@ ook jongere lezers ondervonden voordeel van de illustraties.
 
 \begin{longtable}[]{@{}lccc@{}}
 \caption{\label{tab:designDona83} Aanbiedingscondities in het onderzoek van Donald (1983).}\tabularnewline
-\toprule
+\toprule\noalign{}
 groep & leesvaardigheid & conditie & \(n\) \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 groep & leesvaardigheid & conditie & \(n\) \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 3 & slecht & zonder & 15 \\
 3 & slecht & met & 15 \\
 3 & goed & zonder & 15 \\
@@ -2397,7 +2404,6 @@ groep & leesvaardigheid & conditie & \(n\) \\
 6 & slecht & met & 15 \\
 6 & goed & zonder & 15 \\
 6 & goed & met & 15 \\
-\bottomrule
 \end{longtable}
 
 Wat is er nu mis met dit onderzoek? Het antwoord is gelegen in de manier
@@ -4463,11 +4469,13 @@ studenten (Voorbeeld 8.1).
 \caption{\label{tab:schoenmaat} Frequentieverdeling van zelfgerapporteerde schoenmaten
 van \(N=50\) studenten in een eerstejaars cursus (zie
 Voorbeeld 8.1 hierboven).}\tabularnewline
-\toprule
+\toprule\noalign{}
+\endfirsthead
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Schoenmaat & 36 & 37 & 38 & 39 & 40 & 41 & 42 & 43 & 44 & ?? \\
 Aantal & 2 & 6 & 6 & 19 & 6 & 5 & 2 & 2 & 1 & 1 \\
-\bottomrule
 \end{longtable}
 
 Als een numerieke variabele heel veel verschillende waarden kan
@@ -4489,14 +4497,16 @@ Tabel \ref{tab:troonrede2012pauzes}.
 
 \begin{longtable}[]{@{}cr@{}}
 \caption{\label{tab:troonrede2012pauzes} Frequentieverdeling van de duren van spreekpauzes (in seconden) in de Troonrede van 18 september 2012, voorgelezen door Koningin Beatrix \((N=305)\).}\tabularnewline
-\toprule
+\toprule\noalign{}
 Interval & Aantal \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Interval & Aantal \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 4.50--4.99 & 1 \\
 4.00--4.49 & 0 \\
 3.50--3.99 & 2 \\
@@ -4507,7 +4517,6 @@ Interval & Aantal \\
 1.00--1.49 & 16 \\
 0.50--0.99 & 67 \\
 0.00--0.49 & 151 \\
-\bottomrule
 \end{longtable}
 
 \hypertarget{sec:intervallen}{%
@@ -5088,14 +5097,16 @@ gegeven in Tabel \ref{tab:cito}.
 \begin{longtable}[]{@{}cccc@{}}
 \caption{\label{tab:cito} Scores van N=10 leerlingen op drie onderdelen van de CITO-toets,
 afgenomen in groep 8 van het basisonderwijs.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Leerling & Lezen & Rekenen & Wereldoriëntatie \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Leerling & Lezen & Rekenen & Wereldoriëntatie \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & 18 & 22 & 55 \\
 2 & 32 & 36 & 55 \\
 3 & 45 & 34 & 38 \\
@@ -5108,7 +5119,6 @@ Leerling & Lezen & Rekenen & Wereldoriëntatie \\
 10 & 25 & 27 & 47 \\
 \(\sum x\) & 270 & 270 & 475 \\
 \(\overline{x}\) & 27.0 & 27.0 & 47.5 \\
-\bottomrule
 \end{longtable}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -5315,19 +5325,20 @@ Tabel \ref{tab:signifcijfersgemiddelde}.
 
 \begin{longtable}[]{@{}cccc@{}}
 \caption{\label{tab:signifcijfersgemiddelde} Het aantal significante cijfers in het gerapporteerde gemiddelde is gelijk aan het aantal significante cijfers van het aantal observaties.}\tabularnewline
-\toprule
+\toprule\noalign{}
 aant.obs. & aant.signif.cijfers & voorbeeld gemiddelde & rapporteer als \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 aant.obs. & aant.signif.cijfers & voorbeeld gemiddelde & rapporteer als \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \(1\dots9\) & 1 & 21/8 = 2.625 & 3 \\
 \(10\dots99\) & 2 & 57/21 = 2.714286 & 2.7 \\
 \(100\dots999\) & 3 & 317/120 = 2.641667 & 2.64 \\
 \(1000\dots9999\) & 4 & 3179/1234 = 2.576175 & 2.576 \\
-\bottomrule
 \end{longtable}
 
 Het aantal significante cijfers in de gerapporteerde standaarddeviatie
@@ -5378,19 +5389,20 @@ misleidend, zie Tabel \ref{tab:signifcijferspercentage}.
 
 \begin{longtable}[]{@{}cccc@{}}
 \caption{\label{tab:signifcijferspercentage} Het aantal significante cijfers in de gerapporteerde proportie (of percentage) hangt samen met het aantal significante cijfers van het aantal observaties in de noemer van de breuk.}\tabularnewline
-\toprule
+\toprule\noalign{}
 aant.obs.(noemer) & aant.signif.cijfers & voorbeeld breuk & rapporteer als \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 aant.obs.(noemer) & aant.signif.cijfers & voorbeeld breuk & rapporteer als \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \(1\dots9\) & 1 & 3/8 = 0.4 & 3/8 \\
 \(10\dots99\) & 2 & 21/57 = 0.36 & 21/57 \\
 \(100\dots999\) & 3 & 120/317 = 0.378 & 38\% \\
 \(1000\dots9999\) & 4 & 1234/3179 = 0.3882 & 38.8\% \\
-\bottomrule
 \end{longtable}
 
 \hypertarget{achtergrond-1}{%
@@ -5465,18 +5477,19 @@ Tabel \ref{tab:centrumspreidingsmaten}.
 
 \begin{longtable}[]{@{}lll@{}}
 \caption{\label{tab:centrumspreidingsmaten} Overzicht van besproken centrummaten en spreidingsmaten.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Verdeling & Centrummaat & Spreidingsmaat \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Verdeling & Centrummaat & Spreidingsmaat \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 alle & mediaan & kwartielen, IQR, MAD \\
 \ldots{} & getrimde of gewins.gemidd. & getrimde of gewins.std.dev. \\
 (a \& b \& c) & gemiddelde & standaarddeviatie \\
-\bottomrule
 \end{longtable}
 
 De meest \textbf{robuuste} maten staan
@@ -5931,14 +5944,16 @@ Tabel \ref{tab:klinkerkansen}.
 \begin{longtable}[]{@{}lcc@{}}
 \caption{\label{tab:klinkerkansen} Kansen van mogelijke uitkomsten van \(n=3\) trekkingen van klinkers,
 \(p=.38\), met teruglegging (zie tekst).}\tabularnewline
-\toprule
+\toprule\noalign{}
 uitkomst & aantal klinkers & kans \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 uitkomst & aantal klinkers & kans \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 CCC & 0 & \(qqq = q^3\) \\
 VCC & 1 & \(pqq = pq^2\) \\
 CVC & 1 & \(qpq = pq^2\) \\
@@ -5947,7 +5962,6 @@ VVC & 2 & \(ppq = p^2q\) \\
 VCV & 2 & \(pqp = p^2q\) \\
 CVV & 2 & \(qpp = p^2q\) \\
 VVV & 3 & \(ppp = p^3\) \\
-\bottomrule
 \end{longtable}
 
 Het aantal treffers (klinkers) in de \(n=3\) trekkingen heeft de
@@ -5959,20 +5973,21 @@ aantal klinkers) hoe groot de kans op die uitkomst is.
 
 \begin{longtable}[]{@{}lrc@{}}
 \caption{\label{tab:binomkansverdeling3} Kansverdeling van een binomiale variabele met \(n=3\) en \(p=.38\).}\tabularnewline
-\toprule
+\toprule\noalign{}
 aantal klinkers & kans & kans \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 aantal klinkers & kans & kans \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 0 & \(1 q^3\) & = .2383 \\
 1 & \(3 p q^2\) & = .4383 \\
 2 & \(3 p^2 q\) & = .2686 \\
 3 & \(1 p^3\) & = .0549 \\
 som & \((p+q)^3\) & = 1.0000 \\
-\bottomrule
 \end{longtable}
 
 \begin{figure}
@@ -6043,8 +6058,11 @@ die cel.
 
 \begin{longtable}[]{@{}llllllllclllllll@{}}
 \caption{\label{tab:driehoekpascal} Driehoek van Pascal: binomiaalcoëfficienten voor het aantal mogelijke ordeningen voor een combinatie van \(x\) elementen uit \(n\) (zie tekst).}\tabularnewline
-\toprule
+\toprule\noalign{}
+\endfirsthead
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \(n= 0\): & & & & & & & & 1 & & & & & & & \\
 \(n= 1\): & & & & & & & 1 & & 1 & & & & & & \\
 \(n= 2\): & & & & & & 1 & & 2 & & 1 & & & & & \\
@@ -6053,7 +6071,6 @@ die cel.
 \(n= 5\): & & & 1 & & 5 & & 10 & & 10 & & 5 & & 1 & & \\
 \(n= 6\): & & 1 & & 6 & & 15 & & 20 & & 15 & & 6 & & 1 & \\
 \(n= 7\): & 1 & & 7 & & 21 & & 35 & & 35 & & 21 & & 7 & & 1 \\
-\bottomrule
 \end{longtable}
 
 Het gemiddelde en de standaarddeviatie van de binomiale kansverdeling
@@ -6825,25 +6842,26 @@ correlation matrix').
 \caption{\label{tab:cito-correlaties} Correlaties tussen de drie onderdelen van de CITO-toets, zoals
 samengevat in Tabel \ref{tab:cito}, met bijbehorende significantie-niveau
 tussen haakjes.}\tabularnewline
-\toprule
+\toprule\noalign{}
 & Lezen & Rekenen & Wereldoriëntatie \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 & Lezen & Rekenen & Wereldoriëntatie \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Lezen & 1.00 & & \\
 Rekenen & 0.79 (.007) & 1.00 & \\
 Wereldoriëntatie & -0.51 (.13) & -0.01 (.97) & 1.00 \\
-\bottomrule
 \end{longtable}
 
 In deze matrix is alleen de onderste (linker) helft van de volledige
 matrix weergegeven. Dat is ook voldoende, want de cellen zijn gespiegeld
 rond de diagonaal: de correlatie tussen Lezen (kolom 1) en Rekenen (rij
-2) is immers hetzelfde als de correlatie tussen Rekenen (rij 2) en Lezen
-(rij 1). De correlatiematrix bevat in de cellen op de diagonaal altijd
+2) is immers hetzelfde als de correlatie tussen Rekenen (kolom 2) en Lezen
+(rij 1). De cellen op de diagonaal van de correlatiematrix bevatten altijd
 de waarde \(1.00\), omdat een variabele altijd perfect met zichzelf
 correleert. We rapporteren deze bevindingen als volgt:
 
@@ -7247,18 +7265,19 @@ voor Lezen en Rekenen, hier geordend volgens de rangnummers voor Lezen.
 
 \begin{longtable}[]{@{}lcccccccccc@{}}
 \caption{\label{tab:cito-rangnummers} Rangnummers van de scores van 10 leerlingen op onderdelen van een toets, zoals samengevat in Tabel \ref{tab:cito}, met verschil \(v_i\) tussen de twee rangnummers per leerling.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Leerling & 1 & 9 & 6 & 4 & 10 & 8 & 5 & 7 & 2 & 3 \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Leerling & 1 & 9 & 6 & 4 & 10 & 8 & 5 & 7 & 2 & 3 \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Lezen & 1 & 2 & 3 & 4.5 & 4.5 & 6 & 7 & 8 & 9 & 10 \\
 Rekenen & 2 & 4 & 1 & 4 & 6.5 & 4 & 8 & 6.5 & 10 & 9 \\
 verschil \(v_i\) & -1 & -2 & 1 & 0.5 & -2 & 2 & -1 & 1.5 & -1 & 1 \\
-\bottomrule
 \end{longtable}
 
 De ordening in Tabel \ref{tab:cito-rangnummers} maakt in één oogopslag duidelijk dat
@@ -7338,8 +7357,8 @@ Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld ``Va
 \end{Shaded}
 
 \begin{verbatim}
-## Warning in cor.test.default(Lezen, Rekenen, method = "spearman"): Cannot compute
-## exact p-value with ties
+## Warning in cor.test.default(Lezen, Rekenen, method = "spearman"): Cannot
+## compute exact p-value with ties
 \end{verbatim}
 
 \begin{verbatim}
@@ -7389,18 +7408,19 @@ de \(2\times 2\) categorieën vatten we samen in een kruistabel
 (stad=1, platteland=0) en naar categorie van score bij het onderdeel Rekenen van een
 CITO-toets (`mean split', laag=0, hoog=1), met letter-aanduiding voor de aantallen
 observaties; zie tekst.}\tabularnewline
-\toprule
+\toprule\noalign{}
 herkomst & laag (0) & hoog (1) & totaal \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 herkomst & laag (0) & hoog (1) & totaal \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 platteland (0) & 5 (A) & 0 (B) & 5 (A+B) \\
 stad (1) & 2 (C) & 3 (D) & 5 (C+D) \\
 totaal & 7 (A+C) & 3 (B+D) & 10 (A+B+C+D) \\
-\bottomrule
 \end{longtable}
 
 De nominale correlatiecoëfficiënt \(r_\Phi\) is gelijk aan de Pearson
@@ -8012,14 +8032,16 @@ beoordelaar.
 \begin{longtable}[]{@{}cccc@{}}
 \caption{\label{tab:betrouwbaarheid} Oordelen over spreekvaardigheid van \(n = 10\) studenten (rijen) door
 \(k = 3\) beoordelaars (kolommen).}\tabularnewline
-\toprule
+\toprule\noalign{}
 student & B1 & B2 & B3 \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 student & B1 & B2 & B3 \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & 67 & 64 & 70 \\
 2 & 72 & 75 & 74 \\
 3 & 83 & 89 & 73 \\
@@ -8032,7 +8054,6 @@ student & B1 & B2 & B3 \\
 10 & 70 & 82 & 69 \\
 \(\overline{x_i}\) & 71.0 & 74.4 & 71.7 \\
 \(s_i\) & 5.6 & 7.0 & 4.7 \\
-\bottomrule
 \end{longtable}
 
 De oordelen van alleen de eerste en de tweede beoordelaar vertonen een
@@ -9125,14 +9146,16 @@ respondenten samengevat.
 \begin{longtable}[]{@{}crrc@{}}
 \caption{\label{tab:data-uje-paired} Fictieve oordelen over een webpagina met \emph{U} of \emph{je} als
 aanspreekvorm, door \(N=10\) respondenten.}\tabularnewline
-\toprule
+\toprule\noalign{}
 id & conditie \emph{U} & conditie \emph{je} & \(D\) \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 id & conditie \emph{U} & conditie \emph{je} & \(D\) \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & 8 & 9 & -1 \\
 2 & 5 & 6 & -1 \\
 3 & 6 & 9 & -3 \\
@@ -9144,7 +9167,6 @@ id & conditie \emph{U} & conditie \emph{je} & \(D\) \\
 9 & 7 & 9 & -2 \\
 10 & 6 & 7 & -1 \\
 & & & \(\overline{D}\)=-2.2 \\
-\bottomrule
 \end{longtable}
 
 Het paar van observaties voor het \(i\)-de lid van de steekproef heeft een
@@ -9391,9 +9413,11 @@ sprekers uit het Westen dus aanzienlijk sneller dan die uit het
 Noorden van Nederland.
 \end{quote}
 
+Als \(d\) ligt rond 0.01 spreken we van een zeer klein effect \citep{Sawi09}.
 Als \(d\) ligt rond 0.2 spreken we van een klein effect. Een effectgrootte
 \(d\) rond 0.5 noemen we een middelmatig (medium) effect, en een \(d\) rond
 0.8 of groter noemen we een groot effect \citep{Cohen88, Rose08}.
+Als \(d\) ligt rond 1.2 dan spreken we van een zeer groot effect, en als \(d\) ligt rond 2.0 dan noemen we dat een `enorm' of `reusachtig' effect \citep[`huge',][]{Sawi09}.
 
 \begin{figure}
 \centering
@@ -9534,8 +9558,8 @@ Voor een enkele steekproef
 \end{Shaded}
 
 \begin{verbatim}
-## Warning in mean.default(score.TW): argument is not numeric or logical: returning
-## NA
+## Warning in mean.default(score.TW): argument is not numeric or logical:
+## returning NA
 \end{verbatim}
 
 \begin{verbatim}
@@ -9988,7 +10012,7 @@ De geobserveerde spreeksnelheden per spreker uit bovenstaand voorbeeld 15.1
 zijn samengevat in Tabel~\ref{tab:syldur} en
 Figuur~\ref{fig:syldur-boxplot}. Hierbij is de regio van herkomst een
 onafhankelijke categoriale variabele of `factor'. De waarden van deze
-factor worden ook aangeduid als `niveaus's' (Eng. `levels'), of in veel
+factor worden ook aangeduid als `niveaus\textquotesingle s' (Eng. `levels'), of in veel
 onderzoeken als `groepen' of `condities'. Ieder niveau of iedere groep of
 conditie vormt een `cel' van het ontwerp, en de observaties uit die cel
 worden ook `replicaties' genoemd (bedenk waarom die zo genoemd worden).
@@ -10002,19 +10026,20 @@ komen daar later nog op terug.
 
 \begin{longtable}[]{@{}lccc@{}}
 \caption{\label{tab:syldur} Gemiddelde spreeksnelheden, met standaarddeviatie en aantallen sprekers, verdeeld naar regio van herkomst van de spreker (zie voorbeeld 15.1).}\tabularnewline
-\toprule
+\toprule\noalign{}
 regio & gemiddelde & s.d. & n \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 regio & gemiddelde & s.d. & n \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Midden & 0.253 & 0.028 & 20 \\
 Noord & 0.269 & 0.029 & 20 \\
 Zuid & 0.260 & 0.030 & 19 \\
 West & 0.235 & 0.028 & 20 \\
-\bottomrule
 \end{longtable}
 
 \begin{figure}
@@ -10076,14 +10101,16 @@ regio's). Dat laatste noemen we de `interactie' tussen de twee factoren.
 
 \begin{longtable}[]{@{}llccc@{}}
 \caption{\label{tab:syldur2way} Gemiddelde spreeksnelheden, met standaarddeviatie en aantallen sprekers, verdeeld naar geslacht en regio van herkomst van de spreker (zie voorbeeld 15.1).}\tabularnewline
-\toprule
+\toprule\noalign{}
 geslacht & regio & gemiddelde & s.d. & n \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 geslacht & regio & gemiddelde & s.d. & n \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 vrouw & Midden & 0.271 & 0.021 & 10 \\
 vrouw & Noord & 0.285 & 0.025 & 10 \\
 vrouw & Zuid & 0.269 & 0.028 & 9 \\
@@ -10092,7 +10119,6 @@ man & Midden & 0.235 & 0.022 & 10 \\
 man & Noord & 0.253 & 0.025 & 10 \\
 man & Zuid & 0.252 & 0.030 & 10 \\
 man & West & 0.232 & 0.028 & 10 \\
-\bottomrule
 \end{longtable}
 
 De resultaten in Tabel~\ref{tab:syldur2way} suggereren dat (i) sprekers uit het Westen
@@ -10333,17 +10359,18 @@ worden, zie Voorbeeld 15.2.
 
 \begin{longtable}[]{@{}lrcccc@{}}
 \caption{\label{tab:kleurtjes-anova} Samenvatting van variantieanalyse van de observaties in Figuur~\ref{fig:kleurtjes-obs}.}\tabularnewline
-\toprule
+\toprule\noalign{}
 variantiebron & df & SS & MS & \(F\) & \(p\) \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 variantiebron & df & SS & MS & \(F\) & \(p\) \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 groep & 2 & 14.50 & 7.248 & 9.36 & \textless.001 \\
 (within) & 42 & 32.54 & 0.775 & & \\
-\bottomrule
 \end{longtable}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -10464,19 +10491,20 @@ de blauwe groep.
 
 \begin{longtable}[]{@{}lrcccc@{}}
 \caption{\label{tab:kleurtjes-anova-contrast} Samenvatting van variantieanalyse van de observaties in Figuur~\ref{fig:kleurtjes-obs}, met gerichte contrasten tussen groepen.}\tabularnewline
-\toprule
+\toprule\noalign{}
 variantiebron & df & SS & MS & \(F\) & \(p\) \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 variantiebron & df & SS & MS & \(F\) & \(p\) \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 groep & 2 & 14.50 & 7.248 & 9.36 & \textless.001 \\
 ~~groep, contrast 1 & 1 & 14.31 & 14.308 & 18.47 & \textless.001 \\
 ~~groep, contrast 2 & 1 & 0.19 & 0.188 & 0.24 & .62 \\
 (within) & 42 & 32.54 & 0.775 & & \\
-\bottomrule
 \end{longtable}
 
 De variantie-analyse met gerichte vergelijkingen is dus vooral bruikbaar
@@ -10493,14 +10521,15 @@ conditie. Voor de hierboven besproken contrasten kan dat in de vorm van
 deze gewichten:
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule
+\toprule\noalign{}
 conditie & contrast 1 & contrast 2 \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 ~~rood & -1 & 0 \\
 ~~grijs & +0.5 & -1 \\
 ~~blauw & +0.5 & +1 \\
-\bottomrule
 \end{longtable}
 
 De H0 voor contrast 2 (\(\mu_\textrm{grijs} = \mu_\textrm{blauw}\)) is uit
@@ -11049,19 +11078,20 @@ uitgebreid in Tabel~\ref{tab:DBE12anova}. We toetsen en rapporteren nu drie hypo
 
 \begin{longtable}[]{@{}lccccc@{}}
 \caption{\label{tab:DBE12anova} Samenvatting van tweewegs-variantieanalyse van de begripsscores van twee tekstversies en drie lezerstypen.}\tabularnewline
-\toprule
+\toprule\noalign{}
 variantiebron & df & SS & MS & \(F\) & \(p\) \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 variantiebron & df & SS & MS & \(F\) & \(p\) \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 (A) tekstversie & 1 & 91.2663 & 91.2663 & 63.75 & \textless.001 \\
 (B) lezerstype & 2 & 96.0800 & 48.0400 & 33.56 & \textless.001 \\
 (C) interactie & 2 & 30.7416 & 15.3708 & 10.74 & \textless.001 \\
 within & 88 & 125.9830 & 1.4316 & & \\
-\bottomrule
 \end{longtable}
 
 Daarbij rapporteren we doorgaans eerst de hoofdeffecten, en daarna de interactie.
@@ -11403,20 +11433,21 @@ deze vier klassen? De kruistabel~\ref{tab:titanic} geeft de verdelingen van uitk
 
 \begin{longtable}[]{@{}lrrr@{}}
 \caption{\label{tab:titanic} Verdeling van opvarenden van de \emph{Titanic} (\(N=2201\)), naar klasse van overtocht en naar status als (niet/wel) overlevende. Gegevens ontleend aan dataset \texttt{Titanic} in R.}\tabularnewline
-\toprule
+\toprule\noalign{}
 klasse & niet & wel & totaal \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 klasse & niet & wel & totaal \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1st & 122 & 203 & 325 \\
 2nd & 167 & 118 & 285 \\
 3rd & 528 & 178 & 706 \\
 crew & 673 & 212 & 885 \\
 totaal & 1490 & 711 & 2201 \\
-\bottomrule
 \end{longtable}
 
 \begin{quote}
@@ -11815,18 +11846,19 @@ tabel~\ref{tab:dollhill}.
 
 \begin{longtable}[]{@{}lrlrlrl@{}}
 \caption{\label{tab:dollhill} Kruistabel van \(N=24354\) Britse artsen van 35 jaar en ouder bij de eerste enquete, onderverdeeld naar rookgedrag (rijen: wel/niet rokend resp. gerookt hebbend) en naar sterfte door longkanker in de afgelopen 4 jaar (kolommen), met letter-aanduiding voor de aantallen observaties.}\tabularnewline
-\toprule
+\toprule\noalign{}
 rokend & niet longkanker & & wel longkanker & & totaal & \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 rokend & niet longkanker & & wel longkanker & & totaal & \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 niet (0) & 3092 & (A) & 1 & (B) & 3093 & (A+B) \\
 wel (1) & 21178 & (C) & 83 & (D) & 21261 & (C+D) \\
 totaal & 24270 & (A+C) & 84 & (B+D) & 24354 & (A+B+C+D) \\
-\bottomrule
 \end{longtable}
 
 \begin{quote}
@@ -12026,17 +12058,18 @@ bestaat in waardering tussen de twee condities.
 
 \begin{longtable}[]{@{}lllllllllll@{}}
 \caption{\label{tab:data-origineelherschreven} Oordelen van \(N=19\) proefpersonen over de originele en herschreven versies van een tekst.}\tabularnewline
-\toprule
+\toprule\noalign{}
 Conditie & & & & & & & & & & \\
-\midrule
+\midrule\noalign{}
 \endfirsthead
-\toprule
+\toprule\noalign{}
 Conditie & & & & & & & & & & \\
-\midrule
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Origineel & 10 & 17 & 35 & 2 & 19 & 4 & 18 & 28 & 24 & -- \\
 Herschreven & 15 & 22 & 8 & 48 & 29 & 25 & 27 & 39 & 31 & 36 \\
-\bottomrule
 \end{longtable}
 
 De Wilcoxon rank sum test is gebaseerd op de \emph{rangorde} van de

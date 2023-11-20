@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Hoofdstuk 16 Chi-kwadraat-toetsen | Kwantitatieve Methoden en Statistiek</title>
-  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Hoofdstuk 16 Chi-kwadraat-toetsen | Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
   <meta name="github-repo" content="rstudio/KMS-NL" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Hoofdstuk 16 Chi-kwadraat-toetsen | Kwantitatieve Methoden en Statistiek" />
   
-  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
   
 
 
@@ -90,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -103,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -117,6 +117,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -729,13 +733,13 @@ frequenties opnieuw te bepalen.</p></li>
 \end{equation}\]</span>
 waarbij <span class="math inline">\(O\)</span> en <span class="math inline">\(E\)</span> de
 geobserveerde (Observed) en verwachte (Expected) aantallen observaties
-aangeven voor iedere cel van de frequentietabel <span class="citation">(<a href="#ref-Ferg89" role="doc-biblioref">Ferguson and Takane 1989</a>)</span>. De verwachte
+aangeven voor iedere cel van de frequentietabel <span class="citation">(<a href="#ref-Ferg89">Ferguson and Takane 1989</a>)</span>. De verwachte
 aantallen kunnen ook gebroken getallen zijn (bijv. <span class="math inline">\(45/6\)</span> voor de 6
 mogelijke uitkomsten van een eerlijke dobbelsteen, als we <span class="math inline">\(45\times\)</span>
 gooien). Naarmate het verschil <span class="math inline">\((O-E)\)</span> in een of meerdere cellen groter
 is, zal <span class="math inline">\(\chi^2\)</span> ook groter zijn. Door het kwadrateren is de
 toetsingsgrootheid <span class="math inline">\(\chi^2\)</span> altijd nul of positief, en nooit negatief
-<span class="citation">(<a href="#ref-Ferg89" role="doc-biblioref">Ferguson and Takane 1989</a>)</span>.</p>
+<span class="citation">(<a href="#ref-Ferg89">Ferguson and Takane 1989</a>)</span>.</p>
 <p>De kansverdeling van de toetsingsgrootheid <span class="math inline">\(\chi^2\)</span> wordt bepaald door
 het aantal vrijheidsgraden (zie
 §<a href="ch-toetsing.html#sec:ttoets-vrijheidsgraden">13.2.1</a> voor uitleg van dit concept).
@@ -750,7 +754,7 @@ vrijheidsgraden gelijk aan <span class="math inline">\((k-1)\times(m-1)\)</span>
   e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}}}
 \end{equation}\]</span>
 Als we al deze ruwe residuen <span class="math inline">\(e\)</span> kwadrateren en de kwadraten optellen, dan levert dat de bovenstaande toetsingsgrootheid <span class="math inline">\(\chi2\)</span> op (formule <a href="ch-chi-kwadraat-toetsen.html#eq:chikwadraat">(16.1)</a>).</p>
-<p>Het is echter inzichtelijker om het <em>gestandardiseerde</em> residu van iedere cel te bepalen <span class="citation">(<a href="#ref-Agre07" role="doc-biblioref">Agresti 2007, 38</a>)</span>.
+<p>Het is echter inzichtelijker om het <em>gestandardiseerde</em> residu van iedere cel te bepalen <span class="citation">(<a href="#ref-Agre07">Agresti 2007, 38</a>)</span>.
 Daarbij houden we dan rekening met de standaardfout van de residuen (via de rij-totalen <span class="math inline">\(R_i\)</span>, kolom-totalen <span class="math inline">\(C_j\)</span>, en totaal aantal observaties <span class="math inline">\(N\)</span>):
 <span class="math display" id="eq:chi2-stdresidu">\[\begin{equation}
   \tag{16.3}
@@ -912,29 +916,29 @@ Open de <code>Cells</code> balk en zorg dat <code>Expected counts</code> zijn aa
 <h2><span class="header-section-number">16.9</span> R<a href="ch-chi-kwadraat-toetsen.html#r-17" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="goodness-of-fit-toetsing-2" class="section level3 hasAnchor" number="16.9.1">
 <h3><span class="header-section-number">16.9.1</span> goodness of fit: toetsing<a href="ch-chi-kwadraat-toetsen.html#goodness-of-fit-toetsing-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="ch-chi-kwadraat-toetsen.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>( <span class="fu">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="ot">-&gt;</span> dobbel.chi2.htest <span class="co"># dobbelsteen §16.2</span></span>
-<span id="cb170-2"><a href="ch-chi-kwadraat-toetsen.html#cb170-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dobbel.chi2.htest)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="ch-chi-kwadraat-toetsen.html#cb170-1" tabindex="-1"></a><span class="fu">chisq.test</span>( <span class="fu">c</span>( <span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">1</span> ) ) <span class="ot">-&gt;</span> dobbel.chi2.htest <span class="co"># dobbelsteen §16.2</span></span>
+<span id="cb170-2"><a href="ch-chi-kwadraat-toetsen.html#cb170-2" tabindex="-1"></a><span class="fu">print</span>(dobbel.chi2.htest)</span></code></pre></div>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
 ## 
 ## data:  c(14, 9, 11, 10, 15, 1)
 ## X-squared = 12.4, df = 5, p-value = 0.0297</code></pre>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="ch-chi-kwadraat-toetsen.html#cb172-1" aria-hidden="true" tabindex="-1"></a>dobbel.chi2.htest<span class="sc">$</span>residuals <span class="co"># STD.resid. in ...chisq.htest$residuals</span></span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="ch-chi-kwadraat-toetsen.html#cb172-1" tabindex="-1"></a>dobbel.chi2.htest<span class="sc">$</span>residuals <span class="co"># STD.resid. in ...chisq.htest$residuals</span></span></code></pre></div>
 <pre><code>## [1]  1.2649111 -0.3162278  0.3162278  0.0000000  1.5811388 -2.8460499</code></pre>
 </div>
 <div id="kruistabellen-voorbereiding-en-toetsing" class="section level3 hasAnchor" number="16.9.2">
 <h3><span class="header-section-number">16.9.2</span> kruistabellen: voorbereiding en toetsing<a href="ch-chi-kwadraat-toetsen.html#kruistabellen-voorbereiding-en-toetsing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In R is de dataset <code>Titanic</code> gegeven als een multidimensionele matrix. We tellen de observaties op en maken een kruistabel van de eerste dimensie (klasse) en de vierde dimensie (uitkomst).</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="ch-chi-kwadraat-toetsen.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>( Titanic, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) <span class="ot">-&gt;</span> Titanic.klasseuitkomst</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="ch-chi-kwadraat-toetsen.html#cb174-1" tabindex="-1"></a><span class="fu">apply</span>( Titanic, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), sum ) <span class="ot">-&gt;</span> Titanic.klasseuitkomst</span></code></pre></div>
 <p>Vervolgens gebruiken we deze kruistabel weer als invoer voor een <code>chisq.test</code>. Die <code>chisq.test</code> slaan we op zijn beurt weer op, om de residuals te inspecteren.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="ch-chi-kwadraat-toetsen.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>( Titanic.klasseuitkomst ) <span class="ot">-&gt;</span> Titanic.chisq.htest</span>
-<span id="cb175-2"><a href="ch-chi-kwadraat-toetsen.html#cb175-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Titanic.chisq.htest)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="ch-chi-kwadraat-toetsen.html#cb175-1" tabindex="-1"></a><span class="fu">chisq.test</span>( Titanic.klasseuitkomst ) <span class="ot">-&gt;</span> Titanic.chisq.htest</span>
+<span id="cb175-2"><a href="ch-chi-kwadraat-toetsen.html#cb175-2" tabindex="-1"></a><span class="fu">print</span>(Titanic.chisq.htest)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  Titanic.klasseuitkomst
 ## X-squared = 190.4, df = 3, p-value &lt; 2.2e-16</code></pre>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="ch-chi-kwadraat-toetsen.html#cb177-1" aria-hidden="true" tabindex="-1"></a>Titanic.chisq.htest<span class="sc">$</span>residuals</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="ch-chi-kwadraat-toetsen.html#cb177-1" tabindex="-1"></a>Titanic.chisq.htest<span class="sc">$</span>residuals</span></code></pre></div>
 <pre><code>##       Survived
 ## Class         No       Yes
 ##   1st  -6.607873  9.565772
@@ -953,7 +957,7 @@ We leggen een en ander uit aan de hand van het volgende voorbeeld met een <span 
 <hr />
 <blockquote>
 <p><em>Voorbeeld 16.2</em>:
-<span class="citation">Doll and Hill (<a href="#ref-DollHill1956" role="doc-biblioref">1956</a>)</span> onderzochten de relatie tussen roken en
+<span class="citation">Doll and Hill (<a href="#ref-DollHill1956">1956</a>)</span> onderzochten de relatie tussen roken en
 longkanker. Eerst enqueteerden zij alle Britse artsen over hun leeftijd
 en rookgedrag. Vervolgens hielden deze onderzoekers jarenlang de
 overlijdensberichten en de doodsoorzaak bij van alle geënqueteerden. De
@@ -1022,7 +1026,7 @@ AD/BC =
 ‘odds’ om te sterven aan longkanker zijn dus ruim <span class="math inline">\(12\times\)</span> zo groot
 voor de rokers dan voor de niet-rokers. We rapporteren dat als volgt:</p>
 <blockquote>
-<p><span class="citation">Doll and Hill (<a href="#ref-DollHill1956" role="doc-biblioref">1956</a>)</span> vonden een significant verband tussen
+<p><span class="citation">Doll and Hill (<a href="#ref-DollHill1956">1956</a>)</span> vonden een significant verband tussen
 rookgedrag en sterfte door longkanker,
 <span class="math inline">\(\chi^2(1)=10.35, p&lt;.01, \textrm{OR}=12.1\)</span>. De ‘odds’ om te overlijden
 door longkanker bleken ruim <span class="math inline">\(12\times\)</span> zo groot voor rokers als voor
@@ -1051,7 +1055,7 @@ Maxwell, Scott E., and Harold D. Delaney. 2004. <em>Designing Experiments and An
 <ol start="35">
 <li id="fn35"><p>De gevonden waarde <span class="math inline">\(\chi^2=12.44\)</span> ligt iets onder de kritieke waarde voor 5 d.f. en <span class="math inline">\(p=.03\)</span>, (daar staat <span class="math inline">\((\chi^2)^*=12.83\)</span>), dus de bijbehorende kans op deze waarde of een grotere waarde is iets groter dan <span class="math inline">\(0.03\)</span>.<a href="ch-chi-kwadraat-toetsen.html#fnref35" class="footnote-back">↩︎</a></p></li>
 <li id="fn36"><p>Als de observaties van één variabele niet onafhankelijk maar gepaard zijn (bijv. voor/na behandeling, wel/niet geslaagd, enz), dan biedt de McNemar test een bruikbaar alternatief.<a href="ch-chi-kwadraat-toetsen.html#fnref36" class="footnote-back">↩︎</a></p></li>
-<li id="fn37"><p>Als er meerdere vergelijkingen worden gedaan, dan moet de kritieke waarde van <span class="math inline">\(\alpha\)</span> worden aangepast, om Type-I-fouten bij die meerdere vergelijkingen te voorkomen. Als er <span class="math inline">\(k\)</span> cellen en dus <span class="math inline">\(k\)</span> vergelijkingen zijn, dan is het veilig om <span class="math inline">\(\alpha/k\)</span> i.p.v. <span class="math inline">\(\alpha\)</span> te gebruiken bij elke vergelijking – dit staat bekend als Bonferroni’s aanpassing van de <span class="math inline">\(\alpha\)</span>-waarde, of als Dunn’s procedure <span class="citation">(<a href="#ref-MD04" role="doc-biblioref">Maxwell and Delaney 2004, 202</a>)</span>. Zie ook §<a href="ch-variantieanalyse.html#sec:anova-oneway-posthoc">15.3.5</a>.<a href="ch-chi-kwadraat-toetsen.html#fnref37" class="footnote-back">↩︎</a></p></li>
+<li id="fn37"><p>Als er meerdere vergelijkingen worden gedaan, dan moet de kritieke waarde van <span class="math inline">\(\alpha\)</span> worden aangepast, om Type-I-fouten bij die meerdere vergelijkingen te voorkomen. Als er <span class="math inline">\(k\)</span> cellen en dus <span class="math inline">\(k\)</span> vergelijkingen zijn, dan is het veilig om <span class="math inline">\(\alpha/k\)</span> i.p.v. <span class="math inline">\(\alpha\)</span> te gebruiken bij elke vergelijking – dit staat bekend als Bonferroni’s aanpassing van de <span class="math inline">\(\alpha\)</span>-waarde, of als Dunn’s procedure <span class="citation">(<a href="#ref-MD04">Maxwell and Delaney 2004, 202</a>)</span>. Zie ook §<a href="ch-variantieanalyse.html#sec:anova-oneway-posthoc">15.3.5</a>.<a href="ch-chi-kwadraat-toetsen.html#fnref37" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -1120,7 +1124,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Hoofdstuk 11 Samenhang | Kwantitatieve Methoden en Statistiek</title>
-  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Hoofdstuk 11 Samenhang | Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
   <meta name="github-repo" content="rstudio/KMS-NL" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Hoofdstuk 11 Samenhang | Kwantitatieve Methoden en Statistiek" />
   
-  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002), BA Taalwetenschap, Universiteit Utrecht." />
+  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
   
 
 
@@ -90,7 +90,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -103,7 +103,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -117,6 +117,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -700,8 +704,8 @@ tussen haakjes.</caption>
 <p>In deze matrix is alleen de onderste (linker) helft van de volledige
 matrix weergegeven. Dat is ook voldoende, want de cellen zijn gespiegeld
 rond de diagonaal: de correlatie tussen Lezen (kolom 1) en Rekenen (rij
-2) is immers hetzelfde als de correlatie tussen Rekenen (rij 2) en Lezen
-(rij 1). De correlatiematrix bevat in de cellen op de diagonaal altijd
+2) is immers hetzelfde als de correlatie tussen Rekenen (kolom 2) en Lezen
+(rij 1). De cellen op de diagonaal van de correlatiematrix bevatten altijd
 de waarde <span class="math inline">\(1.00\)</span>, omdat een variabele altijd perfect met zichzelf
 correleert. We rapporteren deze bevindingen als volgt:</p>
 <hr />
@@ -747,13 +751,13 @@ overnemen in of omzetten naar een eigen tabel die daar wel aan voldoet.</p>
 </div>
 <div id="r-7" class="section level3 hasAnchor" number="11.2.4">
 <h3><span class="header-section-number">11.2.4</span> R<a href="ch-samenhang.html#r-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="ch-samenhang.html#cb64-1" aria-hidden="true" tabindex="-1"></a>cito <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file=</span><span class="st">&quot;data/cito.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
-<span id="cb64-2"><a href="ch-samenhang.html#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>( cito[,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>] ) <span class="co"># correlatie-matrix van kolommen 2,3,4</span></span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="ch-samenhang.html#cb64-1" tabindex="-1"></a>cito <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file=</span><span class="st">&quot;data/cito.txt&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb64-2"><a href="ch-samenhang.html#cb64-2" tabindex="-1"></a><span class="fu">cor</span>( cito[,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>] ) <span class="co"># correlatie-matrix van kolommen 2,3,4</span></span></code></pre></div>
 <pre><code>##                       Lezen    Rekenen Wereldoriëntatie
 ## Lezen             1.0000000 0.74921033      -0.50881738
 ## Rekenen           0.7492103 1.00000000       0.06351024
 ## Wereldoriëntatie -0.5088174 0.06351024       1.00000000</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="ch-samenhang.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>( cito, <span class="fu">cor.test</span>( Lezen, Rekenen ) )</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="ch-samenhang.html#cb66-1" tabindex="-1"></a><span class="fu">with</span>( cito, <span class="fu">cor.test</span>( Lezen, Rekenen ) )</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -931,7 +935,7 @@ dat de standaarddeviatie van de residuen <span class="math inline">\(3.212\)</sp
 </div>
 <div id="r-8" class="section level3 hasAnchor" number="11.3.4">
 <h3><span class="header-section-number">11.3.4</span> R<a href="ch-samenhang.html#r-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="ch-samenhang.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>( Rekenen<span class="sc">~</span>Lezen, <span class="at">data=</span>cito ) )</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="ch-samenhang.html#cb70-1" tabindex="-1"></a><span class="fu">summary</span>( m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>( Rekenen<span class="sc">~</span>Lezen, <span class="at">data=</span>cito ) )</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Rekenen ~ Lezen, data = cito)
@@ -955,7 +959,7 @@ als afhankelijke variabele en <code>Lezen</code> als predictor. Dit model wordt
 bewaard als een object genaamd <code>m1</code>, en dat wordt meteen weer gebruikt
 als argument (invoer) om te rapporteren. In die rapportage van model
 <code>m1</code> wordt de constante coëfficient <span class="math inline">\(a\)</span> aangeduid als <code>Intercept</code>.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="ch-samenhang.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>( <span class="fu">resid</span>( m1 ) ) <span class="co"># s.d. van residuen volgens `m1`</span></span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="ch-samenhang.html#cb72-1" tabindex="-1"></a><span class="fu">sd</span>( <span class="fu">resid</span>( m1 ) ) <span class="co"># s.d. van residuen volgens `m1`</span></span></code></pre></div>
 <pre><code>## [1] 3.211533</code></pre>
 </div>
 </div>
@@ -1133,9 +1137,9 @@ correlatie-analyse.</p>
 </div>
 <div id="r-9" class="section level3 hasAnchor" number="11.5.4">
 <h3><span class="header-section-number">11.5.4</span> R<a href="ch-samenhang.html#r-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="ch-samenhang.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(cito, <span class="fu">cor.test</span>( Lezen,Rekenen, <span class="at">method=</span><span class="st">&quot;spearman&quot;</span> ) )</span></code></pre></div>
-<pre><code>## Warning in cor.test.default(Lezen, Rekenen, method = &quot;spearman&quot;): Cannot compute
-## exact p-value with ties</code></pre>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="ch-samenhang.html#cb76-1" tabindex="-1"></a><span class="fu">with</span>(cito, <span class="fu">cor.test</span>( Lezen,Rekenen, <span class="at">method=</span><span class="st">&quot;spearman&quot;</span> ) )</span></code></pre></div>
+<pre><code>## Warning in cor.test.default(Lezen, Rekenen, method = &quot;spearman&quot;): Cannot
+## compute exact p-value with ties</code></pre>
 <pre><code>## 
 ##  Spearman&#39;s rank correlation rho
 ## 
@@ -1292,22 +1296,22 @@ Voor de herkomst variabele scrol je rechts van het veld bij de functies naar ben
 <p>De dataset <code>cito</code> bevat al een variabele StadPlat die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve laten we toch zien hoe je zo’n variabele zelf kunt construeren.</p>
 <div id="nieuwe-variabele-construeren-2" class="section level4 hasAnchor" number="11.6.4.1">
 <h4><span class="header-section-number">11.6.4.1</span> nieuwe variabele construeren<a href="ch-samenhang.html#nieuwe-variabele-construeren-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="ch-samenhang.html#cb84-1" aria-hidden="true" tabindex="-1"></a>StadPlat2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>( cito<span class="sc">$</span>Leerling<span class="sc">&lt;</span><span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="co"># 1=stad, 0=plat</span></span>
-<span id="cb84-2"><a href="ch-samenhang.html#cb84-2" aria-hidden="true" tabindex="-1"></a>Reken2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>( cito<span class="sc">$</span>Rekenen<span class="sc">&gt;</span><span class="fu">mean</span>(cito<span class="sc">$</span>Rekenen), <span class="dv">1</span>, <span class="dv">0</span> ) <span class="co"># 1=hoog, 0=laag</span></span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="ch-samenhang.html#cb84-1" tabindex="-1"></a>StadPlat2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>( cito<span class="sc">$</span>Leerling<span class="sc">&lt;</span><span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="co"># 1=stad, 0=plat</span></span>
+<span id="cb84-2"><a href="ch-samenhang.html#cb84-2" tabindex="-1"></a>Reken2 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>( cito<span class="sc">$</span>Rekenen<span class="sc">&gt;</span><span class="fu">mean</span>(cito<span class="sc">$</span>Rekenen), <span class="dv">1</span>, <span class="dv">0</span> ) <span class="co"># 1=hoog, 0=laag</span></span></code></pre></div>
 <p>Maak een nieuwe variabele <code>Reken2</code>, met de waarde 1 indien de score
 voor Rekenen groter is dan het gemiddelde, en anders de waarde 0.</p>
 </div>
 <div id="correlatie-analyse-2" class="section level4 hasAnchor" number="11.6.4.2">
 <h4><span class="header-section-number">11.6.4.2</span> correlatie-analyse<a href="ch-samenhang.html#correlatie-analyse-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Ook in R maken we eerst een kruistabel (Tabel <a href="ch-samenhang.html#tab:cito-kruis">11.3</a>) en daarna berekenen we de <span class="math inline">\(r_\Phi\)</span> over die kruistabel.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="ch-samenhang.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">table</span>(StadPlat2,Reken2) <span class="ot">-&gt;</span> citokruistabel ) <span class="co"># maak en bewaar en toon kruistabel</span></span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="ch-samenhang.html#cb85-1" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">table</span>(StadPlat2,Reken2) <span class="ot">-&gt;</span> citokruistabel ) <span class="co"># maak en bewaar en toon kruistabel</span></span></code></pre></div>
 <pre><code>##          Reken2
 ## StadPlat2 0 1
 ##         0 5 0
 ##         1 2 3</code></pre>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="ch-samenhang.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">require</span>(psych)) { <span class="co"># voor psych::phi</span></span>
-<span id="cb87-2"><a href="ch-samenhang.html#cb87-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">phi</span>(citokruistabel) <span class="co"># eerder gemaakte kruistabel is hier invoer!</span></span>
-<span id="cb87-3"><a href="ch-samenhang.html#cb87-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="ch-samenhang.html#cb87-1" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">require</span>(psych)) { <span class="co"># voor psych::phi</span></span>
+<span id="cb87-2"><a href="ch-samenhang.html#cb87-2" tabindex="-1"></a>  <span class="fu">phi</span>(citokruistabel) <span class="co"># eerder gemaakte kruistabel is hier invoer!</span></span>
+<span id="cb87-3"><a href="ch-samenhang.html#cb87-3" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## Loading required package: psych</code></pre>
 <pre><code>## [1] 0.65</code></pre>
 </div>
@@ -1405,7 +1409,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
