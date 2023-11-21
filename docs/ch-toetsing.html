@@ -564,7 +564,7 @@ We leggen het hier nogmaals uit aan
 de hand van een voorbeeld. We onderzoeken de bewering H1: ‘studenten
 Taalwetenschap beheersen de traditionele zinsgrammatica <em>beter</em> dan de
 gemiddelde talen-student’. Als meet-instrument gebruiken we de zgn.
-“grammaticatoets”<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a> die verplicht is voor de meeste studenten in het
+“grammaticatoets”<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> die verplicht is voor de meeste studenten in het
 talen-domein van de Universiteit Utrecht. Op grond van eerdere
 studiejaren verwachten we een gemiddelde score van 73 op deze toets; dit
 is het gemiddeld aantal goede antwoorden uit 100 vragen. We
@@ -799,9 +799,9 @@ Klik op de tekst <code>Apply pass-through filter</code> onder het werkblad om di
 <div id="r-12" class="section level3 hasAnchor" number="13.2.6">
 <h3><span class="header-section-number">13.2.6</span> R<a href="ch-toetsing.html#r-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Onze hierboven besproken hypothese kan worden getoetst met de volgende opdrachten:</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="ch-toetsing.html#cb101-1" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span><span class="cn">TRUE</span>)</span>
-<span id="cb101-2"><a href="ch-toetsing.html#cb101-2" tabindex="-1"></a><span class="fu">with</span>( gramm2013,</span>
-<span id="cb101-3"><a href="ch-toetsing.html#cb101-3" tabindex="-1"></a>      <span class="fu">t.test</span>( score[opleiding<span class="sc">==</span><span class="st">&quot;TW&quot;</span>], <span class="at">mu=</span><span class="dv">73</span>, <span class="at">alt=</span><span class="st">&quot;greater&quot;</span> ) )</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="ch-toetsing.html#cb4-1" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb4-2"><a href="ch-toetsing.html#cb4-2" tabindex="-1"></a><span class="fu">with</span>( gramm2013,</span>
+<span id="cb4-3"><a href="ch-toetsing.html#cb4-3" tabindex="-1"></a>      <span class="fu">t.test</span>( score[opleiding<span class="sc">==</span><span class="st">&quot;TW&quot;</span>], <span class="at">mu=</span><span class="dv">73</span>, <span class="at">alt=</span><span class="st">&quot;greater&quot;</span> ) )</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -832,11 +832,9 @@ omdat de uitkomst van de toetsingsgrootheid niet a priori vaststaat.</p>
 <p>In SPSS worden de overschrijdingskansen echter afgerond, en kunnen dan
 in de uitvoer verschijnen als <code>‘Sig. .000’</code> oftewel <span class="math inline">\(p=.000\)</span>. Dit is
 onjuist. De overschrijdingskans of significantie is immers niet gelijk
-aan nul, maar is <em>afgerond tot</em> nul, en dat is niet hetzelfde.
+aan nul, maar is <em>afgerond naar</em> nul, en dat is niet hetzelfde.
 Rapporteer de overschrijdingskans of significantie altijd met de juiste
-nauwkeurigheid, in dit voorbeeld als <span class="math inline">\(p&lt;.001\)</span> of zelfs <span class="math inline">\(p&lt;.0005\)</span>
-(rekening houdend met de afronding door SPSS naar drie decimale
-cijfers).</p>
+nauwkeurigheid, in dit voorbeeld als <span class="math inline">\(p&lt;.001\)</span> <span class="citation">(zie ook <a href="#ref-Wright09"><strong>Wright09?</strong></a>)</span>.</p>
 </div>
 <div id="sec:ttoets-eenzijdigtweezijdig" class="section level2 hasAnchor" number="13.4">
 <h2><span class="header-section-number">13.4</span> Eenzijdige en tweezijdige toetsen<a href="ch-toetsing.html#sec:ttoets-eenzijdigtweezijdig" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -899,7 +897,7 @@ percentage stemmen op een bepaalde partij, zal liggen tussen <span class="math i
 <span class="math inline">\((x+2)\)</span>%.</p>
 <p>In ons voorbeeld met 30 d.f. vinden we <span class="math inline">\(t^*=2.042\)</span> voor 95%
 betrouwbaarheid. Via formule
-<a href="ch-kansverdelingen.html#eq:t-onesampleCI">(10.12)</a> komen we tot het 95%
+<a href="ch-toetsing.html#eq:t-onesampleCI">(13.2)</a> komen we tot het 95%
 betrouwbaarheidsinterval <span class="math inline">\((81.5, 87.3)\)</span>. We weten met 95% zekerheid dat
 de onbekende gemiddelde score op de grammaticatoets, van de populatie
 van alle mogelijke studenten taalwetenschap groter is dan 81.5 en
@@ -911,7 +909,7 @@ waarde 73 <span class="citation">(<a href="#ref-Cumm12">Cumming 2012</a>)</span>
 84.4, met 95% betrouwbaarheidsinterval (81.5, 87.3), 33 d.f.</p>
 </blockquote>
 <p>In Figuur <a href="ch-toetsing.html#fig:gramm2013CIs">13.2</a> zie je de resultaten van een
-computersimulatie om dit te illustreren. Deze figuur is op dezelfde wijze gemaakt als Figuur <a href="ch-kansverdelingen.html#fig:tempo95CIs">10.8</a> in Hoofdstuk <a href="ch-kansverdelingen.html#ch-kansverdelingen">10</a> en illustreert hetzelfde punt.
+computersimulatie om dit te illustreren. Deze figuur is op dezelfde wijze gemaakt als Figuur <a href="#fig:tempo95CIs"><strong>??</strong></a> in Hoofdstuk <a href="ch-kansverdelingen.html#ch-kansverdelingen">10</a> en illustreert hetzelfde punt.
 We hebben <span class="math inline">\(100\times\)</span>
 steekproeven getrokken van scores van studenten Taalwetenschap, met
 <span class="math inline">\(\mu=84.4\)</span> en <span class="math inline">\(\sigma=8.4\)</span> (zie
@@ -932,7 +930,7 @@ Figuur 13.2: 95%-Betrouwbaarheidsintervallen en steekproefgemiddelden, over 100 
 een populatie-gemiddelde <span class="math inline">\(\overline{y}\)</span> is
 <span class="math display" id="eq:t-onesampleCI">\[\begin{equation}
     \overline{y} \pm t^*_{N-1} \times \frac{s}{\sqrt{N}}
-  \tag{10.12}
+  \tag{13.2}
 \end{equation}\]</span></p>
 </div>
 <div id="spss-11" class="section level3 hasAnchor" number="13.5.2">
@@ -960,7 +958,7 @@ ook het 95% betrouwbaarheidsinterval van het gemiddelde.</p>
 op te geven betrouwbaarheidsniveau) bij een <span class="math inline">\(t\)</span>-toets. We voeren dus wederom een <span class="math inline">\(t\)</span>-toets
 uit en vinden het betrouwbaarheidsinterval van het gemiddelde in de
 uitvoer.</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="ch-toetsing.html#cb105-1" tabindex="-1"></a><span class="fu">with</span>( gramm2013, <span class="fu">t.test</span>( score[opleiding<span class="sc">==</span><span class="st">&quot;TW&quot;</span>] ) )</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="ch-toetsing.html#cb8-1" tabindex="-1"></a><span class="fu">with</span>( gramm2013, <span class="fu">t.test</span>( score[opleiding<span class="sc">==</span><span class="st">&quot;TW&quot;</span>] ) )</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -998,7 +996,7 @@ oud. Uit de resultaten blijkt dat de meisjes een gemiddelde woordenschat
 hebben van <span class="math inline">\(\overline{x_1}=95\)</span> woorden (<span class="math inline">\(s_1=82\)</span>), en voor de jongens is
 dat <span class="math inline">\(\overline{x_2}=85\)</span> woorden (<span class="math inline">\(s_2=98\)</span>). Met deze gegevens bepalen we
 de toetsingsgrootheid <span class="math inline">\(t\)</span> volgens formule
-<a href="ch-toetsing.html#eq:t-homoskedastic">(13.3)</a>, resulterend in <span class="math inline">\(t=0.88\)</span> met 122 d.f. De
+<a href="ch-toetsing.html#eq:t-homoskedastic">(13.4)</a>, resulterend in <span class="math inline">\(t=0.88\)</span> met 122 d.f. De
 bijbehorende kritieke grenswaarde <span class="math inline">\(t^*\)</span> zoeken we wederom op in
 Bijlage <a href="app-kritieketwaarden.html#app-kritieketwaarden">C</a>. In de regel voor 100 d.f. (na
 afronding naar beneden) vinden we <span class="math inline">\(t^*=1.984\)</span> in de vierde kolom. Voor
@@ -1025,7 +1023,7 @@ tweezijdige toetsing. Uit de resultaten blijkt dat de westerlingen
 <span class="math inline">\(\overline{x_W}=0.235\)</span> s (<span class="math inline">\(s=0.028\)</span>), en voor de noorderlingen (ook
 <span class="math inline">\(n=20\)</span>) is dat <span class="math inline">\(\overline{x_N}=0.269\)</span> s (<span class="math inline">\(s=0.029\)</span>). Met deze gegevens
 bepalen we wederom de toetsingsgrootheid <span class="math inline">\(t\)</span> volgens formule
-<a href="ch-toetsing.html#eq:t-homoskedastic">(13.3)</a>, resulterend in <span class="math inline">\(t=-3.76\)</span> met 38 d.f. De
+<a href="ch-toetsing.html#eq:t-homoskedastic">(13.4)</a>, resulterend in <span class="math inline">\(t=-3.76\)</span> met 38 d.f. De
 bijbehorende kritieke grenswaarde <span class="math inline">\(t^*\)</span> zoeken we wederom op in
 Bijlage <a href="app-kritieketwaarden.html#app-kritieketwaarden">C</a>. De juiste d.f. zijn niet in de tabel
 vermeld, dus ronden we naar beneden af (d.i. in conservatieve richting)
@@ -1075,23 +1073,23 @@ standaarddeviaties van de twee steekproeven worden daarin gewogen naar
 hun steekproefomvang.
 <span class="math display" id="eq:sd-pooled">\[\begin{equation}
     s_p = \sqrt{ \frac{(n_1-1) s^2_1 + (n_2-1) s^2_2} {n_1+n_2-2} }
-    \tag{13.2}
+    \tag{13.3}
 \end{equation}\]</span>
 Vervolgens
 <span class="math display" id="eq:t-homoskedastic">\[\begin{equation}
-  \tag{13.3}
+  \tag{13.4}
   t = \frac{ \overline{x_1}-\overline{x_2} } { s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}} }
 \end{equation}\]</span></p>
 <p>Indien de steekproeven <strong>niet gelijke varianties</strong> hebben, en de vierde
 aanname hierboven dus is geschonden, dan wordt Welch’s benadering
 gebruikt:
 <span class="math display" id="eq:sd-WS">\[\begin{equation}
-  \tag{13.4}
+  \tag{13.5}
   s_{\textrm{WS}} = \sqrt{\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2} }
 \end{equation}\]</span>
 Vervolgens
 <span class="math display" id="eq:t-WS">\[\begin{equation}
-  \tag{13.5}
+  \tag{13.6}
   t = \frac{ \overline{x_1}-\overline{x_2} } { s_{\textrm{WS}} }
 \end{equation}\]</span></p>
 </div>
@@ -1103,7 +1101,7 @@ dan meestal de volgende benadering gebruikt van de vrijheidsgraden
 Eerst worden <span class="math inline">\(g_1=s^2_1/n_1\)</span>
 en <span class="math inline">\(g_2=s^2_2/n_2\)</span> berekend. Het aantal vrijheidsgraden van <span class="math inline">\(t\)</span> is dan
 <span class="math display" id="eq:df-WS">\[\begin{equation}
-  \tag{13.6}
+  \tag{13.7}
   \nu_\textrm{WS} =
         \frac {(g_1+g_2)^2} {g^2_1/(n_1-1) + g^2_2/(n_2-1)}
 \end{equation}\]</span></p>
@@ -1114,7 +1112,7 @@ ondergrens gebruiken. Indien de twee groepen ongeveer dezelfde variantie
 hebben (d.i. <span class="math inline">\(s_1 \approx s_2\)</span>), dan kan je ook de liberale bovengrens
 gebruiken.</p>
 <p>Voor het tweede voorbeeld hierboven geeft de benadering van formule
-<a href="ch-toetsing.html#eq:df-WS">(13.6)</a> de
+<a href="ch-toetsing.html#eq:df-WS">(13.7)</a> de
 schatting van <span class="math inline">\(37.99 \approx 38\)</span> d.f. De conservatieve ondergrens is
 <span class="math inline">\(n_1-1 = n_2-1 = 19\)</span>. De liberale bovengrens is <span class="math inline">\(n_1+n_2 -2 = 38\)</span>. (In
 de tabel met kritische waarden <span class="math inline">\(t*\)</span>, in
@@ -1183,10 +1181,11 @@ Als je een grote waarde vindt voor <span class="math inline">\(F\)</span>, met <
 </div>
 <div id="sec:R-ttoets-ongepaard" class="section level3 hasAnchor" number="13.6.5">
 <h3><span class="header-section-number">13.6.5</span> R<a href="ch-toetsing.html#sec:R-ttoets-ongepaard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="ch-toetsing.html#cb109-1" tabindex="-1"></a><span class="fu">require</span>(hqmisc)</span>
-<span id="cb109-2"><a href="ch-toetsing.html#cb109-2" tabindex="-1"></a><span class="fu">data</span>(talkers)</span>
-<span id="cb109-3"><a href="ch-toetsing.html#cb109-3" tabindex="-1"></a><span class="fu">with</span>(talkers, <span class="fu">t.test</span>( syldur[region<span class="sc">==</span><span class="st">&quot;W&quot;</span>], syldur[region<span class="sc">==</span><span class="st">&quot;N&quot;</span>], </span>
-<span id="cb109-4"><a href="ch-toetsing.html#cb109-4" tabindex="-1"></a>            <span class="at">paired=</span>F, <span class="at">var.equal=</span>T ) )</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="ch-toetsing.html#cb12-1" tabindex="-1"></a><span class="fu">require</span>(hqmisc)</span></code></pre></div>
+<pre><code>## Loading required package: hqmisc</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="ch-toetsing.html#cb14-1" tabindex="-1"></a><span class="fu">data</span>(talkers)</span>
+<span id="cb14-2"><a href="ch-toetsing.html#cb14-2" tabindex="-1"></a><span class="fu">with</span>(talkers, <span class="fu">t.test</span>( syldur[region<span class="sc">==</span><span class="st">&quot;W&quot;</span>], syldur[region<span class="sc">==</span><span class="st">&quot;N&quot;</span>], </span>
+<span id="cb14-3"><a href="ch-toetsing.html#cb14-3" tabindex="-1"></a>            <span class="at">paired=</span>F, <span class="at">var.equal=</span>T ) )</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -1315,14 +1314,14 @@ tussen condities. We berekenen het gemiddelde van de verschilscore,
 op de gebruikelijke wijze (zie
 §<a href="ch-centrumenspreiding.html#sec:standaarddeviatie">9.5.2</a>). We gebruiken dit gemiddelde en deze
 standaarddeviatie om de toetsingsgrootheid <span class="math inline">\(t\)</span> te berekenen, via formule
-<a href="ch-toetsing.html#eq:t-pairedsamples">(13.7)</a>, met <span class="math inline">\((N-1)\)</span> vrijheidsgraden. Tenslotte
+<a href="ch-toetsing.html#eq:t-pairedsamples">(13.8)</a>, met <span class="math inline">\((N-1)\)</span> vrijheidsgraden. Tenslotte
 gebruiken we weer
 Bijlage <a href="app-kritieketwaarden.html#app-kritieketwaarden">C</a> om de grenswaarde <span class="math inline">\(t^*\)</span> te bepalen, en
 daarmee de overschrijdingskans <span class="math inline">\(p\)</span> voor de gevonden waarde van de
 steekproefgrootheid <span class="math inline">\(t\)</span> onder H0.</p>
 <p>Voor het bovengenoemde voorbeeld met <em>U</em> of <em>je</em> als aanspreekvorm
 vinden we aldus <span class="math inline">\(\overline{D}=-2.2\)</span> en <span class="math inline">\(s_D=1.0\)</span>. Als we dit invullen in
-formule <a href="ch-toetsing.html#eq:t-pairedsamples">(13.7)</a> vinden we <span class="math inline">\(t=-6.74\)</span> met <span class="math inline">\(N-1=9\)</span> d.f. De
+formule <a href="ch-toetsing.html#eq:t-pairedsamples">(13.8)</a> vinden we <span class="math inline">\(t=-6.74\)</span> met <span class="math inline">\(N-1=9\)</span> d.f. De
 bijbehorende kritieke grenswaarde <span class="math inline">\(t^*\)</span> zoeken we wederom op in
 Bijlage <a href="app-kritieketwaarden.html#app-kritieketwaarden">C</a>. Daarbij negeren we het teken van <span class="math inline">\(t\)</span>,
 omdat de kansverdeling van <span class="math inline">\(t\)</span> immers symmetrisch is. In de regel voor 9
@@ -1357,7 +1356,7 @@ doorgaans goed bruikbaar.</p></li>
 <div id="sec:formules13-4" class="section level3 hasAnchor" number="13.7.2">
 <h3><span class="header-section-number">13.7.2</span> formules<a href="ch-toetsing.html#sec:formules13-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display" id="eq:t-pairedsamples">\[\begin{equation}
-  \tag{13.7}
+  \tag{13.8}
   t = \frac{ \overline{D}-\mu_D} { s_D } \times \sqrt{N}
 \end{equation}\]</span></p>
 </div>
@@ -1383,8 +1382,8 @@ Als dit is aangevinkt wordt als laatste in de uitvoer een tabel met beschrijvend
 <div id="sec:R-ttoets-gepaard" class="section level3 hasAnchor" number="13.7.5">
 <h3><span class="header-section-number">13.7.5</span> R<a href="ch-toetsing.html#sec:R-ttoets-gepaard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand <code>data/ujedata.csv</code>.</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="ch-toetsing.html#cb113-1" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
-<span id="cb113-2"><a href="ch-toetsing.html#cb113-2" tabindex="-1"></a><span class="fu">with</span>(ujedata, <span class="fu">t.test</span>( cond.u, cond.je, <span class="at">paired=</span><span class="cn">TRUE</span> ) )</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="ch-toetsing.html#cb18-1" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
+<span id="cb18-2"><a href="ch-toetsing.html#cb18-2" tabindex="-1"></a><span class="fu">with</span>(ujedata, <span class="fu">t.test</span>( cond.u, cond.je, <span class="at">paired=</span><span class="cn">TRUE</span> ) )</span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 
@@ -1404,14 +1403,14 @@ Als dit is aangevinkt wordt als laatste in de uitvoer een tabel met beschrijvend
 beslissing om H0 wel of niet te verwerpen, in het licht van de
 observaties. Maar het is daarnaast ook van groot belang om te weten hoe
 groot het geobserveerde effect eigenlijk is: de <em>effectgrootte</em> (Eng.
-‘effect size’, ‘ES’) <span class="citation">(<a href="#ref-Cohen88">Cohen 1988</a>; <a href="#ref-Thom02">B. Thompson 2002</a>; <a href="#ref-Naka07">Nakagawa and Cuthill 2007</a>)</span>.</p>
-<p>In formules <a href="ch-toetsing.html#eq:t-onesample">(13.1)</a> en <a href="ch-toetsing.html#eq:t-pairedsamples">(13.7)</a> komt tot uiting dat de toetsingsgrootheid <span class="math inline">\(t\)</span> groter wordt,
+‘effect size’, ‘ES’) <span class="citation">(<a href="#ref-Cohen88">Cohen 1988</a>; <a href="#ref-Thom02">Thompson 2002</a>; <a href="#ref-Naka07">Nakagawa and Cuthill 2007</a>)</span>.</p>
+<p>In formules <a href="ch-toetsing.html#eq:t-onesample">(13.1)</a> en <a href="ch-toetsing.html#eq:t-pairedsamples">(13.8)</a> komt tot uiting dat de toetsingsgrootheid <span class="math inline">\(t\)</span> groter wordt,
 naarmate het effect groter wordt, d.w.z. bij een groter verschil
 <span class="math inline">\((\overline{x}-\mu)\)</span> of <span class="math inline">\((\overline{x_1}-\overline{x_2})\)</span> of
 <span class="math inline">\((\overline{D}-\mu_D)\)</span>], <em>en/of</em> naarmate de steekproef groter wordt.
 Kort gezegd <span class="citation">(<a href="#ref-Rose08">Rosenthal and Rosnow 2008, 338</a>, formule 11.10)</span>:
 <span class="math display" id="eq:Rose08">\[\begin{equation}
-  \tag{13.8}
+  \tag{13.9}
     \textrm{significance of test} =
     \textrm{size of effect} \times \textrm{size of study}
 \end{equation}\]</span></p>
@@ -1462,10 +1461,10 @@ van de ruwe score. In §<a href="ch-toetsing.html#sec:ttoets-onafh">13.6</a> von
 van <span class="math inline">\(D=95-85=10\)</span> tussen jongens en meisjes.</p>
 <p>Meestal gebruiken we echter de gestandaardiseerde effectgrootte (zie
 formules hieronder), waarbij we rekening houden met de spreiding in de
-observaties, bijv in de vorm van “pooled standard deviation” <span class="math inline">\(s_p\)</span> <a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>.
+observaties, bijv in de vorm van “pooled standard deviation” <span class="math inline">\(s_p\)</span> <a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.
 We vinden zo een gestandaardiseerde effectgrootte van
 <span class="math display" id="eq:d-standardized">\[\begin{equation}
-  \tag{13.9}
+  \tag{13.10}
     d = \frac{ \overline{x_1}-\overline{x_2} } {s_p} = \frac{10}{90.5} = 0.11
 \end{equation}\]</span>
 In het eerste voorbeeld hierboven is de gestandaardiseerde effectgrootte
@@ -1514,7 +1513,7 @@ Figuur 13.3: Relatie tussen de steekproefgrootte en het kleinste effect (d) dat 
 <blockquote>
 <p><em>Voorbeeld 13.3:</em>
 Kijk nog eens naar formule
-<a href="ch-toetsing.html#eq:Rose08">(13.8)</a>
+<a href="ch-toetsing.html#eq:Rose08">(13.9)</a>
 en naar Figuur <a href="ch-toetsing.html#fig:kleinstesignifverschil">13.3</a> die de relatie tussen
 steekproefgrootte en effectgrootte illustreert. Met een
 steekproefgrootte van <span class="math inline">\(n_1=122\)</span> kunnen we alleen een effect van <span class="math inline">\(d=0.42\)</span>
@@ -1527,10 +1526,10 @@ steekproeven van tenminste 1738 meisjes en 1738 jongens nodig zijn.</p>
 <p>We kunnen de effectgrootte ook uitdrukken als de waarschijnlijkheid dat
 een verschil in de voorspelde richting optreedt, voor een willekeurig
 gekozen element uit de populatie
-(formules <a href="ch-toetsing.html#eq:d-onesample">(13.10)</a> en <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>),
+(formules <a href="ch-toetsing.html#eq:d-onesample">(13.11)</a> en <a href="ch-toetsing.html#eq:d-paired">(13.13)</a>),
 of (indien van toepassing) voor twee
 willekeurig en onafhankelijk gekozen elementen uit de twee populaties
-(formule <a href="ch-toetsing.html#eq:d-homoskedastic">(13.11)</a>) <span class="citation">(<a href="#ref-McGraw92">McGraw and Wong 1992</a>)</span>. Laten we nog eens
+(formule <a href="ch-toetsing.html#eq:d-homoskedastic">(13.12)</a>) <span class="citation">(<a href="#ref-McGraw92">McGraw and Wong 1992</a>)</span>. Laten we nog eens
 terugkeren naar de grammaticatoets van de studenten Taalwetenschap
 (§<a href="ch-toetsing.html#sec:ttoets-onesample">13.2</a>). Het effect dat we vonden is niet
 alleen significant maar ook groot. In termen van waarschijnlijkheid
@@ -1556,32 +1555,32 @@ verschil. Dit verschil heeft een 95% betrouwbaarheidsinterval van
 <h3><span class="header-section-number">13.8.1</span> formules<a href="ch-toetsing.html#sec:formules13-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Voor een enkele steekproef:
 <span class="math display" id="eq:d-onesample">\[\begin{equation}
-   \tag{13.10}
+   \tag{13.11}
   d = \frac{\overline{x}-\mu}{s}
 \end{equation}\]</span>
 waarbij <span class="math inline">\(s\)</span> de standaarddeviatie <span class="math inline">\(s\)</span>
 van de score <span class="math inline">\(x\)</span> voorstelt.</p>
 <p>Voor twee onafhankelijke steekproeven (zie
-formule <a href="ch-toetsing.html#eq:sd-pooled">(13.2)</a>):
+formule <a href="ch-toetsing.html#eq:sd-pooled">(13.3)</a>):
 <span class="math display" id="eq:d-homoskedastic">\[\begin{equation}
-  \tag{13.11}
+  \tag{13.12}
   d = \frac{ \overline{x_1}-\overline{x_2} } { s_p }
 \end{equation}\]</span></p>
 <p>Voor gepaarde waarnemingen:
 <span class="math display" id="eq:d-paired">\[\begin{equation}
-  \tag{13.12}
+  \tag{13.13}
   d = \frac{ \overline{x_1}-\overline{x_2} } { s_D }
 \end{equation}\]</span>
 waarbij <span class="math inline">\(s_D\)</span> de
 standaarddeviatie is van het verschil <span class="math inline">\(D\)</span> volgens
-formule <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>.</p>
+formule <a href="ch-toetsing.html#eq:d-paired">(13.13)</a>.</p>
 </div>
 <div id="spss-13-2" class="section level3 hasAnchor" number="13.8.2">
 <h3><span class="header-section-number">13.8.2</span> SPSS<a href="ch-toetsing.html#spss-13-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In SPSS kunnen we de effectgrootte meestal het makkelijkste met de hand
 uitrekenen.</p>
 <p>Voor een enkele steekproef
-(formule <a href="ch-toetsing.html#eq:d-onesample">(13.10)</a>) kunnen we de effectgrootte eenvoudig
+(formule <a href="ch-toetsing.html#eq:d-onesample">(13.11)</a>) kunnen we de effectgrootte eenvoudig
 uitrekenen uit het gemiddelde en de standaarddeviatie, rekening houdend
 met de waarde <span class="math inline">\(\mu\)</span> waartegen we toetsen.</p>
 <pre><code>Analyze &gt; Descriptive Statistics &gt; Descriptives...</code></pre>
@@ -1592,10 +1591,10 @@ aangevinkt. In de uitvoer staan vervolgens de benodigde gegevens:<br />
 effectgrootte het beste met de hand uitrekenen op basis van de
 gemiddelden, standaarddeviaties, en omvang van de twee steekproeven,
 gebruik makend van
-formules <a href="ch-toetsing.html#eq:sd-pooled">(13.2)</a> en
-<a href="ch-toetsing.html#eq:d-homoskedastic">(13.11)</a> hierboven.</p>
+formules <a href="ch-toetsing.html#eq:sd-pooled">(13.3)</a> en
+<a href="ch-toetsing.html#eq:d-homoskedastic">(13.12)</a> hierboven.</p>
 <p>Voor een enkele steekproef met twee gepaarde observaties
-(formule <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>) kunnen we de effectgrootte weer eenvoudiger
+(formule <a href="ch-toetsing.html#eq:d-paired">(13.13)</a>) kunnen we de effectgrootte weer eenvoudiger
 uitrekenen uit het gemiddelde en de standaarddeviatie van het verschil.
 De gegevens staan in de uitvoer van de paarsgewijze <span class="math inline">\(t\)</span>-toets
 (§<a href="ch-toetsing.html#sec:SPSS-ttoets-gepaard">13.7.3</a>), respectievelijk als <code>Mean</code> en
@@ -1611,17 +1610,17 @@ De uitvoer van de <span class="math inline">\(t\)</span>-toets zal (Cohen’s) d
 <h3><span class="header-section-number">13.8.4</span> R<a href="ch-toetsing.html#r-14" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In R is het wat makkelijker om de effectgrootte te laten uitrekenen.</p>
 <p>Voor een enkele steekproef
-(formule <a href="ch-toetsing.html#eq:d-onesample">(13.10)</a>):<br />
+(formule <a href="ch-toetsing.html#eq:d-onesample">(13.11)</a>):<br />
 </p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="ch-toetsing.html#cb116-1" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span>F)</span>
-<span id="cb116-2"><a href="ch-toetsing.html#cb116-2" tabindex="-1"></a><span class="fu">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;opleiding&quot;</span>)</span>
-<span id="cb116-3"><a href="ch-toetsing.html#cb116-3" tabindex="-1"></a><span class="fu">with</span>(gramm2013, score[opleiding<span class="sc">==</span><span class="st">&quot;TW&quot;</span>]) <span class="ot">-&gt;</span> score.TW <span class="co"># hulpvariabele</span></span>
-<span id="cb116-4"><a href="ch-toetsing.html#cb116-4" tabindex="-1"></a>( <span class="fu">mean</span>(score.TW)<span class="sc">-</span><span class="dv">73</span> ) <span class="sc">/</span> <span class="fu">sd</span>(score.TW) </span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="ch-toetsing.html#cb21-1" tabindex="-1"></a>gramm2013 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>( <span class="at">file=</span><span class="st">&quot;data/grammaticatoets2013.csv&quot;</span>,<span class="at">header=</span>F)</span>
+<span id="cb21-2"><a href="ch-toetsing.html#cb21-2" tabindex="-1"></a><span class="fu">dimnames</span>(gramm2013)[[<span class="dv">2</span>]] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;score&quot;</span>,<span class="st">&quot;opleiding&quot;</span>)</span>
+<span id="cb21-3"><a href="ch-toetsing.html#cb21-3" tabindex="-1"></a><span class="fu">with</span>(gramm2013, score[opleiding<span class="sc">==</span><span class="st">&quot;TW&quot;</span>]) <span class="ot">-&gt;</span> score.TW <span class="co"># hulpvariabele</span></span>
+<span id="cb21-4"><a href="ch-toetsing.html#cb21-4" tabindex="-1"></a>( <span class="fu">mean</span>(score.TW)<span class="sc">-</span><span class="dv">73</span> ) <span class="sc">/</span> <span class="fu">sd</span>(score.TW) </span></code></pre></div>
 <pre><code>## Warning in mean.default(score.TW): argument is not numeric or logical:
 ## returning NA</code></pre>
 <pre><code>## [1] NA</code></pre>
 <p>De kans op een score groter dan het populatiegemiddelde (de toetswaarde) <code>73</code> voor een willekeurige student Taalwetenschap (waarvan we aannemen dat <span class="math inline">\(\mu=84.4\)</span> en <span class="math inline">\(s=8.4\)</span>):</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="ch-toetsing.html#cb119-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>( <span class="dv">73</span>, <span class="at">mean=</span><span class="fl">84.4</span>, <span class="at">sd=</span><span class="fl">8.4</span> ) </span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="ch-toetsing.html#cb24-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>( <span class="dv">73</span>, <span class="at">mean=</span><span class="fl">84.4</span>, <span class="at">sd=</span><span class="fl">8.4</span> ) </span></code></pre></div>
 <pre><code>## [1] 0.9126321</code></pre>
 <p>Voor ongepaarde, onafhankelijke waarnemingen kunnen we het kleinste
 significante effect uitrekenen (zie ook
@@ -1629,7 +1628,7 @@ Fig. <a href="ch-toetsing.html#fig:kleinstesignifverschil">13.3</a>); daarvoor 
 Je moet bij die functie de gewenste <code>power</code> als
 argument opgeven (power = <span class="math inline">\(1-\beta\)</span>; zie
 §<a href="ch-power.html#sec:power-inleiding">14.1</a>).</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="ch-toetsing.html#cb121-1" tabindex="-1"></a><span class="fu">power.t.test</span>( <span class="at">n=</span><span class="dv">122</span>, <span class="at">sig=</span>.<span class="dv">05</span>, <span class="at">power=</span>.<span class="dv">90</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="ch-toetsing.html#cb26-1" tabindex="-1"></a><span class="fu">power.t.test</span>( <span class="at">n=</span><span class="dv">122</span>, <span class="at">sig=</span>.<span class="dv">05</span>, <span class="at">power=</span>.<span class="dv">90</span>, <span class="at">type=</span><span class="st">&quot;two.sample&quot;</span> )</span></code></pre></div>
 <pre><code>## 
 ##      Two-sample t test power calculation 
 ## 
@@ -1643,9 +1642,9 @@ argument opgeven (power = <span class="math inline">\(1-\beta\)</span>; zie
 ## NOTE: n is number in *each* group</code></pre>
 <p>In de uitvoer staat bij <code>delta</code> het kleinste significante effect aangegeven; zie ook Voorbeeld 13.3 hierboven.</p>
 <p>Voor een enkele steekproef met twee gepaarde observaties
-(formule <a href="ch-toetsing.html#eq:d-paired">(13.12)</a>):</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="ch-toetsing.html#cb123-1" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
-<span id="cb123-2"><a href="ch-toetsing.html#cb123-2" tabindex="-1"></a><span class="fu">with</span>( ujedata, <span class="fu">mean</span>(cond.u<span class="sc">-</span>cond.je) <span class="sc">/</span> <span class="fu">sd</span>(cond.u<span class="sc">-</span>cond.je) )</span></code></pre></div>
+(formule <a href="ch-toetsing.html#eq:d-paired">(13.13)</a>):</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="ch-toetsing.html#cb28-1" tabindex="-1"></a>ujedata <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">file=</span><span class="st">&quot;data/ujedata.csv&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">&quot;;&quot;</span> )</span>
+<span id="cb28-2"><a href="ch-toetsing.html#cb28-2" tabindex="-1"></a><span class="fu">with</span>( ujedata, <span class="fu">mean</span>(cond.u<span class="sc">-</span>cond.je) <span class="sc">/</span> <span class="fu">sd</span>(cond.u<span class="sc">-</span>cond.je) )</span></code></pre></div>
 <pre><code>## [1] -2.130141</code></pre>
 </div>
 <div id="sec:betrouwbaarheidsinterval-effectgrootte" class="section level3 hasAnchor" number="13.8.5">
@@ -1685,22 +1684,22 @@ nodig: ten eerste de effectgrootte uitgedrukt als correlatie <span class="citati
 ten tweede de standaardfout van de effectgrootte <span class="math inline">\(d\)</span> <span class="citation">(<a href="#ref-Naka07">Nakagawa and Cuthill 2007, 600</a>,
 formule 18)</span>:
 <span class="math display" id="eq:d-paired-se">\[\begin{equation}
-  \tag{13.13}
+  \tag{13.14}
     \textrm{se}_d = \sqrt{ \frac{2(1-r)}{n} + \frac{d^2}{2(n-1)} }
 \end{equation}\]</span>
 In
 ons eerdere voorbeeld van de <span class="math inline">\(n=10\)</span> gepaarde oordelen over een webpagina
 met <em>U</em> of <em>je</em> als aanspreekvorm vonden we <span class="math inline">\(d=-2.13\)</span>. We vinden ook dat
 <span class="math inline">\(r=.91\)</span>. Met deze gegevens vinden we <span class="math inline">\(\textrm{se}_d = 0.52\)</span> via
-formule <a href="ch-toetsing.html#eq:d-paired-se">(13.13)</a>.</p>
+formule <a href="ch-toetsing.html#eq:d-paired-se">(13.14)</a>.</p>
 <p>Hiermee bepalen we vervolgens het betrouwbaarheidsinterval voor de
 effectgrootte:
 <span class="math display" id="eq:d-paired-CI">\[\begin{equation}
-   \tag{13.14}
+   \tag{13.15}
     d \pm t^*_{n-1} \times \textrm{se}_d
 \end{equation}\]</span>
 (zie de overeenkomstige
-formule <a href="ch-kansverdelingen.html#eq:t-onesampleCI">(10.12)</a>).
+formule <a href="ch-toetsing.html#eq:t-onesampleCI">(13.2)</a>).
 Na invullen van <span class="math inline">\(t^*_9=2.262\)</span> (zie
 Bijlage <a href="app-kritieketwaarden.html#app-kritieketwaarden">C</a>) en <span class="math inline">\(\textrm{se}_d = 0.519\)</span> vinden we
 uiteindelijk een 95%-betrouwbaarheidsinterval van <span class="math inline">\((-3.30,-0.96)\)</span>. We
@@ -1758,9 +1757,9 @@ Thompson, Bruce. 2002. <span>“<span>‘<span>S</span>tatistical,’</span> <sp
 </div>
 <div class="footnotes">
 <hr />
-<ol start="29">
-<li id="fn29"><p>Wij danken Els Rose voor het beschikbaar stellen van deze gegevens.<a href="ch-toetsing.html#fnref29" class="footnote-back">↩︎</a></p></li>
-<li id="fn30"><p>In dit geval gebruiken we <span class="math inline">\(s_p = \sqrt{ \frac{122\times82^2+128\times98^2} {122+128} } = 90.5\)</span>, zie formules <a href="ch-toetsing.html#eq:sd-pooled">(13.2)</a> en <a href="ch-toetsing.html#eq:d-homoskedastic">(13.11)</a>.<a href="ch-toetsing.html#fnref30" class="footnote-back">↩︎</a></p></li>
+<ol start="1">
+<li id="fn1"><p>Wij danken Els Rose voor het beschikbaar stellen van deze gegevens.<a href="ch-toetsing.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>In dit geval gebruiken we <span class="math inline">\(s_p = \sqrt{ \frac{122\times82^2+128\times98^2} {122+128} } = 90.5\)</span>, zie formules <a href="ch-toetsing.html#eq:sd-pooled">(13.3)</a> en <a href="ch-toetsing.html#eq:d-homoskedastic">(13.12)</a>.<a href="ch-toetsing.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

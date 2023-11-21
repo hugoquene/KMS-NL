@@ -347,11 +347,9 @@ omdat de uitkomst van de toetsingsgrootheid niet a priori vaststaat.
 In SPSS worden de overschrijdingskansen echter afgerond, en kunnen dan
 in de uitvoer verschijnen als `‘Sig. .000’` oftewel $p=.000$. Dit is
 onjuist. De overschrijdingskans of significantie is immers niet gelijk
-aan nul, maar is *afgerond tot* nul, en dat is niet hetzelfde.
+aan nul, maar is *afgerond naar* nul, en dat is niet hetzelfde.
 Rapporteer de overschrijdingskans of significantie altijd met de juiste
-nauwkeurigheid, in dit voorbeeld als $p<.001$ of zelfs $p<.0005$
-(rekening houdend met de afronding door SPSS naar drie decimale
-cijfers).
+nauwkeurigheid, in dit voorbeeld als $p<.001$ [zie ook @Wright09, p.125].
 
 ## Eenzijdige en tweezijdige toetsen {#sec:ttoets-eenzijdigtweezijdig}
 
