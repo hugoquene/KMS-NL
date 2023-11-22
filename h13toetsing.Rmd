@@ -402,13 +402,10 @@ Deze paragraaf gaat dieper in op een onderwerp dat eerder al aan bod kwam in §\
 
 Het gemiddelde van de steekproef, $\overline{x}$, kunnen we beschouwen
 als een goede schatting van het onbekende gemiddelde in de populatie,
-$\mu$. Daarbij kunnen we de gevonden waarde van $t^*$ ook gebruiken om
-aan te geven hoe betrouwbaar die schatting is: het
-betrouwbaarheidsinterval. Daarmee drukken we uit hoe (on)zeker we weten
-dat het gemiddelde van de steekproef, $\overline{x}$, overeenkomt met
-het gemiddelde van de populatie [@Cumm12]. We kennen zulke foutenmarges
+$\mu$. Het betrouwbaarheidsinterval (confidence interval, CI) geeft aan hoeveel vertrouwen we in die schatting mogen hebben, d.w.z., met hoeveel (on)zekerheid het gemiddelde van de steekproef, $\overline{x}$, overeenkomt met
+het gemiddelde van de populatie $\mu$ [@Cumm12]. We kennen zulke foutenmarges
 ook uit verkiezingsuitslagen, waar ze aangeven hoe zeker de uitslag van
-de steekproef (van respondenten) overeenkomt met de werkelijke
+de gepeilde steekproef (van respondenten) overeenkomt met de werkelijke
 verkiezingsuitslag voor de gehele populatie (van kiezers). Een
 foutenmarge van 2% betekent dat het voor 95% zeker is dat $x$, het
 percentage stemmen op een bepaalde partij, zal liggen tussen $(x-2)$% en
@@ -417,12 +414,11 @@ $(x+2)$%.
 In ons voorbeeld met 30 d.f. vinden we $t^*=2.042$ voor 95%
 betrouwbaarheid. Via formule
 \@ref(eq:t-onesampleCI) komen we tot het 95%
-betrouwbaarheidsinterval $(81.5, 87.3)$. We weten met 95% zekerheid dat
-de onbekende gemiddelde score op de grammaticatoets, van de populatie
-van alle mogelijke studenten taalwetenschap groter is dan 81.5 en
-kleiner dan 87.3. We weten dan dus ook, met 95% zekerheid, dat het
-*onbekende* populatiegemiddelde $\mu$ afwijkt van de veronderstelde
-waarde 73 [@Cumm12]. We rapporteren dat als volgt:
+betrouwbaarheidsinterval $(81.5, 87.3)$. 
+Wat betekent dit betrouwbaarheidsinterval?
+Als we herhaalde steekproeven zouden (kunnen) trekken uit dezelfde populatie van studenten Taalwetenschap, dan zou het betrouwbaarheidsinterval in 95% van die herhaalde steekproeven het werkelijke populatiegemiddelde $\mu$ bevatten, en in 5% van de herhaalde steekproeven zou het werkelijke populatiegemiddelde buiten het 95% CI vallen. Het CI geeft dus aan "the confidence in the algorithm and [it is] not a statement about a single CI" (https://rpsychologist.com/d3/ci/). 
+
+We rapporteren het betrouwbaarheidsinterval als volgt:
 
 > De gemiddelde score van de studenten Taalwetenschap (lichting 2013) is
 > 84.4, met 95% betrouwbaarheidsinterval (81.5, 87.3), 33 d.f.
@@ -436,7 +432,7 @@ $\mu=84.4$ en $\sigma=8.4$ (zie
 hebben we het 95% betrouwbaarheidsinterval getekend. Voor 95 van de 100
 steekproeven valt het populatiegemiddelde $\mu=84.4$ inderdaad binnen
 het interval, maar voor 5 van de 100 steekproeven ten onrechte niet
-(deze zijn gemarkeerd langs de rechterkant).
+(deze zijn gemarkeerd langs de rechterkant). Op de website https://rpsychologist.com/d3/ci/ vind je meer visuele uitleg van het concept van betrouwbaarheidsintervallen. 
 
 ```{r gramm2013CIs, echo=FALSE, fig.cap="95%-Betrouwbaarheidsintervallen en steekproefgemiddelden, over 100 gesimuleerde steekproeven (n=34) uit een populatie met populatiegemiddelde 84.4, populatie-s.d. 8.4."}
 # adapted from similar chunk in Ch.10
@@ -484,6 +480,7 @@ rm(aux,lb,ub)
 par(op)
 ```
 
+Uit formule \@ref(eq:t-onesampleCI) volgt logischerwijze, dat als de standaarddeviatie $s$ afneemt, en/of als de steekproefgrootte $N$ toeneemt,  het betrouwbaarheidsinterval dan kleiner wordt, m.a.w., we kunnen er meer vertrouwen in hebben dat het geobserveerde gemiddelde van de steekproef dicht bij het onbekende gemiddelde van de populatie ligt. 
 
 ### formules {#sec:formules13-2}
 
@@ -1203,10 +1200,8 @@ onzekerheid of betrouwbaarheid: misschien verschilt de onbekende
 parameter in de populatie enigszins van het steekproefkenmerk, dat we
 als schatter gebruiken, ten gevolge van toevallige variaties in de
 steekproef. De (on)zekerheid of (on)betrouwbaarheid wordt uitgedrukt als
-een betrouwbaarheidsinterval van het geschatte kenmerk. We weten dan met
-een bepaalde betrouwbaarheid (meestal 95%) dat de onbekende parameter
-binnen dat interval zal liggen
-(§\@ref(sec:betrouwbaarheidsinterval-gemiddelde) en §\@ref(sec:t-betrouwbaarheidsinterval-gemiddelde)). 
+een betrouwbaarheidsinterval van het geschatte kenmerk. 
+Als we herhaalde steekproeven uit de populatie zouden (kunnen) trekken, dan ligt het onbekende gemiddelde van de populatie binnen het betrouwbaarheidsinterval van de steekproef, in 95% van de herhaalde steekproeven (zie §\@ref(sec:betrouwbaarheidsinterval-gemiddelde) en §\@ref(sec:t-betrouwbaarheidsinterval-gemiddelde)). 
 
 Deze redenatie nu geldt niet alleen voor de gemiddelde score, of voor de
 mediaan of voor de variantie, maar evenzo voor de effectgrootte. Ook de
@@ -1249,11 +1244,9 @@ effectgrootte:
 formule \@ref(eq:t-onesampleCI)). 
 Na invullen van $t^*_9=2.262$ (zie
 Bijlage \@ref(app-kritieketwaarden)) en $\textrm{se}_d = 0.519$ vinden we
-uiteindelijk een 95%-betrouwbaarheidsinterval van $(-3.30,-0.96)$. We
-weten dus met 95% betrouwbaarheid dat de onbekende effectgrootte in de
-populatie ergens binnen dit interval ligt, en dus ook dat die kleiner is
-dan nul. Op grond van die laatste overweging kunnen we H0 verwerpen.
-Maar: we weten nu niet alleen *dat* de voorkeur afwijkt van nul, maar
+uiteindelijk een 95%-betrouwbaarheidsinterval van $(-3.30,-0.96)$. Met 95% betrouwbaarheid ligt de onbekende effectgrootte in de populatie binnen dit interval (als we herhaalde steekproeven zouden trekken uit de populatie, dan zou in 5% van de herhaalde steekproeven de onbekende ware effectgrootte in de populatie buiten het gevonden betrouwbaarheidsinterval voor de effectgrootte vallen). Aangezien het betrouwbaarheidsinterval geheel kleiner is dan nul (negatief), mogen we concluderen dat de ware effectgrootte waarschijnlijk negatief is. 
+Op grond van die laatste overweging kunnen we H0 verwerpen.
+En: we weten nu niet alleen *dat* de voorkeur afwijkt van nul, maar
 ook *in welke mate* de (gestandaardiseerde) voorkeur afwijkt van nul,
 d.w.z. hoe sterk de voorkeur voor de *je*-versie is. Deze nieuwe kennis
 over de mate of grootte van het effect is vaak nuttiger en interessanter
