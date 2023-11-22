@@ -1,9 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # (PART\*) Deel III: Toetsende statistiek {.unnumbered}
 
 # Toetsing {#ch-toetsing}
@@ -550,9 +544,10 @@ de steekproef dicht bij het onbekende gemiddelde van de populatie ligt.
 ### formules {#sec:formules13-2}
 
 Het tweezijdige betrouwbaarheidsinterval voor $B$% betrouwbaarheid voor
-een populatie-gemiddelde $\overline{y}$ is \begin{equation}
+een populatie-gemiddelde $\overline{y}$ is 
+\begin{equation}
     \overline{y} \pm t^*_{N-1} \times \frac{s}{\sqrt{N}}
-  (\#eq:t-onesampleCI)
+    (\#eq:t-onesampleCI)
 \end{equation}
 
 ### SPSS
@@ -707,20 +702,26 @@ formules in gebruik.
 Indien de steekproeven ongeveer **gelijke variantie** hebben, dan
 gebruiken we eerst de "pooled standard deviation" $s_p$ als tussenstap.
 De beide standaarddeviaties van de twee steekproeven worden daarin
-gewogen naar hun steekproefomvang. \begin{equation}
+gewogen naar hun steekproefomvang. 
+\begin{equation}
     s_p = \sqrt{ \frac{(n_1-1) s^2_1 + (n_2-1) s^2_2} {n_1+n_2-2} }
     (\#eq:sd-pooled)
-\end{equation} Vervolgens \begin{equation}
+\end{equation} 
+Vervolgens 
+\begin{equation}
   (\#eq:t-homoskedastic)
   t = \frac{ \overline{x_1}-\overline{x_2} } { s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}} }
 \end{equation}
 
 Indien de steekproeven **niet gelijke varianties** hebben, en de vierde
 aanname hierboven dus is geschonden, dan wordt Welch's benadering
-gebruikt: \begin{equation}
+gebruikt: 
+\begin{equation}
   (\#eq:sd-WS)
   s_{\textrm{WS}} = \sqrt{\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2} }
-\end{equation} Vervolgens \begin{equation}
+\end{equation} 
+Vervolgens 
+\begin{equation}
   (\#eq:t-WS)
   t = \frac{ \overline{x_1}-\overline{x_2} } { s_{\textrm{WS}} }
 \end{equation}
@@ -731,7 +732,8 @@ Meestal wordt de $t-toets$ uitgevoerd door een computerprogramma.
 Daarbij wordt dan meestal de volgende benadering gebruikt van de
 vrijheidsgraden ($\nu$, zie §\@ref(sec:ttoets-vrijheidsgraden)). Eerst
 worden $g_1=s^2_1/n_1$ en $g_2=s^2_2/n_2$ berekend. Het aantal
-vrijheidsgraden van $t$ is dan \begin{equation}
+vrijheidsgraden van $t$ is dan 
+\begin{equation}
   (\#eq:df-WS)
   \nu_\textrm{WS} = 
         \frac {(g_1+g_2)^2} {g^2_1/(n_1-1) + g^2_2/(n_2-1)}
@@ -1045,7 +1047,8 @@ uiting dat de toetsingsgrootheid $t$ groter wordt, naarmate het effect
 groter wordt, d.w.z. bij een groter verschil $(\overline{x}-\mu)$ of
 $(\overline{x_1}-\overline{x_2})$ of $(\overline{D}-\mu_D)$], *en/of*
 naarmate de steekproef groter wordt. Kort gezegd [@Rose08 p.338, formule
-11.10]: \begin{equation}
+11.10]: 
+\begin{equation}
   (\#eq:Rose08)
     \textrm{significance of test} = 
     \textrm{size of effect} \times \textrm{size of study}
@@ -1106,7 +1109,8 @@ observaties, bijv in de vorm van "pooled standard deviation" $s_p$
 \begin{equation}
   (\#eq:d-standardized)
     d = \frac{ \overline{x_1}-\overline{x_2} } {s_p} = \frac{10}{90.5} = 0.11
-\end{equation} In het eerste voorbeeld hierboven is de
+\end{equation} 
+In het eerste voorbeeld hierboven is de
 gestandaardiseerde effectgrootte van het verschil in woordenschat tussen
 meisjes en jongens dus 0.11. In dit geval is het verschil tussen de
 groepen gering ten opzichte van de spreiding binnen de groepen --- de
@@ -1227,7 +1231,8 @@ verbazing. We kunnen dat als volgt rapporteren:
 
 ### formules {#sec:formules13-5}
 
-Voor een enkele steekproef: \begin{equation}
+Voor een enkele steekproef: 
+\begin{equation}
    (\#eq:d-onesample)
   d = \frac{\overline{x}-\mu}{s}
 \end{equation} waarbij $s$ de standaarddeviatie $s$ van de score $x$
@@ -1239,7 +1244,8 @@ Voor twee onafhankelijke steekproeven (zie formule \@ref(eq:sd-pooled)):
   d = \frac{ \overline{x_1}-\overline{x_2} } { s_p }
 \end{equation}
 
-Voor gepaarde waarnemingen: \begin{equation}
+Voor gepaarde waarnemingen: 
+\begin{equation}
   (\#eq:d-paired)
   d = \frac{ \overline{x_1}-\overline{x_2} } { s_D }
 \end{equation} waarbij $s_D$ de standaarddeviatie is van het verschil
@@ -1385,10 +1391,12 @@ $d=-2.13$. We vinden ook dat $r=.91$. Met deze gegevens vinden we
 $\textrm{se}_d = 0.52$ via formule \@ref(eq:d-paired-se).
 
 Hiermee bepalen we vervolgens het betrouwbaarheidsinterval voor de
-effectgrootte: \begin{equation}
+effectgrootte: 
+\begin{equation}
    (\#eq:d-paired-CI)
     d \pm t^*_{n-1} \times \textrm{se}_d 
-\end{equation} (zie de overeenkomstige formule \@ref(eq:t-onesampleCI)).
+\end{equation} 
+(zie de overeenkomstige formule \@ref(eq:t-onesampleCI)).
 Na invullen van $t^*_9=2.262$ (zie Bijlage \@ref(app-kritieketwaarden))
 en $\textrm{se}_d = 0.519$ vinden we uiteindelijk een
 95%-betrouwbaarheidsinterval van $(-3.30,-0.96)$. Met 95%
