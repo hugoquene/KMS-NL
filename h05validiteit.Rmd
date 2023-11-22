@@ -523,7 +523,7 @@ zeer sterk beïnvloed door andere zaken zoals algemene ontwikkeling,
 gokvaardigheid, ervaring met eerdere toetsen, en door de vraagstelling
 zelf, zoals geïllustreerd in deze vraag:
 
-> *Wie van de volgende personen heeft de afgelopen jaren een autobiografie
+> *Wie van de volgende personen heeft in de afgelopen 15 jaar een autobiografie
 gepubliceerd?\
  a. Jeanne d'Arc *(algemene ontwikkeling)*\
  b. mijn buurvrouw *(vraagstelling, ervaring)*\
@@ -531,7 +531,7 @@ gepubliceerd?\
  d. Alexander Graham Bell *(algemene ontwikkeling)**\
 
 > Deze vraag is duidelijk niet construct-valide voor het meten van kennis
-over autobiografieën.
+over gepubliceerde autobiografieën.
 
 ---
 
