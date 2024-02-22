@@ -823,7 +823,7 @@ overlijdensrisico voor de voetganger toe tot bijna 100%
 5\. Een vijfde bedreiging van de constructvaliditeit wordt veroorzaakt
 door de *sturende werking van de voormeting*. In veel studies wordt de
 afhankelijke variabele herhaaldelijk gemeten, zowel voor als na
-manipulatie van de afhankelijke variabele: de zgn. voormeting en
+manipulatie van de onafhankelijke variabele: de zgn. voormeting en
 nameting. De aard en inhoud van de voormeting kunnen echter sporen
 nalaten bij de proefpersoon. Zo kan de proefpersoon zijn onbevangenheid
 verliezen, waardoor het effect van de onafhankelijke variabele (bv.
