@@ -57,8 +57,7 @@ Een onderzoeksontwerp is opgebouwd uit verschillende elementen:
 
 ## Tussen of binnen ? {#sec:tussenbinnenproefpersonen}
 
-Voor het
-onderzoeksontwerp is het van groot belang of een onafhankelijke variabele
+Voor het onderzoeksontwerp is het van groot belang of een onafhankelijke variabele
 gevarieerd wordt *tussen proefpersonen* of *binnen proefpersonen*. Voor
 veel taalkundig onderzoek, waarbij meerdere teksten of zinnen of woorden
 worden aangeboden als stimuli, geldt hetzelfde voor het onderscheid
@@ -289,7 +288,8 @@ experimentele als de controle-conditie een (verschillende) rol spelen,
 omdat in beide condities op twee tijdstippen gemeten wordt. Bovendien
 kan een eventueel verschil tussen `(O2-O1`) en `(O4-O3)` ook te
 wijten zijn aan de (extra) *aandacht* die aan de experimentele conditie
-besteed is: het zgn. Hawthorne-effect (zie Voorbeeld 5.10 in Hoofdstuk \@ref(ch-validiteit)). Dit effect speelt vooral een rol als de
+besteed is: het zgn. Hawthorne-effect (zie Voorbeeld 5.10 in Hoofdstuk \@ref(ch-validiteit)). 
+Dit effect speelt vooral een rol als de
 proefpersonen in de ene conditie (groep) meer aandacht krijgen dan in de
 andere, zoals in het onderstaande voorbeeld.
 
@@ -543,7 +543,7 @@ ontwerpen met slechts één onafhankelijke variabele.
 ## Afhankelijke- en onafhankelijke-groepen-ontwerp {#sec:afhankelijkegroepen}
 
 In het begin van dit hoofdstuk hebben we gesproken over de manipulatie
-van een onafhankelijke variabele tussen danwel binnen proefpersonen ().
+van een onafhankelijke variabele tussen danwel binnen proefpersonen (\@ref(sec:tussenbinnenproefpersonen)).
 In de meeste van de voorafgaande onderzoeksontwerpen werd voor elke
 waarde van de onafhankelijke variabele(n) een afzonderlijke groep
 geformeerd; we noemen dat een onafhankelijke-groepen-ontwerp. De
@@ -737,4 +737,4 @@ kan veel ellende in latere stadia van een onderzoek voorkomen.
     onderzoeksverslag. Als er grote problemen optreden, breek dan het
     onderzoek af, en overweeg een verbeterde versie van je onderzoek.
 
-[^fn06-1]: Merk op dat proefpersonen niet aselect zijn toegewezen aan een van  deze groepen, en dat dit dus strikt genomen een quasi-experimenteel onderzoek is (zie Hoofdstuk 1).
+[^fn06-1]: Merk op dat proefpersonen niet aselect zijn toegewezen aan een van deze groepen, en dat dit dus strikt genomen een quasi-experimenteel onderzoek is (zie Hoofdstuk 1).
