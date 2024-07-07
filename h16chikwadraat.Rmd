@@ -386,11 +386,11 @@ Frequencies > Contingency Tables (onder 'Classical')
 ```
 Selecteer de variabele `klasse` in het "Rows" paneel, de variabele `overlevende` in het "Columns" paneel en variabele `aantal` in het "Counts" paneel voor kruistabel \@ref(tab:titanic). Open de `Statistics` balk 
 en zorg dat `Chi-square` ($\chi^2$) is aangevinkt. De waarde voor $\chi^2$ verschijnt dan in de uitvoer in de tabel getiteld *Chi-Squared Tests*. 
-Open de `Cells` balk en zorg dat `Expected counts` zijn aangevinkt. 
+Open de `Cells` balk en zorg dat `Expected counts` zijn aangevinkt en dat ook `Pearson residuals` en `Standardized (adjusted Pearson)` zijn aangevinkt. 
 
 Mocht je toch een "lang" databestand hebben, waarbij elke regel een aparte observatie is, dan hoef je alleen de variabele `klasse` in het "Rows" paneel en de variabele `overlevende` in het "Columns" paneel te selecteren. 
 
-Het is in JASP niet mogelijk om gestandaardiseerde residuen op te vragen; je kunt die wel zelf uitrekenen met de geobserveerde en verwachte aantallen. 
+Het aantal overlevenden is significant groter dan verwacht onder H0 voor passagiers van de eerste en van de tweede klasse (positieve gestandaardiseerde residuen, beide $p<.001$) en significant geringer dan verwacht onder H0 voor passagier van de derde klasse en voor de bemanning (negatieve gestandaardiseerde residuen, beide ook $p<.001$).  
 
 
 ## R
@@ -418,6 +418,7 @@ Titanic.chisq.htest$residuals
 ```
 
 Opvallend zijn het geringe aantal doden onder de eerste-klasse-passagiers, en het grote aantal doden onder de bemanning. 
+R toont hier overigens de ruwe (niet gestandaardiseerde) residuen. 
 
 ## Effectgrootte: odds ratio
 
