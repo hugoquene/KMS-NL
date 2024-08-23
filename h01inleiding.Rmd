@@ -410,7 +410,9 @@ JASP is gratis beschikbaar via <https://jasp-stats.org/>. Op de website zijn ook
 * **R** (versie 3.0 en hoger): een wat moeilijker, maar ook krachtiger en veelzijdiger pakket, met snel stijgende populariteit bij onderzoekers.    
 R is gratis beschikbaar via <https://www.R-project.org>. 
 Een korte inleiding in het gebruik van R is te vinden via <https://hugoquene.github.io/emlar2020/>. 
-Langere inleidingen zijn te vinden in @Dalg02 en in diverse uitstekende "free web books"; een lijst van aanbevolen boeken is te vinden op <https://statisticalhorizons.com/resources/free-web-books-for-learning-r>. 
+Langere inleidingen zijn te vinden in @Dalg02 en in diverse uitstekende "free web books"; 
+een lijst van aanbevolen materialen (Engelstalig) is te vinden op 
+<https://statisticalhorizons.com/resources/free-r-resources>. 
 
 Voor studenten en medewerkers van de Universiteit Utrecht zijn al deze statistische pakketten  geïnstalleerd in `MyWorkPlace`. 
 
