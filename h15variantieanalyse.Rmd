@@ -432,7 +432,7 @@ Table: (#tab:kleurtjes-anova) Samenvatting van variantieanalyse van de observati
 
 > *Voorbeeld 15.2*: 
 De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep 
-[$F(2,42) = 9.35, p<.001, \omega^2 = 0.28$].
+[$F(2,42) = 9.35, p<.001, \omega^2 = .28$].
 
 ---
 
@@ -529,9 +529,9 @@ voorbeeld:
 > *Voorbeeld 15.3*:
 De gemiddelde score van de rode
 groep is significant lager dan van de beide andere groepen gecombineerd
-[$F(1,42)=18.47, p<.001, \omega^2=0.28$]. De gemiddelde score is
+[$F(1,42)=18.47, p<.001, \omega^2=.28$]. De gemiddelde score is
 nagenoeg gelijk voor de grijze en blauwe groep
-[$F(1,42)<1, \textrm{n.s.}, \omega^2=0.00$]. 
+[$F(1,42)<1, \textrm{n.s.}, \omega^2=.00$]. 
 Dit impliceert dat de
 rode groep significant lagere scores behaalt dan de grijze groep en dan
 de blauwe groep.
@@ -611,7 +611,7 @@ en/of in een $p$-waarde van het verschil tussen twee condities.
 
 > *Voorbeeld 15.4*:
 De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep 
-[$F(2,42) = 9.35, p <.001, \omega^2 = 0.28$].
+[$F(2,42) = 9.35, p <.001, \omega^2 = .28$].
 Post-hoc vergelijkingen met Tukey's HSD-toets laten zien dat de grijze en blauwe groep niet van elkaar verschillen ($p=.88$), maar dat er wel significante verschillen zijn tussen de rode en de blauwe groep ($p<.001$) en tussen de rode en de grijze groep ($p=.003$).
 
 ---
@@ -1008,8 +1008,8 @@ een 95% betrouwbaarheidsinterval van het verschil tussen twee condities,
 en/of in een $p$-waarde van het verschil tussen twee condities.
 
 
-> De begripsscores lieten een significant hoofdeffect zien van de structuurmarkeringen $[F(1,88)=63.75, p<.001, \omega^2=0.26]$, alsmede een significant hoofdeffect van het lezerstype $[F(2,88)=33.56, p<.001, \omega^2=0.27]$. 
-Ook was er een significante interactie zien tussen de tekstversie en het lezerstype $[F(2,88)=10.74, p<.001, \omega^2=0.08]$, zie Figuur \@ref(fig:DBE12interaction); deze interactie werd nader onderzocht met de Tukey HSD-toets (tussen 6 cellen). 
+> De begripsscores lieten een significant hoofdeffect zien van de structuurmarkeringen $[F(1,88)=63.75, p<.001, \omega^2=.26]$, alsmede een significant hoofdeffect van het lezerstype $[F(2,88)=33.56, p<.001, \omega^2=.27]$. 
+Ook was er een significante interactie zien tussen de tekstversie en het lezerstype $[F(2,88)=10.74, p<.001, \omega^2=.08]$, zie Figuur \@ref(fig:DBE12interaction); deze interactie werd nader onderzocht met de Tukey HSD-toets (tussen 6 cellen). 
 Zwakke lezers presteren slechter dan gemiddelde lezers, bij de tekstversie zonder markeringen (p<.001), maar niet bij de versie met markeringen ($p=.99$). Sterke lezers presteren beter dan gemiddelde lezers, zowel zonder markeringen ($p<.001$) als met markeringen (p=.01). Tekstmarkeringen hebben wel effect bij zwakke lezers ($p<.001$) en bij gemiddelde lezers ($p<.001$) maar niet bij sterke lezers ($p=.89$); sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst, maar zwakke en gemiddelde lezers wel. Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen ($p=.72$).
 
 

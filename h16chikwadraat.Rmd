@@ -348,7 +348,7 @@ Als je `Expected proportions (chi-square test)` kiest, kun je de verwachte aanta
 
 Je kunt ook nog `Descriptives` en `Confidence interval` aanvinken onder "Additional Statistics" en `Descriptives plot` onder "Plots" om meer inzicht te krijgen in wat je toetst. 
 
-Het is in JASP niet mogelijk om gestandaardiseerde residuen op te vragen; je kunt die wel zelf uitrekenen met de geobserveerde en verwachte aantallen. 
+Het is in JASP niet mogelijk om gestandaardiseerde residuen op te vragen bij deze toets; je kunt die wel zelf uitrekenen met de geobserveerde en verwachte aantallen. 
 
 
 ### kruistabellen: voorbereiding

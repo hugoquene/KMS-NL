@@ -160,11 +160,10 @@ komt de score 2 het meeste voor
 
 ---
 
-> *Voorbeeld 9.4*: In 2014 was het gemiddelde inkomen per huishouden in Nederland €34200.
-Het modale inkomen (per huishouden) lag tussen €18000 en €20000[^fn09-2]. In
-2014 vielen de meeste huishoudens in Nederland dus in deze inkomens-klasse.
+> *Voorbeeld 9.4*: In 2022 was het gemiddelde besteedbare inkomen per huishouden in Nederland ca €35000. 
+Het modale inkomen (per huishouden) was tussen €22000 en €24000 [^fn09-2]: in deze inkomenscategorie vielen de meeste huishoudens. 
 
-[^fn09-2]: http://www.cbs.nl/nl-NL/menu/themas/inkomen-bestedingen/cijfers/extra/inkomensverdeling.htm
+[^fn09-2]: https://www.cbs.nl/nl-nl/visualisaties/inkomensverdeling
 
 ---
 
@@ -197,8 +196,10 @@ doet hij 2.5 uur, over de tweede tekst (1000 woorden) doet hij 4 uur, en
 over de derde tekst (300 woorden) doet hij 0.6 uur. Wat is de gemiddelde
 schrijfsnelheid van deze student? De schrijfsnelheden zijn resp. 200,
 250, en 500 woorden per uur, en het "normale" (rekenkundig) gemiddelde
-daarvan is 317 woorden per uur. Het "eigenlijke" gemiddelde is 
-echter $(500+1000+300)/(2.5+4+0.6)$ $=1800/7.1=254$ woorden per uur. De hoge
+daarvan is 317 woorden per uur. 
+Maar, het kostte 7.1 uur om 1800 woorden te schrijven, dus 
+het "eigenlijke" gemiddelde is 
+$(500+1000+300)/(2.5+4+0.6)$ $=1800/7.1=254$ woorden per uur. De hoge
 schrijfsnelheid van de korte tekst telt voor $1/n$ deel mee in het
 rekenkundig gemiddelde, hoewel die tekst slechts $300/1800=1/6$ van het
 totaal aantal woorden bevat.
@@ -209,7 +210,7 @@ rekenen we de snelheid (woorden per tijdseenheid) om naar de inverse
 daarvan (zie \@ref(eq:harmonischgemiddelde), in noemer, binnen somteken),
 d.w.z. naar *tijd* per woord: 0.005, 0.004, en 0.002 (tijdseenheden per
 woord, zie voetnoot[^fn09-3]). Ten tweede middelen we deze tijden, tot
-gemiddeld 0.00366 uur per woord, en tenslotte nemen we daarvan wederom
+gemiddeld 0.00366 uur per woord (13.2 seconden per woord), en tenslotte nemen we daarvan wederom
 de inverse. De harmonisch gemiddelde schrijfsnelheid is dan $1/0.00366=273$
 woorden per uur, dichter bij het "eigenlijke" gemiddelde van 254 woorden
 per uur.

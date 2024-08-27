@@ -182,8 +182,8 @@ Table: (#tab:cito-correlaties) Correlaties tussen de drie onderdelen van de CITO
                          Lezen         Rekenen      Wereldoriëntatie
   ------------------ -------------- -------------- ------------------
   Lezen               1.00                 
-  Rekenen             0.79 (.007)    1.00   
-  Wereldoriëntatie    -0.51 (.13)   -0.01 (.97)         1.00
+  Rekenen             .79 (.007)    1.00   
+  Wereldoriëntatie    -.51 (.13)   -.01 (.97)         1.00
 
 In deze matrix is alleen de onderste (linker) helft van de volledige
 matrix weergegeven. Dat is ook voldoende, want de cellen zijn gespiegeld
