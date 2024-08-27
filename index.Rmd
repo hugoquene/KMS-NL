@@ -12,7 +12,7 @@ bibliography: [book.bib, packages.bib, hhmhto.bib, pandoc.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/KMS-NL
-description: "Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht."
+description: "Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek (TL3V24001, TL2V23004, TW2V19002, TL2V17002), Dept Talen Literatuur en Communicatie, Universiteit Utrecht."
 
 ---
 
@@ -22,7 +22,7 @@ Data spelen een steeds belangrijker rol, ook in de geesteswetenschappen.
 De beschikbaarheid van digitale gegevens  (o.a. tekst, spraak, video, en gedragsregistraties) leidt tot nieuwe onderzoeksvragen, die vooral met kwantitatieve methoden beantwoord worden. 
 Dit boek biedt onderzoekers en studenten een overzicht en inleiding van de belangrijkste kwantitatieve methoden en statistische technieken in de geesteswetenschappen. Het boek geeft de lezer een stevig methodologisch fundament voor kwantitatief onderzoek, en biedt een inleiding in de meest gebruikte statistische technieken om gegevens te beschrijven en om hypothesen te toetsen. Daarmee is de lezer ook in staat om kwantitatief onderzoek kritisch te beoordelen.
 
-Dit tekstboek wordt gebruikt als leesstof bij de cursus *Methoden en Statistiek 1* aan de Universiteit Utrecht. Het boek is tevens bruikbaar voor zelfstudie op inleidend niveau, voor iedereen die meer wil weten over kwantitatieve methoden en statistiek. 
+Dit tekstboek wordt gebruikt als leesstof bij de inleidende cursus *Methoden en Statistiek* aan de Universiteit Utrecht. Het boek is tevens bruikbaar voor zelfstudie op inleidend niveau, voor iedereen die meer wil weten over kwantitatieve methoden en statistiek. 
 
 De hoofdtekst is gevrijwaard van wiskundige afleidingen en formules, die voor geesteswetenschappers immers weinig bruikbaar zijn. De uitleg is vooral conceptueel, en rijk aan voorbeelden van geesteswetenschappelijk onderzoek. Waar nodig worden formules aangeboden in een aparte paragraaf. 
 
@@ -80,11 +80,11 @@ https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 Gebruik een van de volgende manieren om te verwijzen naar dit tekstboek (in APA-formaat), met de datum van raadpleging:
 
-Quené, H. \& Van den Bergh, H. (2022). *Kwantitatieve Methoden en Statistiek*. 
-Geraadpleegd op 13 mei 2022 via https://hugoquene.github.io/KMS-NL/ .
+Quené, H. \& Van den Bergh, H. (2024). *Kwantitatieve Methoden en Statistiek*. 
+Geraadpleegd op 27 augustus 2024 via https://hugoquene.github.io/KMS-NL/ .
 
-Quené, H. \& Van den Bergh, H. (2022). *Kwantitatieve Methoden en Statistiek* [in Dutch]. 
-Retrieved 13 May 2022 from https://hugoquene.github.io/KMS-NL/ .
+Quené, H. \& Van den Bergh, H. (2024). *Kwantitatieve Methoden en Statistiek* [in Dutch]. 
+Retrieved 27 Aug 2024 from https://hugoquene.github.io/KMS-NL/ .
 
 ## Technische details {-}
 
@@ -94,7 +94,8 @@ De tekst is geschreven in LaTeX, en daarna omgezet naar Rmarkdown, met behulp va
 
 ## Over de auteurs {-}
 
-Beide auteurs zijn verbonden aan de Faculteit Geesteswetenschappen van de Universiteit Utrecht. HQ is hoogleraar Kwantitatieve Methoden van Empirisch Onderzoek in de Geesteswetenschappen, en geeft daarnaast leiding aan het Centre for Digital Humanities. HvdB is hoogleraar Didactiek en Toetsing van het Taalvaardigheidsonderwijs, en is daarnaast vaksectievoorzitter Nederlands bij het College voor Toetsen en Examens (CvTE).
+HQ is hoogleraar Kwantitatieve Methoden van Empirisch Onderzoek in de Geesteswetenschappen, en geeft leiding aan het Centre for Digital Humanities (CDH), bij de Universiteit Utrecht.
+HvdB is emeritus hoogleraar Didactiek en Toetsing van het Taalvaardigheidsonderwijs bij de Universiteit Utrecht, en was eerder vaksectievoorzitter Nederlands bij het College voor Toetsen en Examens (CvTE).
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages

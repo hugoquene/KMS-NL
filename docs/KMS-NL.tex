@@ -116,7 +116,7 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
@@ -126,7 +126,7 @@
 
 \title{Kwantitatieve Methoden en Statistiek}
 \author{true}
-\date{Versie gecompileerd op 22 Nov 2023}
+\date{Versie gecompileerd op 27 Aug 2024}
 
 \begin{document}
 \maketitle
@@ -135,15 +135,14 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{voorwoord}{%
-\chapter*{Voorwoord}\label{voorwoord}}
+\chapter*{Voorwoord}\label{voorwoord}
 \addcontentsline{toc}{chapter}{Voorwoord}
 
 Data spelen een steeds belangrijker rol, ook in de geesteswetenschappen.
 De beschikbaarheid van digitale gegevens (o.a. tekst, spraak, video, en gedragsregistraties) leidt tot nieuwe onderzoeksvragen, die vooral met kwantitatieve methoden beantwoord worden.
 Dit boek biedt onderzoekers en studenten een overzicht en inleiding van de belangrijkste kwantitatieve methoden en statistische technieken in de geesteswetenschappen. Het boek geeft de lezer een stevig methodologisch fundament voor kwantitatief onderzoek, en biedt een inleiding in de meest gebruikte statistische technieken om gegevens te beschrijven en om hypothesen te toetsen. Daarmee is de lezer ook in staat om kwantitatief onderzoek kritisch te beoordelen.
 
-Dit tekstboek wordt gebruikt als leesstof bij de cursus \emph{Methoden en Statistiek 1} aan de Universiteit Utrecht. Het boek is tevens bruikbaar voor zelfstudie op inleidend niveau, voor iedereen die meer wil weten over kwantitatieve methoden en statistiek.
+Dit tekstboek wordt gebruikt als leesstof bij de inleidende cursus \emph{Methoden en Statistiek} aan de Universiteit Utrecht. Het boek is tevens bruikbaar voor zelfstudie op inleidend niveau, voor iedereen die meer wil weten over kwantitatieve methoden en statistiek.
 
 De hoofdtekst is gevrijwaard van wiskundige afleidingen en formules, die voor geesteswetenschappers immers weinig bruikbaar zijn. De uitleg is vooral conceptueel, en rijk aan voorbeelden van geesteswetenschappelijk onderzoek. Waar nodig worden formules aangeboden in een aparte paragraaf.
 
@@ -179,8 +178,7 @@ Huub van den Bergh
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{in-english-please}{%
-\section*{In English please?}\label{in-english-please}}
+\section*{In English please?}\label{in-english-please}
 \addcontentsline{toc}{section}{In English please?}
 
 Dit is de Nederlandstalige versie van het tekstboek, getiteld \emph{Kwantitatieve Methoden en Statistiek}.
@@ -188,58 +186,51 @@ Dit is de Nederlandstalige versie van het tekstboek, getiteld \emph{Kwantitatiev
 You are currently reading the Dutch version of the textbook.
 The parallel English version of this textbook, titled \emph{Quantitative Methods and Statistics}, is available at \url{https://hugoquene.github.io/QMS-EN/}
 
-\hypertarget{notatie}{%
-\section*{Notatie}\label{notatie}}
+\section*{Notatie}\label{notatie}
 \addcontentsline{toc}{section}{Notatie}
 
 In aansluiting op het internationale gebruik en op de conventies van Engelstalige tijdschriften gebruiken we de punt als decimaalteken; we schrijven dus \(\frac{3}{2}=1.5\). Hierbij is een waarschuwing op zijn plaats: het decimale symbool kan verschillen tussen computers, en zelfs tussen programma's op dezelfde computer. Controleer dus welk decimaal symbool gebruikt wordt door (elk programma op) jouw computer.
 
-\hypertarget{licentie}{%
-\section*{Licentie}\label{licentie}}
+\section*{Licentie}\label{licentie}
 \addcontentsline{toc}{section}{Licentie}
 
 This document is licensed under the \emph{GNU GPL 3} license (for details see
 \url{https://www.gnu.org/licenses/gpl-3.0.en.html}).
 
-\hypertarget{citatie}{%
-\section*{Citatie}\label{citatie}}
+\section*{Citatie}\label{citatie}
 \addcontentsline{toc}{section}{Citatie}
 
 Gebruik een van de volgende manieren om te verwijzen naar dit tekstboek (in APA-formaat), met de datum van raadpleging:
 
-Quené, H. \& Van den Bergh, H. (2022). \emph{Kwantitatieve Methoden en Statistiek}.
-Geraadpleegd op 13 mei 2022 via \url{https://hugoquene.github.io/KMS-NL/} .
+Quené, H. \& Van den Bergh, H. (2024). \emph{Kwantitatieve Methoden en Statistiek}.
+Geraadpleegd op 27 augustus 2024 via \url{https://hugoquene.github.io/KMS-NL/} .
 
-Quené, H. \& Van den Bergh, H. (2022). \emph{Kwantitatieve Methoden en Statistiek} {[}in Dutch{]}.
-Retrieved 13 May 2022 from \url{https://hugoquene.github.io/KMS-NL/} .
+Quené, H. \& Van den Bergh, H. (2024). \emph{Kwantitatieve Methoden en Statistiek} {[}in Dutch{]}.
+Retrieved 27 Aug 2024 from \url{https://hugoquene.github.io/KMS-NL/} .
 
-\hypertarget{technische-details}{%
-\section*{Technische details}\label{technische-details}}
+\section*{Technische details}\label{technische-details}
 \addcontentsline{toc}{section}{Technische details}
 
 Alle materialen voor dit tekstboek zijn beschikbaar via \url{https://doi.org/10.5281/zenodo.4113980} of rechtstreeks via \url{https://github.com/hugoquene/KMS-NL}: men vinde daar andere versies van deze tekst (EPUB, PDF, HTML), de broncode (Rmarkdown en R) van de tekst inclusief figuren en voorbeelden en uitwerkingen, de databestanden die worden gebruikt in tekst, en de figuren als afzonderlijke bestanden.
 
 De tekst is geschreven in LaTeX, en daarna omgezet naar Rmarkdown, met behulp van \texttt{pandoc} \citep{pandoc} en het \texttt{bookdown} package \citep{R-bookdown} in \href{https://www.rstudio.com}{Rstudio}.\\
 
-\hypertarget{over-de-auteurs}{%
-\section*{Over de auteurs}\label{over-de-auteurs}}
+\section*{Over de auteurs}\label{over-de-auteurs}
 \addcontentsline{toc}{section}{Over de auteurs}
 
-Beide auteurs zijn verbonden aan de Faculteit Geesteswetenschappen van de Universiteit Utrecht. HQ is hoogleraar Kwantitatieve Methoden van Empirisch Onderzoek in de Geesteswetenschappen, en geeft daarnaast leiding aan het Centre for Digital Humanities. HvdB is hoogleraar Didactiek en Toetsing van het Taalvaardigheidsonderwijs, en is daarnaast vaksectievoorzitter Nederlands bij het College voor Toetsen en Examens (CvTE).
+HQ is hoogleraar Kwantitatieve Methoden van Empirisch Onderzoek in de Geesteswetenschappen, en geeft leiding aan het Centre for Digital Humanities (CDH), bij de Universiteit Utrecht.
+HvdB is emeritus hoogleraar Didactiek en Toetsing van het Taalvaardigheidsonderwijs bij de Universiteit Utrecht, en was eerder vaksectievoorzitter Nederlands bij het College voor Toetsen en Examens (CvTE).
 
-\hypertarget{part-deel-i-methodologie}{%
-\part*{Deel I: Methodologie}\label{part-deel-i-methodologie}}
+\part*{Deel I: Methodologie}\label{part-deel-i-methodologie}
 \addcontentsline{toc}{part}{Deel I: Methodologie}
 
-\hypertarget{ch-inleiding}{%
-\chapter{Inleiding}\label{ch-inleiding}}
+\chapter{Inleiding}\label{ch-inleiding}
 
 In dit tekstboek worden de grondbeginselen, methoden en technieken van
 empirisch wetenschappelijk onderzoek besproken, zowel in algemene zin
 als toegespitst op het brede domein van taal en communicatie. We zullen ons bezighouden met vragen als: Wat is een goede onderzoeksvraag? Welke methode is de beste om de onderzoeksvraag te beantwoorden? Hoe kunnen onderzoekers zinnige en valide conclusies trekken uit (statistische analyses van) hun gegevens? In dit tekstboek beperken we ons tot de belangrijkste grondbeginselen, en tot de belangrijkste methoden en technieken. In dit eerste hoofdstuk zullen we een overzicht geven van verschillende typen en vormen van wetenschappelijk onderzoek. In het vervolg van dit tekstboek geven we de meeste aandacht aan methoden van wetenschappelijk onderzoek waarbij empirische observaties uitgedrukt worden in de vorm van getallen (kwantitatief), die geanalyseerd worden met behulp van statistische technieken.
 
-\hypertarget{sec:wetenschappelijk-onderzoek}{%
-\section{Wetenschappelijk onderzoek}\label{sec:wetenschappelijk-onderzoek}}
+\section{Wetenschappelijk onderzoek}\label{sec:wetenschappelijk-onderzoek}
 
 Om te beginnen moeten we een vraag stellen die terugslaat op de
 allereerste zin hierboven: wat is eigenlijk wetenschappelijk onderzoek?
@@ -281,8 +272,7 @@ Vertrouwelijke gegevens uit een onbekende bron, of inzichten verkregen
 in een droom of in een mystieke beleving, zijn niet empirisch
 onderbouwd, en kunnen dus niet de basis vormen van een wetenschappelijke theorie.
 
-\hypertarget{sec:theorie}{%
-\subsection{Theorie}\label{sec:theorie}}
+\subsection{Theorie}\label{sec:theorie}
 
 Het doel van wetenschappelijk
 onderzoek is te komen tot een theorie over een deel van de
@@ -316,8 +306,7 @@ te delen is gericht op het type onderzoek, bijvoorbeeld
 instrumentatieonderzoek (§\ref{sec:instrumentatie-onderzoek}), beschrijvend onderzoek (§\ref{sec:beschrijvend-onderzoek}),
 en experimenteel onderzoek (§\ref{sec:experimenteel-onderzoek}).
 
-\hypertarget{sec:paradigmata}{%
-\section{Paradigmata}\label{sec:paradigmata}}
+\section{Paradigmata}\label{sec:paradigmata}
 
 Eén criterium om typen onderzoek te onderscheiden is op basis van het
 gebruikte paradigma, de manier waarop de onderzoeker tegen de
@@ -385,8 +374,7 @@ maatschappelijke context waarin het onderzoek is verricht. Deze laatste
 visie wordt overigens overgenomen door steeds meer onderzoekers, ook
 door hen die andere paradigmata aanhangen.
 
-\hypertarget{sec:instrumentatie-onderzoek}{%
-\section{Instrumentatie-onderzoek}\label{sec:instrumentatie-onderzoek}}
+\section{Instrumentatie-onderzoek}\label{sec:instrumentatie-onderzoek}
 
 Onderzoek is, zoals gezegd, een gesystematiseerde en gecontroleerde
 wijze om empirische gegevens te verzamelen en te interpreteren.
@@ -442,8 +430,7 @@ deze begrippen zelfs essentieel, omdat dit type onderzoek juist beoogt
 om valide en betrouwbare instrumenten te leveren, die een goede
 operationatisatie zijn van het abstracte construct-zoals-bedoeld.
 
-\hypertarget{sec:beschrijvend-onderzoek}{%
-\section{Beschrijvend onderzoek}\label{sec:beschrijvend-onderzoek}}
+\section{Beschrijvend onderzoek}\label{sec:beschrijvend-onderzoek}
 
 Met beschrijvend onderzoek bedoelen we onderzoek dat voornamelijk
 gericht is op de beschrijving van een bepaald natuurlijk verschijnsel in
@@ -496,8 +483,7 @@ ook relatief langer in leven zijn\footnote{Het is zelfs mogelijk dat het onderzo
 een causaal verband is, moeten we experimenteel onderzoek opzetten en
 uitvoeren.
 
-\hypertarget{sec:experimenteel-onderzoek}{%
-\section{Experimenteel onderzoek}\label{sec:experimenteel-onderzoek}}
+\section{Experimenteel onderzoek}\label{sec:experimenteel-onderzoek}
 
 Experimenteel onderzoek wordt gekenmerkt doordat de onderzoeker een
 bepaald aspect van de onderzoeksomstandigheden systematisch varieert
@@ -618,8 +604,7 @@ beter in laboratoriumsituaties onderzoeken, terwijl andere beter in
 veldsituaties onderzocht kunnen worden (zoals bovenstaande voorbeelden
 illustreren).
 
-\hypertarget{sec:vooruitblik}{%
-\section{Vooruitblik}\label{sec:vooruitblik}}
+\section{Vooruitblik}\label{sec:vooruitblik}
 
 Dit tekstboek bestaat uit drie delen. Deel I (hoofdstukken 1 tot en met 7) van dit tekstboek behandelt
 methoden van onderzoek, en geeft een toelichting bij allerlei termen en
@@ -659,16 +644,16 @@ In aparte secties leggen we uit hoe je de besproken statistische analyses zelf k
   \textbf{R} (versie 3.0 en hoger): een wat moeilijker, maar ook krachtiger en veelzijdiger pakket, met snel stijgende populariteit bij onderzoekers.\\
   R is gratis beschikbaar via \url{https://www.R-project.org}.
   Een korte inleiding in het gebruik van R is te vinden via \url{https://hugoquene.github.io/emlar2020/}.
-  Langere inleidingen zijn te vinden in \citet{Dalg02} en in diverse uitstekende ``free web books''; een lijst van aanbevolen boeken is te vinden op \url{https://statisticalhorizons.com/resources/free-web-books-for-learning-r}.
+  Langere inleidingen zijn te vinden in \citet{Dalg02} en in diverse uitstekende ``free web books'';
+  een lijst van aanbevolen materialen (Engelstalig) is te vinden op
+  \url{https://statisticalhorizons.com/resources/free-r-resources}.
 \end{itemize}
 
 Voor studenten en medewerkers van de Universiteit Utrecht zijn al deze statistische pakketten geïnstalleerd in \texttt{MyWorkPlace}.
 
-\hypertarget{ch-onderzoek}{%
-\chapter{Hypothese-toetsend onderzoek}\label{ch-onderzoek}}
+\chapter{Hypothese-toetsend onderzoek}\label{ch-onderzoek}
 
-\hypertarget{inleiding}{%
-\section{Inleiding}\label{inleiding}}
+\section{Inleiding}\label{inleiding}
 
 Veel empirisch onderzoek heeft tot doel om verbanden vast te stellen
 tussen (vermeende) oorzaken en hun (vermeende) gevolgen. De onderzoeker
@@ -726,8 +711,7 @@ deze definitie staan twee termen centraal: `variabelen' en `op de
 verwachte wijze'. Voordat we nader ingaan op experimenteel onderzoek
 zullen we deze termen nader beschouwen.
 
-\hypertarget{sec:variabelen}{%
-\section{Variabelen}\label{sec:variabelen}}
+\section{Variabelen}\label{sec:variabelen}
 
 Wat is een variabele? Grofweg is een variabele een eigenschap van
 objecten of personen die kan variëren, en die dus verschillende waarden
@@ -766,8 +750,7 @@ minder populair. Voorbeelden van variabelen zijn er te over:
   diploma's of transacties, rechtsvorm, enz.
 \end{itemize}
 
-\hypertarget{sec:onafhankelijkeafhankelijkevariabelen}{%
-\section{Onafhankelijke en afhankelijke variabelen}\label{sec:onafhankelijkeafhankelijkevariabelen}}
+\section{Onafhankelijke en afhankelijke variabelen}\label{sec:onafhankelijkeafhankelijkevariabelen}
 
 In hypothese-toetsend onderzoek kennen we twee soorten variabelen: de
 afhankelijke en de onafhankelijke variabele. De \emph{onafhankelijke
@@ -846,8 +829,7 @@ luisteraars oordelen vormt de afhankelijke variabele.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sec:falsificatie}{%
-\section{Falsificatie en nul-hypothese}\label{sec:falsificatie}}
+\section{Falsificatie en nul-hypothese}\label{sec:falsificatie}
 
 Het doel van wetenschappelijk onderzoek is om te komen tot een coherente
 verzameling van ``justified true beliefs'' \citep{Mort03}. Een
@@ -949,8 +931,7 @@ g. De stijging van de gemiddelde temperatuur van de aarde is het gevolg van mens
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sec:empirischecyclus}{%
-\section{De empirische cyclus}\label{sec:empirischecyclus}}
+\section{De empirische cyclus}\label{sec:empirischecyclus}
 
 In het voorafgaande hebben we op een vrij
 globale manier kennis gemaakt met experimenteel onderzoek. In deze
@@ -966,8 +947,7 @@ interpretaties geformuleerd. Dit leidt weer tot nieuw onderzoek, waarin
 opnieuw de serie fasen kan worden doorlopen (vandaar `cyclus'). Deze
 vijf onderzoeksfasen zullen wij één voor één behandelen.
 
-\hypertarget{observatie}{%
-\subsection{observatie}\label{observatie}}
+\subsection{observatie}\label{observatie}
 
 In deze fase construeert de onderzoeker een probleem. Dat wil zeggen dat
 de onderzoeker een idee vorm over de mogelijke relaties tussen
@@ -1006,8 +986,7 @@ opmerkelijke verschijnselen, case-studies, literatuurstudie, e.d. Er
 zijn echter geen methodologische richtlijnen over hoe dit proces zou
 moeten verlopen: het is een creatief proces.
 
-\hypertarget{inductie}{%
-\subsection{inductie}\label{inductie}}
+\subsection{inductie}\label{inductie}
 
 In de inductiefase wordt de in de observatiefase geopperde
 veronderstelling gegeneraliseerd. Op grond van specifieke observaties
@@ -1091,8 +1070,7 @@ In het algemeen worden drie typen hypothesen onderscheiden \citep{Groot61}:
   dan alle leerlingen van de oude methode.
 \end{itemize}
 
-\hypertarget{deductie}{%
-\subsection{deductie}\label{deductie}}
+\subsection{deductie}\label{deductie}
 
 In deze fase van de empirische cyclus worden specifieke voorspellingen
 afgeleid uit de algemeen geformuleerde hypothese die is opgezet in de
@@ -1121,8 +1099,7 @@ In de praktijk worden de termen `hypothese' en `voorspelling' vaak door
 elkaar gebruikt, en spreken we vaak over het toetsen van hypothesen.
 Volgens bovenstaande terminologie toetsen we echter niet de hypothesen, maar leiden we uit de hypothesen voorspellingen af (via deductie), en toetsen we daarna die voorspellingen aan de data.
 
-\hypertarget{toetsing}{%
-\subsection{toetsing}\label{toetsing}}
+\subsection{toetsing}\label{toetsing}
 
 In deze fase verzamelen we empirische observaties en vergelijken we die
 met de uitgewerkte voorspellingen ``onder H0'', d.w.z. de voorspellingen
@@ -1245,8 +1222,7 @@ hand. De kans op een Type-II-fout is afhankelijk van drie factoren, en
 is lastig te bepalen. We zullen dat nader bespreken in
 Hoofdstuk \ref{ch-power}.
 
-\hypertarget{evaluatie}{%
-\subsection{evaluatie}\label{evaluatie}}
+\subsection{evaluatie}\label{evaluatie}
 
 Aan het einde van het onderzoek moet de onderzoeker de
 onderzoeksresultaten evalueren: wat is het nu allemaal waard? Het draait
@@ -1266,8 +1242,7 @@ rol speelt. Verschillende onderzoekers kunnen dezelfde uitkomsten geheel
 anders interpreteren. En soms zijn de resultaten in tegenspraak met wat
 was voorspeld of gewenst.
 
-\hypertarget{sec:keuzemomenten}{%
-\section{Keuzemomenten}\label{sec:keuzemomenten}}
+\section{Keuzemomenten}\label{sec:keuzemomenten}
 
 Onderzoek bestaat uit een reeks van keuze-momenten: van de inspirerende
 observaties in de eerste fase, via de operationele beslissingen in de
@@ -1425,11 +1400,9 @@ aaneenschakeling van problemen, keuzes en beslissingen. De belangrijkste
 keuzes zijn al gemaakt voordat de onderzoeker begint met gegevens
 verzamelen.
 
-\hypertarget{ch-integriteit}{%
-\chapter{Integriteit}\label{ch-integriteit}}
+\chapter{Integriteit}\label{ch-integriteit}
 
-\hypertarget{sec:integriteit-inleiding}{%
-\section{Inleiding}\label{sec:integriteit-inleiding}}
+\section{Inleiding}\label{sec:integriteit-inleiding}
 
 Wetenschappelijk onderzoek heeft de mensheid onmetelijk grote baten
 opgeleverd, zoals betrouwbare computer-technologie, goede medische zorg,
@@ -1488,8 +1461,7 @@ bespreken we deze onderwerpen aan het begin van dit tekstboek, hoewel we
 ook vooruit zullen wijzen naar termen en begrippen die worden uitgewerkt
 in volgende hoofdstukken.
 
-\hypertarget{sec:ontwerp}{%
-\section{Ontwerp}\label{sec:ontwerp}}
+\section{Ontwerp}\label{sec:ontwerp}
 
 Weliswaar levert wetenschappelijk onderzoek ons onmetelijk grote baten
 op, maar daar staan ook aanzienlijke kosten tegenover. De directe kosten
@@ -1631,8 +1603,7 @@ dienen te beschikken over voldoende methodologische bagage om een goed
 onderzoeksontwerp (design) te kiezen gezien het tijdsbestek, de mogelijk
 beschikbare proefpersonen, de meetinstrumenten, enz.
 
-\hypertarget{proefpersonen-en-informanten}{%
-\section{Proefpersonen en informanten}\label{proefpersonen-en-informanten}}
+\section{Proefpersonen en informanten}\label{proefpersonen-en-informanten}
 
 Wetenschappelijk onderzoek is mensenwerk: onderzoekers zijn ook mensen.
 Op het gebied van de geesteswetenschappen bestuderen die onderzoekers
@@ -1710,8 +1681,7 @@ Ethische toetsing is ook verplicht voor
 studenten en onderzoekers uit andere domeinen (literatuur, geschiedenis,
 media \& cultuur) die van plan zijn onderzoek te verrichten met mensen.
 
-\hypertarget{gegevens}{%
-\section{Gegevens}\label{gegevens}}
+\section{Gegevens}\label{gegevens}
 
 De verzamelde data of gegevens vormen de onderbouwing voor de conclusies
 uit wetenschappelijk onderzoek. Die gegevens zijn daarmee van essentieel
@@ -1781,8 +1751,7 @@ ander, niet frauduleus onderzoek --- kortom, een wetenschappelijke
 doodzonde.
 Studenten en medewerkers van de Universiteit Utrecht die vragen of dilemma's willen bespreken over wetenschappelijke integriteit zijn welkom bij dr. Rick Nouwen, vertrouwenspersoon wetenschappelijke integriteit in de Faculteit Geesteswetenschappen van de Universiteit Utrecht (\texttt{r.w.f.nouwen@uu.nl}).
 
-\hypertarget{teksten}{%
-\section{Teksten}\label{teksten}}
+\section{Teksten}\label{teksten}
 
 Wetenschappelijk onderzoek wordt pas echt nuttig, als de resultaten
 ervan verspreid worden. Onderzoek dat niet wordt gerapporteerd, zou net
@@ -1935,11 +1904,9 @@ Een overzicht van zulke programma's is te vinden via
 Voor dit tekstboek is gebruik gemaakt van Zotero (\url{https://www.zotero.org}),
 gecombineerd met BibTeX (\url{https://www.bibtex.org}).
 
-\hypertarget{ch-meetniveau}{%
-\chapter{Meetniveau}\label{ch-meetniveau}}
+\chapter{Meetniveau}\label{ch-meetniveau}
 
-\hypertarget{inleiding-1}{%
-\section{Inleiding}\label{inleiding-1}}
+\section{Inleiding}\label{inleiding-1}
 
 In Hoofdstuk \ref{ch-onderzoek} maakten we al kennis met variabelen:
 eigenschappen die verschillende waarden kunnen aannemen. De waarde van
@@ -1960,8 +1927,7 @@ scores op een variabele en --- zoals we later zullen zien --- voor de
 keuze van de juiste statistische toets om een onderzoeksvraag te
 beantwoorden.
 
-\hypertarget{sec:nominaal}{%
-\section{Nominaal}\label{sec:nominaal}}
+\section{Nominaal}\label{sec:nominaal}
 
 We spreken van een nominale variabele (of nominaal meetniveau) als een
 kenmerk gecategoriseerd wordt in afzonderlijke (discrete) categorieën,
@@ -1978,8 +1944,7 @@ de gemeten waarden van een nominale variabele. We kunnen dus wel de
 meest voorkomende nationaliteit vaststellen, maar we kunnen niet de
 gemiddelde nationaliteit uitrekenen.
 
-\hypertarget{sec:ordinaal}{%
-\section{Ordinaal}\label{sec:ordinaal}}
+\section{Ordinaal}\label{sec:ordinaal}
 
 Er is sprake van een ordinale variabele (of van een ordinaal meetniveau)
 als een kenmerk gecategoriseerd wordt in afzonderlijke categorieën,
@@ -1997,8 +1962,7 @@ niet rekenen met de gemeten waarden van een ordinale variabele. We
 kunnen wel de meest verkochte kledingmaat vaststellen, maar we kunnen
 niet de gemiddelde verkochte kledingmaat uitrekenen\footnote{Als de helft van de respondenten \emph{mee eens} antwoordt, en de andere helft \emph{niet mee eens}, dan kunnen we niet zinnig concluderen dat de responsies gemiddeld \emph{neutraal} zouden zijn.}.
 
-\hypertarget{sec:interval}{%
-\section{Interval}\label{sec:interval}}
+\section{Interval}\label{sec:interval}
 
 Er is sprake van een interval-variabele (of van een interval-meetniveau)
 als een kenmerk uitgedrukt wordt in een getal op een continue schaal,
@@ -2015,8 +1979,7 @@ maar de enige zinnige bewerkingen zijn optellen en aftrekken. Daarmee
 kunnen we wel een gemiddelde berekenen, bijv. het gemiddelde jaar waarin de
 personen in een steekproef hun eerste mobiele telefoon begonnen te gebruiken.
 
-\hypertarget{sec:ratio}{%
-\section{Ratio}\label{sec:ratio}}
+\section{Ratio}\label{sec:ratio}
 
 Het vierde en hoogste meetniveau is het ratio-niveau. Er is sprake van
 een ratio-variabele (of van een ratio-meetniveau) als een kenmerk
@@ -2040,8 +2003,7 @@ optellen en aftrekken maar ook delen en vermenigvuldigen. Ook hier is
 het mogelijk om een gemiddelde te berekenen, bijv. de gemiddelde leeftijd
 waarop de personen in een steekproef hun eerste mobiele telefoon begonnen te gebruiken.
 
-\hypertarget{sec:ordeningvanmeetniveaus}{%
-\section{Ordening van meetniveaus}\label{sec:ordeningvanmeetniveaus}}
+\section{Ordening van meetniveaus}\label{sec:ordeningvanmeetniveaus}
 
 De meetniveaus zijn hierboven besproken in toenemende informativiteit of
 sterkte. Een nominale variabele bevat het minste informatie en geldt als
@@ -2073,11 +2035,9 @@ hoeft geen probleem te zijn, maar het is wel goed om vooraf te
 doordenken wat de consequenties zijn van de keuze voor een bepaald
 meetniveau.
 
-\hypertarget{ch-validiteit}{%
-\chapter{Validiteit}\label{ch-validiteit}}
+\chapter{Validiteit}\label{ch-validiteit}
 
-\hypertarget{inleiding-2}{%
-\section{Inleiding}\label{inleiding-2}}
+\section{Inleiding}\label{inleiding-2}
 
 Experimenteel onderzoek heeft tot doel om hypotheses te toetsen. Ook in
 ander, niet-experimenteel onderzoek kunnen hypotheses worden getoetst,
@@ -2097,8 +2057,7 @@ experiment heeft aannemelijk gemaakt dat er een causaal of oorzakelijk
 verband is tussen de behandelingsmethode (onafhankelijke variabele) en
 de resulterende taalvaardigheid (afhankelijke variabele).
 
-\hypertarget{sec:causaliteit}{%
-\section{Causaliteit}\label{sec:causaliteit}}
+\section{Causaliteit}\label{sec:causaliteit}
 
 Een causaal of oorzakelijk verband tussen twee variabelen is iets anders
 dan een `gewoon' verband of samenhang tussen twee variabelen. Als twee
@@ -2138,8 +2097,7 @@ lacunes. Dat betekent dat we goede voorzorgen moeten treffen in onze
 onderzoeksmethoden, teneinde mogelijke alternatieve plausibele
 verklaringen voor de gevonden effecten uit te sluiten.
 
-\hypertarget{sec:validiteit}{%
-\section{Validiteit}\label{sec:validiteit}}
+\section{Validiteit}\label{sec:validiteit}
 
 Een bewering of conclusie is \emph{valide} als de bewering \emph{waar} (true) en
 \emph{gerechtvaardigd} (justified) is. Een ware uitspraak correspondeert met
@@ -2177,8 +2135,7 @@ worden onderscheiden.
 Deze drie vormen van validiteit zullen wij in de navolgende paragrafen
 toelichten.
 
-\hypertarget{sec:internevaliditeit}{%
-\section{Interne validiteit}\label{sec:internevaliditeit}}
+\section{Interne validiteit}\label{sec:internevaliditeit}
 
 Het is vanzelfsprekend de bedoeling om in een experimenteel onderzoek
 zoveel mogelijk alternatieve verklaringen voor de onderzoeksresultaten
@@ -2606,8 +2563,7 @@ wegnemen door de opzet van het onderzoek? Dat vereist goed inzicht in de
 logische relaties tussen de onderzoeksvragen, de onderzochte variabelen,
 de resultaten, en de conclusie.
 
-\hypertarget{sec:constructvaliditeit}{%
-\section{Constructvaliditeit}\label{sec:constructvaliditeit}}
+\section{Constructvaliditeit}\label{sec:constructvaliditeit}
 
 In een experimenteel onderzoek wordt een onafhankelijke variabele
 gemanipuleerd. Dit kan, afhankelijk van de vraagstelling, op vele
@@ -2676,10 +2632,10 @@ zelf, zoals geïllustreerd in deze vraag:
 \begin{quote}
 \emph{Wie van de volgende personen heeft in de afgelopen 15 jaar een autobiografie
 gepubliceerd?\\
-\hspace*{0.333em}a. Jeanne d'Arc }(algemene ontwikkeling)\emph{\hfill\break
+\strut ~a. Jeanne d'Arc }(algemene ontwikkeling)\emph{\hfill\break
 ~b. mijn buurvrouw }(vraagstelling, ervaring)\emph{\hfill\break
 ~c.~Malala Yousafzai\\
-\hspace*{0.333em}d.~Alexander Graham Bell }(algemene ontwikkeling)**\\
+\strut ~d.~Alexander Graham Bell }(algemene ontwikkeling)**\\
 \end{quote}
 
 \begin{quote}
@@ -3009,7 +2965,7 @@ overlijdensrisico voor de voetganger toe tot bijna 100\%
 5. Een vijfde bedreiging van de constructvaliditeit wordt veroorzaakt
 door de \emph{sturende werking van de voormeting}. In veel studies wordt de
 afhankelijke variabele herhaaldelijk gemeten, zowel voor als na
-manipulatie van de afhankelijke variabele: de zgn. voormeting en
+manipulatie van de onafhankelijke variabele: de zgn. voormeting en
 nameting. De aard en inhoud van de voormeting kunnen echter sporen
 nalaten bij de proefpersoon. Zo kan de proefpersoon zijn onbevangenheid
 verliezen, waardoor het effect van de onafhankelijke variabele (bv.
@@ -3096,8 +3052,7 @@ generalisatie kunnen beïnvloeden? Zou een gunstig effect voor de ene
 groep of taal ook kunnen uitpakken als een ongunstig effect voor een
 andere groep of taal die buiten het onderzoek is gevallen?
 
-\hypertarget{sec:externevaliditeit}{%
-\section{Externe validiteit}\label{sec:externevaliditeit}}
+\section{Externe validiteit}\label{sec:externevaliditeit}
 
 Op basis van de gegevens die zijn verzameld kan een onderzoeker --- als
 het goed is --- de conclusie trekken: \emph{in dit onderzoek geldt dat\ldots{}}.
@@ -3200,11 +3155,9 @@ taalmateriaal wel, dat de stimuli willekeurig zijn geselecteerd uit de
 (soms oneindig grote) populatie van al het mogelijke taalmateriaal (zie
 Hoofdstuk \ref{ch-steekproeftrekking}).
 
-\hypertarget{ch-ontwerp}{%
-\chapter{Ontwerp}\label{ch-ontwerp}}
+\chapter{Ontwerp}\label{ch-ontwerp}
 
-\hypertarget{sec:ontwerp-inleiding}{%
-\section{Inleiding}\label{sec:ontwerp-inleiding}}
+\section{Inleiding}\label{sec:ontwerp-inleiding}
 
 Veel van de problemen met validiteit, die we bespraken in
 Hoofdstuk \ref{ch-validiteit}, kunnen voorkomen worden door goede gegevens
@@ -3268,11 +3221,9 @@ Een onderzoeksontwerp is opgebouwd uit verschillende elementen:
   daarmee de validiteit meestal het beste beschermd wordt.
 \end{itemize}
 
-\hypertarget{sec:tussenbinnenproefpersonen}{%
-\section{Tussen of binnen ?}\label{sec:tussenbinnenproefpersonen}}
+\section{Tussen of binnen ?}\label{sec:tussenbinnenproefpersonen}
 
-Voor het
-onderzoeksontwerp is het van groot belang of een onafhankelijke variabele
+Voor het onderzoeksontwerp is het van groot belang of een onafhankelijke variabele
 gevarieerd wordt \emph{tussen proefpersonen} of \emph{binnen proefpersonen}. Voor
 veel taalkundig onderzoek, waarbij meerdere teksten of zinnen of woorden
 worden aangeboden als stimuli, geldt hetzelfde voor het onderscheid
@@ -3291,8 +3242,7 @@ in het onderzoeksontwerp kiezen op welke wijze de behandelingen en
 observaties worden gecombineerd. We komen daarop terug in
 §\ref{sec:afhankelijkegroepen}.
 
-\hypertarget{sec:oneshotsinglecase}{%
-\section{Het one-shot single-case-ontwerp}\label{sec:oneshotsinglecase}}
+\section{Het one-shot single-case-ontwerp}\label{sec:oneshotsinglecase}
 
 Dit is een zwak ontwerp, waarbij er slechts éénmaal observaties worden
 gedaan, na een behandeling. Dit onderzoeksontwerp heeft het volgende
@@ -3365,8 +3315,7 @@ zijn in de observatiefase van de empirische cyclus, wanneer het gaat om
 het opdoen van ideeën en het formuleren van (globale) hypothesen, die
 later goed getoetst kunnen worden.
 
-\hypertarget{sec:eengroepvoorna}{%
-\section{Het één-groep-voormeting-nameting-ontwerp}\label{sec:eengroepvoorna}}
+\section{Het één-groep-voormeting-nameting-ontwerp}\label{sec:eengroepvoorna}
 
 Bij het één-groep-voormeting-nameting-ontwerp worden gegevens verzameld
 van één groep. Op het eerste tijdstip (meestal aangeduid als \texttt{T1}, maar
@@ -3402,8 +3351,7 @@ onderzoeksontwerp kleven diverse bezwaren, omdat de hypothese over het
 effect van de onafhankelijke variabele niet zonder meer op valide wijze
 beantwoord kan worden.
 
-\hypertarget{sec:voormeting-nameting-controlegroep-ontwerp}{%
-\section{Het voormeting-nameting-controlegroep-ontwerp}\label{sec:voormeting-nameting-controlegroep-ontwerp}}
+\section{Het voormeting-nameting-controlegroep-ontwerp}\label{sec:voormeting-nameting-controlegroep-ontwerp}
 
 De bovengenoemde problemen kunnen voor een deel ondervangen worden door
 een controlegroep toe te voegen aan het ontwerp; we krijgen dan een
@@ -3509,7 +3457,8 @@ experimentele als de controle-conditie een (verschillende) rol spelen,
 omdat in beide condities op twee tijdstippen gemeten wordt. Bovendien
 kan een eventueel verschil tussen \texttt{(O2-O1}) en \texttt{(O4-O3)} ook te
 wijten zijn aan de (extra) \emph{aandacht} die aan de experimentele conditie
-besteed is: het zgn. Hawthorne-effect (zie Voorbeeld 5.10 in Hoofdstuk \ref{ch-validiteit}). Dit effect speelt vooral een rol als de
+besteed is: het zgn. Hawthorne-effect (zie Voorbeeld 5.10 in Hoofdstuk \ref{ch-validiteit}).
+Dit effect speelt vooral een rol als de
 proefpersonen in de ene conditie (groep) meer aandacht krijgen dan in de
 andere, zoals in het onderstaande voorbeeld.
 
@@ -3528,8 +3477,7 @@ worden, waardoor zij zich daarna niet meer als naïeve proefpersonen
 gedragen. De voormeting kan dan als een soort manipulatie beschouwd
 worden (zie Voorbeeld 6.3 hieronder).
 
-\hypertarget{sec:solomon-vier-groepen-ontwerp}{%
-\section{Het Solomon-vier-groepen-ontwerp}\label{sec:solomon-vier-groepen-ontwerp}}
+\section{Het Solomon-vier-groepen-ontwerp}\label{sec:solomon-vier-groepen-ontwerp}
 
 Het Solomon-vier-groepen-ontwerp wordt veel minder vaak gebruikt dan het
 voormeting-nameting-controlegroep-ontwerp. Toch verdient dit ontwerp
@@ -3597,8 +3545,7 @@ de proefpersonen.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sec:nameting-controlegroep}{%
-\section{Het nameting-controlegroep-ontwerp}\label{sec:nameting-controlegroep}}
+\section{Het nameting-controlegroep-ontwerp}\label{sec:nameting-controlegroep}
 
 In heel veel onderzoekingen wordt een voormeting uitgevoerd, omdat de
 onderzoekers willen onderbouwen dat de twee (of meer) onderzoeksgroepen
@@ -3659,8 +3606,7 @@ experiment, met mondelinge interviews per telefoon, en zij concluderen
 dat voorbeeldantwoorden wel degelijk sturend werken in deze telefonische
 gesprekken.
 
-\hypertarget{sec:ontwerp-factorieel}{%
-\section{Factoriële ontwerpen}\label{sec:ontwerp-factorieel}}
+\section{Factoriële ontwerpen}\label{sec:ontwerp-factorieel}
 
 Tot nog toe hebben we het gehad over experimentele onderzoeksontwerpen
 waarbij één onafhankelijke variabele gemanipuleerd wordt. Veel
@@ -3775,11 +3721,10 @@ uit factoriële onderzoeksontwerpen
 (Hoofdstuk \ref{ch-variantieanalyse}). Voorlopig concentreren we ons op
 ontwerpen met slechts één onafhankelijke variabele.
 
-\hypertarget{sec:afhankelijkegroepen}{%
-\section{Afhankelijke- en onafhankelijke-groepen-ontwerp}\label{sec:afhankelijkegroepen}}
+\section{Afhankelijke- en onafhankelijke-groepen-ontwerp}\label{sec:afhankelijkegroepen}
 
 In het begin van dit hoofdstuk hebben we gesproken over de manipulatie
-van een onafhankelijke variabele tussen danwel binnen proefpersonen ().
+van een onafhankelijke variabele tussen danwel binnen proefpersonen (\ref{sec:tussenbinnenproefpersonen}).
 In de meeste van de voorafgaande onderzoeksontwerpen werd voor elke
 waarde van de onafhankelijke variabele(n) een afzonderlijke groep
 geformeerd; we noemen dat een onafhankelijke-groepen-ontwerp. De
@@ -3827,8 +3772,7 @@ essentieel dat \emph{dezelfde} proefpersonen spreektaken uitvoeren in beide
 talen (condities) --- de onderzoeksvragen zijn niet met een andere
 methode te beantwoorden.
 
-\hypertarget{onderzoek-ontwerpen}{%
-\section{Onderzoek ontwerpen}\label{onderzoek-ontwerpen}}
+\section{Onderzoek ontwerpen}\label{onderzoek-ontwerpen}
 
 Een onderzoeker die een onderzoek wil uitvoeren, moet bepalen op welke
 wijze hij zijn gegevens gaat verzamelen: hij moet een keuze maken voor
@@ -3912,8 +3856,7 @@ lage samenhang in de derde groep (experimentele groep 1) echter niet tot
 dezelfde uitkomst te leiden! De conclusie hangt immers mede af van de
 mate van samenhang gevonden in de andere groepen.
 
-\hypertarget{tenslotte}{%
-\section{Tenslotte}\label{tenslotte}}
+\section{Tenslotte}\label{tenslotte}
 
 Ondanks alle beschikbare boeken, handleidingen, websites, en ander
 instructiemateriaal komen wij nog te vaak onderzoek tegen waar
@@ -3980,8 +3923,7 @@ kan veel ellende in latere stadia van een onderzoek voorkomen.
   onderzoek af, en overweeg een verbeterde versie van je onderzoek.
 \end{enumerate}
 
-\hypertarget{ch-steekproeftrekking}{%
-\chapter{Steekproeven}\label{ch-steekproeftrekking}}
+\chapter{Steekproeven}\label{ch-steekproeftrekking}
 
 Voor de generalisatie van de uitkomsten van een onderzoek naar de
 doelgroep of de steekproef, is de kwaliteit van de steekproef bepalend.
@@ -4002,8 +3944,7 @@ een verdere verdieping in de wijze waarop steekproeven getrokken kunnen
 worden en de problemen die daarbij een rol spelen verwijzen we naar
 standaardwerken hierover \citep{Coch77, Thom12}.
 
-\hypertarget{sec:gelegenheidssteekproef}{%
-\section{Gelegenheidssteekproeven}\label{sec:gelegenheidssteekproef}}
+\section{Gelegenheidssteekproeven}\label{sec:gelegenheidssteekproef}
 
 In veel sociaalwetenschappelijk onderzoek wordt gewerkt met steekproeven
 die zich nu eenmaal aandienen, zogenaamde \emph{gelegenheidssteekproeven}. De
@@ -4086,8 +4027,7 @@ gemeenschappelijk toegangsnummer. De steekproef van bellers die hun stem
 kunnen uitbrengen is dan representatief voor de populatie van alle
 bellers, en dat was nu niet het geval.
 
-\hypertarget{sec:systematischesteekproef}{%
-\section{Systematische steekproeven}\label{sec:systematischesteekproef}}
+\section{Systematische steekproeven}\label{sec:systematischesteekproef}
 
 Wanneer de elementen in de \emph{steekproefruimte} (d.i. de verzameling van
 mogelijke elementen in een steekproef) op de een of andere manier
@@ -4155,8 +4095,7 @@ steekproef is dus niet representatief voor de populatie van
 derdeklassers. Wederom is het gevolg dat de gemeten resultaten slecht
 generaliseerbaar zijn naar andere derdeklassers van andere scholen.
 
-\hypertarget{sec:aselectesteekproef}{%
-\section{Aselecte steekproeven}\label{sec:aselectesteekproef}}
+\section{Aselecte steekproeven}\label{sec:aselectesteekproef}
 
 De hierboven beschreven storende trendwerking kunnen we voorkomen door
 random of \emph{aselecte steekproeftrekking}. Aselecte steekproeftrekking kan
@@ -4221,8 +4160,7 @@ signatuur heeft. We trekken uit de steekproefruimte nu meerdere aselecte
 strata een juiste afspiegeling vormt van de verhoudingen van dit kenmerk
 in de steekproefruimte \((35:31:31:3)\).
 
-\hypertarget{spss}{%
-\subsection{SPSS}\label{spss}}
+\subsection{SPSS}\label{spss}
 
 Voor het aanmaken van een kolom met random getallen:
 
@@ -4249,8 +4187,7 @@ Vink in het paneel ``Active Generator Initialization'' de optie \texttt{Set\ Sta
 
 Je kunt deze random getallen gebruiken om op aselecte wijze eenheden (bijv. proefpersonen) te kiezen voor een steekproef, maar uiteraard ook om op aselecte wijze de geselecteerde eenheden toe te wijzen aan condities, enzovoort.
 
-\hypertarget{jasp}{%
-\subsection{JASP}\label{jasp}}
+\subsection{JASP}\label{jasp}
 
 In JASP kan een kolom met random getallen worden aangemaakt door eerst een nieuwe variabele (kolom) aan te maken en deze daarna te vullen met random getallen.
 
@@ -4273,8 +4210,7 @@ Het is niet mogelijk een eigen beginwaarde te geven om zo reproduceerbare analys
 
 Je kunt deze random getallen gebruiken om op aselecte wijze eenheden (bijv. proefpersonen) te kiezen voor een steekproef, maar uiteraard ook om op aselecte wijze de geselecteerde eenheden toe te wijzen aan condities, enzovoort.
 
-\hypertarget{r}{%
-\subsection{R}\label{r}}
+\subsection{R}\label{r}
 
 In R kunnen we random getallen genereren met de functie \texttt{runif}. Deze functie kiest aselect (\textbf{r}andom) waarden uit een vlakke (\textbf{unif}orme) kansverdeling, d.w.z. dat elk getal tussen de ondergrens en bovengrens een gelijke kans heeft om getrokken te worden. De standaard grenzen zijn \((0,1)\). De waarden kunnen we afronden tot gehele getallen, zoals gedaan is voor Appendix \ref{app-randomgetallen}.
 
@@ -4295,8 +4231,7 @@ Met de opdracht \texttt{set.seed} geven we een eigen beginwaarde mee aan de ``ra
 
 Je kunt deze random getallen gebruiken om op aselecte wijze eenheden (bijv. proefpersonen) te kiezen voor een steekproef, maar uiteraard ook om op aselecte wijze de geselecteerde eenheden toe te wijzen aan condities, enzovoort.
 
-\hypertarget{sec:steekproefgrootte}{%
-\section{Steekproefgrootte}\label{sec:steekproefgrootte}}
+\section{Steekproefgrootte}\label{sec:steekproefgrootte}
 
 Als je verschillende onderzoeksartikelen leest, dan is één van de eerste
 zaken die opvalt de enorme variatie in aantallen respondenten. In
@@ -4369,15 +4304,12 @@ bespreken hoe we onderzoeksgegevens goed kunnen beschrijven en
 analyseren om onze onderzoeksvragen te beantwoorden. Dat gebeurt in het
 volgende deel van dit boek.
 
-\hypertarget{part-deel-ii-beschrijvende-statistiek}{%
-\part*{Deel II: Beschrijvende statistiek}\label{part-deel-ii-beschrijvende-statistiek}}
+\part*{Deel II: Beschrijvende statistiek}\label{part-deel-ii-beschrijvende-statistiek}
 \addcontentsline{toc}{part}{Deel II: Beschrijvende statistiek}
 
-\hypertarget{ch-frequenties}{%
-\chapter{Frequenties}\label{ch-frequenties}}
+\chapter{Frequenties}\label{ch-frequenties}
 
-\hypertarget{inleiding-3}{%
-\section{Inleiding}\label{inleiding-3}}
+\section{Inleiding}\label{inleiding-3}
 
 Bij de analyse van gegevens wordt vaak een onderscheid gemaakt tussen
 kwalitatieve danwel kwantitatieve methoden. Bij de eerste methode worden
@@ -4394,8 +4326,7 @@ kunnen worden (daarover gaat dit deel van het tekstboek), en dat het
 relatief makkelijk is om zinvolle conclusies te trekken op basis van de
 observaties.
 
-\hypertarget{sec:frequenties}{%
-\section{Frequenties}\label{sec:frequenties}}
+\section{Frequenties}\label{sec:frequenties}
 
 Kwantitatieve gegevens kunnen op allerlei manieren gerapporteerd worden.
 De eenvoudigste manier zou zijn om de ruwe gegevens te rapporteren, bij
@@ -4517,8 +4448,7 @@ Interval & Aantal \\
 0.00--0.49 & 151 \\
 \end{longtable}
 
-\hypertarget{sec:intervallen}{%
-\subsection{Intervallen}\label{sec:intervallen}}
+\subsection{Intervallen}\label{sec:intervallen}
 
 Voor een variabele van nominaal en ordinaal meetniveau gebruiken we
 doorgaans de oorspronkelijke categorieën om de frequentieverdeling te
@@ -4553,8 +4483,7 @@ Daarbij gelden dan de volgende aanbevelingen \citep[Ch.2]{Ferg89}:
 Naarmate we de intervallen breder maken, verliezen we meer informatie
 over de precieze verdeling binnen elk interval.
 
-\hypertarget{spss-1}{%
-\subsection{SPSS}\label{spss-1}}
+\subsection{SPSS}\label{spss-1}
 
 \begin{verbatim}
 Analyze > Descriptive Statistics > Frequencies...
@@ -4565,8 +4494,7 @@ Vink aan: \texttt{Display\ frequency\ tables}.\\
 Kies \texttt{Format}, kies: \texttt{Order\ by:\ Descending\ values}.\\
 Bevestig met \texttt{OK}.\\
 
-\hypertarget{jasp-1}{%
-\subsection{JASP}\label{jasp-1}}
+\subsection{JASP}\label{jasp-1}
 
 Klik in de bovenbalk op \texttt{Descriptives}. Selecteer vervolgens de gewenste variabele(n) en plaats ze in het veld ``Variables''. Vink \texttt{Frequency\ tables\ (nominal\ and\ ordinal\ variables)} (onder het veld met alle variabelen) aan om voor alle geselecteerde variabelen van nominaal en ordinaal meetniveau een frequentietabel als uitvoer te krijgen.\\
 Mocht een variabele als meetniveau ``Scale'' hebben en je wilt hiervan een frequentietabel, dan moet je eerst het meetniveau aanpassen naar ``Nominal'' of ``Ordinal'' door in het data tabblad op het meetniveau-icoontje voor de naam van de variabele te klikken.
@@ -4593,8 +4521,7 @@ Om een variabele op te delen in een aantal gelijke intervallen selecteer je rech
 
 Voor de nieuwe variabele opgedeeld in intervallen kan de frequentietabel worden verkregen zoals helemaal bovenaan beschreven. Ga naar \texttt{Descriptives}, selecteer de gewenste variabele (\texttt{troon12\_interval}) in het veld ``Variables'' en vink \texttt{Frequency\ tables\ (nominal\ and\ ordinal\ variables)} (onder het veld met alle variabelen) aan.
 
-\hypertarget{r-1}{%
-\subsection{R}\label{r-1}}
+\subsection{R}\label{r-1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4630,8 +4557,7 @@ Ontleed bovenstaande opdracht vanuit de binnenste haakjes naar buiten:
 
 De uitvoer van deze laatste opdracht is weergegeven (in aangepaste vorm) in Tabel \ref{tab:troonrede2012pauzes}, en wordt hier onderdrukt.
 
-\hypertarget{sec:staafdiagrammen}{%
-\section{Staafdiagrammen}\label{sec:staafdiagrammen}}
+\section{Staafdiagrammen}\label{sec:staafdiagrammen}
 
 Een staafdiagram (Eng. `bar chart') is de grafische weergave van de
 frequentieverdeling van een discrete, categorische variabele (van
@@ -4664,8 +4590,7 @@ breedte en hoogte van een rechthoek wordt daardoor minder goed leesbaar,
 en de zichtbare oppervlakte van een beschaduwde rechthoek of van een
 balk correspondeert niet meer goed met de frequentie.
 
-\hypertarget{sec:histogrammen}{%
-\section{Histogrammen}\label{sec:histogrammen}}
+\section{Histogrammen}\label{sec:histogrammen}
 
 Een histogram is de grafische weergave van een frequentieverdeling van
 een continue, numerieke variabele (van interval- of ratio-meetniveau).
@@ -4700,8 +4625,7 @@ breedte en hoogte van een rechthoek wordt daardoor minder goed leesbaar,
 en de zichtbare oppervlakte van een beschaduwde rechthoek of van een
 balk correspondeert niet meer goed met de frequentie.
 
-\hypertarget{spss-2}{%
-\subsection{SPSS}\label{spss-2}}
+\subsection{SPSS}\label{spss-2}
 
 \begin{verbatim}
 Analyze > Descriptive Statistics > Frequencies...
@@ -4713,13 +4637,11 @@ staafdiagram of \texttt{Chart\ type:\ Histogram} voor een histogram (zie
 bovenstaande tekst voor het verschil tussen deze opties).\\
 Bevestig met \texttt{OK}.\\
 
-\hypertarget{jasp-2}{%
-\subsection{JASP}\label{jasp-2}}
+\subsection{JASP}\label{jasp-2}
 
 Klik in de bovenbalk op \texttt{Descriptives}. Selecteer vervolgens de gewenste variabele(n) en plaats ze in het veld ``Variables''. Klik de balk \texttt{Plots} open en vink \texttt{Distribution\ plots} aan onder ``Basic plots''. Je zult zien dat JASP automatisch een staafdiagram maakt voor variabelen die het meetniveau ``Ordinal'' of ``Nominal'' hebben, en een histogram voor variabelen met meetniveau ``Scale''. Zorg dus dat het meetniveau van alle variabelen goed staat ingesteld. Je kunt het meetniveau veranderen door in het data tabblad op het meetniveau-icoontje voor de variabele-naam te klikken.
 
-\hypertarget{r-2}{%
-\subsection{R}\label{r-2}}
+\subsection{R}\label{r-2}
 
 Een staafdiagram zoals Figuur \ref{fig:klankfreq-barplot} maak je in R met de volgende commando's:
 
@@ -4757,11 +4679,9 @@ maak je in R met de volgende commando's:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{ch-centrumenspreiding}{%
-\chapter{Centrum en spreiding}\label{ch-centrumenspreiding}}
+\chapter{Centrum en spreiding}\label{ch-centrumenspreiding}
 
-\hypertarget{inleiding-4}{%
-\section{Inleiding}\label{inleiding-4}}
+\section{Inleiding}\label{inleiding-4}
 
 In het vorige hoofdstuk hebben we geleerd om observaties te tellen en te
 classificeren. Daarmee kunnen we de observaties van een variabele
@@ -4775,8 +4695,7 @@ ratio-niveau (bv. gemiddelde). Na een inleiding over het gebruik van
 symbolen bespreken we eerst hoe we het centrum van een verdeling kunnen
 beschrijven, en hoe we de spreiding kunnen beschrijven.
 
-\hypertarget{symbolen}{%
-\section{Symbolen}\label{symbolen}}
+\section{Symbolen}\label{symbolen}
 
 In de beschrijvende statistiek wordt veel gewerkt met symbolen. Die
 symbolen zijn verkorte aanduidingen voor een reeks van handelingen.
@@ -4820,11 +4739,9 @@ binnen een paar haakjes hebben voorrang, die moet je dus eerst
 uitvoeren. Ook als dat niet strikt nodig is, zullen we vaak haakjes
 gebruiken ter verduidelijking, zoals in \((2\times3)+4=10\).
 
-\hypertarget{centrummaten}{%
-\section{Centrummaten}\label{centrummaten}}
+\section{Centrummaten}\label{centrummaten}
 
-\hypertarget{sec:gemiddelde}{%
-\subsection{gemiddelde}\label{sec:gemiddelde}}
+\subsection{gemiddelde}\label{sec:gemiddelde}
 
 De meest bekende maat voor het centrum van een verdeling is wel het
 gemiddelde. Het gemiddelde is eenvoudig uit te rekenen door alle scores
@@ -4873,8 +4790,7 @@ ratio-meetniveau.
 \caption{\label{fig:wachttijden-hist}Histogram van N=10 wachttijden, met markering van het gemiddelde.}
 \end{figure}
 
-\hypertarget{sec:mediaan}{%
-\subsection{mediaan}\label{sec:mediaan}}
+\subsection{mediaan}\label{sec:mediaan}
 
 De mediaan (symbool \(Md\) of \(\tilde{x}\)) is de observatie in het midden
 van de rangorde van observaties \footnote{In het Engels wordt de streep in het midden van een weg aangeduid als de ``median''; deze streep verdeelt de weg in twee even brede helften.}. Als we de scores van \(X\)
@@ -4910,8 +4826,7 @@ veranderen.
 De mediaan is bruikbaar bij variabelen van het ordinale, interval- of
 ratio-meetniveau.
 
-\hypertarget{modus}{%
-\subsection{modus}\label{modus}}
+\subsection{modus}\label{modus}
 
 De modus (bijv.nw. `modaal') is de waarde of score van \(X\) die het
 meeste voorkomt.
@@ -4941,8 +4856,7 @@ van de langste wachttijd is: ook al zou die observatie de waarde \(10\) of
 
 De modus is bruikbaar bij variabelen van alle meetniveau's.
 
-\hypertarget{sec:harmonischgemiddelde}{%
-\subsection{harmonisch gemiddelde}\label{sec:harmonischgemiddelde}}
+\subsection{harmonisch gemiddelde}\label{sec:harmonischgemiddelde}
 
 Als de afhankelijke variabele een breuk of verhouding of ratio
 voorstelt, zoals de snelheid waarmee een taak verricht wordt, dan vormt
@@ -4987,8 +4901,7 @@ per uur.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{gewinsoriseerde-gemiddelde}{%
-\subsection{gewinsoriseerde gemiddelde}\label{gewinsoriseerde-gemiddelde}}
+\subsection{gewinsoriseerde gemiddelde}\label{gewinsoriseerde-gemiddelde}
 
 De grote gevoeligheid van het gewone (rekenkundige) gemiddelde voor
 uitbijters kan ingeperkt worden, door de meest extreme observaties te
@@ -5013,8 +4926,7 @@ Het winsorized gemiddelde over deze gewijzigde waarden is
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{getrimde-gemiddelde}{%
-\subsection{getrimde gemiddelde}\label{getrimde-gemiddelde}}
+\subsection{getrimde gemiddelde}\label{getrimde-gemiddelde}
 
 Een nog drastischer ingreep is om de meest extreme observaties geheel te
 verwijderen. Het gemiddelde van de overblijvende observaties wordt het
@@ -5039,8 +4951,7 @@ hier \(\overline{x}_t=2\) minuten.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{vergelijking-van-centrummaten}{%
-\subsection{vergelijking van centrummaten}\label{vergelijking-van-centrummaten}}
+\subsection{vergelijking van centrummaten}\label{vergelijking-van-centrummaten}
 
 Figuur \ref{fig:centrummaten} illustreert de verschillen tussen de
 diverse centrummaten, voor asymmetrisch verdeelde observaties.
@@ -5063,8 +4974,7 @@ is de mediaan (ga dat zelf na). In
 §\ref{sec:robuustefficient} gaan we verder in op de keuze voor een
 passende maat voor het centrum van een verdeling.
 
-\hypertarget{sec:kwartielen-en-boxplots}{%
-\section{Kwartielen en boxplots}\label{sec:kwartielen-en-boxplots}}
+\section{Kwartielen en boxplots}\label{sec:kwartielen-en-boxplots}
 
 De verdeling van een variabele wordt niet alleen gekenmerkt door het
 centrum van die verdeling, maar ook door de mate van spreiding rondom
@@ -5073,8 +4983,7 @@ het gemiddelde. We willen bijvoorbeeld niet alleen weten wat het
 gemiddelde inkomen is, maar ook hoe groot de \emph{verschillen} in inkomen
 zijn.
 
-\hypertarget{kwartielen}{%
-\subsection{Kwartielen}\label{kwartielen}}
+\subsection{Kwartielen}\label{kwartielen}
 
 Een eenvoudige en bruikbare maat daarvoor zijn de kwartielen \citep{Tukey77}.
 We delen de gerangschikte observaties in twee helften op; de grens
@@ -5135,8 +5044,7 @@ bovenste helft is \(Q_3=29\). De interquartile range is
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sec:uitbijters}{%
-\subsection{Uitbijters}\label{sec:uitbijters}}
+\subsection{Uitbijters}\label{sec:uitbijters}
 
 In de leesscores in Tabel \ref{tab:cito} treffen we een extreme waarde aan, nl. de score
 45, die opvallend veel verschilt van het gemiddelde. Zo'n opvallende
@@ -5163,8 +5071,7 @@ beschouwd als uitbijter.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sec:boxplot}{%
-\subsection{Boxplots}\label{sec:boxplot}}
+\subsection{Boxplots}\label{sec:boxplot}
 
 De frequentieverdeling van een variabele kunnen we nu weergeven met vijf
 kenmerken, de zgn. ``five-number summary'', nl. de kleinste waarde, \(Q_1\),
@@ -5188,11 +5095,9 @@ box markeert de mediaan. De lijnen strekken zich uit naar de kleinste en
 grootste waarden \emph{die géén uitbijters zijn} \footnote{In een klassieke boxplot strekken de lijnen zich uit naar het minimum en maximum \citep{Tukey77} en worden uitbijters niet apart aangeduid.}. De afzonderlijke
 uitbijters worden hier met een apart symbool aangeduid.
 
-\hypertarget{sec:spreidingsmaten}{%
-\section{Spreidingsmaten}\label{sec:spreidingsmaten}}
+\section{Spreidingsmaten}\label{sec:spreidingsmaten}
 
-\hypertarget{sec:variantie}{%
-\subsection{variantie}\label{sec:variantie}}
+\subsection{variantie}\label{sec:variantie}
 
 Een andere
 manier om de spreiding van de observaties aan te geven, zou zijn om te
@@ -5221,8 +5126,7 @@ vrijheidsgraden of ``degrees of freedom'' van de teller (d.f.; zie
 De variantie rekenen we tegenwoordig altijd uit met een rekenmachine of
 computer.
 
-\hypertarget{sec:standaarddeviatie}{%
-\subsection{standaarddeviatie}\label{sec:standaarddeviatie}}
+\subsection{standaarddeviatie}\label{sec:standaarddeviatie}
 
 Om de bovenstaande variantie te berekenen, hebben we de afwijkingen van
 de observaties gekwadrateerd. De variantie is dus een grootheid die niet
@@ -5265,8 +5169,7 @@ willen omzetten naar standaardscores (zie §\ref{sec:standaardscores} hieronder)
 willen beschrijven die normaal verdeeld is (zie §\ref{sec:normaalverdeling}, en
 (c) als we hypotheses willen toetsen met behulp van een normaal verdeelde variabele (zie §\ref{sec:ttoets-onesample} e.v.).
 
-\hypertarget{mad}{%
-\subsection{MAD}\label{mad}}
+\subsection{MAD}\label{mad}
 
 Behalve de standaarddeviatie is er ook een robuuste tegenhanger daarvan,
 die niet gebruik maakt van het gemiddelde. Deze maat is daarom minder
@@ -5304,11 +5207,9 @@ extreme waarde \(x_3=45\).
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sec:significantecijfers}{%
-\section{Over significante cijfers}\label{sec:significantecijfers}}
+\section{Over significante cijfers}\label{sec:significantecijfers}
 
-\hypertarget{sec:significantecijfers-gemiddelde}{%
-\subsection{Gemiddelde en standaarddeviatie}\label{sec:significantecijfers-gemiddelde}}
+\subsection{Gemiddelde en standaarddeviatie}\label{sec:significantecijfers-gemiddelde}
 
 Een gemiddelde uitkomst wordt weergegeven in een beperkt aantal
 significante cijfers, d.i. een beperkt aantal cijfers, van links naar
@@ -5343,8 +5244,7 @@ Het aantal significante cijfers in de gerapporteerde standaarddeviatie
 is hetzelfde als in het gemiddelde, volgens
 Tabel \ref{tab:signifcijfersgemiddelde}.
 
-\hypertarget{achtergrond}{%
-\subsubsection{Achtergrond}\label{achtergrond}}
+\subsubsection{Achtergrond}\label{achtergrond}
 
 Laten we aannemen dat ik de afstand van mijn huis naar mijn werk langs
 een vaste route een aantal keren heb gemeten. Het gemiddelde van die
@@ -5375,8 +5275,7 @@ uitkomst dus ook uit 2 significante cijfers te bestaan. De gemiddelde
 score dient gerapporteerd te worden als \(2.9\) punten, met slechts één
 cijfer achter het decimaalteken.
 
-\hypertarget{percentages}{%
-\subsection{Percentages}\label{percentages}}
+\subsection{Percentages}\label{percentages}
 
 Een percentage is een verhouding of breuk, vermenigvuldigd met \(100\).
 Gebruik en rapporteer een afgerond percentage (d.i. twee significante
@@ -5403,8 +5302,7 @@ aant.obs.(noemer) & aant.signif.cijfers & voorbeeld breuk & rapporteer als \\
 \(1000\dots9999\) & 4 & 1234/3179 = 0.3882 & 38.8\% \\
 \end{longtable}
 
-\hypertarget{achtergrond-1}{%
-\subsubsection{Achtergrond}\label{achtergrond-1}}
+\subsubsection{Achtergrond}\label{achtergrond-1}
 
 De regels voor percentages vloeien voort uit die in
 §\ref{sec:significantecijfers-gemiddelde} toegepast op delingen.
@@ -5461,8 +5359,7 @@ cohort is dan \(69/154=\) 0.448052, af te ronden en te rapporteren als 45\%
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sec:robuustefficient}{%
-\section{Keuzemoment}\label{sec:robuustefficient}}
+\section{Keuzemoment}\label{sec:robuustefficient}
 
 De verdeling van een variabele kun je op verschillende manieren
 beschrijven.
@@ -5515,8 +5412,7 @@ Inspecteer deze assumpties in het histogram en de boxplot van \(X\). Als
 aan één van deze assumpties niet is voldaan, dan doe je er beter aan om
 meer robuuste maten te gebruiken om de verdeling te beschrijven.
 
-\hypertarget{sec:standaardscores}{%
-\section{Standaardscores}\label{sec:standaardscores}}
+\section{Standaardscores}\label{sec:standaardscores}
 
 Soms kan het handig zijn om scores te vergelijken die gemeten zijn op
 verschillende schalen. Bijvoorbeeld: Jan had een 8 als eindcijfer voor
@@ -5560,8 +5456,7 @@ transformatie naar standaardscores alleen zinnig is, indien en voor
 zover het gemiddelde en de standaarddeviatie ook zinnige maten zijn om
 de verdeling van \(x\) te beschrijven (zie §\ref{sec:robuustefficient}).
 
-\hypertarget{spss-3}{%
-\section{SPSS}\label{spss-3}}
+\section{SPSS}\label{spss-3}
 
 Voor \textbf{histogram, percentielen en boxplot}:
 
@@ -5613,8 +5508,7 @@ Vink aan: \texttt{Save\ standardized\ values\ as\ variables} en bevestig met \te
 De nieuwe variabele(n) met z-scores worden toegevoegd als nieuwe
 kolom(men) aan het databestand.\\
 
-\hypertarget{jasp-3}{%
-\section{JASP}\label{jasp-3}}
+\section{JASP}\label{jasp-3}
 
 Voor \textbf{histogram en boxplot}:\\
 Klik in de bovenbalk op \texttt{Descriptives}. Selecteer vervolgens de gewenste variabele(n) en plaats ze in het veld ``Variables''. Klik de balk \texttt{Plots} open en vink \texttt{Distribution\ plots} aan onder ``Basic plots'' voor een histogram (of staafdiagram, afhankelijk van het meetniveau). Vink \texttt{Boxplots} (met \texttt{Boxplot\ element}) aan onder ``Customizable plots'' voor een boxplot.
@@ -5637,8 +5531,7 @@ Vul de R code in en klik onderaan op \texttt{Compute\ column} om de lege variabe
 Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met links daarvan de variabelen, boven wiskundige symbolen, en rechts een aantal functies. Hier kan handmatig de functie worden geselecteerd die de nieuwe variabele definieert. Om standaardscores te berekenen sleep je de variabele die je wilt omzetten in het lege veld. Klik dan bovenaan op \(-\) en selecteer daarna uit het rechter menu de functie \texttt{mean(y)}. Sleep de om te zette variabele naar ``values'' en klik daarna bovenaan op \(\div\). Selecteer in het rechter menu de functie \texttt{σy} voor op de puntjes onder het breukteken (als noemer) en sleep ook hier de om te zette variabele naar ``values''. Voor de variabele `Lezen' zou dit er zo uitzien in het werkblad: \[\frac{(Lezen-mean(Lezen)}{\sigma Lezen}\]
 Klik onderaan op \texttt{Compute\ column} om de lege variabele vervolgens te vullen met de standaardscores.
 
-\hypertarget{r-3}{%
-\section{R}\label{r-3}}
+\section{R}\label{r-3}
 
 Voor \textbf{kwartielen en boxplot} zoals Figuur \ref{fig:cito-boxplot} gebruiken we de commando's \texttt{fivenum}, \texttt{quantile}, en \texttt{boxplot}:
 
@@ -5767,11 +5660,9 @@ Daarentegen moeten we \textbf{standaardscores} zelf uitrekenen, en zelf bewaren 
 ## [1] -1.1575990  0.6776189  2.3716662 -0.3105753  0.1129365 -0.7340872
 \end{verbatim}
 
-\hypertarget{ch-kansverdelingen}{%
-\chapter{Kansverdelingen}\label{ch-kansverdelingen}}
+\chapter{Kansverdelingen}\label{ch-kansverdelingen}
 
-\hypertarget{sec:kansen}{%
-\section{Kansen}\label{sec:kansen}}
+\section{Kansen}\label{sec:kansen}
 
 Bellen achter het stuur vergroot de kans op een ongeluk \citep{Bhar13}. De
 gemiddelde kans op neerslag in Nederland is 7\%. Mijn bestelling heeft
@@ -5901,8 +5792,7 @@ een klinker uit het tweede zakje is dan
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sec:binomiaalverdeling}{%
-\section{Binomiale kansverdeling}\label{sec:binomiaalverdeling}}
+\section{Binomiale kansverdeling}\label{sec:binomiaalverdeling}
 
 Voor het vervolg van dit hoofdstuk brengen we twee wijzigingen aan in
 het Scrabble-spel. Ten eerste verwijderen we de 2 blanco fiches zonder
@@ -5999,8 +5889,7 @@ kansverdeling, ook aangeduid als binomiale verdeling of
 binomiaalverdeling. De exacte kansen van de binomiale kansverdeling kan
 je uitrekenen met formule \eqref{eq:prob-binomial} hieronder.
 
-\hypertarget{formules}{%
-\subsection{formules}\label{formules}}
+\subsection{formules}\label{formules}
 
 De kans op een \(x\) aantal treffers in \(n\) trekkingen is gegeven als
 \begin{equation}
@@ -6091,8 +5980,7 @@ standaarddeviatie
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{jasp-4}{%
-\subsection{JASP}\label{jasp-4}}
+\subsection{JASP}\label{jasp-4}
 
 De binomiale kansverdeling van Figuur \ref{fig:binomkansverdeling3} kan in JASP worden verkregen door in de bovenbalk te klikken op:
 
@@ -6103,8 +5991,7 @@ Distributions > Binomial (onder 'Discrete')
 Als \texttt{Distributions} nog niet in de bovenbalk staat kun je dit toevoegen door rechtsbovenin op de blauwe \textbf{+}-button te klikken en \texttt{Distributions} aan te vinken.~
 In de ``Binomial'' invoer is de balk \texttt{Show\ Distribution} als het goed is open. Pas hier de waarden voor \(p\) (onder ``free parameter'') en \(n\) (onder ``Fixed parameter'') aan naar \(p=0.38\) en \(n=3\). Pas onder ``Options'' ook de range aan naar \texttt{Range\ of\ x\ from\ 0\ to\ 3}. Onder ``Display'' moet \texttt{Probability\ mass\ function} aangevinkt zijn. In de uitvoer zie je onder \emph{Probability Mass Plot} de binomiale kansverdeling.
 
-\hypertarget{r-4}{%
-\subsection{R}\label{r-4}}
+\subsection{R}\label{r-4}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6140,8 +6027,7 @@ De uitvoer is weergegeven in Tabel \ref{tab:binomkansverdeling3} hierboven.
 
 De driehoek van Pascal is te vinden links onder de diagonaal van deze matrix.
 
-\hypertarget{sec:normaalverdeling}{%
-\section{Normale kansverdeling}\label{sec:normaalverdeling}}
+\section{Normale kansverdeling}\label{sec:normaalverdeling}
 
 Naarmate de steekproefgrootte \(n\) toeneemt, gaat de binomiale
 kansverdeling minder trapsgewijs verspringen, en wordt de kansverdeling
@@ -6311,8 +6197,7 @@ Bijlage \ref{app-kritiekeZwaarden}.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{formules-1}{%
-\subsection{formules}\label{formules-1}}
+\subsection{formules}\label{formules-1}
 
 Als variabele \(X\) een normale kansverdeling heeft, met gemiddelde \(\mu\)
 en standaarddeviatie \(\sigma\), dan wordt dat aangegeven als
@@ -6335,8 +6220,7 @@ De standaard-normale kansverdeling van variabele \(Z\) met gemiddelde
   \label{eq:prob-standaardnormaal}
 \end{equation}
 
-\hypertarget{jasp-5}{%
-\subsection{JASP}\label{jasp-5}}
+\subsection{JASP}\label{jasp-5}
 
 De normale kansverdeling van Figuur \ref{fig:normaalkansverdeling} kan in JASP worden verkregen door in de bovenbalk te klikken op:
 
@@ -6348,8 +6232,7 @@ Als \texttt{Distributions} nog niet in de bovenbalk staat kun je dit toevoegen d
 In de ``Normal'' invoer is de balk \texttt{Show\ Distribution} als het goed is open. Automatisch staan de waarden voor de standaard-normale kansverdeling al ingevuld en \texttt{Probability\ density\ function} aangevinkt; je ziet deze verdeling dus meteen in de uitvoer onder \emph{Density Plot}.\\
 Voor andere normale kansverdelingen kunnen de waarden voor \(\mu\) en \(\sigma\) worden aangepast, en ook de range die wordt weergegeven (onder ``Options''). Let op dat je bij ``Parameters'' \texttt{\$\textbackslash{}mu\$,\ \$\textbackslash{}sigma\$} selecteert als je het gemiddelde en de standaarddeviatie ingeeft (voor de standaard-normale kansverdeling maakt dit niet uit, want bij \(\sigma=1\) geldt ook \(\sigma^2=1\)).
 
-\hypertarget{r-5}{%
-\subsection{R}\label{r-5}}
+\subsection{R}\label{r-5}
 
 De normale kansverdeling van Figuur \ref{fig:normaalkansverdeling} kan in R worden afgebeeld
 met het onderstaande commando. Hierin wordt een \texttt{curve} getekend, met \texttt{x} in het aangegeven domein, en waarbij \texttt{y} het resultaat is van de functie die de normale kansverdeling berekent volgens formule \eqref{eq:prob-normal}:
@@ -6368,8 +6251,7 @@ met het onderstaande commando. Hierin wordt een \texttt{curve} getekend, met \te
 
 Als je een extra argument \texttt{curve(\ ...,\ add=TRUE\ )} opgeeft, dan wordt de curve toegevoegd aan de meest recente plot (zie bijv. Figuur \ref{fig:itunesmeanshist} hieronder).
 
-\hypertarget{sec:isvarnormaalverdeeld}{%
-\section{Heeft mijn variabele een normale kansverdeling?}\label{sec:isvarnormaalverdeeld}}
+\section{Heeft mijn variabele een normale kansverdeling?}\label{sec:isvarnormaalverdeeld}
 
 Het langste nummer in mijn digitale muziekbibliotheek duurt ongeveer 50
 minuten (dat is een klassiek-indiaas muziekstuk, een `morning raga').
@@ -6418,8 +6300,7 @@ normaliteit. Beide toetsen onderzoeken de
 H0:\(X\sim\mathcal{N}(\bar{X},s)\) (zie
 formule \eqref{eq:normaalverdeeld}).
 
-\hypertarget{spss-4}{%
-\subsection{SPSS}\label{spss-4}}
+\subsection{SPSS}\label{spss-4}
 
 \begin{verbatim}
 Analyze > Descriptive Statistics > Explore...
@@ -6437,14 +6318,12 @@ waarschuwing in
 dat de duren van muzieknummers niet normaal verdeeld zijn. Na deze
 toetsresultaten volgt o.a. een QQ-plot.
 
-\hypertarget{jasp-6}{%
-\subsection{JASP}\label{jasp-6}}
+\subsection{JASP}\label{jasp-6}
 
 Klik in de bovenbalk op \texttt{Descriptives} en selecteer variabele Time in het veld ``Variables''. Klik de balk \texttt{Plots} open en vink \texttt{Distribution\ plots} aan onder ``Basic plots'' voor een histogram. Vink ook \texttt{Q-Q\ plots} aan voor een quantile-quantile plot. Klik vervolgens de balk \texttt{Statistics} open en vink \texttt{Shapiro-Wilk\ test} aan onder ``Distribution''.\\
 De uitvoer geeft de uitkomst van de Shapiro-Wilk-toets in de tabel \emph{Descriptive Statistics}. We zien dat de kans om deze verdeling te vinden, als H0 waar is, bijna nul is. H0 wordt dus verworpen en we concluderen dat de duren van de muzieknummers niet normaal verdeeld zijn. Dit kun je ook terugzien in het histogram en de Q-Q plot.
 
-\hypertarget{r-6}{%
-\subsection{R}\label{r-6}}
+\subsection{R}\label{r-6}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6475,8 +6354,7 @@ het kleinste getal dat het analysepakket hier kan weergeven). We
 verwerpen daarom H0 en concluderen dat de duren van muzieknummers niet
 normaal verdeeld zijn.
 
-\hypertarget{sec:watalsnietnormaal}{%
-\section{Wat als mijn variabele niet normaal verdeeld is?}\label{sec:watalsnietnormaal}}
+\section{Wat als mijn variabele niet normaal verdeeld is?}\label{sec:watalsnietnormaal}
 
 In Deel III zullen we diverse statistische
 toetsen bespreken. De toetsen die we bespreken in hoofdstukken
@@ -6511,8 +6389,7 @@ dat ze minder statistische power hebben (voor een bespreking van power,
 zie hoofdstuk \ref{ch-power}): ze zijn minder gevoelig, en vereisen dus grotere
 steekproeven om een effect vast te stellen.
 
-\hypertarget{sec:CentraalLimietTheorema}{%
-\section{Kansverdeling van gemiddelde}\label{sec:CentraalLimietTheorema}}
+\section{Kansverdeling van gemiddelde}\label{sec:CentraalLimietTheorema}
 
 In deze paragraaf beschouwen we de muzieknummers in mijn digitale
 muziekbibliotheek als een \emph{populatie}. We nemen nu een willekeurige
@@ -6574,8 +6451,7 @@ steekproef van \(n\) observaties, met één steekproefgemiddelde \(\bar{X}\)
 en één standaarddeviatie \(s\) \citep{Cumm12}. Lees ook deze alinea nog eens
 aandachtig door.
 
-\hypertarget{sec:betrouwbaarheidsinterval-gemiddelde}{%
-\section{Betrouwbaarheidsinterval van het gemiddelde}\label{sec:betrouwbaarheidsinterval-gemiddelde}}
+\section{Betrouwbaarheidsinterval van het gemiddelde}\label{sec:betrouwbaarheidsinterval-gemiddelde}
 
 Zoals hierboven uitgelegd, kunnen we het gemiddelde van de steekproef,
 \(\bar{X}\), gebruiken als een goede schatting van het onbekende
@@ -6670,8 +6546,7 @@ langs de rechterkant).
 \caption{\label{fig:tempo95CIs}95\%-Betrouwbaarheidsintervallen en steekproefgemiddelden, over 100 gesimuleerde steekproeven (n=30) uit een populatie met gemiddelde 0.220 en s.d. 0.0225; zie tekst.}
 \end{figure}
 
-\hypertarget{formules-2}{%
-\subsection{formules}\label{formules-2}}
+\subsection{formules}\label{formules-2}
 
 Het tweezijdige \(B\)\% betrouwbaarheidsinterval voor het
 populatie-gemiddelde is
@@ -6683,11 +6558,9 @@ waarbij \(t^*\) met \(n-1\) vrijheidsgraden gevonden wordt met behulp van
 Bijlage \ref{app-kritieketwaarden}, zie
 §\ref{sec:ttoets-vrijheidsgraden} voor meer uitleg hierover.
 
-\hypertarget{ch-samenhang}{%
-\chapter{Samenhang}\label{ch-samenhang}}
+\chapter{Samenhang}\label{ch-samenhang}
 
-\hypertarget{inleiding-5}{%
-\section{Inleiding}\label{inleiding-5}}
+\section{Inleiding}\label{inleiding-5}
 
 Het meeste empirische onderzoek is gericht op het vaststellen van
 samenhang tussen variabelen. In experimenteel onderzoek gaat het dan
@@ -6752,8 +6625,7 @@ overigens ook (c) dat de hoogste leesscore een uitbijter vormt (zie ook
 Fig.\ref{fig:cito-boxplot}); zulke uitbijters kunnen onevenredig
 grote invloed hebben op het gevonden verband.
 
-\hypertarget{sec:Pearson}{%
-\section{Pearson product-moment-correlatie}\label{sec:Pearson}}
+\section{Pearson product-moment-correlatie}\label{sec:Pearson}
 
 De Pearson product-moment-correlatiecoëfficiënt wordt aangeduid met
 symbool \(r\) (in het geval van twee variabelen). Deze coëfficiënt is te
@@ -6878,8 +6750,7 @@ correlaties waren niet significant.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{formules-3}{%
-\subsection{Formules}\label{formules-3}}
+\subsection{Formules}\label{formules-3}
 
 De eenvoudigste formule voor de Pearson
 product-moment-correlatiecoëfficiënt \(r\) maakt gebruik van de
@@ -6894,8 +6765,7 @@ Net als bij het berekenen van de variantie
 (formule \eqref{eq:variantie}) delen we weer door \((n-1)\) om een schatting
 te maken van de samenhang in de populatie.
 
-\hypertarget{spss-5}{%
-\subsection{SPSS}\label{spss-5}}
+\subsection{SPSS}\label{spss-5}
 
 Voor Pearson's product-moment-correlatiecoëfficiënt:
 
@@ -6908,8 +6778,7 @@ Kies \texttt{Pearsons} correlatiecoëfficiënt, vink aan:
 uitvoer (tabel) voldoet niet aan de stijl-eisen; je moet de gegevens dus
 overnemen in of omzetten naar een eigen tabel die daar wel aan voldoet.
 
-\hypertarget{jasp-7}{%
-\subsection{JASP}\label{jasp-7}}
+\subsection{JASP}\label{jasp-7}
 
 Voor Pearson's product-moment-correlatiecoëfficiënt klik je in de bovenbalk op:
 
@@ -6919,8 +6788,7 @@ Regression > Classical: Correlation
 
 Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld ``Variables''. Zorg dat onder ``Sample Correlation Coefficient'' \texttt{Pearson\textquotesingle{}s\ r} aangevinkt is, en onder ``Additional Options'' \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} en \texttt{Sample\ size}. Je kunt ook \texttt{Display\ pairwise} aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren.
 
-\hypertarget{r-7}{%
-\subsection{R}\label{r-7}}
+\subsection{R}\label{r-7}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6956,8 +6824,7 @@ Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld ``Va
 ## 0.7492103
 \end{verbatim}
 
-\hypertarget{sec:regressie}{%
-\section{Regressie}\label{sec:regressie}}
+\section{Regressie}\label{sec:regressie}
 
 Het meest eenvoudige verband dat we kunnen onderscheiden en beschrijven
 is een lineair verband, d.w.z. een rechte lijn in het spreidingsdiagram
@@ -7078,8 +6945,7 @@ totale variantie in de rekenscores (de residuele standaarddeviatie is
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sec:regressie-formules}{%
-\subsection{Formules}\label{sec:regressie-formules}}
+\subsection{Formules}\label{sec:regressie-formules}
 
 Bij lineaire regressie van \(y\) op \(x\) proberen we de coëfficiënten \(a\)
 en \(b\) zodanig te schatten dat (het kwadraat van) de afwijking tussen de
@@ -7093,8 +6959,7 @@ De beste schatting voor \(b\) is
 
 De beste schatting voor \(a\) is \[a = \overline{y} - b \overline{x}\]
 
-\hypertarget{spss-6}{%
-\subsection{SPSS}\label{spss-6}}
+\subsection{SPSS}\label{spss-6}
 
 Voor lineaire regressie:
 
@@ -7126,8 +6991,7 @@ voorspelde waarden als de residuen. Controleer of het gemiddelde van de
 residuen inderdaad nul is. In deze tabel zien we ook (regel 2, kolom 4)
 dat de standaarddeviatie van de residuen \(3.212\) is.
 
-\hypertarget{jasp-8}{%
-\subsection{JASP}\label{jasp-8}}
+\subsection{JASP}\label{jasp-8}
 
 Voor lineaire regressie klik je in de bovenbalk op:
 
@@ -7149,8 +7013,7 @@ voorspelde waarden als de residuen. Controleer of het gemiddelde van de
 residuen inderdaad (zo goed als gelijk aan) nul is. In deze tabel zien we ook (regel 2, kolom 4)
 dat de standaarddeviatie van de residuen \(3.212\) is.
 
-\hypertarget{r-8}{%
-\subsection{R}\label{r-8}}
+\subsection{R}\label{r-8}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7195,8 +7058,7 @@ als argument (invoer) om te rapporteren. In die rapportage van model
 ## [1] 3.211533
 \end{verbatim}
 
-\hypertarget{invloedrijke-observaties}{%
-\section{Invloedrijke observaties}\label{invloedrijke-observaties}}
+\section{Invloedrijke observaties}\label{invloedrijke-observaties}
 
 In de vorige paragraaf zagen we dat in een correlatie-analyse of een
 regressie-analyse gestreefd wordt naar een minimale residuele variantie.
@@ -7231,8 +7093,7 @@ speciaal op observaties die ver verwijderd zijn van het gemiddelde, voor
 elk van beide variabelen, en op observaties die ver verwijderd zijn van
 de regressielijn.
 
-\hypertarget{sec:Spearman}{%
-\section{Spearmans rangorde-correlatie}\label{sec:Spearman}}
+\section{Spearmans rangorde-correlatie}\label{sec:Spearman}
 
 De beide variabelen waarvan we de correlatie willen onderzoeken, zijn
 niet altijd uitgedrukt op het interval-meetniveau
@@ -7291,8 +7152,7 @@ negatief verband zou zijn (\(r_s=-1\)) tussen de scores bij Lezen en
 Rekenen, en hoe de tabel er uit zou zien als er geen enkel verband zou
 zijn (\(r_s=0\)) tussen deze scores.
 
-\hypertarget{formules-4}{%
-\subsection{Formules}\label{formules-4}}
+\subsection{Formules}\label{formules-4}
 
 De samenhang tussen de rangnummers van twee variabelen wordt uitgedrukt
 in de Spearman rangorde-correlatiecoëfficiënt:
@@ -7318,8 +7178,7 @@ extreme observaties --- dergelijke uitschieters leggen immers minder
 gewicht in de schaal, nadat we de ruwe scores vervangen hebben door de
 rangnummers.
 
-\hypertarget{spss-7}{%
-\subsection{SPSS}\label{spss-7}}
+\subsection{SPSS}\label{spss-7}
 
 Voor Spearmans rangorde-correlatiecoëfficiënt:
 
@@ -7334,8 +7193,7 @@ overnemen in of omzetten naar een eigen tabel die daar wel aan voldoet,
 en rapporteren volgens de gebruikelijke conventies voor
 correlatie-analyse.
 
-\hypertarget{jasp-9}{%
-\subsection{JASP}\label{jasp-9}}
+\subsection{JASP}\label{jasp-9}
 
 Voor Spearmans rangorde-correlatiecoëfficiënt klik je in de bovenbalk op:
 
@@ -7345,8 +7203,7 @@ Regression > Classical: Correlation
 
 Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld ``Variables''. Zorg dat onder ``Sample Correlation Coefficient'' \texttt{Spearman\textquotesingle{}s\ rho} aangevinkt is, en onder ``Additional Options'' \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} en \texttt{Sample\ size}. Je kunt ook \texttt{Display\ pairwise} aanvinken voor een simpelere tabel als uitvoer. In beide gevallen is de uitvoer tabel niet volgens de stijl-eisen; neem de gegevens dus over om het netjes te rapporteren.
 
-\hypertarget{r-9}{%
-\subsection{R}\label{r-9}}
+\subsection{R}\label{r-9}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7371,8 +7228,7 @@ Selecteer de variabelen waarvan je de correlatie wilt berekenen in het veld ``Va
 ## 0.8470988
 \end{verbatim}
 
-\hypertarget{sec:Phi}{%
-\section{Phi}\label{sec:Phi}}
+\section{Phi}\label{sec:Phi}
 
 De beide variabelen waarvan we de samenhang willen onderzoeken, zijn
 zelfs niet altijd uitgedrukt op het ordinale meetniveau
@@ -7432,8 +7288,7 @@ binomiale codes van de rijen (herkomst) en die van de kolommen
 Die samenhang wordt gekwantificeerd in de
 correlatiecoëfficiënt \(r_\Phi=0.65\) voor deze gegevens.
 
-\hypertarget{formules-5}{%
-\subsection{Formules}\label{formules-5}}
+\subsection{Formules}\label{formules-5}
 
 De nominale correlatiecoëfficiënt \(r_\Phi\) wordt berekend als volgt,
 waarbij de letters verwijzen naar de aantallen in de cellen van een
@@ -7448,13 +7303,11 @@ Voor het hierboven besproken voorbeeld vinden we dan
     r_\Phi = \frac{(15-0)}{\sqrt{(5)(5)(7)(3)}} = \frac{15}{22.91} = 0.65
 \]
 
-\hypertarget{spss-8}{%
-\subsection{SPSS}\label{spss-8}}
+\subsection{SPSS}\label{spss-8}
 
 De dataset \texttt{cito} bevat al een variabele \texttt{StadPlat} die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve leggen we toch uit hoe je zo'n variabele zelf kunt construeren.
 
-\hypertarget{nieuwe-variabele-construeren}{%
-\subsubsection{nieuwe variabele construeren}\label{nieuwe-variabele-construeren}}
+\subsubsection{nieuwe variabele construeren}\label{nieuwe-variabele-construeren}
 
 \begin{verbatim}
 Transform > Recode into different variables...
@@ -7474,8 +7327,7 @@ omgezet naar nieuwe waarde 0 voor die nieuwe variabele. Alle waarden
 vanaf het gemiddelde (\(27.2\)) tot de hoogste waarde worden omgezet naar
 nieuwe waarde 1.
 
-\hypertarget{correlatie-analyse}{%
-\subsubsection{correlatie-analyse}\label{correlatie-analyse}}
+\subsubsection{correlatie-analyse}\label{correlatie-analyse}
 
 Na dit voorbereidend werk kunnen we eindelijk \(r_\Phi\) gaan berekenen.
 
@@ -7489,13 +7341,11 @@ kruistabel \ref{tab:cito-kruis}.\\
 Kies \texttt{Statistics…} en vink optie \texttt{Phi\ and\ Cramer’s\ V}aan!\\
 Bevestig eerst met \texttt{Continue} en daarna nogmaals met \texttt{OK}.
 
-\hypertarget{jasp-10}{%
-\subsection{JASP}\label{jasp-10}}
+\subsection{JASP}\label{jasp-10}
 
 De dataset \texttt{cito} bevat al een variabele \texttt{StadPlat} die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve leggen we toch uit hoe je zo'n variabele zelf kunt construeren.
 
-\hypertarget{nieuwe-variabele-construeren-1}{%
-\subsubsection{nieuwe variabele construeren}\label{nieuwe-variabele-construeren-1}}
+\subsubsection{nieuwe variabele construeren}\label{nieuwe-variabele-construeren-1}
 
 Maak eerst een nieuwe variabele aan door op de \textbf{+}-button te klikken rechts van de naam van de laatste kolom in de dataset. Er verschijnt een paneel ``Create Computed Column'', waar je een naam voor de nieuwe variabele kunt invullen, bijvoorbeeld \texttt{StadPlat2}. Ook kun je kiezen uit \texttt{R} en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of handmatig. Hieronder wordt voor allebei de opties uitgelegd hoe we hiermee de herkomst variabele maken. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen. Voor de herkomst variabele zet je dit op \texttt{Nominal}. Klik vervolgens op \texttt{Create\ Column} om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.
 
@@ -7523,8 +7373,7 @@ Dit betekent: als de score op de oude variabele (Rekenen) kleiner is dan (\textl
 
 Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, selecteer je weer de functie \texttt{ifElse(y)}. Klik op ``test'' en selecteer bovenaan \(<\). Sleep vervolgens de variabele `Rekenen' naar de puntjes aan de linkerkant van het teken, en sleep de functie \texttt{mean(y)} (uit het scrolmenu rechts) naar de puntjes aan de rechterkant. Sleep de variabele `Rekenen' nu ook naar de plek waar ``values'' staat. Vul voor ``then'' en ``else'' \(0\) en \(1\) in. Je hebt dan: \texttt{ifElse(Rekenen\ \textless{}\ mean(Rekenen),0,1)}, en deze formule werkt hetzelfde als de R code van hierboven. Klik op \texttt{Compute\ column} om de lege variabele te vullen met de gekozen waardes.
 
-\hypertarget{correlatie-analyse-1}{%
-\subsubsection{correlatie-analyse}\label{correlatie-analyse-1}}
+\subsubsection{correlatie-analyse}\label{correlatie-analyse-1}
 
 Na dit voorbereidend werk kunnen we eindelijk \(r_\Phi\) gaan berekenen. Klik in de bovenbalk op:
 
@@ -7534,13 +7383,11 @@ Frequencies > Classical: Contingency Tables
 
 Selecteer de variabelen \texttt{StadPlat2} (in het ``Rows'' paneel) en \texttt{Reken2} (in het ``Columns'' paneel) voor kruistabel \ref{tab:cito-kruis}. Open de \texttt{Statistics} balk en vink \texttt{Phi\ and\ Cramer’s\ V}aan onder ``Nominal''. De waarde voor \(r_\Phi\) verschijnt dan ook in de uitvoer (als ``Phi-coefficient'').
 
-\hypertarget{r-10}{%
-\subsection{R}\label{r-10}}
+\subsection{R}\label{r-10}
 
 De dataset \texttt{cito} bevat al een variabele StadPlat die de herkomst van de leerlingen aangeeft. Maar volledigheidshalve laten we toch zien hoe je zo'n variabele zelf kunt construeren.
 
-\hypertarget{nieuwe-variabele-construeren-2}{%
-\subsubsection{nieuwe variabele construeren}\label{nieuwe-variabele-construeren-2}}
+\subsubsection{nieuwe variabele construeren}\label{nieuwe-variabele-construeren-2}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7552,8 +7399,7 @@ De dataset \texttt{cito} bevat al een variabele StadPlat die de herkomst van de 
 Maak een nieuwe variabele \texttt{Reken2}, met de waarde 1 indien de score
 voor Rekenen groter is dan het gemiddelde, en anders de waarde 0.
 
-\hypertarget{correlatie-analyse-2}{%
-\subsubsection{correlatie-analyse}\label{correlatie-analyse-2}}
+\subsubsection{correlatie-analyse}\label{correlatie-analyse-2}
 
 Ook in R maken we eerst een kruistabel (Tabel \ref{tab:cito-kruis}) en daarna berekenen we de \(r_\Phi\) over die kruistabel.
 
@@ -7586,8 +7432,7 @@ Ook in R maken we eerst een kruistabel (Tabel \ref{tab:cito-kruis}) en daarna be
 ## [1] 0.65
 \end{verbatim}
 
-\hypertarget{sec:correlationcausation}{%
-\section{Tenslotte}\label{sec:correlationcausation}}
+\section{Tenslotte}\label{sec:correlationcausation}
 
 Bij het einde van dit hoofdstuk willen we nog eens benadrukken dat een
 samenhang of correlatie tussen twee variabelen niet noodzakelijkerwijs
@@ -7604,11 +7449,9 @@ en bijgaande Figuur \ref{fig:xkcd552} (met toestemming ontleend aan \url{https:/
 \caption{\label{fig:xkcd552}Correlation does not imply causation.}
 \end{figure}
 
-\hypertarget{ch-betrouwbaarheid}{%
-\chapter{Betrouwbaarheid}\label{ch-betrouwbaarheid}}
+\chapter{Betrouwbaarheid}\label{ch-betrouwbaarheid}
 
-\hypertarget{inleiding-6}{%
-\section{Inleiding}\label{inleiding-6}}
+\section{Inleiding}\label{inleiding-6}
 
 In Hoofdstuk \ref{ch-validiteit} hebben we het onder andere gehad over
 construct-validiteit, de afstand tussen het bedoelde (theoretische)
@@ -7622,8 +7465,7 @@ constructvaliditeit.
 
 Vaak worden validiteit en betrouwbaarheid in één adem genoemd, en in opeenvolgende hoofdstukken besproken. Daar is wat voor te zeggen, want beide begrippen gaan over hoe je je variabelen definieert en operationaliseert. Toch hebben we hier gekozen voor een andere volgorde. Betrouwbaarheid komt pas aan bod nadat we samenhang besproken hebben (Hoofdstuk \ref{ch-samenhang}), omdat betrouwbaarheid gebaseerd is op de samenhang of correlatie tussen observaties.
 
-\hypertarget{wat-is-betrouwbaarheid}{%
-\section{Wat is betrouwbaarheid?}\label{wat-is-betrouwbaarheid}}
+\section{Wat is betrouwbaarheid?}\label{wat-is-betrouwbaarheid}
 
 Een betrouwbaar persoon is stabiel en voorspelbaar: wat hij of zij
 vandaag doet is consistent met wat hij of zij vorige week deed, je kunt
@@ -7769,8 +7611,7 @@ zo'n strenge eis aan de betrouwbaarheid van een toets te worden gesteld.
 Vaak wordt als ondergrens voor de betrouwbaarheidscoëfficient de waarde
 \(0.70\) gehanteerd.
 
-\hypertarget{testtheorie}{%
-\section{Testtheorie}\label{testtheorie}}
+\section{Testtheorie}\label{testtheorie}
 
 De klassieke testtheorie heeft betrekking op de meting van variabele \(x\)
 bij het \(i\)-de element van een steekproef van willekeurige leden uit een
@@ -7807,7 +7648,7 @@ de foutscore nul:
   r_{(t,e)} = 0
 \end{equation}
 
-De totale variantie van \(x\) is daarom\footnote{\(s^2_{(t+e)} = s^2_t + s^2_e + 2 r_{(t,e)} s_t s_e\), met hier \(r_{(t,e)}=0\) volgens formule \eqref{eq:r-true-error}.} gelijk aan som van de
+De totale variantie van \(x\) is daarom\footnote{\(s^2_{(t+e)} = s^2_t + s^2_e + 2  r_{(t,e)} s_t s_e\), met hier \(r_{(t,e)}=0\) volgens formule \eqref{eq:r-true-error}.} gelijk aan som van de
 variantie van de ware scores en de variantie van de foutscores:
 \begin{equation}
   \label{eq:var-true-error}
@@ -7894,8 +7735,7 @@ waarschijnlijkheid juist.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{interpretaties}{%
-\section{Interpretaties}\label{interpretaties}}
+\section{Interpretaties}\label{interpretaties}
 
 Voordat we ingaan op verschillende berekeningswijzen van de
 betrouwbaarheid is het zinvol om stil te staan bij verschillende
@@ -7972,8 +7812,7 @@ de respondent. Alle bovenvermelde inzichten en interpretaties aangaande
 testtheorie, meetfout en betrouwbaarheid zijn daarbij evengoed van
 toepassing.
 
-\hypertarget{methoden-om-betrouwbaarheid-te-schatten}{%
-\section{Methoden om betrouwbaarheid te schatten}\label{methoden-om-betrouwbaarheid-te-schatten}}
+\section{Methoden om betrouwbaarheid te schatten}\label{methoden-om-betrouwbaarheid-te-schatten}
 
 De betrouwbaarheid van een meting kan op verschillende manieren worden
 bepaald. De belangrijkste zijn de volgende:
@@ -8011,8 +7850,7 @@ bepaald. De belangrijkste zijn de volgende:
   gehele toets afgeleid worden, \(r_{xx} = \frac{2r_{hh}}{1+r_{hh}}\).
 \end{itemize}
 
-\hypertarget{betrouwbaarheid-tussen-beoordelaars}{%
-\section{Betrouwbaarheid tussen beoordelaars}\label{betrouwbaarheid-tussen-beoordelaars}}
+\section{Betrouwbaarheid tussen beoordelaars}\label{betrouwbaarheid-tussen-beoordelaars}
 
 Laten we als voorbeeld eens kijken naar metingen van de
 spreekvaardigheid van studenten in een vreemde taal. Dit construct
@@ -8139,8 +7977,7 @@ onderzoeken, kan blijken dat de betrouwbaarheid van de gehele toets
 die ``slechte'' vragen een construct gemeten dat verschilt van wat de
 resterende vragen gemeten hebben.
 
-\hypertarget{betrouwbaarheid-en-constructvaliditeit}{%
-\section{Betrouwbaarheid en constructvaliditeit}\label{betrouwbaarheid-en-constructvaliditeit}}
+\section{Betrouwbaarheid en constructvaliditeit}\label{betrouwbaarheid-en-constructvaliditeit}
 
 Als een meting betrouwbaar is, dan is er ``iets'' betrouwbaar gemeten.
 Maar let op: dat toont nog niet aan \emph{wat} er gemeten is! Er is wel een
@@ -8184,8 +8021,7 @@ wordt het onderscheid niet duidelijk gemaakt,
 en bespreken de onderzoekers de construct-validiteit van hun nieuwe
 vragenlijst niet expliciet.
 
-\hypertarget{spss-9}{%
-\section{SPSS}\label{spss-9}}
+\section{SPSS}\label{spss-9}
 
 Voor een betrouwbaarheidsanalyse van de \(k=3\) oordelen over
 spreekvaardigheid in
@@ -8218,8 +8054,7 @@ maar als we beoordelaar 3 zouden verwijderen dan neemt de
 betrouwbaarheid zelfs toe (van 0.68 naar 0.84). Vermoedelijk heeft deze
 beoordelaar een ander construct beoordeeld dan de anderen.
 
-\hypertarget{jasp-11}{%
-\section{JASP}\label{jasp-11}}
+\section{JASP}\label{jasp-11}
 
 Klik voor een betrouwbaarheidsanalyse van de \(k=3\) oordelen over spreekvaardigheid in Tabel \ref{tab:betrouwbaarheid} in de bovenbalk op:\\
 
@@ -8241,8 +8076,7 @@ Regression > Correlation (onder 'Classical')
 
 Selecteer de variabelen waarvan je de correlatie wilt berekenen (de drie beoordelaars) in het veld ``Variables''. Zorg dat onder ``Sample Correlation Coefficient'' \texttt{Pearson\textquotesingle{}s\ r} aangevinkt is, en onder ``Additional Options'' \texttt{Report\ significance}, \texttt{Flag\ significant\ correlations} en \texttt{Sample\ size}. Je kunt ook \texttt{Display\ pairwise} aanvinken voor een simpelere tabel als uitvoer. De uitvoer laat zien dat de inter-rater-correlatie tussen beoordelaars 1 en 2 tamelijk hoog is (en significant), en dat de inter-rater-correlaties waarbij beoordelaar 3 meedoet tamelijk laag zijn (en niet significant).
 
-\hypertarget{r-11}{%
-\section{R}\label{r-11}}
+\section{R}\label{r-11}
 
 Voor een betrouwbaarheidsanalyse van de \(k=3\) oordelen over
 spreekvaardigheid in Tabel \ref{tab:betrouwbaarheid}:\\
@@ -8311,15 +8145,12 @@ vragen we die nog op:
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{part-deel-iii-toetsende-statistiek}{%
-\part*{Deel III: Toetsende statistiek}\label{part-deel-iii-toetsende-statistiek}}
+\part*{Deel III: Toetsende statistiek}\label{part-deel-iii-toetsende-statistiek}
 \addcontentsline{toc}{part}{Deel III: Toetsende statistiek}
 
-\hypertarget{ch-toetsing}{%
-\chapter{Toetsing}\label{ch-toetsing}}
+\chapter{Toetsing}\label{ch-toetsing}
 
-\hypertarget{sec:toetsing-inleiding}{%
-\section{Inleiding}\label{sec:toetsing-inleiding}}
+\section{Inleiding}\label{sec:toetsing-inleiding}
 
 Vanaf dit hoofdstuk houden we ons bezig met het toetsen van
 onderzoekshypothesen, en in het bijzonder met toetsen van
@@ -8444,8 +8275,7 @@ fout maak ik dan?
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sec:ttoets-onesample}{%
-\section{\texorpdfstring{\(t\)-toets voor enkele steekproef}{t-toets voor enkele steekproef}}\label{sec:ttoets-onesample}}
+\section{\texorpdfstring{\(t\)-toets voor enkele steekproef}{t-toets voor enkele steekproef}}\label{sec:ttoets-onesample}
 
 De Student \(t\)-toets wordt toegepast om een verschil te kunnen
 onderzoeken tussen de gemiddelde score van een steekproef, en een a
@@ -8507,8 +8337,7 @@ De gemiddelde score van de studenten Taalwetenschap (lichting 2013) is
 populatie-gemiddelde van 73 (\(t(33)=7.9, p<.001\)).
 \end{quote}
 
-\hypertarget{sec:ttoets-vrijheidsgraden}{%
-\subsection{vrijheidsgraden}\label{sec:ttoets-vrijheidsgraden}}
+\subsection{vrijheidsgraden}\label{sec:ttoets-vrijheidsgraden}
 
 Om het concept van vrijheidsgraden uit te leggen, beginnen we met een
 analogie. Stel dat er drie mogelijke routes zijn om van A naar B te
@@ -8545,16 +8374,14 @@ Bij de \(t\)-toets voor een enkele steekproef is het aantal
 vrijheidsgraden het aantal observaties \(N-1\). In het hierboven besproken
 voorbeeld hebben we dus \(N-1 = 34-1 = 33\) vrijheidsgraden.
 
-\hypertarget{sec:formules13-1}{%
-\subsection{formules}\label{sec:formules13-1}}
+\subsection{formules}\label{sec:formules13-1}
 
 \begin{equation}
   t = \frac{ \overline{y}-\mu} { s } \times \sqrt{N}
   \label{eq:t-onesample}
 \end{equation}
 
-\hypertarget{sec:ttoets-aannames}{%
-\subsection{aannames}\label{sec:ttoets-aannames}}
+\subsection{aannames}\label{sec:ttoets-aannames}
 
 De \(t\)-toets voor een enkele steekproef vereist drie aannames
 (assumpties) waaraan voldaan moet zijn, om de toets te mogen gebruiken.
@@ -8570,8 +8397,7 @@ De \(t\)-toets voor een enkele steekproef vereist drie aannames
   §\ref{sec:normaalverdeling}).
 \end{itemize}
 
-\hypertarget{spss-10}{%
-\subsection{SPSS}\label{spss-10}}
+\subsection{SPSS}\label{spss-10}
 
 De hierboven besproken gegevens zijn te vinden in het bestand
 \texttt{data/grammaticatoets2013.csv}.
@@ -8606,8 +8432,7 @@ Neem bij het overnemen van die uitvoer goede notitie van de waarschuwing
 in §\ref{sec:pgroterdannul} hieronder: SPSS rapporteert alsof \texttt{p=.000}
 maar dat is onjuist.
 
-\hypertarget{sec:jaspttoetsenkel}{%
-\subsection{JASP}\label{sec:jaspttoetsenkel}}
+\subsection{JASP}\label{sec:jaspttoetsenkel}
 
 De hierboven besproken gegevens zijn te vinden in het bestand
 \texttt{data/grammaticatoets2013.csv}.
@@ -8661,8 +8486,7 @@ filter werkblad te gaan en 2x op de prullenbak te klikken. Als het goed
 gaat staat er ``Filter cleared'' en worden alle observaties weer zwart in
 het data tabblad.
 
-\hypertarget{r-12}{%
-\subsection{R}\label{r-12}}
+\subsection{R}\label{r-12}
 
 Onze hierboven besproken hypothese kan worden getoetst met de volgende
 opdrachten:
@@ -8692,8 +8516,7 @@ opdrachten:
 De notatie \texttt{1.913e-09} moet gelezen worden als het getal
 \((1.913 \times 10^{-9})\).
 
-\hypertarget{sec:pgroterdannul}{%
-\section{\texorpdfstring{Overschrijdingskans \(p\) is altijd groter dan nul}{Overschrijdingskans p is altijd groter dan nul}}\label{sec:pgroterdannul}}
+\section{\texorpdfstring{Overschrijdingskans \(p\) is altijd groter dan nul}{Overschrijdingskans p is altijd groter dan nul}}\label{sec:pgroterdannul}
 
 De overschrijdingskans \(p\) kan heel klein zijn, maar is altijd groter
 dan nul! In het bovenstaande voorbeeld van de grammaticatoets vonden we
@@ -8714,8 +8537,7 @@ Rapporteer de overschrijdingskans of significantie altijd met de juiste
 nauwkeurigheid, in dit voorbeeld als \(p<.001\) \citep[zie ook][
 p.125]{Wright03}.
 
-\hypertarget{sec:ttoets-eenzijdigtweezijdig}{%
-\section{Eenzijdige en tweezijdige toetsen}\label{sec:ttoets-eenzijdigtweezijdig}}
+\section{Eenzijdige en tweezijdige toetsen}\label{sec:ttoets-eenzijdigtweezijdig}
 
 De procedure die we hierboven hebben besproken geldt voor het éénzijdig
 toetsen. Dat wil zeggen dat de alternatieve hypothese niet alleen stelt
@@ -8762,8 +8584,7 @@ In de meeste onderzoeken wordt tweezijdig getoetst; als de richting van
 de toets niet wordt vermeld dan mag je daarom aannemen dat er tweezijdig
 is getoetst.
 
-\hypertarget{sec:t-betrouwbaarheidsinterval-gemiddelde}{%
-\section{Betrouwbaarheidsinterval van het gemiddelde}\label{sec:t-betrouwbaarheidsinterval-gemiddelde}}
+\section{Betrouwbaarheidsinterval van het gemiddelde}\label{sec:t-betrouwbaarheidsinterval-gemiddelde}
 
 Deze paragraaf gaat dieper in op een onderwerp dat eerder al aan bod
 kwam in §\ref{sec:betrouwbaarheidsinterval-gemiddelde}, en illustreert
@@ -8828,8 +8649,7 @@ toeneemt, het betrouwbaarheidsinterval dan kleiner wordt, m.a.w., we
 kunnen er meer vertrouwen in hebben dat het geobserveerde gemiddelde van
 de steekproef dicht bij het onbekende gemiddelde van de populatie ligt.
 
-\hypertarget{sec:formules13-2}{%
-\subsection{formules}\label{sec:formules13-2}}
+\subsection{formules}\label{sec:formules13-2}
 
 Het tweezijdige betrouwbaarheidsinterval voor \(B\)\% betrouwbaarheid voor een populatie-gemiddelde \(\mu\) is
 \begin{equation}
@@ -8837,8 +8657,7 @@ Het tweezijdige betrouwbaarheidsinterval voor \(B\)\% betrouwbaarheid voor een p
     \label{eq:t-onesampleCI}
 \end{equation}
 
-\hypertarget{spss-11}{%
-\subsection{SPSS}\label{spss-11}}
+\subsection{SPSS}\label{spss-11}
 
 \begin{verbatim}
 Analyze > Descriptive Statistics > Explore...
@@ -8851,8 +8670,7 @@ Bevestig met \texttt{Continue} en met \texttt{OK}.\\
 De uitvoer bevat meerdere beschrijvende statistische maten, waaronder nu
 ook het 95\% betrouwbaarheidsinterval van het gemiddelde.
 
-\hypertarget{jasp-12}{%
-\subsection{JASP}\label{jasp-12}}
+\subsection{JASP}\label{jasp-12}
 
 In JASP kun je het betrouwsbaarheidsinterval van het gemiddelde
 aanvragen bij een \(t\)-toets. We voeren dus wederom een \(t\)-toets uit en
@@ -8878,8 +8696,7 @@ wordt vergeleken met 0; dat is de `Test value'). In dezelfde tabel zie
 je het `95\% CI for Mean Difference', wat in dit geval dus het
 betrouwbaarheidsinterval van het gemiddelde is.
 
-\hypertarget{r-13}{%
-\subsection{R}\label{r-13}}
+\subsection{R}\label{r-13}
 
 R vermeldt het betrouwbaarheidsinterval van het gemiddelde (met een zelf
 op te geven betrouwbaarheidsniveau) bij een \(t\)-toets. We voeren dus
@@ -8906,8 +8723,7 @@ gemiddelde in de uitvoer.
 ##  84.41176
 \end{verbatim}
 
-\hypertarget{sec:ttoets-onafh}{%
-\section{\texorpdfstring{\(t\)-toets voor twee onafhankelijke steekproeven}{t-toets voor twee onafhankelijke steekproeven}}\label{sec:ttoets-onafh}}
+\section{\texorpdfstring{\(t\)-toets voor twee onafhankelijke steekproeven}{t-toets voor twee onafhankelijke steekproeven}}\label{sec:ttoets-onafh}
 
 De Student \(t\)-toets wordt toegepast om een verschil te kunnen
 onderzoeken tussen de gemiddelde scores van twee onafhankelijke
@@ -8981,8 +8797,7 @@ onderzochte opnames uit 1999 praten de sprekers uit het Westen dus
 sneller dan die uit het Noorden van Nederland.
 \end{quote}
 
-\hypertarget{sec:ttoets-ongepaard-aannames}{%
-\subsection{aannames}\label{sec:ttoets-ongepaard-aannames}}
+\subsection{aannames}\label{sec:ttoets-ongepaard-aannames}
 
 De Student \(t\)-toets voor twee onafhankelijke steekproeven vereist vier
 aannames (of assumpties) waaraan voldaan moet zijn, om de toets te mogen
@@ -9007,11 +8822,9 @@ gebruiken.
   §\ref{sec:ttoets-formules} direct hieronder.
 \end{itemize}
 
-\hypertarget{sec:ttoets-formules}{%
-\subsection{formules}\label{sec:ttoets-formules}}
+\subsection{formules}\label{sec:ttoets-formules}
 
-\hypertarget{toetsingsgrootheid}{%
-\subsubsection{toetsingsgrootheid}\label{toetsingsgrootheid}}
+\subsubsection{toetsingsgrootheid}\label{toetsingsgrootheid}
 
 Voor de berekening van de toetsingsgrootheid \(t\) zijn verschillende
 formules in gebruik.
@@ -9043,8 +8856,7 @@ Vervolgens
   t = \frac{ \overline{x_1}-\overline{x_2} } { s_{\textrm{WS}} }
 \end{equation}
 
-\hypertarget{vrijheidsgraden}{%
-\subsubsection{vrijheidsgraden}\label{vrijheidsgraden}}
+\subsubsection{vrijheidsgraden}\label{vrijheidsgraden}
 
 Meestal wordt de \(t-toets\) uitgevoerd door een computerprogramma.
 Daarbij wordt dan meestal de volgende benadering gebruikt van de
@@ -9072,8 +8884,7 @@ Bijlage~\ref{app-kritieketwaarden}, is het meestal raadzaam om de regel
 te gebruiken met de eerstvolgende kleinere waarde voor het aantal
 vrijheidsgraden.)
 
-\hypertarget{sec:SPSS-ttoets-ongepaard}{%
-\subsection{SPSS}\label{sec:SPSS-ttoets-ongepaard}}
+\subsection{SPSS}\label{sec:SPSS-ttoets-ongepaard}
 
 Het tweede bovenstaande voorbeeld wordt hier uitgewerkt.
 
@@ -9092,8 +8903,7 @@ twee groepen ongeveer gelijk zijn. SPSS lost dat zeer onhandig op: je
 krijgt alle relevante uitvoer te zien, en moet daar zelf een keuze uit
 maken.
 
-\hypertarget{test-for-equality-of-variances}{%
-\subsubsection{Test for equality of variances}\label{test-for-equality-of-variances}}
+\subsubsection{Test for equality of variances}\label{test-for-equality-of-variances}
 
 Met Levene's test wordt onderzocht H0: \(s^2_1 = s^2_2\), d.w.z. of de
 varianties (en daarmee de standaarddeviaties) van de twee groepen gelijk
@@ -9104,8 +8914,7 @@ met \(p<.05\), dan dien je deze H0 wel te verwerpen, en je mag niet
 aannemen dat de varianties van de twee groepen gelijk zijn. Gebruik en
 rapporteer de juiste t-toets uit de uitvoer.
 
-\hypertarget{test-for-equality-of-means}{%
-\subsubsection{Test for equality of means}\label{test-for-equality-of-means}}
+\subsubsection{Test for equality of means}\label{test-for-equality-of-means}
 
 Afhankelijk van deze uitkomst van Levene's test moet je de eerste of de
 tweede regel gebruiken van de uitvoer van de Independent-Samples Test
@@ -9114,14 +8923,12 @@ zijn). In dit voorbeeld zijn de varianties ongeveer gelijk, zoals de
 Levene's test ook aangeeft. We gebruiken dus de eerste regel van de
 uitvoer, en rapporteren \(t(38)=-3.76, p=.001\).
 
-\hypertarget{sec:jaspttoetsongepaard}{%
-\subsection{JASP}\label{sec:jaspttoetsongepaard}}
+\subsection{JASP}\label{sec:jaspttoetsongepaard}
 
 Het tweede bovenstaande voorbeeld wordt hier uitgewerkt: het spreektempo
 van sprekers uit het Westen en Noorden van Nederland wordt vergeleken.
 
-\hypertarget{voorbereiding}{%
-\subsubsection{voorbereiding}\label{voorbereiding}}
+\subsubsection{voorbereiding}\label{voorbereiding}
 
 Hiervoor moeten we eerst zorgen dat alleen de regio's Noord en West zijn
 geselecteerd. Dit doe je door in het data tabblad op de variabele-naam
@@ -9139,8 +8946,7 @@ selecteren.\\
 (Vergeet niet later de kruizen weer terug te veranderen in vinkjes als
 je wel weer alle observaties wilt meenemen!).
 
-\hypertarget{t-toets}{%
-\subsubsection{\texorpdfstring{\emph{t}-toets}{t-toets}}\label{t-toets}}
+\subsubsection{\texorpdfstring{\emph{t}-toets}{t-toets}}\label{t-toets}
 
 Klik na het filteren van de goede regio's in de bovenbalk op:
 
@@ -9193,8 +8999,7 @@ Als dit is aangevinkt wordt als laatste in de uitvoer een tabel met
 beschrijvende statistiek en een ``Descriptive plot'' gegeven. Hiermee kun
 je goed zien hoe de scores van de twee groepen van elkaar verschillen.
 
-\hypertarget{sec:R-ttoets-ongepaard}{%
-\subsection{R}\label{sec:R-ttoets-ongepaard}}
+\subsection{R}\label{sec:R-ttoets-ongepaard}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -9219,8 +9024,7 @@ je goed zien hoe de scores van de twee groepen van elkaar verschillen.
 ##   0.23490   0.26871
 \end{verbatim}
 
-\hypertarget{sec:ttoets-gepaard}{%
-\section{\texorpdfstring{\(t\)-toets voor gepaarde waarnemingen}{t-toets voor gepaarde waarnemingen}}\label{sec:ttoets-gepaard}}
+\section{\texorpdfstring{\(t\)-toets voor gepaarde waarnemingen}{t-toets voor gepaarde waarnemingen}}\label{sec:ttoets-gepaard}
 
 De Student \(t\)-toets wordt ook toegepast om een verschil te onderzoeken
 tussen de gemiddelden van twee afhankelijke of gepaarde waarnemingen.
@@ -9307,8 +9111,7 @@ vergelijkbare pagina met \emph{je} als aanspreekvorm; dit is een
 significant verschil (\(t(9)=-6.74, p<.002\)).
 \end{quote}
 
-\hypertarget{aannames-1}{%
-\subsection{aannames}\label{aannames-1}}
+\subsection{aannames}\label{aannames-1}
 
 De \(t\)-toets voor gepaarde waarnemingen binnen een enkele steekproef
 vereist drie aannames (assumpties) waaraan voldaan moet zijn, om deze
@@ -9327,16 +9130,14 @@ toets te mogen gebruiken.
   \(t\)-toets doorgaans goed bruikbaar.
 \end{itemize}
 
-\hypertarget{sec:formules13-4}{%
-\subsection{formules}\label{sec:formules13-4}}
+\subsection{formules}\label{sec:formules13-4}
 
 \begin{equation}
   \label{eq:t-pairedsamples}
   t = \frac{ \overline{D}-\mu_D} { s_D } \times \sqrt{N}
 \end{equation}
 
-\hypertarget{sec:SPSS-ttoets-gepaard}{%
-\subsection{SPSS}\label{sec:SPSS-ttoets-gepaard}}
+\subsection{SPSS}\label{sec:SPSS-ttoets-gepaard}
 
 De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand
 \texttt{data/ujedata.csv}.
@@ -9349,8 +9150,7 @@ Sleep eerste afhankelijke variabele \texttt{cond.u} naar paneel Paired
 Variables onder Variable1, en sleep tweede variabele \texttt{cond.je} naar
 zelfde paneel onder Variable2. Bevestig met \texttt{OK}.
 
-\hypertarget{sec:jaspttoetsgepaard}{%
-\subsection{JASP}\label{sec:jaspttoetsgepaard}}
+\subsection{JASP}\label{sec:jaspttoetsgepaard}
 
 Het bovenstaande voorbeeld wordt hier uitgewerkt. De gegevens zijn te
 vinden in bestand \texttt{data/ujedata.csv}.
@@ -9383,8 +9183,7 @@ Als dit is aangevinkt wordt als laatste in de uitvoer een tabel met
 beschrijvende statistiek en een ``Descriptive plot'' gegeven. Hiermee kun
 je goed zien hoe de twee condities van elkaar verschillen in scores.
 
-\hypertarget{sec:R-ttoets-gepaard}{%
-\subsection{R}\label{sec:R-ttoets-gepaard}}
+\subsection{R}\label{sec:R-ttoets-gepaard}
 
 De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand
 \texttt{data/ujedata.csv}.
@@ -9410,8 +9209,7 @@ De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand
 ##            -2.2
 \end{verbatim}
 
-\hypertarget{sec:ttoets-effectgrootte}{%
-\section{Effectgrootte}\label{sec:ttoets-effectgrootte}}
+\section{Effectgrootte}\label{sec:ttoets-effectgrootte}
 
 Tot nu toe zijn we vooral ingegaan op toetsing als een binaire
 beslissing om H0 wel of niet te verwerpen, in het licht van de
@@ -9587,8 +9385,7 @@ verschil. Dit verschil heeft een 95\% betrouwbaarheidsinterval van
 \emph{je}-versie hoger beoordeelt dan de \emph{U}-versie is \(p=.98\).
 \end{quote}
 
-\hypertarget{sec:formules13-5}{%
-\subsection{formules}\label{sec:formules13-5}}
+\subsection{formules}\label{sec:formules13-5}
 
 Voor een enkele steekproef:
 \begin{equation}
@@ -9610,8 +9407,7 @@ Voor gepaarde waarnemingen:
 \end{equation} waarbij \(s_D\) de standaarddeviatie is van het verschil
 \(D\) volgens formule~\eqref{eq:d-paired}.
 
-\hypertarget{spss-13-2}{%
-\subsection{SPSS}\label{spss-13-2}}
+\subsection{SPSS}\label{spss-13-2}
 
 In SPSS kunnen we de effectgrootte meestal het makkelijkste met de hand
 uitrekenen.
@@ -9643,8 +9439,7 @@ De gegevens staan in de uitvoer van de paarsgewijze \(t\)-toets
 \texttt{Std.Deviation}:\\
 \(d = -2.200 / 1.033 = 2.130\), een super groot effect.
 
-\hypertarget{jasp-13}{%
-\subsection{JASP}\label{jasp-13}}
+\subsection{JASP}\label{jasp-13}
 
 In JASP kan de effectgrootte worden opgevraagd bij het doen van een
 \(t\)-toets, door simpelweg \texttt{Effect\ size} aan te vinken onder ``Additional
@@ -9658,8 +9453,7 @@ staat standaard op 95\%, maar kan ook worden veranderd) voor het
 betrouwbaarheidsinterval van de effectgrootte (zie
 §\ref{sec:betrouwbaarheidsinterval-effectgrootte} hieronder).
 
-\hypertarget{r-14}{%
-\subsection{R}\label{r-14}}
+\subsection{R}\label{r-14}
 
 In R is het wat makkelijker om de effectgrootte te laten uitrekenen.
 
@@ -9742,8 +9536,7 @@ Voor een enkele steekproef met twee gepaarde observaties
 ## [1] -2.130141
 \end{verbatim}
 
-\hypertarget{sec:betrouwbaarheidsinterval-effectgrootte}{%
-\subsection{Betrouwbaarheidsinterval van de effectgrootte}\label{sec:betrouwbaarheidsinterval-effectgrootte}}
+\subsection{Betrouwbaarheidsinterval van de effectgrootte}\label{sec:betrouwbaarheidsinterval-effectgrootte}
 
 We hebben al eerder gezien
 (§\ref{sec:betrouwbaarheidsinterval-gemiddelde} en
@@ -9817,11 +9610,9 @@ grootte van het effect is vaak nuttiger en interessanter dan de binaire
 beslissing of er wel of niet een effect is (H0 wel of niet verwerpen)
 \citep{Cumm12}.
 
-\hypertarget{ch-power}{%
-\chapter{Power}\label{ch-power}}
+\chapter{Power}\label{ch-power}
 
-\hypertarget{sec:power-inleiding}{%
-\section{Inleiding}\label{sec:power-inleiding}}
+\section{Inleiding}\label{sec:power-inleiding}
 
 Bij statistische toetsing van H0 bepalen we de kans \(P\) op de
 geobserveerde verschillen of effecten (of op nog grotere verschillen of
@@ -9897,8 +9688,7 @@ toetsen.
 \caption{\label{fig:powercontours-alpha05}Power uitgedrukt in contouren (zie schaalverdeling), afhankelijk van de gestandaardiseerde effectgrootte (d) en de steekproefgrootte (n), volgens een tweezijdige t-toets voor ongepaarde, onafhankelijke waarnemingen, met significantieniveau alpha=.05.}
 \end{figure}
 
-\hypertarget{sec:effectgrootte-power}{%
-\section{Verband tussen effectgrootte en power}\label{sec:effectgrootte-power}}
+\section{Verband tussen effectgrootte en power}\label{sec:effectgrootte-power}
 
 De twee figuren~\ref{fig:powercontours-alpha01} en
 \ref{fig:powercontours-alpha05} laten zien dat in het algemeen de
@@ -9951,8 +9741,7 @@ tussen de hoogste en de laagste (bereik of `range'), deel dit bereik
 door 4, en gebruik de uitkomst daarvan als grove schatting voor \(s\)
 \citep{PD08}.
 
-\hypertarget{sec:steekproefgrootte-power}{%
-\section{Verband tussen steekproefgrootte en power}\label{sec:steekproefgrootte-power}}
+\section{Verband tussen steekproefgrootte en power}\label{sec:steekproefgrootte-power}
 
 Het verband tussen de steekproefgrootte \(N\) en de power van een
 onderzoek wordt geïllustreerd in
@@ -9979,8 +9768,7 @@ De power is gebaseerd op het \emph{harmonisch gemiddelde} van \(n_1\) en \(n_2\)
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sec:significantieniveau-power}{%
-\section{Verband tussen significantieniveau en power}\label{sec:significantieniveau-power}}
+\section{Verband tussen significantieniveau en power}\label{sec:significantieniveau-power}
 
 Het verband tussen het significantieniveau \(\alpha\) en de power wordt
 geïllustreerd door het verschil tussen de twee figuren
@@ -10000,8 +9788,7 @@ kans \(\alpha\)) of van Type-II (met kans \(\beta\)); zoals eerder gezegd
 moet deze afweging afhangen van de ernst van (de consequenties van) deze
 twee typen van fouten.
 
-\hypertarget{nadelen-van-onvoldoende-power}{%
-\section{Nadelen van onvoldoende power}\label{nadelen-van-onvoldoende-power}}
+\section{Nadelen van onvoldoende power}\label{nadelen-van-onvoldoende-power}
 
 Helaas zijn er zeer veel voorbeelden te vinden van `underpowered'
 onderzoek in het domein van taal en communicatie. Dit onderzoek heeft
@@ -10077,11 +9864,9 @@ in strijd met de eerder besproken ethische en morele principes van
 zorgvuldigheid en verantwoordelijkheid
 (§\ref{sec:integriteit-inleiding}).
 
-\hypertarget{ch-variantieanalyse}{%
-\chapter{Variantieanalyse}\label{ch-variantieanalyse}}
+\chapter{Variantieanalyse}\label{ch-variantieanalyse}
 
-\hypertarget{sec:inleiding}{%
-\section{Inleiding}\label{sec:inleiding}}
+\section{Inleiding}\label{sec:inleiding}
 
 Dit hoofdstuk gaat over een veel gebruikte statistische analyse, genaamd
 \emph{variantie-analyse} (Eng. `analysis of variance', vaak afgekort als
@@ -10101,8 +9886,7 @@ intuïtieve wijze door in te gaan op de gedachtegang achter de toets. In
 §\ref{sec:anova-oneway-formeel} leiden we een formele vorm af voor
 de belangrijkste toetsingsgrootheid, de \(F\)-ratio.
 
-\hypertarget{sec:anova-voorbeelden}{%
-\section{Enkele voorbeelden}\label{sec:anova-voorbeelden}}
+\section{Enkele voorbeelden}\label{sec:anova-voorbeelden}
 
 Variantieanalyse is, net als de \emph{t}-toets, een statistische
 generalisatietechniek, dat wil zeggen: een instrument dat gebruikt kan
@@ -10253,8 +10037,7 @@ vrouwen (!). En (iii) het verschil tussen mannen en vrouwen lijkt
 kleiner voor sprekers uit het Westen dan voor sprekers uit andere
 regionen. Uiteraard zouden we deze effecten moeten toetsen om de bovenstaande uitspraken te onderbouwen (zie daarvoor §\ref{sec:tweeweg-anova} hieronder).
 
-\hypertarget{aannames}{%
-\subsection{aannames}\label{aannames}}
+\subsection{aannames}\label{aannames}
 
 De variantie-analyse vereist vier aannames (of assumpties) waaraan
 voldaan moet zijn, om deze toets te mogen gebruiken; deze aannames komen
@@ -10286,11 +10069,9 @@ factoren en combinaties van factoren (interacties) te bepalen.
 Variantieanalyse vereist wel dat de gegevens aan meerdere voorwaarden
 voldoen.
 
-\hypertarget{euxe9n-weg-variantieanalyse}{%
-\section{Eén-weg-variantieanalyse}\label{euxe9n-weg-variantieanalyse}}
+\section{Eén-weg-variantieanalyse}\label{euxe9n-weg-variantieanalyse}
 
-\hypertarget{sec:anova-oneway-uitleg}{%
-\subsection{Een intuïtieve uitleg}\label{sec:anova-oneway-uitleg}}
+\subsection{Een intuïtieve uitleg}\label{sec:anova-oneway-uitleg}
 
 Zoals gezegd gebruiken we variantieanalyse om te onderzoeken of de
 scores van verschillende groepen, of verzameld onder verschillende
@@ -10391,8 +10172,7 @@ daarmee nog niet welke groepen van elkaar verschillen, daarvoor is nog
 verdere (post-hoc) analyse nodig
 (§\ref{sec:anova-oneway-posthoc} hieronder).
 
-\hypertarget{sec:anova-oneway-formeel}{%
-\subsection{Een formele uitleg}\label{sec:anova-oneway-formeel}}
+\subsection{Een formele uitleg}\label{sec:anova-oneway-formeel}
 
 Voor onze uitleg beginnen we met de geobserveerde scores. We nemen aan
 dat de scores zijn opgebouwd volgens een bepaald statistisch model, nl.
@@ -10509,8 +10289,7 @@ De gemiddelde scores zijn niet gelijk voor de rode, grijze en blauwe groep
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{sec:anova-oneway-effectgrootte}{%
-\subsection{Effectgrootte}\label{sec:anova-oneway-effectgrootte}}
+\subsection{Effectgrootte}\label{sec:anova-oneway-effectgrootte}
 
 Net als bij de \(t\)-toets is het niet alleen van belang om een binaire beslissing
 te nemen over H0, maar is het minstens zo belangrijk om te weten hoe
@@ -10555,8 +10334,7 @@ association of independent and dependent variables {[}i.e., effect size
 coefficients{]} are \emph{indispensable} parts of research results'' \citep[ p.327, nadruk toegevoegd]{KL00}.
 \end{quote}
 
-\hypertarget{sec:anova-oneway-gericht}{%
-\subsection{Gerichte vergelijkingen}\label{sec:anova-oneway-gericht}}
+\subsection{Gerichte vergelijkingen}\label{sec:anova-oneway-gericht}
 
 In voorbeeld 15.2 (zie
 Figuur~\ref{fig:kleurtjes-obs}) onderzochten we de verschillen tussen
@@ -10639,8 +10417,7 @@ over verschillen tussen bepaalde (combinaties van) groepen of condities.
 Die hypotheses kunnen gebaseerd zijn op theoretische overwegingen, of op
 eerdere onderzoeksresultaten.
 
-\hypertarget{sec:anova-oneway-contrasts}{%
-\subsubsection{Orthogonale contrasten}\label{sec:anova-oneway-contrasts}}
+\subsubsection{Orthogonale contrasten}\label{sec:anova-oneway-contrasts}
 
 Elk contrast kan worden uitgedrukt in de vorm van gewichten voor iedere
 conditie. Voor de hierboven besproken contrasten kan dat in de vorm van
@@ -10669,8 +10446,7 @@ Vervolgens tellen we al deze producten bij elkaar op:
 \(0 -0.5 + 0.5 = 0\). Als de som van deze producten nul is, dan zijn de
 twee contrasten orthogonaal.
 
-\hypertarget{sec:anova-oneway-posthoc}{%
-\subsection{Post-hoc vergelijkingen}\label{sec:anova-oneway-posthoc}}
+\subsection{Post-hoc vergelijkingen}\label{sec:anova-oneway-posthoc}
 
 In veel onderzoeken heeft een onderzoeker géén idee over de te
 verwachten verschillen tussen de groepen of condities. Pas na afloop van
@@ -10711,11 +10487,9 @@ Post-hoc vergelijkingen met Tukey's HSD-toets laten zien dat de grijze en blauwe
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{spss-12}{%
-\subsection{SPSS}\label{spss-12}}
+\subsection{SPSS}\label{spss-12}
 
-\hypertarget{voorbereiding-1}{%
-\subsubsection{voorbereiding}\label{voorbereiding-1}}
+\subsubsection{voorbereiding}\label{voorbereiding-1}
 
 We gebruiken de gegevens in het bestand \texttt{data/kleurgroepen.txt}; deze gegevens zijn ook weergegeven in Figuur \ref{fig:kleurtjes-obs}.
 Lees eerst de benodigde gegevens, en controleer deze:
@@ -10742,8 +10516,7 @@ We kunnen in SPSS niet vooraf toetsen of de varianties gelijk zijn in de
 drie groepen, zoals vereist voor variantieanalyse. We doen dat tegelijk
 met de variantieanalyse zelf.
 
-\hypertarget{anova}{%
-\subsubsection{ANOVA}\label{anova}}
+\subsubsection{ANOVA}\label{anova}
 
 In SPSS kan je een variantieanalyse op meerdere manieren uitvoeren. We
 gebruiken hier een algemeen bruikbare aanpak, waarbij we aangeven dat er
@@ -10775,8 +10548,7 @@ Tabel~\ref{tab:kleurtjes-anova}, waarbij ook de effectgrootte vermeld
 wordt in de vorm van \texttt{~Partial\ eta\ square}. Het is echter beter om
 \(\omega^2\) te rapporteren, maar je moet die dan wel zelf uitrekenen!
 
-\hypertarget{gerichte-vergelijking}{%
-\subsubsection{gerichte vergelijking}\label{gerichte-vergelijking}}
+\subsubsection{gerichte vergelijking}\label{gerichte-vergelijking}
 
 Voor een variantieanalyse met gerichte vergelijkingen moeten we de
 gewenste contrasten aangeven voor de factor \texttt{kleur}. De werkwijze is
@@ -10817,8 +10589,7 @@ betrouwbaarheidsinterval van het getoetste contrast. Het eerste contrast
 is wel significant (\texttt{Sig.\ .000}, rapporteer als \(p<.001\), zie §\ref{sec:pgroterdannul}), en het tweede niet, zie
 Tabel~\ref{tab:kleurtjes-anova-contrast}.
 
-\hypertarget{post-hoc-vergelijking}{%
-\subsubsection{post-hoc vergelijking}\label{post-hoc-vergelijking}}
+\subsubsection{post-hoc vergelijking}\label{post-hoc-vergelijking}
 
 Herhaal eerst de instructies hierboven.\\
 Kies de knop \texttt{Post\ Hoc...}, en selecteer de factor \texttt{kleur}
@@ -10835,11 +10606,9 @@ gegeven in de derde kolom. We zien dat rood verschilt van blauw, dat
 rood verschilt van grijs, en dat de scores van de grijze en blauwe
 groepen niet verschillen.
 
-\hypertarget{jasp-14}{%
-\subsection{JASP}\label{jasp-14}}
+\subsection{JASP}\label{jasp-14}
 
-\hypertarget{voorbereiding-2}{%
-\subsubsection{voorbereiding}\label{voorbereiding-2}}
+\subsubsection{voorbereiding}\label{voorbereiding-2}
 
 We gebruiken de gegevens in het bestand \texttt{data/kleurgroepen.txt}; deze gegevens zijn ook weergegeven in Figuur \ref{fig:kleurtjes-obs}.
 Lees de data in en controleer deze.
@@ -10852,8 +10621,7 @@ Het toetsen of de varianties gelijk zijn in de
 drie groepen, zoals vereist voor variantieanalyse, doen we tegelijk
 met de variantieanalyse zelf, zie hieronder.
 
-\hypertarget{anova-1}{%
-\subsubsection{ANOVA}\label{anova-1}}
+\subsubsection{ANOVA}\label{anova-1}
 
 Klik in de bovenbalk op:
 
@@ -10872,8 +10640,7 @@ In de uitvoer vind je onder \emph{Assumption Checks} ook de uitslag van Levene's
 varianties (homogeniteit van variantie). Die geeft geen aanleiding om H0
 te verwerpen; we mogen dus een variantieanalyse uitvoeren.
 
-\hypertarget{gerichte-vergelijking-1}{%
-\subsubsection{gerichte vergelijking}\label{gerichte-vergelijking-1}}
+\subsubsection{gerichte vergelijking}\label{gerichte-vergelijking-1}
 
 Voor een variantieanalyse met gerichte vergelijkingen moeten we de
 gewenste contrasten aangeven voor de factor \texttt{kleur}. De werkwijze is in het begin
@@ -10885,8 +10652,7 @@ De uitvoer geeft voor ieder contrast (\emph{Comparison}) de significantie. Let o
 In de tekst hierboven (§\ref{sec:anova-oneway-gericht}) werden de gerichte contrasten getoetst met behulp van de toetsingsgrootheid \(F\);
 JASP gebruikt daarvoor echter de \(t\)-toets (voor twee onafhankelijke steekproeven). De \(p\)-waarde is hetzelfde. Rapporteer de toetsing van deze contrasten met behulp van de \(t\)-toets en \(p\)-waarde in de uitvoer van JASP, net zoals je bij een \(t\)-toets doet.
 
-\hypertarget{post-hoc-vergelijking-1}{%
-\subsubsection{post-hoc vergelijking}\label{post-hoc-vergelijking-1}}
+\subsubsection{post-hoc vergelijking}\label{post-hoc-vergelijking-1}
 
 Voor een variantieanalyse met post-hoc vergelijkingen moeten we de
 gewenste vergelijkingen aanvragen. De werkwijze is in het begin
@@ -10904,11 +10670,9 @@ aangepaste overschrijdingskans volgens Tukey's HSD toets wordt gegeven in de laa
 rood verschilt van grijs, en dat de scores van de grijze en blauwe
 groepen niet verschillen. In je eigen rapportage moet je vermelden dat Tukey's HSD-toets is gebruikt, en wat de overschrijdingskansen zijn van elke post-hoc vergelijking (zie \emph{Voorbeeld 15.4}).
 
-\hypertarget{r-15}{%
-\subsection{R}\label{r-15}}
+\subsection{R}\label{r-15}
 
-\hypertarget{voorbereiding-3}{%
-\subsubsection{voorbereiding}\label{voorbereiding-3}}
+\subsubsection{voorbereiding}\label{voorbereiding-3}
 
 Lees eerst de benodigde gegevens, en controleer deze:
 
@@ -10943,8 +10707,7 @@ toetsen deze H0 met behulp van Bartlett's toets.
 ## Bartlett's K-squared = 3.0941, df = 2, p-value = 0.2129
 \end{verbatim}
 
-\hypertarget{anova-2}{%
-\subsubsection{ANOVA}\label{anova-2}}
+\subsubsection{ANOVA}\label{anova-2}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10960,8 +10723,7 @@ toetsen deze H0 met behulp van Bartlett's toets.
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 \end{verbatim}
 
-\hypertarget{R:omega-kwadraat}{%
-\subsubsection{effectgrootte}\label{R:omega-kwadraat}}
+\subsubsection{effectgrootte}\label{R:omega-kwadraat}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -10981,8 +10743,7 @@ toetsen deze H0 met behulp van Bartlett's toets.
 ## [1] 0.2708136
 \end{verbatim}
 
-\hypertarget{gerichte-vergelijking-2}{%
-\subsubsection{gerichte vergelijking}\label{gerichte-vergelijking-2}}
+\subsubsection{gerichte vergelijking}\label{gerichte-vergelijking-2}
 
 Bij het specificeren van de contrasten moeten we rekening houden met de \emph{alfabetische} ordening van de condities: \emph{blauw, grijs, rood}.
 
@@ -11043,8 +10804,7 @@ Als we gerichte vergelijkingen hebben (planned contrasts) dan is de eerder gecon
 ## [1] -0.012277
 \end{verbatim}
 
-\hypertarget{post-hoc-vergelijkingen}{%
-\subsubsection{post-hoc vergelijkingen}\label{post-hoc-vergelijkingen}}
+\subsubsection{post-hoc vergelijkingen}\label{post-hoc-vergelijkingen}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11075,8 +10835,7 @@ Wederom zien we dat rood verschilt van grijs, dat rood verschilt van
 blauw, en dat de scores van de grijze en blauwe groepen niet
 verschillen.
 
-\hypertarget{sec:tweeweg-anova}{%
-\section{Tweeweg-variantieanalyse}\label{sec:tweeweg-anova}}
+\section{Tweeweg-variantieanalyse}\label{sec:tweeweg-anova}
 
 In §\ref{sec:anova-voorbeelden} hebben we al een voorbeeld gegeven
 van een onderzoek met twee factoren die in één variantieanalyse
@@ -11089,8 +10848,7 @@ factor niet hetzelfde zijn voor de condities van de andere factor, of
 anders gezegd, dat de gemiddelde score van een cel afwijkt van de
 voorspelde waarde op grond van de twee hoofdeffecten.
 
-\hypertarget{een-intuuxeftieve-uitleg}{%
-\subsection{Een intuïtieve uitleg}\label{een-intuuxeftieve-uitleg}}
+\subsection{Een intuïtieve uitleg}\label{een-intuuxeftieve-uitleg}
 
 In veel studies zijn we geïnteresseerd in de \emph{gecombineerde} effecten
 van twee of meer factoren, zoals in het onderstaande voorbeeld dat we gebruiken voor onze uitleg.
@@ -11142,8 +10900,7 @@ is daarentegen wel significant. In dat onderzoek is het effect van de
 ene factor precies tegengesteld in de twee verschillende niveaus
 van de andere factor.
 
-\hypertarget{een-formele-uitleg}{%
-\subsection{Een formele uitleg}\label{een-formele-uitleg}}
+\subsection{Een formele uitleg}\label{een-formele-uitleg}
 
 We nemen wederom aan dat de scores zijn opgebouwd volgens een
 statistisch model, nl. als de optelsom van het populatiegemiddelde
@@ -11225,8 +10982,7 @@ Voor de interpretatie is het van belang of de \emph{interactie} wel of niet sign
 Als de interactie wel significant is, dan rapporteren we eerst de hoofdeffecten zonder die te interpreteren, daarna rapporteren en interpreteren we de interactie, en tenslotte interpreteren we de eventuele significante hoofdeffecten die niet bij de interactie geïnterpreteerd zijn.
 Als de interactie niet significant is, dan kan het makkelijker zijn om eerst de hoofdeffecten te rapporteren en te interpreteren, en daarna rapporteren we de interactie (die dan niet geïnterpreteerd wordt).
 
-\hypertarget{sec:anova-twoway-posthoc}{%
-\subsection{Post-hoc vergelijkingen}\label{sec:anova-twoway-posthoc}}
+\subsection{Post-hoc vergelijkingen}\label{sec:anova-twoway-posthoc}
 
 Ook bij tweeweg-variantieanalyse kunnen we weer post-hoc vergelijkingen uitvoeren (vgl. §\ref{sec:anova-oneway-posthoc}) om te onderzoeken welke cellen of combinaties van condities van elkaar verschillen. We gebruiken daarvoor wederom de Tukey HSD toets.
 
@@ -11240,13 +10996,11 @@ Ook was er een significante interactie zien tussen de tekstversie en het lezerst
 Zwakke lezers presteren slechter dan gemiddelde lezers, bij de tekstversie zonder markeringen (p\textless.001), maar niet bij de versie met markeringen (\(p=.99\)). Sterke lezers presteren beter dan gemiddelde lezers, zowel zonder markeringen (\(p<.001\)) als met markeringen (p=.01). Tekstmarkeringen hebben wel effect bij zwakke lezers (\(p<.001\)) en bij gemiddelde lezers (\(p<.001\)) maar niet bij sterke lezers (\(p=.89\)); sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst, maar zwakke en gemiddelde lezers wel. Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (\(p=.72\)).
 \end{quote}
 
-\hypertarget{spss-13}{%
-\subsection{SPSS}\label{spss-13}}
+\subsection{SPSS}\label{spss-13}
 
 De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand \texttt{data/DBE2012.csv}.
 
-\hypertarget{anova-3}{%
-\subsubsection{ANOVA}\label{anova-3}}
+\subsubsection{ANOVA}\label{anova-3}
 
 \begin{verbatim}
 Analyze > General Linear Model > Univariate...
@@ -11256,19 +11010,16 @@ Sleep de afhankelijke variabele (\texttt{MCBiScore}) naar het vakje Dependent
 variable. Sleep de twee onafhankelijke variabelen (\texttt{Versie}, \texttt{Groep}) naar het
 vakje Fixed factor(s).
 
-\hypertarget{jasp-15}{%
-\subsection{JASP}\label{jasp-15}}
+\subsection{JASP}\label{jasp-15}
 
-\hypertarget{voorbereiding-4}{%
-\subsubsection{voorbereiding}\label{voorbereiding-4}}
+\subsubsection{voorbereiding}\label{voorbereiding-4}
 
 De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand \texttt{data/DBE2012.csv}.
 
 Onderzoek of de observaties normaal verdeeld zijn binnen elke groep of cel, met behulp van de technieken uit Deel II van dit tekstboek (met name
 §\ref{sec:isvarnormaalverdeeld}). Let op: Dit kan in JASP ook tegelijk met de variantieanalyse zelf, zie hieronder.
 
-\hypertarget{anova-4}{%
-\subsubsection{ANOVA}\label{anova-4}}
+\subsubsection{ANOVA}\label{anova-4}
 
 Klik in de bovenbalk op:
 
@@ -11289,8 +11040,7 @@ In de uitvoer vind je onder \emph{Assumption Checks} ook de uitslag van Levene's
 varianties (homogeniteit van variantie), die geen aanleiding geeft om H0
 te verwerpen. We mogen dus een variantieanalyse uitvoeren.
 
-\hypertarget{post-hoc-vergelijking-2}{%
-\subsubsection{post-hoc vergelijking}\label{post-hoc-vergelijking-2}}
+\subsubsection{post-hoc vergelijking}\label{post-hoc-vergelijking-2}
 
 Voor een variantieanalyse met post-hoc vergelijkingen moeten we de
 gewenste post-hoc vergelijkingen aanvragen. De werkwijze is in het begin
@@ -11310,11 +11060,9 @@ Voor de versie met markeringen zien we dat de cel \texttt{met:zwak} ongeveer gel
 Ook zien we dat \texttt{zonder:zwak} lager scoort dan \texttt{met:zwak} (\(p<.001\)), dat \texttt{zonder:gemiddeld} lager scoort dan \texttt{met:gemiddeld} (\(p<.001\)), terwijl er geen verschil is tussen \texttt{zonder:sterk} en \texttt{met:sterk} (\(p=.89\)). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst.
 Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (\(p=.72\)).
 
-\hypertarget{r-16}{%
-\subsection{R}\label{r-16}}
+\subsection{R}\label{r-16}
 
-\hypertarget{voorbereiding-5}{%
-\subsubsection{voorbereiding}\label{voorbereiding-5}}
+\subsubsection{voorbereiding}\label{voorbereiding-5}
 
 De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand \texttt{data/DBE2012.csv}.
 
@@ -11338,8 +11086,7 @@ De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand \texttt{da
 ## zonder 2.666667  4.642857 7.571429
 \end{verbatim}
 
-\hypertarget{anova-5}{%
-\subsubsection{ANOVA}\label{anova-5}}
+\subsubsection{ANOVA}\label{anova-5}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11359,8 +11106,7 @@ De gegevens voor het bovenstaande voorbeeld zijn te vinden in bestand \texttt{da
 
 De uitkomsten wijken enigszins af van die in Tabel \ref{tab:DBE12anova} omdat R de Sums of Squares op een andere wijze berekent\footnote{De standaard berekeningswijze van R (Type I) is na te bootsen in JASP met de keuze: Model, Sum of squares: Type I. De standaard berekeningswijze van JASP (Type III) is ook na te bootsen in R, zie \url{https://www.r-bloggers.com/2011/03/anova-\%E2\%80\%93-type-iiiiii-ss-explained}.}.
 
-\hypertarget{effectgrootte}{%
-\subsubsection{effectgrootte}\label{effectgrootte}}
+\subsubsection{effectgrootte}\label{effectgrootte}
 
 We gebruiken hiervoor de eerder geprogrammeerde functie \texttt{omegasq} (§\ref{R:omega-kwadraat}):
 
@@ -11396,8 +11142,7 @@ We gebruiken hiervoor de eerder geprogrammeerde functie \texttt{omegasq} (§\ref
 
 De uitkomsten wijken enigszins af van die in de tekst hierboven omdat R de Sums of Squares op een iets andere wijze berekent.
 
-\hypertarget{post-hoc-toetsen}{%
-\subsubsection{post-hoc toetsen}\label{post-hoc-toetsen}}
+\subsubsection{post-hoc toetsen}\label{post-hoc-toetsen}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11440,11 +11185,9 @@ Voor de versie met markeringen zien we dat de cel \texttt{met:zwak} ongeveer gel
 Ook zien we dat \texttt{zonder:zwak} lager scoort dan \texttt{met:zwak} (p\textless.001), dat \texttt{zonder:gemiddeld} lager scoort dan \texttt{met:gemiddeld} (p\textless.001), terwijl er geen verschil is tussen \texttt{zonder:sterk} en \texttt{met:sterk} (p=.89). Sterke lezers hebben dus geen baat bij structuurmarkeringen in de tekst.
 Ook interessant is de bevinding dat zwakke lezers een tekst met markeringen net zo goed begrijpen als sterke lezers een tekst zonder markeringen begrijpen (\(p=.72\)).
 
-\hypertarget{ch-chi-kwadraat-toetsen}{%
-\chapter{Chi-kwadraat-toetsen}\label{ch-chi-kwadraat-toetsen}}
+\chapter{Chi-kwadraat-toetsen}\label{ch-chi-kwadraat-toetsen}
 
-\hypertarget{sec:h16inleiding}{%
-\section{Inleiding}\label{sec:h16inleiding}}
+\section{Inleiding}\label{sec:h16inleiding}
 
 We zagen al eerder dat we niet altijd gebruik kunnen maken van een
 parametrische toets zoals de \(t\)-toets of variantie-analyse, omdat de verzamelde
@@ -11464,8 +11207,7 @@ effect (zie hoofdstuk \ref{ch-power}).
 In dit hoofdstuk bespreken we de meest gebruikte non-parametrische
 toets: de \(\chi^2\)-toets.
 
-\hypertarget{sec:chi2gof}{%
-\section{\texorpdfstring{\(\chi^2\)-toets voor ``goodness of fit'' in enkele steekproef}{\textbackslash chi\^{}2-toets voor ``goodness of fit'' in enkele steekproef}}\label{sec:chi2gof}}
+\section{\texorpdfstring{\(\chi^2\)-toets voor ``goodness of fit'' in enkele steekproef}{\textbackslash chi\^{}2-toets voor ``goodness of fit'' in enkele steekproef}}\label{sec:chi2gof}
 
 Gegevens van het nominale meetniveau worden vaak geanalyseerd met de
 zgn. \(\chi^2\)-toets (met de Griekse letter ``chi''). Het aantal ogen op een dobbelsteen
@@ -11507,8 +11249,7 @@ verwerpen we H0. We concluderen dat deze dobbelsteen niet eerlijk is: de
 gevonden verdeling van uitkomsten wijkt significant af van de verwachte
 verdeling volgens H0.
 
-\hypertarget{chi2-toets-voor-homogeniteit-van-een-variabele-in-meerdere-steekproeven}{%
-\section{\texorpdfstring{\(\chi^2\)-toets voor homogeniteit van een variabele in meerdere steekproeven}{\textbackslash chi\^{}2-toets voor homogeniteit van een variabele in meerdere steekproeven}}\label{chi2-toets-voor-homogeniteit-van-een-variabele-in-meerdere-steekproeven}}
+\section{\texorpdfstring{\(\chi^2\)-toets voor homogeniteit van een variabele in meerdere steekproeven}{\textbackslash chi\^{}2-toets voor homogeniteit van een variabele in meerdere steekproeven}}\label{chi2-toets-voor-homogeniteit-van-een-variabele-in-meerdere-steekproeven}
 
 De \(\chi^2\)-toets is ook goed bruikbaar bij een onderzoeksontwerp met \emph{een} nominale
 variabele, die we geobserveerd hebben in twee of meer steekproeven. De
@@ -11527,8 +11268,7 @@ in verdeling tussen de twee steekproeven) zou de verdeling van
 observaties over de kolommen ongeveer gelijk moeten zijn voor alle rijen
 (en vice versa).
 
-\hypertarget{chi2-toets-voor-verband-tussen-twee-variabelen-in-enkele-steekproef}{%
-\section{\texorpdfstring{\(\chi^2\)-toets voor verband tussen twee variabelen in enkele steekproef}{\textbackslash chi\^{}2-toets voor verband tussen twee variabelen in enkele steekproef}}\label{chi2-toets-voor-verband-tussen-twee-variabelen-in-enkele-steekproef}}
+\section{\texorpdfstring{\(\chi^2\)-toets voor verband tussen twee variabelen in enkele steekproef}{\textbackslash chi\^{}2-toets voor verband tussen twee variabelen in enkele steekproef}}\label{chi2-toets-voor-verband-tussen-twee-variabelen-in-enkele-steekproef}
 
 Tenslotte is de \(\chi^2\)-toets eveneens goed bruikbaar bij een onderzoeksontwerp met
 \emph{twee} nominale variabelen, die we geobserveerd hebben in een enkele
@@ -11603,8 +11343,7 @@ cellen is de Phi coefficiënt een bruikbaar alternatief (zie
 Herlees en onthoud de waarschuwingen over correlatie en causaliteit (§\ref{sec:correlationcausation})
 --- die zijn ook hier van toepassing.
 
-\hypertarget{sec:chi2toets-aannames}{%
-\section{aannames}\label{sec:chi2toets-aannames}}
+\section{aannames}\label{sec:chi2toets-aannames}
 
 De \(\chi^2\)-toets vereist drie aannames (assumpties) waaraan voldaan moet zijn, om de
 toets te mogen gebruiken.
@@ -11627,8 +11366,7 @@ toets te mogen gebruiken.
   frequenties opnieuw te bepalen.
 \end{itemize}
 
-\hypertarget{formules-6}{%
-\section{formules}\label{formules-6}}
+\section{formules}\label{formules-6}
 
 De toetsingsgrootheid \(\chi^2\) is gedefinieerd als
 \begin{equation}
@@ -11671,11 +11409,9 @@ De gestandaardiseerde residuen \(e\) kunnen geïnterpreteerd worden alsof het \(
 
 Voor het bovenstaande voorbeeld in §\ref{sec:chi2gof} vinden we de volgende zes gestandaardiseerde residuen voor de zes mogelijke uitkomsten van de dobbelsteen: \((1.39, -0.35, +0.35, 0.00, 1.73, -3.12)\). De eerste vijf uitkomsten komen ongeveer even vaak voor als verwacht, maar de zesde mogelijke uitkomst is veel minder vaak geobserveerd dan verwacht (\(p\)=.003).
 
-\hypertarget{spss-14}{%
-\section{SPSS}\label{spss-14}}
+\section{SPSS}\label{spss-14}
 
-\hypertarget{goodness-of-fit-voorbereiding}{%
-\subsection{goodness of fit: voorbereiding}\label{goodness-of-fit-voorbereiding}}
+\subsection{goodness of fit: voorbereiding}\label{goodness-of-fit-voorbereiding}
 
 Als we een nominale variabele willen onderzoeken, dan moet die uiteraard
 als kolom in het SPSS databestand zijn aangemerkt. Iedere observatie
@@ -11712,8 +11448,7 @@ Data > Weigh Cases...
 Kies \texttt{Weigh\ cases\ by...} en selecteer de variabele \texttt{aantal} in
 het invulveld. Bevestig met \texttt{OK}.
 
-\hypertarget{goodness-of-fit-toetsing}{%
-\subsection{goodness of fit: toetsing}\label{goodness-of-fit-toetsing}}
+\subsection{goodness of fit: toetsing}\label{goodness-of-fit-toetsing}
 
 \begin{verbatim}
 Analyze > Nonparametric tests > Legacy Dialogs > Chi-square...
@@ -11725,8 +11460,7 @@ geef aan dat we \emph{gelijke} aantallen observaties verwachten in elke cel.
 als er volgens H0 andere, ongelijke frequenties verwacht worden.)
 Bevestig met \texttt{OK}.
 
-\hypertarget{kruistabellen-voorbereiding}{%
-\subsection{kruistabellen: voorbereiding}\label{kruistabellen-voorbereiding}}
+\subsection{kruistabellen: voorbereiding}\label{kruistabellen-voorbereiding}
 
 Als we twee nominale variabelen willen onderzoeken, dan moeten die
 allebei als kolommen in het SPSS databestand zijn aangemerkt. Iedere
@@ -11769,8 +11503,7 @@ Data > Weigh Cases...
 Kies \texttt{Weigh\ cases\ by...} en selecteer de variabele \texttt{aantal} in
 het invulveld. Bevestig met \texttt{OK}.
 
-\hypertarget{kruistabellen-toetsing}{%
-\subsection{kruistabellen: toetsing}\label{kruistabellen-toetsing}}
+\subsection{kruistabellen: toetsing}\label{kruistabellen-toetsing}
 
 De toetsing verloopt op dezelfde wijze als beschreven in
 §\ref{sec:Phi} voor
@@ -11786,11 +11519,9 @@ kruistabel~\ref{tab:titanic}.\\
 Kies \texttt{Statistics…} en vink de optie~\texttt{Chi-square}~aan. Bevestig eerst met
 \texttt{Continue} en daarna nogmaals met \texttt{OK}.
 
-\hypertarget{jasp-16}{%
-\section{JASP}\label{jasp-16}}
+\section{JASP}\label{jasp-16}
 
-\hypertarget{goodness-of-fit-voorbereiding-1}{%
-\subsection{goodness of fit: voorbereiding}\label{goodness-of-fit-voorbereiding-1}}
+\subsection{goodness of fit: voorbereiding}\label{goodness-of-fit-voorbereiding-1}
 
 Als we een nominale variabele willen onderzoeken, dan moet die uiteraard
 als kolom in het databestand zijn aangemerkt. Het is gebruikelijk dat iedere observatie dan een aparte regel vormt in dit databestand. Voor de ``goodness of fit'' \(\chi^2\)-toets moet de data echter net iets anders worden ingevoerd. Niet alle afzonderlijke observaties moeten worden ingevoerd, maar de aantallen (ook wel `frequenties' of `counts') observaties per categorie van de nominale variabele. Hierdoor hoeven we niet \(N=60\) regels in te vullen (voor elke observatie een regel), maar slechts 6 regels (voor elke categorie een regel). Voor het voorbeeld uit §\ref{sec:chi2gof} ziet dit er als volgt uit:
@@ -11808,8 +11539,7 @@ uitkomst aantal
 Om deze data in JASP te krijgen maak je een Excel-bestand aan waar je de data invoert (precies zoals hierboven weergegeven, met de variabele-namen erbij).
 Sla dit bestand op als CSV-bestand (.csv, dus niet .xlsx), en open het in JASP.
 
-\hypertarget{goodness-of-fit-toetsing-1}{%
-\subsection{goodness of fit: toetsing}\label{goodness-of-fit-toetsing-1}}
+\subsection{goodness of fit: toetsing}\label{goodness-of-fit-toetsing-1}
 
 Klik in de bovenbalk op:
 
@@ -11827,8 +11557,7 @@ Je kunt ook nog \texttt{Descriptives} en \texttt{Confidence\ interval} aanvinken
 
 Het is in JASP niet mogelijk om gestandaardiseerde residuen op te vragen; je kunt die wel zelf uitrekenen met de geobserveerde en verwachte aantallen.
 
-\hypertarget{kruistabellen-voorbereiding-1}{%
-\subsection{kruistabellen: voorbereiding}\label{kruistabellen-voorbereiding-1}}
+\subsection{kruistabellen: voorbereiding}\label{kruistabellen-voorbereiding-1}
 
 Als we twee nominale variabelen willen onderzoeken, dan moeten die allebei als kolommen in het databestand zijn aangemerkt.
 Het is gebruikelijk dat iedere observatie dan een aparte regel vormt in dit databestand. Voor de \(\chi^2\)-toets met twee nominale variabelen kan zo'n ``lang'' databestand ook worden gebruikt in JASP. Voor het voorbeeld 16.1 hierboven zouden we dan \(N=2201\) regels hebben: voor elke opvarende een aparte regel, met tenminste twee kolommen, voor \texttt{klasse} en \texttt{overlevende}.\\
@@ -11854,8 +11583,7 @@ crew    wel        212
 Om deze data in JASP te krijgen maak je een Excel-bestand aan waar je de data invoert (precies zoals hierboven weergegeven, met de variabele-namen erbij).
 Sla dit bestand op als CSV-bestand (.csv, dus niet .xlsx), en open het in JASP.
 
-\hypertarget{kruistabellen-toetsing-1}{%
-\subsection{kruistabellen: toetsing}\label{kruistabellen-toetsing-1}}
+\subsection{kruistabellen: toetsing}\label{kruistabellen-toetsing-1}
 
 De toetsing verloopt op dezelfde wijze als beschreven in
 §\ref{sec:Phi} voor de samenhang tussen twee nominale variabelen.
@@ -11868,17 +11596,15 @@ Frequencies > Contingency Tables (onder 'Classical')
 
 Selecteer de variabele \texttt{klasse} in het ``Rows'' paneel, de variabele \texttt{overlevende} in het ``Columns'' paneel en variabele \texttt{aantal} in het ``Counts'' paneel voor kruistabel \ref{tab:titanic}. Open de \texttt{Statistics} balk
 en zorg dat \texttt{Chi-square} (\(\chi^2\)) is aangevinkt. De waarde voor \(\chi^2\) verschijnt dan in de uitvoer in de tabel getiteld \emph{Chi-Squared Tests}.
-Open de \texttt{Cells} balk en zorg dat \texttt{Expected\ counts} zijn aangevinkt.
+Open de \texttt{Cells} balk en zorg dat \texttt{Expected\ counts} zijn aangevinkt en dat ook \texttt{Pearson\ residuals} en \texttt{Standardized\ (adjusted\ Pearson)} zijn aangevinkt.
 
 Mocht je toch een ``lang'' databestand hebben, waarbij elke regel een aparte observatie is, dan hoef je alleen de variabele \texttt{klasse} in het ``Rows'' paneel en de variabele \texttt{overlevende} in het ``Columns'' paneel te selecteren.
 
-Het is in JASP niet mogelijk om gestandaardiseerde residuen op te vragen; je kunt die wel zelf uitrekenen met de geobserveerde en verwachte aantallen.
+Het aantal overlevenden is significant groter dan verwacht onder H0 voor passagiers van de eerste en van de tweede klasse (positieve gestandaardiseerde residuen, beide \(p<.001\)) en significant geringer dan verwacht onder H0 voor passagier van de derde klasse en voor de bemanning (negatieve gestandaardiseerde residuen, beide ook \(p<.001\)).
 
-\hypertarget{r-17}{%
-\section{R}\label{r-17}}
+\section{R}\label{r-17}
 
-\hypertarget{goodness-of-fit-toetsing-2}{%
-\subsection{goodness of fit: toetsing}\label{goodness-of-fit-toetsing-2}}
+\subsection{goodness of fit: toetsing}\label{goodness-of-fit-toetsing-2}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -11905,8 +11631,7 @@ Het is in JASP niet mogelijk om gestandaardiseerde residuen op te vragen; je kun
 ## [1]  1.2649111 -0.3162278  0.3162278  0.0000000  1.5811388 -2.8460499
 \end{verbatim}
 
-\hypertarget{kruistabellen-voorbereiding-en-toetsing}{%
-\subsection{kruistabellen: voorbereiding en toetsing}\label{kruistabellen-voorbereiding-en-toetsing}}
+\subsection{kruistabellen: voorbereiding en toetsing}\label{kruistabellen-voorbereiding-en-toetsing}
 
 In R is de dataset \texttt{Titanic} gegeven als een multidimensionele matrix. We tellen de observaties op en maken een kruistabel van de eerste dimensie (klasse) en de vierde dimensie (uitkomst).
 
@@ -11949,9 +11674,9 @@ Vervolgens gebruiken we deze kruistabel weer als invoer voor een \texttt{chisq.t
 \end{verbatim}
 
 Opvallend zijn het geringe aantal doden onder de eerste-klasse-passagiers, en het grote aantal doden onder de bemanning.
+R toont hier overigens de ruwe (niet gestandaardiseerde) residuen.
 
-\hypertarget{effectgrootte-odds-ratio}{%
-\section{Effectgrootte: odds ratio}\label{effectgrootte-odds-ratio}}
+\section{Effectgrootte: odds ratio}\label{effectgrootte-odds-ratio}
 
 Bij het gebruik van de \(\chi^2\)-toets kan de effectgrootte worden gerapporteerd in de
 vorm van de zgn. ``odds ratio''. De `odds ratio' wordt afgeleid van de
@@ -12017,11 +11742,9 @@ door longkanker bleken ruim \(12\times\) zo groot voor rokers als voor
 niet-rokers.
 \end{quote}
 
-\hypertarget{ch-andere-nonpar-toetsen}{%
-\chapter{Andere nonparametrische toetsen}\label{ch-andere-nonpar-toetsen}}
+\chapter{Andere nonparametrische toetsen}\label{ch-andere-nonpar-toetsen}
 
-\hypertarget{sec:h17inleiding}{%
-\section{Inleiding}\label{sec:h17inleiding}}
+\section{Inleiding}\label{sec:h17inleiding}
 
 In dit hoofdstuk bespreken we verschillende andere non-parametrische
 toetsen. Deze toetsen zijn bruikbaar indien de gegevens niet op
@@ -12044,11 +11767,9 @@ toetsen die informatie gebruiken van nominaal niveau (tekentoetsen en
 aanverwanten) en daarna de toetsen die informatie gebruiken van ordinaal
 niveau, d.w.z. die gebaseerd zijn op de rangorde van de observaties.
 
-\hypertarget{gepaarde-observaties-enkele-steekproef}{%
-\section{Gepaarde observaties, enkele steekproef}\label{gepaarde-observaties-enkele-steekproef}}
+\section{Gepaarde observaties, enkele steekproef}\label{gepaarde-observaties-enkele-steekproef}
 
-\hypertarget{sec:tekentoets}{%
-\subsection{Tekentoets}\label{sec:tekentoets}}
+\subsection{Tekentoets}\label{sec:tekentoets}
 
 Een handige toets voor gepaarde observaties is de zgn. tekentoets (Eng: `sign test').
 Deze toets is te beschouwen als een non-parametrische, nominale tegenhanger
@@ -12086,8 +11807,7 @@ met \emph{je} als aanspreekvorm; dit is een significant verschil
 (tekentoets, \(p<.001\)).
 \end{quote}
 
-\hypertarget{sec:Wilcoxon-signed-rank}{%
-\subsection{Wilcoxon signed-ranks test}\label{sec:Wilcoxon-signed-rank}}
+\subsection{Wilcoxon signed-ranks test}\label{sec:Wilcoxon-signed-rank}
 
 De Wilcoxon signed-ranks test is te beschouwen als een
 non-parametrische, ordinale tegenhanger van de \emph{t}-toets voor gepaarde
@@ -12122,8 +11842,7 @@ Wilcoxon signed-rank is gebaseerd op de (ordinale) \emph{rangschikking} van de
 verschillen, en de \emph{t}-toets is gebaseerd op de (interval) \emph{omvang} van de
 verschillen.
 
-\hypertarget{formules-7}{%
-\subsubsection{formules}\label{formules-7}}
+\subsubsection{formules}\label{formules-7}
 
 We berekenen niet alleen \(W_+\) (of \(|W_-|\)) op de hierboven aangegeven wijze,
 maar ook de bijbehorende waarde van \(z\) \citep{Ferg89}:
@@ -12140,11 +11859,9 @@ correlatie \citep[ Eq.2.18]{Rose91}:
 Voor het bovenstaande voorbeeld vinden we
 \(z=-2.80\), en \(r=-.89\), hetgeen wijst op een buitengewoon groot effect.
 
-\hypertarget{onafhankelijke-observaties-meerdere-steekproeven}{%
-\section{Onafhankelijke observaties, meerdere steekproeven}\label{onafhankelijke-observaties-meerdere-steekproeven}}
+\section{Onafhankelijke observaties, meerdere steekproeven}\label{onafhankelijke-observaties-meerdere-steekproeven}
 
-\hypertarget{mediaantoets}{%
-\subsection{Mediaantoets}\label{mediaantoets}}
+\subsection{Mediaantoets}\label{mediaantoets}
 
 De mediaantoets (Eng. `median test') is te beschouwen als een non-parametrische, nominale
 tegenhanger van de \emph{t}-toets voor ongepaarde, onafhankelijke waarnemingen. Het is
@@ -12156,8 +11873,7 @@ van elkaar verschillen, en dat in beide steekproeven dus ongeveer de
 helft van de observaties boven de gezamenlijke mediaan ligt, en de
 andere helft er onder.
 
-\hypertarget{sec:wilcoxon-rank-sum}{%
-\subsection{Wilcoxon rank sum test, ofwel Mann-Whitney U test}\label{sec:wilcoxon-rank-sum}}
+\subsection{Wilcoxon rank sum test, ofwel Mann-Whitney U test}\label{sec:wilcoxon-rank-sum}
 
 De Wilcoxon rank sum test is equivalent aan de Mann-Whitney U test.
 Beide zijn de beschouwen als non-parametrische, ordinale tegenhangers
@@ -12232,8 +11948,7 @@ tweezijdig toetsen (H0: oordelen in conditie 2 zijn niet hoger en niet
 lager dan in conditie 1) met \(\alpha=.05\) dan is er geen reden om H0 te
 verwerpen\footnote{Als we tweezijdig toetsen met \(\alpha=.10\), dan zouden we H0 wel kunnen verwerpen. Als we eenzijdig toetsen (H0: oordelen in conditie 2 zijn niet hoger dan in conditie 1), dan mogen we de berekende \(p\) halveren, omdat die berekende \(p\) uitgaat van tweezijdige toetsing. We zouden dan dus vinden \(p=.0653/2=.0326\), en omdat deze kans kleiner is dan \(\alpha=.05\) zouden we dan wel H0 kunnen verwerpen.}.
 
-\hypertarget{formules-8}{%
-\subsubsection{formules}\label{formules-8}}
+\subsubsection{formules}\label{formules-8}
 
 Voor de sommen van rangnummers geldt dat
 \(W_1 + W_2 = (n_1+n_2) (n_1+n_2+1) / 2\).
@@ -12263,8 +11978,7 @@ effect. Dat dit aanzienlijke effect toch niet leidt tot een significant
 verschil (bij tweezijdige toetsing) is vermoedelijk een gevolg van de
 (te) kleine omvang van de twee groepen.
 
-\hypertarget{kruskall-wallis-h-test}{%
-\subsection{Kruskall-Wallis H test}\label{kruskall-wallis-h-test}}
+\subsection{Kruskall-Wallis H test}\label{kruskall-wallis-h-test}
 
 De Kruskall-Wallis H test is te beschouwen als een uitbreiding van de
 Wilcoxon rank sum test (zie
@@ -12280,8 +11994,7 @@ rangnummers van de observaties. We berekenen als toetsingsgrootheid \(H\),
 op basis van de rangnummers van de observaties in de \(k\) verschillende
 groepen.
 
-\hypertarget{formule}{%
-\subsubsection{formule}\label{formule}}
+\subsubsection{formule}\label{formule}
 
 \begin{equation}
   \label{eq:kruskall-wallis-H}
@@ -12301,12 +12014,10 @@ Die benadering via \(\chi^2\) werkt echter alleen indien \(k\ge3\)
 en \(n_j\ge5\) voor de kleinste groep \citep{Ferg89}; indien \(k=2\) of \(n_j<5\)
 dan wordt de kans \(P(H)\) exact berekend.
 
-\hypertarget{appendix-bijlagen}{%
-\appendix}
+\appendix
 
 
-\hypertarget{app-randomgetallen}{%
-\chapter{Willekeurige getallen}\label{app-randomgetallen}}
+\chapter{Willekeurige getallen}\label{app-randomgetallen}
 
 \begin{table}
 
@@ -12343,8 +12054,7 @@ dan wordt de kans \(P(H)\) exact berekend.
 \end{tabular}
 \end{table}
 
-\hypertarget{app-kritiekeZwaarden}{%
-\chapter{Standaard-normale kansverdeling}\label{app-kritiekeZwaarden}}
+\chapter{Standaard-normale kansverdeling}\label{app-kritiekeZwaarden}
 
 \includegraphics{KMS-NL_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf}
 
@@ -12379,8 +12089,7 @@ Z* & 0.5 & 1 & 1.5 & 2 & 2.5 & 3 & 3.5\\
 \bottomrule
 \end{tabular}
 
-\hypertarget{app-kritieketwaarden}{%
-\chapter{\texorpdfstring{Kritieke waarden van \(t\)-verdeling}{Kritieke waarden van t-verdeling}}\label{app-kritieketwaarden}}
+\chapter{\texorpdfstring{Kritieke waarden van \(t\)-verdeling}{Kritieke waarden van t-verdeling}}\label{app-kritieketwaarden}
 
 \includegraphics{KMS-NL_files/figure-latex/kritieketwaarden-hulpfiguur-1.pdf}
 
@@ -12437,8 +12146,7 @@ De tabel hieronder geeft de kritieke grenswaarden \(t^*\) voor veel gebruikte ov
 \bottomrule
 \end{tabular}
 
-\hypertarget{app-kritiekechi2waarden}{%
-\chapter{\texorpdfstring{Kritieke waarden van \(\chi^2\)-verdeling}{Kritieke waarden van \textbackslash chi\^{}2-verdeling}}\label{app-kritiekechi2waarden}}
+\chapter{\texorpdfstring{Kritieke waarden van \(\chi^2\)-verdeling}{Kritieke waarden van \textbackslash chi\^{}2-verdeling}}\label{app-kritiekechi2waarden}
 
 \includegraphics{KMS-NL_files/figure-latex/kritiekechi2waarden-hulpfiguur-1.pdf}
 

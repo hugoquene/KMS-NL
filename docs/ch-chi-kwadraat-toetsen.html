@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Hoofdstuk 16 Chi-kwadraat-toetsen | Kwantitatieve Methoden en Statistiek</title>
-  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek (TL3V24001, TL2V23004, TW2V19002, TL2V17002), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Hoofdstuk 16 Chi-kwadraat-toetsen | Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
+  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek (TL3V24001, TL2V23004, TW2V19002, TL2V17002), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
   <meta name="github-repo" content="rstudio/KMS-NL" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Hoofdstuk 16 Chi-kwadraat-toetsen | Kwantitatieve Methoden en Statistiek" />
   
-  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
+  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek (TL3V24001, TL2V23004, TW2V19002, TL2V17002), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
   
 
 
@@ -54,7 +54,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -126,6 +126,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -907,9 +908,9 @@ Sla dit bestand op als CSV-bestand (.csv, dus niet .xlsx), en open het in JASP.<
 <pre><code>Frequencies &gt; Contingency Tables (onder &#39;Classical&#39;)</code></pre>
 <p>Selecteer de variabele <code>klasse</code> in het “Rows” paneel, de variabele <code>overlevende</code> in het “Columns” paneel en variabele <code>aantal</code> in het “Counts” paneel voor kruistabel <a href="ch-chi-kwadraat-toetsen.html#tab:titanic">16.1</a>. Open de <code>Statistics</code> balk
 en zorg dat <code>Chi-square</code> (<span class="math inline">\(\chi^2\)</span>) is aangevinkt. De waarde voor <span class="math inline">\(\chi^2\)</span> verschijnt dan in de uitvoer in de tabel getiteld <em>Chi-Squared Tests</em>.
-Open de <code>Cells</code> balk en zorg dat <code>Expected counts</code> zijn aangevinkt.</p>
+Open de <code>Cells</code> balk en zorg dat <code>Expected counts</code> zijn aangevinkt en dat ook <code>Pearson residuals</code> en <code>Standardized (adjusted Pearson)</code> zijn aangevinkt.</p>
 <p>Mocht je toch een “lang” databestand hebben, waarbij elke regel een aparte observatie is, dan hoef je alleen de variabele <code>klasse</code> in het “Rows” paneel en de variabele <code>overlevende</code> in het “Columns” paneel te selecteren.</p>
-<p>Het is in JASP niet mogelijk om gestandaardiseerde residuen op te vragen; je kunt die wel zelf uitrekenen met de geobserveerde en verwachte aantallen.</p>
+<p>Het aantal overlevenden is significant groter dan verwacht onder H0 voor passagiers van de eerste en van de tweede klasse (positieve gestandaardiseerde residuen, beide <span class="math inline">\(p&lt;.001\)</span>) en significant geringer dan verwacht onder H0 voor passagier van de derde klasse en voor de bemanning (negatieve gestandaardiseerde residuen, beide ook <span class="math inline">\(p&lt;.001\)</span>).</p>
 </div>
 </div>
 <div id="r-17" class="section level2 hasAnchor" number="16.9">
@@ -945,7 +946,8 @@ Open de <code>Cells</code> balk en zorg dat <code>Expected counts</code> zijn aa
 ##   2nd  -1.867159  2.702959
 ##   3rd   2.289965 -3.315027
 ##   Crew  3.018611 -4.369840</code></pre>
-<p>Opvallend zijn het geringe aantal doden onder de eerste-klasse-passagiers, en het grote aantal doden onder de bemanning.</p>
+<p>Opvallend zijn het geringe aantal doden onder de eerste-klasse-passagiers, en het grote aantal doden onder de bemanning.
+R toont hier overigens de ruwe (niet gestandaardiseerde) residuen.</p>
 </div>
 </div>
 <div id="effectgrootte-odds-ratio" class="section level2 hasAnchor" number="16.10">
@@ -1036,7 +1038,7 @@ niet-rokers.</p>
 </div>
 </div>
 <h3>Referenties<a href="referenties.html#referenties" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Agre07" class="csl-entry">
 Agresti, Alan. 2007. <em>Introduction to Categorical Data Analysis</em>. Hoboken, NJ: Wiley.
 </div>

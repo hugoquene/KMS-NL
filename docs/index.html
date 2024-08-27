@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Kwantitatieve Methoden en Statistiek</title>
-  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek (TL3V24001, TL2V23004, TW2V19002, TL2V17002), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Kwantitatieve Methoden en Statistiek" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
+  <meta property="og:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek (TL3V24001, TL2V23004, TW2V19002, TL2V17002), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
   <meta name="github-repo" content="rstudio/KMS-NL" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Kwantitatieve Methoden en Statistiek" />
   
-  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek 1 (TL2V17002, TW2V19002, TL2V23004), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
+  <meta name="twitter:description" content="Tekstboek over Kwantitatieve Methoden en Statistiek, o.a. gebruikt in cursus Methoden en Statistiek (TL3V24001, TL2V23004, TW2V19002, TL2V17002), Dept Talen Literatuur en Communicatie, Universiteit Utrecht." />
   
 
 
@@ -54,7 +54,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -126,6 +126,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -541,14 +542,14 @@ div.csl-indent {
 Universiteit Utrecht<br>
 <a class="author_email" href="mailto:#"><a href="mailto:h.quene@uu.nl" class="email">h.quene@uu.nl</a></a>
 </address>
-<p class="date"><em>Versie gecompileerd op 22 Nov 2023</em></p>
+<p class="date"><em>Versie gecompileerd op 27 Aug 2024</em></p>
 </div>
 <div id="voorwoord" class="section level1 unnumbered hasAnchor">
 <h1>Voorwoord<a href="index.html#voorwoord" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Data spelen een steeds belangrijker rol, ook in de geesteswetenschappen.
 De beschikbaarheid van digitale gegevens (o.a. tekst, spraak, video, en gedragsregistraties) leidt tot nieuwe onderzoeksvragen, die vooral met kwantitatieve methoden beantwoord worden.
 Dit boek biedt onderzoekers en studenten een overzicht en inleiding van de belangrijkste kwantitatieve methoden en statistische technieken in de geesteswetenschappen. Het boek geeft de lezer een stevig methodologisch fundament voor kwantitatief onderzoek, en biedt een inleiding in de meest gebruikte statistische technieken om gegevens te beschrijven en om hypothesen te toetsen. Daarmee is de lezer ook in staat om kwantitatief onderzoek kritisch te beoordelen.</p>
-<p>Dit tekstboek wordt gebruikt als leesstof bij de cursus <em>Methoden en Statistiek 1</em> aan de Universiteit Utrecht. Het boek is tevens bruikbaar voor zelfstudie op inleidend niveau, voor iedereen die meer wil weten over kwantitatieve methoden en statistiek.</p>
+<p>Dit tekstboek wordt gebruikt als leesstof bij de inleidende cursus <em>Methoden en Statistiek</em> aan de Universiteit Utrecht. Het boek is tevens bruikbaar voor zelfstudie op inleidend niveau, voor iedereen die meer wil weten over kwantitatieve methoden en statistiek.</p>
 <p>De hoofdtekst is gevrijwaard van wiskundige afleidingen en formules, die voor geesteswetenschappers immers weinig bruikbaar zijn. De uitleg is vooral conceptueel, en rijk aan voorbeelden van geesteswetenschappelijk onderzoek. Waar nodig worden formules aangeboden in een aparte paragraaf.</p>
 <p>Dit boek bevat ook aanwijzingen over hoe de besproken statistische analyses en visualisaties uitgevoerd kunnen worden in drie statistische pakketten, nl. SPSS, JASP, en R. In §<a href="ch-inleiding.html#sec:vooruitblik">1.6</a> worden deze pakketten nader besproken. De technische aanwijzingen voor het gebruik van deze pakketten staan eveneens los van de hoofdtekst, in afzonderlijke paragrafen.</p>
 <p>Graag willen we onze mede-docenten danken voor de vele discussies en voorbeelden die op enige wijze verwerkt zijn in dit tekstboek. Onze studenten danken we voor hun nieuwsgierigheid en nauwkeurigheid die geleid heeft tot deze versie van dit tekstboek.</p>
@@ -591,20 +592,21 @@ The parallel English version of this textbook, titled <em>Quantitative Methods a
 <div id="citatie" class="section level2 unnumbered hasAnchor">
 <h2>Citatie<a href="index.html#citatie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Gebruik een van de volgende manieren om te verwijzen naar dit tekstboek (in APA-formaat), met de datum van raadpleging:</p>
-<p>Quené, H. &amp; Van den Bergh, H. (2022). <em>Kwantitatieve Methoden en Statistiek</em>.
-Geraadpleegd op 13 mei 2022 via <a href="https://hugoquene.github.io/KMS-NL/" class="uri">https://hugoquene.github.io/KMS-NL/</a> .</p>
-<p>Quené, H. &amp; Van den Bergh, H. (2022). <em>Kwantitatieve Methoden en Statistiek</em> [in Dutch].
-Retrieved 13 May 2022 from <a href="https://hugoquene.github.io/KMS-NL/" class="uri">https://hugoquene.github.io/KMS-NL/</a> .</p>
+<p>Quené, H. &amp; Van den Bergh, H. (2024). <em>Kwantitatieve Methoden en Statistiek</em>.
+Geraadpleegd op 27 augustus 2024 via <a href="https://hugoquene.github.io/KMS-NL/" class="uri">https://hugoquene.github.io/KMS-NL/</a> .</p>
+<p>Quené, H. &amp; Van den Bergh, H. (2024). <em>Kwantitatieve Methoden en Statistiek</em> [in Dutch].
+Retrieved 27 Aug 2024 from <a href="https://hugoquene.github.io/KMS-NL/" class="uri">https://hugoquene.github.io/KMS-NL/</a> .</p>
 </div>
 <div id="technische-details" class="section level2 unnumbered hasAnchor">
 <h2>Technische details<a href="index.html#technische-details" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Alle materialen voor dit tekstboek zijn beschikbaar via <a href="https://doi.org/10.5281/zenodo.4113980" class="uri">https://doi.org/10.5281/zenodo.4113980</a> of rechtstreeks via <a href="https://github.com/hugoquene/KMS-NL" class="uri">https://github.com/hugoquene/KMS-NL</a>: men vinde daar andere versies van deze tekst (EPUB, PDF, HTML), de broncode (Rmarkdown en R) van de tekst inclusief figuren en voorbeelden en uitwerkingen, de databestanden die worden gebruikt in tekst, en de figuren als afzonderlijke bestanden.</p>
-<p>De tekst is geschreven in LaTeX, en daarna omgezet naar Rmarkdown, met behulp van <code>pandoc</code> <span class="citation">(<a href="#ref-pandoc">MacFarlane 2020</a>)</span> en het <code>bookdown</code> package <span class="citation">(<a href="#ref-R-bookdown">Xie 2023</a>)</span> in <a href="https://www.rstudio.com">Rstudio</a>.<br />
+<p>De tekst is geschreven in LaTeX, en daarna omgezet naar Rmarkdown, met behulp van <code>pandoc</code> <span class="citation">(<a href="#ref-pandoc">MacFarlane 2020</a>)</span> en het <code>bookdown</code> package <span class="citation">(<a href="#ref-R-bookdown">Xie 2024</a>)</span> in <a href="https://www.rstudio.com">Rstudio</a>.<br />
 </p>
 </div>
 <div id="over-de-auteurs" class="section level2 unnumbered hasAnchor">
 <h2>Over de auteurs<a href="index.html#over-de-auteurs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Beide auteurs zijn verbonden aan de Faculteit Geesteswetenschappen van de Universiteit Utrecht. HQ is hoogleraar Kwantitatieve Methoden van Empirisch Onderzoek in de Geesteswetenschappen, en geeft daarnaast leiding aan het Centre for Digital Humanities. HvdB is hoogleraar Didactiek en Toetsing van het Taalvaardigheidsonderwijs, en is daarnaast vaksectievoorzitter Nederlands bij het College voor Toetsen en Examens (CvTE).</p>
+<p>HQ is hoogleraar Kwantitatieve Methoden van Empirisch Onderzoek in de Geesteswetenschappen, en geeft leiding aan het Centre for Digital Humanities (CDH), bij de Universiteit Utrecht.
+HvdB is emeritus hoogleraar Didactiek en Toetsing van het Taalvaardigheidsonderwijs bij de Universiteit Utrecht, en was eerder vaksectievoorzitter Nederlands bij het College voor Toetsen en Examens (CvTE).</p>
 
 </div>
 </div>
@@ -612,12 +614,12 @@ Retrieved 13 May 2022 from <a href="https://hugoquene.github.io/KMS-NL/" class="
 
 
 <h3>Referenties<a href="referenties.html#referenties" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-pandoc" class="csl-entry">
 MacFarlane, John. 2020. <em>Pandoc: A Universal Document Converter</em>. <a href="https://pandoc.org/">https://pandoc.org/</a>.
 </div>
 <div id="ref-R-bookdown" class="csl-entry">
-Xie, Yihui. 2023. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
+Xie, Yihui. 2024. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
 </div>
 </div>
             </section>
