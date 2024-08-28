@@ -119,7 +119,7 @@ rangschikken van klein naar groot, dan is de mediaan het middenpunt van
 die gerangschikte reeks. De helft van de observaties is kleiner dan de
 mediaan, en de andere helft is groter dan de mediaan.
 
-[^fn09-1]: In het Engels wordt de streep in het midden van een weg aangeduid als de "median"; deze streep verdeelt de weg in twee even brede helften.
+[^fn09-1]: In het Engels wordt de streep of middenberm in het midden van een weg aangeduid als de "median" (Am.Eng.) of "central reservation" (Br.Eng.); deze streep verdeelt de weg in twee meestal even grote helften.
 
 Bij een oneven aantal observaties is de middelste observatie de mediaan.
 Bij een even aantal observaties wordt de mediaan gevormd door het
@@ -816,16 +816,22 @@ Klik in de bovenbalk op `Descriptives`. Selecteer vervolgens de gewenste variabe
 Voor kenmerkende getallen, zoals centrummaten en spreidingsmaten, vink je `Mean`, `Median`, `Mode` en `Sum` aan onder "Central Tendency", en `Variance`, `Std.deviation`, `MAD Robust` (bij `MAD` is de constante op 1 gezet), `IQR`, `Minimum` en `Maximum` aan onder "Dispersion".\
 De uitvoer is een tabel met alle opgevraagde beschrijvende statistiek van de variabele(n). 
 
-**Standaardscores** moeten zelf worden uitgerekend als nieuwe variabele. Maak de nieuwe variabele aan door op de **+**-button te klikken rechts van de naam van de laatste kolom in de dataset. Er verschijnt een paneel "Create Computed Column", waar je een naam voor de nieuwe variabele kunt invullen, bijvoorbeeld `zLezen`. Ook kun je kiezen uit `R` en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of handmatig. Hieronder wordt voor allebei de opties uitgelegd hoe we hiermee de variabele met standaardscores maken. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen; dat is in dit geval "Scale", net als de originele variabele. Klik vervolgens op `Create Column` om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.
+**Standaardscores** moeten zelf worden uitgerekend als nieuwe variabele. Maak de nieuwe variabele aan door op de **+**-button te klikken rechts van de naam van de laatste kolom in de dataset. Er verschijnt een paneel "Create Computed Column", waar je een naam voor de nieuwe variabele kunt invullen, bijvoorbeeld `zLezen`. Ook kun je kiezen uit `R` en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of met drag-and-drop in JASP. Hieronder wordt voor allebei de opties uitgelegd hoe we hiermee de variabele met standaardscores maken. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen; dat is in dit geval "Scale", net als de originele variabele. Klik vervolgens op `Create Column` om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.
 
-Als `R` is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met "#Enter your R code here :)". Hier kan R code worden gegeven die met behulp van R functies de nieuwe variabele definieert. Om een standaardscore te berekenen kan de volgende code worden gebruikt (hier voor de variabele 'Lezen'):
+Als `computed with R code` is gekozen als optie om de nieuwe variabele te definiëren, dan verschijnt er boven de data een veld met de tekst "Enter your R code here". Hier kan R code worden ingevoerd die met behulp van R functies de nieuwe variabele definieert. Om een standaardscore te berekenen kan de volgende code worden gebruikt (hier voor de variabele 'Lezen'):
 ```
 ((Lezen - mean(Lezen)) / sd(Lezen))
 ```
-Vul de R code in en klik onderaan op `Compute column` om de lege variabele te vullen met de standaardscores.
+Vul de R code in, vul de overige velden ook in, en klik onderaan op `Compute column` om de lege variabele te vullen met de standaardscores.
 
-Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met links daarvan de variabelen, boven wiskundige symbolen, en rechts een aantal functies. Hier kan handmatig de functie worden geselecteerd die de nieuwe variabele definieert. Om standaardscores te berekenen sleep je de variabele die je wilt omzetten in het lege veld. Klik dan bovenaan op $-$ en selecteer daarna uit het rechter menu de functie `mean(y)`. Sleep de om te zette variabele naar "values" en klik daarna bovenaan op $\div$. Selecteer in het rechter menu de functie `σy` voor op de puntjes onder het breukteken (als noemer) en sleep ook hier de om te zette variabele naar "values". Voor de variabele 'Lezen' zou dit er zo uitzien in het werkblad: \[\frac{(Lezen-mean(Lezen)}{\sigma Lezen}\]
-Klik onderaan op `Compute column` om de lege variabele vervolgens te vullen met de standaardscores.
+*Rekenkundige bewerkingen op de variabelen zijn in JASP alleen mogelijk indien het meetniveau van alle gebruikte variabelen is ingesteld op 'Scale'.*
+
+Als `drag-and-drop` (aanwijshandje) is gekozen als optie om de nieuwe variabele te definiëren, dan verschijnt er boven de data een veld met links daarvan de variabelen, boven wiskundige symbolen, en rechts een aantal functies. Hier kan handmatig de functie worden geselecteerd die de nieuwe variabele definieert. Om standaardscores te berekenen sleep je de variabele die je wilt omzetten in het lege veld. Klik dan bovenaan op $-$ en selecteer daarna uit het rechter menu de functie `mean(y)`. Sleep de om te zette variabele naar "values" en klik daarna bovenaan op $\div$. Selecteer in het rechter menu de functie `σy` voor op de puntjes onder het breukteken (als noemer) en sleep ook hier de om te zette variabele naar "values". Voor de variabele 'Lezen' zou dit er zo uitzien in het werkblad: \[\frac{(Lezen-mean(Lezen)}{\sigma Lezen}\]
+Vul ook de overige velden in, en klik dan onderaan op `Compute column` om de lege variabele te vullen met de standaardscores.
+
+*Rekenkundige bewerkingen op de variabelen zijn in JASP alleen mogelijk indien het meetniveau van alle gebruikte variabelen is ingesteld op 'Scale'.*
+
+Als je een fout hebt gemaakt of als je de code of formule voor de nieuwe variabele wilt aanpassen, dan kan je altijd terugkeren naar dit 'Computed Column' veld door te klikken op het formule-symbool $f_x$ naast de variabele-naam, of door te klikken op de variabele-naam zelf. 
 
 ## R
 
