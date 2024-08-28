@@ -69,6 +69,7 @@ eq:cronbach-corr
 fig:gramm2013onesample
 eq:t-onesample
 fig:gramm2013CIs
+eq:t-onesampleCI-nogmaals
 eq:sd-pooled
 eq:t-homoskedastic
 eq:sd-WS

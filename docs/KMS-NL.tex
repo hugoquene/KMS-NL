@@ -126,7 +126,7 @@
 
 \title{Kwantitatieve Methoden en Statistiek}
 \author{true}
-\date{Versie gecompileerd op 27 Aug 2024}
+\date{Versie gecompileerd op 28 Aug 2024}
 
 \begin{document}
 \maketitle
@@ -4793,7 +4793,7 @@ ratio-meetniveau.
 \subsection{mediaan}\label{sec:mediaan}
 
 De mediaan (symbool \(Md\) of \(\tilde{x}\)) is de observatie in het midden
-van de rangorde van observaties \footnote{In het Engels wordt de streep in het midden van een weg aangeduid als de ``median''; deze streep verdeelt de weg in twee even brede helften.}. Als we de scores van \(X\)
+van de rangorde van observaties \footnote{In het Engels wordt de streep of middenberm in het midden van een weg aangeduid als de ``median'' (Am.Eng.) of ``central reservation'' (Br.Eng.); deze streep verdeelt de weg in twee meestal even grote helften.}. Als we de scores van \(X\)
 rangschikken van klein naar groot, dan is de mediaan het middenpunt van
 die gerangschikte reeks. De helft van de observaties is kleiner dan de
 mediaan, en de andere helft is groter dan de mediaan.
@@ -5519,18 +5519,24 @@ Klik in de bovenbalk op \texttt{Descriptives}. Selecteer vervolgens de gewenste 
 Voor kenmerkende getallen, zoals centrummaten en spreidingsmaten, vink je \texttt{Mean}, \texttt{Median}, \texttt{Mode} en \texttt{Sum} aan onder ``Central Tendency'', en \texttt{Variance}, \texttt{Std.deviation}, \texttt{MAD\ Robust} (bij \texttt{MAD} is de constante op 1 gezet), \texttt{IQR}, \texttt{Minimum} en \texttt{Maximum} aan onder ``Dispersion''.\\
 De uitvoer is een tabel met alle opgevraagde beschrijvende statistiek van de variabele(n).
 
-\textbf{Standaardscores} moeten zelf worden uitgerekend als nieuwe variabele. Maak de nieuwe variabele aan door op de \textbf{+}-button te klikken rechts van de naam van de laatste kolom in de dataset. Er verschijnt een paneel ``Create Computed Column'', waar je een naam voor de nieuwe variabele kunt invullen, bijvoorbeeld \texttt{zLezen}. Ook kun je kiezen uit \texttt{R} en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of handmatig. Hieronder wordt voor allebei de opties uitgelegd hoe we hiermee de variabele met standaardscores maken. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen; dat is in dit geval ``Scale'', net als de originele variabele. Klik vervolgens op \texttt{Create\ Column} om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.
+\textbf{Standaardscores} moeten zelf worden uitgerekend als nieuwe variabele. Maak de nieuwe variabele aan door op de \textbf{+}-button te klikken rechts van de naam van de laatste kolom in de dataset. Er verschijnt een paneel ``Create Computed Column'', waar je een naam voor de nieuwe variabele kunt invullen, bijvoorbeeld \texttt{zLezen}. Ook kun je kiezen uit \texttt{R} en een aanwijshandje. Dit zijn de twee opties in JASP om formules te definiëren waarmee de nieuwe (lege) variabele wordt gevuld; met R code of met drag-and-drop in JASP. Hieronder wordt voor allebei de opties uitgelegd hoe we hiermee de variabele met standaardscores maken. Als laatste kun je aanvinken welk meetniveau de variabele moet krijgen; dat is in dit geval ``Scale'', net als de originele variabele. Klik vervolgens op \texttt{Create\ Column} om de nieuwe variabele aan te maken. De nieuwe variabele (kolom) verschijnt als meest rechtse in de data en is nog leeg.
 
-Als \texttt{R} is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met ``\#Enter your R code here :)''. Hier kan R code worden gegeven die met behulp van R functies de nieuwe variabele definieert. Om een standaardscore te berekenen kan de volgende code worden gebruikt (hier voor de variabele `Lezen'):
+Als \texttt{computed\ with\ R\ code} is gekozen als optie om de nieuwe variabele te definiëren, dan verschijnt er boven de data een veld met de tekst ``Enter your R code here''. Hier kan R code worden ingevoerd die met behulp van R functies de nieuwe variabele definieert. Om een standaardscore te berekenen kan de volgende code worden gebruikt (hier voor de variabele `Lezen'):
 
 \begin{verbatim}
 ((Lezen - mean(Lezen)) / sd(Lezen))
 \end{verbatim}
 
-Vul de R code in en klik onderaan op \texttt{Compute\ column} om de lege variabele te vullen met de standaardscores.
+Vul de R code in, vul de overige velden ook in, en klik onderaan op \texttt{Compute\ column} om de lege variabele te vullen met de standaardscores.
 
-Als het aanwijshandje is aangeklikt als optie om de nieuwe variabele te definiëren, verschijnt er boven de data een veld met links daarvan de variabelen, boven wiskundige symbolen, en rechts een aantal functies. Hier kan handmatig de functie worden geselecteerd die de nieuwe variabele definieert. Om standaardscores te berekenen sleep je de variabele die je wilt omzetten in het lege veld. Klik dan bovenaan op \(-\) en selecteer daarna uit het rechter menu de functie \texttt{mean(y)}. Sleep de om te zette variabele naar ``values'' en klik daarna bovenaan op \(\div\). Selecteer in het rechter menu de functie \texttt{σy} voor op de puntjes onder het breukteken (als noemer) en sleep ook hier de om te zette variabele naar ``values''. Voor de variabele `Lezen' zou dit er zo uitzien in het werkblad: \[\frac{(Lezen-mean(Lezen)}{\sigma Lezen}\]
-Klik onderaan op \texttt{Compute\ column} om de lege variabele vervolgens te vullen met de standaardscores.
+\emph{Rekenkundige bewerkingen op de variabelen zijn in JASP alleen mogelijk indien het meetniveau van alle gebruikte variabelen is ingesteld op `Scale'.}
+
+Als \texttt{drag-and-drop} (aanwijshandje) is gekozen als optie om de nieuwe variabele te definiëren, dan verschijnt er boven de data een veld met links daarvan de variabelen, boven wiskundige symbolen, en rechts een aantal functies. Hier kan handmatig de functie worden geselecteerd die de nieuwe variabele definieert. Om standaardscores te berekenen sleep je de variabele die je wilt omzetten in het lege veld. Klik dan bovenaan op \(-\) en selecteer daarna uit het rechter menu de functie \texttt{mean(y)}. Sleep de om te zette variabele naar ``values'' en klik daarna bovenaan op \(\div\). Selecteer in het rechter menu de functie \texttt{σy} voor op de puntjes onder het breukteken (als noemer) en sleep ook hier de om te zette variabele naar ``values''. Voor de variabele `Lezen' zou dit er zo uitzien in het werkblad: \[\frac{(Lezen-mean(Lezen)}{\sigma Lezen}\]
+Vul ook de overige velden in, en klik dan onderaan op \texttt{Compute\ column} om de lege variabele te vullen met de standaardscores.
+
+\emph{Rekenkundige bewerkingen op de variabelen zijn in JASP alleen mogelijk indien het meetniveau van alle gebruikte variabelen is ingesteld op `Scale'.}
+
+Als je een fout hebt gemaakt of als je de code of formule voor de nieuwe variabele wilt aanpassen, dan kan je altijd terugkeren naar dit `Computed Column' veld door te klikken op het formule-symbool \(f_x\) naast de variabele-naam, of door te klikken op de variabele-naam zelf.
 
 \section{R}\label{r-3}
 
@@ -8644,7 +8650,7 @@ concept van betrouwbaarheidsintervallen.
 \caption{\label{fig:gramm2013CIs}95\%-Betrouwbaarheidsintervallen en steekproefgemiddelden, over 100 gesimuleerde steekproeven (n=34) uit een populatie met populatiegemiddelde 84.4, populatie-s.d. 8.4.}
 \end{figure}
 
-Uit formule \eqref{eq:t-onesampleCI} volgt logischerwijze, dat als de
+Uit formule \eqref{eq:t-onesampleCI-nogmaals} volgt logischerwijze, dat als de
 standaarddeviatie \(s\) afneemt, en/of als de steekproefgrootte \(N\)
 toeneemt, het betrouwbaarheidsinterval dan kleiner wordt, m.a.w., we
 kunnen er meer vertrouwen in hebben dat het geobserveerde gemiddelde van
@@ -8655,8 +8661,9 @@ de steekproef dicht bij het onbekende gemiddelde van de populatie ligt.
 Het tweezijdige betrouwbaarheidsinterval voor \(B\)\% betrouwbaarheid voor een populatie-gemiddelde \(\mu\) is
 \begin{equation}
     \overline{y} \pm t^*_{1-B,N-1} \times \frac{s}{\sqrt{N}}
-    \label{eq:t-onesampleCI}
+    \label{eq:t-onesampleCI-nogmaals}
 \end{equation}
+(zie ook eerdere formule \eqref{eq:t-onesampleCI}).
 
 \subsection{SPSS}\label{spss-11}
 
@@ -9586,21 +9593,18 @@ over een webpagina met \emph{U} of \emph{je} als aanspreekvorm vonden we
 \(d=-2.13\). We vinden ook dat \(r=.91\). Met deze gegevens vinden we
 \(\textrm{se}_d = 0.52\) via formule~\eqref{eq:d-paired-se}.
 
-Hiermee bepalen we vervolgens het betrouwbaarheidsinterval voor de
-effectgrootte:
+Hiermee bepalen we vervolgens het betrouwbaarheidsinterval voor de effectgrootte:
 \begin{equation}
    \label{eq:d-paired-CI}
     d \pm t^*_{n-1} \times \textrm{se}_d 
 \end{equation}
-(zie de overeenkomstige formule~\eqref{eq:t-onesampleCI}).
+(zie de overeenkomstige formule~\eqref{eq:t-onesampleCI-nogmaals}).
 Na invullen van \(t^*_9=2.262\) (zie Bijlage~\ref{app-kritieketwaarden})
 en \(\textrm{se}_d = 0.519\) vinden we uiteindelijk een
 95\%-betrouwbaarheidsinterval van \((-3.30,-0.96)\). Met 95\%
 betrouwbaarheid ligt de onbekende effectgrootte in de populatie binnen
 dit interval (als we herhaalde steekproeven zouden trekken uit de
-populatie, dan zou in 5\% van de herhaalde steekproeven de onbekende ware
-effectgrootte in de populatie buiten het gevonden
-betrouwbaarheidsinterval voor de effectgrootte vallen). Aangezien het
+populatie, dan zou in 95\% van de herhaalde steekproeven de onbekende ware effectgrootte in de populatie binnen het gevonden betrouwbaarheidsinterval voor de effectgrootte vallen). Aangezien het
 betrouwbaarheidsinterval geheel kleiner is dan nul (negatief), mogen we
 concluderen dat de ware effectgrootte waarschijnlijk negatief is. Op
 grond van die laatste overweging kunnen we H0 verwerpen. En: we weten nu
