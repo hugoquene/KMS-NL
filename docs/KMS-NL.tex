@@ -1,10 +1,11 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-%
 \documentclass[
 ]{book}
+\usepackage{xcolor}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -35,7 +36,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -88,21 +88,24 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
 \usepackage{booktabs}
 \usepackage{amsthm}
 \makeatletter
@@ -111,11 +114,6 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\usepackage[]{natbib}
-\bibliographystyle{apalike}
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
@@ -126,7 +124,7 @@
 
 \title{Kwantitatieve Methoden en Statistiek}
 \author{true}
-\date{Versie gecompileerd op 21 Jan 2025}
+\date{Versie gecompileerd op 20 Mar 2026}
 
 \begin{document}
 \maketitle
@@ -239,7 +237,7 @@ onderzoek (bijv. door onderzoeksjournalisten)? Onderzoek dat een
 wetenschapper uitvoert, hoeft nog geen wetenschappelijk onderzoek te
 zijn. Evenmin is journalistiek onderzoek per definitie
 onwetenschappelijk omdat het door een journalist wordt uitgevoerd. In
-dit tekstboek hanteren we de volgende definitie \citep[14]{KL00}:
+dit tekstboek hanteren we de volgende definitie \citep[p.14]{KL00}:
 
 \begin{quote}
 ``Scientific
@@ -896,7 +894,7 @@ succesvol voortplanten, terwijl veel anderen voortijdig sterven en/of
 zich niet voortplanten. Op analoge wijze kunnen sommige tentatieve
 beweringen niet weerlegd worden, en kunnen deze dus `overleven' en `zich
 voortplanten', terwijl veel andere beweringen weerlegd worden en dus
-`sterven'. In de woorden van \citep[51]{Popp63}:
+`sterven'. In de woorden van \citep[p.51]{Popp63}:
 
 \begin{quote}
 '' \ldots{} to explain (the world) \ldots{} as far as possible, with the help of laws and explanatory theories \ldots there is no more rational procedure than the method of trial and error --- of conjecture and refutation: of boldly proposing theories; of trying our best to show that these are erroneous; and of accepting them tentatively if our critical efforts are unsuccessful.''
@@ -1115,7 +1113,7 @@ juist, en moet dus verworpen worden, ten gunste van H1.
 In ons voorbeeld hierboven (in de voorgaande subsectie over deductie) hebben we uit H0 (!) de voorspelling afgeleid
 dat in een steekproef van 40 mannelijke en 40 vrouwelijke docenten, de
 leden van de twee groepen even veel lettergrepen gebruiken in een
-gestandaardiseerd interview. We vinden echter dat de mannen meer lettergrepen gebruiken (gemiddeld 4210 lettergrepen) dan de vrouwen (gemiddeld 3926 lettergrepen) \citep[1112]{Quene08}.
+gestandaardiseerd interview. We vinden echter dat de mannen meer lettergrepen gebruiken (gemiddeld 4210 lettergrepen) dan de vrouwen (gemiddeld 3926 lettergrepen) \citep[p.1112]{Quene08}.
 Hoe
 waarschijnlijk is dit verschil als de observaties kloppen, en als H0
 waar zou zijn? Die kans is zodanig klein dat de onderzoeker H0 verwerpt
@@ -2154,7 +2152,7 @@ gelijk verdeeld over de twee leeftijdsgroepen, in een interview van
 ongeveer 15 minuten. Na fonetische analyse van de articulatiesnelheid
 blijkt dat de ``jongeren'' relatief snel spreken met 4.78 lettergrepen per
 seconde, en de ``ouderen'' aanzienlijk langzamer, met 4.52 lettergrepen
-per seconde \citep[302]{Verh04}. We concluderen dat de hogere leeftijd de
+per seconde \citep[p.302]{Verh04}. We concluderen dat de hogere leeftijd de
 \emph{oorzaak} is van het lagere spreektempo bij de oudere sprekers --- maar
 is die conclusie terecht?
 \end{quote}
@@ -2488,7 +2486,7 @@ van leerlingen naar scholen veroorzaakt kunnen zijn.
 Hierboven is al de meest eenvoudige manier aangegeven om verschillende
 condities een gelijk aanvangsniveau te geven: wijs de leerlingen
 aselect, volgens toeval, `at random', toe aan de condities. Deze methode
-staat bekend als \emph{randomisatie} \citep[294 ff]{SCC02}. We kunnen bijvoorbeeld
+staat bekend als \emph{randomisatie} \citep[p.294 ff]{SCC02}. We kunnen bijvoorbeeld
 randomiseren door leerlingen een willekeurig (random) nummer te geven
 (zie
 Appendix \ref{app-randomgetallen}) en daarna de `even leerlingen' aan de
@@ -2873,7 +2871,7 @@ Hans inderdaad kon rekenen (en communiceren met mensen). Later
 constateerde een lid van de onderzoekscommissie, Carl Stumpf, samen met
 zijn assistent Oskar Pfungst, echter: ``\ldots het paard laat verstek gaan,
 als de oplossing van de gestelde opgave aan geen van de aanwezigen
-bekend is'' \citep[185, vert. HQ]{Pfung07}, of als het de persoon die de
+bekend is'' \citep[ p.185, vert. HQ]{Pfung07}, of als het de persoon die de
 oplossing weet niet kan zien. ``Es bedarf also optischer Hilfen'' (idem).
 Na nauwkeurige observaties bleek dat de baas van Kluger Hans (en andere
 aanwezigen) zich een heel klein beetje ontspande zodra Hans het juiste
@@ -2881,7 +2879,7 @@ aantal malen met zijn rechter voorpoot gestampt had. Dit onopzettelijke
 teken was voor Kluger Hans voldoende aanleiding om het stampen te staken
 (d.i. om zijn rechter voorhoef op de grond te houden), teneinde daarna
 zijn beloning van wortels en brood in ontvangst te nemen
-\citep{Pfung07} \citep[38--47]{Watz77}.
+\citep{Pfung07} \citep[p.38--47]{Watz77}.
 \end{quote}
 
 \begin{quote}
@@ -2904,7 +2902,7 @@ bias'. In het Head Turn Preference Paradigm
 (voorbeeld 5.6), bijvoorbeeld, is het gebruikelijk dat de
 experimentator niet weet uit welke groep een proefpersoon afkomstig is,
 en dat de experimentator niet hoort welk geluidsbestand wordt aangeboden
-\citep[74]{John10}.
+\citep[p.74]{John10}.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -3705,7 +3703,7 @@ tred houden met het aantal verschillende combinaties van factoren. Als
 je meer combinaties van factoren toevoegt, dan zijn er daardoor ook veel
 meer proefpersonen nodig (of andere eenheden). Ten tweede is het
 moeilijker te garanderen dat alle combinaties van factoren perfect
-vergelijkbaar zijn \citep[266]{SCC02}: zijn Tunesische deelnemers die in
+vergelijkbaar zijn \citep[p.266]{SCC02}: zijn Tunesische deelnemers die in
 Tunesië luisteren naar Tunesische muziek wel goed vergelijkbaar met
 Franse deelnemers die in Frankrijk luisteren naar Franse muziek? De
 vergelijkbaarheid van combinaties wordt lastiger, naarmate er meer
@@ -4571,7 +4569,7 @@ geven dat we te maken hebben met discrete categorieën.
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/klankfreq-barplot-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/klankfreq-barplot-1.pdf}}
 \caption{\label{fig:klankfreq-barplot}Staafdiagram van de frequentieverdeling van fonologische klasse van spraakklanken in het Corpus Gesproken Nederlands (C=consonant=medeklinker, V=vocaal=klinker).}
 \end{figure}
 
@@ -4604,7 +4602,7 @@ as.
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/troonrede2012-hist-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/troonrede2012-hist-1.pdf}}
 \caption{\label{fig:troonrede2012-hist}Histogram van de duren van spreekpauzes (in seconden) in de Troonrede van 18 september 2012, voorgelezen door Koningin Beatrix (N=305).}
 \end{figure}
 
@@ -4786,7 +4784,7 @@ ratio-meetniveau.
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/wachttijden-hist-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/wachttijden-hist-1.pdf}}
 \caption{\label{fig:wachttijden-hist}Histogram van N=10 wachttijden, met markering van het gemiddelde.}
 \end{figure}
 
@@ -4959,7 +4957,7 @@ diverse centrummaten, voor asymmetrisch verdeelde observaties.
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/centrummaten-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/centrummaten-1.pdf}}
 \caption{\label{fig:centrummaten}Histogram van een variabele met positief scheve (asymmetrische) frequentieverdeling, met daarin aangegeven (1) de mediaan, (2) het 10\% getrimde gemiddelde, (3) het 10\% gewinsoriseerde gemiddelde, en (4) het rekenkundig gemiddelde. De geobserveerde scores zijn gemarkeerd langs de horizontale as.}
 \end{figure}
 
@@ -5086,7 +5084,7 @@ Figuur \ref{fig:cito-boxplot} voor een voorbeeld \citep[ §2C]{Tukey77}.
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/cito-boxplot-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/cito-boxplot-1.pdf}}
 \caption{\label{fig:cito-boxplot}Boxplots van scores van \(N=10\) leerlingen op de onderdelen Lezen en Rekenen van de CITO-toets (zie Tabel 9.1), met uitbijters als open cirkels gemarkeerd. De geobserveerde scores zijn gemarkeerd langs de verticale assen.}
 \end{figure}
 
@@ -5578,7 +5576,7 @@ Voor \textbf{kwartielen en boxplot} zoals Figuur \ref{fig:cito-boxplot} gebruike
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{KMS-NL_files/figure-latex/cito-summary-boxplot-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/cito-summary-boxplot-1.pdf}}
 
 Veel \textbf{centrummaten} zijn als functie in R voorgeprogrammeerd:
 
@@ -5887,7 +5885,7 @@ som & \((p+q)^3\) & = 1.0000 \\
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/binomkansverdeling3-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/binomkansverdeling3-1.pdf}}
 \caption{\label{fig:binomkansverdeling3}Kansverdeling van een binomiale variabele x met n=3 en p=.38.}
 \end{figure}
 
@@ -6043,7 +6041,7 @@ Figuur \ref{fig:binomkansverdeling50n500}.
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/binomkansverdeling50n500-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/binomkansverdeling50n500-1.pdf}}
 \caption{\label{fig:binomkansverdeling50n500}Kansverdeling van een binomiale variabele x met n=50 (links) en n=500 (rechts) en p=.38.}
 \end{figure}
 
@@ -6061,7 +6059,7 @@ gemiddelde zijn relatief zeldzaam (lage kans).
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/normaalkansverdeling-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/normaalkansverdeling-1.pdf}}
 \caption{\label{fig:normaalkansverdeling}Normale kansverdeling van een variabele x met gemiddelde 0 en standaarddeviatie 1.}
 \end{figure}
 
@@ -6254,7 +6252,7 @@ met het onderstaande commando. Hierin wordt een \texttt{curve} getekend, met \te
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{KMS-NL_files/figure-latex/normkansverdeling.dnorm-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/normkansverdeling.dnorm-1.pdf}}
 
 Als je een extra argument \texttt{curve(\ ...,\ add=TRUE\ )} opgeeft, dan wordt de curve toegevoegd aan de meest recente plot (zie bijv. Figuur \ref{fig:itunesmeanshist} hieronder).
 
@@ -6265,7 +6263,7 @@ minuten (dat is een klassiek-indiaas muziekstuk, een `morning raga').
 Een histogram van de duren van alle muzieknummers zie je in
 Figuur \ref{fig:itunestimeshist}.
 
-\includegraphics{KMS-NL_files/figure-latex/itunestimeshist-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/itunestimeshist-1.pdf}}
 Dit histogram laat zien dat deze duren
 duidelijk \emph{niet} een normale kansverdeling volgen: de verdeling is niet
 symmetrisch, en de onderste staart loopt niet eindeloos door (er zijn
@@ -6287,7 +6285,7 @@ je in Figuur \ref{fig:itunestimesqqplot}.
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/itunestimesqqplot-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/itunestimesqqplot-1.pdf}}
 \caption{\label{fig:itunestimesqqplot}Quantile-quantile-plot van de duren van muzieknummers in mijn digitale muziekbibliotheek.}
 \end{figure}
 
@@ -6412,7 +6410,7 @@ Figuur \ref{fig:itunesmeanshist}.
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/itunesmeanshist-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/itunesmeanshist-1.pdf}}
 \caption{\label{fig:itunesmeanshist}Frequentieverdeling van 250 gemiddelden, elk over een willekeurige steekproef van \(n=50\) muzieknummers (de afhankelijke variabele is de duur van een muzieknummer, in minuten). De bijpassende normaalverdeling is aangegeven als een vloeiende curve.}
 \end{figure}
 
@@ -6496,7 +6494,7 @@ is: de \(t\)-verdeling benadert dan de standaard-normale kansverdeling.
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/tkansverdeling-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/tkansverdeling-1.pdf}}
 \caption{\label{fig:tkansverdeling}Kansverdeling volgens de t-verdeling van een variabele \(x\) met gemiddelde 0 en standaarddeviatie 1, voor n=600 en n=6.}
 \end{figure}
 
@@ -6532,7 +6530,7 @@ formule \eqref{eq:t-onesampleCI} weten we dan met 95\% betrouwbaarheid dat het o
 \(\bar{x}-2.05\times s_{\bar{x}}\) en \(\bar{x}+2.05\times s_{\bar{x}}\),
 oftewel tussen \(0.215-2.05\times0.0037\) en \(0.215+2.05\times0.0037\),
 oftewel tussen \(0.208\) en \(0.223\) seconde
-Als de werkelijke waarde in de populatie tussen deze grenzen ligt, dan is er een kans van 95\% om dit gemiddelde te vinden in een aselecte steekproef \citep[241]{Spie19}.
+Als de werkelijke waarde in de populatie tussen deze grenzen ligt, dan is er een kans van 95\% om dit gemiddelde te vinden in een aselecte steekproef \citep[p.241]{Spie19}.
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -6549,7 +6547,7 @@ langs de rechterkant).
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/tempo95CIs-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/tempo95CIs-1.pdf}}
 \caption{\label{fig:tempo95CIs}95\%-Betrouwbaarheidsintervallen en steekproefgemiddelden, over 100 gesimuleerde steekproeven (n=30) uit een populatie met gemiddelde 0.220 en s.d. 0.0225; zie tekst.}
 \end{figure}
 
@@ -7143,7 +7141,7 @@ Leerling & 1 & 9 & 6 & 4 & 10 & 8 & 5 & 7 & 2 & 3 \\
 \endlastfoot
 Lezen & 1 & 2 & 3 & 4.5 & 4.5 & 6 & 7 & 8 & 9 & 10 \\
 Rekenen & 2 & 4 & 1 & 4 & 6.5 & 4 & 8 & 6.5 & 10 & 9 \\
-verschil \(v_i\) & -1 & -2 & 1 & 0.5 & -2 & 2 & -1 & 1.5 & -1 & 1 \\
+verschil \(v_i\) & -1 & -2 & 2 & 0.5 & -2 & 2 & -1 & 1.5 & -1 & 1 \\
 \end{longtable}
 
 De ordening in Tabel \ref{tab:cito-rangnummers} maakt in één oogopslag duidelijk dat
@@ -7452,7 +7450,7 @@ en bijgaande Figuur \ref{fig:xkcd552} (met toestemming ontleend aan \url{https:/
 
 \begin{figure}
 \centering
-\includegraphics{figures/correlation.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figures/correlation.png}}
 \caption{\label{fig:xkcd552}Correlation does not imply causation.}
 \end{figure}
 
@@ -7593,7 +7591,7 @@ afasie-patiënten om de kwaliteit van hun leven te bepalen. De kwaliteit
 van leven wordt omschreven als ``the patient perception about, either the
 effects of a given disease, or the application of a certain treatment on
 different aspects of life, especially regarding its consequences on the
-physical, emotional and social welfare'' \citep[379]{Lata09}. De nieuwe
+physical, emotional and social welfare'' \citep[ p.379]{Lata09}. De nieuwe
 vragenlijst werd tweemaal afgenomen bij een steekproef van 23
 Spaanstalige patiënten met afasie t.g.v. hersenbloeding. De
 gerapporteerde test-hertest-stabiliteit voor deze vragenlijst was
@@ -7792,7 +7790,7 @@ correlatie tussen twee metingen met hetzelfde instrument.
 
 Ten derde kan de betrouwbaarheid geïnterpreteerd worden als het verlies
 van efficiëntie in het schatten van de gemiddelde score \(\overline{X}\)
-\citep[474]{Ferg89}. Stel dat we de gemiddelde score van een groep van
+\citep[ p.474]{Ferg89}. Stel dat we de gemiddelde score van een groep van
 \(n=50\) proefpersonen willen vaststellen, en we gebruiken daarbij een
 meetinstrument met betrouwbaarheid \(\rho_{xx}=0.8\). Er is dan
 onzekerheid in de schatting, deels afkomstig van variatie in de ware
@@ -7801,7 +7799,7 @@ toevallige afwijkingen \(e_i\) bij de metingen. Als het meetinstrument
 perfect betrouwbaar zou zijn (\(\rho=1\)) dan zouden we slechts
 \(\rho_{xx}\times n = 0.8\times50=40\) proefpersonen nodig hebben gehad
 voor dezelfde nauwkeurigheid van de schatting van \(\overline{X}\)
-\citep[474]{Ferg89}. We hebben dus als het ware 10 proefpersonen verspeeld
+\citep[ p.474]{Ferg89}. We hebben dus als het ware 10 proefpersonen verspeeld
 om te compenseren voor de onbetrouwbaarheid van het meetinstrument.
 
 Hierboven hebben we gesproken over metingen met behulp van
@@ -8235,7 +8233,7 @@ anders scoren dan \(\mu=73\)).
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/gramm2013onesample-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/gramm2013onesample-1.pdf}}
 \caption{\label{fig:gramm2013onesample}Kansverdeling van de gemiddelde score uit een steekproef (n=34) bij populatiegemiddelde 73 en populatie-s.d. 14. Het gekleurde gebied bestrijkt 5\% van de totale oppervlakte onder de curve; uitkomsten langs de X-as van dit gebied hebben dus een kans van ten hoogste 5\% om op te treden als H0 waar is.}
 \end{figure}
 
@@ -8267,7 +8265,7 @@ kunnen allerlei andere, plausibele redenen zijn waarom een wel bestaand
 effect (H0 is onwaar) toch niet goed geobserveerd wordt. Als ik geen
 vogels hoor zingen, dan betekent dat niet noodzakelijkerwijs dat er echt
 geen vogels zingen. Meer algemeen: ``absence of evidence is not evidence
-of absence'' \citetext{\citealp[121]{Sagan96}; \citealp{Alde04}}. Het is daarom goed om ook altijd
+of absence'' \citetext{\citealp[p.121]{Sagan96}; \citealp{Alde04}}. Het is daarom goed om ook altijd
 de grootte van het gevonden effect of verschil te rapporteren (dit wordt
 nader uitgelegd in §\ref{sec:ttoets-effectgrootte} hieronder).
 
@@ -8541,7 +8539,8 @@ in de uitvoer verschijnen als \texttt{‘Sig.\ .000’} oftewel \(p=.000\). Dit 
 onjuist. De overschrijdingskans of significantie is immers niet gelijk
 aan nul, maar is \emph{afgerond naar} nul, en dat is niet hetzelfde.
 Rapporteer de overschrijdingskans of significantie altijd met de juiste
-nauwkeurigheid, in dit voorbeeld als \(p<.001\) \citep[zie ook][125]{Wright03}.
+nauwkeurigheid, in dit voorbeeld als \(p<.001\) \citep[zie ook][
+p.125]{Wright03}.
 
 \section{Eenzijdige en tweezijdige toetsen}\label{sec:ttoets-eenzijdigtweezijdig}
 
@@ -8645,7 +8644,7 @@ concept van betrouwbaarheidsintervallen.
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/gramm2013CIs-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/gramm2013CIs-1.pdf}}
 \caption{\label{fig:gramm2013CIs}95\%-Betrouwbaarheidsintervallen en steekproefgemiddelden, over 100 gesimuleerde steekproeven (n=34) uit een populatie met populatiegemiddelde 84.4, populatie-s.d. 8.4.}
 \end{figure}
 
@@ -9228,7 +9227,7 @@ In formules \eqref{eq:t-onesample} en \eqref{eq:t-pairedsamples} komt tot
 uiting dat de toetsingsgrootheid \(t\) groter wordt, naarmate het effect
 groter wordt, d.w.z. bij een groter verschil \((\overline{x}-\mu)\) of
 \((\overline{x_1}-\overline{x_2})\) of \((\overline{D}-\mu_D)\){]}, \emph{en/of}
-naarmate de steekproef groter wordt. Kort gezegd \citep[338, formule
+naarmate de steekproef groter wordt. Kort gezegd \citep[ p.338, formule
 11.10]{Rose08}:
 \begin{equation}
   \label{eq:Rose08}
@@ -9342,7 +9341,7 @@ rond 2.0 dan noemen we dat een `enorm' of `reusachtig' effect \citep[`huge',][]{
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/kleinstesignifverschil-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/kleinstesignifverschil-1.pdf}}
 \caption{\label{fig:kleinstesignifverschil}Relatie tussen de steekproefgrootte en het kleinste effect (d) dat significant is volgens een \emph{t}-toets voor ongepaarde, onafhankelijke waarnemingen, met foutkansen alpha=.05 en beta=.10.}
 \end{figure}
 
@@ -9581,9 +9580,9 @@ te stellen \citep{Naka07, Chen15}. We illustreren het hier op simpele wijze
 voor het simpelste geval, nl. dat van de \(t\)-toets voor een enkele
 steekproef, c.q. voor twee gepaarde observaties. We hebben hiervoor twee
 elementen nodig: ten eerste de effectgrootte uitgedrukt als correlatie
-\citep[359, formule 12.1]{Rose08},
+\citep[ p.359, formule 12.1]{Rose08},
 \[r = \sqrt{ \frac{t^2}{t^2+\textrm{df}} }\] en ten tweede de
-standaardfout van de effectgrootte \(d\) \citep[600, formule 18]{Naka07}:
+standaardfout van de effectgrootte \(d\) \citep[ p.600, formule 18]{Naka07}:
 \begin{equation}
   \label{eq:d-paired-se}
     \textrm{se}_d = \sqrt{ \frac{2(1-r)}{n} + \frac{d^2}{2(n-1)} }
@@ -9682,13 +9681,13 @@ toetsen.
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/powercontours-alpha01-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/powercontours-alpha01-1.pdf}}
 \caption{\label{fig:powercontours-alpha01}Power uitgedrukt in contouren (zie schaalverdeling), afhankelijk van de gestandaardiseerde effectgrootte (d) en de steekproefgrootte (n), volgens een tweezijdige t-toets voor ongepaarde, onafhankelijke waarnemingen, met significantieniveau alpha=.01.}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/powercontours-alpha05-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/powercontours-alpha05-1.pdf}}
 \caption{\label{fig:powercontours-alpha05}Power uitgedrukt in contouren (zie schaalverdeling), afhankelijk van de gestandaardiseerde effectgrootte (d) en de steekproefgrootte (n), volgens een tweezijdige t-toets voor ongepaarde, onafhankelijke waarnemingen, met significantieniveau alpha=.05.}
 \end{figure}
 
@@ -9767,7 +9766,7 @@ De power is gebaseerd op het \emph{harmonisch gemiddelde} van \(n_1\) en \(n_2\)
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{quote}
-\emph{Voorbeeld 14.1}: In een studie worden twee groepen proefpersonen vergeleken, met \(n_1=10\) en \(n_2=50\) (\(N=n_1+n_2=10+50=60\)). Het harmonisch gemiddelde van \(n_1=10\) en \(n_2=50\) is \(H=17\). Deze studie heeft dus dezelfde power als een kleinere studie met twee groepen van elk 17 proefpersonen, dus 34 proefpersonen in totaal. Voor deze studie zijn er dus 26 proefpersonen méér onderzocht (en belast) dan noodzakelijk (zie ook §\ref{sec:ontwerp}) \citep[295]{ACA11}.
+\emph{Voorbeeld 14.1}: In een studie worden twee groepen proefpersonen vergeleken, met \(n_1=10\) en \(n_2=50\) (\(N=n_1+n_2=10+50=60\)). Het harmonisch gemiddelde van \(n_1=10\) en \(n_2=50\) is \(H=17\). Deze studie heeft dus dezelfde power als een kleinere studie met twee groepen van elk 17 proefpersonen, dus 34 proefpersonen in totaal. Voor deze studie zijn er dus 26 proefpersonen méér onderzocht (en belast) dan noodzakelijk (zie ook §\ref{sec:ontwerp}) \citep[p.295]{ACA11}.
 \end{quote}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -9807,7 +9806,7 @@ belemmert de groei van onze kennis en ons inzicht, en belemmert de
 wetenschappelijke vooruitgang (zie ook
 voorbeeld~3.2 in Hoofdstuk \ref{ch-integriteit}).
 
-\includegraphics{KMS-NL_files/figure-latex/underpoweredeffectsizes-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/underpoweredeffectsizes-1.pdf}}
 De uitkomsten van gesimuleerde experimenten met verschillende
 steekproefgrootte, en dus met verschillende power, zijn samengevat in
 Figuur~\ref{fig:underpoweredeffectsizes}. We leggen het tweede nadeel uit aan de hand van deze wat complexe figuur. In het linker paneel van
@@ -9824,7 +9823,7 @@ gemengde beeld van deze onderzoeken is goed te verklaren door de geringe
 power van elk onderzoek. Het nodeloze en overbodige vervolg-onderzoek
 kost veel tijd en geld (en indirecte kosten, zie
 Hoofdstuk~\ref{ch-integriteit}), en het gaat ten koste van ander, nuttiger
-onderzoek \citep[118]{Schm96}. Anders gezegd: één goed ontworpen studie met
+onderzoek \citep[p.118]{Schm96}. Anders gezegd: één goed ontworpen studie met
 ruim voldoende power kan vele nodeloze vervolg-studies voorkomen.
 
 Het derde nadeel is gebaseerd op de ervaring dat onderzoek waarin wèl
@@ -9958,7 +9957,7 @@ West & 0.235 & 0.028 & 20 \\
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/syldur-boxplot-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/syldur-boxplot-1.pdf}}
 \caption{\label{fig:syldur-boxplot}Boxplot van de gemiddelde duur van de lettergrepen, opgesplitst naar regio van herkomst van de spreker.}
 \end{figure}
 
@@ -10113,7 +10112,7 @@ groepen? Zo ja, dan verwerpen we H0.
 
 \begin{figure}
 \centering
-\includegraphics{KMS-NL_files/figure-latex/kleurtjes-obs-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/kleurtjes-obs-1.pdf}}
 \caption{\label{fig:kleurtjes-obs}Gesimuleerde observaties van drie experimentele groepen: rood (neerwaartse driehoek), grijs (ruit), en blauw (opwaartse driehoek) (n=15 per groep), met het gemiddelde per groep (in streeplijnen), en met het gemiddelde over alle observaties (stippellijn).}
 \end{figure}
 
@@ -10335,7 +10334,7 @@ how strong relations are. After all, with large enough \(N\)s, \(F\)- and
 \(t\)-ratios can almost always be statistically significant. While often
 sobering in their effect, especially when they are low, coefficients of
 association of independent and dependent variables {[}i.e., effect size
-coefficients{]} are \emph{indispensable} parts of research results'' \citep[327, nadruk toegevoegd]{KL00}.
+coefficients{]} are \emph{indispensable} parts of research results'' \citep[ p.327, nadruk toegevoegd]{KL00}.
 \end{quote}
 
 \subsection{Gerichte vergelijkingen}\label{sec:anova-oneway-gericht}
@@ -10457,7 +10456,7 @@ verwachten verschillen tussen de groepen of condities. Pas na afloop van
 de variantieanalyse, \emph{nadat} er een significant effect gevonden is,
 besluit de onderzoeker om nader te inspecteren welke condities van
 elkaar verschillen. We spreken dan van \emph{post-hoc} vergelijkingen,
-``suggested by the data'' \citep[200]{MD04}. We moeten daarbij conservatief te
+``suggested by the data'' \citep[ p.200]{MD04}. We moeten daarbij conservatief te
 werk gaan, juist omdat we na de variantieanalyse al kunnen vermoeden dat
 sommige vergelijkingen een significant resultaat zullen opleveren,
 d.w.z., de nulhypotheses zijn al niet neutraal.
@@ -10869,7 +10868,7 @@ Ook verwachten de onderzoekers een effect van de leesvaardigheid van de proefper
 \end{quote}
 
 \begin{quote}
-Bovendien verwachten de onderzoekers dat zwakke lezers de structuurmarkeringen meer nodig hebben, en dus meer baat erbij hebben, dan sterke lezers; ``sterke lezers zijn in staat studieteksten met begrip te lezen, ongeacht de aanwezigheid van structuurmarkeringen'' \citep[33]{DBE12}.
+Bovendien verwachten de onderzoekers dat zwakke lezers de structuurmarkeringen meer nodig hebben, en dus meer baat erbij hebben, dan sterke lezers; ``sterke lezers zijn in staat studieteksten met begrip te lezen, ongeacht de aanwezigheid van structuurmarkeringen'' \citep[p.33]{DBE12}.
 De onderzoekers verwachten dus een \textbf{interactie} of wisselwerking tussen de factoren: de verschillen tussen de tekstversies zijn anders voor de verschillende lezerstypen, of anders gezegd, de verschillen tussen de lezerstypen zijn anders voor de verschillende tekstversies.
 \end{quote}
 
@@ -10883,7 +10882,7 @@ Maar het meest opvallende effect is de interactie: het effect van tekstmarkering
 
 \begin{figure}
 \centering
-\includegraphics{figures/DBE2012interaction_v2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figures/DBE2012interaction_v2.png}}
 \caption{\label{fig:DBE12interaction}Gemiddelde begripsscores (met 95\%-betrouwbaarheidsintervallen), voor twee tekstversies en drie groepen lezers (naar Van Dooren, Van den Bergh en Evers-Vermeul, 2012).}
 \end{figure}
 
@@ -11403,13 +11402,13 @@ Voor iedere cel van de frequentietabel (in regel \(i\) en kolom \(j\)) kunnen we
 \end{equation}
 Als we al deze ruwe residuen \(e\) kwadrateren en de kwadraten optellen, dan levert dat de bovenstaande toetsingsgrootheid \(\chi2\) op (formule \eqref{eq:chikwadraat}).
 
-Het is echter inzichtelijker om het \emph{gestandardiseerde} residu van iedere cel te bepalen \citep[38]{Agre07}.
+Het is echter inzichtelijker om het \emph{gestandardiseerde} residu van iedere cel te bepalen \citep[p.38]{Agre07}.
 Daarbij houden we dan rekening met de standaardfout van de residuen (via de rij-totalen \(R_i\), kolom-totalen \(C_j\), en totaal aantal observaties \(N\)):
 \begin{equation}
   \label{eq:chi2-stdresidu}
   e_{ij} = \frac{(O_{ij}-E_{ij})}{\sqrt{E_{ij}\times(1-\frac{R_i}{N})\times(1-\frac{C_j}{N})}}
 \end{equation}
-De gestandaardiseerde residuen \(e\) kunnen geïnterpreteerd worden alsof het \(Z\)-waarden zijn, met gebruik van de kritieke \(Z\)-waarden (zie Bijlage \ref{app-kritiekeZwaarden}). De aangepaste en gestandaardiseerde residuen laten dus zien welke cellen vooral bijdragen aan een significante uitkomst van de \(\chi^2\)toets \footnote{Als er meerdere vergelijkingen worden gedaan, dan moet de kritieke waarde van \(\alpha\) worden aangepast, om Type-I-fouten bij die meerdere vergelijkingen te voorkomen. Als er \(k\) cellen en dus \(k\) vergelijkingen zijn, dan is het veilig om \(\alpha/k\) i.p.v. \(\alpha\) te gebruiken bij elke vergelijking -- dit staat bekend als Bonferroni's aanpassing van de \(\alpha\)-waarde, of als Dunn's procedure \citep[202]{MD04}. Zie ook §\ref{sec:anova-oneway-posthoc}.}.
+De gestandaardiseerde residuen \(e\) kunnen geïnterpreteerd worden alsof het \(Z\)-waarden zijn, met gebruik van de kritieke \(Z\)-waarden (zie Bijlage \ref{app-kritiekeZwaarden}). De aangepaste en gestandaardiseerde residuen laten dus zien welke cellen vooral bijdragen aan een significante uitkomst van de \(\chi^2\)toets \footnote{Als er meerdere vergelijkingen worden gedaan, dan moet de kritieke waarde van \(\alpha\) worden aangepast, om Type-I-fouten bij die meerdere vergelijkingen te voorkomen. Als er \(k\) cellen en dus \(k\) vergelijkingen zijn, dan is het veilig om \(\alpha/k\) i.p.v. \(\alpha\) te gebruiken bij elke vergelijking -- dit staat bekend als Bonferroni's aanpassing van de \(\alpha\)-waarde, of als Dunn's procedure \citep[p.202]{MD04}. Zie ook §\ref{sec:anova-oneway-posthoc}.}.
 
 Voor het bovenstaande voorbeeld in §\ref{sec:chi2gof} vinden we de volgende zes gestandaardiseerde residuen voor de zes mogelijke uitkomsten van de dobbelsteen: \((1.39, -0.35, +0.35, 0.00, 1.73, -3.12)\). De eerste vijf uitkomsten komen ongeveer even vaak voor als verwacht, maar de zesde mogelijke uitkomst is veel minder vaak geobserveerd dan verwacht (\(p\)=.003).
 
@@ -11855,7 +11854,7 @@ maar ook de bijbehorende waarde van \(z\) \citep{Ferg89}:
   z = \frac{ W_+ - \frac{N(N+1)}{4} } { \sqrt{ \frac{N(N+1)(2N+1)}{24} } }
 \end{equation}
 Daarmee kunnen we de effectgrootte uitrekenen, in de vorm van een
-correlatie \citep[Eq.2.18]{Rose91}:
+correlatie \citep[ Eq.2.18]{Rose91}:
 \begin{equation}
   \label{eq:es-z2r}
     r = \frac {z} {\sqrt{N}}
@@ -12060,7 +12059,7 @@ dan wordt de kans \(P(H)\) exact berekend.
 
 \chapter{Standaard-normale kansverdeling}\label{app-kritiekeZwaarden}
 
-\includegraphics{KMS-NL_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/kritiekeZwaarden-hulpfiguur-1.pdf}}
 
 De hieronder gegeven kritieke grenswaarde \(Z^*\) heeft een overschrijdingskans \(p\) onder \(H_0\),
 d.w.z. \(P(Z > Z^*|H_0)=p\) (de blauwe oppervlakte),
@@ -12095,7 +12094,7 @@ Z* & 0.5 & 1 & 1.5 & 2 & 2.5 & 3 & 3.5\\
 
 \chapter{\texorpdfstring{Kritieke waarden van \(t\)-verdeling}{Kritieke waarden van t-verdeling}}\label{app-kritieketwaarden}
 
-\includegraphics{KMS-NL_files/figure-latex/kritieketwaarden-hulpfiguur-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/kritieketwaarden-hulpfiguur-1.pdf}}
 
 De hieronder gegeven kritieke grenswaarde \(t^*\) heeft een overschrijdingskans \(p\)
 onder \(H_0\), d.w.z. \(P(t \geq t^*|H_0)=p\), en heeft kans \(B\) op een
@@ -12152,7 +12151,7 @@ De tabel hieronder geeft de kritieke grenswaarden \(t^*\) voor veel gebruikte ov
 
 \chapter{\texorpdfstring{Kritieke waarden van \(\chi^2\)-verdeling}{Kritieke waarden van \textbackslash chi\^{}2-verdeling}}\label{app-kritiekechi2waarden}
 
-\includegraphics{KMS-NL_files/figure-latex/kritiekechi2waarden-hulpfiguur-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{KMS-NL_files/figure-latex/kritiekechi2waarden-hulpfiguur-1.pdf}}
 
 De hieronder gegeven kritieke grenswaarde \((\chi^2)^*\) heeft een overschrijdingskans \(p\)
 onder \(H_0\), d.w.z. \(P(\chi^2 \geq (\chi^2)^*|H_0)=p\).
@@ -12203,6 +12202,6 @@ De tabel hieronder geeft de kritieke grenswaarden \((\chi^2)^*\) voor veel gebru
 \bottomrule
 \end{tabular}
 
-  \bibliography{book.bib,packages.bib,hhmhto.bib,pandoc.bib}
+\bibliography{book.bib,packages.bib,hhmhto.bib,pandoc.bib}
 
 \end{document}

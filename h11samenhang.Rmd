@@ -93,6 +93,7 @@ bijbehorende correlatiecoëfficiënten.
 
 ```{r cor-scatter, echo=FALSE, fig.cap="Meerdere spreidingsdiagrammen van observaties met bijbehorende correlatiecoëfficiënten.", fig.align="center"}
 # original version named correlationincolor.r, for statistiek1011, HQ 20110601
+require(MASS) # for MASS::mvrnorm
 op <- par( mfrow=c(2,4), mar=c(2,2,2,1), oma=c(3,3,1,1) )  # 2 rows 4 cols
 tol <- .005 # tolerance between intended and simulated correlation coef
 for (i in c(.9,.7,.5,.3) ) {
@@ -533,7 +534,7 @@ Table: (#tab:cito-rangnummers) Rangnummers van de scores van 10 leerlingen op on
   ---------------- ---- ---- --- ----- ----- --- ---- ----- ---- ----
   Lezen             1    2    3   4.5   4.5   6   7     8    9    10
   Rekenen           2    4    1    4    6.5   4   8    6.5   10   9
-  verschil $v_i$    -1   -2   1   0.5   -2    2   -1   1.5   -1   1
+  verschil $v_i$    -1   -2   2   0.5   -2    2   -1   1.5   -1   1
 
 De ordening in Tabel \@ref(tab:cito-rangnummers) maakt in één oogopslag duidelijk dat
 de drie leerlingen met de laagste score voor Lezen (nrs. 1, 9, 6) ook
