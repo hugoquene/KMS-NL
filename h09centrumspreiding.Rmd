@@ -246,7 +246,7 @@ Een nog drastischer ingreep is om de meest extreme observaties geheel te
 verwijderen. Het gemiddelde van de overblijvende observaties wordt het
 *getrimde* gemiddelde genoemd ("trimmed mean"). Bij een 10% trim
 verwijderen we de onderste 10% *en* de bovenste 10% van de observaties;
-er resteren dan dus nog slechts $(1- (2 \times (10/100))\times n$
+er resteren dan dus nog slechts $(1- (2 \times (10/100)))\times n$
 observaties [@Wilcox12].
 
 ---

@@ -461,7 +461,7 @@ $1/3092 =0.00032$ (de 'odds' zijn 1 op de 0.00032).
 De *verhouding* van deze beide 'odds' voor de beide groepen noemen we de
 'odds ratio' (afgekort OR). In dit voorbeeld vinden we (D/C) / (B/A) =
 AD/BC =
-$(3092 \times 83) / (1 \times 2178) = (0.00392)/(0.00032) = 12.1$. De
+$(3092 \times 83) / (1 \times 21178) = (0.00392)/(0.00032) = 12.1$. De
 'odds' om te sterven aan longkanker zijn dus ruim $12\times$ zo groot
 voor de rokers dan voor de niet-rokers. We rapporteren dat als volgt:
 
